@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="pandoc">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Preference Model & Predictions</title>
+<title>2018 Preference Model Intro</title>
 
 <!-- Yahoo! CDN combo URL for selected Pure.css modules -->
 <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
@@ -53,14 +53,19 @@ table td {
 
 <section id="where-did-the-2018-votes-come-from" class="level2">
 <h2>Where Did The 2018 Votes Come From?</h2>
-<p>The 2018 house races were generally good for Democrats and progressives--but why? Virtually every plausible theory has at least some support – depending on which pundits and researchers you follow, you could credibly argue that turnout of young voters, or white women abandoning Trump, or an underlying demographic shift toward non-white voters was the main factor that propelled the Blue Wave in the midterms.</p>
+<p>The 2018 house races were generally good for Democrats and progressives--but why? Virtually every plausible theory has at least some support – depending on which pundits and researchers you follow, you could credibly argue that turnout of young voters[^VoxOn2018], or white women abandoning Trump, or an underlying demographic shift toward non-white voters<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> was the main factor that propelled the Blue Wave in the midterms.</p>
 <p>If Democrats want to solidify and extend their gains, what we really want to know is the relative importance of each of these factors – in other words, how much of last year’s outcome was due to changes in demographics vs. voter turnout vs. voters changing their party preferences? It turns out that answering this is difficult. We have good data on the country’s changing demographics, and also on who showed up to the polls, broken down by gender, age, and race. But in terms of how each sub-group voted, we only have exit polls and post-election surveys, as well as the final election results in aggregate.</p>
-<p>Several folks have tried to study voting patterns of particular sub-groups in U.S. elections. *** CONTEXT/PRIOR WORK *** But so far, none of these studies have been able to specifically estimate, for example, what fraction of ***</p>
 <ul>
 <li><p>We consider only "competitive" districts, defined as those that had a democrat and republican candidate. Of the 435 House districts, 382 districts were competitive in 2018.</p></li>
 <li><p>Our demographic groupings are limited by the the categories recognized and tabulated by the census and by our desire to balance specificity (using more groups so that we might recognize people's identity more precisely) with a need to keep the model small enough to make inference possible. Thus for now we split the electorate into "white" (non-hispanic) and "non-white", "male" and "female" and "young" (&lt;45) and "old".</p></li>
 <li><p>Our inference model uses Bayesian techniques that are described in more detail in a separate <a href="https://blueripple.github.io/PreferenceModel/MethodsAndSources.html">Preference-Model Notes</a> post.</p></li>
 </ul>
+<p>Several folks have done related work, inferring voter behavior using the election results and other data combined with census data about demographics. in U.S. elections. In particular:</p>
+<ul>
+<li><p><a href="http://tomvladeck.com/2016/12/31/unpacking-the-election-results-using-bayesian-inference/">This blog post</a> uses bayesian inference and a beta-binomial voter model to look at the 2016 election and various subsets of the electorate. The more sophisticated model allows inference on voter polarity within groups as well as the voter preference of each group.</p></li>
+<li><p><a href="https://arxiv.org/pdf/1611.03787.pdf">This paper</a> uses different techniques but similar data to look at the 2016 election and infer voter behavior by demographic group. The model uses county-level data and exit-polls and is able to draw inferences about turnout and voter preference and to do so for <em>specific geographical areas</em>.</p></li>
+</ul>
+<p>Each of these studies is limited to the 2016 presidential election. Still, each has much to offer in terms of ideas for pushing this work forward, especially where county-level election returns are available, as they are for 2016 and 2018[^MITElectionLabData].</p>
 <p>As a first pass, we modeled the voting preferences of our 8 demographic sub-groups in the 2018 election, so we could compare our results with data from exit polls and surveys. The results are presented in the figure below:</p>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
@@ -75,59 +80,59 @@ table td {
     "data": {
         "values": [
             {
-                "ConfHi": 0.8006812866234536,
+                "ConfHi": 0.8006839406101066,
                 "Key": "2018",
-                "ConfLo": 0.7988813870238336,
-                "Estimate": 0.7997779016253133,
+                "ConfLo": 0.7988609410169086,
+                "Estimate": 0.7997736190520583,
                 "Parameter": "OldNonWhiteFemale-2018"
             },
             {
-                "ConfHi": 0.7718366108822627,
+                "ConfHi": 0.7718230876001205,
                 "Key": "2018",
-                "ConfLo": 0.7697038154157588,
-                "Estimate": 0.770768739060037,
+                "ConfLo": 0.7697125534903118,
+                "Estimate": 0.7707700644278527,
                 "Parameter": "YoungNonWhiteFemale-2018"
             },
             {
-                "ConfHi": 0.7588644888207915,
+                "ConfHi": 0.758889681500983,
                 "Key": "2018",
-                "ConfLo": 0.7567145636276568,
-                "Estimate": 0.7577956067630006,
+                "ConfLo": 0.7567133623117516,
+                "Estimate": 0.7577983318106879,
                 "Parameter": "OldNonWhiteMale-2018"
             },
             {
-                "ConfHi": 0.7329464405113382,
+                "ConfHi": 0.7329507948660247,
                 "Key": "2018",
-                "ConfLo": 0.7304785044232781,
-                "Estimate": 0.7317042106774145,
+                "ConfLo": 0.7304646953866141,
+                "Estimate": 0.7317089937071046,
                 "Parameter": "YoungNonWhiteMale-2018"
             },
             {
-                "ConfHi": 0.42498506182751195,
+                "ConfHi": 0.4249756746814617,
                 "Key": "2018",
-                "ConfLo": 0.42393637674612794,
-                "Estimate": 0.4244586937158314,
+                "ConfLo": 0.4239427069956992,
+                "Estimate": 0.42446015451824,
                 "Parameter": "OldWhiteFemale-2018"
             },
             {
-                "ConfHi": 0.4744422455913507,
+                "ConfHi": 0.4744282243927943,
                 "Key": "2018",
-                "ConfLo": 0.47280639665426066,
-                "Estimate": 0.47361714647891534,
+                "ConfLo": 0.47280157118168875,
+                "Estimate": 0.4736172107876755,
                 "Parameter": "YoungWhiteFemale-2018"
             },
             {
-                "ConfHi": 0.4294478997162432,
+                "ConfHi": 0.4294257877648905,
                 "Key": "2018",
-                "ConfLo": 0.4283172853342181,
-                "Estimate": 0.4288842936335116,
+                "ConfLo": 0.42834186115537487,
+                "Estimate": 0.4288842564173813,
                 "Parameter": "OldWhiteMale-2018"
             },
             {
-                "ConfHi": 0.48605247032773014,
+                "ConfHi": 0.48606088592508784,
                 "Key": "2018",
-                "ConfLo": 0.4843265228235889,
-                "Estimate": 0.48519781970514564,
+                "ConfLo": 0.48432915563189327,
+                "Estimate": 0.48519394361735574,
                 "Parameter": "YoungWhiteMale-2018"
             }
         ]
@@ -187,6 +192,12 @@ table td {
 vegaEmbed('#figure_1',vlSpec);</script>
 </figure>
 <p>The most striking observation is the chasm between white and non-white voters’ inferred support for Democrats in 2018. Non-whites were modeled to have over 75% preference for Dems regardless of age or gender, though support is even a bit stronger among non-white female voters than non-white male voters5. Inferred support from white voters in 2018 is substantially lower, roughly 35-45% across age groups and genders. In contrast, differences in inferred preferences by age (matching for gender and race) or gender (matching for age and race) are not particularly striking or consistent (e.g., comparing white males in the under-25 and over-75 groups). Overall, we’re heartened that our model seems to work pretty well, because the results are broadly consistent with exit polls and surveys6789. *** Thus, our model confirmed prior work suggesting that non-white support for Democrats in 2018 was much higher than that by whites, across all genders and age groups. But it still doesn’t tell us what happened in 2018 compared with prior years. To what extent did Democrats’ gains over 2016 come from underlying growth in the non-white population, higher turnout among non-whites, increased preference for Democrats (among whites or non-whites), or some combination of these and other factors? That requires comparing these data to results from earlier elections – which is what we’ll do in subsequent posts. Stay tuned.</p>
+</section>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p><a href="https://www.pewresearch.org/fact-tank/2018/11/08/the-2018-midterm-vote-divisions-by-race-gender-education/" class="uri">https://www.pewresearch.org/fact-tank/2018/11/08/the-2018-midterm-vote-divisions-by-race-gender-education/</a> speaks to this, though it addresses turnout and opinion shifts as well.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+</ol>
 </section>
 
 <!-- page content ends here -->
