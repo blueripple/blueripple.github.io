@@ -82,62 +82,49 @@ table td {
     "data": {
         "values": [
             {
-                "ConfHi": 0.8006851806646448,
-                "Key": "2018",
-                "ConfLo": 0.7988696189844274,
-                "Estimate": 0.7997733190796807,
-                "Parameter": "OldNonWhiteFemale-2018"
+                "Name": "OldNonWhiteFemale",
+                "Estimate": 0.7788418495830381,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.7718277246598932,
-                "Key": "2018",
-                "ConfLo": 0.7697105519454347,
-                "Estimate": 0.7707640386725882,
-                "Parameter": "YoungNonWhiteFemale-2018"
+                "Name": "YoungNonWhiteFemale",
+                "Estimate": 0.7700979802357888,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.7588714815581696,
-                "Key": "2018",
-                "ConfLo": 0.7567230689246147,
-                "Estimate": 0.7578003510399378,
-                "Parameter": "OldNonWhiteMale-2018"
+                "Name": "OldNonWhiteMale",
+                "Estimate": 0.7413808725834197,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.7329709233416373,
-                "Key": "2018",
-                "ConfLo": 0.7304577595507449,
-                "Estimate": 0.7317072832408531,
-                "Parameter": "YoungNonWhiteMale-2018"
+                "Name": "YoungNonWhiteMale",
+                "Estimate": 0.7530534721013248,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.4249686248789716,
-                "Key": "2018",
-                "ConfLo": 0.4239509955917914,
-                "Estimate": 0.42445969335762,
-                "Parameter": "OldWhiteFemale-2018"
+                "Name": "OldWhiteFemale",
+                "Estimate": 0.4095981765969586,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.474432443769777,
-                "Key": "2018",
-                "ConfLo": 0.47280203980663554,
-                "Estimate": 0.4736170436693896,
-                "Parameter": "YoungWhiteFemale-2018"
+                "Name": "YoungWhiteFemale",
+                "Estimate": 0.4941606303096594,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.42943377987843084,
-                "Key": "2018",
-                "ConfLo": 0.42833966144844277,
-                "Estimate": 0.4288838292710328,
-                "Parameter": "OldWhiteMale-2018"
+                "Name": "OldWhiteMale",
+                "Estimate": 0.4105422572454656,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.48605036931805173,
-                "Key": "2018",
-                "ConfLo": 0.48433841378040465,
-                "Estimate": 0.48519621985796463,
-                "Parameter": "YoungWhiteMale-2018"
+                "Name": "YoungWhiteMale",
+                "Estimate": 0.5144572968897546,
+                "NullText": ""
             }
-        ]
+        ],
+        "format": {
+            "parse": {}
+        }
     },
     "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
     "title": "Modeled probability of voting Democratic in (competitive) 2018 house races",
@@ -146,8 +133,9 @@ table td {
             "mark": "point",
             "encoding": {
                 "color": {
-                    "field": "Key",
-                    "type": "nominal"
+                    "field": "NullText",
+                    "type": "nominal",
+                    "legend": null
                 },
                 "x": {
                     "field": "Estimate",
@@ -157,7 +145,7 @@ table td {
                     }
                 },
                 "y": {
-                    "field": "Parameter",
+                    "field": "Name",
                     "type": "ordinal"
                 }
             }
@@ -166,25 +154,26 @@ table td {
             "mark": "rule",
             "encoding": {
                 "x2": {
-                    "field": "ConfHi",
+                    "field": "Hi",
                     "type": "quantitative",
                     "axis": {
                         "title": ""
                     }
                 },
                 "color": {
-                    "field": "Key",
-                    "type": "nominal"
+                    "field": "NullText",
+                    "type": "nominal",
+                    "legend": null
                 },
                 "x": {
-                    "field": "ConfLo",
+                    "field": "Lo",
                     "type": "quantitative",
                     "axis": {
                         "title": ""
                     }
                 },
                 "y": {
-                    "field": "Parameter",
+                    "field": "Name",
                     "type": "ordinal"
                 }
             }
@@ -206,62 +195,49 @@ vegaEmbed('#figure_1',vlSpec);</script>
     "data": {
         "values": [
             {
-                "ConfHi": 0.41529790235302977,
-                "Key": "2018",
-                "ConfLo": 0.4141891095732584,
-                "Estimate": 0.4147443581745965,
-                "Parameter": "OldFemaleNonGrad-2018"
+                "Name": "OldFemaleNonGrad",
+                "Estimate": 0.41485140360864575,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.5010160856716103,
-                "Key": "2018",
-                "ConfLo": 0.4992608125601351,
-                "Estimate": 0.5001450318556147,
-                "Parameter": "YoungFemaleNonGrad-2018"
+                "Name": "YoungFemaleNonGrad",
+                "Estimate": 0.5422306952998762,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.3977860394970952,
-                "Key": "2018",
-                "ConfLo": 0.3965313633511306,
-                "Estimate": 0.3971572400006498,
-                "Parameter": "OldMaleNonGrad-2018"
+                "Name": "OldMaleNonGrad",
+                "Estimate": 0.39984440086821166,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.48894682454035615,
-                "Key": "2018",
-                "ConfLo": 0.48711109778714956,
-                "Estimate": 0.4880349131371696,
-                "Parameter": "YoungMaleNonGrad-2018"
+                "Name": "YoungMaleNonGrad",
+                "Estimate": 0.5518080982257398,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.6014836751682446,
-                "Key": "2018",
-                "ConfLo": 0.5999923744371655,
-                "Estimate": 0.6007403043108047,
-                "Parameter": "OldFemaleCollegeGrad-2018"
+                "Name": "OldFemaleCollegeGrad",
+                "Estimate": 0.587200451581339,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.7281326322711718,
-                "Key": "2018",
-                "ConfLo": 0.7263816689933636,
-                "Estimate": 0.7272567012724633,
-                "Parameter": "YoungFemaleCollegeGrad-2018"
+                "Name": "YoungFemaleCollegeGrad",
+                "Estimate": 0.7350401631911342,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.5616487756447037,
-                "Key": "2018",
-                "ConfLo": 0.5601479351057786,
-                "Estimate": 0.5609001657602491,
-                "Parameter": "OldMaleCollegeGrad-2018"
+                "Name": "OldMaleCollegeGrad",
+                "Estimate": 0.5475755954062091,
+                "NullText": ""
             },
             {
-                "ConfHi": 0.7798269175291995,
-                "Key": "2018",
-                "ConfLo": 0.7778656094031315,
-                "Estimate": 0.7788488261802282,
-                "Parameter": "YoungMaleCollegeGrad-2018"
+                "Name": "YoungMaleCollegeGrad",
+                "Estimate": 0.7921374677829883,
+                "NullText": ""
             }
-        ]
+        ],
+        "format": {
+            "parse": {}
+        }
     },
     "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
     "title": "Modeled probability of voting Democratic in (competitive) 2018 house races",
@@ -270,8 +246,9 @@ vegaEmbed('#figure_1',vlSpec);</script>
             "mark": "point",
             "encoding": {
                 "color": {
-                    "field": "Key",
-                    "type": "nominal"
+                    "field": "NullText",
+                    "type": "nominal",
+                    "legend": null
                 },
                 "x": {
                     "field": "Estimate",
@@ -281,7 +258,7 @@ vegaEmbed('#figure_1',vlSpec);</script>
                     }
                 },
                 "y": {
-                    "field": "Parameter",
+                    "field": "Name",
                     "type": "ordinal"
                 }
             }
@@ -290,25 +267,26 @@ vegaEmbed('#figure_1',vlSpec);</script>
             "mark": "rule",
             "encoding": {
                 "x2": {
-                    "field": "ConfHi",
+                    "field": "Hi",
                     "type": "quantitative",
                     "axis": {
                         "title": ""
                     }
                 },
                 "color": {
-                    "field": "Key",
-                    "type": "nominal"
+                    "field": "NullText",
+                    "type": "nominal",
+                    "legend": null
                 },
                 "x": {
-                    "field": "ConfLo",
+                    "field": "Lo",
                     "type": "quantitative",
                     "axis": {
                         "title": ""
                     }
                 },
                 "y": {
-                    "field": "Parameter",
+                    "field": "Name",
                     "type": "ordinal"
                 }
             }
