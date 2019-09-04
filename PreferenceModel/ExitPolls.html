@@ -184,11 +184,11 @@
 
 <!-- page content begins here -->
 
-<div class="published">September  3, 2019</div>
+<div class="published">September  4, 2019</div>
 <header>
 <h1 class="title">Comparing the Inferred Preference Model to the Exit Polls</h1>
 </header>
-<p>The press has various breakdowns of the 2018 exit polling done by Edison Research. None split things into the same categories we looked at in our <a href="https://blueripple.github.io/PreferenceModel/2018.html">post on 2018</a>. But we can merge some of our categories and then compare.</p>
+<p>The press has various breakdowns of the 2018 exit polling done by Edison Research. None split things into the same categories we looked at in our <a href="https://blueripple.github.io/PreferenceModel/2018.html">post on inferred voter preference in 2018 house elections</a>. But we can merge some of our categories and then compare. We see rough agreement but also some very large discrepancies that we have yet to explain.</p>
 <figure id="figure_3">
 <script type="text/javascript">var vlSpec=
 {
@@ -233,25 +233,31 @@
             "mark": "point",
             "encoding": {
                 "color": {
-                    "field": "ModelvsExit",
-                    "type": "quantitative",
-                    "legend": {
-                        "format": "%",
-                        "formatType": "number"
-                    }
+                    "field": "Group",
+                    "type": "nominal"
                 },
                 "x": {
                     "field": "Model Dem Pref",
                     "type": "quantitative",
                     "axis": {
-                        "title": "% Likelihood of Voting Democratic"
+                        "format": "%",
+                        "title": "Modeled % Likelihood of Voting Democratic",
+                        "formatType": "number"
                     }
                 },
                 "y": {
-                    "field": "Group",
-                    "type": "ordinal",
+                    "field": "ModelvsExit",
+                    "scale": {
+                        "domain": [
+                            -0.15,
+                            0.15
+                        ]
+                    },
+                    "type": "quantitative",
                     "axis": {
-                        "title": "Demographic Group"
+                        "format": "%",
+                        "title": "Model - Exit Poll",
+                        "formatType": "number"
                     }
                 }
             }
@@ -260,6 +266,9 @@
     "padding": 0
 };
 vegaEmbed('#figure_3',vlSpec);</script>
+<figcaption>
+After merging genders, our preference model tracks the exit polls quite well.
+</figcaption>
 </figure>
 <figure id="figure_4">
 <script type="text/javascript">var vlSpec=
@@ -305,25 +314,31 @@ vegaEmbed('#figure_3',vlSpec);</script>
             "mark": "point",
             "encoding": {
                 "color": {
-                    "field": "ModelvsExit",
-                    "type": "quantitative",
-                    "legend": {
-                        "format": "%",
-                        "formatType": "number"
-                    }
+                    "field": "Group",
+                    "type": "nominal"
                 },
                 "x": {
                     "field": "Model Dem Pref",
                     "type": "quantitative",
                     "axis": {
-                        "title": "% Likelihood of Voting Democratic"
+                        "format": "%",
+                        "title": "Modeled % Likelihood of Voting Democratic",
+                        "formatType": "number"
                     }
                 },
                 "y": {
-                    "field": "Group",
-                    "type": "ordinal",
+                    "field": "ModelvsExit",
+                    "scale": {
+                        "domain": [
+                            -0.15,
+                            0.15
+                        ]
+                    },
+                    "type": "quantitative",
                     "axis": {
-                        "title": "Demographic Group"
+                        "format": "%",
+                        "title": "Model - Exit Poll",
+                        "formatType": "number"
                     }
                 }
             }
@@ -332,6 +347,9 @@ vegaEmbed('#figure_3',vlSpec);</script>
     "padding": 0
 };
 vegaEmbed('#figure_4',vlSpec);</script>
+<figcaption>
+A fairly large discrepancy appears when we look at sex and race, merging ages. Our model infers similar voting preferences for white men and women and non-white men and women whereas the exit polls show women in both groups voting for Democrats more than men by about 10 percentage points.
+</figcaption>
 </figure>
 <figure id="figure_5">
 <script type="text/javascript">var vlSpec=
@@ -377,25 +395,31 @@ vegaEmbed('#figure_4',vlSpec);</script>
             "mark": "point",
             "encoding": {
                 "color": {
-                    "field": "ModelvsExit",
-                    "type": "quantitative",
-                    "legend": {
-                        "format": "%",
-                        "formatType": "number"
-                    }
+                    "field": "Group",
+                    "type": "nominal"
                 },
                 "x": {
                     "field": "Model Dem Pref",
                     "type": "quantitative",
                     "axis": {
-                        "title": "% Likelihood of Voting Democratic"
+                        "format": "%",
+                        "title": "Modeled % Likelihood of Voting Democratic",
+                        "formatType": "number"
                     }
                 },
                 "y": {
-                    "field": "Group",
-                    "type": "ordinal",
+                    "field": "ModelvsExit",
+                    "scale": {
+                        "domain": [
+                            -0.15,
+                            0.15
+                        ]
+                    },
+                    "type": "quantitative",
                     "axis": {
-                        "title": "Demographic Group"
+                        "format": "%",
+                        "title": "Model - Exit Poll",
+                        "formatType": "number"
                     }
                 }
             }
@@ -404,6 +428,9 @@ vegaEmbed('#figure_4',vlSpec);</script>
     "padding": 0
 };
 vegaEmbed('#figure_5',vlSpec);</script>
+<figcaption>
+An even larger discrepancy appears when we look at sex and education, merging our race categories. Our inferred result for male college graduates is a full 15% higher than the exit polls, while our result for female non-college graduates is almost 10% below the exit-polls.
+</figcaption>
 </figure>
 
 <!-- page content ends here -->

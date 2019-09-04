@@ -184,7 +184,7 @@
 
 <!-- page content begins here -->
 
-<div class="published">September  3, 2019</div>
+<div class="published">September  4, 2019</div>
 <header>
 <h1 class="title">Digging into the 2018 House Election Results</h1>
 </header>
@@ -288,6 +288,12 @@
             "encoding": {
                 "color": {
                     "field": "Turnout",
+                    "scale": {
+                        "domain": [
+                            0.2,
+                            0.8
+                        ]
+                    },
                     "type": "quantitative",
                     "legend": {
                         "format": "%",
@@ -297,6 +303,12 @@
                 },
                 "size": {
                     "field": "Voters",
+                    "scale": {
+                        "domain": [
+                            5000000,
+                            30000000
+                        ]
+                    },
                     "type": "quantitative",
                     "legend": {
                         "formatType": "number"
@@ -406,6 +418,12 @@ vegaEmbed('#figure_1',vlSpec);</script>
             "encoding": {
                 "color": {
                     "field": "Turnout",
+                    "scale": {
+                        "domain": [
+                            0.2,
+                            0.8
+                        ]
+                    },
                     "type": "quantitative",
                     "legend": {
                         "format": "%",
@@ -415,6 +433,12 @@ vegaEmbed('#figure_1',vlSpec);</script>
                 },
                 "size": {
                     "field": "Voters",
+                    "scale": {
+                        "domain": [
+                            5000000,
+                            30000000
+                        ]
+                    },
                     "type": "quantitative",
                     "legend": {
                         "formatType": "number"
