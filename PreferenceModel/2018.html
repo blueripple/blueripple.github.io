@@ -179,7 +179,7 @@
 
 <!-- page content begins here -->
 
-<div class="published">September  5, 2019 </div>
+<div class="published">September  5, 2019 (updated: September  6, 2019)</div>
 <header>
 <h1 class="title">Digging into the 2018 House Election Results</h1>
 </header>
@@ -192,19 +192,23 @@
 </ol>
 <section id="estimating-voter-preference" class="level2">
 <h2>Estimating Voter Preference</h2>
-<p>There are many ways to partition the electorate, e.g., age, educational attainment, race or sex. We can also group people by answers to specific questions about issues or previous votes. In subsequent posts we will look at all these possibilities, or point to other sources which do. For our first look we’re going to stick with some standard demographic groupings which originate with the <a href="https://www.census.gov/programs-surveys/acs.html">Census ACS data</a>. We’ll look first at grouping the electorate by age (old/young = over/under 45), sex (female or male), and race (non-white and white), as well as the same age and sex categories but with a split on education (non-college-grad or college-grad) instead of race.</p>
-<p>We know that these categories are oversimplifications and problematic in various ways. But we are limited to the categories the census provides and we want the number of groups to be reasonably small for this analysis to be useful.</p>
-<p><a href="https://www.edisonresearch.com/election-polling/#one">Edison Research</a> did extensive exit-polling in 2018 and, along with others, <a href="https://www.cnn.com/election/2018/exit-polls">CNN analyzed</a> this data, providing some breakdowns along these categories. <a href="https://www.vox.com/policy-and-politics/2018/11/7/18064260/midterm-elections-turnout-women-trump-exit-polls">Much reporting</a> has used these results to <a href="https://www.nytimes.com/interactive/2018/11/07/us/elections/house-exit-polls-analysis.html">discuss</a> the <a href="https://www.brookings.edu/blog/the-avenue/2018/11/08/2018-exit-polls-show-greater-white-support-for-democrats/">2018 electorate</a>. However, there is <a href="https://www.nytimes.com/2014/11/05/upshot/exit-polls-why-they-so-often-mislead.html">widespread criticism</a> of exit-polling.</p>
-<p>Is there a different way to see which groups voted in what numbers for Democrats? In the rest of this post, and some subsequent posts, we’ll explore a <a href="https://blueripple.github.io/PreferenceModel/MethodsAndSources.html">different approach</a>. What if, rather than polling, we just used the <em>election results</em> themselves? How would that work? Here’s the date used:</p>
+<p>The 2018 house races were generally good for Democrats and progressives–but why? Virtually every plausible theory has at least some support – depending on which pundits and researchers you follow, you could credibly argue that <a href="https://www.vox.com/2019/4/26/18516645/2018-midterms-voter-turnout-census">turnout of young voters</a> , or <a href="https://www.vox.com/policy-and-politics/2018/11/7/18064260/midterm-elections-turnout-women-trump-exit-polls%3E">white women abandoning Trump</a> , or an <a href="https://www.pewresearch.org/fact-tank/2018/11/08/the-2018-midterm-vote-divisions-by-race-gender-education">underlying demographic shift toward non-white voters</a> was the main factor that propelled the Blue Wave in the midterms.</p>
+<p>But if Democrats want to solidify and extend their gains, we really want to know the relative importance of each of these factors—in other words, how much of last year’s outcome was due to changes in demographics vs. voter turnout vs. voters changing their party preferences?</p>
+<p>It turns out that answering this is difficult. We have good data on the country’s changing demographics, and also on who showed up to the polls, broken down by various factors. But in terms of how each sub-group voted,, we have limited information.</p>
+<p><a href="https://www.edisonresearch.com/election-polling/#one">Edison Research</a> did extensive exit-polling in 2018 and, along with others, <a href="https://www.cnn.com/election/2018/exit-polls">CNN analyzed</a> this data, providing some breakdowns along these categories. <a href="https://www.vox.com/policy-and-politics/2018/11/7/18064260/midterm-elections-turnout-women-trump-exit-polls">Much reporting</a> has used these results to <a href="https://www.nytimes.com/interactive/2018/11/07/us/elections/house-exit-polls-analysis.html">discuss</a> the <a href="https://www.brookings.edu/blog/the-avenue/2018/11/08/2018-exit-polls-show-greater-white-support-for-democrats/">2018 electorate</a>. However, there is <a href="https://www.nytimes.com/2014/11/05/upshot/exit-polls-why-they-so-often-mislead.html">widespread criticism</a> of exit-polling, and it may lead us astray in several ways.</p>
+<p>Is there a different way to find out which groups voted in what numbers for Democrats, without relying on exit polls?</p>
+<p>In the rest of this post, and some subsequent posts, we’ll explore a different approach, which we describe in detail <a href="https://blueripple.github.io/PreferenceModel/MethodsAndSources.html">here</a>. What if, rather than polling, we just used the <em>election results</em> themselves? How would that work? Here are the data we used:</p>
 <ul>
 <li><a href="https://www.census.gov/topics/public-sector/voting/data/tables.2018.html">Census data</a> for (national) turnout of each group.</li>
 <li><a href="https://www.census.gov/programs-surveys/acs.html">Census data</a> for the demographic breakdown of each house district.</li>
-<li>The <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/IG0UN2">election result</a> in each comptetive house district.</li>
+<li>The <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/IG0UN2">election result</a> in each competitive house district.</li>
 </ul>
-<p>What are the odds of a voter in any of these demographic groups voting for a Democrat? Any set of voter preferences (those odds), give rise to a probability, given the turnout and demographics, of the election result we observe in a specific district. In 2018, We had 382 districts with at least one democrat and one republican running (we ignore the rest), and we can combine all those to get the chance that a particular set of voter preferences explains all the results. From this, we infer the most-likley voter preferences. The details are spelled out in a <a href="https://blueripple.github.io/PreferenceModel/MethodsAndSources.html">separate post</a>.</p>
+<p>What are the odds of a voter in any of these demographic groups voting for a Democrat? Any set of voter preferences (those odds), give rise to a probability, given the turnout and demographics, of the election result we observe in a specific district. In 2018, we had 382 districts with at least one Democrat and one Republican running (we ignore the rest), and we can combine all those to get the chance that a particular set of voter preferences explains all the results. From this, we infer the most likely voter preferences. The details are spelled out in a <a href="https://blueripple.github.io/PreferenceModel/MethodsAndSources.html">separate post</a>.</p>
 </section>
 <section id="who-voted-for-democrats-and-progressives" class="level2">
 <h2>Who Voted For Democrats and Progressives?</h2>
+<p>There are many ways to partition the electorate, e.g., age, educational attainment, race or sex. We can also group people by answers to specific questions about issues or previous votes. In subsequent posts we will look at all these possibilities, or point to other sources that do. For our first look we’re going to stick with some standard demographic groupings that originate with the <a href="https://www.census.gov/programs-surveys/acs.html">Census ACS data</a>. We’ll look first at grouping the electorate by age (old/young = over/under 45), sex (female or male), and race (non-white and white), as well as the same age and sex categories but with a split on education (non-college-grad or college-grad) instead of race.</p>
+<p>We know that these categories are oversimplifications and problematic in various ways. But we are limited to the categories the census provides and we want the number of groups to be reasonably small for this analysis to be useful.</p>
 <p>In the charts below, we show our inferred voter preference split by demographic group. We use size to indicate the number of voters in each group and the color to signify turnout.</p>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
@@ -283,7 +287,10 @@
     "title": "Grouped by Age, Race, and Sex",
     "layer": [
         {
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Turnout",
@@ -291,7 +298,14 @@
                         "domain": [
                             0.2,
                             0.8
-                        ]
+                        ],
+                        "scheme": {
+                            "extent": [
+                                0.3,
+                                1
+                            ],
+                            "name": "blues"
+                        }
                     },
                     "type": "quantitative",
                     "legend": {
@@ -413,7 +427,10 @@ vegaEmbed('#figure_1',vlSpec);</script>
     "title": "Grouped by Age, Sex and Education",
     "layer": [
         {
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Turnout",
@@ -421,7 +438,14 @@ vegaEmbed('#figure_1',vlSpec);</script>
                         "domain": [
                             0.2,
                             0.8
-                        ]
+                        ],
+                        "scheme": {
+                            "extent": [
+                                0.3,
+                                1
+                            ],
+                            "name": "blues"
+                        }
                     },
                     "type": "quantitative",
                     "legend": {
@@ -464,29 +488,24 @@ vegaEmbed('#figure_1',vlSpec);</script>
 };
 vegaEmbed('#figure_2',vlSpec);</script>
 </figure>
-<p>Here we see a large (&gt;15% point) gap between more-democratic-leaning college-educated voters and voters without a four-year degree. We also see a similar gap with age, where younger voters are 15% or so more likely to vote for democrats.</p>
+<p>Here we see a large (&gt;15% point) gap between more Democratic-leaning college-educated voters and voters without a four-year degree. We also see a similar gap with age, where younger voters are 15% or so more likely to vote for Democrats.</p>
 <p>In both charts, the size of the circles reflects the number of people of voting age in each group (within the competitive districts). In 2018 democrats won almost all the groups we consider here but the groups where they lag have the largest number of actual voters. The charts also make clear that voter turnout among young voters is relatively low and raising that would generally be a boon for democrats.</p>
-<p>These results are similar but markedly different from the exit-polls. <a href="https://blueripple.github.io/PreferenceModel/ExitPolls.html">This post</a> has more details on that comparison.</p>
+<p>These results are similar but markedly different from the exit polls. <a href="https://blueripple.github.io/PreferenceModel/ExitPolls.html">This post</a> has more details on that comparison.</p>
 </section>
 <section id="what-does-this-mean-for-2019-and-2020" class="level2">
 <h2>What does this mean for 2019 and 2020?</h2>
 <p>These charts can be viewed as pictures of the so-called Democratic “base”–voters of color and younger white voters, particularly those with a college degree. Winning more votes comes from raising turnout among that coalition <em>and</em> trying to improve Democratic voter preference with everyone else.</p>
-<p>But this isn’t really a national question! Most candidates win local races and, because of the <a href="https://www.nationalpopularvote.com/">electoral college</a>, presidential elections also hinge on very local outcomes. So, in the near future, we plan to investigate the issue of turnout and changing voter-preference for single states or congressional districts. We hope to use that analysis to help interested progressives discover where turnout is key vs. places where changing minds might be more important. Both are important everywhere, of course. But in some places, one might be a much larger source of democratic votes.</p>
+<p>But this isn’t really a national question! Most candidates win local races and, because of the <a href="https://www.nationalpopularvote.com/">electoral college</a>, presidential elections also hinge on very local outcomes. So, in the near future, we plan to investigate the issue of turnout and changing voter-preference for single states or congressional districts. We hope to use that analysis to help interested progressives discover where turnout is key vs. places where changing minds might be more important. Both are important everywhere, of course. But in some places, one might be a much larger source of Democratic votes.</p>
 </section>
 <section id="action" class="level2">
 <h2>Action</h2>
-<p>Democrats and progressives will benefit from get-out-the-vote work and work fighting voter suppression. Both improve turnout among the groups most likely to vote for Dems and progressives.</p>
-<p>Donate your time or money to organizations fighting to improve voter access and turnout:</p>
+<p>Democrats and progressives will benefit from get-out-the-vote work and work fighting voter suppression. Both improve turnout among the groups most likely to vote for blue candidates.</p>
+<p>We suggest that you donate your time or money to organizations fighting to improve voter access and turnout. In later posts we’ll dig into who’s doing this work at a state and local level, but here are some groups that are operating nationally.</p>
 <ul>
-<li><a href="https://www.demandthevote.com/">Demand The Vote</a> is an information clearinghouse for voter access and voting rights legislation in all 50 states. and link to variety of ways to put your time or money into voter access and turnout.</li>
+<li><a href="https://www.demandthevote.com/">Demand The Vote</a> is an information clearinghouse for voter access and voting rights legislation in all 50 states.</li>
 <li><a href="https://www.whenweallvote.org/">When We All Vote</a>, Michelle Obama’s new organization, works to increase voter turnout nationally and has opportunities to volunteer and donate money.</li>
 <li>The <a href="https://www.campusvoteproject.org/why-student-voters-matter">Campus Vote Project</a> works to improve registration and turnout among college students. Students can <a href="https://www.campusvoteproject.org/sign-up">sign up</a> to work on their own campuses.</li>
 <li><a href="https://nextgenamerica.org/">Next Gen America</a> works nationally to improve youth turnout. They have a <a href="https://nextgenamerica.org/act/">variety of ways</a> you can donate time or money to the cause.</li>
-</ul>
-<p>And here’s our take on some crucial state races coming up in 2019. State legislatures, Governors and state Secretaries-of-State have a large impact on voter access:</p>
-<ul>
-<li><a href="http://www.blueripplepolitics.org/blog/ky-la-2019">Crucial 2019 legislative races in VA and LA</a></li>
-<li><a href="http://www.blueripplepolitics.org/blog/state-level-races">Other important 2019 state races</a></li>
 </ul>
 </section>
 
