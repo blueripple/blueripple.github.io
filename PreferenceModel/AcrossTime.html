@@ -91,6 +91,15 @@
       color: white;
       text-align: center;      
   }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
   @media screen and (min-width: 629px) {
      .content-wrapper {
 	 margin-left: 218px;
@@ -164,9 +173,11 @@
 </head>
 <body>
   <div class="br-header">
-    <div class="br-header-item br-header-logo-wrapper">
-      <img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
-    </div>
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>	
     <div class="br-header-item br-home-button-c">
       <a href="https://www.blueripplepolitics.org">
 	<div class="br-home-button-b">HOME</div>
@@ -193,7 +204,7 @@
 <h2>The Evolving Democratic Coalition</h2>
 <p>Democratic votes can come from turnout—getting a Democratic voter registered and/or to the polls—or from changes in voter preference—basically, changing the opinion of a non-Democratic voter. Further, the demographics of the voting population in a district change over time which shifts how these factors add up to an election result.</p>
 <p>Consider the voter preference broken down by age, sex and race from 2010 to 2018:</p>
-<figure id="figure_6">
+<figure id="figure_3">
 <script type="text/javascript">var vlSpec=
 {
     "height": 400,
@@ -954,10 +965,10 @@
     ],
     "padding": 10
 };
-vegaEmbed('#figure_6',vlSpec);</script>
+vegaEmbed('#figure_3',vlSpec);</script>
 </figure>
 <p>As before, the difference in voter preference between non-white and white voters is stark. There is an encouraging move in white voter preference toward Democrats in 2018. We can also look at how those numbers translate to the composition of the democratic electorate:</p>
-<figure id="figure_7">
+<figure id="figure_4">
 <script type="text/javascript">var vlSpec=
 {
     "height": 400,
@@ -1203,11 +1214,11 @@ vegaEmbed('#figure_6',vlSpec);</script>
     ],
     "padding": 10
 };
-vegaEmbed('#figure_7',vlSpec);</script>
+vegaEmbed('#figure_4',vlSpec);</script>
 </figure>
 <p>This chart reminds us that though non-white voters are overwhelmingly democratic, they only make up roughly 40% of the Democratic votes. This is a combination of smaller numbers of possible voters and lower turnout. The latter is something there is ongoing work to change via anti-voter-suppression efforts and registration and GOTV drives.</p>
 <p>As before we can also group things by age, sex and educational attainment. First the voter preferences through time:</p>
-<figure id="figure_8">
+<figure id="figure_5">
 <script type="text/javascript">var vlSpec=
 {
     "height": 400,
@@ -1968,11 +1979,11 @@ vegaEmbed('#figure_7',vlSpec);</script>
     ],
     "padding": 10
 };
-vegaEmbed('#figure_8',vlSpec);</script>
+vegaEmbed('#figure_5',vlSpec);</script>
 </figure>
 <p>This shows a very distinct shift toward Democrats of all groups except older non-college graduates, who have become more Republican since 2012. Younger non-college graduates shifted republican in 2012 but shifted back in 2018.</p>
 <p>Again, we can also look at this data in terms of vote-share:</p>
-<figure id="figure_9">
+<figure id="figure_6">
 <script type="text/javascript">var vlSpec=
 {
     "height": 400,
@@ -2218,7 +2229,7 @@ vegaEmbed('#figure_8',vlSpec);</script>
     ],
     "padding": 10
 };
-vegaEmbed('#figure_9',vlSpec);</script>
+vegaEmbed('#figure_6',vlSpec);</script>
 </figure>
 <p>Here we see again that the Democratic coalition is made up of a large number of voters from groups that are not majority democratic voters and smaller numbers of votes from many groups which do tend to vote for Democrats.</p>
 <p>Also of note in both vote-share charts is the tendency of Democratic vote-share to fall off in mid-term years, except for 2018. That’s something to keep in mind and work against in 2022!</p>
@@ -2620,6 +2631,7 @@ vegaEmbed('#figure_9',vlSpec);</script>
 </tr>
 </tbody>
 </table>
+<p><em>Want to read more from Blue Ripple? Visit our <a href="https://blueripple.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple/Guide">Github</a> page.</em></p>
 </section>
 </section>
 <section class="footnotes" role="doc-endnotes">
@@ -2629,7 +2641,17 @@ vegaEmbed('#figure_9',vlSpec);</script>
 <li id="fn2" role="doc-endnote"><p>Sources: <a href="https://en.wikipedia.org/wiki/2010_United_States_House_of_Representatives_elections" class="uri">https://en.wikipedia.org/wiki/2010_United_States_House_of_Representatives_elections</a> <a href="https://en.wikipedia.org/wiki/2012_United_States_House_of_Representatives_elections" class="uri">https://en.wikipedia.org/wiki/2012_United_States_House_of_Representatives_elections</a>, <a href="https://en.wikipedia.org/wiki/2014_United_States_House_of_Representatives_elections" class="uri">https://en.wikipedia.org/wiki/2014_United_States_House_of_Representatives_elections</a>, <a href="https://en.wikipedia.org/wiki/2016_United_States_House_of_Representatives_elections" class="uri">https://en.wikipedia.org/wiki/2016_United_States_House_of_Representatives_elections</a>, <a href="https://en.wikipedia.org/wiki/2018_United_States_House_of_Representatives_elections" class="uri">https://en.wikipedia.org/wiki/2018_United_States_House_of_Representatives_elections</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
-
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
 <!-- page content ends here -->
 
 </div>     <!-- pure-u-1... -->
