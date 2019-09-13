@@ -190,7 +190,7 @@
 
 <!-- page content begins here -->
 
-<div class="published">September  5, 2019 (updated: September 12, 2019)</div>
+<div class="published">September  5, 2019 (updated: September 13, 2019)</div>
 <header>
 <h1 class="title">Digging into the 2018 House Election Results</h1>
 </header>
@@ -220,8 +220,8 @@
 <p>In short, we have geographically specific information on demographics, demographically detailed but geographically general data on turnout, and demographically general but geographically specific data on voter preference.</p>
 <p><a href="https://www.edisonresearch.com/election-polling/#one">Edison Research</a> did extensive exit-polling in 2018 and, along with others, <a href="https://www.cnn.com/election/2018/exit-polls">CNN analyzed</a> this data, providing some breakdowns of voter preference in various demographic categories. <a href="https://www.vox.com/policy-and-politics/2018/11/7/18064260/midterm-elections-turnout-women-trump-exit-polls">Much reporting</a> has used these results to <a href="https://www.nytimes.com/interactive/2018/11/07/us/elections/house-exit-polls-analysis.html">discuss</a> the voter preferences of the <a href="https://www.brookings.edu/blog/the-avenue/2018/11/08/2018-exit-polls-show-greater-white-support-for-democrats/">2018 electorate</a>. However, there is <a href="https://www.nytimes.com/2014/11/05/upshot/exit-polls-why-they-so-often-mislead.html">widespread criticism</a> of exit-polling, and it may lead us astray in several ways.</p>
 <p>Is there a different way to find out which groups voted in what numbers for Democrats, without relying on exit polls?</p>
-<p>In the rest of this post, and some subsequent posts, we’ll explore one approach for using the data we have to learn something demographically specific about voter preference. That is, we’ll infer a national-level voter preference for each demographic group using the data described above. We describe the methods in detail <strong><a href="https://blueripple.github.io/PreferenceModel/MethodsAndSources.html">here</a></strong>, and the <a href="https://github.com/blueripple/BlueRipple">data and code</a> are available at the Blue Ripple <a href="https://github.com/blueripple/Guide">github</a>.</p>
-<p>What are the odds of a voter in any of these demographic groups voting for a Democrat? Any set of voter preferences (those odds), give rise to a probability, given the turnout and demographics, of the election result we observe in a specific district. In 2018, we had 382 districts with at least one Democrat and one Republican running (and we ignore the rest, since we are only interested in the choices people make between Democrats and Republicans). We can combine all those to get the chance that a particular set of voter preferences explains all the results. From this, we can infer the most likely voter preferences. The details are spelled out in a <strong><a href="https://blueripple.github.io/PreferenceModel/MethodsAndSources.html">separate post</a></strong>.</p>
+<p>In the rest of this post, and some subsequent posts, we’ll explore one approach for using the data we have to learn something demographically specific about voter preference. That is, we’ll infer a national-level voter preference for each demographic group using the data described above. We describe the methods in detail <strong><a href="https://blueripple.github.io/research/preference-model/MethodsAndSources.html">here</a></strong>, and the <a href="https://github.com/blueripple/BlueRipple">data and code</a> are available at the Blue Ripple <a href="https://github.com/blueripple/Guide">github</a>.</p>
+<p>What are the odds of a voter in any of these demographic groups voting for a Democrat? Any set of voter preferences (those odds), give rise to a probability, given the turnout and demographics, of the election result we observe in a specific district. In 2018, we had 382 districts with at least one Democrat and one Republican running (and we ignore the rest, since we are only interested in the choices people make between Democrats and Republicans). We can combine all those to get the chance that a particular set of voter preferences explains all the results. From this, we can infer the most likely voter preferences. The details are spelled out in a <strong><a href="https://blueripple.github.io/research/preference-model/MethodsAndSources.html">separate post</a></strong>.</p>
 </section>
 <section id="who-voted-for-democrats-and-progressives" class="level2">
 <h2>Who Voted For Democrats and Progressives?</h2>
@@ -533,8 +533,8 @@ vegaEmbed('#figure_2',vlSpec);</script>
 </section>
 <section id="a-note-about-exit-polls" class="level2">
 <h2>A Note about Exit Polls</h2>
-<p>These results are similar but markedly different from the exit polls. <strong><a href="https://blueripple.github.io/PreferenceModel/ExitPolls.html">This post</a></strong> has more details on that comparison.</p>
-<p><em>Want to read more from Blue Ripple? Visit our <a href="https://blueripple.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple/Guide">Github</a> page.</em></p>
+<p>These results are similar but markedly different from the exit polls. <strong><a href="https://blueripple.github.io/research/preference-model/p1/ExitPolls.html">This post</a></strong> has more details on that comparison.</p>
+<p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple">Github</a> page.</em></p>
 </section>
 <!--
   <div class="br-readmore">
