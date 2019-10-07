@@ -1,0 +1,2693 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voter Preference: 2010-2018</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@4.4.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@3.28.0"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex; 
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;      
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 629px) {
+     .content-wrapper {
+	 margin-left: 218px;
+	 margin-right: 218px
+     }   
+  }
+  @media screen and (max-width: 630px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }		       
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;		
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px		       
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;      		       
+  }  
+  table {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  table th, table td {
+      border: 1px solid black;
+  }
+</style>
+
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>	
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">September 19, 2019 </div>
+<header>
+<h1 class="title">Voter Preference: 2010-2018</h1>
+</header>
+<p>In our previous <a href="https://blueripple.github.io/research/preference-model/p1/main.html#">post</a> we introduced a <a href="https://blueripple.github.io/research/preference-model/methods/main.html#">model</a> which we used to infer voter preference for various demographic groups in the 2018 house elections, using census data and election results. Here we look at how those preferences have shifted since 2010.</p>
+<ol type="1">
+<li>The Evolving Democratic Coalition</li>
+<li>Breaking Down the Changes</li>
+<li>What Happened in the Battleground States?</li>
+<li>Take Action</li>
+</ol>
+<section id="the-evolving-democratic-coalition" class="level2">
+<h2>The Evolving Democratic Coalition</h2>
+<p>Our way of breaking down the Democratic electorate has three compoonents:</p>
+<ul>
+<li>Demographics: What are the age, sex, education level, race, etc. of the eligible voters?</li>
+<li>Turnout: For each demographic group, what fraction of those eligible to vote cast votes on election day?</li>
+<li>Voter Preference: When people from each group vote, who are they likely to vote for?</li>
+</ul>
+<p>and given data about the first two, we can use statistical techniques to infer the third. See <a href="https://blueripple.github.io/research/preference-model/methods/main.html#">this post</a> for details. Each of these can change over time. The demographics change as people move from one district to another, or age into voting eligibility, etc. Turnout changes as interest in the election varies and as various impediments to voting are put in place or removed. And voter preference changes as well, as people choose different candidates and prioritize different issues. Using the model we introduced in <a href="https://blueripple.github.io/research/preference-model/p1/main.html#">this post</a>, we can see each of these components separately.</p>
+<p>First, we look at the preference component broken down by age, sex and race from 2010 to 2018 by plotting inferred national Democratic voter preference vs. year.</p>
+<figure id="figure_1">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 400,
+    "autosize": {
+        "resize": true,
+        "type": "fit",
+        "contains": "padding"
+    },
+    "data": {
+        "values": [
+            {
+                "Election Year": 2010,
+                "Group": "OldNonWhiteFemale",
+                "D Voter Preference (%)": 80.17060404749238
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungNonWhiteFemale",
+                "D Voter Preference (%)": 77.08574237953783
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldNonWhiteMale",
+                "D Voter Preference (%)": 75.44098068505015
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungNonWhiteMale",
+                "D Voter Preference (%)": 73.20271923671805
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldWhiteFemale",
+                "D Voter Preference (%)": 39.06648899718473
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungWhiteFemale",
+                "D Voter Preference (%)": 45.13624650601661
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldWhiteMale",
+                "D Voter Preference (%)": 37.37077029434801
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungWhiteMale",
+                "D Voter Preference (%)": 45.413988941228496
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldNonWhiteFemale",
+                "D Voter Preference (%)": 82.12170762780487
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungNonWhiteFemale",
+                "D Voter Preference (%)": 79.52151276314218
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldNonWhiteMale",
+                "D Voter Preference (%)": 77.27106161695099
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungNonWhiteMale",
+                "D Voter Preference (%)": 75.32728787961861
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldWhiteFemale",
+                "D Voter Preference (%)": 40.68930532369041
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungWhiteFemale",
+                "D Voter Preference (%)": 46.25283847841784
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldWhiteMale",
+                "D Voter Preference (%)": 39.49024435886893
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungWhiteMale",
+                "D Voter Preference (%)": 47.467199791859514
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldNonWhiteFemale",
+                "D Voter Preference (%)": 77.55587818646337
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungNonWhiteFemale",
+                "D Voter Preference (%)": 74.49136342392522
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldNonWhiteMale",
+                "D Voter Preference (%)": 73.5807116549655
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungNonWhiteMale",
+                "D Voter Preference (%)": 70.62497721924899
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldWhiteFemale",
+                "D Voter Preference (%)": 37.77534527639394
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungWhiteFemale",
+                "D Voter Preference (%)": 45.61720022136881
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldWhiteMale",
+                "D Voter Preference (%)": 37.22040011997008
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungWhiteMale",
+                "D Voter Preference (%)": 46.16631029409778
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldNonWhiteFemale",
+                "D Voter Preference (%)": 79.92977907368757
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungNonWhiteFemale",
+                "D Voter Preference (%)": 79.46486936700428
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldNonWhiteMale",
+                "D Voter Preference (%)": 76.7332591740149
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungNonWhiteMale",
+                "D Voter Preference (%)": 77.04727772078364
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldWhiteFemale",
+                "D Voter Preference (%)": 37.23525020224919
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungWhiteFemale",
+                "D Voter Preference (%)": 43.08115685849974
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldWhiteMale",
+                "D Voter Preference (%)": 36.80000317512304
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungWhiteMale",
+                "D Voter Preference (%)": 43.763665911515936
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldNonWhiteFemale",
+                "D Voter Preference (%)": 79.39588161007916
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungNonWhiteFemale",
+                "D Voter Preference (%)": 79.05649906708028
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldNonWhiteMale",
+                "D Voter Preference (%)": 75.96873313257977
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungNonWhiteMale",
+                "D Voter Preference (%)": 75.9376808691919
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldWhiteFemale",
+                "D Voter Preference (%)": 39.90385572852577
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungWhiteFemale",
+                "D Voter Preference (%)": 49.08628034398046
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldWhiteMale",
+                "D Voter Preference (%)": 39.89336113086922
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungWhiteMale",
+                "D Voter Preference (%)": 50.28317590708055
+            }
+        ],
+        "format": {
+            "parse": {
+                "Election Year": "date:'%Y'"
+            }
+        }
+    },
+    "width": 800,
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "title": "D Voter Preference Vs. Election Year",
+    "layer": [
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldNonWhiteFemale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldNonWhiteFemale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldNonWhiteMale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldNonWhiteMale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldWhiteFemale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldWhiteFemale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldWhiteMale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldWhiteMale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungNonWhiteFemale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungNonWhiteFemale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungNonWhiteMale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungNonWhiteMale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungWhiteFemale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungWhiteFemale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungWhiteMale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungWhiteMale",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            36.80000317512304,
+                            82.12170762780487
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        }
+    ],
+    "padding": 10
+};
+vegaEmbed('#figure_1',vlSpec);</script>
+</figure>
+<p>As before, the difference in voter preference between non-white and white voters is stark. There is an encouraging move in white voter preference toward Democrats in 2018, though it’s hard to compare presidential election years (2012 and 2016) to the mid-term years (2010, 2014, and 2018). Though turnout in 2018 was at near-presidential levels so 2018 may be more indicative than a typical mid-term election.</p>
+<p>We can also look at how those numbers translate to the composition of the democratic electorate by plotting vote-share–fraction of the total electorate–rather than preference. This allows us to see how many votes are coming from each group and how that has changed over time.</p>
+<figure id="figure_2">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 400,
+    "autosize": {
+        "resize": true,
+        "type": "fit",
+        "contains": "padding"
+    },
+    "data": {
+        "values": [
+            {
+                "Election Year": 2010,
+                "Group": "OldNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 5.329690922062448
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 4.07787679905155
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 4.06407890892527
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 2.9884072071305763
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 11.399883409192457
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 5.107088135540854
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldWhiteMale",
+                "D Voteshare of D+R Votes (%)": 10.019570258943876
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungWhiteMale",
+                "D Voteshare of D+R Votes (%)": 4.989440141766444
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 5.657379084189864
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 5.205469439981444
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 4.149994199617324
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 3.888329846251008
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 10.766909428493705
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 6.312232735372926
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldWhiteMale",
+                "D Voteshare of D+R Votes (%)": 9.323182620519798
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungWhiteMale",
+                "D Voteshare of D+R Votes (%)": 5.884366468381473
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 5.316913076853689
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 3.5132828914648715
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 3.961168453006353
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 2.3612268286690314
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 11.45582252748809
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 4.935231445427026
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldWhiteMale",
+                "D Voteshare of D+R Votes (%)": 10.325024870190848
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungWhiteMale",
+                "D Voteshare of D+R Votes (%)": 4.769803933208859
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 5.679720276082212
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 5.362942174333843
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 4.423951749810843
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 3.9194194532022655
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 9.742126165527466
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 5.728974150850076
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldWhiteMale",
+                "D Voteshare of D+R Votes (%)": 8.53049919014709
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungWhiteMale",
+                "D Voteshare of D+R Votes (%)": 5.447088909192654
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 5.939163094839356
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungNonWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 4.861944784259354
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 4.423896283821325
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungNonWhiteMale",
+                "D Voteshare of D+R Votes (%)": 3.7007810062645503
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 10.879469506728084
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungWhiteFemale",
+                "D Voteshare of D+R Votes (%)": 6.0195661859730185
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldWhiteMale",
+                "D Voteshare of D+R Votes (%)": 9.875886019770757
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungWhiteMale",
+                "D Voteshare of D+R Votes (%)": 5.805398419517352
+            }
+        ],
+        "format": {
+            "parse": {
+                "Election Year": "date:'%Y'"
+            }
+        }
+    },
+    "width": 800,
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "title": "D Voteshare of D+R votes in Competitive Districts vs. Election Year",
+    "layer": [
+        {
+            "mark": {
+                "interpolate": "monotone",
+                "type": "area"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voteshare of D+R Votes (%)",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ],
+    "padding": 10
+};
+vegaEmbed('#figure_2',vlSpec);</script>
+</figure>
+<p>This chart reminds us that though non-white voters are overwhelmingly democratic, they make up only about 40% of the Democratic votes. This is a combination of smaller numbers of possible voters and lower turnout. The latter is something there is ongoing work to change via anti-voter-suppression efforts, registration drives and get-out-the-vote (GOTV) work.</p>
+<p>As before, we also group things by age, sex and educational attainment. First the voter preferences through time:</p>
+<figure id="figure_3">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 400,
+    "autosize": {
+        "resize": true,
+        "type": "fit",
+        "contains": "padding"
+    },
+    "data": {
+        "values": [
+            {
+                "Election Year": 2010,
+                "Group": "OldFemaleNonGrad",
+                "D Voter Preference (%)": 43.68690337510949
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungFemaleNonGrad",
+                "D Voter Preference (%)": 51.607236416023326
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldMaleNonGrad",
+                "D Voter Preference (%)": 41.70750352088079
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungMaleNonGrad",
+                "D Voter Preference (%)": 49.47498061859959
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voter Preference (%)": 52.99852665116004
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voter Preference (%)": 63.15006864743885
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldMaleCollegeGrad",
+                "D Voter Preference (%)": 44.05769552372746
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voter Preference (%)": 63.033981420277996
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldFemaleNonGrad",
+                "D Voter Preference (%)": 45.851814549602985
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungFemaleNonGrad",
+                "D Voter Preference (%)": 53.699145635133284
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldMaleNonGrad",
+                "D Voter Preference (%)": 43.276526705184196
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungMaleNonGrad",
+                "D Voter Preference (%)": 50.82886645078572
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voter Preference (%)": 55.45249197562262
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voter Preference (%)": 66.4630326168541
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldMaleCollegeGrad",
+                "D Voter Preference (%)": 47.53494879791777
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voter Preference (%)": 67.62452146402944
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldFemaleNonGrad",
+                "D Voter Preference (%)": 40.9329770814438
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungFemaleNonGrad",
+                "D Voter Preference (%)": 48.39132551535804
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldMaleNonGrad",
+                "D Voter Preference (%)": 39.04997366073717
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungMaleNonGrad",
+                "D Voter Preference (%)": 45.516679287977084
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voter Preference (%)": 53.31607138608761
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voter Preference (%)": 62.93419381862473
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldMaleCollegeGrad",
+                "D Voter Preference (%)": 47.4660657195429
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voter Preference (%)": 65.55451600618076
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldFemaleNonGrad",
+                "D Voter Preference (%)": 42.37146040933313
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungFemaleNonGrad",
+                "D Voter Preference (%)": 50.31931394814575
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldMaleNonGrad",
+                "D Voter Preference (%)": 39.89861089896223
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungMaleNonGrad",
+                "D Voter Preference (%)": 47.29741310225104
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voter Preference (%)": 54.182999355309114
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voter Preference (%)": 64.9923686411364
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldMaleCollegeGrad",
+                "D Voter Preference (%)": 48.84628344941987
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voter Preference (%)": 66.455537410311
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldFemaleNonGrad",
+                "D Voter Preference (%)": 40.92299530834026
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungFemaleNonGrad",
+                "D Voter Preference (%)": 47.660630689552654
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldMaleNonGrad",
+                "D Voter Preference (%)": 38.41768899611432
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungMaleNonGrad",
+                "D Voter Preference (%)": 45.61234613795255
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voter Preference (%)": 61.23076310153939
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voter Preference (%)": 73.73041185805236
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldMaleCollegeGrad",
+                "D Voter Preference (%)": 57.232968689672504
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voter Preference (%)": 78.00662550015545
+            }
+        ],
+        "format": {
+            "parse": {
+                "Election Year": "date:'%Y'"
+            }
+        }
+    },
+    "width": 800,
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "title": "D Voter Preference Vs. Election Year",
+    "layer": [
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldFemaleCollegeGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldFemaleCollegeGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldFemaleNonGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldFemaleNonGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldMaleCollegeGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldMaleCollegeGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldMaleNonGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "OldMaleNonGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungFemaleCollegeGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungFemaleCollegeGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungFemaleNonGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungFemaleNonGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungMaleCollegeGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungMaleCollegeGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungMaleNonGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": {
+                "interpolate": "monotone",
+                "type": "line"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "YoungMaleNonGrad",
+                        "field": "Group"
+                    }
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voter Preference (%)",
+                    "scale": {
+                        "domain": [
+                            38.41768899611432,
+                            78.00662550015545
+                        ]
+                    },
+                    "type": "quantitative"
+                }
+            }
+        }
+    ],
+    "padding": 10
+};
+vegaEmbed('#figure_3',vlSpec);</script>
+</figure>
+<p>This shows a very distinct shift toward Democrats of college-educated voters in 2018 and an equally distinct shift toward Republicans of non-college-educated voters in 2014.</p>
+<p>In terms of vote-share:</p>
+<figure id="figure_4">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 400,
+    "autosize": {
+        "resize": true,
+        "type": "fit",
+        "contains": "padding"
+    },
+    "data": {
+        "values": [
+            {
+                "Election Year": 2010,
+                "Group": "OldFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 10.7032469050774
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 4.948827886429159
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 8.339876794076579
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 4.639035106191054
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 6.015448384389694
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 4.409999827566622
+            },
+            {
+                "Election Year": 2010,
+                "Group": "OldMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 5.410121660947079
+            },
+            {
+                "Election Year": 2010,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 3.509479217935898
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 10.63839148737745
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 6.4265194863926665
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 8.076925372835738
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 5.708550163424161
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 5.6930802643294625
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 5.492974108593075
+            },
+            {
+                "Election Year": 2012,
+                "Group": "OldMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 4.962501696673944
+            },
+            {
+                "Election Year": 2012,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 4.188921243181052
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 9.965436817241088
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 3.9701752094256024
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 7.862008835275618
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 3.6854158953103773
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 6.869445079230893
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 4.578796945489059
+            },
+            {
+                "Election Year": 2014,
+                "Group": "OldMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 6.22308837167076
+            },
+            {
+                "Election Year": 2014,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 3.4841068726653774
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 9.350206225554281
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 5.668725560530801
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 7.125799289313614
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 5.183828447501006
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 6.104976390855008
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 5.655136885283437
+            },
+            {
+                "Election Year": 2016,
+                "Group": "OldMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 5.472443673936081
+            },
+            {
+                "Election Year": 2016,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 4.2736055961722075
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 9.092457174843444
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungFemaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 4.642527416131091
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 7.048974954536277
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungMaleNonGrad",
+                "D Voteshare of D+R Votes (%)": 4.338059457453877
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 7.690113441820653
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungFemaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 6.384300849192908
+            },
+            {
+                "Election Year": 2018,
+                "Group": "OldMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 7.0789446818364326
+            },
+            {
+                "Election Year": 2018,
+                "Group": "YoungMaleCollegeGrad",
+                "D Voteshare of D+R Votes (%)": 5.230727325359115
+            }
+        ],
+        "format": {
+            "parse": {
+                "Election Year": "date:'%Y'"
+            }
+        }
+    },
+    "width": 800,
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "title": "D Voteshare of D+R votes in Competitive Districts vs. Election Year",
+    "layer": [
+        {
+            "mark": {
+                "interpolate": "monotone",
+                "type": "area"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Group",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Election Year",
+                    "timeUnit": "year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "D Voteshare of D+R Votes (%)",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ],
+    "padding": 10
+};
+vegaEmbed('#figure_4',vlSpec);</script>
+</figure>
+<p>Again we see that, in terms of these groups, the Democratic coalition is made up of a large number of votes from groups that are not majority democratic voters and smaller numbers of votes from many groups which do tend to vote for Democrats.</p>
+<p>Also of note in both vote-share charts is the tendency of Democratic vote-share to fall off in mid-term years, except for 2018. That’s something to keep in mind and work against in 2022!</p>
+</section>
+<section id="breaking-down-the-changes" class="level2">
+<h2>Breaking Down The Changes</h2>
+<p>One way to look at all this data is to break-down the changes in total Democratic votes in each group into our 3 categories: demographics, turnout and preference. For example, the following table illustrates the age/sex/race break-down in the loss of democratic votes between 2012 and 2016:</p>
+<section id="section" class="level3">
+<h3>2012-&gt;2016</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Population (k)</th>
+<th>+/- From Population (k)</th>
+<th>+/- From Turnout (k)</th>
+<th>+/- From Opinion (k)</th>
+<th>+/- Total (k)</th>
+<th>+/- %Vote</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OldNonWhiteFemale</td>
+<td>17125</td>
+<td>539</td>
+<td>13</td>
+<td>-383</td>
+<td>170</td>
+<td>0.08</td>
+</tr>
+<tr class="even">
+<td>YoungNonWhiteFemale</td>
+<td>21054</td>
+<td>138</td>
+<td>419</td>
+<td>-10</td>
+<td>548</td>
+<td>0.26</td>
+</tr>
+<tr class="odd">
+<td>OldNonWhiteMale</td>
+<td>14614</td>
+<td>399</td>
+<td>136</td>
+<td>-76</td>
+<td>460</td>
+<td>0.22</td>
+</tr>
+<tr class="even">
+<td>YoungNonWhiteMale</td>
+<td>21079</td>
+<td>74</td>
+<td>194</td>
+<td>231</td>
+<td>500</td>
+<td>0.24</td>
+</tr>
+<tr class="odd">
+<td>OldWhiteFemale</td>
+<td>43098</td>
+<td>142</td>
+<td>-413</td>
+<td>-2134</td>
+<td>-2404</td>
+<td>-1.13</td>
+</tr>
+<tr class="even">
+<td>YoungWhiteFemale</td>
+<td>27411</td>
+<td>117</td>
+<td>-187</td>
+<td>-1032</td>
+<td>-1102</td>
+<td>-0.52</td>
+</tr>
+<tr class="odd">
+<td>OldWhiteMale</td>
+<td>39022</td>
+<td>89</td>
+<td>-322</td>
+<td>-1481</td>
+<td>-1714</td>
+<td>-0.81</td>
+</tr>
+<tr class="even">
+<td>YoungWhiteMale</td>
+<td>28263</td>
+<td>79</td>
+<td>-180</td>
+<td>-1123</td>
+<td>-1223</td>
+<td>-0.57</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>211669</td>
+<td>1580</td>
+<td>-338</td>
+<td>-6005</td>
+<td>-4762</td>
+<td>-2.25</td>
+</tr>
+</tbody>
+</table>
+<p>The loss of Democratic votes comes almost entirely from shifts in opinion among white voters, only slightly offset by demographic and turnout trends among non-white voters.</p>
+<p>The age/sex/education breakdown tells a related story, a waning of Democratic preference among non-college graduates, especially older ones:</p>
+</section>
+<section id="section" class="level3">
+<h3>2012-&gt;2016</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Population (k)</th>
+<th>+/- From Population (k)</th>
+<th>+/- From Turnout (k)</th>
+<th>+/- From Opinion (k)</th>
+<th>+/- Total (k)</th>
+<th>+/- %Vote</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OldFemaleNonGrad</td>
+<td>43460</td>
+<td>77</td>
+<td>-130</td>
+<td>-1892</td>
+<td>-1944</td>
+<td>-0.91</td>
+</tr>
+<tr class="even">
+<td>YoungFemaleNonGrad</td>
+<td>33014</td>
+<td>-38</td>
+<td>55</td>
+<td>-994</td>
+<td>-976</td>
+<td>-0.46</td>
+</tr>
+<tr class="odd">
+<td>OldMaleNonGrad</td>
+<td>37060</td>
+<td>20</td>
+<td>-119</td>
+<td>-1489</td>
+<td>-1587</td>
+<td>-0.75</td>
+</tr>
+<tr class="even">
+<td>YoungMaleNonGrad</td>
+<td>36871</td>
+<td>14</td>
+<td>-32</td>
+<td>-1001</td>
+<td>-1018</td>
+<td>-0.48</td>
+</tr>
+<tr class="odd">
+<td>OldFemaleCollegeGrad</td>
+<td>16764</td>
+<td>134</td>
+<td>30</td>
+<td>-316</td>
+<td>-151</td>
+<td>-0.07</td>
+</tr>
+<tr class="even">
+<td>YoungFemaleCollegeGrad</td>
+<td>15450</td>
+<td>179</td>
+<td>158</td>
+<td>-299</td>
+<td>39</td>
+<td>0.02</td>
+</tr>
+<tr class="odd">
+<td>OldMaleCollegeGrad</td>
+<td>16576</td>
+<td>-32</td>
+<td>-20</td>
+<td>327</td>
+<td>277</td>
+<td>0.13</td>
+</tr>
+<tr class="even">
+<td>YoungMaleCollegeGrad</td>
+<td>12471</td>
+<td>139</td>
+<td>115</td>
+<td>-179</td>
+<td>76</td>
+<td>0.04</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>211669</td>
+<td>497</td>
+<td>61</td>
+<td>-5840</td>
+<td>-5281</td>
+<td>-2.49</td>
+</tr>
+</tbody>
+</table>
+<p>One common thread in these tables is that the loss of votes comes largely from shifts in opinion rather than demographics or turnout. This is what often leaves Democrats feeling like they must appeal more to white working class voters, as we talked about in <a href="https://blueripple.github.io/explainer/WWCV.html#">this post</a>.</p>
+</section>
+</section>
+<section id="what-happened-in-the-battleground-states" class="level2">
+<h2>What Happened in the Battleground States?</h2>
+<p>One question we can ask is what happened to those voters in 2018? In particular, let’s consider just the battleground states of NH, PA, VA, NV, FL, OH, MI, WI, IA, CO, AZ, and NV. First we’ll look again at the loss of votes from 2012 to 2016 and then the blue wave of 2018.</p>
+<section id="section" class="level3">
+<h3>2012-&gt;2016</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Population (k)</th>
+<th>+/- From Population (k)</th>
+<th>+/- From Turnout (k)</th>
+<th>+/- From Opinion (k)</th>
+<th>+/- Total (k)</th>
+<th>+/- %Vote</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OldFemaleNonGrad</td>
+<td>15746</td>
+<td>-42</td>
+<td>17</td>
+<td>-684</td>
+<td>-708</td>
+<td>-1.03</td>
+</tr>
+<tr class="even">
+<td>YoungFemaleNonGrad</td>
+<td>11048</td>
+<td>0</td>
+<td>1</td>
+<td>-336</td>
+<td>-334</td>
+<td>-0.48</td>
+</tr>
+<tr class="odd">
+<td>OldMaleNonGrad</td>
+<td>13455</td>
+<td>-76</td>
+<td>36</td>
+<td>-540</td>
+<td>-579</td>
+<td>-0.84</td>
+</tr>
+<tr class="even">
+<td>YoungMaleNonGrad</td>
+<td>12377</td>
+<td>-2</td>
+<td>-3</td>
+<td>-340</td>
+<td>-344</td>
+<td>-0.50</td>
+</tr>
+<tr class="odd">
+<td>OldFemaleCollegeGrad</td>
+<td>5713</td>
+<td>70</td>
+<td>-3</td>
+<td>-107</td>
+<td>-39</td>
+<td>-0.06</td>
+</tr>
+<tr class="even">
+<td>YoungFemaleCollegeGrad</td>
+<td>4941</td>
+<td>111</td>
+<td>1</td>
+<td>-96</td>
+<td>18</td>
+<td>0.03</td>
+</tr>
+<tr class="odd">
+<td>OldMaleCollegeGrad</td>
+<td>5713</td>
+<td>-20</td>
+<td>-2</td>
+<td>111</td>
+<td>91</td>
+<td>0.13</td>
+</tr>
+<tr class="even">
+<td>YoungMaleCollegeGrad</td>
+<td>3950</td>
+<td>78</td>
+<td>-8</td>
+<td>-58</td>
+<td>13</td>
+<td>0.02</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>72946</td>
+<td>123</td>
+<td>42</td>
+<td>-2045</td>
+<td>-1878</td>
+<td>-2.57</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="section" class="level3">
+<h3>2016-&gt;2018</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Population (k)</th>
+<th>+/- From Population (k)</th>
+<th>+/- From Turnout (k)</th>
+<th>+/- From Opinion (k)</th>
+<th>+/- Total (k)</th>
+<th>+/- %Vote</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OldFemaleNonGrad</td>
+<td>15466</td>
+<td>27</td>
+<td>196</td>
+<td>-268</td>
+<td>-45</td>
+<td>-0.06</td>
+</tr>
+<tr class="even">
+<td>YoungFemaleNonGrad</td>
+<td>10507</td>
+<td>4</td>
+<td>22</td>
+<td>-229</td>
+<td>-202</td>
+<td>-0.28</td>
+</tr>
+<tr class="odd">
+<td>OldMaleNonGrad</td>
+<td>13292</td>
+<td>20</td>
+<td>196</td>
+<td>-226</td>
+<td>-10</td>
+<td>-0.01</td>
+</tr>
+<tr class="even">
+<td>YoungMaleNonGrad</td>
+<td>11960</td>
+<td>10</td>
+<td>83</td>
+<td>-143</td>
+<td>-50</td>
+<td>-0.07</td>
+</tr>
+<tr class="odd">
+<td>OldFemaleCollegeGrad</td>
+<td>6116</td>
+<td>47</td>
+<td>-52</td>
+<td>638</td>
+<td>634</td>
+<td>0.87</td>
+</tr>
+<tr class="even">
+<td>YoungFemaleCollegeGrad</td>
+<td>5206</td>
+<td>65</td>
+<td>-217</td>
+<td>564</td>
+<td>412</td>
+<td>0.57</td>
+</tr>
+<tr class="odd">
+<td>OldMaleCollegeGrad</td>
+<td>5992</td>
+<td>12</td>
+<td>-20</td>
+<td>756</td>
+<td>750</td>
+<td>1.03</td>
+</tr>
+<tr class="even">
+<td>YoungMaleCollegeGrad</td>
+<td>4167</td>
+<td>57</td>
+<td>-150</td>
+<td>564</td>
+<td>472</td>
+<td>0.65</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>72710</td>
+<td>244</td>
+<td>61</td>
+<td>1659</td>
+<td>1965</td>
+<td>2.70</td>
+</tr>
+</tbody>
+</table>
+<p>All of the approximately 2 million votes lost across those states from 2012 to 2016 are regained in 2018. What’s more, the gain comes from changes in preference <em>not</em> changes in turnout. This was not Republican voters staying home, it was an electorate with similar turnout but which became substantially more Democratic between 2016 and 2018. This happened in an interesting way: from 2012 to 2016 Democrats lost share with non-college educated voters while holding relatively steady with college-educated voters. The Blue wave in 2018 was <em>not</em> powered by gaining back ground with the voters lost in 2016 but instead making inroads with college-educated white voters while maintaining turnout and preference among the rest of the coalition. That is, from 2012 to 2018, Democrats are about even with white voters but they have lost non-college educated voters and gained college educated ones.</p>
+</section>
+</section>
+<section id="take-action" class="level1">
+<h1>Take Action</h1>
+<p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple">Github</a> page.</em></p>
+</section>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
