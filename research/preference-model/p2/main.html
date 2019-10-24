@@ -14,7 +14,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="pandoc">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Voter Preference: 2010-2018</title>
+<title>Where Did The Blue Wave Come From?</title>
 
 <!-- Yahoo! CDN combo URL for selected Pure.css modules -->
 <link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
@@ -190,27 +190,21 @@
 
 <!-- page content begins here -->
 
-<div class="published">September 19, 2019 </div>
+<div class="published">October 25, 2019 </div>
 <header>
-<h1 class="title">Voter Preference: 2010-2018</h1>
+<h1 class="title">Where Did The Blue Wave Come From?</h1>
 </header>
-<p>In our previous <a href="https://blueripple.github.io/research/preference-model/p1/main.html#">post</a> we introduced a <a href="https://blueripple.github.io/research/preference-model/methods/main.html#">model</a> which we used to infer voter preference for various demographic groups in the 2018 house elections, using census data and election results. Here we look at how those preferences have shifted since 2010.</p>
+<p>In our previous <a href="https://blueripple.github.io/research/preference-model/p1/main.html#">post</a> we introduced a <a href="https://blueripple.github.io/research/preference-model/methods/main.html#">model</a> using census data and election results to infer voter preference for various demographic groups in the 2018 house elections. In this post we’ll look back to 2010, examining how Democrats gained and lost votes.</p>
+<p>From our analysis it appears that most of the election-to-election change in vote-share is driven by changes in voter preference rather than demographics or turnout. We do see a long-term demographic shift which currently favors Democrats.</p>
+<p>Whatever happened in the past is likely not predictive. 2020 will not be a repeat of 2016 or 2018. However, understanding what happened in previous elections is a good place to start as we look to hold and expand on the gains made in 2018.</p>
 <ol type="1">
 <li>The Evolving Democratic Coalition</li>
 <li>Breaking Down the Changes</li>
-<li>What Happened in the Battleground States?</li>
 <li>Take Action</li>
 </ol>
 <section id="the-evolving-democratic-coalition" class="level2">
 <h2>The Evolving Democratic Coalition</h2>
-<p>Our way of breaking down the Democratic electorate has three compoonents:</p>
-<ul>
-<li>Demographics: What are the age, sex, education level, race, etc. of the eligible voters?</li>
-<li>Turnout: For each demographic group, what fraction of those eligible to vote cast votes on election day?</li>
-<li>Voter Preference: When people from each group vote, who are they likely to vote for?</li>
-</ul>
-<p>and given data about the first two, we can use statistical techniques to infer the third. See <a href="https://blueripple.github.io/research/preference-model/methods/main.html#">this post</a> for details. Each of these can change over time. The demographics change as people move from one district to another, or age into voting eligibility, etc. Turnout changes as interest in the election varies and as various impediments to voting are put in place or removed. And voter preference changes as well, as people choose different candidates and prioritize different issues. Using the model we introduced in <a href="https://blueripple.github.io/research/preference-model/p1/main.html#">this post</a>, we can see each of these components separately.</p>
-<p>First, we look at the preference component broken down by age, sex and race from 2010 to 2018 by plotting inferred national Democratic voter preference vs. year.</p>
+<p>From 2010 to 2018, non-white voters were highly likely to vote for Democrats, with a &gt;75% Democratic voter preference throughout all those elections. By contrast, white voters are more likely to vote for Republicans, remaining between 40% and 45% throughout, with a low in 2016 and an encouraging uptick in 2018.</p>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
 {
@@ -477,7 +471,10 @@
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -544,7 +541,10 @@
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -611,7 +611,10 @@
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -678,7 +681,10 @@
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -745,7 +751,10 @@
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -812,7 +821,10 @@
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -879,7 +891,10 @@
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -946,7 +961,10 @@
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -974,8 +992,7 @@
 };
 vegaEmbed('#figure_1',vlSpec);</script>
 </figure>
-<p>As before, the difference in voter preference between non-white and white voters is stark. There is an encouraging move in white voter preference toward Democrats in 2018, though it’s hard to compare presidential election years (2012 and 2016) to the mid-term years (2010, 2014, and 2018). Though turnout in 2018 was at near-presidential levels so 2018 may be more indicative than a typical mid-term election.</p>
-<p>We can also look at how those numbers translate to the composition of the democratic electorate by plotting vote-share–fraction of the total electorate–rather than preference. This allows us to see how many votes are coming from each group and how that has changed over time.</p>
+<p>There are more white than non-white voters—though that is changing, see below–and white voters have higher overall turnout. So it’s also useful to look at shares of the Democratic electorate, that is, fractions of Democratic votes, rather than preference numbers. Though non-white voters are overwhelmingly democratic, they make up only about 40% of the votes Democrats get in any election.</p>
 <figure id="figure_2">
 <script type="text/javascript">var vlSpec=
 {
@@ -990,202 +1007,202 @@ vegaEmbed('#figure_1',vlSpec);</script>
             {
                 "Election Year": 2010,
                 "Group": "OldNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 5.329690922062448
+                "Voteshare of D Votes (%)": 11.109069007310369
             },
             {
                 "Election Year": 2010,
                 "Group": "YoungNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 4.07787679905155
+                "Voteshare of D Votes (%)": 8.499820238439485
             },
             {
                 "Election Year": 2010,
                 "Group": "OldNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 4.06407890892527
+                "Voteshare of D Votes (%)": 8.47106027546797
             },
             {
                 "Election Year": 2010,
                 "Group": "YoungNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 2.9884072071305763
+                "Voteshare of D Votes (%)": 6.228958183772189
             },
             {
                 "Election Year": 2010,
                 "Group": "OldWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 11.399883409192457
+                "Voteshare of D Votes (%)": 23.761620198982286
             },
             {
                 "Election Year": 2010,
                 "Group": "YoungWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 5.107088135540854
+                "Voteshare of D Votes (%)": 10.645081554219747
             },
             {
                 "Election Year": 2010,
                 "Group": "OldWhiteMale",
-                "D Voteshare of D+R Votes (%)": 10.019570258943876
+                "Voteshare of D Votes (%)": 20.884531403019686
             },
             {
                 "Election Year": 2010,
                 "Group": "YoungWhiteMale",
-                "D Voteshare of D+R Votes (%)": 4.989440141766444
+                "Voteshare of D Votes (%)": 10.399859138788239
             },
             {
                 "Election Year": 2012,
                 "Group": "OldNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 5.657379084189864
+                "Voteshare of D Votes (%)": 11.052188276059939
             },
             {
                 "Election Year": 2012,
                 "Group": "YoungNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 5.205469439981444
+                "Voteshare of D Votes (%)": 10.169342987237663
             },
             {
                 "Election Year": 2012,
                 "Group": "OldNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 4.149994199617324
+                "Voteshare of D Votes (%)": 8.107379151400004
             },
             {
                 "Election Year": 2012,
                 "Group": "YoungNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 3.888329846251008
+                "Voteshare of D Votes (%)": 7.596194792794816
             },
             {
                 "Election Year": 2012,
                 "Group": "OldWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 10.766909428493705
+                "Voteshare of D Votes (%)": 21.034105790709596
             },
             {
                 "Election Year": 2012,
                 "Group": "YoungWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 6.312232735372926
+                "Voteshare of D Votes (%)": 12.331502555417076
             },
             {
                 "Election Year": 2012,
                 "Group": "OldWhiteMale",
-                "D Voteshare of D+R Votes (%)": 9.323182620519798
+                "Voteshare of D Votes (%)": 18.213658324936212
             },
             {
                 "Election Year": 2012,
                 "Group": "YoungWhiteMale",
-                "D Voteshare of D+R Votes (%)": 5.884366468381473
+                "Voteshare of D Votes (%)": 11.495628121444682
             },
             {
                 "Election Year": 2014,
                 "Group": "OldNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 5.316913076853689
+                "Voteshare of D Votes (%)": 11.400272388531446
             },
             {
                 "Election Year": 2014,
                 "Group": "YoungNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 3.5132828914648715
+                "Voteshare of D Votes (%)": 7.53301424374011
             },
             {
                 "Election Year": 2014,
                 "Group": "OldNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 3.961168453006353
+                "Voteshare of D Votes (%)": 8.493349183705833
             },
             {
                 "Election Year": 2014,
                 "Group": "YoungNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 2.3612268286690314
+                "Voteshare of D Votes (%)": 5.062830373345969
             },
             {
                 "Election Year": 2014,
                 "Group": "OldWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 11.45582252748809
+                "Voteshare of D Votes (%)": 24.563030344916214
             },
             {
                 "Election Year": 2014,
                 "Group": "YoungWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 4.935231445427026
+                "Voteshare of D Votes (%)": 10.581888769866401
             },
             {
                 "Election Year": 2014,
                 "Group": "OldWhiteMale",
-                "D Voteshare of D+R Votes (%)": 10.325024870190848
+                "Voteshare of D Votes (%)": 22.138427737508092
             },
             {
                 "Election Year": 2014,
                 "Group": "YoungWhiteMale",
-                "D Voteshare of D+R Votes (%)": 4.769803933208859
+                "Voteshare of D Votes (%)": 10.227186958385927
             },
             {
                 "Election Year": 2016,
                 "Group": "OldNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 5.679720276082212
+                "Voteshare of D Votes (%)": 11.630495752673964
             },
             {
                 "Election Year": 2016,
                 "Group": "YoungNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 5.362942174333843
+                "Voteshare of D Votes (%)": 10.981821841312629
             },
             {
                 "Election Year": 2016,
                 "Group": "OldNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 4.423951749810843
+                "Voteshare of D Votes (%)": 9.059029236506857
             },
             {
                 "Election Year": 2016,
                 "Group": "YoungNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 3.9194194532022655
+                "Voteshare of D Votes (%)": 8.0258866788525
             },
             {
                 "Election Year": 2016,
                 "Group": "OldWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 9.742126165527466
+                "Voteshare of D Votes (%)": 19.94917909378765
             },
             {
                 "Election Year": 2016,
                 "Group": "YoungWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 5.728974150850076
+                "Voteshare of D Votes (%)": 11.731354061436578
             },
             {
                 "Election Year": 2016,
                 "Group": "OldWhiteMale",
-                "D Voteshare of D+R Votes (%)": 8.53049919014709
+                "Voteshare of D Votes (%)": 17.468102261478048
             },
             {
                 "Election Year": 2016,
                 "Group": "YoungWhiteMale",
-                "D Voteshare of D+R Votes (%)": 5.447088909192654
+                "Voteshare of D Votes (%)": 11.154131073951785
             },
             {
                 "Election Year": 2018,
                 "Group": "OldNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 5.939163094839356
+                "Voteshare of D Votes (%)": 11.530988530604363
             },
             {
                 "Election Year": 2018,
                 "Group": "YoungNonWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 4.861944784259354
+                "Voteshare of D Votes (%)": 9.439550429662468
             },
             {
                 "Election Year": 2018,
                 "Group": "OldNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 4.423896283821325
+                "Voteshare of D Votes (%)": 8.589071641028363
             },
             {
                 "Election Year": 2018,
                 "Group": "YoungNonWhiteMale",
-                "D Voteshare of D+R Votes (%)": 3.7007810062645503
+                "Voteshare of D Votes (%)": 7.185130742510657
             },
             {
                 "Election Year": 2018,
                 "Group": "OldWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 10.879469506728084
+                "Voteshare of D Votes (%)": 21.122679424336415
             },
             {
                 "Election Year": 2018,
                 "Group": "YoungWhiteFemale",
-                "D Voteshare of D+R Votes (%)": 6.0195661859730185
+                "Voteshare of D Votes (%)": 11.687092531602921
             },
             {
                 "Election Year": 2018,
                 "Group": "OldWhiteMale",
-                "D Voteshare of D+R Votes (%)": 9.875886019770757
+                "Voteshare of D Votes (%)": 19.174204615206445
             },
             {
                 "Election Year": 2018,
                 "Group": "YoungWhiteMale",
-                "D Voteshare of D+R Votes (%)": 5.805398419517352
+                "Voteshare of D Votes (%)": 11.271282085048373
             }
         ],
         "format": {
@@ -1196,7 +1213,7 @@ vegaEmbed('#figure_1',vlSpec);</script>
     },
     "width": 800,
     "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-    "title": "D Voteshare of D+R votes in Competitive Districts vs. Election Year",
+    "title": "Voteshare in Competitive Districts vs. Election Year",
     "layer": [
         {
             "mark": {
@@ -1214,7 +1231,13 @@ vegaEmbed('#figure_1',vlSpec);</script>
                     "type": "temporal"
                 },
                 "y": {
-                    "field": "D Voteshare of D+R Votes (%)",
+                    "field": "Voteshare of D Votes (%)",
+                    "scale": {
+                        "domain": [
+                            0,
+                            100
+                        ]
+                    },
                     "type": "quantitative"
                 }
             }
@@ -1224,8 +1247,7 @@ vegaEmbed('#figure_1',vlSpec);</script>
 };
 vegaEmbed('#figure_2',vlSpec);</script>
 </figure>
-<p>This chart reminds us that though non-white voters are overwhelmingly democratic, they make up only about 40% of the Democratic votes. This is a combination of smaller numbers of possible voters and lower turnout. The latter is something there is ongoing work to change via anti-voter-suppression efforts, registration drives and get-out-the-vote (GOTV) work.</p>
-<p>As before, we also group things by age, sex and educational attainment. First the voter preferences through time:</p>
+<p>Grouping by educational attainment, age and sex, we a different picture of the Democratic electorate. Young college graduates and older female college graduates are consistently democratic, but the younger voters are more Democratic leaning by about 10 percentage points. Older college-educated men were Republican leaning until 2018 when they shifted to slight support of the Democrats. We also see a very distinct shift: beginning sometime after the 2012 election college-educated voters become more likely to vote for Democrats and non-college-educated voters become more likely to vote for Republicans.</p>
 <figure id="figure_3">
 <script type="text/javascript">var vlSpec=
 {
@@ -1492,7 +1514,10 @@ vegaEmbed('#figure_2',vlSpec);</script>
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -1559,7 +1584,10 @@ vegaEmbed('#figure_2',vlSpec);</script>
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -1626,7 +1654,10 @@ vegaEmbed('#figure_2',vlSpec);</script>
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -1693,7 +1724,10 @@ vegaEmbed('#figure_2',vlSpec);</script>
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -1760,7 +1794,10 @@ vegaEmbed('#figure_2',vlSpec);</script>
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -1827,7 +1864,10 @@ vegaEmbed('#figure_2',vlSpec);</script>
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -1894,7 +1934,10 @@ vegaEmbed('#figure_2',vlSpec);</script>
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -1961,7 +2004,10 @@ vegaEmbed('#figure_2',vlSpec);</script>
                     }
                 }
             ],
-            "mark": "point",
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
             "encoding": {
                 "color": {
                     "field": "Group",
@@ -1989,8 +2035,8 @@ vegaEmbed('#figure_2',vlSpec);</script>
 };
 vegaEmbed('#figure_3',vlSpec);</script>
 </figure>
-<p>This shows a very distinct shift toward Democrats of college-educated voters in 2018 and an equally distinct shift toward Republicans of non-college-educated voters in 2014.</p>
-<p>In terms of vote-share:</p>
+<p>When we looked at the breakdown by race rather than educational attainment, it looked as if Democrats had gained with all groups from 2016 to 2018. But looking at educational attainment, it’s clear that Democrats lost ground with non-college-educated people. Though the census data is not granular enough for us to do the same analysis broken down by race <em>and</em> educational attainment, it seems likely that the Democratic losses between 2016 and 2018 are largely with white non-college-educated voters, the so-called “White Working Class”, something we discuss in some detail in <a href="https://blueripple.github.io/explainer/WWCV.html#">another post</a>.</p>
+<p>It’s useful as before to look at vote share. Here the Democratic and Republican supporting groups are of about equal size in terms of their contribution to the electorate, with higher turnout among college graduates making up for their smaller share of the population.</p>
 <figure id="figure_4">
 <script type="text/javascript">var vlSpec=
 {
@@ -2005,202 +2051,202 @@ vegaEmbed('#figure_3',vlSpec);</script>
             {
                 "Election Year": 2010,
                 "Group": "OldFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 10.7032469050774
+                "Voteshare of D Votes (%)": 22.309569205708023
             },
             {
                 "Election Year": 2010,
                 "Group": "YoungFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 4.948827886429159
+                "Voteshare of D Votes (%)": 10.315208011043325
             },
             {
                 "Election Year": 2010,
                 "Group": "OldMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 8.339876794076579
+                "Voteshare of D Votes (%)": 17.383422073190445
             },
             {
                 "Election Year": 2010,
                 "Group": "YoungMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 4.639035106191054
+                "Voteshare of D Votes (%)": 9.669484004912803
             },
             {
                 "Election Year": 2010,
                 "Group": "OldFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 6.015448384389694
+                "Voteshare of D Votes (%)": 12.538444009101921
             },
             {
                 "Election Year": 2010,
                 "Group": "YoungFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 4.409999827566622
+                "Voteshare of D Votes (%)": 9.192088832743464
             },
             {
                 "Election Year": 2010,
                 "Group": "OldMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 5.410121660947079
+                "Voteshare of D Votes (%)": 11.276716745545922
             },
             {
                 "Election Year": 2010,
                 "Group": "YoungMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 3.509479217935898
+                "Voteshare of D Votes (%)": 7.315067117754097
             },
             {
                 "Election Year": 2012,
                 "Group": "OldFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 10.63839148737745
+                "Voteshare of D Votes (%)": 20.78303467439747
             },
             {
                 "Election Year": 2012,
                 "Group": "YoungFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 6.4265194863926665
+                "Voteshare of D Votes (%)": 12.554771788560611
             },
             {
                 "Election Year": 2012,
                 "Group": "OldMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 8.076925372835738
+                "Voteshare of D Votes (%)": 15.778985035974364
             },
             {
                 "Election Year": 2012,
                 "Group": "YoungMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 5.708550163424161
+                "Voteshare of D Votes (%)": 11.152155485888098
             },
             {
                 "Election Year": 2012,
                 "Group": "OldFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 5.6930802643294625
+                "Voteshare of D Votes (%)": 11.121933675600703
             },
             {
                 "Election Year": 2012,
                 "Group": "YoungFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 5.492974108593075
+                "Voteshare of D Votes (%)": 10.731008677384178
             },
             {
                 "Election Year": 2012,
                 "Group": "OldMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 4.962501696673944
+                "Voteshare of D Votes (%)": 9.694684102958842
             },
             {
                 "Election Year": 2012,
                 "Group": "YoungMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 4.188921243181052
+                "Voteshare of D Votes (%)": 8.183426559235732
             },
             {
                 "Election Year": 2014,
                 "Group": "OldFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 9.965436817241088
+                "Voteshare of D Votes (%)": 21.36741612004626
             },
             {
                 "Election Year": 2014,
                 "Group": "YoungFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 3.9701752094256024
+                "Voteshare of D Votes (%)": 8.512661042867798
             },
             {
                 "Election Year": 2014,
                 "Group": "OldMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 7.862008835275618
+                "Voteshare of D Votes (%)": 16.85734578459977
             },
             {
                 "Election Year": 2014,
                 "Group": "YoungMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 3.6854158953103773
+                "Voteshare of D Votes (%)": 7.9020936517593485
             },
             {
                 "Election Year": 2014,
                 "Group": "OldFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 6.869445079230893
+                "Voteshare of D Votes (%)": 14.729137740132407
             },
             {
                 "Election Year": 2014,
                 "Group": "YoungFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 4.578796945489059
+                "Voteshare of D Votes (%)": 9.817638850932727
             },
             {
                 "Election Year": 2014,
                 "Group": "OldMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 6.22308837167076
+                "Voteshare of D Votes (%)": 13.343250399145381
             },
             {
                 "Election Year": 2014,
                 "Group": "YoungMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 3.4841068726653774
+                "Voteshare of D Votes (%)": 7.4704564105163325
             },
             {
                 "Election Year": 2016,
                 "Group": "OldFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 9.350206225554281
+                "Voteshare of D Votes (%)": 19.14663548676506
             },
             {
                 "Election Year": 2016,
                 "Group": "YoungFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 5.668725560530801
+                "Voteshare of D Votes (%)": 11.60798161706397
             },
             {
                 "Election Year": 2016,
                 "Group": "OldMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 7.125799289313614
+                "Voteshare of D Votes (%)": 14.591665494121164
             },
             {
                 "Election Year": 2016,
                 "Group": "YoungMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 5.183828447501006
+                "Voteshare of D Votes (%)": 10.615046483035325
             },
             {
                 "Election Year": 2016,
                 "Group": "OldFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 6.104976390855008
+                "Voteshare of D Votes (%)": 12.50130262277484
             },
             {
                 "Election Year": 2016,
                 "Group": "YoungFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 5.655136885283437
+                "Voteshare of D Votes (%)": 11.580155769651299
             },
             {
                 "Election Year": 2016,
                 "Group": "OldMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 5.472443673936081
+                "Voteshare of D Votes (%)": 11.20605061740189
             },
             {
                 "Election Year": 2016,
                 "Group": "YoungMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 4.2736055961722075
+                "Voteshare of D Votes (%)": 8.75116190918644
             },
             {
                 "Election Year": 2018,
                 "Group": "OldFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 9.092457174843444
+                "Voteshare of D Votes (%)": 17.653163875771117
             },
             {
                 "Election Year": 2018,
                 "Group": "YoungFemaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 4.642527416131091
+                "Voteshare of D Votes (%)": 9.013547790081674
             },
             {
                 "Election Year": 2018,
                 "Group": "OldMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 7.048974954536277
+                "Voteshare of D Votes (%)": 13.685707574506969
             },
             {
                 "Election Year": 2018,
                 "Group": "YoungMaleNonGrad",
-                "D Voteshare of D+R Votes (%)": 4.338059457453877
+                "Voteshare of D Votes (%)": 8.422417948489333
             },
             {
                 "Election Year": 2018,
                 "Group": "OldFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 7.690113441820653
+                "Voteshare of D Votes (%)": 14.930489107755154
             },
             {
                 "Election Year": 2018,
                 "Group": "YoungFemaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 6.384300849192908
+                "Voteshare of D Votes (%)": 12.39523122911686
             },
             {
                 "Election Year": 2018,
                 "Group": "OldMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 7.0789446818364326
+                "Voteshare of D Votes (%)": 13.743894321738026
             },
             {
                 "Election Year": 2018,
                 "Group": "YoungMaleCollegeGrad",
-                "D Voteshare of D+R Votes (%)": 5.230727325359115
+                "Voteshare of D Votes (%)": 10.155548152540877
             }
         ],
         "format": {
@@ -2211,7 +2257,7 @@ vegaEmbed('#figure_3',vlSpec);</script>
     },
     "width": 800,
     "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-    "title": "D Voteshare of D+R votes in Competitive Districts vs. Election Year",
+    "title": "Voteshare in Competitive Districts vs. Election Year",
     "layer": [
         {
             "mark": {
@@ -2229,7 +2275,13 @@ vegaEmbed('#figure_3',vlSpec);</script>
                     "type": "temporal"
                 },
                 "y": {
-                    "field": "D Voteshare of D+R Votes (%)",
+                    "field": "Voteshare of D Votes (%)",
+                    "scale": {
+                        "domain": [
+                            0,
+                            100
+                        ]
+                    },
                     "type": "quantitative"
                 }
             }
@@ -2239,419 +2291,41 @@ vegaEmbed('#figure_3',vlSpec);</script>
 };
 vegaEmbed('#figure_4',vlSpec);</script>
 </figure>
-<p>Again we see that, in terms of these groups, the Democratic coalition is made up of a large number of votes from groups that are not majority democratic voters and smaller numbers of votes from many groups which do tend to vote for Democrats.</p>
-<p>Also of note in both vote-share charts is the tendency of Democratic vote-share to fall off in mid-term years, except for 2018. That’s something to keep in mind and work against in 2022!</p>
 </section>
 <section id="breaking-down-the-changes" class="level2">
 <h2>Breaking Down The Changes</h2>
-<p>One way to look at all this data is to break-down the changes in total Democratic votes in each group into our 3 categories: demographics, turnout and preference. For example, the following table illustrates the age/sex/race break-down in the loss of democratic votes between 2012 and 2016:</p>
-<section id="section" class="level3">
-<h3>2012-&gt;2016</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Group</th>
-<th>Population (k)</th>
-<th>+/- From Population (k)</th>
-<th>+/- From Turnout (k)</th>
-<th>+/- From Opinion (k)</th>
-<th>+/- Total (k)</th>
-<th>+/- %Vote</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>OldNonWhiteFemale</td>
-<td>17125</td>
-<td>539</td>
-<td>13</td>
-<td>-383</td>
-<td>170</td>
-<td>0.08</td>
-</tr>
-<tr class="even">
-<td>YoungNonWhiteFemale</td>
-<td>21054</td>
-<td>138</td>
-<td>419</td>
-<td>-10</td>
-<td>548</td>
-<td>0.26</td>
-</tr>
-<tr class="odd">
-<td>OldNonWhiteMale</td>
-<td>14614</td>
-<td>399</td>
-<td>136</td>
-<td>-76</td>
-<td>460</td>
-<td>0.22</td>
-</tr>
-<tr class="even">
-<td>YoungNonWhiteMale</td>
-<td>21079</td>
-<td>74</td>
-<td>194</td>
-<td>231</td>
-<td>500</td>
-<td>0.24</td>
-</tr>
-<tr class="odd">
-<td>OldWhiteFemale</td>
-<td>43098</td>
-<td>142</td>
-<td>-413</td>
-<td>-2134</td>
-<td>-2404</td>
-<td>-1.13</td>
-</tr>
-<tr class="even">
-<td>YoungWhiteFemale</td>
-<td>27411</td>
-<td>117</td>
-<td>-187</td>
-<td>-1032</td>
-<td>-1102</td>
-<td>-0.52</td>
-</tr>
-<tr class="odd">
-<td>OldWhiteMale</td>
-<td>39022</td>
-<td>89</td>
-<td>-322</td>
-<td>-1481</td>
-<td>-1714</td>
-<td>-0.81</td>
-</tr>
-<tr class="even">
-<td>YoungWhiteMale</td>
-<td>28263</td>
-<td>79</td>
-<td>-180</td>
-<td>-1123</td>
-<td>-1223</td>
-<td>-0.57</td>
-</tr>
-<tr class="odd">
-<td>Total</td>
-<td>211669</td>
-<td>1580</td>
-<td>-338</td>
-<td>-6005</td>
-<td>-4762</td>
-<td>-2.25</td>
-</tr>
-</tbody>
-</table>
-<p>The loss of Democratic votes comes almost entirely from shifts in opinion among white voters, only slightly offset by demographic and turnout trends among non-white voters.</p>
-<p>The age/sex/education breakdown tells a related story, a waning of Democratic preference among non-college graduates, especially older ones:</p>
+<p>People tell various stories about how elections are won or lost. For example, one story about the 2018 blue wave is that disaffected Republican voters stayed home, while energized Democratic voters turned out in unexpected numbers. Another story is that significant numbers of voters shifted from voting Republican to Democratic. We think there is a grain of truth in the first story but that the second is more convincing. To see why, we’re going to look at some tables which break down the changes in Democratic votes by our three factors: demographics, turnout and preference. Before we dive in, let’s consider just one row of such a table, looking at changes from 2016 to 2018:</p>
+<table class="br_table"><thead><tr><th>Group</th><th>Population (k)</th><th>+/- From Population (k)</th><th>+/- From Turnout (k)</th><th>+/- From Opinion (k)</th><th>+/- Total (k)</th><th>+/- %Vote</th></tr></thead><tbody><tr><td style="; ; ; ; ">OldFemaleNonGrad</td><td style="; ; ; ; ">44689</td><td style="; ; ; ; color: red">(120)</td><td style="; ; ; ; color: green">693</td><td style="; ; ; ; color: red">(745)</td><td style="; ; ; ; color: red">(171)</td><td style="; ; ; ; color: red">(0.08)</td></tr></tbody></table>
+<p>By column:</p>
+<ol type="1">
+<li>The name of the demographic group (older female non-college-graduates).</li>
+<li>The population (44.7 million) in the ending year.</li>
+<li>The change in Democratic votes coming from changes in population (-120,000 votes). One important note here: if this is a group that votes for Democrats on average, increases in population lead to increases in Democratic votes and a positive number in this column.<br />
+But if this is a group that votes <em>against</em> Democrats, an increase in population is a <em>net loss</em> of Democratic votes and the number in this column will be negative. Older female non-college educated voters tend to vote against Democrats so this net loss of votes comes from an increase in population.</li>
+<li>The change in votes coming from changes in turnout (+693,000 votes). Again, increased turnout may lead to a positive or negative number here, depending on whether the group is more likely to vote for Democrats or Republicans.</li>
+<li>The next column indicates votes gained or lost from shifts in voter preference (-745,000).</li>
+<li>The total votes gained or lost in this group over the time period (-171,000 votes, the sum of columns 3, 4, and 5).</li>
+<li>The total votes gained or lost (column 6) as a percentage of the total electorate (-0.08%).</li>
+</ol>
+<p>Looking at all the groups together tells a more complete story. Overall, turnout was <em>not</em> a big mover of votes. Some Democratic votes were gained by a drop in turnout among older non-college-educated voters, but a similar number of Democratic votes were lost by lower turnout among young college-educated voters. Similarly, demographic shifts play a <em>small</em> role—net gains among college-graduates outpace the aging of the non-college-educated groups. Nearly all the Democratic vote gains arise from changes in voter preference.</p>
+<table class="br_table"><thead><tr><th>Group</th><th>Population (k)</th><th>+/- From Population (k)</th><th>+/- From Turnout (k)</th><th>+/- From Opinion (k)</th><th>+/- Total (k)</th><th>+/- %Vote</th></tr></thead><tbody><tr><td style="; ; ; ; ">OldFemaleNonGrad</td><td style="; ; ; ; ">44689</td><td style="; ; ; ; color: red">(120)</td><td style="; ; ; ; color: green">693</td><td style="; ; ; ; color: red">(745)</td><td style="; ; ; ; color: red">(171)</td><td style="; ; ; ; color: red">(0.08)</td></tr><tr><td style="; ; ; ; ">YoungFemaleNonGrad</td><td style="; ; ; ; ">33234</td><td style="; ; ; ; color: red">(2)</td><td style="; ; ; ; color: green">81</td><td style="; ; ; ; color: red">(687)</td><td style="; ; ; ; color: red">(607)</td><td style="; ; ; ; color: red">(0.29)</td></tr><tr><td style="; ; ; ; ">OldMaleNonGrad</td><td style="; ; ; ; ">38466</td><td style="; ; ; ; color: red">(171)</td><td style="; ; ; ; color: green">709</td><td style="; ; ; ; color: red">(625)</td><td style="; ; ; ; color: red">(86)</td><td style="; ; ; ; color: red">(0.04)</td></tr><tr><td style="; ; ; ; ">YoungMaleNonGrad</td><td style="; ; ; ; ">37635</td><td style="; ; ; ; color: red">(19)</td><td style="; ; ; ; color: green">297</td><td style="; ; ; ; color: red">(428)</td><td style="; ; ; ; color: red">(149)</td><td style="; ; ; ; color: red">(0.07)</td></tr><tr><td style="; ; ; ; ">OldFemaleCollegeGrad</td><td style="; ; ; ; ">18079</td><td style="; ; ; ; color: green">152</td><td style="; ; ; ; color: red">(191)</td><td style="; ; ; ; color: green">1861</td><td style="; ; ; ; color: green">1823</td><td style="; ; ; ; color: green">0.86</td></tr><tr><td style="; ; ; ; ">YoungFemaleCollegeGrad</td><td style="; ; ; ; ">16543</td><td style="; ; ; ; color: green">263</td><td style="; ; ; ; color: red">(800)</td><td style="; ; ; ; color: green">1753</td><td style="; ; ; ; color: green">1217</td><td style="; ; ; ; color: green">0.58</td></tr><tr><td style="; ; ; ; ">OldMaleCollegeGrad</td><td style="; ; ; ; ">17624</td><td style="; ; ; ; color: green">47</td><td style="; ; ; ; color: red">(72)</td><td style="; ; ; ; color: green">2188</td><td style="; ; ; ; color: green">2165</td><td style="; ; ; ; color: green">1.02</td></tr><tr><td style="; ; ; ; ">YoungMaleCollegeGrad</td><td style="; ; ; ; ">13378</td><td style="; ; ; ; color: green">237</td><td style="; ; ; ; color: red">(587)</td><td style="; ; ; ; color: green">1768</td><td style="; ; ; ; color: green">1420</td><td style="; ; ; ; color: green">0.67</td></tr><tr><td style="border: 2px solid black; ; ; ; ">Total</td><td style="border: 2px solid black; ; ; ; ">219653</td><td style="border: 2px solid black; ; ; ; color: green">392</td><td style="border: 2px solid black; ; ; ; color: green">133</td><td style="border: 2px solid black; ; ; ; color: green">5089</td><td style="border: 2px solid black; ; ; ; color: green">5615</td><td style="border: 2px solid black; ; ; ; color: green">2.56</td></tr></tbody></table>
+<p>It’s instructive to look at the same groups but this time examining the changes from 2010 through 2018. Here we see that voter preference also plays the largest role. Over this time range, demographics begins to play a larger role as well. More people are getting college degrees and that increases the size of the college-educated electorate, which benefits Democrats on average. Again, the turnout changes are fairly small across all groups.</p>
+<table class="br_table"><thead><tr><th>Group</th><th>Population (k)</th><th>+/- From Population (k)</th><th>+/- From Turnout (k)</th><th>+/- From Opinion (k)</th><th>+/- Total (k)</th><th>+/- %Vote</th></tr></thead><tbody><tr><td style="; ; ; ; ">OldFemaleNonGrad</td><td style="; ; ; ; ">44689</td><td style="; ; ; ; color: green">74</td><td style="; ; ; ; color: red">(613)</td><td style="; ; ; ; color: red">(1229)</td><td style="; ; ; ; color: red">(1767)</td><td style="; ; ; ; color: red">(0.81)</td></tr><tr><td style="; ; ; ; ">YoungFemaleNonGrad</td><td style="; ; ; ; ">33234</td><td style="; ; ; ; color: green">10</td><td style="; ; ; ; color: red">(25)</td><td style="; ; ; ; color: red">(762)</td><td style="; ; ; ; color: red">(776)</td><td style="; ; ; ; color: red">(0.36)</td></tr><tr><td style="; ; ; ; ">OldMaleNonGrad</td><td style="; ; ; ; ">38466</td><td style="; ; ; ; color: red">(62)</td><td style="; ; ; ; color: red">(568)</td><td style="; ; ; ; color: red">(1201)</td><td style="; ; ; ; color: red">(1831)</td><td style="; ; ; ; color: red">(0.84)</td></tr><tr><td style="; ; ; ; ">YoungMaleNonGrad</td><td style="; ; ; ; ">37635</td><td style="; ; ; ; color: green">37</td><td style="; ; ; ; color: red">(165)</td><td style="; ; ; ; color: red">(727)</td><td style="; ; ; ; color: red">(855)</td><td style="; ; ; ; color: red">(0.39)</td></tr><tr><td style="; ; ; ; ">OldFemaleCollegeGrad</td><td style="; ; ; ; ">18079</td><td style="; ; ; ; color: green">363</td><td style="; ; ; ; color: green">174</td><td style="; ; ; ; color: green">1838</td><td style="; ; ; ; color: green">2376</td><td style="; ; ; ; color: green">1.10</td></tr><tr><td style="; ; ; ; ">YoungFemaleCollegeGrad</td><td style="; ; ; ; ">16543</td><td style="; ; ; ; color: green">395</td><td style="; ; ; ; color: green">867</td><td style="; ; ; ; color: green">1602</td><td style="; ; ; ; color: green">2865</td><td style="; ; ; ; color: green">1.32</td></tr><tr><td style="; ; ; ; ">OldMaleCollegeGrad</td><td style="; ; ; ; ">17624</td><td style="; ; ; ; color: green">25</td><td style="; ; ; ; color: green">17</td><td style="; ; ; ; color: green">3017</td><td style="; ; ; ; color: green">3060</td><td style="; ; ; ; color: green">1.41</td></tr><tr><td style="; ; ; ; ">YoungMaleCollegeGrad</td><td style="; ; ; ; ">13378</td><td style="; ; ; ; color: green">344</td><td style="; ; ; ; color: green">702</td><td style="; ; ; ; color: green">1782</td><td style="; ; ; ; color: green">2829</td><td style="; ; ; ; color: green">1.30</td></tr><tr><td style="border: 2px solid black; ; ; ; ">Total</td><td style="border: 2px solid black; ; ; ; ">219653</td><td style="border: 2px solid black; ; ; ; color: green">1189</td><td style="border: 2px solid black; ; ; ; color: green">391</td><td style="border: 2px solid black; ; ; ; color: green">4322</td><td style="border: 2px solid black; ; ; ; color: green">5903</td><td style="border: 2px solid black; ; ; ; color: green">2.69</td></tr></tbody></table>
+<p>And it’s worthwhile to look at these longer-term changes by race as well as by educational attainment. Again we see that voter preference plays the largest role and that demographics is significant. One distinction here is a noticeable trend to higher turnout but one which is more pronounced among non-white voters, leading to a net gain of Democratic votes.</p>
+<table class="br_table"><thead><tr><th>Group</th><th>Population (k)</th><th>+/- From Population (k)</th><th>+/- From Turnout (k)</th><th>+/- From Opinion (k)</th><th>+/- Total (k)</th><th>+/- %Vote</th></tr></thead><tbody><tr><td style="; ; ; ; ">OldNonWhiteFemale</td><td style="; ; ; ; ">17635</td><td style="; ; ; ; color: green">506</td><td style="; ; ; ; color: green">940</td><td style="; ; ; ; color: red">(108)</td><td style="; ; ; ; color: green">1339</td><td style="; ; ; ; color: green">0.62</td></tr><tr><td style="; ; ; ; ">YoungNonWhiteFemale</td><td style="; ; ; ; ">21338</td><td style="; ; ; ; color: green">0</td><td style="; ; ; ; color: green">1243</td><td style="; ; ; ; color: green">227</td><td style="; ; ; ; color: green">1471</td><td style="; ; ; ; color: green">0.68</td></tr><tr><td style="; ; ; ; ">OldNonWhiteMale</td><td style="; ; ; ; ">15173</td><td style="; ; ; ; color: green">398</td><td style="; ; ; ; color: green">501</td><td style="; ; ; ; color: green">58</td><td style="; ; ; ; color: green">958</td><td style="; ; ; ; color: green">0.44</td></tr><tr><td style="; ; ; ; ">YoungNonWhiteMale</td><td style="; ; ; ; ">21688</td><td style="; ; ; ; color: green">33</td><td style="; ; ; ; color: green">900</td><td style="; ; ; ; color: green">249</td><td style="; ; ; ; color: green">1183</td><td style="; ; ; ; color: green">0.55</td></tr><tr><td style="; ; ; ; ">OldWhiteFemale</td><td style="; ; ; ; ">45134</td><td style="; ; ; ; color: red">(84)</td><td style="; ; ; ; color: red">(925)</td><td style="; ; ; ; color: green">443</td><td style="; ; ; ; color: red">(565)</td><td style="; ; ; ; color: red">(0.26)</td></tr><tr><td style="; ; ; ; ">YoungWhiteFemale</td><td style="; ; ; ; ">28440</td><td style="; ; ; ; color: green">39</td><td style="; ; ; ; color: red">(266)</td><td style="; ; ; ; color: green">900</td><td style="; ; ; ; color: green">674</td><td style="; ; ; ; color: green">0.31</td></tr><tr><td style="; ; ; ; ">OldWhiteMale</td><td style="; ; ; ; ">40917</td><td style="; ; ; ; color: red">(146)</td><td style="; ; ; ; color: red">(788)</td><td style="; ; ; ; color: green">1217</td><td style="; ; ; ; color: green">284</td><td style="; ; ; ; color: green">0.13</td></tr><tr><td style="; ; ; ; ">YoungWhiteMale</td><td style="; ; ; ; ">29325</td><td style="; ; ; ; color: green">22</td><td style="; ; ; ; color: red">(173)</td><td style="; ; ; ; color: green">1060</td><td style="; ; ; ; color: green">911</td><td style="; ; ; ; color: green">0.42</td></tr><tr><td style="border: 2px solid black; ; ; ; ">Total</td><td style="border: 2px solid black; ; ; ; ">219653</td><td style="border: 2px solid black; ; ; ; color: green">772</td><td style="border: 2px solid black; ; ; ; color: green">1436</td><td style="border: 2px solid black; ; ; ; color: green">4049</td><td style="border: 2px solid black; ; ; ; color: green">6259</td><td style="border: 2px solid black; ; ; ; color: green">2.85</td></tr></tbody></table>
+<p>In our analysis, the blue wave was produced by voters who preferred Republicans in 2016, shifting toward Democrats in 2018. We also see that current demographic shifts, both in average educational attainment and non-white vs. white voters lead to more Democratic votes. Turnout shifts are also largely good for Democrats over the long-term.</p>
+<p>It’s important to note that this analysis is at the national level. Each district has its own version of this story and we plan to dig into those in more detail in the coming months.</p>
 </section>
-<section id="section" class="level3">
-<h3>2012-&gt;2016</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Group</th>
-<th>Population (k)</th>
-<th>+/- From Population (k)</th>
-<th>+/- From Turnout (k)</th>
-<th>+/- From Opinion (k)</th>
-<th>+/- Total (k)</th>
-<th>+/- %Vote</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>OldFemaleNonGrad</td>
-<td>43460</td>
-<td>77</td>
-<td>-130</td>
-<td>-1892</td>
-<td>-1944</td>
-<td>-0.91</td>
-</tr>
-<tr class="even">
-<td>YoungFemaleNonGrad</td>
-<td>33014</td>
-<td>-38</td>
-<td>55</td>
-<td>-994</td>
-<td>-976</td>
-<td>-0.46</td>
-</tr>
-<tr class="odd">
-<td>OldMaleNonGrad</td>
-<td>37060</td>
-<td>20</td>
-<td>-119</td>
-<td>-1489</td>
-<td>-1587</td>
-<td>-0.75</td>
-</tr>
-<tr class="even">
-<td>YoungMaleNonGrad</td>
-<td>36871</td>
-<td>14</td>
-<td>-32</td>
-<td>-1001</td>
-<td>-1018</td>
-<td>-0.48</td>
-</tr>
-<tr class="odd">
-<td>OldFemaleCollegeGrad</td>
-<td>16764</td>
-<td>134</td>
-<td>30</td>
-<td>-316</td>
-<td>-151</td>
-<td>-0.07</td>
-</tr>
-<tr class="even">
-<td>YoungFemaleCollegeGrad</td>
-<td>15450</td>
-<td>179</td>
-<td>158</td>
-<td>-299</td>
-<td>39</td>
-<td>0.02</td>
-</tr>
-<tr class="odd">
-<td>OldMaleCollegeGrad</td>
-<td>16576</td>
-<td>-32</td>
-<td>-20</td>
-<td>327</td>
-<td>277</td>
-<td>0.13</td>
-</tr>
-<tr class="even">
-<td>YoungMaleCollegeGrad</td>
-<td>12471</td>
-<td>139</td>
-<td>115</td>
-<td>-179</td>
-<td>76</td>
-<td>0.04</td>
-</tr>
-<tr class="odd">
-<td>Total</td>
-<td>211669</td>
-<td>497</td>
-<td>61</td>
-<td>-5840</td>
-<td>-5281</td>
-<td>-2.49</td>
-</tr>
-</tbody>
-</table>
-<p>One common thread in these tables is that the loss of votes comes largely from shifts in opinion rather than demographics or turnout. This is what often leaves Democrats feeling like they must appeal more to white working class voters, as we talked about in <a href="https://blueripple.github.io/explainer/WWCV.html#">this post</a>.</p>
-</section>
-</section>
-<section id="what-happened-in-the-battleground-states" class="level2">
-<h2>What Happened in the Battleground States?</h2>
-<p>One question we can ask is what happened to those voters in 2018? In particular, let’s consider just the battleground states of NH, PA, VA, NV, FL, OH, MI, WI, IA, CO, AZ, and NV. First we’ll look again at the loss of votes from 2012 to 2016 and then the blue wave of 2018.</p>
-<section id="section" class="level3">
-<h3>2012-&gt;2016</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Group</th>
-<th>Population (k)</th>
-<th>+/- From Population (k)</th>
-<th>+/- From Turnout (k)</th>
-<th>+/- From Opinion (k)</th>
-<th>+/- Total (k)</th>
-<th>+/- %Vote</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>OldFemaleNonGrad</td>
-<td>15746</td>
-<td>-42</td>
-<td>17</td>
-<td>-684</td>
-<td>-708</td>
-<td>-1.03</td>
-</tr>
-<tr class="even">
-<td>YoungFemaleNonGrad</td>
-<td>11048</td>
-<td>0</td>
-<td>1</td>
-<td>-336</td>
-<td>-334</td>
-<td>-0.48</td>
-</tr>
-<tr class="odd">
-<td>OldMaleNonGrad</td>
-<td>13455</td>
-<td>-76</td>
-<td>36</td>
-<td>-540</td>
-<td>-579</td>
-<td>-0.84</td>
-</tr>
-<tr class="even">
-<td>YoungMaleNonGrad</td>
-<td>12377</td>
-<td>-2</td>
-<td>-3</td>
-<td>-340</td>
-<td>-344</td>
-<td>-0.50</td>
-</tr>
-<tr class="odd">
-<td>OldFemaleCollegeGrad</td>
-<td>5713</td>
-<td>70</td>
-<td>-3</td>
-<td>-107</td>
-<td>-39</td>
-<td>-0.06</td>
-</tr>
-<tr class="even">
-<td>YoungFemaleCollegeGrad</td>
-<td>4941</td>
-<td>111</td>
-<td>1</td>
-<td>-96</td>
-<td>18</td>
-<td>0.03</td>
-</tr>
-<tr class="odd">
-<td>OldMaleCollegeGrad</td>
-<td>5713</td>
-<td>-20</td>
-<td>-2</td>
-<td>111</td>
-<td>91</td>
-<td>0.13</td>
-</tr>
-<tr class="even">
-<td>YoungMaleCollegeGrad</td>
-<td>3950</td>
-<td>78</td>
-<td>-8</td>
-<td>-58</td>
-<td>13</td>
-<td>0.02</td>
-</tr>
-<tr class="odd">
-<td>Total</td>
-<td>72946</td>
-<td>123</td>
-<td>42</td>
-<td>-2045</td>
-<td>-1878</td>
-<td>-2.57</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="section" class="level3">
-<h3>2016-&gt;2018</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Group</th>
-<th>Population (k)</th>
-<th>+/- From Population (k)</th>
-<th>+/- From Turnout (k)</th>
-<th>+/- From Opinion (k)</th>
-<th>+/- Total (k)</th>
-<th>+/- %Vote</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>OldFemaleNonGrad</td>
-<td>15466</td>
-<td>27</td>
-<td>196</td>
-<td>-268</td>
-<td>-45</td>
-<td>-0.06</td>
-</tr>
-<tr class="even">
-<td>YoungFemaleNonGrad</td>
-<td>10507</td>
-<td>4</td>
-<td>22</td>
-<td>-229</td>
-<td>-202</td>
-<td>-0.28</td>
-</tr>
-<tr class="odd">
-<td>OldMaleNonGrad</td>
-<td>13292</td>
-<td>20</td>
-<td>196</td>
-<td>-226</td>
-<td>-10</td>
-<td>-0.01</td>
-</tr>
-<tr class="even">
-<td>YoungMaleNonGrad</td>
-<td>11960</td>
-<td>10</td>
-<td>83</td>
-<td>-143</td>
-<td>-50</td>
-<td>-0.07</td>
-</tr>
-<tr class="odd">
-<td>OldFemaleCollegeGrad</td>
-<td>6116</td>
-<td>47</td>
-<td>-52</td>
-<td>638</td>
-<td>634</td>
-<td>0.87</td>
-</tr>
-<tr class="even">
-<td>YoungFemaleCollegeGrad</td>
-<td>5206</td>
-<td>65</td>
-<td>-217</td>
-<td>564</td>
-<td>412</td>
-<td>0.57</td>
-</tr>
-<tr class="odd">
-<td>OldMaleCollegeGrad</td>
-<td>5992</td>
-<td>12</td>
-<td>-20</td>
-<td>756</td>
-<td>750</td>
-<td>1.03</td>
-</tr>
-<tr class="even">
-<td>YoungMaleCollegeGrad</td>
-<td>4167</td>
-<td>57</td>
-<td>-150</td>
-<td>564</td>
-<td>472</td>
-<td>0.65</td>
-</tr>
-<tr class="odd">
-<td>Total</td>
-<td>72710</td>
-<td>244</td>
-<td>61</td>
-<td>1659</td>
-<td>1965</td>
-<td>2.70</td>
-</tr>
-</tbody>
-</table>
-<p>All of the approximately 2 million votes lost across those states from 2012 to 2016 are regained in 2018. What’s more, the gain comes from changes in preference <em>not</em> changes in turnout. This was not Republican voters staying home, it was an electorate with similar turnout but which became substantially more Democratic between 2016 and 2018. This happened in an interesting way: from 2012 to 2016 Democrats lost share with non-college educated voters while holding relatively steady with college-educated voters. The Blue wave in 2018 was <em>not</em> powered by gaining back ground with the voters lost in 2016 but instead making inroads with college-educated white voters while maintaining turnout and preference among the rest of the coalition. That is, from 2012 to 2018, Democrats are about even with white voters but they have lost non-college educated voters and gained college educated ones.</p>
-</section>
-</section>
-<section id="take-action" class="level1">
-<h1>Take Action</h1>
+<section id="take-action" class="level2">
+<h2>Take Action</h2>
+<p>What’s the takeaway here, in terms of concrete actions you can take? Firstly, as always, it’s important to support organizations that fight for voting rights and work for higher turnout among minority communities and young voters. Though turnout was not the driver of the blue wave, it was the base beneath it. All those “extra” votes don’t matter, if the Democratic base doesn’t (or can’t) show up on election day. So consider supporting:</p>
+<ul>
+<li>[Fair Fight][FairFight], Stacey Abrams organization dedicated to fighting for voting rights in Georgia and beyond.</li>
+<li><a href="https://www.blocbybloc.org">BLOC</a>, community organizers in Milwaukee, WI, working on <a href="https://www.washingtonpost.com/politics/in-milwaukee-an-inner-city-group-tackles-a-key-democratic-need-turning-out-black-voters/2019/10/23/ceee17ea-e9d4-11e9-9c6d-436a0df4f31d_story.html">improving black voter turnout</a>.</li>
+<li><a href="https://www.campusvoteproject.org">Campus Vote Project</a>, an organization working on campuses across the country to register college students, an <a href="https://www.nytimes.com/2019/10/24/us/voting-college-suppression.html">important and suppressed</a> source of Democratic votes.</li>
+</ul>
+<p>And stay focused on progressive policies where there is crossover support from independents and centrist Republicans. <a href="https://www.dataforprogress.org/">Data For Progress</a> does extremely good work in this area and has identified policies that progressives support which also poll well with centrist Democrats and Republicans, e.g., capping credit-card interest rates or ending the war in Yemen.</p>
+<p>Lastly, support <em>local</em> candidates who will rally turnout and engage undecided voters who may then support progressives up and down the ticket. Watch this space for our recommendations as we head toward 2020!</p>
 <p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple">Github</a> page.</em></p>
 </section>
 <!--
