@@ -1,0 +1,4495 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Do We Look for Democratic Votes in 2020?</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@4"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex; 
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;      
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 218px;
+	 margin-right: 218px
+     }   
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }		       
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;		
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px		       
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;      		       
+  }  
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+      
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+      
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+      
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+
+</style>
+
+<script src="" type="text/javascript"></script>
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>	
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">December  1, 2019 </div>
+<header>
+<h1 class="title">Where Do We Look For Democratic Votes in 2020?</h1>
+</header>
+<p>One benefit of working on Blue Ripple Politics is that we get to talk with very smart analysts who point us in interesting directions. A recent conversation with one of our favorite election modelers, Professor Rachel Bitecofer (LINK), reminded us of her spot-on analysis (LINK) of the 2018 house races, one which focused on turnout among “pools of untapped Democratic voters” (CHECK QUOTE). In this post we look a bit at one of the pools that Professor Bitecofer is focused on in the 2020 elections: college educated voters.</p>
+<ol type="1">
+<li><strong>Data and Methods</strong></li>
+<li><strong>How Many Votes is a Voter Worth?</strong></li>
+<li><strong>Female College Educated Voters and Age</strong></li>
+<li><strong>Battleground States</strong></li>
+<li><strong>What Does It Mean?</strong></li>
+<li><strong>Take Action</strong></li>
+</ol>
+<section id="data-and-methods" class="level2">
+<h2>Data and Methods</h2>
+<p>In our research pieces so far, we’ve looked only at aggregate data, that is data which comes from adding together a large number of people: census counts or election results, for example. In this piece we look at some per-person data, namely the Cooperative Congressional Election Study <a href="https://cces.gov.harvard.edu/">CCES</a>, which surveys about 60,000 people in every election cycle. For each survey response, the CCES includes geographic and demographic information along with opinion about various political questions, whether the person is registered to vote, and whether they voted and who for in elections for Governor, House, Senate and President, whenever each is applicable.</p>
+<p>The geographic information allows us to start estimating a variety of things at the state level, something we couldn’t do using only aggregate data. We do this using multi-level regression (the “MR” of “MRP”, which stands for Multi-level Regression with Post-stratification), a technique explained in more detail <a href="https://en.wikipedia.org/wiki/Multilevel_regression_with_poststratification">here</a> and about which we will have an explainer in the coming months. Very briefly: MR allows you to use all the data to get a baseline and then use the data in a specific “bucket” (e.g., college educated older women in Texas) to make an improved inference for that set of people; it balances the abundance of the data for everywhere with the need to use the local information for improved insight.</p>
+<p>Our specific model uses a survey-weighted logistic MR to fit a binomial distribution to the Democratic votes, among voters who voted D or R, in each 408 groups: (states + DC) x (Female or Male) x (Non-College Grad or College Grad) x (Under 45 or 45 and over).</p>
+<p>As we’ve said in earlier posts, we recognize that these categories are vast oversimplifications of the electorate. We are limited by what information is present in the survey–Gender is limited to “Female” and “Male” in the CCES, and by computational complexity, which is why we’ve limited our education and age breakdown to two categories each.</p>
+<p>If we are hoping to boost turnout among Democratic leaning voters in battleground states or crucial races, it helps to know which voters are most likely to be Democratic leaning <em>in that particular state or district.</em> This data and these techniques allow us to do just that.</p>
+</section>
+<section id="how-many-votes-is-a-voter-worth" class="level2">
+<h2>How Many Votes is a Voter Worth?</h2>
+<p>According to our model, young college-educated women in Texas voted Democratic in the 2016 presidential election about 72% of the time. If we increased turnout among them by 100,000 voters for 2020 and they were exactly as likely to vote Democratic as in 2016, how many votes would that extar 100,000 voters net the Democratic candidate? Of that 100,000, 72,000 (72% x 100,000) would vote for the democrat and 38,000 ((100% - 72%) x 100,000) for the Republican. So Dems would net 72,000 - 38,000 = 34,000 votes. In general, if x% of voters will vote for the Democrat, each such voter is “worth” <span class="math inline">\(2x-100\%\)</span> votes. We’ll call that number “Votes Per Voter” or VPV. Note that a group with a voter preference of 50% has a VPV of 0. A group that votes Democratic 60% of the time has a VPV of 20%. And a group which votes for Democrats less than 50% of the time has a negative VPV.</p>
+<p>As a side note, this is why changing people’s minds can be a more appealing avenue to getting votes: each changed mind of a voter is worth 2 votes: the one lost by the Republican and the one gained by the Democrat.</p>
+</section>
+<section id="female-college-educated-voters-and-age" class="level2">
+<h2>Female College Educated Voters and Age</h2>
+<p>So let’s look at college-educated women and how their VPV varies by state and by age. In the chart below we show the VPV of college-educated women, split by age at 45, for each state (and DC and the Nation as a whole). The states are ordered by the VPV of young college-educated women.</p>
+<figure id="figure_1">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 800,
+    "autosize": {
+        "resize": true,
+        "type": "fit",
+        "contains": "padding"
+    },
+    "data": {
+        "values": [
+            {
+                "State": "National",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.1408921145864669,
+                "Sex": "Female"
+            },
+            {
+                "State": "National",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.12538912609145947,
+                "Sex": "Female"
+            },
+            {
+                "State": "National",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.12057797323772079,
+                "Sex": "Female"
+            },
+            {
+                "State": "National",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.37054583982433087,
+                "Sex": "Female"
+            },
+            {
+                "State": "National",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.28913539418063416,
+                "Sex": "Male"
+            },
+            {
+                "State": "National",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -2.9725587691059152e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "National",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -3.4605572759129566e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "National",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2291278346786585,
+                "Sex": "Male"
+            },
+            {
+                "State": "AK",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -4.6677452489762516e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "AK",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 6.503785504553328e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "AK",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.22481413622865487,
+                "Sex": "Female"
+            },
+            {
+                "State": "AK",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3450623730885338,
+                "Sex": "Female"
+            },
+            {
+                "State": "AK",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3210845669593194,
+                "Sex": "Male"
+            },
+            {
+                "State": "AK",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 3.766414475427693e-3,
+                "Sex": "Male"
+            },
+            {
+                "State": "AK",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -7.587908677703459e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "AK",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2263686415580597,
+                "Sex": "Male"
+            },
+            {
+                "State": "AL",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -3.0424230711870837e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "AL",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -4.742899426415348e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "AL",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -1.1483331020685883e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "AL",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.19179349779223687,
+                "Sex": "Female"
+            },
+            {
+                "State": "AL",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.4164075851482364,
+                "Sex": "Male"
+            },
+            {
+                "State": "AL",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -3.370993733065897e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "AL",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.17211293802480343,
+                "Sex": "Male"
+            },
+            {
+                "State": "AL",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.10470763555761287,
+                "Sex": "Male"
+            },
+            {
+                "State": "AR",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.16953472706725026,
+                "Sex": "Female"
+            },
+            {
+                "State": "AR",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -5.711276845044033e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "AR",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -9.680538219078771e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "AR",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.24223042390064653,
+                "Sex": "Female"
+            },
+            {
+                "State": "AR",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3803452839204151,
+                "Sex": "Male"
+            },
+            {
+                "State": "AR",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.16050664057693775,
+                "Sex": "Male"
+            },
+            {
+                "State": "AR",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.18541208143811794,
+                "Sex": "Male"
+            },
+            {
+                "State": "AR",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 7.447487756453564e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "AZ",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.21986698059665155,
+                "Sex": "Female"
+            },
+            {
+                "State": "AZ",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.10440181820293892,
+                "Sex": "Female"
+            },
+            {
+                "State": "AZ",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -5.7028950980638204e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "AZ",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2991083734508404,
+                "Sex": "Female"
+            },
+            {
+                "State": "AZ",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.4101522384296825,
+                "Sex": "Male"
+            },
+            {
+                "State": "AZ",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.15879533413173252,
+                "Sex": "Male"
+            },
+            {
+                "State": "AZ",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.10279815156534344,
+                "Sex": "Male"
+            },
+            {
+                "State": "AZ",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.18493323746558055,
+                "Sex": "Male"
+            },
+            {
+                "State": "CA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": 7.726435681070587e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "CA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.3696974666218149,
+                "Sex": "Female"
+            },
+            {
+                "State": "CA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.3863387849060922,
+                "Sex": "Female"
+            },
+            {
+                "State": "CA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.6389608223315881,
+                "Sex": "Female"
+            },
+            {
+                "State": "CA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -1.4947368297795416e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "CA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.12262802977922838,
+                "Sex": "Male"
+            },
+            {
+                "State": "CA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.18862258628638484,
+                "Sex": "Male"
+            },
+            {
+                "State": "CA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.4158494706137952,
+                "Sex": "Male"
+            },
+            {
+                "State": "CO",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -4.5374640500786656e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "CO",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 8.854348876729867e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "CO",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.22840032229085483,
+                "Sex": "Female"
+            },
+            {
+                "State": "CO",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.275147011958228,
+                "Sex": "Female"
+            },
+            {
+                "State": "CO",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.20868956771465574,
+                "Sex": "Male"
+            },
+            {
+                "State": "CO",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 6.498964390910533e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "CO",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.1456693737326552,
+                "Sex": "Male"
+            },
+            {
+                "State": "CO",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.26358274925897485,
+                "Sex": "Male"
+            },
+            {
+                "State": "CT",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.10636883752689186,
+                "Sex": "Female"
+            },
+            {
+                "State": "CT",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.1204848758378192,
+                "Sex": "Female"
+            },
+            {
+                "State": "CT",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.13539853336389407,
+                "Sex": "Female"
+            },
+            {
+                "State": "CT",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.40762599972055824,
+                "Sex": "Female"
+            },
+            {
+                "State": "CT",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -9.696055350938049e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "CT",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -1.0792615714083298e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "CT",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 5.978843447785942e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "CT",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.33728553809438955,
+                "Sex": "Male"
+            },
+            {
+                "State": "DC",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": 0.13723557456082536,
+                "Sex": "Female"
+            },
+            {
+                "State": "DC",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.20029719640964005,
+                "Sex": "Female"
+            },
+            {
+                "State": "DC",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.31993180275486144,
+                "Sex": "Female"
+            },
+            {
+                "State": "DC",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.5112934187968481,
+                "Sex": "Female"
+            },
+            {
+                "State": "DC",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.12092283695381845,
+                "Sex": "Male"
+            },
+            {
+                "State": "DC",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -2.9725587691059152e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "DC",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 7.368187545326133e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "DC",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.4681574833217057,
+                "Sex": "Male"
+            },
+            {
+                "State": "DE",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.1133795689955387,
+                "Sex": "Female"
+            },
+            {
+                "State": "DE",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.14969450598008804,
+                "Sex": "Female"
+            },
+            {
+                "State": "DE",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 6.108511923491289e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "DE",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.44355577366693777,
+                "Sex": "Female"
+            },
+            {
+                "State": "DE",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2657442708419331,
+                "Sex": "Male"
+            },
+            {
+                "State": "DE",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 7.734282075431298e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "DE",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -6.45730204769176e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "DE",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2060458030500234,
+                "Sex": "Male"
+            },
+            {
+                "State": "FL",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.1622636908160272,
+                "Sex": "Female"
+            },
+            {
+                "State": "FL",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.23082139709625227,
+                "Sex": "Female"
+            },
+            {
+                "State": "FL",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.1310297598797232,
+                "Sex": "Female"
+            },
+            {
+                "State": "FL",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2974738043258107,
+                "Sex": "Female"
+            },
+            {
+                "State": "FL",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3577321430004835,
+                "Sex": "Male"
+            },
+            {
+                "State": "FL",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 9.110932044132047e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "FL",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.10036626411105065,
+                "Sex": "Male"
+            },
+            {
+                "State": "FL",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.33740528880444765,
+                "Sex": "Male"
+            },
+            {
+                "State": "GA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.17815157425371853,
+                "Sex": "Female"
+            },
+            {
+                "State": "GA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -7.348685284545131e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "GA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.12431936104339036,
+                "Sex": "Female"
+            },
+            {
+                "State": "GA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.311102537102919,
+                "Sex": "Female"
+            },
+            {
+                "State": "GA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3009837764002108,
+                "Sex": "Male"
+            },
+            {
+                "State": "GA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.14425311352100334,
+                "Sex": "Male"
+            },
+            {
+                "State": "GA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.12216784520347856,
+                "Sex": "Male"
+            },
+            {
+                "State": "GA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.26861531559998375,
+                "Sex": "Male"
+            },
+            {
+                "State": "HI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.21548906267482848,
+                "Sex": "Female"
+            },
+            {
+                "State": "HI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.2099612557916375,
+                "Sex": "Female"
+            },
+            {
+                "State": "HI",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.26613772940989566,
+                "Sex": "Female"
+            },
+            {
+                "State": "HI",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.45162174587179016,
+                "Sex": "Female"
+            },
+            {
+                "State": "HI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2083119425002785,
+                "Sex": "Male"
+            },
+            {
+                "State": "HI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -2.002964725525802e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "HI",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.11964723564035418,
+                "Sex": "Male"
+            },
+            {
+                "State": "HI",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.1908540946666304,
+                "Sex": "Male"
+            },
+            {
+                "State": "IA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.1389740789120134,
+                "Sex": "Female"
+            },
+            {
+                "State": "IA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 7.804070360027526e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "IA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.14115069685252268,
+                "Sex": "Female"
+            },
+            {
+                "State": "IA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 8.058085190273134e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "IA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.41816583643496286,
+                "Sex": "Male"
+            },
+            {
+                "State": "IA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 9.140050698804125e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "IA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -7.320822267996663e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "IA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2089102188133336,
+                "Sex": "Male"
+            },
+            {
+                "State": "ID",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.31034170972541697,
+                "Sex": "Female"
+            },
+            {
+                "State": "ID",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 1.0726719031019405e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "ID",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 6.323273167230337e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "ID",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.24061752617051346,
+                "Sex": "Female"
+            },
+            {
+                "State": "ID",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.49139097205512705,
+                "Sex": "Male"
+            },
+            {
+                "State": "ID",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 2.9209263219948323e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "ID",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -3.3946307803139675e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "ID",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2465732850841733,
+                "Sex": "Male"
+            },
+            {
+                "State": "IL",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": 0.11780239042932705,
+                "Sex": "Female"
+            },
+            {
+                "State": "IL",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.37605159392233034,
+                "Sex": "Female"
+            },
+            {
+                "State": "IL",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.2569284601834305,
+                "Sex": "Female"
+            },
+            {
+                "State": "IL",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.41418622124448534,
+                "Sex": "Female"
+            },
+            {
+                "State": "IL",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.15862282983059273,
+                "Sex": "Male"
+            },
+            {
+                "State": "IL",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -3.552523013699016e-4,
+                "Sex": "Male"
+            },
+            {
+                "State": "IL",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -3.378779584718605e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "IL",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.29552166618978815,
+                "Sex": "Male"
+            },
+            {
+                "State": "IN",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.14313180172601014,
+                "Sex": "Female"
+            },
+            {
+                "State": "IN",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.10295702408382335,
+                "Sex": "Female"
+            },
+            {
+                "State": "IN",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 3.601343489147513e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "IN",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.17995028768716215,
+                "Sex": "Female"
+            },
+            {
+                "State": "IN",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.31596228543992455,
+                "Sex": "Male"
+            },
+            {
+                "State": "IN",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.1442947660705508,
+                "Sex": "Male"
+            },
+            {
+                "State": "IN",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.1420748354863698,
+                "Sex": "Male"
+            },
+            {
+                "State": "IN",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.23755582841387746,
+                "Sex": "Male"
+            },
+            {
+                "State": "KS",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.15735258178104938,
+                "Sex": "Female"
+            },
+            {
+                "State": "KS",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -3.673696257338599e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "KS",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 6.477381955038575e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "KS",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.29548081914972113,
+                "Sex": "Female"
+            },
+            {
+                "State": "KS",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.4680042637362577,
+                "Sex": "Male"
+            },
+            {
+                "State": "KS",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -2.9547400407934465e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "KS",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 2.7319223297675777e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "KS",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.20403199167761898,
+                "Sex": "Male"
+            },
+            {
+                "State": "KY",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.20100493559529997,
+                "Sex": "Female"
+            },
+            {
+                "State": "KY",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -6.151204779359443e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "KY",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 7.393365685153919e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "KY",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2033735963622716,
+                "Sex": "Female"
+            },
+            {
+                "State": "KY",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3299493909651565,
+                "Sex": "Male"
+            },
+            {
+                "State": "KY",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.1398573607038689,
+                "Sex": "Male"
+            },
+            {
+                "State": "KY",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.22719955554038274,
+                "Sex": "Male"
+            },
+            {
+                "State": "KY",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": -4.027848759124941e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "LA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.24375169766866933,
+                "Sex": "Female"
+            },
+            {
+                "State": "LA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 9.839745976890812e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "LA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 7.552662723429493e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "LA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.4753308691979403,
+                "Sex": "Female"
+            },
+            {
+                "State": "LA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.47383416870853423,
+                "Sex": "Male"
+            },
+            {
+                "State": "LA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.1413295219594044,
+                "Sex": "Male"
+            },
+            {
+                "State": "LA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 2.688203618398921e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "LA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3561480366776484,
+                "Sex": "Male"
+            },
+            {
+                "State": "MA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": 0.11382041374537932,
+                "Sex": "Female"
+            },
+            {
+                "State": "MA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.45470947669318273,
+                "Sex": "Female"
+            },
+            {
+                "State": "MA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.26465124109662863,
+                "Sex": "Female"
+            },
+            {
+                "State": "MA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.6001556302878774,
+                "Sex": "Female"
+            },
+            {
+                "State": "MA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.1130081177293043,
+                "Sex": "Male"
+            },
+            {
+                "State": "MA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 5.963072339716846e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "MA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.2104561451496001,
+                "Sex": "Male"
+            },
+            {
+                "State": "MA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.4660531617475825,
+                "Sex": "Male"
+            },
+            {
+                "State": "MD",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": 5.577932025426002e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "MD",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.19536876765601252,
+                "Sex": "Female"
+            },
+            {
+                "State": "MD",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.37860237481959413,
+                "Sex": "Female"
+            },
+            {
+                "State": "MD",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.5717852733615827,
+                "Sex": "Female"
+            },
+            {
+                "State": "MD",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2795255254128083,
+                "Sex": "Male"
+            },
+            {
+                "State": "MD",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -9.588164742982963e-4,
+                "Sex": "Male"
+            },
+            {
+                "State": "MD",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.20407225704765386,
+                "Sex": "Male"
+            },
+            {
+                "State": "MD",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.35284226514716055,
+                "Sex": "Male"
+            },
+            {
+                "State": "ME",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.11963312364350098,
+                "Sex": "Female"
+            },
+            {
+                "State": "ME",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.11789767733154721,
+                "Sex": "Female"
+            },
+            {
+                "State": "ME",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.20380532201011392,
+                "Sex": "Female"
+            },
+            {
+                "State": "ME",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.42124325979670707,
+                "Sex": "Female"
+            },
+            {
+                "State": "ME",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.20400359834263426,
+                "Sex": "Male"
+            },
+            {
+                "State": "ME",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -1.9394834348291923e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "ME",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -5.084795625085092e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "ME",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.11974074090956521,
+                "Sex": "Male"
+            },
+            {
+                "State": "MI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -6.962607153852507e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "MI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.22286072276936686,
+                "Sex": "Female"
+            },
+            {
+                "State": "MI",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.11702201337029039,
+                "Sex": "Female"
+            },
+            {
+                "State": "MI",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.19177869074168252,
+                "Sex": "Female"
+            },
+            {
+                "State": "MI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.21089004413451318,
+                "Sex": "Male"
+            },
+            {
+                "State": "MI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 3.438388507800316e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "MI",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.1334898046651306,
+                "Sex": "Male"
+            },
+            {
+                "State": "MI",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.12873139106600617,
+                "Sex": "Male"
+            },
+            {
+                "State": "MN",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.11190506489617191,
+                "Sex": "Female"
+            },
+            {
+                "State": "MN",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 4.257000632960817e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "MN",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.25562088425896,
+                "Sex": "Female"
+            },
+            {
+                "State": "MN",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3228422254782142,
+                "Sex": "Female"
+            },
+            {
+                "State": "MN",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.42759883113746955,
+                "Sex": "Male"
+            },
+            {
+                "State": "MN",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -3.943710620230467e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "MN",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 5.52639461727884e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "MN",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3929088964021512,
+                "Sex": "Male"
+            },
+            {
+                "State": "MO",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.1341452817137032,
+                "Sex": "Female"
+            },
+            {
+                "State": "MO",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -4.183356625937762e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "MO",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.14760212929559913,
+                "Sex": "Female"
+            },
+            {
+                "State": "MO",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2428898220083302,
+                "Sex": "Female"
+            },
+            {
+                "State": "MO",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.4511513754261195,
+                "Sex": "Male"
+            },
+            {
+                "State": "MO",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.10596945636996491,
+                "Sex": "Male"
+            },
+            {
+                "State": "MO",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.1606295728888112,
+                "Sex": "Male"
+            },
+            {
+                "State": "MO",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 5.4968868583664454e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "MS",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2083651341122822,
+                "Sex": "Female"
+            },
+            {
+                "State": "MS",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.1280432691277653,
+                "Sex": "Female"
+            },
+            {
+                "State": "MS",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.11638057434916793,
+                "Sex": "Female"
+            },
+            {
+                "State": "MS",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3648831910581787,
+                "Sex": "Female"
+            },
+            {
+                "State": "MS",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3222339987027468,
+                "Sex": "Male"
+            },
+            {
+                "State": "MS",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -4.208720878422234e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "MS",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.19751873163238365,
+                "Sex": "Male"
+            },
+            {
+                "State": "MS",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2361384155551911,
+                "Sex": "Male"
+            },
+            {
+                "State": "MT",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -1.3313558636102618e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "MT",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -1.7840879387013286e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "MT",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 9.170746873415947e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "MT",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2633122848011116,
+                "Sex": "Female"
+            },
+            {
+                "State": "MT",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.25882593686557387,
+                "Sex": "Male"
+            },
+            {
+                "State": "MT",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -3.3829899175571443e-3,
+                "Sex": "Male"
+            },
+            {
+                "State": "MT",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.21526282776507832,
+                "Sex": "Male"
+            },
+            {
+                "State": "MT",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.18390609982524087,
+                "Sex": "Male"
+            },
+            {
+                "State": "NC",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.13402917050702534,
+                "Sex": "Female"
+            },
+            {
+                "State": "NC",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 8.993903403932291e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NC",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.26976873237447063,
+                "Sex": "Female"
+            },
+            {
+                "State": "NC",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.26669686107025425,
+                "Sex": "Female"
+            },
+            {
+                "State": "NC",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.29986903546781174,
+                "Sex": "Male"
+            },
+            {
+                "State": "NC",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -2.22615720707543e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NC",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -4.281280431484902e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NC",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.20753788887337632,
+                "Sex": "Male"
+            },
+            {
+                "State": "ND",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.20650426840290337,
+                "Sex": "Female"
+            },
+            {
+                "State": "ND",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 5.4734735406912094e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "ND",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -4.408107949263562e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "ND",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.1895353129013655,
+                "Sex": "Female"
+            },
+            {
+                "State": "ND",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3083333093927002,
+                "Sex": "Male"
+            },
+            {
+                "State": "ND",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -2.9725587691059152e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "ND",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -4.634925193977979e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "ND",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.18083609973455905,
+                "Sex": "Male"
+            },
+            {
+                "State": "NE",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -4.842906353561327e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "NE",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 7.26614794952205e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NE",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 1.675110333597818e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NE",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.38559998414833574,
+                "Sex": "Female"
+            },
+            {
+                "State": "NE",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3879748001516954,
+                "Sex": "Male"
+            },
+            {
+                "State": "NE",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -2.5329812970388832e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NE",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.20502744866212308,
+                "Sex": "Male"
+            },
+            {
+                "State": "NE",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 9.009424008587819e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NH",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.14464809404262058,
+                "Sex": "Female"
+            },
+            {
+                "State": "NH",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 7.462622915738182e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "NH",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.13858716364445467,
+                "Sex": "Female"
+            },
+            {
+                "State": "NH",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.4912759247943548,
+                "Sex": "Female"
+            },
+            {
+                "State": "NH",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.287439483753567,
+                "Sex": "Male"
+            },
+            {
+                "State": "NH",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 4.835064815952528e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NH",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -4.6184768046934055e-3,
+                "Sex": "Male"
+            },
+            {
+                "State": "NH",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.1770871031948973,
+                "Sex": "Male"
+            },
+            {
+                "State": "NJ",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -8.701583548564873e-5,
+                "Sex": "Female"
+            },
+            {
+                "State": "NJ",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.36486901534019656,
+                "Sex": "Female"
+            },
+            {
+                "State": "NJ",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.29456724074919416,
+                "Sex": "Female"
+            },
+            {
+                "State": "NJ",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.4111848954363315,
+                "Sex": "Female"
+            },
+            {
+                "State": "NJ",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.34829968695807134,
+                "Sex": "Male"
+            },
+            {
+                "State": "NJ",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.25415443751185873,
+                "Sex": "Male"
+            },
+            {
+                "State": "NJ",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 7.157868677554702e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NJ",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.32846697095250654,
+                "Sex": "Male"
+            },
+            {
+                "State": "NM",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.1484750544799548,
+                "Sex": "Female"
+            },
+            {
+                "State": "NM",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 8.66130821416835e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NM",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.27906471412358114,
+                "Sex": "Female"
+            },
+            {
+                "State": "NM",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3649440741763563,
+                "Sex": "Female"
+            },
+            {
+                "State": "NM",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2415825875503922,
+                "Sex": "Male"
+            },
+            {
+                "State": "NM",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.10490975358341725,
+                "Sex": "Male"
+            },
+            {
+                "State": "NM",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 5.744307524019332e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NM",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.19092381807994108,
+                "Sex": "Male"
+            },
+            {
+                "State": "NV",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -9.694055600451024e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NV",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.170794241157479,
+                "Sex": "Female"
+            },
+            {
+                "State": "NV",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 9.460530577457216e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NV",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.47831251271129194,
+                "Sex": "Female"
+            },
+            {
+                "State": "NV",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2857105441708452,
+                "Sex": "Male"
+            },
+            {
+                "State": "NV",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 3.817402004973913e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NV",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.12585998071475824,
+                "Sex": "Male"
+            },
+            {
+                "State": "NV",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2195409147430485,
+                "Sex": "Male"
+            },
+            {
+                "State": "NY",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -6.690427837915613e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NY",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.29260998795869786,
+                "Sex": "Female"
+            },
+            {
+                "State": "NY",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.36877030806864397,
+                "Sex": "Female"
+            },
+            {
+                "State": "NY",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.597255531229353,
+                "Sex": "Female"
+            },
+            {
+                "State": "NY",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -9.257275869424186e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NY",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.23718984330873205,
+                "Sex": "Male"
+            },
+            {
+                "State": "NY",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.21394155434126283,
+                "Sex": "Male"
+            },
+            {
+                "State": "NY",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.47810308700640425,
+                "Sex": "Male"
+            },
+            {
+                "State": "OH",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.18189462037842374,
+                "Sex": "Female"
+            },
+            {
+                "State": "OH",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -2.7164458457587415e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "OH",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.10522406765501713,
+                "Sex": "Female"
+            },
+            {
+                "State": "OH",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2781823493730189,
+                "Sex": "Female"
+            },
+            {
+                "State": "OH",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.32795583299843456,
+                "Sex": "Male"
+            },
+            {
+                "State": "OH",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 2.8175883731073936e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "OH",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.11216181662187885,
+                "Sex": "Male"
+            },
+            {
+                "State": "OH",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.1945955013877787,
+                "Sex": "Male"
+            },
+            {
+                "State": "OK",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.4289100220394818,
+                "Sex": "Female"
+            },
+            {
+                "State": "OK",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.12994240018794523,
+                "Sex": "Female"
+            },
+            {
+                "State": "OK",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 1.582082175459365e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "OK",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.22609335143856213,
+                "Sex": "Female"
+            },
+            {
+                "State": "OK",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3774493238105038,
+                "Sex": "Male"
+            },
+            {
+                "State": "OK",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.1250515991926915,
+                "Sex": "Male"
+            },
+            {
+                "State": "OK",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.25422921665365805,
+                "Sex": "Male"
+            },
+            {
+                "State": "OK",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 9.340152814442959e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "OR",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -8.983129938097911e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "OR",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.24184113359201231,
+                "Sex": "Female"
+            },
+            {
+                "State": "OR",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.2852688738900726,
+                "Sex": "Female"
+            },
+            {
+                "State": "OR",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.42664607902599583,
+                "Sex": "Female"
+            },
+            {
+                "State": "OR",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3105755262977139,
+                "Sex": "Male"
+            },
+            {
+                "State": "OR",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 7.870035465787018e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "OR",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 7.95504443543944e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "OR",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3790203531096439,
+                "Sex": "Male"
+            },
+            {
+                "State": "PA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -7.179367861514652e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "PA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.18059877387782097,
+                "Sex": "Female"
+            },
+            {
+                "State": "PA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.2547681259223884,
+                "Sex": "Female"
+            },
+            {
+                "State": "PA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.233709678500164,
+                "Sex": "Female"
+            },
+            {
+                "State": "PA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.33767101730153304,
+                "Sex": "Male"
+            },
+            {
+                "State": "PA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.16734029784289584,
+                "Sex": "Male"
+            },
+            {
+                "State": "PA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 7.56313425019064e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "PA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.41804778683932753,
+                "Sex": "Male"
+            },
+            {
+                "State": "RI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -3.431815896793666e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "RI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.208057563116117,
+                "Sex": "Female"
+            },
+            {
+                "State": "RI",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.18855116141821404,
+                "Sex": "Female"
+            },
+            {
+                "State": "RI",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.4490182440933359,
+                "Sex": "Female"
+            },
+            {
+                "State": "RI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.19870329259928876,
+                "Sex": "Male"
+            },
+            {
+                "State": "RI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -5.4877340462704316e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "RI",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 2.4831725593385867e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "RI",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3170550997308972,
+                "Sex": "Male"
+            },
+            {
+                "State": "SC",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3044461349379731,
+                "Sex": "Female"
+            },
+            {
+                "State": "SC",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -9.599891430994933e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "SC",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -1.1526044531859791e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "SC",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.23361891209345553,
+                "Sex": "Female"
+            },
+            {
+                "State": "SC",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2859178801334944,
+                "Sex": "Male"
+            },
+            {
+                "State": "SC",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 5.572510466514502e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "SC",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.14612904171333063,
+                "Sex": "Male"
+            },
+            {
+                "State": "SC",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.16932280386162168,
+                "Sex": "Male"
+            },
+            {
+                "State": "SD",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.17589979705017522,
+                "Sex": "Female"
+            },
+            {
+                "State": "SD",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 2.3527698764299387e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "SD",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -1.080918000113773e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "SD",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.36498889271873347,
+                "Sex": "Female"
+            },
+            {
+                "State": "SD",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2880061555835228,
+                "Sex": "Male"
+            },
+            {
+                "State": "SD",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -5.191196154721056e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "SD",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -8.095794672885115e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "SD",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.10448942684030449,
+                "Sex": "Male"
+            },
+            {
+                "State": "TN",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2850280139533764,
+                "Sex": "Female"
+            },
+            {
+                "State": "TN",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -4.871310308181276e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "TN",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 1.9140082977748163e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "TN",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.26961937839577654,
+                "Sex": "Female"
+            },
+            {
+                "State": "TN",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3829483700921382,
+                "Sex": "Male"
+            },
+            {
+                "State": "TN",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -0.1160069546131085,
+                "Sex": "Male"
+            },
+            {
+                "State": "TN",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.3114269385775925,
+                "Sex": "Male"
+            },
+            {
+                "State": "TN",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.19195352317271963,
+                "Sex": "Male"
+            },
+            {
+                "State": "TX",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.22209377992360546,
+                "Sex": "Female"
+            },
+            {
+                "State": "TX",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.12757943743020128,
+                "Sex": "Female"
+            },
+            {
+                "State": "TX",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -2.6118473371465556e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "TX",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.4554944363575977,
+                "Sex": "Female"
+            },
+            {
+                "State": "TX",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.378193224302403,
+                "Sex": "Male"
+            },
+            {
+                "State": "TX",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -8.309406730452229e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "TX",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.1159743770024999,
+                "Sex": "Male"
+            },
+            {
+                "State": "TX",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.30337320276071256,
+                "Sex": "Male"
+            },
+            {
+                "State": "UT",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2675718269077936,
+                "Sex": "Female"
+            },
+            {
+                "State": "UT",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 1.572365336546322e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "UT",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.10447014766896734,
+                "Sex": "Female"
+            },
+            {
+                "State": "UT",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.29793034323877055,
+                "Sex": "Female"
+            },
+            {
+                "State": "UT",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3697162190546205,
+                "Sex": "Male"
+            },
+            {
+                "State": "UT",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -4.376224924822192e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "UT",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.18976326399102716,
+                "Sex": "Male"
+            },
+            {
+                "State": "UT",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.1635084451586859,
+                "Sex": "Male"
+            },
+            {
+                "State": "VA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.11496383418004585,
+                "Sex": "Female"
+            },
+            {
+                "State": "VA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 6.5497943442101025e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "VA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.1580089227262682,
+                "Sex": "Female"
+            },
+            {
+                "State": "VA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.40324177136913053,
+                "Sex": "Female"
+            },
+            {
+                "State": "VA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3759035627759454,
+                "Sex": "Male"
+            },
+            {
+                "State": "VA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.1884387627430666,
+                "Sex": "Male"
+            },
+            {
+                "State": "VA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -7.172081857716872e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "VA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.2747563353831284,
+                "Sex": "Male"
+            },
+            {
+                "State": "VT",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.12836172515565947,
+                "Sex": "Female"
+            },
+            {
+                "State": "VT",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.14305102482068577,
+                "Sex": "Female"
+            },
+            {
+                "State": "VT",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.27712563045365046,
+                "Sex": "Female"
+            },
+            {
+                "State": "VT",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3547732580273786,
+                "Sex": "Female"
+            },
+            {
+                "State": "VT",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.28137882849667517,
+                "Sex": "Male"
+            },
+            {
+                "State": "VT",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 6.317682896695276e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "VT",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -4.739054007959198e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "VT",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.27743526388652806,
+                "Sex": "Male"
+            },
+            {
+                "State": "WA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -4.863877010839235e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "WA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.18679567225630644,
+                "Sex": "Female"
+            },
+            {
+                "State": "WA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.3001565300825577,
+                "Sex": "Female"
+            },
+            {
+                "State": "WA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.4601567366467427,
+                "Sex": "Female"
+            },
+            {
+                "State": "WA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.12992468010462377,
+                "Sex": "Male"
+            },
+            {
+                "State": "WA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 5.3354960430430864e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "WA",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.13616183310176222,
+                "Sex": "Male"
+            },
+            {
+                "State": "WA",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.264641254269683,
+                "Sex": "Male"
+            },
+            {
+                "State": "WI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -5.842669691111724e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "WI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.14965107808057398,
+                "Sex": "Female"
+            },
+            {
+                "State": "WI",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.26077442519037075,
+                "Sex": "Female"
+            },
+            {
+                "State": "WI",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.3831248652122723,
+                "Sex": "Female"
+            },
+            {
+                "State": "WI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.37000840185983774,
+                "Sex": "Male"
+            },
+            {
+                "State": "WI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 1.3729646557603115e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "WI",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -1.8598551095548532e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "WI",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.17167548852340486,
+                "Sex": "Male"
+            },
+            {
+                "State": "WV",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.4046133666709554,
+                "Sex": "Female"
+            },
+            {
+                "State": "WV",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -8.465539391517396e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "WV",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 0.1464343193013693,
+                "Sex": "Female"
+            },
+            {
+                "State": "WV",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.19714080903820275,
+                "Sex": "Female"
+            },
+            {
+                "State": "WV",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.45061597155033795,
+                "Sex": "Male"
+            },
+            {
+                "State": "WV",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": -2.361930689786962e-3,
+                "Sex": "Male"
+            },
+            {
+                "State": "WV",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.21044739013787583,
+                "Sex": "Male"
+            },
+            {
+                "State": "WV",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.13646094731585068,
+                "Sex": "Male"
+            },
+            {
+                "State": "WY",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.2854689172547912,
+                "Sex": "Female"
+            },
+            {
+                "State": "WY",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 0.22389856257446605,
+                "Sex": "Female"
+            },
+            {
+                "State": "WY",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": 8.57462741158348e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "WY",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.21102720396357277,
+                "Sex": "Female"
+            },
+            {
+                "State": "WY",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "D VPV": -0.3381942417403925,
+                "Sex": "Male"
+            },
+            {
+                "State": "WY",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "D VPV": 3.766414475427693e-3,
+                "Sex": "Male"
+            },
+            {
+                "State": "WY",
+                "Education": "Grad",
+                "Age": "Old",
+                "D VPV": -0.1813546101381741,
+                "Sex": "Male"
+            },
+            {
+                "State": "WY",
+                "Education": "Grad",
+                "Age": "Young",
+                "D VPV": 0.25279407002347787,
+                "Sex": "Male"
+            }
+        ]
+    },
+    "width": 800,
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "title": "2016 Presidential Election: Preference Gap Between Older and Younger College Educated Women",
+    "layer": [
+        {
+            "transform": [
+                {
+                    "filter": "datum.Sex == 'Female' && datum.Education == 'Grad'"
+                }
+            ],
+            "mark": "point",
+            "encoding": {
+                "color": {
+                    "field": "Age",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "D VPV",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "State",
+                    "sort": [
+                        "IA",
+                        "IN",
+                        "ND",
+                        "MI",
+                        "AL",
+                        "WV",
+                        "KY",
+                        "WY",
+                        "OK",
+                        "SC",
+                        "PA",
+                        "ID",
+                        "AR",
+                        "MO",
+                        "MT",
+                        "NC",
+                        "TN",
+                        "CO",
+                        "OH",
+                        "KS",
+                        "FL",
+                        "UT",
+                        "AZ",
+                        "GA",
+                        "MN",
+                        "AK",
+                        "VT",
+                        "MS",
+                        "NM",
+                        "SD",
+                        "National",
+                        "WI",
+                        "NE",
+                        "VA",
+                        "CT",
+                        "NJ",
+                        "IL",
+                        "ME",
+                        "OR",
+                        "DE",
+                        "RI",
+                        "HI",
+                        "TX",
+                        "WA",
+                        "LA",
+                        "NV",
+                        "NH",
+                        "DC",
+                        "MD",
+                        "NY",
+                        "MA",
+                        "CA"
+                    ],
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "filter": "datum.Sex == 'Female' && datum.Education == 'Grad'"
+                }
+            ],
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "D VPV",
+                    "type": "quantitative"
+                },
+                "detail": {
+                    "field": "State",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "State",
+                    "sort": [
+                        "IA",
+                        "IN",
+                        "ND",
+                        "MI",
+                        "AL",
+                        "WV",
+                        "KY",
+                        "WY",
+                        "OK",
+                        "SC",
+                        "PA",
+                        "ID",
+                        "AR",
+                        "MO",
+                        "MT",
+                        "NC",
+                        "TN",
+                        "CO",
+                        "OH",
+                        "KS",
+                        "FL",
+                        "UT",
+                        "AZ",
+                        "GA",
+                        "MN",
+                        "AK",
+                        "VT",
+                        "MS",
+                        "NM",
+                        "SD",
+                        "National",
+                        "WI",
+                        "NE",
+                        "VA",
+                        "CT",
+                        "NJ",
+                        "IL",
+                        "ME",
+                        "OR",
+                        "DE",
+                        "RI",
+                        "HI",
+                        "TX",
+                        "WA",
+                        "LA",
+                        "NV",
+                        "NH",
+                        "DC",
+                        "MD",
+                        "NY",
+                        "MA",
+                        "CA"
+                    ],
+                    "type": "nominal"
+                }
+            }
+        }
+    ],
+    "padding": 10
+};
+vegaEmbed('#figure_1',vlSpec);</script>
+</figure>
+<p>Some quick observations:</p>
+<ul>
+<li>Except in PA and NC, college-educated women under 45 are more likely than their older counterparts to vote for Democrats.</li>
+<li>The spread varies <em>a lot</em>: From an almost 50% VPV spread in Texas to almost no spread at all in North Carolina.</li>
+<li>In a few states (TX, SD, AZ, UT, AR, SC, AL, ND), college-educated women over 45 have negative VPV.</li>
+</ul>
+<p>Those last two observations lead to a tactical suggestion: anyone working on registration or GOTV of college-educated women in Texas, ought to skew their efforts sharply toward younger voters. Note: We strongly believe that everyone should vote and that all states should make that easy. But if we were spending money or time on that effort in Texas in 2020, we would target <em>younger</em> college-educated women (and men, as we’ll see below).</p>
+<p>Texas is interesting, both as a long-shot battleground in the presidential race, but more because there are many house seats in play. The more presidential battleground states are worth focusing on here, and below we chart just those. We’ve added men here as well.</p>
+<figure id="figure_2">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 800,
+    "autosize": {
+        "resize": true,
+        "type": "fit",
+        "contains": "padding"
+    },
+    "data": {
+        "values": [
+            {
+                "State": "National",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.1408921145864669,
+                "Sex": "Female"
+            },
+            {
+                "State": "National",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.12538912609145947,
+                "Sex": "Female"
+            },
+            {
+                "State": "National",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.12057797323772079,
+                "Sex": "Female"
+            },
+            {
+                "State": "National",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.37054583982433087,
+                "Sex": "Female"
+            },
+            {
+                "State": "National",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.28913539418063416,
+                "Sex": "Male"
+            },
+            {
+                "State": "National",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": -2.9725587691059152e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "National",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -3.4605572759129566e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "National",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.2291278346786585,
+                "Sex": "Male"
+            },
+            {
+                "State": "AZ",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.21986698059665155,
+                "Sex": "Female"
+            },
+            {
+                "State": "AZ",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.10440181820293892,
+                "Sex": "Female"
+            },
+            {
+                "State": "AZ",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -5.7028950980638204e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "AZ",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.2991083734508404,
+                "Sex": "Female"
+            },
+            {
+                "State": "AZ",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.4101522384296825,
+                "Sex": "Male"
+            },
+            {
+                "State": "AZ",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.15879533413173252,
+                "Sex": "Male"
+            },
+            {
+                "State": "AZ",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.10279815156534344,
+                "Sex": "Male"
+            },
+            {
+                "State": "AZ",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.18493323746558055,
+                "Sex": "Male"
+            },
+            {
+                "State": "CO",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -4.5374640500786656e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "CO",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 8.854348876729867e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "CO",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.22840032229085483,
+                "Sex": "Female"
+            },
+            {
+                "State": "CO",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.275147011958228,
+                "Sex": "Female"
+            },
+            {
+                "State": "CO",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.20868956771465574,
+                "Sex": "Male"
+            },
+            {
+                "State": "CO",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 6.498964390910533e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "CO",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.1456693737326552,
+                "Sex": "Male"
+            },
+            {
+                "State": "CO",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.26358274925897485,
+                "Sex": "Male"
+            },
+            {
+                "State": "FL",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.1622636908160272,
+                "Sex": "Female"
+            },
+            {
+                "State": "FL",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.23082139709625227,
+                "Sex": "Female"
+            },
+            {
+                "State": "FL",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.1310297598797232,
+                "Sex": "Female"
+            },
+            {
+                "State": "FL",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.2974738043258107,
+                "Sex": "Female"
+            },
+            {
+                "State": "FL",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.3577321430004835,
+                "Sex": "Male"
+            },
+            {
+                "State": "FL",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 9.110932044132047e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "FL",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.10036626411105065,
+                "Sex": "Male"
+            },
+            {
+                "State": "FL",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.33740528880444765,
+                "Sex": "Male"
+            },
+            {
+                "State": "GA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.17815157425371853,
+                "Sex": "Female"
+            },
+            {
+                "State": "GA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": -7.348685284545131e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "GA",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.12431936104339036,
+                "Sex": "Female"
+            },
+            {
+                "State": "GA",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.311102537102919,
+                "Sex": "Female"
+            },
+            {
+                "State": "GA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.3009837764002108,
+                "Sex": "Male"
+            },
+            {
+                "State": "GA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": -0.14425311352100334,
+                "Sex": "Male"
+            },
+            {
+                "State": "GA",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.12216784520347856,
+                "Sex": "Male"
+            },
+            {
+                "State": "GA",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.26861531559998375,
+                "Sex": "Male"
+            },
+            {
+                "State": "IA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.1389740789120134,
+                "Sex": "Female"
+            },
+            {
+                "State": "IA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 7.804070360027526e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "IA",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.14115069685252268,
+                "Sex": "Female"
+            },
+            {
+                "State": "IA",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 8.058085190273134e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "IA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.41816583643496286,
+                "Sex": "Male"
+            },
+            {
+                "State": "IA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 9.140050698804125e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "IA",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -7.320822267996663e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "IA",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.2089102188133336,
+                "Sex": "Male"
+            },
+            {
+                "State": "MI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -6.962607153852507e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "MI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.22286072276936686,
+                "Sex": "Female"
+            },
+            {
+                "State": "MI",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.11702201337029039,
+                "Sex": "Female"
+            },
+            {
+                "State": "MI",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.19177869074168252,
+                "Sex": "Female"
+            },
+            {
+                "State": "MI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.21089004413451318,
+                "Sex": "Male"
+            },
+            {
+                "State": "MI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 3.438388507800316e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "MI",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.1334898046651306,
+                "Sex": "Male"
+            },
+            {
+                "State": "MI",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.12873139106600617,
+                "Sex": "Male"
+            },
+            {
+                "State": "NC",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.13402917050702534,
+                "Sex": "Female"
+            },
+            {
+                "State": "NC",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 8.993903403932291e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NC",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.26976873237447063,
+                "Sex": "Female"
+            },
+            {
+                "State": "NC",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.26669686107025425,
+                "Sex": "Female"
+            },
+            {
+                "State": "NC",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.29986903546781174,
+                "Sex": "Male"
+            },
+            {
+                "State": "NC",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": -2.22615720707543e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NC",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -4.281280431484902e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NC",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.20753788887337632,
+                "Sex": "Male"
+            },
+            {
+                "State": "NH",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.14464809404262058,
+                "Sex": "Female"
+            },
+            {
+                "State": "NH",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 7.462622915738182e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "NH",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.13858716364445467,
+                "Sex": "Female"
+            },
+            {
+                "State": "NH",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.4912759247943548,
+                "Sex": "Female"
+            },
+            {
+                "State": "NH",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.287439483753567,
+                "Sex": "Male"
+            },
+            {
+                "State": "NH",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 4.835064815952528e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NH",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -4.6184768046934055e-3,
+                "Sex": "Male"
+            },
+            {
+                "State": "NH",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.1770871031948973,
+                "Sex": "Male"
+            },
+            {
+                "State": "NV",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -9.694055600451024e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NV",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.170794241157479,
+                "Sex": "Female"
+            },
+            {
+                "State": "NV",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 9.460530577457216e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "NV",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.47831251271129194,
+                "Sex": "Female"
+            },
+            {
+                "State": "NV",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.2857105441708452,
+                "Sex": "Male"
+            },
+            {
+                "State": "NV",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 3.817402004973913e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "NV",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.12585998071475824,
+                "Sex": "Male"
+            },
+            {
+                "State": "NV",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.2195409147430485,
+                "Sex": "Male"
+            },
+            {
+                "State": "OH",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.18189462037842374,
+                "Sex": "Female"
+            },
+            {
+                "State": "OH",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": -2.7164458457587415e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "OH",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.10522406765501713,
+                "Sex": "Female"
+            },
+            {
+                "State": "OH",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.2781823493730189,
+                "Sex": "Female"
+            },
+            {
+                "State": "OH",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.32795583299843456,
+                "Sex": "Male"
+            },
+            {
+                "State": "OH",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 2.8175883731073936e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "OH",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.11216181662187885,
+                "Sex": "Male"
+            },
+            {
+                "State": "OH",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.1945955013877787,
+                "Sex": "Male"
+            },
+            {
+                "State": "PA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -7.179367861514652e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "PA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.18059877387782097,
+                "Sex": "Female"
+            },
+            {
+                "State": "PA",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.2547681259223884,
+                "Sex": "Female"
+            },
+            {
+                "State": "PA",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.233709678500164,
+                "Sex": "Female"
+            },
+            {
+                "State": "PA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.33767101730153304,
+                "Sex": "Male"
+            },
+            {
+                "State": "PA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": -0.16734029784289584,
+                "Sex": "Male"
+            },
+            {
+                "State": "PA",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 7.56313425019064e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "PA",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.41804778683932753,
+                "Sex": "Male"
+            },
+            {
+                "State": "TX",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.22209377992360546,
+                "Sex": "Female"
+            },
+            {
+                "State": "TX",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.12757943743020128,
+                "Sex": "Female"
+            },
+            {
+                "State": "TX",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -2.6118473371465556e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "TX",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.4554944363575977,
+                "Sex": "Female"
+            },
+            {
+                "State": "TX",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.378193224302403,
+                "Sex": "Male"
+            },
+            {
+                "State": "TX",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": -8.309406730452229e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "TX",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.1159743770024999,
+                "Sex": "Male"
+            },
+            {
+                "State": "TX",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.30337320276071256,
+                "Sex": "Male"
+            },
+            {
+                "State": "VA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.11496383418004585,
+                "Sex": "Female"
+            },
+            {
+                "State": "VA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 6.5497943442101025e-3,
+                "Sex": "Female"
+            },
+            {
+                "State": "VA",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.1580089227262682,
+                "Sex": "Female"
+            },
+            {
+                "State": "VA",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.40324177136913053,
+                "Sex": "Female"
+            },
+            {
+                "State": "VA",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.3759035627759454,
+                "Sex": "Male"
+            },
+            {
+                "State": "VA",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.1884387627430666,
+                "Sex": "Male"
+            },
+            {
+                "State": "VA",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -7.172081857716872e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "VA",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.2747563353831284,
+                "Sex": "Male"
+            },
+            {
+                "State": "WI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -5.842669691111724e-2,
+                "Sex": "Female"
+            },
+            {
+                "State": "WI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.14965107808057398,
+                "Sex": "Female"
+            },
+            {
+                "State": "WI",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": 0.26077442519037075,
+                "Sex": "Female"
+            },
+            {
+                "State": "WI",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.3831248652122723,
+                "Sex": "Female"
+            },
+            {
+                "State": "WI",
+                "Education": "NonGrad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -0.37000840185983774,
+                "Sex": "Male"
+            },
+            {
+                "State": "WI",
+                "Education": "NonGrad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 1.3729646557603115e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "WI",
+                "Education": "Grad",
+                "Age": "Old",
+                "Ref0": 0,
+                "D VPV": -1.8598551095548532e-2,
+                "Sex": "Male"
+            },
+            {
+                "State": "WI",
+                "Education": "Grad",
+                "Age": "Young",
+                "Ref0": 0,
+                "D VPV": 0.17167548852340486,
+                "Sex": "Male"
+            }
+        ]
+    },
+    "width": 800,
+    "spec": {
+        "layer": [
+            {
+                "transform": [
+                    {
+                        "filter": "datum.Education == 'Grad'"
+                    }
+                ],
+                "mark": "point",
+                "encoding": {
+                    "color": {
+                        "field": "Age",
+                        "type": "nominal"
+                    },
+                    "x": {
+                        "field": "D VPV",
+                        "scale": {
+                            "domain": [
+                                -0.5,
+                                0.5
+                            ]
+                        },
+                        "type": "quantitative",
+                        "axis": {
+                            "grid": false
+                        }
+                    },
+                    "y": {
+                        "field": "Sex",
+                        "type": "nominal",
+                        "axis": {
+                            "title": ""
+                        }
+                    }
+                }
+            },
+            {
+                "transform": [
+                    {
+                        "filter": "datum.Education == 'Grad'"
+                    }
+                ],
+                "mark": "line",
+                "encoding": {
+                    "x": {
+                        "field": "D VPV",
+                        "scale": {
+                            "domain": [
+                                -0.5,
+                                0.5
+                            ]
+                        },
+                        "type": "quantitative",
+                        "axis": {
+                            "grid": false
+                        }
+                    },
+                    "detail": {
+                        "field": "Sex",
+                        "type": "nominal"
+                    },
+                    "y": {
+                        "field": "Sex",
+                        "type": "nominal",
+                        "axis": {
+                            "title": ""
+                        }
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "opacity": 5.0e-2,
+                    "type": "rule"
+                },
+                "encoding": {
+                    "x": {
+                        "field": "Ref0",
+                        "type": "quantitative",
+                        "axis": {
+                            "title": "D VPV"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "columns": 3,
+    "facet": {
+        "field": "State",
+        "sort": [
+            "National",
+            "AZ",
+            "CO",
+            "FL",
+            "GA",
+            "IA",
+            "MI",
+            "NC",
+            "NH",
+            "NV",
+            "OH",
+            "PA",
+            "TX",
+            "VA",
+            "WI"
+        ],
+        "type": "nominal"
+    },
+    "title": "2016 Presidential Election: Preference Gap Between Older and Younger College Educated Voters",
+    "padding": 10
+};
+vegaEmbed('#figure_2',vlSpec);</script>
+</figure>
+<p>Looking at each of these states, it seems clear that a battleground state turnout drive focused on all college-educated voters should skew young, especially one that targets men as well as women. In many of the battleground states, college-educated men over 45 have negative VPV.</p>
+<p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple">Github</a> page.</em></p>
+</section>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
