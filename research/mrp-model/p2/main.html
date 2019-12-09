@@ -245,31 +245,35 @@
 <header>
 <h1 class="title">Where Do We Look For Democratic Votes in 2020?</h1>
 </header>
-<p>One benefit of working on Blue Ripple Politics is that we get to talk with very smart analysts who point us in interesting directions. A recent conversation with one of our favorite election modelers, Professor Rachel Bitecofer (LINK), reminded us of her spot-on analysis (LINK) of the 2018 house races, one which focused on turnout among “pools of untapped Democratic voters” (CHECK QUOTE). In this post we look a bit at one of the pools that Professor Bitecofer is focused on in the 2020 elections: college educated voters.</p>
+<p>In prior analyses (<a href="https://blueripple.github.io/research/preference-model/p1/main.html">here</a>, focusing on 2018, and <a href="https://blueripple.github.io/research/preference-model/p2/main.html">here</a>, considering trends 2010-2018), we asked a key question about Democratic strategy in 2020: should the focus be on turning out likely Dem voters, or changing the minds of folks who are less likely to vote for Team Blue? (TL;DR: We concluded that we should definitely get our base to turn out, but we shouldn’t neglect subgroups outside of that group that align with us on key issues).</p>
+<p>Here, we ask an obvious follow-up question about turnout: if we want to mobilize likely Democratic voters, on whom should we focus? Is that answer the same in every state or district? There is a tendency to imagine that the voting preferences of a demographic group are the same everywhere. That, for example, young voters in Texas are the same as young voters in Michigan. But looking only at national averages obscures lots of interesting regional variation. That regional variation <em>matters</em>, since house and senate campaigns contend for voters in specific places and, as long as the path to the presidency goes through the electoral college, the presidential race also has a strong geographic component.</p>
+<p>In this post, we focus specifically on college-educated voters, and mostly on female college-educated voters. We were inspired to begin our analysis here by one of our favorite election modelers, <a href="http://cnu.edu/people/rachelbitecofer/">Professor Rachel Bitecofer</a>, who generously spent some time chatting with us last month about our related interests. She reminded us of a core idea in her <a href="https://cnu.edu/wasoncenter/2018/09/26-signs-democrats-win-big/">spot-on analysis</a> of the 2018 house races: the presence of “large pools of untapped Democratic voters,” including college-educated voters, makes for places where Democrats can (and did!) outperform compared to 2016.</p>
+<p>In our work, we always try to keep an eye on how progressives and Democrats can best use their time and/or money in upcoming elections. Our <a href="https://blueripplepolitics.org/about-us">values</a> make us particularly interested in work that emphasizes registration and voter turnout. In this post we examine if and <em>where</em> a college-educated-voter turnout drive might be most effective.</p>
 <ol type="1">
 <li><strong>Data and Methods</strong></li>
 <li><strong>How Many Votes is a New Voter Worth?</strong></li>
-<li><strong>Female College Educated Voters and Age</strong></li>
-<li><strong>Battleground States</strong></li>
-<li><strong>What Does It Mean?</strong></li>
+<li><strong>College Educated Voters and Age</strong></li>
+<li><strong>Key Takeaways</strong></li>
 <li><strong>Take Action</strong></li>
 </ol>
 <section id="data-and-methods" class="level2">
 <h2>Data and Methods</h2>
-<p>In our research pieces so far, we’ve looked only at aggregate data, that is data which comes from adding together a large number of people: census counts or election results, for example. In this piece we look at some per-person data, namely the Cooperative Congressional Election Study <a href="https://cces.gov.harvard.edu/">CCES</a>, which surveys about 60,000 people in every election cycle. For each survey response, the CCES includes geographic and demographic information along with opinion about various political questions, whether the person is registered to vote, and whether they voted and who for in elections for Governor, House, Senate and President, whenever each is applicable.</p>
-<p>The geographic information allows us to start estimating a variety of things at the state level, something we couldn’t do using only aggregate data. We do this using multi-level regression (the “MR” of “MRP”, which stands for Multi-level Regression with Post-stratification), a technique explained in more detail <a href="https://en.wikipedia.org/wiki/Multilevel_regression_with_poststratification">here</a> and about which we will have an explainer in the coming months. Very briefly: MR allows you to use all the data to get a baseline and then use the data in a specific “bucket” (e.g., college educated older women in Texas) to make an improved inference for that set of people; it balances the abundance of the data for everywhere with the need to use the local information for improved insight.</p>
-<p>Our specific model uses a survey-weighted logistic MR to fit a binomial distribution to the Democratic votes, among voters who voted D or R, in each 408 groups: (states + DC) x (Female or Male) x (Non-College Grad or College Grad) x (Under 45 or 45 and over).</p>
-<p>As we’ve said in earlier posts, we recognize that these categories are vast oversimplifications of the electorate. We are limited by what information is present in the survey–Gender is limited to “Female” and “Male” in the CCES, and by computational complexity, which is why we’ve limited our education and age breakdown to two categories each.</p>
+<p>In our research pieces so far, we’ve looked only at aggregate data, that is data which comes from adding together a large number of people: census counts or election results, for example. In this piece we look at some per-person data, namely the Cooperative Congressional Election Study, or <a href="https://cces.gov.harvard.edu/">CCES</a>, which surveys about 60,000 people in every election cycle. For each survey response, the CCES includes geographic and demographic information along with opinion about various political questions, whether the person is registered to vote, and whether they voted and for whom in elections for Governor, House, Senate and President, whenever each is applicable.</p>
+<p>The geographic information allows us to start estimating a variety of things at the state level, something that isn’t possible using only aggregate data. We do this using Multi-level Regression (the “MR” of “MRP”, which stands for Multi-level Regression with Post-stratification), a technique explained in more detail <a href="https://en.wikipedia.org/wiki/Multilevel_regression_with_poststratification">here</a> and about which we will have an explainer in the coming months. Very briefly: this method allows you to use all the data (e.g., all female-college-educated voters over 45 who voted for a Democrat or Republican) to get a baseline and then use the data in a specific “bucket” (e.g., those same voters, but just in Texas) to make an improved inference for that set of people. In other words, it balances the abundance of the non-specific data with the sparser local information for improved insight.</p>
 <p>If we are hoping to boost turnout among Democratic leaning voters in battleground states or crucial races, it helps to know which voters are most likely to be Democratic leaning <em>in that particular state or district.</em> This data and these techniques allow us to do just that.</p>
+<p>(Quick aside for data geeks: Our specific model uses a survey-weighted, logistic MR to fit a binomial distribution to the likelihood of a Democratic vote in the 2016 presidential election, among voters who voted D or R, in each of 408 = 51 x 2 x 2 x 2 groups: (states + DC) x (Female or Male) x (Non-College Grad or College Grad) x (Under 45 or 45 and over). Also, as we’ve said in earlier posts, we recognize that these categories are vast oversimplifications of the electorate. We are limited by what information is present in the survey—Sex is limited to “Female” and “Male” in the CCES—and by computational complexity, which is why we’ve limited our education and age breakdown to two categories each.)</p>
+<p>In this post, we analyze the 2016 presidential election to measure Democratic voter preference among college-educated voters in each state (and DC). Given the results in the house races in 2018, we think that most college-educated voters have become <em>more likely</em> to vote for Democrats since 2016. But there are inevitable differences between presidential elections and house races and we want to start with a straightforward question: If the 2020 electorate was like the 2016 electorate, where might a college-educated-voter turnout drive be useful?</p>
 </section>
 <section id="how-many-votes-is-a-new-voter-worth" class="level2">
 <h2>How Many Votes is a New Voter Worth?</h2>
-<p>According to our model, young college-educated women in Texas voted Democratic in the 2016 presidential election about 72% of the time. If we increased turnout among them by 100,000 voters for 2020 and they were exactly as likely to vote Democratic as in 2016, how many votes would that extar 100,000 voters net the Democratic candidate? Of that 100,000, 72,000 (72% x 100,000) would vote for the democrat and 38,000 ((100% - 72%) x 100,000) for the Republican. So Dems would net 72,000 - 38,000 = 34,000 votes. In general, if <span class="math inline">\(x\%\)</span> of voters will vote for the Democrat, each such voter is “worth” <span class="math inline">\(2x-100\%\)</span> votes. We’ll call that number “Votes Per Voter” or VPV. Note that a group with a voter preference of 50% has a VPV of 0. A group that votes Democratic 60% of the time has a VPV of 20%. And a group which votes for Democrats less than 50% of the time has a negative VPV.</p>
-<p>As a side note, this is why changing people’s minds can seem a more appealing avenue to getting votes: changing a Republican vote to a Democratic vote has a VPV of 2 votes (200%): the one lost by the Republican and the one gained by the Democrat.</p>
+<p>Before getting into the results, let’s introduce a metric that we call “Votes Per Voter” (VPV), which reflects the “value” to Democrats of getting a single person in a particular group to show up on election day.</p>
+<p>Here’s how VPV works: Let’s say that our model tells us that in a certain state, young, female, college-educated people vote Democratic about 72% of the time. If we increased turnout among them by 100,000 voters for 2020 and they were exactly as likely to vote Democratic as in 2016, how many votes would that extra 100,000 voters net the Democratic candidate? Of that 100,000, 72,000 (72% x 100,000) would vote for the democrat and 28,000 ((100% - 72%) x 100,000) for the Republican. So Dems would net 72,000 - 28,000 = 44,000 votes. In general, if <span class="math inline">\(x\%\)</span> of voters will vote for the Democrat, each such voter is “worth” <span class="math inline">\(2x-100\%\)</span> votes. In other words, the VPV for this group is 0.44 (44,000 <em>net</em> Democratic votes out of 100,000 new voters in the group who show up to cast ballots). Note that a group with a Democratic voter preference of 50% has a VPV of 0, a group that votes Democratic 60% of the time has a VPV of 0.2. And a group which votes for Democrats less than 50% of the time has a negative VPV.</p>
+<p>This metric is useful: a group which leans only slightly Democratic is not a great place to invest resources on turnout since each voter is only slightly more likely to vote blue. This is reflected by the near 0 VPV.</p>
+<p>As a side note, this is why changing people’s minds can seem a more appealing avenue to getting votes: changing a Republican vote to a Democratic vote has a VPV of 2 (200%): one vote is lost by the Republican and one is gained by the Democrat, so each such voter is “worth” 2 votes. (More on that in a later analysis—stay tuned!)</p>
 </section>
 <section id="female-college-educated-voters-and-age" class="level2">
 <h2>Female College Educated Voters and Age</h2>
-<p>So let’s look at college-educated women and how their VPV varies by state and by age. In the chart below we show the VPV of college-educated women, split by age at 45, for each state (and DC and the Nation as a whole). The states are ordered by the VPV of young college-educated women.</p>
+<p>Let’s look first at female college-educated voters and how their VPV varies by state and by age. This demographic, one that has been <a href="https://www.npr.org/2018/09/24/650447848/the-womens-wave-backlash-to-trump-persists-reshaping-politics-in-2018">trending strongly Democratic since the early 2000s</a>, is particularly important for Democrats. In the chart below we show the VPV of female college-educated voters, split by age at 45, for each state (and DC and the Nation as a whole). We’ve ordered the states (plus DC and the nation as a whole) by increasing VPV of female college-educated voters under 45.</p>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
 {
@@ -3356,15 +3360,7 @@
 };
 vegaEmbed('#figure_1',vlSpec);</script>
 </figure>
-<p>Some quick observations:</p>
-<ul>
-<li>Except in PA and NC, college-educated women under 45 are more likely than their older counterparts to vote for Democrats.</li>
-<li>The VPV, even of college-educated women under 45, is widely distributed, from under 10% in Indiana, to almost 65% in California.</li>
-<li>The spread varies <em>a lot</em>: From an almost 50% VPV spread in Texas to almost no spread at all in North Carolina.</li>
-<li>In a few states (TX, SD, AZ, UT, AR, SC, AL, ND), college-educated women over 45 have negative VPV.</li>
-</ul>
-<p>Those last two observations lead to a tactical suggestion: anyone working on registration or GOTV of college-educated women in Texas, ought to skew their efforts sharply toward younger voters. Note: We strongly believe that everyone should vote and that all states should make that easy. But if we were spending money or time on that effort in Texas in 2020, we would target <em>younger</em> college-educated women (and men, as we’ll see below).</p>
-<p>Texas is interesting, maybe as a long-shot battleground in the presidential race, but more because there are many house seats in play. The presidential battleground states are all worth focusing on here, and below we chart just those. We’ve added men here as well, in order to clarify why people focus on college-educated <em>women</em> as a good source of Democratic votes.</p>
+<p>We also looked specifically at some states we think are worth highlighting, including several classic presidential “battlegrounds” and others (like Texas and Georgia) that are moving towards battleground status and have important house seats in play. we’ve added male voters here as well, in order to clarify the focus on <em>female</em> college-educated voters as a good source of Democratic votes:</p>
 <figure id="figure_2">
 <script type="text/javascript">var vlSpec=
 {
@@ -4454,7 +4450,31 @@ vegaEmbed('#figure_1',vlSpec);</script>
 };
 vegaEmbed('#figure_2',vlSpec);</script>
 </figure>
-<p>Looking at each of these states, it seems clear that a battleground state turnout drive focused on all college-educated voters should skew young, especially one that targets men as well as women. In many of the battleground states, college-educated men over 45 have negative VPV.</p>
+</section>
+<section id="key-takeaways" class="level2">
+<h2>Key Takeaways</h2>
+<p>There’s a lot of detail here, but we’d like to make a few main observations:</p>
+<ul>
+<li>College-educated voters are not a monolithic group. There’s a lot of variation in VPV by state, by sex and by age. Still, female college-educated voters under 45 all have positive VPV.</li>
+<li>A GOTV strategy targeting all college-educated voters is not a good use of resources for Dems since it will target lots of voters with VPVs below or near 0.</li>
+<li>In the battleground states, a strategy targeting <em>young</em> college-educated voters (of either sex) would be effective, though even here, there is much variation among the states.</li>
+<li>The VPV, even of female college-educated voters under 45, is widely distributed, from under 0.1 in Indiana, to almost 0.65 in California. Even among the battleground states, female college-educated voters under 45 have a much higher VPV in some places (TX, NH, NV) than others (PA, MI) which suggests that targeted GOTV efforts would be much more useful in some places than others.</li>
+</ul>
+<p>It’s also interesting that:</p>
+<ul>
+<li>While older voters are almost uniformly less likely to vote for Dems, the spread varies <em>a lot</em>, from a nearly 50% VPV spread in Texas to almost no spread at all between older and younger female voters in NC and PA.</li>
+<li>In a few states (TX, SD, AZ, UT, AR, SC, AL, ND), female college-educated voters over 45 have <em>negative</em> VPV.</li>
+</ul>
+<p>We’re interested to see which of these things remain true as we re-do this analysis based on the 2018 house vote. Stay tuned!</p>
+</section>
+<section id="take-action" class="level2">
+<h2>Take Action</h2>
+<p>This early in the cycle it can be difficult to find organizations focused on specific groups within states. But there are some groups which are clearly working in the same vein. And please, if you know of local organizations doing work on youth/college-educated voter turnout, email us with that information and we’ll update this post.</p>
+<ul>
+<li><a href="https://movetexas.org/">MOVE Texas</a>, does GOTV work with young people in Texas.</li>
+<li>[The Sunrise Movement][Org:SunriseMovemement], a youth-focused environmental advocacy group has joined forces with various local organizations to work on registration and turnout among young voters.</li>
+<li><a href="https://nextgenamerica.org/">NextGen America</a> works on youth turnout nationally, holding registration events at many colleges and universities.</li>
+</ul>
 <p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple">Github</a> page.</em></p>
 </section>
 <!--
