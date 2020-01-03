@@ -240,11 +240,11 @@
 
 <!-- page content begins here -->
 
-<div class="published">January  2, 2020 </div>
+<div class="published">January  3, 2020 </div>
 <header>
 <h1 class="title">Deep Dive on Variations in Democratic VPV</h1>
 </header>
-<p>In our <a href="https://blueripple.github.io/research/mrp-model/p1/main.html">last research post</a> we looked at college-educated-voter preference, measured by “Votes Per Voter” (<a href="https://blueripple.github.io/research/mrp-model/p1/main.html/#VPV">VPV</a>). VPV captures the value of boosting turnout among some group of voters. In that post, we looked exclusively at the 2016 presidential election. But is the 2016 presidential election the right baseline for the 2020 presidential election? Or should we think of the 2018 house elections as a baseline? Mid-terms are different from presidential years and house elections are different from presidential elections. Let’s dive into those differences, looking first at 2016 Presidential vs. House races, and then at the 2016 vs. 2018 House races.</p>
+<p>In our <a href="https://blueripple.github.io/research/mrp-model/p1/main.html">last research post</a> we looked at college-educated-voter preference, measured by “Votes Per Voter” (<a href="https://blueripple.github.io/research/mrp-model/p1/main.html/#VPV">VPV</a>). VPV captures the value of boosting turnout among some group of voters. In that post, we looked exclusively at the 2016 Presidential election. But is the 2016 Presidential election the right baseline for the 2020 Presidential election? Or should we think of the 2018 House elections as a baseline? Mid-terms are different from Presidential years and House elections are different from Presidential elections. Let’s dive into those differences, looking first at 2016 Presidential vs. House races, and then at the 2016 vs. 2018 House races.</p>
 <p>In the last post we were struck by how different some of the VPV numbers were in different states. We’re going to hone in on that here as well, looking at our data on <a href="https://en.wikipedia.org/wiki/Choropleth_map">choropleth-maps</a> so we can see the geographic variation clearly.</p>
 <ol type="1">
 <li><strong>Review: MRP and VPV</strong></li>
@@ -255,13 +255,13 @@
 </ol>
 <section id="mrp-and-vpv" class="level2">
 <h2>MRP and VPV</h2>
-<p>To recap: we have data from the <a href="https://cces.gov.harvard.edu/">CCES</a> survey which gives us information about individual voters, including their location and reported votes for president in 2016 and the house in 2016 and 2018. We use a technique called Multi-level Regression (MR) to combine the local data (e.g., college-educated female voters over 45 in a particular state) in a sensible way with the data for the same group in all the states, and estimate Democratic voter preference (D votes/(D votes + R votes) among voters who voted D or R) of each group in each state. From these numbers we compute VPV, which makes the value of turnout among these voters a bit clearer than voter preference. In particular, a group which is equally likely to vote for the Democrat or the Republican in an election has a VPV of 0.</p>
-<p>To combine group estimates into an estimate of VPV for a state, we “Post-stratify” (the “P” in MRP) them, which means weighting the group VPV estimates by the number of people in each group. For the post-stratified charts below, we will be post-stratifying by estimated numbers of voters, obtained from census estimates of voting age population in each group and state and national voter turnout rates in each group.</p>
+<p>To recap: we have data from the <a href="https://cces.gov.harvard.edu/">CCES</a> survey which gives us information about individual voters, including their location and reported votes for President in 2016 and the House in 2016 and 2018. We use a technique called Multi-level Regression (MR) to combine the local data (e.g., college-educated female voters over 45 in a particular state) in a sensible way with the data for the same group in all the states, and estimate Democratic voter preference (D votes/(D votes + R votes) among voters who voted D or R) of each group in each state. From these numbers we compute VPV, which makes the value of turnout among these voters a bit clearer than voter preference.</p>
+<p>To combine group estimates into an estimate of VPV for a state, we “Post-stratify” (the “P” in MRP) them, which means weighting the group VPV estimates by the number of people in each group. For the post-stratified charts below, we will be post-stratifying by estimated numbers of voters, obtained from census estimates of voting age population in each group and state and national voter turnout rates in each group. We adjust the turnout rates in each congressional district so that the total number of number of votes cast in the house race is the product of the turnout rates and the population from the census in that district. See <a href="https://blueripple.github.io/research/preference-model/methods/main.html/#turnout">here</a> for more details.</p>
 </section>
 <section id="presidential-race-vs.-house-races" class="level2">
 <h2>2016: Presidential Race vs. House Races</h2>
-<p>Was Clinton more or less popular than other Democratic candidates running for office in 2016? That turns out to depend on which voters you look at and where they live. In the charts below we look at the <em>change</em> in Democratic VPV from 2016 presidential voting to 2016 House voting, a measure of the difference in popularity of Clinton and local House candidates. We estimate VPV for presidential and House votes separately, keeping the same groups as in our last post: Non-College-Grad/College-Grad, Female/Male, and Over 45/Under 45. In each chart, a blue color indicates a place where Clinton was <em>more</em> popular than the Democrats running for the local House seats and a red color indicates the opposite. Since we are considering only voters who voted D or R, anyplace Clinton out-performed local house candidates is also a place where Trump under-performed local house candidates. From this data there is no way to know what is underlying the differences between presidential and house voting.</p>
-<p>It’s important to remember that these charts are showing <em>change</em> in VPV. Red doesn’t mean that the state voted Republican for President or House in 2016, just that it was <em>more</em> Republican in its presidential voting than house voting.</p>
+<p>Was Clinton more or less popular than other Democratic candidates running for office in 2016? That turns out to depend on which voters you look at and where they live. In the charts below we look at the <em>change</em> in Democratic VPV from 2016 Presidential voting to 2016 House voting, a measure of the difference in popularity of Clinton and local House candidates. We estimate VPV for Presidential and House votes separately, keeping the same groups as in our last post: Non-College-Grad/College-Grad, Female/Male, and Over 45/Under 45. In each chart, a blue color indicates a place where Clinton was <em>more</em> popular than the Democrats running for the local House seats and a red color indicates the opposite. Since we are considering only voters who voted D or R, anyplace Clinton out-performed local House candidates is also a place where Trump under-performed local House candidates. From this data there is no way to know what is underlying the differences between Presidential and House voting.</p>
+<p>It’s important to remember that these charts are showing <em>change</em> in VPV. Red doesn’t mean that the state voted Republican for President or House in 2016, just that it was <em>more</em> Republican in its Presidential voting than House voting.</p>
 <p>We plot all eight groups below, first college graduates and then non-graduates. Among college-educated young female voters, and to a lesser extent, college-educated young male voters, Clinton was clearly more popular than the local Democrat. Older college-educated voters are a mix, though with wide variation among states. Among older non-college-educated voters, though, Clinton is <em>less</em> popular than the local Democrat, and younger non-college-educated voters are a widely varying mix.</p>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
@@ -7789,7 +7789,7 @@ vegaEmbed('#figure_2',vlSpec);</script>
 <ul>
 <li>Clinton under-performed local candidates significantly in the battleground state of WI, but outperformed significantly in PA and a smaller amount in MI, OH and FL.</li>
 <li>Clinton outperformed local candidates in TX and GA. This is interesting since Clinton <em>outperforming</em> the local Democrat looks the same (in this data) as Trump <em>under-performing</em> the local Republican. Trump under-performance in ever-less-Republican TX—where there has been a wave of <a href="https://www.theatlantic.com/politics/archive/2019/09/house-republicans-texas-are-retiring-2020/597406/">Republican retirements</a>—and GA—where Stacey Abrams <a href="https://www.nytimes.com/2018/11/16/us/elections/georgia-governor-race-kemp-abrams.html">barely lost</a> the Governor’s race in 2018—would be very interesting in 2020.</li>
-<li>Clinton’s biggest under-performances were in heavily Democratic VT and MA. Her biggest out-performance was in heavily Republican AK. We’d have to look at other races to be sure, but we imagine Democratic presidential candidates often under-perform house voting in heavily blue states and out-perform in heavily red ones (and vice-versa with Republican presidential candidates) because voters don’t think their presidential votes matter so they are less inclined to vote the party line.</li>
+<li>Clinton’s biggest under-performances were in heavily Democratic VT and MA. Her biggest out-performance was in heavily Republican AK. We’d have to look at other races to be sure, but we imagine Democratic Presidential candidates often under-perform House voting in heavily blue states and out-perform in heavily red ones (and vice-versa with Republican Presidential candidates) because voters don’t think their Presidential votes matter so they are less inclined to vote the party line.</li>
 </ul>
 <figure id="figure_3">
 <script type="text/javascript">var vlSpec=
@@ -7824,310 +7824,304 @@ vegaEmbed('#figure_2',vlSpec);</script>
     "data": {
         "values": [
             {
-                "House2018": -0.14028041322972465,
+                "House2018": -0.1410373006974462,
                 "StateName": "Alabama",
-                "President2016": -9.96901014953584e-2,
-                "House2016": -0.172002060051292
+                "President2016": -9.867646982586893e-2,
+                "House2016": -0.1720915031986334
             },
             {
-                "House2018": -4.339370273094902e-2,
+                "House2018": -4.3003496470186864e-2,
                 "StateName": "Alaska",
-                "President2016": -7.660628424842635e-3,
-                "House2016": 2.6963135638173423e-3
+                "President2016": -8.172302720369508e-3,
+                "House2016": 1.8261145583111516e-3
             },
             {
-                "House2018": 2.6368105983052236e-2,
+                "House2018": 2.4587489456470428e-2,
                 "StateName": "Arizona",
-                "President2016": -7.76850786986416e-2,
-                "House2016": -8.884831416861876e-2
+                "President2016": -8.097553957878388e-2,
+                "House2016": -9.532145208746295e-2
             },
             {
-                "House2018": -0.11443009150033191,
+                "House2018": -0.11729449985836868,
                 "StateName": "Arkansas",
-                "President2016": -0.14828779951833293,
-                "House2016": -0.4443984124750947
+                "President2016": -0.14642694052924723,
+                "House2016": -0.44488212540720623
             },
             {
-                "House2018": 0.34921199868438135,
+                "House2018": 0.34813570505923863,
                 "StateName": "California",
-                "President2016": 0.22636959737265647,
-                "House2016": 0.28958069422156885
+                "President2016": 0.22972972129147318,
+                "House2016": 0.2907567029596036
             },
             {
-                "House2018": 6.381545056607224e-2,
+                "House2018": 6.451204745702885e-2,
                 "StateName": "Colorado",
-                "President2016": 4.02386208950603e-2,
-                "House2016": 3.486506673244171e-2
+                "President2016": 3.96121191960633e-2,
+                "House2016": 3.5737075523422694e-2
             },
             {
-                "House2018": 0.10478798229065975,
+                "House2018": 0.10414811445772269,
                 "StateName": "Connecticut",
-                "President2016": 6.341985918736302e-2,
-                "House2016": 0.2117902906695957
+                "President2016": 6.353829604146534e-2,
+                "House2016": 0.21178377858030595
             },
             {
-                "House2018": 0.12914437025597672,
+                "House2018": 0.12914250113374548,
                 "StateName": "Delaware",
-                "President2016": -4.028115037418567e-3,
-                "House2016": 6.539370509896864e-2
+                "President2016": -4.007643753544636e-3,
+                "House2016": 6.553786192342607e-2
             },
             {
-                "House2018": 0.2854006440152158,
-                "StateName": "District of Columbia",
-                "President2016": 0.25107556039125933,
-                "House2016": 0.3516544742784249
-            },
-            {
-                "House2018": -1.1413865689681078e-2,
+                "House2018": -1.209356894211469e-2,
                 "StateName": "Florida",
-                "President2016": -3.330236867419813e-2,
-                "House2016": -5.731074554626301e-2
+                "President2016": -3.377015230921647e-2,
+                "House2016": -5.7866057733565845e-2
             },
             {
-                "House2018": -0.11102638893732039,
+                "House2018": -0.11110095450919749,
                 "StateName": "Georgia",
-                "President2016": -6.358590755747963e-2,
-                "House2016": -0.21970734389213917
+                "President2016": -6.0583092934242494e-2,
+                "House2016": -0.21666968923656074
             },
             {
-                "House2018": 0.14954941189965096,
+                "House2018": 0.15251660983371873,
                 "StateName": "Hawaii",
-                "President2016": 3.2991532407553106e-2,
-                "House2016": 0.11797320516387116
+                "President2016": 3.920556126632934e-2,
+                "House2016": 0.12736579931149175
             },
             {
-                "House2018": -0.14323183915818063,
+                "House2018": -0.1441328042920712,
                 "StateName": "Idaho",
-                "President2016": -0.12562648820146224,
-                "House2016": -0.23002817875380258
+                "President2016": -0.12560303925151772,
+                "House2016": -0.23004807441888725
             },
             {
-                "House2018": 0.16671718393372822,
+                "House2018": 0.16543511954537204,
                 "StateName": "Illinois",
-                "President2016": 0.12803696148283017,
-                "House2016": 7.87626213740757e-2
+                "President2016": 0.1277644656038423,
+                "House2016": 7.886958452883527e-2
             },
             {
-                "House2018": -9.98952140242983e-2,
+                "House2018": -9.971707497079012e-2,
                 "StateName": "Indiana",
-                "President2016": -0.11121982435566884,
-                "House2016": -0.15234750471618017
+                "President2016": -0.11024527380292146,
+                "House2016": -0.15139505105601014
             },
             {
-                "House2018": -1.3028333950081407e-2,
+                "House2018": -1.0406376138216971e-2,
                 "StateName": "Iowa",
-                "President2016": -7.120362988050745e-2,
-                "House2016": -5.347719161399945e-2
+                "President2016": -7.07836703451681e-2,
+                "House2016": -5.1171256613594084e-2
             },
             {
-                "House2018": -5.698232088445016e-2,
+                "House2018": -5.637091626998858e-2,
                 "StateName": "Kansas",
-                "President2016": -7.19423325582792e-2,
-                "House2016": -0.17746600887489883
+                "President2016": -6.988333287469643e-2,
+                "House2016": -0.17643656188566334
             },
             {
-                "House2018": -0.14913257726772497,
+                "House2018": -0.1484860633301925,
                 "StateName": "Kentucky",
-                "President2016": -0.151145056276308,
-                "House2016": -0.31849040415125646
+                "President2016": -0.14980839579038305,
+                "House2016": -0.31776275798050546
             },
             {
-                "House2018": -0.21900940992912574,
+                "House2018": -0.21919208286518854,
                 "StateName": "Louisiana",
-                "President2016": -9.981696882513322e-2,
-                "House2016": -7.368895140813549e-2
+                "President2016": -9.767184877265507e-2,
+                "House2016": -7.288998547481819e-2
             },
             {
-                "House2018": 2.2739689643399143e-2,
+                "House2018": 2.4414710877878644e-2,
                 "StateName": "Maine",
-                "President2016": -4.524489851488218e-3,
-                "House2016": 6.075219616067473e-2
+                "President2016": -7.141783567305705e-3,
+                "House2016": 6.113185066938231e-2
             },
             {
-                "House2018": 0.19201441510987768,
+                "House2018": 0.19605869580160712,
                 "StateName": "Maryland",
-                "President2016": 0.15550108498544754,
-                "House2016": 0.19028151899052417
+                "President2016": 0.15407894381924908,
+                "House2016": 0.1890345661408789
             },
             {
-                "House2018": 0.44595684523456447,
+                "House2018": 0.4439982526333477,
                 "StateName": "Massachusetts",
-                "President2016": 0.22902116428232058,
-                "House2016": 0.5156654069105967
+                "President2016": 0.2263490154266935,
+                "House2016": 0.514309513706849
             },
             {
-                "House2018": -3.0975562597481708e-2,
+                "House2018": -3.0961809472578664e-2,
                 "StateName": "Michigan",
-                "President2016": -9.02580567113379e-3,
-                "House2016": -4.3782528557492324e-2
+                "President2016": -8.195522298649288e-3,
+                "House2016": -4.337326880775329e-2
             },
             {
-                "House2018": 0.11071775225017876,
+                "House2018": 0.11004346322089283,
                 "StateName": "Minnesota",
-                "President2016": -1.8376849688445365e-3,
-                "House2016": 3.499186079808559e-2
+                "President2016": -7.3842250514964325e-3,
+                "House2016": 3.1310859774089025e-2
             },
             {
-                "House2018": -0.1497407042282869,
+                "House2018": -0.15117745921007578,
                 "StateName": "Mississippi",
-                "President2016": -7.782712651722618e-2,
-                "House2016": -5.5297287417104185e-2
+                "President2016": -7.773872452355879e-2,
+                "House2016": -5.552976821835168e-2
             },
             {
-                "House2018": -0.2006189237712885,
+                "House2018": -0.19952433090042337,
                 "StateName": "Missouri",
-                "President2016": -0.11441978194884903,
-                "House2016": -0.2132439158913393
+                "President2016": -0.11483836348782814,
+                "House2016": -0.2133983876591791
             },
             {
-                "House2018": -8.068635741178665e-2,
+                "House2018": -7.532141444987828e-2,
                 "StateName": "Montana",
-                "President2016": -3.99389438232455e-2,
-                "House2016": -4.3411872812813466e-2
+                "President2016": -3.995028077850784e-2,
+                "House2016": -4.433237692104702e-2
             },
             {
-                "House2018": -8.406917500148389e-2,
+                "House2018": -8.368377807343179e-2,
                 "StateName": "Nebraska",
-                "President2016": -4.396258588927143e-2,
-                "House2016": -0.21812193970100183
+                "President2016": -4.260857946746316e-2,
+                "House2016": -0.21750435766268686
             },
             {
-                "House2018": 4.9824621334586504e-2,
+                "House2018": 4.817520755345678e-2,
                 "StateName": "Nevada",
-                "President2016": -1.6007960623636547e-2,
-                "House2016": -6.08404181300301e-3
+                "President2016": -1.597057892982264e-2,
+                "House2016": -6.85155851128789e-3
             },
             {
-                "House2018": 2.516941842050616e-2,
+                "House2018": 2.5788665327015403e-2,
                 "StateName": "New Hampshire",
-                "President2016": -4.475307688199036e-3,
-                "House2016": 3.23072287793735e-2
+                "President2016": -6.834711780925058e-3,
+                "House2016": 3.1050778705630236e-2
             },
             {
-                "House2018": 0.18857412445089625,
+                "House2018": 0.18794750585087147,
                 "StateName": "New Jersey",
-                "President2016": 0.11995391219021881,
-                "House2016": 0.10763952626953152
+                "President2016": 0.11879301388497594,
+                "House2016": 0.10513356851752524
             },
             {
-                "House2018": 7.383214773495406e-2,
+                "House2018": 7.59151681203881e-2,
                 "StateName": "New Mexico",
-                "President2016": -1.2956735958721764e-2,
-                "House2016": 5.438962117088225e-2
+                "President2016": -9.943237307017839e-3,
+                "House2016": 5.745044564315979e-2
             },
             {
-                "House2018": 0.2159477454584262,
+                "House2018": 0.21121000536650053,
                 "StateName": "New York",
-                "President2016": 0.19467831912192857,
-                "House2016": 0.2088798334547595
+                "President2016": 0.193515429257211,
+                "House2016": 0.2081530906238608
             },
             {
-                "House2018": -7.913062431551081e-2,
+                "House2018": -7.967664841136425e-2,
                 "StateName": "North Carolina",
-                "President2016": -1.6249538102245536e-2,
-                "House2016": -1.2963854459203123e-3
+                "President2016": -1.7277078140984874e-2,
+                "House2016": -1.7412387206464594e-3
             },
             {
-                "House2018": -9.983935156970936e-2,
+                "House2018": -9.853463913209465e-2,
                 "StateName": "North Dakota",
-                "President2016": -7.731971489840392e-2,
-                "House2016": -0.15310657469282193
+                "President2016": -7.728511914952889e-2,
+                "House2016": -0.151073714780361
             },
             {
-                "House2018": -3.3068741218341885e-2,
+                "House2018": -3.272155612093248e-2,
                 "StateName": "Ohio",
-                "President2016": -7.809103233606798e-2,
-                "House2016": -0.13941128405751274
+                "President2016": -7.811472806248639e-2,
+                "House2016": -0.13889091665518538
             },
             {
-                "House2018": -0.21385417102504872,
+                "House2018": -0.2186120762369881,
                 "StateName": "Oklahoma",
-                "President2016": -0.20987936717533057,
-                "House2016": -0.36048114744896953
+                "President2016": -0.21406560695280907,
+                "House2016": -0.363256629512222
             },
             {
-                "House2018": 0.19179547152943738,
+                "House2018": 0.18957318964114758,
                 "StateName": "Oregon",
-                "President2016": 8.311054048312648e-2,
-                "House2016": 0.17631073271165318
+                "President2016": 8.133250918404795e-2,
+                "House2016": 0.17548462995916841
             },
             {
-                "House2018": 4.805173186006562e-2,
+                "House2018": 4.946322589271604e-2,
                 "StateName": "Pennsylvania",
-                "President2016": 1.1744646856726455e-3,
-                "House2016": -9.872577036418717e-2
+                "President2016": 1.4406615968612234e-3,
+                "House2016": -9.871284338822799e-2
             },
             {
-                "House2018": 0.11200528952078644,
+                "House2018": 0.11108073927140683,
                 "StateName": "Rhode Island",
-                "President2016": 6.375903508924627e-2,
-                "House2016": 7.884575780699057e-2
+                "President2016": 6.488558633397239e-2,
+                "House2016": 8.203278256869748e-2
             },
             {
-                "House2018": -0.14159386688182266,
+                "House2018": -0.1434470220373502,
                 "StateName": "South Carolina",
-                "President2016": -0.1127182878792639,
-                "House2016": -0.1807528157763271
+                "President2016": -0.11283360805354925,
+                "House2016": -0.18077918855837413
             },
             {
-                "House2018": -9.443584296365362e-2,
+                "House2018": -9.365575730848225e-2,
                 "StateName": "South Dakota",
-                "President2016": -7.352322162342631e-2,
-                "House2016": -0.13009438515451296
+                "President2016": -7.368716448750869e-2,
+                "House2016": -0.13045784141659744
             },
             {
-                "House2018": -0.20887135625780806,
+                "House2018": -0.21298044009457323,
                 "StateName": "Tennessee",
-                "President2016": -0.16042383238546856,
-                "House2016": -0.14344463845838176
+                "President2016": -0.16055855584251455,
+                "House2016": -0.1441282641403681
             },
             {
-                "House2018": -8.129588736637101e-2,
+                "House2018": -8.60391565610505e-2,
                 "StateName": "Texas",
-                "President2016": -5.8733010044969246e-2,
-                "House2016": -0.1675744550146464
+                "President2016": -5.671481735440401e-2,
+                "House2016": -0.1652357530672935
             },
             {
-                "House2018": -0.12180953006047844,
+                "House2018": -0.12111427762482,
                 "StateName": "Utah",
-                "President2016": -9.373072798003929e-2,
-                "House2016": -0.2150512071908112
+                "President2016": -9.370823793874727e-2,
+                "House2016": -0.21530128738409818
             },
             {
-                "House2018": 0.15650421300308556,
+                "House2018": 0.15548038360369223,
                 "StateName": "Vermont",
-                "President2016": 2.2394294206070343e-2,
-                "House2016": 0.31961631852011874
+                "President2016": 2.0978743810562632e-2,
+                "House2016": 0.31709760358468736
             },
             {
-                "House2018": 3.235100638303994e-2,
+                "House2018": 3.250804603586036e-2,
                 "StateName": "Virginia",
-                "President2016": 1.3528224739076564e-2,
-                "House2016": -3.901098132315271e-2
+                "President2016": 1.161659858650841e-2,
+                "House2016": -4.050105604007771e-2
             },
             {
-                "House2018": 0.1749597703066431,
+                "House2018": 0.17447925964797692,
                 "StateName": "Washington",
-                "President2016": 0.1197727942209692,
-                "House2016": 0.10748308310920619
+                "President2016": 0.1194843863093389,
+                "House2016": 0.10729222034930846
             },
             {
-                "House2018": -0.19363204856076213,
+                "House2018": -0.1924960803476721,
                 "StateName": "West Virginia",
-                "President2016": -0.21539449808748196,
-                "House2016": -0.29686530191006805
+                "President2016": -0.21494383073376033,
+                "House2016": -0.29756156803794537
             },
             {
-                "House2018": 9.178765605682473e-2,
+                "House2018": 9.072013647551606e-2,
                 "StateName": "Wisconsin",
-                "President2016": -2.3467772785807192e-3,
-                "House2016": 9.491646610955952e-2
+                "President2016": -3.6521257217584863e-3,
+                "House2016": 9.358278313242555e-2
             },
             {
-                "House2018": -7.118841048843504e-2,
+                "House2018": -7.133040861813009e-2,
                 "StateName": "Wyoming",
-                "President2016": -8.39716471484108e-2,
-                "House2016": -0.11175244513946717
+                "President2016": -8.29925497299042e-2,
+                "House2016": -0.10954753910883641
             }
         ]
     },
@@ -8169,7 +8163,7 @@ vegaEmbed('#figure_2',vlSpec);</script>
 };
 vegaEmbed('#figure_3',vlSpec);</script>
 </figure>
-<p>Now that we’ve looked at Presidential vs. House voting in 2016, let’s look at the 2018 Blue Wave in the House and compare that to House voting in 2016. We do the same breakdown as before. Young college-educated voters were noticeably more Democratic in their voting in 2018, as were older college-educated female voters. Among non-college-educated voters, things are mixed but with great variation among the states. It’s interesting and encouraging that young non-college-educated female voters shifted strongly Democratic in their house voting between 2016 and 2018.</p>
+<p>Now that we’ve looked at Presidential vs. House voting in 2016, let’s look at the 2018 Blue Wave in the House and compare that to House voting in 2016. We do the same breakdown as before. Young college-educated voters were noticeably more Democratic in their voting in 2018, as were older college-educated female voters. Among non-college-educated voters, things are mixed but with great variation among the states. It’s interesting and encouraging that young non-college-educated female voters shifted strongly Democratic in their House voting between 2016 and 2018.</p>
 <figure id="figure_4">
 <script type="text/javascript">var vlSpec=
 {
@@ -15726,310 +15720,304 @@ vegaEmbed('#figure_5',vlSpec);</script>
     "data": {
         "values": [
             {
-                "House2018": -0.14028041322972465,
+                "House2018": -0.1410373006974462,
                 "StateName": "Alabama",
-                "President2016": -9.96901014953584e-2,
-                "House2016": -0.172002060051292
+                "President2016": -9.867646982586893e-2,
+                "House2016": -0.1720915031986334
             },
             {
-                "House2018": -4.339370273094902e-2,
+                "House2018": -4.3003496470186864e-2,
                 "StateName": "Alaska",
-                "President2016": -7.660628424842635e-3,
-                "House2016": 2.6963135638173423e-3
+                "President2016": -8.172302720369508e-3,
+                "House2016": 1.8261145583111516e-3
             },
             {
-                "House2018": 2.6368105983052236e-2,
+                "House2018": 2.4587489456470428e-2,
                 "StateName": "Arizona",
-                "President2016": -7.76850786986416e-2,
-                "House2016": -8.884831416861876e-2
+                "President2016": -8.097553957878388e-2,
+                "House2016": -9.532145208746295e-2
             },
             {
-                "House2018": -0.11443009150033191,
+                "House2018": -0.11729449985836868,
                 "StateName": "Arkansas",
-                "President2016": -0.14828779951833293,
-                "House2016": -0.4443984124750947
+                "President2016": -0.14642694052924723,
+                "House2016": -0.44488212540720623
             },
             {
-                "House2018": 0.34921199868438135,
+                "House2018": 0.34813570505923863,
                 "StateName": "California",
-                "President2016": 0.22636959737265647,
-                "House2016": 0.28958069422156885
+                "President2016": 0.22972972129147318,
+                "House2016": 0.2907567029596036
             },
             {
-                "House2018": 6.381545056607224e-2,
+                "House2018": 6.451204745702885e-2,
                 "StateName": "Colorado",
-                "President2016": 4.02386208950603e-2,
-                "House2016": 3.486506673244171e-2
+                "President2016": 3.96121191960633e-2,
+                "House2016": 3.5737075523422694e-2
             },
             {
-                "House2018": 0.10478798229065975,
+                "House2018": 0.10414811445772269,
                 "StateName": "Connecticut",
-                "President2016": 6.341985918736302e-2,
-                "House2016": 0.2117902906695957
+                "President2016": 6.353829604146534e-2,
+                "House2016": 0.21178377858030595
             },
             {
-                "House2018": 0.12914437025597672,
+                "House2018": 0.12914250113374548,
                 "StateName": "Delaware",
-                "President2016": -4.028115037418567e-3,
-                "House2016": 6.539370509896864e-2
+                "President2016": -4.007643753544636e-3,
+                "House2016": 6.553786192342607e-2
             },
             {
-                "House2018": 0.2854006440152158,
-                "StateName": "District of Columbia",
-                "President2016": 0.25107556039125933,
-                "House2016": 0.3516544742784249
-            },
-            {
-                "House2018": -1.1413865689681078e-2,
+                "House2018": -1.209356894211469e-2,
                 "StateName": "Florida",
-                "President2016": -3.330236867419813e-2,
-                "House2016": -5.731074554626301e-2
+                "President2016": -3.377015230921647e-2,
+                "House2016": -5.7866057733565845e-2
             },
             {
-                "House2018": -0.11102638893732039,
+                "House2018": -0.11110095450919749,
                 "StateName": "Georgia",
-                "President2016": -6.358590755747963e-2,
-                "House2016": -0.21970734389213917
+                "President2016": -6.0583092934242494e-2,
+                "House2016": -0.21666968923656074
             },
             {
-                "House2018": 0.14954941189965096,
+                "House2018": 0.15251660983371873,
                 "StateName": "Hawaii",
-                "President2016": 3.2991532407553106e-2,
-                "House2016": 0.11797320516387116
+                "President2016": 3.920556126632934e-2,
+                "House2016": 0.12736579931149175
             },
             {
-                "House2018": -0.14323183915818063,
+                "House2018": -0.1441328042920712,
                 "StateName": "Idaho",
-                "President2016": -0.12562648820146224,
-                "House2016": -0.23002817875380258
+                "President2016": -0.12560303925151772,
+                "House2016": -0.23004807441888725
             },
             {
-                "House2018": 0.16671718393372822,
+                "House2018": 0.16543511954537204,
                 "StateName": "Illinois",
-                "President2016": 0.12803696148283017,
-                "House2016": 7.87626213740757e-2
+                "President2016": 0.1277644656038423,
+                "House2016": 7.886958452883527e-2
             },
             {
-                "House2018": -9.98952140242983e-2,
+                "House2018": -9.971707497079012e-2,
                 "StateName": "Indiana",
-                "President2016": -0.11121982435566884,
-                "House2016": -0.15234750471618017
+                "President2016": -0.11024527380292146,
+                "House2016": -0.15139505105601014
             },
             {
-                "House2018": -1.3028333950081407e-2,
+                "House2018": -1.0406376138216971e-2,
                 "StateName": "Iowa",
-                "President2016": -7.120362988050745e-2,
-                "House2016": -5.347719161399945e-2
+                "President2016": -7.07836703451681e-2,
+                "House2016": -5.1171256613594084e-2
             },
             {
-                "House2018": -5.698232088445016e-2,
+                "House2018": -5.637091626998858e-2,
                 "StateName": "Kansas",
-                "President2016": -7.19423325582792e-2,
-                "House2016": -0.17746600887489883
+                "President2016": -6.988333287469643e-2,
+                "House2016": -0.17643656188566334
             },
             {
-                "House2018": -0.14913257726772497,
+                "House2018": -0.1484860633301925,
                 "StateName": "Kentucky",
-                "President2016": -0.151145056276308,
-                "House2016": -0.31849040415125646
+                "President2016": -0.14980839579038305,
+                "House2016": -0.31776275798050546
             },
             {
-                "House2018": -0.21900940992912574,
+                "House2018": -0.21919208286518854,
                 "StateName": "Louisiana",
-                "President2016": -9.981696882513322e-2,
-                "House2016": -7.368895140813549e-2
+                "President2016": -9.767184877265507e-2,
+                "House2016": -7.288998547481819e-2
             },
             {
-                "House2018": 2.2739689643399143e-2,
+                "House2018": 2.4414710877878644e-2,
                 "StateName": "Maine",
-                "President2016": -4.524489851488218e-3,
-                "House2016": 6.075219616067473e-2
+                "President2016": -7.141783567305705e-3,
+                "House2016": 6.113185066938231e-2
             },
             {
-                "House2018": 0.19201441510987768,
+                "House2018": 0.19605869580160712,
                 "StateName": "Maryland",
-                "President2016": 0.15550108498544754,
-                "House2016": 0.19028151899052417
+                "President2016": 0.15407894381924908,
+                "House2016": 0.1890345661408789
             },
             {
-                "House2018": 0.44595684523456447,
+                "House2018": 0.4439982526333477,
                 "StateName": "Massachusetts",
-                "President2016": 0.22902116428232058,
-                "House2016": 0.5156654069105967
+                "President2016": 0.2263490154266935,
+                "House2016": 0.514309513706849
             },
             {
-                "House2018": -3.0975562597481708e-2,
+                "House2018": -3.0961809472578664e-2,
                 "StateName": "Michigan",
-                "President2016": -9.02580567113379e-3,
-                "House2016": -4.3782528557492324e-2
+                "President2016": -8.195522298649288e-3,
+                "House2016": -4.337326880775329e-2
             },
             {
-                "House2018": 0.11071775225017876,
+                "House2018": 0.11004346322089283,
                 "StateName": "Minnesota",
-                "President2016": -1.8376849688445365e-3,
-                "House2016": 3.499186079808559e-2
+                "President2016": -7.3842250514964325e-3,
+                "House2016": 3.1310859774089025e-2
             },
             {
-                "House2018": -0.1497407042282869,
+                "House2018": -0.15117745921007578,
                 "StateName": "Mississippi",
-                "President2016": -7.782712651722618e-2,
-                "House2016": -5.5297287417104185e-2
+                "President2016": -7.773872452355879e-2,
+                "House2016": -5.552976821835168e-2
             },
             {
-                "House2018": -0.2006189237712885,
+                "House2018": -0.19952433090042337,
                 "StateName": "Missouri",
-                "President2016": -0.11441978194884903,
-                "House2016": -0.2132439158913393
+                "President2016": -0.11483836348782814,
+                "House2016": -0.2133983876591791
             },
             {
-                "House2018": -8.068635741178665e-2,
+                "House2018": -7.532141444987828e-2,
                 "StateName": "Montana",
-                "President2016": -3.99389438232455e-2,
-                "House2016": -4.3411872812813466e-2
+                "President2016": -3.995028077850784e-2,
+                "House2016": -4.433237692104702e-2
             },
             {
-                "House2018": -8.406917500148389e-2,
+                "House2018": -8.368377807343179e-2,
                 "StateName": "Nebraska",
-                "President2016": -4.396258588927143e-2,
-                "House2016": -0.21812193970100183
+                "President2016": -4.260857946746316e-2,
+                "House2016": -0.21750435766268686
             },
             {
-                "House2018": 4.9824621334586504e-2,
+                "House2018": 4.817520755345678e-2,
                 "StateName": "Nevada",
-                "President2016": -1.6007960623636547e-2,
-                "House2016": -6.08404181300301e-3
+                "President2016": -1.597057892982264e-2,
+                "House2016": -6.85155851128789e-3
             },
             {
-                "House2018": 2.516941842050616e-2,
+                "House2018": 2.5788665327015403e-2,
                 "StateName": "New Hampshire",
-                "President2016": -4.475307688199036e-3,
-                "House2016": 3.23072287793735e-2
+                "President2016": -6.834711780925058e-3,
+                "House2016": 3.1050778705630236e-2
             },
             {
-                "House2018": 0.18857412445089625,
+                "House2018": 0.18794750585087147,
                 "StateName": "New Jersey",
-                "President2016": 0.11995391219021881,
-                "House2016": 0.10763952626953152
+                "President2016": 0.11879301388497594,
+                "House2016": 0.10513356851752524
             },
             {
-                "House2018": 7.383214773495406e-2,
+                "House2018": 7.59151681203881e-2,
                 "StateName": "New Mexico",
-                "President2016": -1.2956735958721764e-2,
-                "House2016": 5.438962117088225e-2
+                "President2016": -9.943237307017839e-3,
+                "House2016": 5.745044564315979e-2
             },
             {
-                "House2018": 0.2159477454584262,
+                "House2018": 0.21121000536650053,
                 "StateName": "New York",
-                "President2016": 0.19467831912192857,
-                "House2016": 0.2088798334547595
+                "President2016": 0.193515429257211,
+                "House2016": 0.2081530906238608
             },
             {
-                "House2018": -7.913062431551081e-2,
+                "House2018": -7.967664841136425e-2,
                 "StateName": "North Carolina",
-                "President2016": -1.6249538102245536e-2,
-                "House2016": -1.2963854459203123e-3
+                "President2016": -1.7277078140984874e-2,
+                "House2016": -1.7412387206464594e-3
             },
             {
-                "House2018": -9.983935156970936e-2,
+                "House2018": -9.853463913209465e-2,
                 "StateName": "North Dakota",
-                "President2016": -7.731971489840392e-2,
-                "House2016": -0.15310657469282193
+                "President2016": -7.728511914952889e-2,
+                "House2016": -0.151073714780361
             },
             {
-                "House2018": -3.3068741218341885e-2,
+                "House2018": -3.272155612093248e-2,
                 "StateName": "Ohio",
-                "President2016": -7.809103233606798e-2,
-                "House2016": -0.13941128405751274
+                "President2016": -7.811472806248639e-2,
+                "House2016": -0.13889091665518538
             },
             {
-                "House2018": -0.21385417102504872,
+                "House2018": -0.2186120762369881,
                 "StateName": "Oklahoma",
-                "President2016": -0.20987936717533057,
-                "House2016": -0.36048114744896953
+                "President2016": -0.21406560695280907,
+                "House2016": -0.363256629512222
             },
             {
-                "House2018": 0.19179547152943738,
+                "House2018": 0.18957318964114758,
                 "StateName": "Oregon",
-                "President2016": 8.311054048312648e-2,
-                "House2016": 0.17631073271165318
+                "President2016": 8.133250918404795e-2,
+                "House2016": 0.17548462995916841
             },
             {
-                "House2018": 4.805173186006562e-2,
+                "House2018": 4.946322589271604e-2,
                 "StateName": "Pennsylvania",
-                "President2016": 1.1744646856726455e-3,
-                "House2016": -9.872577036418717e-2
+                "President2016": 1.4406615968612234e-3,
+                "House2016": -9.871284338822799e-2
             },
             {
-                "House2018": 0.11200528952078644,
+                "House2018": 0.11108073927140683,
                 "StateName": "Rhode Island",
-                "President2016": 6.375903508924627e-2,
-                "House2016": 7.884575780699057e-2
+                "President2016": 6.488558633397239e-2,
+                "House2016": 8.203278256869748e-2
             },
             {
-                "House2018": -0.14159386688182266,
+                "House2018": -0.1434470220373502,
                 "StateName": "South Carolina",
-                "President2016": -0.1127182878792639,
-                "House2016": -0.1807528157763271
+                "President2016": -0.11283360805354925,
+                "House2016": -0.18077918855837413
             },
             {
-                "House2018": -9.443584296365362e-2,
+                "House2018": -9.365575730848225e-2,
                 "StateName": "South Dakota",
-                "President2016": -7.352322162342631e-2,
-                "House2016": -0.13009438515451296
+                "President2016": -7.368716448750869e-2,
+                "House2016": -0.13045784141659744
             },
             {
-                "House2018": -0.20887135625780806,
+                "House2018": -0.21298044009457323,
                 "StateName": "Tennessee",
-                "President2016": -0.16042383238546856,
-                "House2016": -0.14344463845838176
+                "President2016": -0.16055855584251455,
+                "House2016": -0.1441282641403681
             },
             {
-                "House2018": -8.129588736637101e-2,
+                "House2018": -8.60391565610505e-2,
                 "StateName": "Texas",
-                "President2016": -5.8733010044969246e-2,
-                "House2016": -0.1675744550146464
+                "President2016": -5.671481735440401e-2,
+                "House2016": -0.1652357530672935
             },
             {
-                "House2018": -0.12180953006047844,
+                "House2018": -0.12111427762482,
                 "StateName": "Utah",
-                "President2016": -9.373072798003929e-2,
-                "House2016": -0.2150512071908112
+                "President2016": -9.370823793874727e-2,
+                "House2016": -0.21530128738409818
             },
             {
-                "House2018": 0.15650421300308556,
+                "House2018": 0.15548038360369223,
                 "StateName": "Vermont",
-                "President2016": 2.2394294206070343e-2,
-                "House2016": 0.31961631852011874
+                "President2016": 2.0978743810562632e-2,
+                "House2016": 0.31709760358468736
             },
             {
-                "House2018": 3.235100638303994e-2,
+                "House2018": 3.250804603586036e-2,
                 "StateName": "Virginia",
-                "President2016": 1.3528224739076564e-2,
-                "House2016": -3.901098132315271e-2
+                "President2016": 1.161659858650841e-2,
+                "House2016": -4.050105604007771e-2
             },
             {
-                "House2018": 0.1749597703066431,
+                "House2018": 0.17447925964797692,
                 "StateName": "Washington",
-                "President2016": 0.1197727942209692,
-                "House2016": 0.10748308310920619
+                "President2016": 0.1194843863093389,
+                "House2016": 0.10729222034930846
             },
             {
-                "House2018": -0.19363204856076213,
+                "House2018": -0.1924960803476721,
                 "StateName": "West Virginia",
-                "President2016": -0.21539449808748196,
-                "House2016": -0.29686530191006805
+                "President2016": -0.21494383073376033,
+                "House2016": -0.29756156803794537
             },
             {
-                "House2018": 9.178765605682473e-2,
+                "House2018": 9.072013647551606e-2,
                 "StateName": "Wisconsin",
-                "President2016": -2.3467772785807192e-3,
-                "House2016": 9.491646610955952e-2
+                "President2016": -3.6521257217584863e-3,
+                "House2016": 9.358278313242555e-2
             },
             {
-                "House2018": -7.118841048843504e-2,
+                "House2018": -7.133040861813009e-2,
                 "StateName": "Wyoming",
-                "President2016": -8.39716471484108e-2,
-                "House2016": -0.11175244513946717
+                "President2016": -8.29925497299042e-2,
+                "House2016": -0.10954753910883641
             }
         ]
     },
@@ -16075,12 +16063,12 @@ vegaEmbed('#figure_6',vlSpec);</script>
 <section id="key-takeaways" class="level2">
 <h2>Key Takeaways</h2>
 <ul>
-<li><p>In the presidential battleground states, non-college-educated female voters under 45 shifted much more strongly toward Dems as compared to other non-college-educated voters (except in Wisconsin). How do Dems hold on to or increase this shift in 2020? Was something really so different in Wisconsin?</p></li>
-<li><p>Wisconsin is actually different from the other mid-western battlegrounds on nearly all these maps! Wisconsin voters of all sorts were less likely to vote for Clinton than for their local house candidates. And while young WI voters, with the exception of non-college-educated young males, were more likely to vote for Dems in the 2018 house races than in 2016, older <em>college-educated</em> voters shifted <em>Republican</em> from 2016 to 2018. This makes Wisconsin look quite different from Ohio and Pennsylvania which moved solidly Democratic in their house voting from 2016 to 2018. So Wisconsin might not be so much a <a href="https://www.washingtonpost.com/lifestyle/all-eyes-are-on-wisconsin-the-state-thats-gearing-up-to-define-the-presidential-election/2019/11/04/abf643dc-f40d-11e9-a285-882a8e386a96_story.html">“Tipping Point”</a> state as an exception among the battlegrounds.</p></li>
-<li><p>Texas! Among nearly all groups in Texas, Clinton was more popular than local Dem house candidates in 2016. This appears as an 11% blue VPV shift on the post-stratified map. A similar shift happens in the 2016 to 2018 house vote, this time about a 9% VPV shift toward Dem house candidates. But the house vote shift comes from combining <em>hugely different</em> shifts among groups: college-educated young females shifted slightly <em>Republican</em> in Texas house voting while young non-college educated males shifted heavily Democratic. This seems worth trying to understand better. Texas has many opportunities for House pickups, a possible Senate flip and is shifting slowly to becoming a presidential battleground, though that remains unlikely in 2020.</p></li>
+<li><p>In the Presidential battleground states, non-college-educated female voters under 45 shifted much more strongly toward Dems as compared to other non-college-educated voters (except in Wisconsin). How do Dems hold on to or increase this shift in 2020? Was something really so different in Wisconsin?</p></li>
+<li><p>Wisconsin is actually different from the other mid-western battlegrounds on nearly all these maps! Wisconsin voters of all sorts were less likely to vote for Clinton than for their local House candidates. And while young WI voters, with the exception of non-college-educated young males, were more likely to vote for Dems in the 2018 House races than in 2016, older <em>college-educated</em> voters shifted <em>Republican</em> from 2016 to 2018. This makes Wisconsin look quite different from Ohio and Pennsylvania which moved solidly Democratic in their House voting from 2016 to 2018. So Wisconsin might not be so much a <a href="https://www.washingtonpost.com/lifestyle/all-eyes-are-on-wisconsin-the-state-thats-gearing-up-to-define-the-presidential-election/2019/11/04/abf643dc-f40d-11e9-a285-882a8e386a96_story.html">“Tipping Point”</a> state as an exception among the battlegrounds.</p></li>
+<li><p>Texas! Among nearly all groups in Texas, Clinton was more popular than local Dem House candidates in 2016. This appears as an 11% blue VPV shift on the post-stratified map. A similar shift happens in the 2016 to 2018 House vote, this time about a 9% VPV shift toward Dem House candidates. But the House vote shift comes from combining <em>hugely different</em> shifts among groups: college-educated young females shifted slightly <em>Republican</em> in Texas House voting while young non-college educated males shifted heavily Democratic. This seems worth trying to understand better. Texas has many opportunities for House pickups, a possible Senate flip and is shifting slowly to becoming a Presidential battleground, though that remains unlikely in 2020.</p></li>
 </ul>
 <p>Sometimes exploring the data leaves us with more questions than answers!</p>
-<p>At Blue Ripple Politics we are keenly interested in where this data leads in terms of what you can do with your time or money to help elect progressives, take back the White House and Senate and hold the House. As far as national strategy goes, we think the data we examined in this post leads us to focus turnout work on young female voters and registration work similarly.</p>
+<p>At Blue Ripple Politics we are keenly interested in where this data leads in terms of what you can do with your time or money to help elect progressives, take back the White House and Senate and hold the House. As far as national strategy goes, we think the data we examined in this post suggests a continued and targeted effort at registering and GOTV among young female voters, particularly those with a college education.</p>
 <p>We don’t mean to imply that this is the most important focus for turnout work. Voters-of-color, particularly black women, are hugely Democratic leaning and any work to support registration, turnout and to eliminate voter-suppression for those voters is crucial as well.</p>
 </section>
 <section id="take-action" class="level2">
