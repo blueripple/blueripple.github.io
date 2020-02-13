@@ -290,22 +290,6 @@
             },
             {
                 "PostStratifiedBy": "VAP",
-                "DemPref": 0.5579936602238522,
-                "Office": "President",
-                "state_abbreviation": "CO",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "Voted",
-                "DemPref": 0.5388898412259654,
-                "Office": "President",
-                "state_abbreviation": "CO",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "VAP",
                 "DemPref": 0.5582246809077388,
                 "Office": "President",
                 "state_abbreviation": "FL",
@@ -338,22 +322,6 @@
             },
             {
                 "PostStratifiedBy": "VAP",
-                "DemPref": 0.5068728386745066,
-                "Office": "President",
-                "state_abbreviation": "ME",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "Voted",
-                "DemPref": 0.501536074592154,
-                "Office": "President",
-                "state_abbreviation": "ME",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "VAP",
                 "DemPref": 0.5156106407046284,
                 "Office": "President",
                 "state_abbreviation": "MI",
@@ -381,38 +349,6 @@
                 "DemPref": 0.5055860122565523,
                 "Office": "President",
                 "state_abbreviation": "NC",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "VAP",
-                "DemPref": 0.5249628096779162,
-                "Office": "President",
-                "state_abbreviation": "NH",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "Voted",
-                "DemPref": 0.5149887953660757,
-                "Office": "President",
-                "state_abbreviation": "NH",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "VAP",
-                "DemPref": 0.5749191038610022,
-                "Office": "President",
-                "state_abbreviation": "NV",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "Voted",
-                "DemPref": 0.5335963963654936,
-                "Office": "President",
-                "state_abbreviation": "NV",
                 "year": 2016,
                 "DemographicGrouping": "ASR"
             },
@@ -461,22 +397,6 @@
                 "DemPref": 0.5065308847807758,
                 "Office": "President",
                 "state_abbreviation": "TX",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "VAP",
-                "DemPref": 0.5699069562949212,
-                "Office": "President",
-                "state_abbreviation": "VA",
-                "year": 2016,
-                "DemographicGrouping": "ASR"
-            },
-            {
-                "PostStratifiedBy": "Voted",
-                "DemPref": 0.5374249403616155,
-                "Office": "President",
-                "state_abbreviation": "VA",
                 "year": 2016,
                 "DemographicGrouping": "ASR"
             },
@@ -575,117 +495,8 @@ vegaEmbed('#figure_1',vlSpec);</script>
 <p>What we see so far is that turnout gaps are different in different states. This can already help you focus your efforts: if enfranchisement and turnout are something you care about, this analysis suggests that putting your effort (or money) into groups working in AZ, FL, NV and PA, or specific house or state legislative candidates in those same states, might be the best choice in terms of affecting the outcome of the presidential race. Devoting energy to closing turnout gaps in GA and TX is also likely to be worthwhile, helping to win house and state legislative races and putting pressure on Republican efforts to hold the state in the Presidential race (and, in the case of TX, the senate race). Once the primaries are done, we will start focusing on the house races in those states to see which might have useful overlap with turnout efforts.</p>
 <p>Now we’ve identified some battleground states where turnout gaps are important to presidential vote outcomes. But we haven’t addressed how much we would need to boost turnout in order to flip these states. As our previous piece discussed, boosting turnout a few % is possible but boosting it 20% isn’t. To put this more concretely, let’s consider two different plans for boosting turnout in each of these states. In one, we focus on efforts that increase turnout for everyone and in the other, we focus exclusively on Dem leaning voters. In either case, is GOTV work alone enought to flip any of these states? Using the voter preferences and turnout from the 2016 presidential election and the demographics from 2018, we compute the turnout boost, if possible, required to flip each battleground state. The math is straightforward but messy so we’ve put the details <a href="https://blueripple.github.io/research/mrp-model/np4/turnoutBoostExplainer.html#">here</a>.</p>
 <p>In the chart below, we summarize the results.</p>
-<table>
-<thead>
-<tr class="header">
-<th>State</th>
-<th>Electoral Votes</th>
-<th>Boosting All Requires (%)</th>
-<th>Boosting Dems Requires (%)</th>
-<th>Cost/Ev ($)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>AZ</td>
-<td>11</td>
-<td>35.20851038364301</td>
-<td>10.294864962074188</td>
-<td>889051.0518516265</td>
-</tr>
-<tr class="even">
-<td>CO</td>
-<td>9</td>
-<td>-38.013901154197534</td>
-<td>-24.668495821653096</td>
-<td>-3248398.429124992</td>
-</tr>
-<tr class="odd">
-<td>FL</td>
-<td>29</td>
-<td>12.897797653816673</td>
-<td>4.387388531668372</td>
-<td>532569.3143894357</td>
-</tr>
-<tr class="even">
-<td>GA</td>
-<td>16</td>
-<td>47.32828223951079</td>
-<td>10.400956691714887</td>
-<td>774188.1972026286</td>
-</tr>
-<tr class="odd">
-<td>ME</td>
-<td>4</td>
-<td>-51.13267300581772</td>
-<td>-20.387987082670985</td>
-<td>-999797.88462256</td>
-</tr>
-<tr class="even">
-<td>MI</td>
-<td>16</td>
-<td>3.455907209560337</td>
-<td>1.0972887083883986</td>
-<td>67705.9688260009</td>
-</tr>
-<tr class="odd">
-<td>NC</td>
-<td>15</td>
-<td>91.25018759895097</td>
-<td>14.245870883179373</td>
-<td>866903.2115770868</td>
-</tr>
-<tr class="even">
-<td>NH</td>
-<td>4</td>
-<td>-11.09486325469374</td>
-<td>-3.179710163620751</td>
-<td>-211359.27741647421</td>
-</tr>
-<tr class="odd">
-<td>NV</td>
-<td>6</td>
-<td>-12.16174259052405</td>
-<td>-6.723916528113269</td>
-<td>-582119.7787023075</td>
-</tr>
-<tr class="even">
-<td>OH</td>
-<td>18</td>
-<td>-154.63331058504644</td>
-<td>51.47412491161476</td>
-<td>4508922.126764899</td>
-</tr>
-<tr class="odd">
-<td>PA</td>
-<td>20</td>
-<td>10.662540755057698</td>
-<td>3.677982512820071</td>
-<td>320668.52267601923</td>
-</tr>
-<tr class="even">
-<td>TX</td>
-<td>38</td>
-<td>-685.0685825659625</td>
-<td>31.360792582482183</td>
-<td>3753728.541384776</td>
-</tr>
-<tr class="odd">
-<td>VA</td>
-<td>13</td>
-<td>-28.394292025997814</td>
-<td>-15.98295217361202</td>
-<td>-1698803.3113139814</td>
-</tr>
-<tr class="even">
-<td>WI</td>
-<td>10</td>
-<td>23.548376084185506</td>
-<td>5.465709196522623</td>
-<td>267281.08312545443</td>
-</tr>
-</tbody>
-</table>
+<div class="brTableTitle">Turnout Boosts to Flip Battlegrounds</div>
+<table class="brTable"><thead><tr><th>State</th><th>Electoral Votes</th><th>Population (000s)</th><th>Dem Leaners (000s)</th><th>Boosting All Requires (%)</th><th>Boosting Dems Requires (%)</th><th>New Voters/Ev</th></tr></thead><tbody><tr><td style="; " data-label="State">AZ</td><td style="; color: green" data-label="EVs">11</td><td style="; color: green" data-label="Pop">5530</td><td style="; color: green" data-label="Leaners">2879</td><td style="; color: green" data-label="% Of All">35.21</td><td style="; color: green" data-label="% Of Dems">10.29</td><td style="; color: green" data-label="Voters/EV">26941</td></tr><tr><td style="; " data-label="State">FL</td><td style="; color: green" data-label="EVs">29</td><td style="; color: green" data-label="Pop">17071</td><td style="; color: green" data-label="Leaners">10667</td><td style="; color: green" data-label="% Of All">12.90</td><td style="; color: green" data-label="% Of Dems">4.39</td><td style="; color: green" data-label="Voters/EV">16138</td></tr><tr><td style="; " data-label="State">GA</td><td style="; color: green" data-label="EVs">16</td><td style="; color: green" data-label="Pop">8016</td><td style="; color: green" data-label="Leaners">3609</td><td style="; color: green" data-label="% Of All">47.33</td><td style="; color: green" data-label="% Of Dems">10.40</td><td style="; color: green" data-label="Voters/EV">23460</td></tr><tr><td style="; " data-label="State">MI</td><td style="; color: green" data-label="EVs">16</td><td style="; color: green" data-label="Pop">7832</td><td style="; color: green" data-label="Leaners">2992</td><td style="; color: green" data-label="% Of All">3.46</td><td style="; color: green" data-label="% Of Dems">1.10</td><td style="; color: green" data-label="Voters/EV">2052</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="EVs">15</td><td style="; color: green" data-label="Pop">8087</td><td style="; color: green" data-label="Leaners">2766</td><td style="; color: green" data-label="% Of All">91.25</td><td style="; color: green" data-label="% Of Dems">14.25</td><td style="; color: green" data-label="Voters/EV">26270</td></tr><tr><td style="; " data-label="State">OH</td><td style="; color: green" data-label="EVs">18</td><td style="; color: green" data-label="Pop">9099</td><td style="; color: green" data-label="Leaners">4778</td><td style="; color: red" data-label="% Of All">(154.63)</td><td style="; color: green" data-label="% Of Dems">51.47</td><td style="; color: green" data-label="Voters/EV">136634</td></tr><tr><td style="; " data-label="State">PA</td><td style="; color: green" data-label="EVs">20</td><td style="; color: green" data-label="Pop">10159</td><td style="; color: green" data-label="Leaners">5284</td><td style="; color: green" data-label="% Of All">10.66</td><td style="; color: green" data-label="% Of Dems">3.68</td><td style="; color: green" data-label="Voters/EV">9717</td></tr><tr><td style="; " data-label="State">TX</td><td style="; color: green" data-label="EVs">38</td><td style="; color: green" data-label="Pop">21302</td><td style="; color: green" data-label="Leaners">13783</td><td style="; color: red" data-label="% Of All">(685.07)</td><td style="; color: green" data-label="% Of Dems">31.36</td><td style="; color: green" data-label="Voters/EV">113749</td></tr><tr><td style="; " data-label="State">WI</td><td style="; color: green" data-label="EVs">10</td><td style="; color: green" data-label="Pop">4541</td><td style="; color: green" data-label="Leaners">1482</td><td style="; color: green" data-label="% Of All">23.55</td><td style="; color: green" data-label="% Of Dems">5.47</td><td style="; color: green" data-label="Voters/EV">8099</td></tr></tbody></table>
 <p>One of our themes at <a href="https://blueripplepolitics.org">Blue Ripple Politics</a> is that we believe that Democracy works better if everyone votes, and that we should prioritize laws and policies that make voting easier for everyone, e.g., same-day-registration, vote-by-mail, making election day a federal holiday, having more polling places, etc.</p>
 <p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple">Github</a> page.</em></p>
 </section>
