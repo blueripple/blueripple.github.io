@@ -240,7 +240,7 @@
 
 <!-- page content begins here -->
 
-<div class="published">February 21, 2020 </div>
+<div class="published">February 21, 2020 (updated: June 13, 2020)</div>
 <header>
 <h1 class="title">Polling Explainer: CNN vs. Trump</h1>
 </header>
@@ -459,12 +459,12 @@ vegaEmbed('#figure_1',vlSpec);</script>
 <h2>Example: The 2016 Presidential Election</h2>
 <p>So, does the last election provide any useful guidance for weighting? Using partisan identity is particularly bad since it is so heavily correlated the thing a poll is trying to measure. But perhaps if we just weight demographically, that is assume that the turnout in any given demographic group in any state will be similar to 2016, this might provide reasonable weights? This doesn’t have the correlation issue of partisan identity but turnout by demographic group is also variable election-to-election. And there are two other issues: data sources on turnout vary dramatically and how one breaks down the demographics can change the results as well. To illustrate both these points, we built a few simple electorate models from 2016 data, either from the census <a href="https://www.census.gov/topics/public-sector/voting.html">CPS voter survey</a> or the <a href="https://cces.gov.harvard.edu/">CCES survey data</a>. For each data-set, we used <a href="https://blueripple.github.io/research/mrp-model/p1/main.html#data-and-methods">multi-level regression</a> to infer turnout probabilities in each state for 2 demographic groupings:</p>
 <ul>
-<li><p><strong>ASER</strong>: we infer turnout for 16 groups per state, categorizing everyone by age (45 andOver/Under 45), sex (Female/Male), education (Non-College-Grad/College Grad or In College), and race (Non-White/White-Non-Latinx).</p></li>
-<li><p><strong>ASER5</strong>: we infer turnout for 40 groups per state, categorizing everyone by age (45 andOver/Under 45), sex (Female/Male), education (Non-College-Grad/College Grad or In College), and race (Black/Latinx/Asian/Other/White-Non-Latinx).</p></li>
+<li><p><strong>ASER</strong>: we infer turnout for 16 groups per state, categorizing everyone by age (45 and Over/Under 45), sex (Female/Male), education (Non-College-Grad/College Grad or In College), and race (Non-White/White-Non-Latinx).</p></li>
+<li><p><strong>ASER5</strong>: we infer turnout for 40 groups per state, categorizing everyone by age (45 and Over/Under 45), sex (Female/Male), education (Non-College-Grad/College Grad or In College), and race (Black/Latinx/Asian/Other/White-Non-Latinx).</p></li>
 </ul>
 <p>We further adjust these inferred turnout numbers such that, when multiplied by the number of people in the state, we reproduce the actual number of ballots cast on election day. If you’re interested in the details, we followed a simplified version of the techniques described in <a href="http://www.stat.columbia.edu/~gelman/research/unpublished/deep-inter.pdf">this paper</a></p>
-<p>To illustrate how different these electorate weights are, we apply them to the 2016 election itself, using the census demographics in each state and voter preferences inferred from the CCES data using the same multi-level regression methods. From that we compute the two-party vote share in each state and get 4 different 2016 outcomes in terms of national popular vote and electoral votes.</p>
-<p>The results are charted below and vary quite a bit, from a Dem popular vote share below 49.5% and 190 electoral votes to a popular vote share over 53% and 340 electoral votes! That’s a swing of almost 4% in the popular vote (~6 million votes) and the difference between losing and winning the election.</p>
+<p>To illustrate how different these electorate weights are, we apply them to the 2016 election itself, using the census demographics in each state and voter preferences inferred from the CCES data using the same multi-level regression methods. From that we compute the two-party vote share in each state and get 4 different 2016 outcomes in terms of national popular vote and electoral votes. This is not intended as something that would have been an actual forecast. For that, we would want to simulate many elections with the given set of probabilities. But these correspond to the average outcome with each of these electorate compositions and so give a picture of how different they are.</p>
+<p>The results are charted below and vary, from a Dem popular vote share below 48.5% and 180 electoral votes to a popular vote share of about 50.5% and almost 280 electoral votes! That’s a swing of almost 3% in the popular vote (~4 million votes) and the difference between losing and winning the election.</p>
 <figure id="figure_2">
 <script type="text/javascript">var vlSpec=
 {
@@ -485,22 +485,22 @@ vegaEmbed('#figure_1',vlSpec);</script>
     "data": {
         "values": [
             {
-                "DemPref": 0.5300134370126306,
-                "ElectorsR": 195,
+                "DemPref": 0.49779725389654755,
+                "ElectorsR": 335,
                 "year": 2016,
                 "DemographicGrouping": "ASER",
                 "WeightSource": "2016 Census",
                 "ElectoralWeightSource": "EW_Census",
-                "ElectorsD": 343
+                "ElectorsD": 203
             },
             {
-                "DemPref": 0.5168501503634724,
-                "ElectorsR": 294,
+                "DemPref": 0.48501461862802414,
+                "ElectorsR": 355,
                 "year": 2016,
                 "DemographicGrouping": "ASER",
                 "WeightSource": "2016 CCES",
                 "ElectoralWeightSource": "EW_CCES",
-                "ElectorsD": 244
+                "ElectorsD": 183
             },
             {
                 "DemPref": 0.5044266677258492,
@@ -562,7 +562,7 @@ vegaEmbed('#figure_1',vlSpec);</script>
                     "scale": {
                         "domain": [
                             48.5,
-                            53.5
+                            51.5
                         ]
                     },
                     "title": "D Vote Share (%)",
@@ -573,7 +573,7 @@ vegaEmbed('#figure_1',vlSpec);</script>
                     "scale": {
                         "domain": [
                             180,
-                            350
+                            300
                         ]
                     },
                     "title": "# D Electoral Votes",
@@ -595,7 +595,7 @@ vegaEmbed('#figure_1',vlSpec);</script>
                     "scale": {
                         "domain": [
                             48.5,
-                            53.5
+                            51.5
                         ]
                     },
                     "title": null,
@@ -617,7 +617,7 @@ vegaEmbed('#figure_1',vlSpec);</script>
                     "scale": {
                         "domain": [
                             180,
-                            350
+                            300
                         ]
                     },
                     "title": null,
@@ -630,14 +630,15 @@ vegaEmbed('#figure_1',vlSpec);</script>
 };
 vegaEmbed('#figure_2',vlSpec);</script>
 </figure>
-<p>The CCES models look more like the actual election outcomes, though that could just be a coincidence. The census-sourced electoral weights indicate higher turnout from younge and minority voters than does the CCES data, and is thus more Democratic-candidate-friendly than the CCES data.</p>
-<p>None of these is exactly right, and they vary quite a bit from each other. And this is using data from an election to model the same election! Blindly using that data to model the 2020 election would be foolhardy.</p>
+<p>The Census based models look more like the actual election outcomes, though that could just be a coincidence. The census-sourced electoral weights indicate higher turnout from younger and minority voters than does the CCES data, and is thus more Democratic-candidate-friendly than the CCES data.</p>
+<p>For a given data-set, there are significant differences in ASER and ASER5. Popular vote difference comes from correlation between turnout and preference among the more specific race categories. For instance, Black voters are more likely to vote for Democratic candidates <em>and</em> turnout to vote at higher rates than Latinx voters. So separating those groups out results in a model with higher Dem vote-share. The difference in electoral college outcome is even larger–electoral votes jump by more than you might expect from just the shift in popular vote–suggesting that the specific places that people of various racial backgrounds live is advantageous to a Democratic Presidential candidate.</p>
+<p>None of these models is particularly close to the actual election we had, and this is using data from an election to model the same election. Blindly using that data to model the 2020 election would be foolhardy.</p>
 <p>What pollsters actually do, is ask respondents a variety of questions to gauge how likely they are to vote. They combine this with demographic weighting (like the examples above) to estimate the makeup of the electorate. This is complicated and hard to get right, and is part of what makes some pollsters more reliable than others. Previous elections may be used as sanity checks or as the baseline for non-poll-based models.</p>
 <p>Election modelers then use these polls as well as fundamentals—economic trends, incumbency, etc.—to predict the probabilities of various outcomes. For a particularly thorough explanation of one such model, see the <a href="https://projects.economist.com/us-2020-forecast/president/how-this-works">Economist’s summary</a> of their work for 2020.</p>
 </section>
 <section id="model-notes" class="level2">
 <h2>Model Notes</h2>
-<p>As we continue to work with this data we refine and improve our modeling. In this post we have shifted from using the census summary of the CPS voter supplement to using the CPS microdata itself, as harmonized via the <a href="https://cps.ipums.org/cps/">IPUMS</a> web portal. This has several advantages. Firstly, the micro-data allows us to get turnout numbers at the <em>state</em> level. Also useful is that the microdata has more demographic information. For example, the summary tables allow us to explore the variables of age, sex and race <em>or</em> age, sex, and education but not age, sex, education, <em>and</em> race. This is important since the combination of education and race is necessary to explore the voting and turnout patterns of the so-called “White Working Class,” a crucial voting block in the past few elections. Another nice benefit is that the microdata contains more information about voting. It includes data about whether people voted by mail or voted early and some information about why registered non-voters didn’t vote. For all those reasons, going forward we will be using the micro-data sourced CPS turnout data instead of the previous nationally-aggregated summaries of that data.</p>
+<p>As we continue to work with this data we refine and improve our modeling. In this post we have shifted from using the census summary of the CPS voter supplement to using the CPS micro-data itself, as harmonized via the <a href="https://cps.ipums.org/cps/">IPUMS</a> web portal. This has several advantages. Firstly, the micro-data allows us to get turnout numbers at the <em>state</em> level. Also useful is that the micro-data has more demographic information. For example, the summary tables allow us to explore the variables of age, sex and race <em>or</em> age, sex, and education but not age, sex, education, <em>and</em> race. This is important since the combination of education and race is necessary to explore the voting and turnout patterns of the so-called “White Working Class,” a crucial voting block in the past few elections. Another nice benefit is that the micro-data contains more information about voting. It includes data about whether people voted by mail or voted early and some information about why registered non-voters didn’t vote. For all those reasons, going forward we will be using the micro-data sourced CPS turnout data instead of the previous nationally-aggregated summaries of that data.</p>
 <p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple">Github</a> page.</em></p>
 </section>
 <!--
