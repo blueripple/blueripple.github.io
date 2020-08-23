@@ -16203,7 +16203,7 @@ vegaEmbed('#figure_2',vlSpec);</script>
             "type": "interval"
         }
     },
-    "title": "tSNE Embedding (Perplexity=40; Colored by Dem Vote Share)",
+    "title": "tSNE Embedding (Perplexity=10; Colored by Dem Vote Share)",
     "encoding": {
         "color": {
             "field": "Dem Vote Share",
@@ -21948,7 +21948,7 @@ vegaEmbed('#figure_3',vlSpec);</script>
             "type": "interval"
         }
     },
-    "title": "tSNE Embedding (Perplexity=40; Colored by Dem Vote Share, Sized by Anomaly)",
+    "title": "tSNE Embedding (Perplexity=10; Colored by Dem Vote Share, Sized by Anomaly)",
     "encoding": {
         "color": {
             "field": "Dem Vote Share",
@@ -27696,7 +27696,7 @@ vegaEmbed('#figure_4',vlSpec);</script>
             "type": "interval"
         }
     },
-    "title": "tSNE Embedding (Perplexity=40; Colored by Dem Vote Share, Sized by Flip Index)",
+    "title": "tSNE Embedding (Perplexity=10; Colored by Dem Vote Share, Sized by Flip Index)",
     "encoding": {
         "color": {
             "field": "Dem Vote Share",
@@ -27730,6 +27730,3556 @@ vegaEmbed('#figure_4',vlSpec);</script>
     "padding": 10
 };
 vegaEmbed('#figure_5',vlSpec);</script>
+</figure>
+<p>Also, we can look directly at anomaly vs 2018 vote-share (and add 2016 vote-share via color):</p>
+<figure id="figure_6">
+<script type="text/javascript">var vlSpec=
+{
+    "transform": [
+        {
+            "as": "2018 Dem Vote Share",
+            "calculate": "datum.DemPref - 0.5"
+        },
+        {
+            "as": "2016 Dem Vote Share",
+            "calculate": "datum.Pref2016 - 0.5"
+        },
+        {
+            "as": "Anomaly",
+            "calculate": "datum.scaled_delta"
+        }
+    ],
+    "height": 800,
+    "autosize": {
+        "resize": true,
+        "type": "pad",
+        "contains": "padding"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 800,
+            "continuousWidth": 800,
+            "discreteHeight": 800,
+            "discreteWidth": 800
+        }
+    },
+    "mark": {
+        "tooltip": {
+            "content": "data"
+        },
+        "type": "point"
+    },
+    "data": {
+        "values": [
+            {
+                "flip_index": 0,
+                "DemPref": 0.33510231636927784,
+                "Pref2016": 0,
+                "state_abbreviation": "AR",
+                "scaled_delta": -0.735228720323726,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4057540950093272,
+                "Pref2016": 0.3590483687571066,
+                "state_abbreviation": "AZ",
+                "scaled_delta": -7.180932652844525e-3,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6417854732527583,
+                "Pref2016": 0.6048105891542066,
+                "state_abbreviation": "CO",
+                "scaled_delta": 0.3181505590999,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.39380705770302665,
+                "Pref2016": 0.3324853713105585,
+                "state_abbreviation": "CO",
+                "scaled_delta": 1.1988601353132419e-3,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.40806820009650957,
+                "Pref2016": 0.3312638488851184,
+                "state_abbreviation": "CO",
+                "scaled_delta": -0.478742353319361,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 1.52855389919153,
+                "DemPref": 0.6304437736501293,
+                "Pref2016": 0.580989110707804,
+                "state_abbreviation": "CO",
+                "scaled_delta": 1.52855389919153,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.23498197837404886,
+                "Pref2016": 0,
+                "state_abbreviation": "GA",
+                "scaled_delta": -1.3998798139007682,
+                "congressional_district": 14
+            },
+            {
+                "flip_index": 2.353631008936881,
+                "DemPref": 0.5626105475941234,
+                "Pref2016": 0.5373987832337404,
+                "state_abbreviation": "IA",
+                "scaled_delta": 2.353631008936881,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 1.5221118122230053,
+                "DemPref": 0.5112188022993523,
+                "Pref2016": 0.4262981298129813,
+                "state_abbreviation": "IA",
+                "scaled_delta": 1.5221118122230053,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.39329782116833834,
+                "Pref2016": 0.31849205927657087,
+                "state_abbreviation": "ID",
+                "scaled_delta": -1.8502070852256004e-2,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0.2473235075376493,
+                "DemPref": 0.5250185902375176,
+                "Pref2016": 0.4069512595497742,
+                "state_abbreviation": "IL",
+                "scaled_delta": 0.2473235075376493,
+                "congressional_district": 14
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.45163897894801236,
+                "Pref2016": 0.3838751518241389,
+                "state_abbreviation": "IN",
+                "scaled_delta": 0.6038912144200616,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3527370620313843,
+                "Pref2016": 0.24688971239889462,
+                "state_abbreviation": "IN",
+                "scaled_delta": -0.1462627371553968,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3593997454606467,
+                "Pref2016": 0.32056992707294113,
+                "state_abbreviation": "IN",
+                "scaled_delta": -0.3728039182194581,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4323831803693206,
+                "Pref2016": 0.35814589683232795,
+                "state_abbreviation": "IN",
+                "scaled_delta": 9.337584625894844e-2,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.43517675716112486,
+                "Pref2016": 0.42769908780752935,
+                "state_abbreviation": "IN",
+                "scaled_delta": 0.4808696413700486,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.31854522792022794,
+                "Pref2016": 0,
+                "state_abbreviation": "KS",
+                "scaled_delta": -1.0395538762340546,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4955212296515001,
+                "Pref2016": 0.3482601378080182,
+                "state_abbreviation": "KS",
+                "scaled_delta": 0.6063323833543754,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0.5937841850183057,
+                "DemPref": 0.549561686218899,
+                "Pref2016": 0.4417706344625494,
+                "state_abbreviation": "KS",
+                "scaled_delta": 0.5937841850183057,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4056359268705731,
+                "Pref2016": 0.327956924339921,
+                "state_abbreviation": "KS",
+                "scaled_delta": -8.474425140592243e-2,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.31774111513764386,
+                "Pref2016": 0,
+                "state_abbreviation": "KY",
+                "scaled_delta": -0.6565887897784356,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.35716934535785577,
+                "Pref2016": 0.28679490345653946,
+                "state_abbreviation": "KY",
+                "scaled_delta": -0.2586011693528562,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4837368484378551,
+                "Pref2016": 0.3891097159542601,
+                "state_abbreviation": "KY",
+                "scaled_delta": 3.583344968020202e-2,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4371869004476657,
+                "Pref2016": 0.3418747038547657,
+                "state_abbreviation": "MI",
+                "scaled_delta": 0.6096487174008107,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4424284188175092,
+                "Pref2016": 0.3868110680986308,
+                "state_abbreviation": "MI",
+                "scaled_delta": 0.2973474191192351,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5196866489109065,
+                "Pref2016": 0.4115133650048652,
+                "state_abbreviation": "MI",
+                "scaled_delta": -0.14375748788979906,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0.6857217693730827,
+                "DemPref": 0.5275924838868432,
+                "Pref2016": 0.4902500842404442,
+                "state_abbreviation": "MN",
+                "scaled_delta": 0.6857217693730827,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3880315799824274,
+                "Pref2016": 0.3432246543618075,
+                "state_abbreviation": "MN",
+                "scaled_delta": -1.8089707857194593e-2,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.335428128036462,
+                "Pref2016": 0.29104191179709177,
+                "state_abbreviation": "MO",
+                "scaled_delta": -0.5860625712974397,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3283174654402668,
+                "Pref2016": 0.29487695220066257,
+                "state_abbreviation": "MO",
+                "scaled_delta": -0.6028654947983174,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.371420221143386,
+                "Pref2016": 0.25568700553828927,
+                "state_abbreviation": "ND",
+                "scaled_delta": -0.22059558808194352,
+                "congressional_district": 0
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3964077161269438,
+                "Pref2016": 0.3054736164076739,
+                "state_abbreviation": "NE",
+                "scaled_delta": -0.4464269159774046,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.41717969424605045,
+                "Pref2016": 0.3355312763790716,
+                "state_abbreviation": "OH",
+                "scaled_delta": 0.42733697793445646,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4785918653243423,
+                "Pref2016": 0.30952668835736896,
+                "state_abbreviation": "OH",
+                "scaled_delta": 0.5627867973433675,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.40498770513245325,
+                "Pref2016": 0.33835401283227484,
+                "state_abbreviation": "OH",
+                "scaled_delta": 0.191243335190457,
+                "congressional_district": 15
+            },
+            {
+                "flip_index": 1.123562981256379,
+                "DemPref": 0.665042399696241,
+                "Pref2016": 0.6172609935176792,
+                "state_abbreviation": "OR",
+                "scaled_delta": 1.123562981256379,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7855131951599916,
+                "Pref2016": 1,
+                "state_abbreviation": "OR",
+                "scaled_delta": 1.8403178473280044,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 1.5773792061634762,
+                "DemPref": 0.5681410880676744,
+                "Pref2016": 0.5542606154222277,
+                "state_abbreviation": "OR",
+                "scaled_delta": 1.5773792061634762,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.34635827994391893,
+                "Pref2016": 0.3496589353448107,
+                "state_abbreviation": "TN",
+                "scaled_delta": -0.1247003824523366,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.32439658049036274,
+                "Pref2016": 0.24554931051488332,
+                "state_abbreviation": "TN",
+                "scaled_delta": -0.37375359355673893,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.23326980050148943,
+                "Pref2016": 0,
+                "state_abbreviation": "TX",
+                "scaled_delta": -1.4503567520407459,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.25295197524474117,
+                "Pref2016": 0,
+                "state_abbreviation": "TX",
+                "scaled_delta": -1.429027505131072,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.18703794065385712,
+                "Pref2016": 0,
+                "state_abbreviation": "TX",
+                "scaled_delta": -1.6766638732858719,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3452614484483079,
+                "Pref2016": 0.27899424243425036,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.46723207551900303,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.17188280828964775,
+                "Pref2016": 0,
+                "state_abbreviation": "TX",
+                "scaled_delta": -1.9799366045645763,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6062640648601991,
+                "Pref2016": 0.6033133834354555,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.10521200798851216,
+                "congressional_district": 15
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.24773621803599277,
+                "Pref2016": 0,
+                "state_abbreviation": "TX",
+                "scaled_delta": -1.3003116474726872,
+                "congressional_district": 19
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "TX",
+                "scaled_delta": 2.362525206908084,
+                "congressional_district": 20
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4866604059813624,
+                "Pref2016": 0.3899985573975452,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.15921563329904076,
+                "congressional_district": 21
+            },
+            {
+                "flip_index": 0.15913826420434776,
+                "DemPref": 0.4977485363054599,
+                "Pref2016": 0.4930055982723759,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.15913826420434776,
+                "congressional_district": 23
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4555155506866884,
+                "Pref2016": 0.3927820144198671,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.31701039553528454,
+                "congressional_district": 25
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3965605273684587,
+                "Pref2016": 0.3086073857829067,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.31707211405240704,
+                "congressional_district": 26
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3776679084990077,
+                "Pref2016": 0.38307311995836585,
+                "state_abbreviation": "TX",
+                "scaled_delta": 8.129423947386674e-2,
+                "congressional_district": 27
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.678911836997987,
+                "state_abbreviation": "TX",
+                "scaled_delta": 2.427048383377852,
+                "congressional_district": 28
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4852015001316529,
+                "Pref2016": 0.38476244109191143,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.1407891548239747,
+                "congressional_district": 31
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5998895630050046,
+                "Pref2016": 0.626721210342535,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.20115698968033105,
+                "congressional_district": 34
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7322844236380679,
+                "Pref2016": 0.6663885858521038,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.9675139642581599,
+                "congressional_district": 35
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.27441474886914524,
+                "Pref2016": 0,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.7754790837125792,
+                "congressional_district": 36
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.2877636363636364,
+                "Pref2016": 0.2862995259554047,
+                "state_abbreviation": "UT",
+                "scaled_delta": -0.9956706824616371,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0.4894578105947893,
+                "DemPref": 0.4094916972012162,
+                "Pref2016": 0.3548138114732389,
+                "state_abbreviation": "UT",
+                "scaled_delta": -0.4894578105947893,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 1.0694586853911274,
+                "DemPref": 0.28787743033778335,
+                "Pref2016": 0.26538616568233997,
+                "state_abbreviation": "UT",
+                "scaled_delta": -1.0694586853911274,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.501288841676757,
+                "Pref2016": 0.43451591893030916,
+                "state_abbreviation": "UT",
+                "scaled_delta": -2.6588428454362465e-2,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.47329002102686624,
+                "Pref2016": 0.3824730190853462,
+                "state_abbreviation": "WA",
+                "scaled_delta": 0.3558217336462882,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.452400053691778,
+                "Pref2016": 0.40358973090927075,
+                "state_abbreviation": "WA",
+                "scaled_delta": -0.17815574852453717,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 4.982540141200646,
+                "DemPref": 1,
+                "Pref2016": 0.6880031993480574,
+                "state_abbreviation": "WI",
+                "scaled_delta": 4.982540141200646,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3188602514558249,
+                "Pref2016": 0.3257872061197883,
+                "state_abbreviation": "WY",
+                "scaled_delta": -0.9977947679901981,
+                "congressional_district": 0
+            },
+            {
+                "flip_index": 1.7030543914988219,
+                "DemPref": 0.5260976453438094,
+                "Pref2016": 0.4616191264252965,
+                "state_abbreviation": "IA",
+                "scaled_delta": 1.7030543914988219,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4828972655302012,
+                "Pref2016": 0.386768619898732,
+                "state_abbreviation": "IA",
+                "scaled_delta": 1.1099985128694558,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3289494673178546,
+                "Pref2016": 0.3181838650845473,
+                "state_abbreviation": "ID",
+                "scaled_delta": -0.6661640377356328,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.33989473233771234,
+                "Pref2016": 0.2785904138283079,
+                "state_abbreviation": "IN",
+                "scaled_delta": -0.36505909942501297,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.31411941868247445,
+                "Pref2016": 0.2735804519384335,
+                "state_abbreviation": "KY",
+                "scaled_delta": -0.7210286355208856,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.21052100393149925,
+                "Pref2016": 0,
+                "state_abbreviation": "KY",
+                "scaled_delta": -1.8824573400551565,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3353627073422437,
+                "Pref2016": 0.2916775334792321,
+                "state_abbreviation": "MO",
+                "scaled_delta": -0.4722093867932419,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.31236319444687655,
+                "Pref2016": 0.2885567805679301,
+                "state_abbreviation": "MO",
+                "scaled_delta": -0.7709913105050414,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.25423820010530646,
+                "Pref2016": 0.23351823376172862,
+                "state_abbreviation": "MO",
+                "scaled_delta": -1.3214717249552452,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4761432405678188,
+                "Pref2016": 0.41915049961630607,
+                "state_abbreviation": "MT",
+                "scaled_delta": 1.067110695755577,
+                "congressional_district": 0
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3342396403365335,
+                "Pref2016": 0.2817278348795194,
+                "state_abbreviation": "OH",
+                "scaled_delta": -0.4675361928229191,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3737401859791748,
+                "Pref2016": 0.3589721412103045,
+                "state_abbreviation": "SD",
+                "scaled_delta": -0.2751454681552474,
+                "congressional_district": 0
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.28937412616169095,
+                "Pref2016": 0.2346260251524246,
+                "state_abbreviation": "TN",
+                "scaled_delta": -0.9067489722928401,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3557028298218109,
+                "Pref2016": 0.33215919845725794,
+                "state_abbreviation": "IN",
+                "scaled_delta": -0.20540313172982996,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.34735921990637325,
+                "Pref2016": 0.3201113813355411,
+                "state_abbreviation": "OH",
+                "scaled_delta": -0.36633168384901454,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.41256383007293224,
+                "Pref2016": 0.311395509607134,
+                "state_abbreviation": "OH",
+                "scaled_delta": 0.5083270475482569,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.41173153487581293,
+                "Pref2016": 0.2809332125018441,
+                "state_abbreviation": "OR",
+                "scaled_delta": 0.20059743529595195,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 2.060026380874404,
+                "DemPref": 0.5779455256366234,
+                "Pref2016": 0.5830996561575807,
+                "state_abbreviation": "OR",
+                "scaled_delta": 2.060026380874404,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3339498466423144,
+                "Pref2016": 0.24354473466829976,
+                "state_abbreviation": "TN",
+                "scaled_delta": -0.6122293890163852,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 2.7778609721825696,
+                "DemPref": 0.596719895321214,
+                "Pref2016": 1,
+                "state_abbreviation": "WI",
+                "scaled_delta": 2.7778609721825696,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.49774120961231255,
+                "Pref2016": 0.5037947526035846,
+                "state_abbreviation": "MN",
+                "scaled_delta": 0.5600849646365164,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.45810950752586577,
+                "Pref2016": 0.4249494556984124,
+                "state_abbreviation": "CO",
+                "scaled_delta": 0.2657406196061047,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.36077603683966636,
+                "Pref2016": 0.29099889562336406,
+                "state_abbreviation": "OH",
+                "scaled_delta": -0.39480478127110474,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.36286605309196013,
+                "Pref2016": 0.37318950199959294,
+                "state_abbreviation": "WI",
+                "scaled_delta": -0.46592327690428487,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.46204161865383314,
+                "Pref2016": 0.4209769076841401,
+                "state_abbreviation": "MI",
+                "scaled_delta": 1.0972921850377857,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.44493561584376645,
+                "Pref2016": 0.394615961734066,
+                "state_abbreviation": "WI",
+                "scaled_delta": 0.7650989838984573,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3074912822157201,
+                "Pref2016": 0.2932404089114961,
+                "state_abbreviation": "OH",
+                "scaled_delta": -0.7780417742303027,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.29072037495647546,
+                "Pref2016": 0,
+                "state_abbreviation": "IL",
+                "scaled_delta": -1.3570987084412247,
+                "congressional_district": 15
+            },
+            {
+                "flip_index": 0.644756365667583,
+                "DemPref": 0.4669369132102869,
+                "Pref2016": 0.4171968418718786,
+                "state_abbreviation": "AK",
+                "scaled_delta": -0.644756365667583,
+                "congressional_district": 0
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5384476588578474,
+                "Pref2016": 0.538781803579276,
+                "state_abbreviation": "AZ",
+                "scaled_delta": 0.1293701864171376,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5474644913170772,
+                "Pref2016": 0.4304150735398934,
+                "state_abbreviation": "AZ",
+                "scaled_delta": -0.2634971328766109,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 1.0953640077928155,
+                "DemPref": 0.6386546195924643,
+                "Pref2016": 0.9977763638190281,
+                "state_abbreviation": "AZ",
+                "scaled_delta": 1.0953640077928155,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.7525306927200459,
+                "state_abbreviation": "AZ",
+                "scaled_delta": 2.2755750998680497,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6108557101571322,
+                "Pref2016": 0.6094158360519818,
+                "state_abbreviation": "AZ",
+                "scaled_delta": 0.5879701559655994,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7700795483705415,
+                "Pref2016": 0.7685009946608781,
+                "state_abbreviation": "CA",
+                "scaled_delta": 1.504120091154879,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5807294694102502,
+                "Pref2016": 0.5935143170691842,
+                "state_abbreviation": "CA",
+                "scaled_delta": -7.024858895056389e-2,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.7686851015608149,
+                "state_abbreviation": "CA",
+                "scaled_delta": 2.6101127563302353,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.550449724270907,
+                "Pref2016": 0.5117137177473335,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.6647061885826075,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 4.56168589557372,
+                "DemPref": 0,
+                "Pref2016": 0.3774198093697019,
+                "state_abbreviation": "CA",
+                "scaled_delta": -4.56168589557372,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0.14493094360517658,
+                "DemPref": 0.5225101397025688,
+                "Pref2016": 0.48299542591264033,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.14493094360517658,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5754517029358067,
+                "Pref2016": 0.5803484245873919,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.27734183276951335,
+                "congressional_district": 16
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5037934797915786,
+                "Pref2016": 0.4326173645096973,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.4578823958326336,
+                "congressional_district": 21
+            },
+            {
+                "flip_index": 0.563715882339801,
+                "DemPref": 0.4727784548001385,
+                "Pref2016": 0.32434905475685843,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.563715882339801,
+                "congressional_district": 22
+            },
+            {
+                "flip_index": 0.8667361255221816,
+                "DemPref": 0.3628300951529348,
+                "Pref2016": 0.30824889065501027,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.8667361255221816,
+                "congressional_district": 23
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5855550203740099,
+                "Pref2016": 0.5341908665632822,
+                "state_abbreviation": "CA",
+                "scaled_delta": -2.5290712000539957e-2,
+                "congressional_district": 24
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5436613855082401,
+                "Pref2016": 0.46869938467075867,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.7328229848432308,
+                "congressional_district": 25
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6194201060189644,
+                "Pref2016": 0.6037951246312079,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.5717524152432298,
+                "congressional_district": 26
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5874449985332942,
+                "Pref2016": 0.5606753852993479,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.13159273718190648,
+                "congressional_district": 31
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6509973052307396,
+                "Pref2016": 0.6495137414290275,
+                "state_abbreviation": "CA",
+                "scaled_delta": -7.155151669008245e-2,
+                "congressional_district": 41
+            },
+            {
+                "flip_index": 0.596792435255189,
+                "DemPref": 0.43500681234154837,
+                "Pref2016": 0.41177881967935304,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.596792435255189,
+                "congressional_district": 42
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5355199229140655,
+                "Pref2016": 0.41680264738133777,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.9916079959870465,
+                "congressional_district": 48
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5641900823645053,
+                "Pref2016": 0.49738679047572987,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.17733851094264172,
+                "congressional_district": 49
+            },
+            {
+                "flip_index": 0.3113675113924079,
+                "DemPref": 0.4828451560755937,
+                "Pref2016": 0.3654873529090249,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.3113675113924079,
+                "congressional_district": 50
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7120095171230205,
+                "Pref2016": 0.7275415488863495,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.9474253550850636,
+                "congressional_district": 51
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6907408647514454,
+                "Pref2016": 0.670092538962001,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.5225420511566714,
+                "congressional_district": 53
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7620534330467225,
+                "Pref2016": 0.7100893221892217,
+                "state_abbreviation": "CO",
+                "scaled_delta": 1.199944644604265,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0.42885515697451737,
+                "DemPref": 0.5579114187509663,
+                "Pref2016": 0.4556048613912579,
+                "state_abbreviation": "CO",
+                "scaled_delta": 0.42885515697451737,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7380034217744345,
+                "Pref2016": 1,
+                "state_abbreviation": "IL",
+                "scaled_delta": 1.038866531572864,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7666501866540558,
+                "Pref2016": 0.7116938180456357,
+                "state_abbreviation": "IL",
+                "scaled_delta": 0.9015673902167124,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5357525535273866,
+                "Pref2016": 0.4077598496078331,
+                "state_abbreviation": "IL",
+                "scaled_delta": -0.5097350072175029,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6597472695267518,
+                "Pref2016": 0.5831492812918643,
+                "state_abbreviation": "IL",
+                "scaled_delta": -1.4465635134767512e-2,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6559011832534442,
+                "Pref2016": 0.52605168374305,
+                "state_abbreviation": "IL",
+                "scaled_delta": 4.584020698518318e-2,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6384080082541216,
+                "Pref2016": 0.6044786680843188,
+                "state_abbreviation": "IL",
+                "scaled_delta": 0.3789363306316756,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7824301534738399,
+                "Pref2016": 0.7560319039855785,
+                "state_abbreviation": "MN",
+                "scaled_delta": 1.2301363017000817,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0.23138738967496364,
+                "DemPref": 0.4900497011892066,
+                "Pref2016": 0.4937847187334032,
+                "state_abbreviation": "NE",
+                "scaled_delta": -0.23138738967496364,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0.1492581657874307,
+                "DemPref": 0.5093397438471112,
+                "Pref2016": 0.37260379371095576,
+                "state_abbreviation": "NM",
+                "scaled_delta": 0.1492581657874307,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5478387262189791,
+                "Pref2016": 0.5068030849393537,
+                "state_abbreviation": "NV",
+                "scaled_delta": -0.37005123128417194,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5427528814917004,
+                "Pref2016": 0.5215455718057684,
+                "state_abbreviation": "NV",
+                "scaled_delta": -0.13622301811602824,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4070055417089635,
+                "Pref2016": 0,
+                "state_abbreviation": "OK",
+                "scaled_delta": -0.34582470416849354,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 1.5032062970436342,
+                "DemPref": 0.3164470098115558,
+                "Pref2016": 0.24734563447067312,
+                "state_abbreviation": "OK",
+                "scaled_delta": -1.5032062970436342,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.2612607608997501,
+                "Pref2016": 0.21709134077731707,
+                "state_abbreviation": "OK",
+                "scaled_delta": -1.4349195018627983,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.34352330466533226,
+                "Pref2016": 0.27251572439106964,
+                "state_abbreviation": "OK",
+                "scaled_delta": -0.690593440522385,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0.3326967156949464,
+                "DemPref": 0.506984432541011,
+                "Pref2016": 0.3919918620495944,
+                "state_abbreviation": "OK",
+                "scaled_delta": 0.3326967156949464,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0.7109374832570399,
+                "DemPref": 0.46296782159117217,
+                "Pref2016": 0.3727126352152847,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.7109374832570399,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0.7124820354432494,
+                "DemPref": 0.449170441326514,
+                "Pref2016": 0.3609982052364865,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.7124820354432494,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4782005312084993,
+                "Pref2016": 0.40138147105290406,
+                "state_abbreviation": "TX",
+                "scaled_delta": -9.1964255003124e-2,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7169516720057155,
+                "Pref2016": 1,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.9692227038571374,
+                "congressional_district": 16
+            },
+            {
+                "flip_index": 0.5813303810005954,
+                "DemPref": 0.42106212244161934,
+                "Pref2016": 0.366930768578934,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.5813303810005954,
+                "congressional_district": 17
+            },
+            {
+                "flip_index": 0.49825808630219337,
+                "DemPref": 0.4749108809465698,
+                "Pref2016": 0.4047842693172483,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.49825808630219337,
+                "congressional_district": 22
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5332496816795476,
+                "Pref2016": 0,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.45244226404468835,
+                "congressional_district": 32
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5619762688692991,
+                "Pref2016": 0.47104287797080574,
+                "state_abbreviation": "VA",
+                "scaled_delta": -0.6794741138042888,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.592676630312283,
+                "Pref2016": 0.5541502813410495,
+                "state_abbreviation": "WA",
+                "scaled_delta": 0.19927705908409138,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0.8548272277564144,
+                "DemPref": 0.3718225228103809,
+                "Pref2016": 0,
+                "state_abbreviation": "WA",
+                "scaled_delta": -0.8548272277564144,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8356115445131638,
+                "Pref2016": 1,
+                "state_abbreviation": "WA",
+                "scaled_delta": 1.796288573881111,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5241505540524569,
+                "Pref2016": 0.3980490237327225,
+                "state_abbreviation": "WA",
+                "scaled_delta": -0.35730065046081794,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6154401555123576,
+                "Pref2016": 0.5866521661320742,
+                "state_abbreviation": "WA",
+                "scaled_delta": 0.4796745410830028,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.7075307575325168,
+                "state_abbreviation": "CA",
+                "scaled_delta": 2.3015073790979175,
+                "congressional_district": 20
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5901655974648323,
+                "Pref2016": 0.6205393414926682,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.19110515936520486,
+                "congressional_district": 36
+            },
+            {
+                "flip_index": 0.78832657880981,
+                "DemPref": 0.4176923317694766,
+                "Pref2016": 0.3878109102607926,
+                "state_abbreviation": "NV",
+                "scaled_delta": -0.78832657880981,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.6401625036876782,
+                "state_abbreviation": "WA",
+                "scaled_delta": 4.549188915940804,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5649148498478306,
+                "Pref2016": 0.5735952273265706,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.68641599565257,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6388670508780944,
+                "Pref2016": 0.6153053069541292,
+                "state_abbreviation": "WA",
+                "scaled_delta": 0.49796626043865044,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7583716010525773,
+                "Pref2016": 0.7513963627793707,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.8094193137850026,
+                "congressional_district": 29
+            },
+            {
+                "flip_index": 0.7860138783682543,
+                "DemPref": 0.4843626715348794,
+                "Pref2016": 0.41175911926270925,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.7860138783682543,
+                "congressional_district": 24
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7002844722879243,
+                "Pref2016": 0.6643984749514716,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.16687006442913796,
+                "congressional_district": 33
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5051480376260985,
+                "Pref2016": 0.38317510467630866,
+                "state_abbreviation": "GA",
+                "scaled_delta": -0.898914728877267,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7766089373530041,
+                "Pref2016": 0.7371032452579351,
+                "state_abbreviation": "TX",
+                "scaled_delta": 1.106022248583245,
+                "congressional_district": 33
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7348622873694253,
+                "Pref2016": 0.6648371148150868,
+                "state_abbreviation": "IL",
+                "scaled_delta": 0.46656617699936814,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6893093715433614,
+                "Pref2016": 0.6268237485046187,
+                "state_abbreviation": "MN",
+                "scaled_delta": 0.32755263904797965,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5205100740609717,
+                "Pref2016": 0.4144024832531129,
+                "state_abbreviation": "CA",
+                "scaled_delta": -1.1778966525984031,
+                "congressional_district": 45
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6384713875009712,
+                "Pref2016": 0.5652568484606556,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.3484954325527313,
+                "congressional_district": 52
+            },
+            {
+                "flip_index": 0.64827315149499,
+                "DemPref": 0.49925296229866534,
+                "Pref2016": 0.396183155798974,
+                "state_abbreviation": "GA",
+                "scaled_delta": -0.64827315149499,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5252810949051934,
+                "Pref2016": 0.4382643337651106,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.9085846972067294,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7593820616588288,
+                "Pref2016": 1,
+                "state_abbreviation": "MA",
+                "scaled_delta": 0.9156057701607319,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5254901343739182,
+                "Pref2016": 0.4436261742675983,
+                "state_abbreviation": "NJ",
+                "scaled_delta": -0.8237551938805471,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5740017374674224,
+                "Pref2016": 0.40116377623196625,
+                "state_abbreviation": "NJ",
+                "scaled_delta": -0.3890910178197813,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6029969475534178,
+                "Pref2016": 0.5618537986255802,
+                "state_abbreviation": "NY",
+                "scaled_delta": -0.44352705869901077,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6205420355202813,
+                "Pref2016": 0.6088587322993931,
+                "state_abbreviation": "CT",
+                "scaled_delta": -0.3427560449767684,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6202369634812871,
+                "Pref2016": 0.5893532632825218,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.40189698354947373,
+                "congressional_district": 22
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6927951267329505,
+                "Pref2016": 0.6390150242681896,
+                "state_abbreviation": "MD",
+                "scaled_delta": 0.10874453987820976,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6363254142272655,
+                "Pref2016": 0.6462396508123462,
+                "state_abbreviation": "NJ",
+                "scaled_delta": -0.12368614493639975,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6868112927191679,
+                "Pref2016": 0.6625474278494141,
+                "state_abbreviation": "NJ",
+                "scaled_delta": 2.298886092391205e-2,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6344389841074508,
+                "Pref2016": 0.6204594226681723,
+                "state_abbreviation": "NY",
+                "scaled_delta": -0.25249121381860656,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5462801060409499,
+                "Pref2016": 0.4101595762593631,
+                "state_abbreviation": "NY",
+                "scaled_delta": -0.9077166363699839,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "NY",
+                "scaled_delta": 3.8974275352375263,
+                "congressional_district": 17
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6685188810705607,
+                "Pref2016": 0.6476282143512753,
+                "state_abbreviation": "RI",
+                "scaled_delta": 0.1186750105269979,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6363668382415835,
+                "Pref2016": 0.654385990787035,
+                "state_abbreviation": "RI",
+                "scaled_delta": -0.13004987423059644,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5769191992388106,
+                "Pref2016": 0.5147841480450877,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.614570948070999,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5802174989974287,
+                "Pref2016": 0.574848202118548,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.6820582333226628,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8067036324239937,
+                "Pref2016": 0.8064463997126953,
+                "state_abbreviation": "NJ",
+                "scaled_delta": 0.2660573980479058,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7088169272117814,
+                "Pref2016": 0.7132857932268505,
+                "state_abbreviation": "NJ",
+                "scaled_delta": -0.22270712055170275,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6194674638311828,
+                "Pref2016": 0.6514730165811049,
+                "state_abbreviation": "NM",
+                "scaled_delta": -0.38417273718268985,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8279466661219571,
+                "Pref2016": 0.7955979009859006,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.7773969169889873,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8711574920441465,
+                "Pref2016": 0.8232952126803338,
+                "state_abbreviation": "NY",
+                "scaled_delta": 1.1609316768633027,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7626837758767544,
+                "Pref2016": 0.7148533503361929,
+                "state_abbreviation": "VA",
+                "scaled_delta": 0.1737432856130694,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7252840702283813,
+                "Pref2016": 1,
+                "state_abbreviation": "VA",
+                "scaled_delta": -2.7305562232207457e-2,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7413242116794411,
+                "Pref2016": 0.7205282201409079,
+                "state_abbreviation": "CA",
+                "scaled_delta": 6.170048830316918e-2,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7837200219978162,
+                "Pref2016": 0.7798667943744476,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.7097592926793528,
+                "congressional_district": 28
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7340158548313557,
+                "Pref2016": 0.7263839153019773,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.16990811491026134,
+                "congressional_district": 30
+            },
+            {
+                "flip_index": 1.7826629925891855,
+                "DemPref": 0.3954661843125279,
+                "Pref2016": 0.37639788343073766,
+                "state_abbreviation": "FL",
+                "scaled_delta": -1.7826629925891855,
+                "congressional_district": 25
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5087461513961142,
+                "Pref2016": 0.437407211028632,
+                "state_abbreviation": "FL",
+                "scaled_delta": -1.0773463358820718,
+                "congressional_district": 26
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5307614551152717,
+                "Pref2016": 0.4510614334826907,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.8846440704472289,
+                "congressional_district": 27
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.865851530486374,
+                "Pref2016": 1,
+                "state_abbreviation": "IL",
+                "scaled_delta": 0.5781877000463065,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "MA",
+                "scaled_delta": 1.6211008985217603,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6700442088175869,
+                "Pref2016": 0.6241704531319738,
+                "state_abbreviation": "NM",
+                "scaled_delta": -0.3289125470050742,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.9173434388138969,
+                "state_abbreviation": "NY",
+                "scaled_delta": 1.2931044361167963,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.7288743152315246,
+                "state_abbreviation": "WA",
+                "scaled_delta": 2.041732082606277,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.7542701550041842,
+                "state_abbreviation": "CA",
+                "scaled_delta": 1.9734749955411959,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8682318211636474,
+                "Pref2016": 1,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.7594505749124661,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.9078455482220453,
+                "state_abbreviation": "CA",
+                "scaled_delta": 1.4628082719945261,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7922255577667593,
+                "Pref2016": 0.8086312651205982,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.11858740988497572,
+                "congressional_district": 14
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7296754383447642,
+                "Pref2016": 0.7376679532089883,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.15683571670055035,
+                "congressional_district": 15
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.753473636355026,
+                "Pref2016": 1,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.24468252072418162,
+                "congressional_district": 17
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7449162580482931,
+                "Pref2016": 0.7114500046306301,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.17022498277111786,
+                "congressional_district": 18
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7375487361507632,
+                "Pref2016": 0.7394443246848855,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.10398140156237537,
+                "congressional_district": 19
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.6742036132656644,
+                "state_abbreviation": "CA",
+                "scaled_delta": 1.839787062137844,
+                "congressional_district": 27
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8060985700618002,
+                "Pref2016": 1,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.5470837914173927,
+                "congressional_district": 29
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6877834955459778,
+                "Pref2016": 1,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.34446610655507903,
+                "congressional_district": 32
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "CA",
+                "scaled_delta": 1.3674531005670154,
+                "congressional_district": 34
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6939821773674039,
+                "Pref2016": 0.7239091232718423,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.4449283536065042,
+                "congressional_district": 35
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.890755484858997,
+                "Pref2016": 1,
+                "state_abbreviation": "CA",
+                "scaled_delta": 0.4051398273887621,
+                "congressional_district": 37
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6885177783493935,
+                "Pref2016": 0.7047829945630164,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.5353806850461348,
+                "congressional_district": 38
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5155712315819193,
+                "Pref2016": 0.42769570630389897,
+                "state_abbreviation": "CA",
+                "scaled_delta": -1.4868035901253156,
+                "congressional_district": 39
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "CA",
+                "scaled_delta": 1.5269944284801094,
+                "congressional_district": 40
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7766918980678595,
+                "Pref2016": 0.7608420342936278,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.5312232384990607,
+                "congressional_district": 43
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "CA",
+                "scaled_delta": 1.330335494803513,
+                "congressional_district": 44
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6914600178479677,
+                "Pref2016": 1,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.16085069721081421,
+                "congressional_district": 46
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6485549865180332,
+                "Pref2016": 0.6372144539420591,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.7220758512665442,
+                "congressional_district": 47
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7600989003545059,
+                "Pref2016": 0.7598536903984324,
+                "state_abbreviation": "HI",
+                "scaled_delta": -0.2792768690288749,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7736231898688175,
+                "Pref2016": 0.8115677668205742,
+                "state_abbreviation": "HI",
+                "scaled_delta": -8.268764752369508e-2,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6819040525442666,
+                "Pref2016": 0.6826566536427061,
+                "state_abbreviation": "NV",
+                "scaled_delta": -0.5096779370230414,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.7502182808032734,
+                "state_abbreviation": "NY",
+                "scaled_delta": 1.7217028705924085,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.6486867174963806,
+                "state_abbreviation": "FL",
+                "scaled_delta": 1.2949396383231249,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.6178706564376714,
+                "state_abbreviation": "FL",
+                "scaled_delta": 1.701943763181633,
+                "congressional_district": 14
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.619064035823594,
+                "Pref2016": 0.5834392105539687,
+                "state_abbreviation": "FL",
+                "scaled_delta": -1.0476106945885413,
+                "congressional_district": 23
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8517449042618901,
+                "Pref2016": 0.8372786793982742,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.2284168797810908,
+                "congressional_district": 14
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.9472843273845065,
+                "Pref2016": 0.9404102159102772,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.7664456667773086,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.9639259557725581,
+                "Pref2016": 0.9643283260678512,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.8274174204533279,
+                "congressional_district": 15
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "NY",
+                "scaled_delta": 1.155964625333264,
+                "congressional_district": 16
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6337464098955294,
+                "Pref2016": 0.638962059481713,
+                "state_abbreviation": "CT",
+                "scaled_delta": 7.5305463732000056e-3,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.630455272367679,
+                "Pref2016": 0.6674789974310907,
+                "state_abbreviation": "CT",
+                "scaled_delta": -2.7220974308085613e-3,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.6408332420491474,
+                "state_abbreviation": "FL",
+                "scaled_delta": 3.5741653626253944,
+                "congressional_district": 21
+            },
+            {
+                "flip_index": 1.0950702509774386,
+                "DemPref": 0.4915028369050631,
+                "Pref2016": 0.3935868473412587,
+                "state_abbreviation": "NY",
+                "scaled_delta": -1.0950702509774386,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.8031200461161551,
+                "state_abbreviation": "FL",
+                "scaled_delta": 1.0760828559892195,
+                "congressional_district": 20
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7901694210375182,
+                "Pref2016": 0.9017713095387885,
+                "state_abbreviation": "PA",
+                "scaled_delta": -0.2720183082105822,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5693264965530673,
+                "Pref2016": 0.5225522818724888,
+                "state_abbreviation": "NJ",
+                "scaled_delta": -0.34028028264768995,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5537789627470965,
+                "Pref2016": 0.5669194414682437,
+                "state_abbreviation": "CT",
+                "scaled_delta": -0.48253644977936383,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0,
+                "state_abbreviation": "FL",
+                "scaled_delta": 0.8563792951118082,
+                "congressional_district": 24
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6495199159852975,
+                "Pref2016": 0.6876554184387274,
+                "state_abbreviation": "MA",
+                "scaled_delta": 0.2534204339365184,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6082403976839009,
+                "Pref2016": 0.582623231540751,
+                "state_abbreviation": "MD",
+                "scaled_delta": -0.23943490440950002,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.567402890715854,
+                "Pref2016": 0.5591784756494279,
+                "state_abbreviation": "NY",
+                "scaled_delta": -0.34157279061110857,
+                "congressional_district": 18
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.7251092269700318,
+                "state_abbreviation": "MA",
+                "scaled_delta": 3.1379249898235235,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5053931441358966,
+                "Pref2016": 0.4442647450919858,
+                "state_abbreviation": "NY",
+                "scaled_delta": -0.8613711066557334,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "MA",
+                "scaled_delta": 4.497023529273241,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.20148474303024524,
+                "Pref2016": 0,
+                "state_abbreviation": "AL",
+                "scaled_delta": -2.0038103211327236,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.20494527077958616,
+                "Pref2016": 0,
+                "state_abbreviation": "GA",
+                "scaled_delta": -2.5785267419775764,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.32766554683559074,
+                "Pref2016": 0.27865444200002304,
+                "state_abbreviation": "IL",
+                "scaled_delta": -0.8063301621468925,
+                "congressional_district": 18
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4762821560255472,
+                "Pref2016": 0.38303021015901595,
+                "state_abbreviation": "MI",
+                "scaled_delta": 0.6685959589455001,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.407072616702848,
+                "Pref2016": 0.36860961160162864,
+                "state_abbreviation": "NC",
+                "scaled_delta": -0.14720138052639986,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.35122677134673336,
+                "Pref2016": 0.30286176679561067,
+                "state_abbreviation": "TN",
+                "scaled_delta": -0.5250806385363698,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4024796328578035,
+                "Pref2016": 0.33221676277466305,
+                "state_abbreviation": "VA",
+                "scaled_delta": -0.1769238355979593,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3091896123469526,
+                "Pref2016": 0.2854664779849921,
+                "state_abbreviation": "AZ",
+                "scaled_delta": -1.116137139270216,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0.5118858255038927,
+                "DemPref": 0.4480696463807663,
+                "Pref2016": 0.37869709410560837,
+                "state_abbreviation": "AZ",
+                "scaled_delta": -0.5118858255038927,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4453587994901512,
+                "Pref2016": 0,
+                "state_abbreviation": "AZ",
+                "scaled_delta": -4.718370908358413e-2,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4511341111271151,
+                "Pref2016": 0.4094689780789464,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.3577304338165546,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4586853522929424,
+                "Pref2016": 0.37280114423126237,
+                "state_abbreviation": "CA",
+                "scaled_delta": -0.24406798347216382,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6206328523517262,
+                "Pref2016": 0.6262127596608813,
+                "state_abbreviation": "CT",
+                "scaled_delta": 0.3070293848191988,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4368602933022428,
+                "Pref2016": 0.4143264667965,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.18252752029338057,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.39501895835818124,
+                "Pref2016": 0.34026658815342203,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.8458948870865844,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3484928479676036,
+                "Pref2016": 0.3258519735896679,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.9338624077492133,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.40574451448956655,
+                "Pref2016": 0.31409179563339096,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.5197184445344047,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0.7049939055358002,
+                "DemPref": 0.5764470566707995,
+                "Pref2016": 0.5190309182165118,
+                "state_abbreviation": "FL",
+                "scaled_delta": 0.7049939055358002,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.45438546081459663,
+                "Pref2016": 0.4023207122793561,
+                "state_abbreviation": "FL",
+                "scaled_delta": 9.497012538537111e-2,
+                "congressional_district": 16
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.37741208295761947,
+                "Pref2016": 0.3564898777211501,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.7280772772576036,
+                "congressional_district": 17
+            },
+            {
+                "flip_index": 0.7721642944633222,
+                "DemPref": 0.4569881323406132,
+                "Pref2016": 0.4455567602075915,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.7721642944633222,
+                "congressional_district": 18
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.377258364230161,
+                "Pref2016": 0.3410451276316188,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.7813684132429616,
+                "congressional_district": 19
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.49620258770214115,
+                "Pref2016": 0.40335057284808234,
+                "state_abbreviation": "IL",
+                "scaled_delta": 0.26340160589516454,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4087552721999195,
+                "Pref2016": 0,
+                "state_abbreviation": "IL",
+                "scaled_delta": 3.957013249800602e-3,
+                "congressional_district": 16
+            },
+            {
+                "flip_index": 1.9043227096515751,
+                "DemPref": 0.6209341498766044,
+                "Pref2016": 0.6030801064556133,
+                "state_abbreviation": "IL",
+                "scaled_delta": 1.9043227096515751,
+                "congressional_district": 17
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6719934813836607,
+                "Pref2016": 1,
+                "state_abbreviation": "MA",
+                "scaled_delta": 0.6598458038183317,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.7016057939495035,
+                "state_abbreviation": "MA",
+                "scaled_delta": 4.021302324916662,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.675045968849709,
+                "Pref2016": 1,
+                "state_abbreviation": "MA",
+                "scaled_delta": 0.6962511121846722,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5940119205707051,
+                "Pref2016": 0.6236583204011861,
+                "state_abbreviation": "MA",
+                "scaled_delta": 1.0601792658886542,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 2.2169533659849257,
+                "DemPref": 0.6440651379876626,
+                "Pref2016": 0.5803042474784184,
+                "state_abbreviation": "ME",
+                "scaled_delta": 2.2169533659849257,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0.9871414567472259,
+                "DemPref": 0.5052711417238539,
+                "Pref2016": 0.4519873053395424,
+                "state_abbreviation": "ME",
+                "scaled_delta": 0.9871414567472259,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.43683401654751775,
+                "Pref2016": 0.4218923098058817,
+                "state_abbreviation": "MI",
+                "scaled_delta": 0.2487861856977035,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.37375898965093846,
+                "Pref2016": 0.3423266598839273,
+                "state_abbreviation": "MI",
+                "scaled_delta": -0.2655220113145838,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3671595082892245,
+                "Pref2016": 0.33855197943697657,
+                "state_abbreviation": "MI",
+                "scaled_delta": -0.24342910134833096,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5344458318031583,
+                "Pref2016": 0.43149380329604087,
+                "state_abbreviation": "MI",
+                "scaled_delta": -4.967716000955385e-2,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5572137659913612,
+                "Pref2016": 0.43138514400491446,
+                "state_abbreviation": "MN",
+                "scaled_delta": 0.24470153343885115,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 1.2857080014921232,
+                "DemPref": 0.5213336176867847,
+                "Pref2016": 0.5251546067361338,
+                "state_abbreviation": "MN",
+                "scaled_delta": 1.2857080014921232,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4711032344995586,
+                "Pref2016": 0.5028201636789871,
+                "state_abbreviation": "MN",
+                "scaled_delta": 0.5870263464973483,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4799155876440198,
+                "Pref2016": 0.3915295880978667,
+                "state_abbreviation": "MO",
+                "scaled_delta": -7.58779112555447e-2,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.39558603829960615,
+                "Pref2016": 0.3591102284232896,
+                "state_abbreviation": "NC",
+                "scaled_delta": -0.14933326907450503,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.23278513295578143,
+                "Pref2016": 0,
+                "state_abbreviation": "NE",
+                "scaled_delta": -1.8466239044925068,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0.6605883697617914,
+                "DemPref": 0.5433770217512549,
+                "Pref2016": 0.5076803568296289,
+                "state_abbreviation": "NH",
+                "scaled_delta": 0.6605883697617914,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5683524298696168,
+                "Pref2016": 0.5233286113878918,
+                "state_abbreviation": "NH",
+                "scaled_delta": 0.6206652449854682,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0.15362713594147304,
+                "DemPref": 0.5065566898700544,
+                "Pref2016": 0.395893481351786,
+                "state_abbreviation": "NJ",
+                "scaled_delta": 0.15362713594147304,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0.9009462115339538,
+                "DemPref": 0.43737902432797043,
+                "Pref2016": 0.34474103930465744,
+                "state_abbreviation": "NJ",
+                "scaled_delta": -0.9009462115339538,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5469530348627998,
+                "Pref2016": 0.4810032803663012,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.20594170114771124,
+                "congressional_district": 19
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6443200153361982,
+                "Pref2016": 0.6933719954665214,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.507091749384104,
+                "congressional_district": 20
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.44510001096141105,
+                "Pref2016": 0.33236058487412606,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.2506757914840694,
+                "congressional_district": 21
+            },
+            {
+                "flip_index": 0.35727877302524225,
+                "DemPref": 0.5129927562509398,
+                "Pref2016": 0.47557413399623183,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.35727877302524225,
+                "congressional_district": 22
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4679830826021629,
+                "Pref2016": 0.43766730715540886,
+                "state_abbreviation": "NY",
+                "scaled_delta": -0.10596545784007516,
+                "congressional_district": 23
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5051516736401673,
+                "Pref2016": 0.4237580496780129,
+                "state_abbreviation": "NY",
+                "scaled_delta": -6.07259792662706e-2,
+                "congressional_district": 24
+            },
+            {
+                "flip_index": 1.0936273090403623,
+                "DemPref": 0.5281469302312165,
+                "Pref2016": 0.3805732315478522,
+                "state_abbreviation": "NY",
+                "scaled_delta": 1.0936273090403623,
+                "congressional_district": 27
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4475204810026093,
+                "Pref2016": 0.3739153037149598,
+                "state_abbreviation": "OH",
+                "scaled_delta": 1.402272711548315e-2,
+                "congressional_district": 14
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4326882653231457,
+                "Pref2016": 0.3467062472513483,
+                "state_abbreviation": "OH",
+                "scaled_delta": 0.2115741339060004,
+                "congressional_district": 16
+            },
+            {
+                "flip_index": 0.45206861425243927,
+                "DemPref": 0.4874044111850284,
+                "Pref2016": 0.8220159860874219,
+                "state_abbreviation": "PA",
+                "scaled_delta": -0.45206861425243927,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6352243754335702,
+                "Pref2016": 0.339437125748503,
+                "state_abbreviation": "PA",
+                "scaled_delta": 0.47552666929523235,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5887591608465749,
+                "Pref2016": 0.4276227760167076,
+                "state_abbreviation": "PA",
+                "scaled_delta": 6.438102956950204e-2,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.546420541089432,
+                "Pref2016": 0.45574263821563055,
+                "state_abbreviation": "PA",
+                "scaled_delta": 0.5104637352869116,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4025437176360941,
+                "Pref2016": 0.36659141445860843,
+                "state_abbreviation": "PA",
+                "scaled_delta": -0.1102411596468514,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.48677641367130187,
+                "Pref2016": 0.29831122033842017,
+                "state_abbreviation": "PA",
+                "scaled_delta": -2.0148473603989008e-2,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.41023978327281113,
+                "Pref2016": 0.3633217440720769,
+                "state_abbreviation": "PA",
+                "scaled_delta": 8.878858644317902e-2,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3396248851856712,
+                "Pref2016": 0.3823815993140388,
+                "state_abbreviation": "PA",
+                "scaled_delta": -0.8124544336023128,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.2950771126009808,
+                "Pref2016": 1,
+                "state_abbreviation": "PA",
+                "scaled_delta": -1.2041468540049112,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4209465377892188,
+                "Pref2016": 0.7436613728254664,
+                "state_abbreviation": "PA",
+                "scaled_delta": 0.103854455112661,
+                "congressional_district": 14
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.32157637166833625,
+                "Pref2016": 0.3943770711079057,
+                "state_abbreviation": "PA",
+                "scaled_delta": -1.0899182775778748,
+                "congressional_district": 15
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.47834130511028805,
+                "Pref2016": 0.4438047188010091,
+                "state_abbreviation": "PA",
+                "scaled_delta": 0.4516086896085954,
+                "congressional_district": 16
+            },
+            {
+                "flip_index": 1.2382399646238857,
+                "DemPref": 0.5625731389309507,
+                "Pref2016": 0.5380401413543273,
+                "state_abbreviation": "PA",
+                "scaled_delta": 1.2382399646238857,
+                "congressional_district": 17
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.21428993558300335,
+                "Pref2016": 0.16443828297172136,
+                "state_abbreviation": "TN",
+                "scaled_delta": -2.1601593274008413,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3478315489167876,
+                "Pref2016": 0.29222685931862397,
+                "state_abbreviation": "VA",
+                "scaled_delta": -0.9212469918848267,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7272730779318963,
+                "Pref2016": 1,
+                "state_abbreviation": "VT",
+                "scaled_delta": 1.8226793387595315,
+                "congressional_district": 0
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.43653333333333333,
+                "Pref2016": 0.3174456723281169,
+                "state_abbreviation": "WI",
+                "scaled_delta": 0.3038677518547474,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.38017439368798145,
+                "Pref2016": 0.3051230999272355,
+                "state_abbreviation": "WI",
+                "scaled_delta": -0.46845649555693064,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.390450673434516,
+                "Pref2016": 0.38292718630286054,
+                "state_abbreviation": "WI",
+                "scaled_delta": 4.872458236159244e-2,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.35424843855630783,
+                "Pref2016": 0.31026611477491844,
+                "state_abbreviation": "WV",
+                "scaled_delta": -0.9125326836901779,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4433468503639523,
+                "Pref2016": 0.4181865511912534,
+                "state_abbreviation": "WV",
+                "scaled_delta": 0.22181053948297344,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.43626596565419895,
+                "Pref2016": 0.2610042583578806,
+                "state_abbreviation": "WV",
+                "scaled_delta": -4.284033379138351e-2,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3883906717772309,
+                "Pref2016": 0.2993159944077921,
+                "state_abbreviation": "MD",
+                "scaled_delta": -0.9021672623879967,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4296520855252599,
+                "Pref2016": 0.41598314543531584,
+                "state_abbreviation": "NC",
+                "scaled_delta": -0.16715937525964356,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 1.468446910921095,
+                "DemPref": 0.6099494768667701,
+                "Pref2016": 0.677333783568787,
+                "state_abbreviation": "OH",
+                "scaled_delta": 1.468446910921095,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.29444636537444574,
+                "Pref2016": 0,
+                "state_abbreviation": "AR",
+                "scaled_delta": -0.9730427923402506,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 1.6850845540989792,
+                "DemPref": 0.6236640671501742,
+                "Pref2016": 0.6352995142835764,
+                "state_abbreviation": "MI",
+                "scaled_delta": 1.6850845540989792,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7020857323864292,
+                "Pref2016": 0.6874483709615522,
+                "state_abbreviation": "MI",
+                "scaled_delta": 0.30225653047340323,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6183285211076337,
+                "Pref2016": 0.5970265486725663,
+                "state_abbreviation": "NY",
+                "scaled_delta": -0.17348940118093906,
+                "congressional_district": 25
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7185337093053064,
+                "Pref2016": 0.7743129885987029,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.4734040874951082,
+                "congressional_district": 26
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0,
+                "state_abbreviation": "PA",
+                "scaled_delta": 2.6490612735908177,
+                "congressional_district": 18
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6594025151120527,
+                "Pref2016": 0.6198214593784568,
+                "state_abbreviation": "NJ",
+                "scaled_delta": 0.4083387420589911,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5390828669577323,
+                "Pref2016": 0.38595843663815915,
+                "state_abbreviation": "NJ",
+                "scaled_delta": -0.4224416838960545,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5516669931439765,
+                "Pref2016": 0.4053311972005418,
+                "state_abbreviation": "PA",
+                "scaled_delta": -0.44248823866443104,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3680120765176075,
+                "Pref2016": 0,
+                "state_abbreviation": "AL",
+                "scaled_delta": -0.2910209728722945,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3849740932642487,
+                "Pref2016": 0.45384755542058913,
+                "state_abbreviation": "AL",
+                "scaled_delta": -0.30570701956618945,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3624172656903946,
+                "Pref2016": 0.32976879318342733,
+                "state_abbreviation": "AL",
+                "scaled_delta": -0.43616717514780085,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.38927859750970434,
+                "Pref2016": 0.3320568661268477,
+                "state_abbreviation": "AL",
+                "scaled_delta": -0.43495074862162775,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.30786596018491225,
+                "Pref2016": 0.2544176377263526,
+                "state_abbreviation": "AL",
+                "scaled_delta": -1.029009628681093,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "AL",
+                "scaled_delta": 1.241306210165795,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.467795859179892,
+                "Pref2016": 0.38686466147127185,
+                "state_abbreviation": "AR",
+                "scaled_delta": 0.43612264938135764,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.31876606683804626,
+                "Pref2016": 0,
+                "state_abbreviation": "AR",
+                "scaled_delta": -0.9379031544351938,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 2.3305596287067285,
+                "DemPref": 0.6445396995495227,
+                "Pref2016": 0.5754616796639194,
+                "state_abbreviation": "DE",
+                "scaled_delta": 2.3305596287067285,
+                "congressional_district": 0
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.32941362581733813,
+                "Pref2016": 0.309001424756085,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.701204263785669,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.32558666702755373,
+                "Pref2016": 0.3078206034183325,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.9381213116665537,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0.6634650208368404,
+                "DemPref": 0.42375756942994364,
+                "Pref2016": 0.41291897474415545,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.6634650208368404,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3317929585685812,
+                "Pref2016": 0.28229866923616503,
+                "state_abbreviation": "FL",
+                "scaled_delta": -1.033158318867818,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6678121971249529,
+                "Pref2016": 0.6423430205299894,
+                "state_abbreviation": "FL",
+                "scaled_delta": 0.18904029459904823,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0.4377417546857196,
+                "DemPref": 0.4697946145871277,
+                "Pref2016": 0.4253879437567902,
+                "state_abbreviation": "FL",
+                "scaled_delta": -0.4377417546857196,
+                "congressional_district": 15
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4226134201361879,
+                "Pref2016": 0,
+                "state_abbreviation": "GA",
+                "scaled_delta": -6.013535589420272e-2,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.59649344812389,
+                "Pref2016": 0.6122984843301086,
+                "state_abbreviation": "GA",
+                "scaled_delta": -0.8320624786909269,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3447369678436619,
+                "Pref2016": 0.31653402025812455,
+                "state_abbreviation": "GA",
+                "scaled_delta": -0.515595476028386,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7884691959045598,
+                "Pref2016": 0.7571945972160598,
+                "state_abbreviation": "GA",
+                "scaled_delta": -0.3412392383939718,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.8443914303491278,
+                "state_abbreviation": "GA",
+                "scaled_delta": 1.1417698631097675,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0,
+                "Pref2016": 0.32357080650679604,
+                "state_abbreviation": "GA",
+                "scaled_delta": -3.0287838331649017,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.37108031776966655,
+                "Pref2016": 0,
+                "state_abbreviation": "GA",
+                "scaled_delta": -0.40756556218452794,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.38208604366587234,
+                "Pref2016": 0.3259422611793961,
+                "state_abbreviation": "GA",
+                "scaled_delta": -0.5779035119659075,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4052193908714554,
+                "Pref2016": 0.38399147200593253,
+                "state_abbreviation": "GA",
+                "scaled_delta": -0.21869879498911626,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7618437987552787,
+                "Pref2016": 1,
+                "state_abbreviation": "GA",
+                "scaled_delta": -0.43409949928835495,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7881257275902211,
+                "Pref2016": 0.7409657626624959,
+                "state_abbreviation": "IL",
+                "scaled_delta": -5.781133561836454e-3,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8105555343016608,
+                "Pref2016": 0.7980762048335948,
+                "state_abbreviation": "IL",
+                "scaled_delta": -3.21425328878574e-2,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8761507941342495,
+                "Pref2016": 0.8423954334276859,
+                "state_abbreviation": "IL",
+                "scaled_delta": 0.39174123304857056,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4681398063152582,
+                "Pref2016": 0.4222865727239975,
+                "state_abbreviation": "IL",
+                "scaled_delta": 0.2558903005816991,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 1.2405704404465037,
+                "DemPref": 0.6509288146652801,
+                "Pref2016": 1,
+                "state_abbreviation": "IN",
+                "scaled_delta": 1.2405704404465037,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 1.4420990649815608,
+                "DemPref": 0.6486286512619718,
+                "Pref2016": 0.626943660024882,
+                "state_abbreviation": "IN",
+                "scaled_delta": 1.4420990649815608,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 1.3489592483853943,
+                "DemPref": 0.6292537791162905,
+                "Pref2016": 0.6349919580022362,
+                "state_abbreviation": "KY",
+                "scaled_delta": 1.3489592483853943,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.27083491116193825,
+                "Pref2016": 0.20747812510164915,
+                "state_abbreviation": "LA",
+                "scaled_delta": -1.2522756533195507,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "LA",
+                "scaled_delta": 1.1664786368864597,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3074912748584222,
+                "Pref2016": 0.20306246297446864,
+                "state_abbreviation": "LA",
+                "scaled_delta": -0.6398123233420435,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.34360689720154525,
+                "Pref2016": 0.1770263644966726,
+                "state_abbreviation": "LA",
+                "scaled_delta": -0.48156660576877414,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.31053595884072993,
+                "Pref2016": 0,
+                "state_abbreviation": "LA",
+                "scaled_delta": -0.6036360995760379,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.2913977718607204,
+                "Pref2016": 0.24729218770002218,
+                "state_abbreviation": "LA",
+                "scaled_delta": -0.8159734852322792,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6825004183963785,
+                "Pref2016": 0.6519982358528973,
+                "state_abbreviation": "MD",
+                "scaled_delta": 0.7529258297787687,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7097492469694685,
+                "Pref2016": 0.6510397709349446,
+                "state_abbreviation": "MD",
+                "scaled_delta": 0.5095557106812221,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7972118386577886,
+                "Pref2016": 0.7757135718275081,
+                "state_abbreviation": "MD",
+                "scaled_delta": -0.46515742783436353,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7219008836529274,
+                "Pref2016": 0.6964031869769575,
+                "state_abbreviation": "MD",
+                "scaled_delta": -0.18549941562347952,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7824299817099813,
+                "Pref2016": 0.7744573500132946,
+                "state_abbreviation": "MD",
+                "scaled_delta": -0.13487765577327132,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 1.5373614122315942,
+                "DemPref": 0.6184436647757242,
+                "Pref2016": 0.6076147755007638,
+                "state_abbreviation": "MI",
+                "scaled_delta": 1.5373614122315942,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.8305935347997593,
+                "state_abbreviation": "MI",
+                "scaled_delta": 1.2249358832770436,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8236234451433907,
+                "Pref2016": 0.8077574626618758,
+                "state_abbreviation": "MI",
+                "scaled_delta": -1.2215944393198373e-2,
+                "congressional_district": 14
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8273391856893333,
+                "Pref2016": 0.7907489648223098,
+                "state_abbreviation": "MO",
+                "scaled_delta": 0.16702488082857614,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 1.7183612325539859,
+                "DemPref": 0.6339246906783345,
+                "Pref2016": 0.6064978047097798,
+                "state_abbreviation": "MO",
+                "scaled_delta": 1.7183612325539859,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.32617545114670893,
+                "Pref2016": 0.28907170060812254,
+                "state_abbreviation": "MS",
+                "scaled_delta": -0.589339247357718,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.697185421461841,
+                "state_abbreviation": "MS",
+                "scaled_delta": 1.1484171696262802,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0.7352128268288476,
+                "DemPref": 0.3708061002178649,
+                "Pref2016": 0.31447588443376934,
+                "state_abbreviation": "MS",
+                "scaled_delta": -0.7352128268288476,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.31066299340619635,
+                "Pref2016": 0.2994459641151653,
+                "state_abbreviation": "MS",
+                "scaled_delta": -0.6903963149002544,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6984762079398551,
+                "Pref2016": 0.7032183222880652,
+                "state_abbreviation": "NC",
+                "scaled_delta": 0.27774888148169474,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4719064490186276,
+                "Pref2016": 0.4329141991002824,
+                "state_abbreviation": "NC",
+                "scaled_delta": 0.3977104452786759,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0,
+                "Pref2016": 0.32798786534487073,
+                "state_abbreviation": "NC",
+                "scaled_delta": -4.00866058393704,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7506919989426317,
+                "Pref2016": 0.6821783411184716,
+                "state_abbreviation": "NC",
+                "scaled_delta": 1.2117204230468424,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.43483963989309327,
+                "Pref2016": 0.40770895628648723,
+                "state_abbreviation": "NC",
+                "scaled_delta": 7.409586354431011e-3,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4352217023774793,
+                "Pref2016": 0.39086182004337,
+                "state_abbreviation": "NC",
+                "scaled_delta": 7.611858777285092e-2,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4466129985402374,
+                "Pref2016": 0.41227073627513194,
+                "state_abbreviation": "NC",
+                "scaled_delta": 0.17961486839578814,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 2.490261462779276e-2,
+                "DemPref": 0.498369880433882,
+                "Pref2016": 0.41817722478367964,
+                "state_abbreviation": "NC",
+                "scaled_delta": -2.490261462779276e-2,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.730728170295696,
+                "Pref2016": 0.6702404809619239,
+                "state_abbreviation": "NC",
+                "scaled_delta": 0.2216761303817584,
+                "congressional_district": 12
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4691191918610508,
+                "Pref2016": 0.4389662777221428,
+                "state_abbreviation": "NC",
+                "scaled_delta": 0.3666602867985486,
+                "congressional_district": 13
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8966916354556804,
+                "Pref2016": 0.8782822379501717,
+                "state_abbreviation": "NJ",
+                "scaled_delta": 0.1273240013941209,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.8807396624867011,
+                "state_abbreviation": "NY",
+                "scaled_delta": 1.0148830893258696,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 1,
+                "state_abbreviation": "NY",
+                "scaled_delta": 1.0577360583087712,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8994359335595334,
+                "Pref2016": 1,
+                "state_abbreviation": "NY",
+                "scaled_delta": 0.3051118985724231,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4775130529528605,
+                "Pref2016": 0.4078407931020871,
+                "state_abbreviation": "OH",
+                "scaled_delta": 0.30602034643889886,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 1.5553859853938423,
+                "DemPref": 0.7362690833890883,
+                "Pref2016": 0.6857398807623794,
+                "state_abbreviation": "OH",
+                "scaled_delta": 1.5553859853938423,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 1.5705370257327882,
+                "DemPref": 0.6779924877851041,
+                "Pref2016": 0.6868654676284469,
+                "state_abbreviation": "OH",
+                "scaled_delta": 1.5705370257327882,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4298524638216104,
+                "Pref2016": 0.3376705914861608,
+                "state_abbreviation": "OH",
+                "scaled_delta": -0.11009530031129577,
+                "congressional_district": 10
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8224990423901941,
+                "Pref2016": 0.8025379436115314,
+                "state_abbreviation": "OH",
+                "scaled_delta": 0.13714550282872925,
+                "congressional_district": 11
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.9338077968291899,
+                "Pref2016": 0,
+                "state_abbreviation": "PA",
+                "scaled_delta": 0.6407041944278187,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6518866871886425,
+                "Pref2016": 0.328355687801899,
+                "state_abbreviation": "PA",
+                "scaled_delta": 0.5248163972990041,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0.5493283620442075,
+                "DemPref": 0.5069390230301678,
+                "Pref2016": 0.3673014364560108,
+                "state_abbreviation": "SC",
+                "scaled_delta": 0.5493283620442075,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.43018661287971605,
+                "Pref2016": 0.3643150713366453,
+                "state_abbreviation": "SC",
+                "scaled_delta": 3.950087337791073e-2,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.313567668230491,
+                "Pref2016": 0.2708666037777893,
+                "state_abbreviation": "SC",
+                "scaled_delta": -1.1629183451226381,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.38030217097435853,
+                "Pref2016": 0.3157713451178683,
+                "state_abbreviation": "SC",
+                "scaled_delta": -0.5433204411642171,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4211306485466707,
+                "Pref2016": 0.3954965768150732,
+                "state_abbreviation": "SC",
+                "scaled_delta": 0.1379469143023945,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7129630085645196,
+                "Pref2016": 0.7173951605750546,
+                "state_abbreviation": "SC",
+                "scaled_delta": 6.951468021734067e-2,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.40361972037033167,
+                "Pref2016": 0.3695815262823215,
+                "state_abbreviation": "SC",
+                "scaled_delta": -0.14220458695646168,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 1.3711335725550169,
+                "DemPref": 0.6784739170225748,
+                "Pref2016": 0.6255337349749949,
+                "state_abbreviation": "TN",
+                "scaled_delta": 1.3711335725550169,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.30790617212760263,
+                "Pref2016": 0.2673277775893197,
+                "state_abbreviation": "TN",
+                "scaled_delta": -0.9323105251494248,
+                "congressional_district": 8
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.8061486336369695,
+                "Pref2016": 0.8067110371602884,
+                "state_abbreviation": "TN",
+                "scaled_delta": -0.16449628683681128,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.26702494900360896,
+                "Pref2016": 0.24618753452078299,
+                "state_abbreviation": "TX",
+                "scaled_delta": -1.202748193128944,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.3758833732314617,
+                "Pref2016": 0,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.27214870299793426,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.4611372472860874,
+                "Pref2016": 0.40083649304237706,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.12780692579997524,
+                "congressional_district": 6
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.8064374108199,
+                "state_abbreviation": "TX",
+                "scaled_delta": 1.2156900275102767,
+                "congressional_district": 9
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.39892020038588993,
+                "Pref2016": 0.38143905115813387,
+                "state_abbreviation": "TX",
+                "scaled_delta": -0.1050950408359256,
+                "congressional_district": 14
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7833197795247131,
+                "Pref2016": 0.7565994669031507,
+                "state_abbreviation": "TX",
+                "scaled_delta": 0.22324943134169056,
+                "congressional_district": 18
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.8041788510517875,
+                "state_abbreviation": "TX",
+                "scaled_delta": 1.310478116187411,
+                "congressional_district": 30
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.44756627697353746,
+                "Pref2016": 0.3794764392260875,
+                "state_abbreviation": "VA",
+                "scaled_delta": -9.913409001988607e-2,
+                "congressional_district": 1
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.5111947815067264,
+                "Pref2016": 0.3853959956762338,
+                "state_abbreviation": "VA",
+                "scaled_delta": -0.21270756630284154,
+                "congressional_district": 2
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 1,
+                "Pref2016": 0.6685481955934357,
+                "state_abbreviation": "VA",
+                "scaled_delta": 1.4286988078683798,
+                "congressional_district": 3
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.6353251080081802,
+                "Pref2016": 0.5786501747781662,
+                "state_abbreviation": "VA",
+                "scaled_delta": -1.7832086729430593e-2,
+                "congressional_district": 4
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.46729965622674213,
+                "Pref2016": 0.4165690808964973,
+                "state_abbreviation": "VA",
+                "scaled_delta": 0.11428137020103171,
+                "congressional_district": 5
+            },
+            {
+                "flip_index": 0.48930440954509247,
+                "DemPref": 0.509821237267426,
+                "Pref2016": 0.42345908158301077,
+                "state_abbreviation": "VA",
+                "scaled_delta": 0.48930440954509247,
+                "congressional_district": 7
+            },
+            {
+                "flip_index": 0,
+                "DemPref": 0.7775003953640738,
+                "Pref2016": 1,
+                "state_abbreviation": "WI",
+                "scaled_delta": 0.26042554224586956,
+                "congressional_district": 4
+            }
+        ],
+        "format": {
+            "parse": {}
+        }
+    },
+    "width": 800,
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "title": "Raw anomaly vs 2018 vote share (color for 2016 vote share)",
+    "encoding": {
+        "color": {
+            "field": "2016 Dem Vote Share",
+            "scale": {
+                "scheme": "redblue",
+                "domainMid": 0
+            },
+            "type": "quantitative"
+        },
+        "x": {
+            "field": "2018 Dem Vote Share",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Anomaly",
+            "type": "quantitative"
+        }
+    },
+    "padding": 10
+};
+vegaEmbed('#figure_6',vlSpec);</script>
 </figure>
 <p>Some questions:</p>
 <ol type="1">
