@@ -261,7 +261,9 @@
 <li>State-Level effects</li>
 <li>Conclusions</li>
 </ul>
-<p><em>Turnout Data: The CPS Voting and Registration Supplement</em> ________________________________________</p>
+</section>
+<section id="turnout-data-the-cps-voting-and-registration-supplement" class="level1">
+<h1><em>Turnout Data: The CPS Voting and Registration Supplement</em></h1>
 <p>Each election year, the census bureau, via the Current Population Survey, conducts the <a href="https://www.census.gov/topics/public-sector/voting.html">Voting and Registration Survey</a>, asking approximately 100,000 people nationwide about their registration status and if they voted in the general election. In addition to county of residence, demographic information (age, sex, race, ethnicity, education, etc.) is paired with the responses, allowing estimation of voter turnout among various groups and in various places.</p>
 <p>The CPS-VRS responses are “self-reported”: the survey does not validate the registration or turnout of the people surveyed, and thus there are <a href="http://www.electproject.org/home/voter-turnout/cps-methodology">reporting errors</a>, ones which tend to overestimate turnout in a way which differs systematically among states. To account for this, we adjust the turnout probabilities from the CPS so that when they are post-stratified across the citizen population of each state, we get the correct total turnout. This was first suggested by <a href="https://www.aramhur.com/uploads/6/0/1/8/60187785/2013._poq_coding_cps.pdf">Achen and Hur</a> and we follow the procedure outlined by <a href="http://www.stat.columbia.edu/~gelman/research/published/misterp.pdf">Ghitza and Gelman</a> (p. 769), to compute the adjustment for each state/year.</p>
 <p>Also, CPS-VRS data <a href="https://static1.squarespace.com/static/5fac72852ca67743c720d6a1/t/5ff8a986c87fc6090567c6d0/1610131850413/CPS_AFS_2021.pdf">seems to under-report</a> the gaps between White and non-White voters. So all of our results looking at turnout gaps should be viewed skeptically: the gaps are likely larger than we see in the data. There are other publically available surveys which validate survey reponses, when possible, via state voter files, primarily the <a href="https://cces.gov.harvard.edu">CCES</a>. That survey is smaller: approximately 50,000 people surveyed each year, with about 40,000 validated voters. For the sake of a first analysis, we will start with the CPS data.</p>
@@ -319,8 +321,8 @@
                         "NE",
                         "CO",
                         "IA",
-                        "OK",
                         "DC",
+                        "OK",
                         "KS",
                         "NH",
                         "MN",
@@ -340,8 +342,8 @@
                         "MT",
                         "AZ",
                         "RI",
-                        "UT",
                         "SD",
+                        "UT",
                         "AK",
                         "HI"
                     ],
@@ -401,8 +403,8 @@
                         "NE",
                         "CO",
                         "IA",
-                        "OK",
                         "DC",
+                        "OK",
                         "KS",
                         "NH",
                         "MN",
@@ -422,8 +424,8 @@
                         "MT",
                         "AZ",
                         "RI",
-                        "UT",
                         "SD",
+                        "UT",
                         "AK",
                         "HI"
                     ],
@@ -479,412 +481,412 @@
     "data": {
         "values": [
             {
-                "hi": 2.9899999999999996e-2,
-                "mid": -0.1334,
+                "hi": 2.8700000000000003e-2,
+                "mid": -0.1335,
                 "State": "AK",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.880000000000002e-2
+                "lo": -2.7599999999999986e-2
             },
             {
-                "hi": 2.048e-2,
-                "mid": -3.697e-2,
+                "hi": 2.029e-2,
+                "mid": -3.764e-2,
                 "State": "AL",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.044e-2
+                "lo": -1.8799999999999997e-2
             },
             {
-                "hi": 2.102e-2,
-                "mid": -4.668e-2,
+                "hi": 2.047e-2,
+                "mid": -4.697e-2,
                 "State": "AR",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.198e-2
+                "lo": -1.994e-2
             },
             {
-                "hi": 2.321000000000001e-2,
-                "mid": -0.1136,
+                "hi": 2.242999999999999e-2,
+                "mid": -0.1137,
                 "State": "AZ",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.1699999999999997e-2
+                "lo": -2.1800000000000014e-2
             },
             {
-                "hi": 2.001e-2,
-                "mid": -0.103,
+                "hi": 1.945999999999999e-2,
+                "mid": -0.1031,
                 "State": "CA",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.880000000000001e-2
+                "lo": -1.8500000000000003e-2
             },
             {
-                "hi": 1.7260000000000005e-2,
-                "mid": -7.777e-2,
+                "hi": 1.7029999999999997e-2,
+                "mid": -7.8e-2,
                 "State": "CO",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.8269999999999995e-2
+                "lo": -1.6780000000000003e-2
             },
             {
-                "hi": 1.8810000000000007e-2,
+                "hi": 1.8420000000000006e-2,
                 "mid": -0.1053,
                 "State": "CT",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.8699999999999994e-2
+                "lo": -1.899999999999999e-2
             },
             {
-                "hi": 1.4260000000000009e-2,
-                "mid": -8.121e-2,
+                "hi": 1.3440000000000007e-2,
+                "mid": -8.142e-2,
                 "State": "DC",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.4329999999999996e-2
+                "lo": -1.3179999999999997e-2
             },
             {
-                "hi": 1.933e-2,
-                "mid": -6.102e-2,
+                "hi": 1.8839999999999996e-2,
+                "mid": -6.125e-2,
                 "State": "DE",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.886000000000001e-2
+                "lo": -1.779e-2
             },
             {
-                "hi": 1.8100000000000005e-2,
-                "mid": -6.703e-2,
+                "hi": 1.7459999999999996e-2,
+                "mid": -6.719e-2,
                 "State": "FL",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.723999999999999e-2
+                "lo": -1.6509999999999997e-2
             },
             {
-                "hi": 2.0200000000000003e-2,
-                "mid": -4.143e-2,
+                "hi": 1.9389999999999998e-2,
+                "mid": -4.185e-2,
                 "State": "GA",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.9609999999999995e-2
+                "lo": -1.845e-2
             },
             {
-                "hi": 2.1900000000000003e-2,
+                "hi": 2.0700000000000024e-2,
                 "mid": -0.1569,
                 "State": "HI",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.0199999999999996e-2
+                "lo": -2.04e-2
             },
             {
-                "hi": 2.004000000000001e-2,
-                "mid": -7.92e-2,
+                "hi": 1.9430000000000003e-2,
+                "mid": -7.932e-2,
                 "State": "IA",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.08e-2
+                "lo": -2.0470000000000002e-2
             },
             {
-                "hi": 2.6399999999999993e-2,
-                "mid": -0.1049,
+                "hi": 2.5910000000000002e-2,
+                "mid": -0.1051,
                 "State": "ID",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.7100000000000013e-2
+                "lo": -2.6400000000000007e-2
             },
             {
-                "hi": 1.899e-2,
-                "mid": -5.748e-2,
+                "hi": 1.7939999999999998e-2,
+                "mid": -5.755e-2,
                 "State": "IL",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.8199999999999994e-2
+                "lo": -1.7870000000000004e-2
             },
             {
-                "hi": 2.101e-2,
-                "mid": -5.29e-2,
+                "hi": 1.974e-2,
+                "mid": -5.293e-2,
                 "State": "IN",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.938999999999999e-2
+                "lo": -1.9980000000000005e-2
             },
             {
-                "hi": 2.144e-2,
-                "mid": -8.394e-2,
+                "hi": 2.073e-2,
+                "mid": -8.445e-2,
                 "State": "KS",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.0959999999999993e-2
-            },
-            {
-                "hi": 2.086e-2,
-                "mid": -4.097e-2,
-                "State": "KY",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.024e-2
-            },
-            {
-                "hi": 1.9039999999999998e-2,
-                "mid": -4.044e-2,
-                "State": "LA",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.8620000000000005e-2
-            },
-            {
-                "hi": 1.812000000000001e-2,
-                "mid": -0.1073,
-                "State": "MA",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.7199999999999993e-2
-            },
-            {
-                "hi": 1.72e-2,
-                "mid": -5.206e-2,
-                "State": "MD",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.6830000000000005e-2
-            },
-            {
-                "hi": 2.0829999999999987e-2,
-                "mid": -9.323e-2,
-                "State": "ME",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.0970000000000003e-2
-            },
-            {
-                "hi": 1.784e-2,
-                "mid": -3.987e-2,
-                "State": "MI",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.7049999999999996e-2
-            },
-            {
-                "hi": 1.876e-2,
-                "mid": -8.58e-2,
-                "State": "MN",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.9199999999999995e-2
-            },
-            {
-                "hi": 1.815e-2,
-                "mid": -3.642e-2,
-                "State": "MO",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.7549999999999996e-2
-            },
-            {
-                "hi": 2.052e-2,
-                "mid": -3.753e-2,
-                "State": "MS",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.1830000000000002e-2
-            },
-            {
-                "hi": 2.6080000000000006e-2,
-                "mid": -0.1125,
-                "State": "MT",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.550000000000001e-2
-            },
-            {
-                "hi": 1.724e-2,
-                "mid": -4.616e-2,
-                "State": "NC",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.695e-2
-            },
-            {
-                "hi": 2.7400000000000008e-2,
-                "mid": -0.1107,
-                "State": "ND",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.71e-2
-            },
-            {
-                "hi": 1.9900000000000008e-2,
-                "mid": -7.695e-2,
-                "State": "NE",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.9809999999999994e-2
-            },
-            {
-                "hi": 1.8640000000000004e-2,
-                "mid": -8.465e-2,
-                "State": "NH",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.915e-2
-            },
-            {
-                "hi": 1.748000000000001e-2,
-                "mid": -8.708e-2,
-                "State": "NJ",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.722e-2
-            },
-            {
-                "hi": 2.2709999999999994e-2,
-                "mid": -0.1117,
-                "State": "NM",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.100000000000002e-2
-            },
-            {
-                "hi": 2.0920000000000008e-2,
-                "mid": -9.628e-2,
-                "State": "NV",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.9019999999999995e-2
-            },
-            {
-                "hi": 1.9730000000000004e-2,
-                "mid": -7.018e-2,
-                "State": "NY",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.894e-2
-            },
-            {
-                "hi": 2.02e-2,
-                "mid": -4.822e-2,
-                "State": "OH",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.9129999999999994e-2
-            },
-            {
-                "hi": 2.3990000000000004e-2,
-                "mid": -8.093e-2,
-                "State": "OK",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.4370000000000003e-2
-            },
-            {
-                "hi": 2.182999999999999e-2,
-                "mid": -9.792e-2,
-                "State": "OR",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.2580000000000003e-2
-            },
-            {
-                "hi": 1.8900000000000007e-2,
-                "mid": -6.367e-2,
-                "State": "PA",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -1.795999999999999e-2
-            },
-            {
-                "hi": 2.713e-2,
-                "mid": -0.1177,
-                "State": "RI",
-                "Year": "2016",
-                "Label": "Without Interaction",
-                "lo": -2.8299999999999992e-2
-            },
-            {
-                "hi": 2.112e-2,
-                "mid": -5.119e-2,
-                "State": "SC",
                 "Year": "2016",
                 "Label": "Without Interaction",
                 "lo": -2.015e-2
             },
             {
-                "hi": 2.9910000000000006e-2,
-                "mid": -0.1267,
+                "hi": 2.0220000000000002e-2,
+                "mid": -4.136e-2,
+                "State": "KY",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.8569999999999996e-2
+            },
+            {
+                "hi": 1.883e-2,
+                "mid": -4.113e-2,
+                "State": "LA",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.691e-2
+            },
+            {
+                "hi": 1.729e-2,
+                "mid": -0.1072,
+                "State": "MA",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.65e-2
+            },
+            {
+                "hi": 1.6849999999999997e-2,
+                "mid": -5.232e-2,
+                "State": "MD",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.5720000000000005e-2
+            },
+            {
+                "hi": 2.092999999999999e-2,
+                "mid": -9.358e-2,
+                "State": "ME",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -2.0519999999999997e-2
+            },
+            {
+                "hi": 1.723e-2,
+                "mid": -4.022e-2,
+                "State": "MI",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.611e-2
+            },
+            {
+                "hi": 1.8229999999999996e-2,
+                "mid": -8.612e-2,
+                "State": "MN",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.758e-2
+            },
+            {
+                "hi": 1.7819999999999996e-2,
+                "mid": -3.686e-2,
+                "State": "MO",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.666e-2
+            },
+            {
+                "hi": 2.004e-2,
+                "mid": -3.775e-2,
+                "State": "MS",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -2.012e-2
+            },
+            {
+                "hi": 2.5899999999999992e-2,
+                "mid": -0.1128,
+                "State": "MT",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -2.5399999999999992e-2
+            },
+            {
+                "hi": 1.67e-2,
+                "mid": -4.641e-2,
+                "State": "NC",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.575e-2
+            },
+            {
+                "hi": 2.602e-2,
+                "mid": -0.111,
+                "State": "ND",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -2.6199999999999987e-2
+            },
+            {
+                "hi": 1.944e-2,
+                "mid": -7.722e-2,
+                "State": "NE",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.933e-2
+            },
+            {
+                "hi": 1.822e-2,
+                "mid": -8.492e-2,
+                "State": "NH",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.818e-2
+            },
+            {
+                "hi": 1.7309999999999992e-2,
+                "mid": -8.732e-2,
+                "State": "NJ",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.648000000000001e-2
+            },
+            {
+                "hi": 2.185000000000001e-2,
+                "mid": -0.1116,
+                "State": "NM",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -2.149999999999999e-2
+            },
+            {
+                "hi": 1.9879999999999995e-2,
+                "mid": -9.626e-2,
+                "State": "NV",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.8839999999999996e-2
+            },
+            {
+                "hi": 1.9079999999999993e-2,
+                "mid": -7.039e-2,
+                "State": "NY",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.7890000000000003e-2
+            },
+            {
+                "hi": 1.9059999999999997e-2,
+                "mid": -4.833e-2,
+                "State": "OH",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.883e-2
+            },
+            {
+                "hi": 2.423e-2,
+                "mid": -8.143e-2,
+                "State": "OK",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -2.377e-2
+            },
+            {
+                "hi": 2.019e-2,
+                "mid": -9.836e-2,
+                "State": "OR",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -2.1540000000000004e-2
+            },
+            {
+                "hi": 1.8300000000000004e-2,
+                "mid": -6.374e-2,
+                "State": "PA",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.7329999999999998e-2
+            },
+            {
+                "hi": 2.7649999999999994e-2,
+                "mid": -0.1186,
+                "State": "RI",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -2.7200000000000016e-2
+            },
+            {
+                "hi": 2.0149999999999994e-2,
+                "mid": -5.15e-2,
+                "State": "SC",
+                "Year": "2016",
+                "Label": "Without Interaction",
+                "lo": -1.9370000000000005e-2
+            },
+            {
+                "hi": 2.842e-2,
+                "mid": -0.1265,
                 "State": "SD",
                 "Year": "2016",
                 "Label": "Without Interaction",
                 "lo": -2.9099999999999987e-2
             },
             {
-                "hi": 2.16e-2,
-                "mid": -3.341e-2,
+                "hi": 2.071e-2,
+                "mid": -3.376e-2,
                 "State": "TN",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.1039999999999996e-2
+                "lo": -1.985e-2
             },
             {
-                "hi": 2.243e-2,
-                "mid": -6.744e-2,
+                "hi": 2.1210000000000007e-2,
+                "mid": -6.771e-2,
                 "State": "TX",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.1000000000000005e-2
+                "lo": -2.038999999999999e-2
             },
             {
-                "hi": 2.4999999999999994e-2,
-                "mid": -0.1263,
+                "hi": 2.5300000000000017e-2,
+                "mid": -0.1269,
                 "State": "UT",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.4800000000000016e-2
+                "lo": -2.52e-2
             },
             {
-                "hi": 1.7030000000000003e-2,
-                "mid": -5.358e-2,
+                "hi": 1.634e-2,
+                "mid": -5.371e-2,
                 "State": "VA",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.65e-2
+                "lo": -1.5709999999999995e-2
             },
             {
-                "hi": 2.441e-2,
-                "mid": -8.986e-2,
+                "hi": 2.3860000000000006e-2,
+                "mid": -8.995e-2,
                 "State": "VT",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.5440000000000004e-2
+                "lo": -2.4249999999999994e-2
             },
             {
-                "hi": 1.8890000000000004e-2,
-                "mid": -9.857e-2,
+                "hi": 1.879e-2,
+                "mid": -9.879e-2,
                 "State": "WA",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -1.9729999999999998e-2
+                "lo": -1.901e-2
             },
             {
-                "hi": 1.997e-2,
-                "mid": -7.538e-2,
+                "hi": 1.924e-2,
+                "mid": -7.527e-2,
                 "State": "WI",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.0470000000000002e-2
+                "lo": -1.9540000000000002e-2
             },
             {
-                "hi": 2.168e-2,
-                "mid": -3.957e-2,
+                "hi": 2.077e-2,
+                "mid": -3.997e-2,
                 "State": "WV",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.0879999999999996e-2
+                "lo": -1.999e-2
             },
             {
-                "hi": 2.538e-2,
-                "mid": -9.233e-2,
+                "hi": 2.5279999999999997e-2,
+                "mid": -9.281e-2,
                 "State": "WY",
                 "Year": "2016",
                 "Label": "Without Interaction",
-                "lo": -2.527e-2
+                "lo": -2.4489999999999998e-2
             }
         ]
     },
@@ -926,11 +928,11 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                         "TN",
                         "MI",
                         "IN",
-                        "GA",
                         "OH",
+                        "GA",
                         "NC",
-                        "KY",
                         "WV",
+                        "KY",
                         "NV",
                         "MS",
                         "AR",
@@ -940,8 +942,8 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                         "MN",
                         "CO",
                         "NJ",
-                        "ME",
                         "NH",
+                        "ME",
                         "OK",
                         "NM",
                         "VT",
@@ -950,13 +952,13 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                         "NY",
                         "TX",
                         "DC",
-                        "UT",
                         "DE",
+                        "UT",
                         "ID",
                         "MT",
                         "ND",
-                        "RI",
                         "WI",
+                        "RI",
                         "SD",
                         "KS",
                         "AK",
@@ -1008,11 +1010,11 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                         "TN",
                         "MI",
                         "IN",
-                        "GA",
                         "OH",
+                        "GA",
                         "NC",
-                        "KY",
                         "WV",
+                        "KY",
                         "NV",
                         "MS",
                         "AR",
@@ -1022,8 +1024,8 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                         "MN",
                         "CO",
                         "NJ",
-                        "ME",
                         "NH",
+                        "ME",
                         "OK",
                         "NM",
                         "VT",
@@ -1032,13 +1034,13 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                         "NY",
                         "TX",
                         "DC",
-                        "UT",
                         "DE",
+                        "UT",
                         "ID",
                         "MT",
                         "ND",
-                        "RI",
                         "WI",
+                        "RI",
                         "SD",
                         "KS",
                         "AK",
@@ -1104,95 +1106,95 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
     "data": {
         "values": [
             {
-                "hi": 0.10071,
-                "mid": -0.1331,
+                "hi": 0.10017999999999999,
+                "mid": -0.1321,
                 "State": "AK",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -0.10020000000000001
+                "lo": -0.10350000000000001
             },
             {
-                "hi": 6.701e-2,
-                "mid": 8.16e-3,
+                "hi": 6.7419e-2,
+                "mid": 7.921e-3,
                 "State": "AL",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -6.966e-2
+                "lo": -6.8781e-2
             },
             {
-                "hi": 0.10611999999999999,
-                "mid": -4.61e-2,
+                "hi": 0.10058,
+                "mid": -4.533e-2,
                 "State": "AR",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -9.870000000000001e-2
+                "lo": -0.10357
             },
             {
-                "hi": 2.0199999999999996e-2,
-                "mid": -0.2049,
+                "hi": 2.1199999999999997e-2,
+                "mid": -0.2051,
                 "State": "AZ",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -2.1400000000000002e-2
+                "lo": -2.0600000000000007e-2
             },
             {
-                "hi": 9.500000000000008e-3,
-                "mid": -0.1335,
+                "hi": 9.300000000000003e-3,
+                "mid": -0.1336,
                 "State": "CA",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -9.699999999999986e-3
+                "lo": -9.599999999999997e-3
             },
             {
-                "hi": 4.7950000000000007e-2,
-                "mid": -7.155e-2,
+                "hi": 4.758999999999999e-2,
+                "mid": -7.103e-2,
                 "State": "CO",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -5.065e-2
+                "lo": -5.2070000000000005e-2
             },
             {
-                "hi": 4.539999999999998e-2,
+                "hi": 4.5999999999999985e-2,
                 "mid": -0.1362,
                 "State": "CT",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -4.530000000000001e-2
+                "lo": -4.76e-2
             },
             {
-                "hi": 2.7289999999999995e-2,
-                "mid": -9.801e-2,
+                "hi": 2.793000000000001e-2,
+                "mid": -9.821e-2,
                 "State": "DC",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -2.849e-2
+                "lo": -2.808999999999999e-2
             },
             {
-                "hi": 4.594e-2,
-                "mid": -0.1019,
+                "hi": 4.5610000000000005e-2,
+                "mid": -0.1018,
                 "State": "DE",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -4.7700000000000006e-2
+                "lo": -4.5999999999999985e-2
             },
             {
-                "hi": 1.74e-2,
-                "mid": -0.1349,
+                "hi": 1.6600000000000004e-2,
+                "mid": -0.1345,
                 "State": "FL",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -1.69e-2
+                "lo": -1.679999999999998e-2
             },
             {
-                "hi": 4.457e-2,
-                "mid": -1.212e-2,
+                "hi": 4.55e-2,
+                "mid": -1.328e-2,
                 "State": "GA",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -4.479e-2
+                "lo": -4.393e-2
             },
             {
-                "hi": 4.040000000000002e-2,
+                "hi": 3.98e-2,
                 "mid": -0.1869,
                 "State": "HI",
                 "Year": "2016",
@@ -1200,316 +1202,316 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                 "lo": -3.8699999999999984e-2
             },
             {
-                "hi": 8.074999999999999e-2,
-                "mid": -0.1558,
+                "hi": 7.821e-2,
+                "mid": -0.1537,
                 "State": "IA",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -9.570000000000001e-2
+                "lo": -9.660000000000002e-2
             },
             {
-                "hi": 9.4226e-2,
-                "mid": -0.1038,
+                "hi": 9.920799999999999e-2,
+                "mid": -0.1054,
                 "State": "ID",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -0.10289999999999999
+                "lo": -0.10070000000000001
             },
             {
-                "hi": 5.4920000000000004e-2,
-                "mid": -6.385e-2,
+                "hi": 5.3396000000000006e-2,
+                "mid": -6.338e-2,
                 "State": "IL",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -5.514999999999999e-2
+                "lo": -5.611999999999999e-2
             },
             {
-                "hi": 7.33e-2,
-                "mid": -1.184e-2,
+                "hi": 7.007e-2,
+                "mid": -1.267e-2,
                 "State": "IN",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -7.525e-2
+                "lo": -7.191e-2
             },
             {
-                "hi": 6.284000000000001e-2,
-                "mid": -0.1282,
+                "hi": 6.188999999999999e-2,
+                "mid": -0.1289,
                 "State": "KS",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -6.709999999999999e-2
+                "lo": -7.170000000000001e-2
             },
             {
-                "hi": 5.881e-2,
-                "mid": -2.149e-2,
+                "hi": 6.089e-2,
+                "mid": -2.339e-2,
                 "State": "KY",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -6.130000000000001e-2
+                "lo": -5.912e-2
             },
             {
-                "hi": 3.9960999999999997e-2,
-                "mid": 2.729e-3,
+                "hi": 3.8921000000000004e-2,
+                "mid": 3.619e-3,
                 "State": "LA",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -3.8389e-2
+                "lo": -3.9139e-2
             },
             {
-                "hi": 2.3400000000000004e-2,
-                "mid": -0.169,
+                "hi": 2.3800000000000016e-2,
+                "mid": -0.1688,
                 "State": "MA",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -2.2799999999999987e-2
+                "lo": -2.3299999999999987e-2
             },
             {
-                "hi": 3.1698e-2,
-                "mid": 1.062e-3,
+                "hi": 3.28684e-2,
+                "mid": 8.216e-4,
                 "State": "MD",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -3.2522e-2
+                "lo": -3.31116e-2
             },
             {
-                "hi": 6.7491e-2,
-                "mid": -7.629e-2,
+                "hi": 6.8243e-2,
+                "mid": -7.796e-2,
                 "State": "ME",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -7.331000000000001e-2
+                "lo": -7.133999999999999e-2
             },
             {
-                "hi": 2.3389999999999998e-2,
-                "mid": -1.89e-3,
+                "hi": 2.3622e-2,
+                "mid": -2.182e-3,
                 "State": "MI",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -2.433e-2
+                "lo": -2.4198e-2
             },
             {
-                "hi": 6.0705999999999996e-2,
-                "mid": -6.817e-2,
+                "hi": 5.667e-2,
+                "mid": -6.677e-2,
                 "State": "MN",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -6.273e-2
+                "lo": -6.253e-2
             },
             {
-                "hi": 5.730999999999999e-2,
-                "mid": -9.126e-2,
+                "hi": 5.6499999999999995e-2,
+                "mid": -9.194e-2,
                 "State": "MO",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -6.534e-2
+                "lo": -6.616e-2
             },
             {
-                "hi": 9.991e-2,
-                "mid": -3.882e-2,
+                "hi": 9.79e-2,
+                "mid": -3.901e-2,
                 "State": "MS",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -9.888e-2
+                "lo": -9.588999999999999e-2
             },
             {
-                "hi": 8.334e-2,
-                "mid": -0.1059,
+                "hi": 8.743e-2,
+                "mid": -0.1055,
                 "State": "MT",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -8.42e-2
+                "lo": -8.900000000000001e-2
             },
             {
-                "hi": 3.665e-2,
-                "mid": -1.752e-2,
+                "hi": 3.7790000000000004e-2,
+                "mid": -1.829e-2,
                 "State": "NC",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -3.766e-2
+                "lo": -3.661e-2
             },
             {
-                "hi": 0.101813,
-                "mid": -0.1099,
+                "hi": 0.102502,
+                "mid": -0.1095,
                 "State": "ND",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -0.1044
+            },
+            {
+                "hi": 6.697e-2,
+                "mid": -4.899e-2,
+                "State": "NE",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -6.620999999999999e-2
+            },
+            {
+                "hi": 5.4020000000000006e-2,
+                "mid": -7.491e-2,
+                "State": "NH",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -6.2289999999999984e-2
+            },
+            {
+                "hi": 2.5029999999999997e-2,
+                "mid": -7.472e-2,
+                "State": "NJ",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -2.5220000000000006e-2
+            },
+            {
+                "hi": 3.354e-2,
+                "mid": -8.674e-2,
+                "State": "NM",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -3.476e-2
+            },
+            {
+                "hi": 3.0535e-2,
+                "mid": -3.188e-2,
+                "State": "NV",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -3.0650000000000004e-2
+            },
+            {
+                "hi": 1.6130000000000005e-2,
+                "mid": -9.499e-2,
+                "State": "NY",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -1.611e-2
+            },
+            {
+                "hi": 4.841e-2,
+                "mid": -1.285e-2,
+                "State": "OH",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -5.0320000000000004e-2
+            },
+            {
+                "hi": 0.10078,
+                "mid": -8.113e-2,
+                "State": "OK",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -9.897000000000002e-2
+            },
+            {
+                "hi": 7.081000000000001e-2,
+                "mid": -0.1436,
+                "State": "OR",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -7.849999999999999e-2
+            },
+            {
+                "hi": 2.74e-2,
+                "mid": 1.556e-2,
+                "State": "PA",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -2.839e-2
+            },
+            {
+                "hi": 9.254e-2,
+                "mid": -0.1187,
+                "State": "RI",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -9.5e-2
+            },
+            {
+                "hi": 6.468e-2,
+                "mid": 2.213e-2,
+                "State": "SC",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -6.422e-2
+            },
+            {
+                "hi": 0.10166000000000001,
+                "mid": -0.1254,
+                "State": "SD",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -0.10629999999999998
+            },
+            {
+                "hi": 7.34418e-2,
+                "mid": 8.082e-4,
+                "State": "TN",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -7.466819999999999e-2
+            },
+            {
+                "hi": 4.8839999999999995e-2,
+                "mid": -9.691e-2,
+                "State": "TX",
+                "Year": "2016",
+                "Label": "With Interaction",
+                "lo": -4.7390000000000015e-2
+            },
+            {
+                "hi": 0.1035755,
+                "mid": -0.1041,
+                "State": "UT",
                 "Year": "2016",
                 "Label": "With Interaction",
                 "lo": -0.10020000000000001
             },
             {
-                "hi": 6.513e-2,
-                "mid": -4.734e-2,
-                "State": "NE",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -6.856000000000001e-2
-            },
-            {
-                "hi": 5.625e-2,
-                "mid": -7.635e-2,
-                "State": "NH",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -6.065000000000001e-2
-            },
-            {
-                "hi": 2.4970000000000006e-2,
-                "mid": -7.516e-2,
-                "State": "NJ",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -2.475999999999999e-2
-            },
-            {
-                "hi": 3.325e-2,
-                "mid": -8.687e-2,
-                "State": "NM",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -3.383e-2
-            },
-            {
-                "hi": 3.0596000000000005e-2,
-                "mid": -3.185e-2,
-                "State": "NV",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -2.9529999999999994e-2
-            },
-            {
-                "hi": 1.6829999999999998e-2,
-                "mid": -9.502e-2,
-                "State": "NY",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -1.5980000000000008e-2
-            },
-            {
-                "hi": 4.932e-2,
-                "mid": -1.245e-2,
-                "State": "OH",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -5.1199999999999996e-2
-            },
-            {
-                "hi": 9.967e-2,
-                "mid": -8.138e-2,
-                "State": "OK",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -0.10312
-            },
-            {
-                "hi": 7.343999999999999e-2,
-                "mid": -0.1425,
-                "State": "OR",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -8.170000000000002e-2
-            },
-            {
-                "hi": 2.8620000000000003e-2,
-                "mid": 1.569e-2,
-                "State": "PA",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -2.806e-2
-            },
-            {
-                "hi": 8.538000000000001e-2,
-                "mid": -0.116,
-                "State": "RI",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -9.849999999999999e-2
-            },
-            {
-                "hi": 6.384e-2,
-                "mid": 2.148e-2,
-                "State": "SC",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -6.052e-2
-            },
-            {
-                "hi": 9.893000000000002e-2,
-                "mid": -0.1264,
-                "State": "SD",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -0.1046
-            },
-            {
-                "hi": 7.71508e-2,
-                "mid": 1.192e-4,
-                "State": "TN",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -8.03292e-2
-            },
-            {
-                "hi": 4.837e-2,
-                "mid": -9.711e-2,
-                "State": "TX",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -4.7990000000000005e-2
-            },
-            {
-                "hi": 9.623100000000001e-2,
-                "mid": -0.101,
-                "State": "UT",
-                "Year": "2016",
-                "Label": "With Interaction",
-                "lo": -9.65e-2
-            },
-            {
-                "hi": 3.694e-2,
-                "mid": -6.622e-2,
+                "hi": 3.785999999999999e-2,
+                "mid": -6.649e-2,
                 "State": "VA",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -3.7680000000000005e-2
+                "lo": -3.971000000000001e-2
             },
             {
-                "hi": 9.370899999999999e-2,
-                "mid": -8.897e-2,
+                "hi": 9.6341e-2,
+                "mid": -8.993e-2,
                 "State": "VT",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -9.863e-2
+                "lo": -9.627000000000001e-2
             },
             {
-                "hi": 4.880000000000001e-2,
-                "mid": -0.1529,
+                "hi": 4.899999999999999e-2,
+                "mid": -0.1523,
                 "State": "WA",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -5.109999999999998e-2
+                "lo": -5.260000000000001e-2
             },
             {
-                "hi": 7.261999999999999e-2,
-                "mid": -0.1187,
+                "hi": 6.999e-2,
+                "mid": -0.1166,
                 "State": "WI",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -8.280000000000001e-2
+                "lo": -8.23e-2
             },
             {
-                "hi": 8.619e-2,
-                "mid": -2.181e-2,
+                "hi": 8.481e-2,
+                "mid": -2.158e-2,
                 "State": "WV",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -9.119000000000001e-2
+                "lo": -9.032e-2
             },
             {
-                "hi": 0.100892,
-                "mid": -9.258e-2,
+                "hi": 0.101289,
+                "mid": -9.357e-2,
                 "State": "WY",
                 "Year": "2016",
                 "Label": "With Interaction",
-                "lo": -0.10102
+                "lo": -9.713000000000001e-2
             }
         ]
     },
@@ -1553,13 +1555,13 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                         "MI",
                         "OH",
                         "TN",
-                        "NE",
                         "GA",
+                        "NE",
                         "NC",
-                        "UT",
                         "NM",
-                        "KY",
+                        "UT",
                         "MN",
+                        "KY",
                         "WV",
                         "ME",
                         "NJ",
@@ -1567,27 +1569,27 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                         "MT",
                         "CO",
                         "AR",
-                        "RI",
-                        "ID",
+                        "AK",
                         "VT",
+                        "ID",
                         "SD",
                         "ND",
                         "WY",
                         "OK",
-                        "AK",
                         "MS",
+                        "RI",
                         "IL",
                         "VA",
                         "DC",
                         "NY",
                         "TX",
                         "HI",
-                        "CA",
                         "CT",
+                        "CA",
                         "DE",
                         "WI",
-                        "OR",
                         "KS",
+                        "OR",
                         "WA",
                         "MO",
                         "MA",
@@ -1635,13 +1637,13 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                         "MI",
                         "OH",
                         "TN",
-                        "NE",
                         "GA",
+                        "NE",
                         "NC",
-                        "UT",
                         "NM",
-                        "KY",
+                        "UT",
                         "MN",
+                        "KY",
                         "WV",
                         "ME",
                         "NJ",
@@ -1649,27 +1651,27 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                         "MT",
                         "CO",
                         "AR",
-                        "RI",
-                        "ID",
+                        "AK",
                         "VT",
+                        "ID",
                         "SD",
                         "ND",
                         "WY",
                         "OK",
-                        "AK",
                         "MS",
+                        "RI",
                         "IL",
                         "VA",
                         "DC",
                         "NY",
                         "TX",
                         "HI",
-                        "CA",
                         "CT",
+                        "CA",
                         "DE",
                         "WI",
-                        "OR",
                         "KS",
+                        "OR",
                         "WA",
                         "MO",
                         "MA",
@@ -1729,412 +1731,412 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
     "data": {
         "values": [
             {
-                "hi": 0.1008167,
-                "mid": -5.167e-4,
+                "hi": 0.1006963,
+                "mid": 6.037e-4,
                 "State": "AK",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.641330000000001e-2
+                "lo": -0.1016037
             },
             {
-                "hi": 6.819e-2,
-                "mid": 4.471e-2,
+                "hi": 6.527e-2,
+                "mid": 4.483e-2,
                 "State": "AL",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.798e-2
+                "lo": -6.7e-2
             },
             {
-                "hi": 0.1037281,
-                "mid": 8.719e-4,
+                "hi": 9.8775e-2,
+                "mid": 2.025e-3,
                 "State": "AR",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.799189999999999e-2
+                "lo": -9.8485e-2
             },
             {
-                "hi": 2.682000000000001e-2,
-                "mid": -9.148e-2,
+                "hi": 2.6929999999999996e-2,
+                "mid": -9.132e-2,
                 "State": "AZ",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.801999999999999e-2
+                "lo": -2.7480000000000004e-2
             },
             {
-                "hi": 2.037e-2,
-                "mid": -3.075e-2,
+                "hi": 1.982e-2,
+                "mid": -3.063e-2,
                 "State": "CA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.0700000000000003e-2
+                "lo": -1.988e-2
             },
             {
-                "hi": 4.5825000000000005e-2,
-                "mid": 6.375e-3,
+                "hi": 4.5426e-2,
+                "mid": 6.494e-3,
                 "State": "CO",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.8885e-2
+                "lo": -4.6264e-2
             },
             {
-                "hi": 4.449e-2,
-                "mid": -3.128e-2,
+                "hi": 4.2910000000000004e-2,
+                "mid": -3.047e-2,
                 "State": "CT",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.4789999999999996e-2
+                "lo": -4.854e-2
             },
             {
-                "hi": 2.9060000000000002e-2,
-                "mid": -1.649e-2,
+                "hi": 3.018e-2,
+                "mid": -1.732e-2,
                 "State": "DC",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.074e-2
+                "lo": -3.051e-2
             },
             {
-                "hi": 4.6616e-2,
-                "mid": -4.11e-2,
+                "hi": 4.6153e-2,
+                "mid": -4.098e-2,
                 "State": "DE",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.915e-2
+                "lo": -4.6579999999999996e-2
             },
             {
-                "hi": 2.33e-2,
-                "mid": -6.773e-2,
+                "hi": 2.346000000000001e-2,
+                "mid": -6.728e-2,
                 "State": "FL",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.466e-2
+                "lo": -2.377e-2
             },
             {
-                "hi": 4.832e-2,
-                "mid": 2.904e-2,
+                "hi": 4.869e-2,
+                "mid": 2.87e-2,
                 "State": "GA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.556e-2
+                "lo": -4.758e-2
             },
             {
-                "hi": 4.579e-2,
-                "mid": -2.99e-2,
+                "hi": 4.534e-2,
+                "mid": -3.024e-2,
                 "State": "HI",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.5840000000000006e-2
+                "lo": -4.536e-2
             },
             {
-                "hi": 7.750510000000001e-2,
-                "mid": -7.699e-2,
+                "hi": 7.2759e-2,
+                "mid": -7.466e-2,
                 "State": "IA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.220999999999999e-2
+                "lo": -9.244e-2
             },
             {
-                "hi": 9.30321e-2,
-                "mid": 3.079e-4,
+                "hi": 9.6965e-2,
+                "mid": 2.75e-4,
                 "State": "ID",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.76179e-2
+                "lo": -9.672499999999999e-2
             },
             {
-                "hi": 5.2689e-2,
-                "mid": -6.159e-3,
+                "hi": 5.3141e-2,
+                "mid": -6.031e-3,
                 "State": "IL",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.4781e-2
+                "lo": -5.3279e-2
             },
             {
-                "hi": 7.118000000000001e-2,
-                "mid": 4.042e-2,
+                "hi": 6.77e-2,
+                "mid": 4.02e-2,
                 "State": "IN",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.350999999999999e-2
+                "lo": -6.903000000000001e-2
             },
             {
-                "hi": 6.101e-2,
-                "mid": -4.392e-2,
+                "hi": 6.2060000000000004e-2,
+                "mid": -4.513e-2,
                 "State": "KS",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.718e-2
+                "lo": -6.856999999999999e-2
             },
             {
-                "hi": 5.882e-2,
-                "mid": 1.959e-2,
+                "hi": 5.9390000000000005e-2,
+                "mid": 1.806e-2,
                 "State": "KY",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.175e-2
+                "lo": -5.937e-2
             },
             {
-                "hi": 4.186e-2,
-                "mid": 4.291e-2,
+                "hi": 4.014e-2,
+                "mid": 4.429e-2,
                 "State": "LA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.9284999999999994e-2
+                "lo": -4.1304e-2
             },
             {
-                "hi": 2.697e-2,
-                "mid": -6.161e-2,
+                "hi": 2.7180000000000003e-2,
+                "mid": -6.133e-2,
                 "State": "MA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.799e-2
+                "lo": -2.7659999999999997e-2
             },
             {
-                "hi": 3.475999999999999e-2,
-                "mid": 5.242e-2,
+                "hi": 3.512e-2,
+                "mid": 5.29e-2,
                 "State": "MD",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.4140000000000004e-2
+                "lo": -3.5500000000000004e-2
             },
             {
-                "hi": 6.137000000000001e-2,
-                "mid": 1.605e-2,
+                "hi": 6.076e-2,
+                "mid": 1.62e-2,
                 "State": "ME",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.726e-2
+                "lo": -6.637e-2
             },
             {
-                "hi": 2.7249999999999996e-2,
-                "mid": 3.813e-2,
+                "hi": 2.8529999999999993e-2,
+                "mid": 3.724e-2,
                 "State": "MI",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.8164999999999996e-2
+                "lo": -2.6910000000000003e-2
             },
             {
-                "hi": 5.402e-2,
-                "mid": 1.8e-2,
+                "hi": 5.206000000000001e-2,
+                "mid": 1.93e-2,
                 "State": "MN",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.748e-2
+                "lo": -5.7249999999999995e-2
             },
             {
-                "hi": 5.5341999999999995e-2,
-                "mid": -5.458e-2,
+                "hi": 5.58529e-2,
+                "mid": -5.5e-2,
                 "State": "MO",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.432000000000002e-2
+                "lo": -6.639999999999999e-2
             },
             {
-                "hi": 9.82976e-2,
-                "mid": -8.976e-4,
+                "hi": 9.650199999999999e-2,
+                "mid": -1.232e-3,
                 "State": "MS",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.45824e-2
+                "lo": -9.1628e-2
             },
             {
-                "hi": 7.815599999999999e-2,
-                "mid": 6.804e-3,
+                "hi": 7.9711e-2,
+                "mid": 7.729e-3,
                 "State": "MT",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.981400000000001e-2
+                "lo": -8.4479e-2
             },
             {
-                "hi": 3.845e-2,
-                "mid": 2.839e-2,
+                "hi": 3.97e-2,
+                "mid": 2.798e-2,
                 "State": "NC",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.915e-2
+                "lo": -3.7181000000000006e-2
             },
             {
-                "hi": 0.1009086,
-                "mid": -1.086e-4,
+                "hi": 0.10223789999999999,
+                "mid": -5.379e-4,
                 "State": "ND",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.72514e-2
+                "lo": -9.854210000000001e-2
             },
             {
-                "hi": 6.297e-2,
-                "mid": 2.939e-2,
+                "hi": 6.481999999999999e-2,
+                "mid": 2.84e-2,
                 "State": "NE",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.489e-2
+                "lo": -6.420000000000001e-2
             },
             {
-                "hi": 5.1556e-2,
-                "mid": 8.104e-3,
+                "hi": 4.9179e-2,
+                "mid": 9.781e-3,
                 "State": "NH",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.6174e-2
+                "lo": -5.7630999999999995e-2
             },
             {
-                "hi": 2.908e-2,
-                "mid": 1.217e-2,
+                "hi": 2.8749999999999998e-2,
+                "mid": 1.242e-2,
                 "State": "NJ",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.946e-2
+                "lo": -2.9e-2
             },
             {
-                "hi": 3.8970000000000005e-2,
-                "mid": 2.434e-2,
+                "hi": 3.957000000000001e-2,
+                "mid": 2.396e-2,
                 "State": "NM",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.843e-2
+                "lo": -3.925e-2
             },
             {
-                "hi": 3.4199999999999994e-2,
-                "mid": 6.428e-2,
+                "hi": 3.498999999999999e-2,
+                "mid": 6.431e-2,
                 "State": "NV",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.458e-2
+                "lo": -3.4800000000000005e-2
             },
             {
-                "hi": 2.45163e-2,
-                "mid": -2.495e-2,
+                "hi": 2.4453500000000003e-2,
+                "mid": -2.5e-2,
                 "State": "NY",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.5099999999999997e-2
+                "lo": -2.42e-2
             },
             {
-                "hi": 4.9780000000000005e-2,
-                "mid": 3.587e-2,
+                "hi": 4.784e-2,
+                "mid": 3.542e-2,
                 "State": "OH",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.0589999999999996e-2
+                "lo": -5.023e-2
             },
             {
-                "hi": 9.65244e-2,
-                "mid": -4.844e-4,
+                "hi": 9.874680000000001e-2,
+                "mid": -7.468e-4,
                 "State": "OK",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.79356e-2
+                "lo": -9.54332e-2
             },
             {
-                "hi": 6.767999999999999e-2,
-                "mid": -4.389e-2,
+                "hi": 6.555e-2,
+                "mid": -4.531e-2,
                 "State": "OR",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.831e-2
+                "lo": -7.329e-2
             },
             {
-                "hi": 3.201e-2,
-                "mid": 7.879e-2,
+                "hi": 3.022000000000001e-2,
+                "mid": 7.898e-2,
                 "State": "PA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.0669999999999996e-2
+                "lo": -2.9919999999999995e-2
             },
             {
-                "hi": 8.65276e-2,
-                "mid": 7.924e-4,
+                "hi": 9.1623e-2,
+                "mid": -1.303e-3,
                 "State": "RI",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -8.915239999999999e-2
+                "lo": -8.9367e-2
             },
             {
-                "hi": 6.316e-2,
-                "mid": 7.224e-2,
+                "hi": 6.381e-2,
+                "mid": 7.349e-2,
                 "State": "SC",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.0509999999999994e-2
+                "lo": -6.184e-2
             },
             {
-                "hi": 9.731542e-2,
-                "mid": -2.542e-5,
+                "hi": 0.1012663,
+                "mid": -2.663e-4,
                 "State": "SD",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.909458e-2
+                "lo": -9.91137e-2
             },
             {
-                "hi": 7.554e-2,
-                "mid": 3.306e-2,
+                "hi": 7.339999999999999e-2,
+                "mid": 3.46e-2,
                 "State": "TN",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.708999999999999e-2
+                "lo": -7.331e-2
             },
             {
-                "hi": 5.1699999999999996e-2,
-                "mid": -2.922e-2,
+                "hi": 4.999e-2,
+                "mid": -2.912e-2,
                 "State": "TX",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.224000000000001e-2
+                "lo": -5.053e-2
             },
             {
-                "hi": 9.404e-2,
-                "mid": 2.496e-2,
+                "hi": 9.782e-2,
+                "mid": 2.288e-2,
                 "State": "UT",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -8.940999999999999e-2
+                "lo": -9.441e-2
             },
             {
-                "hi": 3.787e-2,
-                "mid": -1.268e-2,
+                "hi": 3.989e-2,
+                "mid": -1.273e-2,
                 "State": "VA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.9830000000000004e-2
+                "lo": -3.964e-2
             },
             {
-                "hi": 9.36516e-2,
-                "mid": 1.684e-4,
+                "hi": 9.69782e-2,
+                "mid": 3.918e-4,
                 "State": "VT",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.33684e-2
+                "lo": -9.37118e-2
             },
             {
-                "hi": 4.7266e-2,
-                "mid": -5.355e-2,
+                "hi": 4.7328999999999996e-2,
+                "mid": -5.313e-2,
                 "State": "WA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.065e-2
+                "lo": -5.147e-2
             },
             {
-                "hi": 6.839e-2,
-                "mid": -4.336e-2,
+                "hi": 6.720000000000001e-2,
+                "mid": -4.098e-2,
                 "State": "WI",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.724e-2
+                "lo": -7.772e-2
             },
             {
-                "hi": 8.556e-2,
-                "mid": 1.714e-2,
+                "hi": 8.239e-2,
+                "mid": 1.801e-2,
                 "State": "WV",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -8.777e-2
+                "lo": -8.69e-2
             },
             {
-                "hi": 9.7089e-2,
-                "mid": -3.89e-4,
+                "hi": 9.89902e-2,
+                "mid": -6.302e-4,
                 "State": "WY",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.7191e-2
+                "lo": -9.43698e-2
             }
         ]
     },
@@ -2172,47 +2174,47 @@ vegaEmbed('#figure_3',vlSpec,{"renderer": "canvas"});</script>
                     "sort": [
                         "SC",
                         "LA",
-                        "OH",
                         "TN",
-                        "NY",
+                        "OH",
                         "MO",
+                        "NY",
+                        "IN",
                         "AL",
                         "DC",
-                        "IN",
                         "PA",
                         "MI",
                         "NV",
                         "NC",
                         "OR",
-                        "ME",
                         "MN",
+                        "ME",
                         "NJ",
-                        "UT",
                         "KS",
-                        "MS",
                         "SD",
-                        "WY",
+                        "MS",
+                        "UT",
                         "VT",
                         "MA",
                         "NH",
-                        "RI",
-                        "WV",
-                        "CT",
                         "AK",
+                        "CT",
                         "NE",
+                        "WY",
+                        "WV",
+                        "RI",
                         "FL",
                         "ID",
                         "OK",
                         "MD",
                         "CA",
                         "VA",
-                        "WI",
                         "NM",
+                        "WI",
                         "HI",
                         "ND",
-                        "MT",
                         "WA",
                         "IL",
+                        "MT",
                         "IA",
                         "GA",
                         "DE",
@@ -2254,47 +2256,47 @@ vegaEmbed('#figure_3',vlSpec,{"renderer": "canvas"});</script>
                     "sort": [
                         "SC",
                         "LA",
-                        "OH",
                         "TN",
-                        "NY",
+                        "OH",
                         "MO",
+                        "NY",
+                        "IN",
                         "AL",
                         "DC",
-                        "IN",
                         "PA",
                         "MI",
                         "NV",
                         "NC",
                         "OR",
-                        "ME",
                         "MN",
+                        "ME",
                         "NJ",
-                        "UT",
                         "KS",
-                        "MS",
                         "SD",
-                        "WY",
+                        "MS",
+                        "UT",
                         "VT",
                         "MA",
                         "NH",
-                        "RI",
-                        "WV",
-                        "CT",
                         "AK",
+                        "CT",
                         "NE",
+                        "WY",
+                        "WV",
+                        "RI",
                         "FL",
                         "ID",
                         "OK",
                         "MD",
                         "CA",
                         "VA",
-                        "WI",
                         "NM",
+                        "WI",
                         "HI",
                         "ND",
-                        "MT",
                         "WA",
                         "IL",
+                        "MT",
                         "IA",
                         "GA",
                         "DE",
@@ -2356,412 +2358,412 @@ vegaEmbed('#figure_3',vlSpec,{"renderer": "canvas"});</script>
     "data": {
         "values": [
             {
-                "hi": 0.11594700000000001,
-                "mid": -1.947e-3,
+                "hi": 0.114686,
+                "mid": -1.286e-3,
                 "State": "AK",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.102453
+                "lo": -0.109514
             },
             {
-                "hi": 5.556e-2,
-                "mid": 4.624e-2,
+                "hi": 5.506e-2,
+                "mid": 4.704e-2,
                 "State": "AL",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.3034000000000005e-2
+                "lo": -5.4648e-2
             },
             {
-                "hi": 0.10056,
-                "mid": -6.813e-2,
+                "hi": 9.875e-2,
+                "mid": -6.738e-2,
                 "State": "AR",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.10697000000000001
+                "lo": -0.10162000000000002
             },
             {
-                "hi": 3.095e-2,
-                "mid": -7.454e-2,
+                "hi": 3.0270000000000005e-2,
+                "mid": -7.376e-2,
                 "State": "AZ",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.1060000000000004e-2
+                "lo": -3.2339999999999994e-2
             },
             {
-                "hi": 2.2e-2,
-                "mid": -1.13e-2,
+                "hi": 2.187e-2,
+                "mid": -1.095e-2,
                 "State": "CA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.0070000000000005e-2
+                "lo": -2.2239999999999996e-2
             },
             {
-                "hi": 3.8439999999999995e-2,
-                "mid": -8.782e-2,
+                "hi": 3.996e-2,
+                "mid": -8.748e-2,
                 "State": "CO",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.268000000000001e-2
+                "lo": -4.391999999999999e-2
             },
             {
-                "hi": 0.10603399999999999,
-                "mid": -1.034e-3,
+                "hi": 0.100803,
+                "mid": -1.403e-3,
                 "State": "CT",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.102466
+                "lo": -9.6737e-2
             },
             {
-                "hi": 3.422e-2,
-                "mid": 4.607e-2,
+                "hi": 3.339e-2,
+                "mid": 4.603e-2,
                 "State": "DC",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.268e-2
+                "lo": -3.223e-2
             },
             {
-                "hi": 4.015e-2,
-                "mid": -5.88e-2,
+                "hi": 4.034e-2,
+                "mid": -5.837e-2,
                 "State": "DE",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.3500000000000004e-2
+                "lo": -4.373e-2
             },
             {
-                "hi": 2.4598000000000002e-2,
-                "mid": -4.968e-3,
+                "hi": 2.3493e-2,
+                "mid": -4.173e-3,
                 "State": "FL",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.3681999999999998e-2
+                "lo": -2.5237e-2
             },
             {
-                "hi": 4.7596e-2,
-                "mid": -5.597e-2,
+                "hi": 5.0825999999999996e-2,
+                "mid": -5.511e-2,
                 "State": "GA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.8330000000000005e-2
+                "lo": -5.059e-2
             },
             {
-                "hi": 4.424e-2,
-                "mid": -2.273e-2,
+                "hi": 4.634e-2,
+                "mid": -2.232e-2,
                 "State": "HI",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.3149999999999994e-2
+                "lo": -4.496000000000001e-2
             },
             {
-                "hi": 6.0950000000000004e-2,
-                "mid": -4.406e-2,
+                "hi": 6.046e-2,
+                "mid": -4.383e-2,
                 "State": "IA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -6.884e-2
+                "lo": -7.167000000000001e-2
             },
             {
-                "hi": 0.102822,
-                "mid": -6.932e-3,
+                "hi": 0.102154,
+                "mid": -8.324e-3,
                 "State": "ID",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.108768
+                "lo": -0.10137600000000001
             },
             {
-                "hi": 6.293e-2,
-                "mid": -3.426e-2,
+                "hi": 6.613e-2,
+                "mid": -3.54e-2,
                 "State": "IL",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -7.334e-2
+                "lo": -7.07e-2
             },
             {
-                "hi": 6.609999999999999e-2,
-                "mid": 4.53e-2,
+                "hi": 6.559000000000001e-2,
+                "mid": 4.741e-2,
                 "State": "IN",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -7.113e-2
+                "lo": -7.03e-2
             },
             {
-                "hi": 7.8566e-2,
-                "mid": 3.984e-3,
+                "hi": 8.8327e-2,
+                "mid": 3.693e-3,
                 "State": "KS",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -8.0594e-2
+                "lo": -8.5143e-2
             },
             {
-                "hi": 6.6979e-2,
-                "mid": -6.533e-2,
+                "hi": 6.515347e-2,
+                "mid": -6.508e-2,
                 "State": "KY",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -7.007e-2
+                "lo": -6.802e-2
             },
             {
-                "hi": 5.855999999999999e-2,
-                "mid": 6.704e-2,
+                "hi": 5.807e-2,
+                "mid": 6.533e-2,
                 "State": "LA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.9073e-2
+                "lo": -5.7471999999999995e-2
             },
             {
-                "hi": 9.928060000000001e-2,
-                "mid": 1.794e-4,
+                "hi": 0.10006698,
+                "mid": -7.698e-5,
                 "State": "MA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -9.257939999999999e-2
+                "lo": -0.10062302
             },
             {
-                "hi": 3.184e-2,
-                "mid": -1.112e-2,
+                "hi": 3.1039999999999998e-2,
+                "mid": -1.061e-2,
                 "State": "MD",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.238e-2
+                "lo": -3.2459999999999996e-2
             },
             {
-                "hi": 9.831000000000001e-2,
-                "mid": 1.079e-2,
+                "hi": 9.5562e-2,
+                "mid": 9.538e-3,
                 "State": "ME",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.10089999999999999
+                "lo": -0.103508
             },
             {
-                "hi": 2.5879999999999993e-2,
-                "mid": 4.197e-2,
+                "hi": 2.5369999999999997e-2,
+                "mid": 4.222e-2,
                 "State": "MI",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.5500000000000002e-2
+                "lo": -2.679e-2
             },
             {
-                "hi": 4.07e-2,
-                "mid": 1.015e-2,
+                "hi": 4.041e-2,
+                "mid": 1.046e-2,
                 "State": "MN",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.269e-2
+                "lo": -4.249e-2
             },
             {
-                "hi": 5.6830000000000006e-2,
-                "mid": 5.277e-2,
+                "hi": 5.523e-2,
+                "mid": 5.337e-2,
                 "State": "MO",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.8323e-2
+                "lo": -5.7328000000000004e-2
             },
             {
-                "hi": 0.1037988,
-                "mid": 8.012e-4,
+                "hi": 0.10197,
+                "mid": 1.93e-3,
                 "State": "MS",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1074012
+                "lo": -0.10303
             },
             {
-                "hi": 9.738e-2,
-                "mid": -3.355e-2,
+                "hi": 0.10308,
+                "mid": -3.545e-2,
                 "State": "MT",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.11135
+                "lo": -0.11354999999999998
             },
             {
-                "hi": 3.928e-2,
-                "mid": 2.969e-2,
+                "hi": 3.855000000000001e-2,
+                "mid": 3.034e-2,
                 "State": "NC",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.9571e-2
+                "lo": -3.9302e-2
             },
             {
-                "hi": 9.16e-2,
-                "mid": -3.324e-2,
+                "hi": 8.726e-2,
+                "mid": -3.27e-2,
                 "State": "ND",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -9.556e-2
+                "lo": -9.52e-2
             },
             {
-                "hi": 7.968199999999999e-2,
-                "mid": -2.202e-3,
+                "hi": 8.4112e-2,
+                "mid": -1.462e-3,
                 "State": "NE",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -8.312800000000001e-2
+                "lo": -8.4648e-2
             },
             {
-                "hi": 0.1062596,
-                "mid": -2.596e-4,
+                "hi": 0.1086175,
+                "mid": -6.175e-4,
                 "State": "NH",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1072404
+                "lo": -0.1052825
             },
             {
-                "hi": 3.4154000000000004e-2,
-                "mid": 5.356e-3,
+                "hi": 3.367e-2,
+                "mid": 5.42e-3,
                 "State": "NJ",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.3316e-2
+                "lo": -3.53e-2
             },
             {
-                "hi": 4.7850000000000004e-2,
-                "mid": -1.879e-2,
+                "hi": 4.772e-2,
+                "mid": -1.791e-2,
                 "State": "NM",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.7869999999999996e-2
+                "lo": -4.718e-2
             },
             {
-                "hi": 3.427000000000001e-2,
-                "mid": 3.677e-2,
+                "hi": 3.4960000000000005e-2,
+                "mid": 3.716e-2,
                 "State": "NV",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.4914e-2
+                "lo": -3.6568699999999996e-2
             },
             {
-                "hi": 2.554e-2,
-                "mid": 5.286e-2,
+                "hi": 2.5910000000000002e-2,
+                "mid": 5.302e-2,
                 "State": "NY",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.5099999999999997e-2
+                "lo": -2.6289999999999997e-2
             },
             {
-                "hi": 2.9179999999999998e-2,
-                "mid": 6.444e-2,
+                "hi": 2.8859999999999997e-2,
+                "mid": 6.469e-2,
                 "State": "OH",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.957e-2
+                "lo": -2.7659999999999997e-2
             },
             {
-                "hi": 0.103625,
-                "mid": -9.915e-3,
+                "hi": 0.10561,
+                "mid": -1.018e-2,
                 "State": "OK",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.10958499999999999
+                "lo": -0.10832
             },
             {
-                "hi": 6.655e-2,
-                "mid": 2.052e-2,
+                "hi": 6.716e-2,
+                "mid": 2.137e-2,
                 "State": "OR",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -7.155e-2
+                "lo": -7.47e-2
             },
             {
-                "hi": 3.348999999999999e-2,
-                "mid": 4.209e-2,
+                "hi": 3.33e-2,
+                "mid": 4.286e-2,
                 "State": "PA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.3319e-2
+                "lo": -3.3083e-2
             },
             {
-                "hi": 0.1029686,
-                "mid": -3.686e-4,
+                "hi": 0.108147,
+                "mid": -1.647e-3,
                 "State": "RI",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1034314
+                "lo": -0.104953
             },
             {
-                "hi": 4.9e-2,
-                "mid": 0.1019,
+                "hi": 4.880000000000001e-2,
+                "mid": 0.1021,
                 "State": "SC",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.0080000000000006e-2
+                "lo": -4.795e-2
             },
             {
-                "hi": 0.1183187,
-                "mid": 7.813e-4,
+                "hi": 0.120753,
+                "mid": 2.147e-3,
                 "State": "SD",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1179813
+                "lo": -0.119147
             },
             {
-                "hi": 9.834999999999999e-2,
-                "mid": 6.275e-2,
+                "hi": 9.406e-2,
+                "mid": 6.514e-2,
                 "State": "TN",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -9.464e-2
+                "lo": -0.10205
             },
             {
-                "hi": 3.247e-2,
-                "mid": -0.1138,
+                "hi": 3.533e-2,
+                "mid": -0.1136,
                 "State": "TX",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.3100000000000004e-2
+                "lo": -3.489999999999999e-2
             },
             {
-                "hi": 8.9015e-2,
-                "mid": 4.495e-3,
+                "hi": 9.2384e-2,
+                "mid": 1.166e-3,
                 "State": "UT",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -9.8015e-2
+                "lo": -0.100376
             },
             {
-                "hi": 3.34e-2,
-                "mid": -1.512e-2,
+                "hi": 3.2420000000000004e-2,
+                "mid": -1.437e-2,
                 "State": "VA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.404e-2
+                "lo": -3.32e-2
             },
             {
-                "hi": 0.1100849,
-                "mid": 2.151e-4,
+                "hi": 0.1087986,
+                "mid": 6.014e-4,
                 "State": "VT",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1069151
+                "lo": -0.1078014
             },
             {
-                "hi": 3.653e-2,
-                "mid": -3.394e-2,
+                "hi": 3.5277e-2,
+                "mid": -3.288e-2,
                 "State": "WA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.676e-2
+                "lo": -3.805000000000001e-2
             },
             {
-                "hi": 6.781000000000001e-2,
-                "mid": -1.561e-2,
+                "hi": 7.227e-2,
+                "mid": -1.821e-2,
                 "State": "WI",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -8.599e-2
+                "lo": -8.154e-2
             },
             {
-                "hi": 0.11136510000000001,
-                "mid": -7.651e-4,
+                "hi": 0.107397,
+                "mid": -1.597e-3,
                 "State": "WV",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1125349
+                "lo": -0.103103
             },
             {
-                "hi": 0.11777199999999999,
-                "mid": 7.28e-4,
+                "hi": 0.11707000000000001,
+                "mid": -1.57e-3,
                 "State": "WY",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.11462800000000001
+                "lo": -0.10993
             }
         ]
     },
@@ -2835,7 +2837,7 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
             "mark": {
                 "font": "Verdana",
                 "type": "text",
-                "text": "Good -> Bad"
+                "text": "Bad -> Good"
             }
         },
         {
@@ -2850,7 +2852,7 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
             "mark": {
                 "font": "Verdana",
                 "type": "text",
-                "text": "Both Good"
+                "text": "Both Bad"
             }
         },
         {
@@ -2865,7 +2867,7 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
             "mark": {
                 "font": "Verdana",
                 "type": "text",
-                "text": "Bad -> Good"
+                "text": "Good -> Bad"
             }
         },
         {
@@ -2880,7 +2882,7 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
             "mark": {
                 "font": "Verdana",
                 "type": "text",
-                "text": "Both Bad"
+                "text": "Both Good"
             }
         }
     ],
@@ -2888,820 +2890,820 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
     "data": {
         "values": [
             {
-                "hi": 0.11594700000000001,
-                "mid": -1.947e-3,
+                "hi": 0.114686,
+                "mid": -1.286e-3,
                 "State": "AK",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.102453
+                "lo": -0.109514
             },
             {
-                "hi": 5.556e-2,
-                "mid": 4.624e-2,
+                "hi": 5.506e-2,
+                "mid": 4.704e-2,
                 "State": "AL",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.3034000000000005e-2
+                "lo": -5.4648e-2
             },
             {
-                "hi": 0.10056,
-                "mid": -6.813e-2,
+                "hi": 9.875e-2,
+                "mid": -6.738e-2,
                 "State": "AR",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.10697000000000001
+                "lo": -0.10162000000000002
             },
             {
-                "hi": 3.095e-2,
-                "mid": -7.454e-2,
+                "hi": 3.0270000000000005e-2,
+                "mid": -7.376e-2,
                 "State": "AZ",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.1060000000000004e-2
+                "lo": -3.2339999999999994e-2
             },
             {
-                "hi": 2.2e-2,
-                "mid": -1.13e-2,
+                "hi": 2.187e-2,
+                "mid": -1.095e-2,
                 "State": "CA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.0070000000000005e-2
+                "lo": -2.2239999999999996e-2
             },
             {
-                "hi": 3.8439999999999995e-2,
-                "mid": -8.782e-2,
+                "hi": 3.996e-2,
+                "mid": -8.748e-2,
                 "State": "CO",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.268000000000001e-2
+                "lo": -4.391999999999999e-2
             },
             {
-                "hi": 0.10603399999999999,
-                "mid": -1.034e-3,
+                "hi": 0.100803,
+                "mid": -1.403e-3,
                 "State": "CT",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.102466
+                "lo": -9.6737e-2
             },
             {
-                "hi": 3.422e-2,
-                "mid": 4.607e-2,
+                "hi": 3.339e-2,
+                "mid": 4.603e-2,
                 "State": "DC",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.268e-2
+                "lo": -3.223e-2
             },
             {
-                "hi": 4.015e-2,
-                "mid": -5.88e-2,
+                "hi": 4.034e-2,
+                "mid": -5.837e-2,
                 "State": "DE",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.3500000000000004e-2
+                "lo": -4.373e-2
             },
             {
-                "hi": 2.4598000000000002e-2,
-                "mid": -4.968e-3,
+                "hi": 2.3493e-2,
+                "mid": -4.173e-3,
                 "State": "FL",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.3681999999999998e-2
+                "lo": -2.5237e-2
             },
             {
-                "hi": 4.7596e-2,
-                "mid": -5.597e-2,
+                "hi": 5.0825999999999996e-2,
+                "mid": -5.511e-2,
                 "State": "GA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.8330000000000005e-2
+                "lo": -5.059e-2
             },
             {
-                "hi": 4.424e-2,
-                "mid": -2.273e-2,
+                "hi": 4.634e-2,
+                "mid": -2.232e-2,
                 "State": "HI",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.3149999999999994e-2
+                "lo": -4.496000000000001e-2
             },
             {
-                "hi": 6.0950000000000004e-2,
-                "mid": -4.406e-2,
+                "hi": 6.046e-2,
+                "mid": -4.383e-2,
                 "State": "IA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -6.884e-2
+                "lo": -7.167000000000001e-2
             },
             {
-                "hi": 0.102822,
-                "mid": -6.932e-3,
+                "hi": 0.102154,
+                "mid": -8.324e-3,
                 "State": "ID",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.108768
+                "lo": -0.10137600000000001
             },
             {
-                "hi": 6.293e-2,
-                "mid": -3.426e-2,
+                "hi": 6.613e-2,
+                "mid": -3.54e-2,
                 "State": "IL",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -7.334e-2
+                "lo": -7.07e-2
             },
             {
-                "hi": 6.609999999999999e-2,
-                "mid": 4.53e-2,
+                "hi": 6.559000000000001e-2,
+                "mid": 4.741e-2,
                 "State": "IN",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -7.113e-2
+                "lo": -7.03e-2
             },
             {
-                "hi": 7.8566e-2,
-                "mid": 3.984e-3,
+                "hi": 8.8327e-2,
+                "mid": 3.693e-3,
                 "State": "KS",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -8.0594e-2
+                "lo": -8.5143e-2
             },
             {
-                "hi": 6.6979e-2,
-                "mid": -6.533e-2,
+                "hi": 6.515347e-2,
+                "mid": -6.508e-2,
                 "State": "KY",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -7.007e-2
+                "lo": -6.802e-2
             },
             {
-                "hi": 5.855999999999999e-2,
-                "mid": 6.704e-2,
+                "hi": 5.807e-2,
+                "mid": 6.533e-2,
                 "State": "LA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.9073e-2
+                "lo": -5.7471999999999995e-2
             },
             {
-                "hi": 9.928060000000001e-2,
-                "mid": 1.794e-4,
+                "hi": 0.10006698,
+                "mid": -7.698e-5,
                 "State": "MA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -9.257939999999999e-2
+                "lo": -0.10062302
             },
             {
-                "hi": 3.184e-2,
-                "mid": -1.112e-2,
+                "hi": 3.1039999999999998e-2,
+                "mid": -1.061e-2,
                 "State": "MD",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.238e-2
+                "lo": -3.2459999999999996e-2
             },
             {
-                "hi": 9.831000000000001e-2,
-                "mid": 1.079e-2,
+                "hi": 9.5562e-2,
+                "mid": 9.538e-3,
                 "State": "ME",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.10089999999999999
+                "lo": -0.103508
             },
             {
-                "hi": 2.5879999999999993e-2,
-                "mid": 4.197e-2,
+                "hi": 2.5369999999999997e-2,
+                "mid": 4.222e-2,
                 "State": "MI",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.5500000000000002e-2
+                "lo": -2.679e-2
             },
             {
-                "hi": 4.07e-2,
-                "mid": 1.015e-2,
+                "hi": 4.041e-2,
+                "mid": 1.046e-2,
                 "State": "MN",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.269e-2
+                "lo": -4.249e-2
             },
             {
-                "hi": 5.6830000000000006e-2,
-                "mid": 5.277e-2,
+                "hi": 5.523e-2,
+                "mid": 5.337e-2,
                 "State": "MO",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.8323e-2
+                "lo": -5.7328000000000004e-2
             },
             {
-                "hi": 0.1037988,
-                "mid": 8.012e-4,
+                "hi": 0.10197,
+                "mid": 1.93e-3,
                 "State": "MS",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1074012
+                "lo": -0.10303
             },
             {
-                "hi": 9.738e-2,
-                "mid": -3.355e-2,
+                "hi": 0.10308,
+                "mid": -3.545e-2,
                 "State": "MT",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.11135
+                "lo": -0.11354999999999998
             },
             {
-                "hi": 3.928e-2,
-                "mid": 2.969e-2,
+                "hi": 3.855000000000001e-2,
+                "mid": 3.034e-2,
                 "State": "NC",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.9571e-2
+                "lo": -3.9302e-2
             },
             {
-                "hi": 9.16e-2,
-                "mid": -3.324e-2,
+                "hi": 8.726e-2,
+                "mid": -3.27e-2,
                 "State": "ND",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -9.556e-2
+                "lo": -9.52e-2
             },
             {
-                "hi": 7.968199999999999e-2,
-                "mid": -2.202e-3,
+                "hi": 8.4112e-2,
+                "mid": -1.462e-3,
                 "State": "NE",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -8.312800000000001e-2
+                "lo": -8.4648e-2
             },
             {
-                "hi": 0.1062596,
-                "mid": -2.596e-4,
+                "hi": 0.1086175,
+                "mid": -6.175e-4,
                 "State": "NH",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1072404
+                "lo": -0.1052825
             },
             {
-                "hi": 3.4154000000000004e-2,
-                "mid": 5.356e-3,
+                "hi": 3.367e-2,
+                "mid": 5.42e-3,
                 "State": "NJ",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.3316e-2
+                "lo": -3.53e-2
             },
             {
-                "hi": 4.7850000000000004e-2,
-                "mid": -1.879e-2,
+                "hi": 4.772e-2,
+                "mid": -1.791e-2,
                 "State": "NM",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.7869999999999996e-2
+                "lo": -4.718e-2
             },
             {
-                "hi": 3.427000000000001e-2,
-                "mid": 3.677e-2,
+                "hi": 3.4960000000000005e-2,
+                "mid": 3.716e-2,
                 "State": "NV",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.4914e-2
+                "lo": -3.6568699999999996e-2
             },
             {
-                "hi": 2.554e-2,
-                "mid": 5.286e-2,
+                "hi": 2.5910000000000002e-2,
+                "mid": 5.302e-2,
                 "State": "NY",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.5099999999999997e-2
+                "lo": -2.6289999999999997e-2
             },
             {
-                "hi": 2.9179999999999998e-2,
-                "mid": 6.444e-2,
+                "hi": 2.8859999999999997e-2,
+                "mid": 6.469e-2,
                 "State": "OH",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.957e-2
+                "lo": -2.7659999999999997e-2
             },
             {
-                "hi": 0.103625,
-                "mid": -9.915e-3,
+                "hi": 0.10561,
+                "mid": -1.018e-2,
                 "State": "OK",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.10958499999999999
+                "lo": -0.10832
             },
             {
-                "hi": 6.655e-2,
-                "mid": 2.052e-2,
+                "hi": 6.716e-2,
+                "mid": 2.137e-2,
                 "State": "OR",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -7.155e-2
+                "lo": -7.47e-2
             },
             {
-                "hi": 3.348999999999999e-2,
-                "mid": 4.209e-2,
+                "hi": 3.33e-2,
+                "mid": 4.286e-2,
                 "State": "PA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.3319e-2
+                "lo": -3.3083e-2
             },
             {
-                "hi": 0.1029686,
-                "mid": -3.686e-4,
+                "hi": 0.108147,
+                "mid": -1.647e-3,
                 "State": "RI",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1034314
+                "lo": -0.104953
             },
             {
-                "hi": 4.9e-2,
-                "mid": 0.1019,
+                "hi": 4.880000000000001e-2,
+                "mid": 0.1021,
                 "State": "SC",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.0080000000000006e-2
+                "lo": -4.795e-2
             },
             {
-                "hi": 0.1183187,
-                "mid": 7.813e-4,
+                "hi": 0.120753,
+                "mid": 2.147e-3,
                 "State": "SD",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1179813
+                "lo": -0.119147
             },
             {
-                "hi": 9.834999999999999e-2,
-                "mid": 6.275e-2,
+                "hi": 9.406e-2,
+                "mid": 6.514e-2,
                 "State": "TN",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -9.464e-2
+                "lo": -0.10205
             },
             {
-                "hi": 3.247e-2,
-                "mid": -0.1138,
+                "hi": 3.533e-2,
+                "mid": -0.1136,
                 "State": "TX",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.3100000000000004e-2
+                "lo": -3.489999999999999e-2
             },
             {
-                "hi": 8.9015e-2,
-                "mid": 4.495e-3,
+                "hi": 9.2384e-2,
+                "mid": 1.166e-3,
                 "State": "UT",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -9.8015e-2
+                "lo": -0.100376
             },
             {
-                "hi": 3.34e-2,
-                "mid": -1.512e-2,
+                "hi": 3.2420000000000004e-2,
+                "mid": -1.437e-2,
                 "State": "VA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.404e-2
+                "lo": -3.32e-2
             },
             {
-                "hi": 0.1100849,
-                "mid": 2.151e-4,
+                "hi": 0.1087986,
+                "mid": 6.014e-4,
                 "State": "VT",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1069151
+                "lo": -0.1078014
             },
             {
-                "hi": 3.653e-2,
-                "mid": -3.394e-2,
+                "hi": 3.5277e-2,
+                "mid": -3.288e-2,
                 "State": "WA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.676e-2
+                "lo": -3.805000000000001e-2
             },
             {
-                "hi": 6.781000000000001e-2,
-                "mid": -1.561e-2,
+                "hi": 7.227e-2,
+                "mid": -1.821e-2,
                 "State": "WI",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -8.599e-2
+                "lo": -8.154e-2
             },
             {
-                "hi": 0.11136510000000001,
-                "mid": -7.651e-4,
+                "hi": 0.107397,
+                "mid": -1.597e-3,
                 "State": "WV",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.1125349
+                "lo": -0.103103
             },
             {
-                "hi": 0.11777199999999999,
-                "mid": 7.28e-4,
+                "hi": 0.11707000000000001,
+                "mid": -1.57e-3,
                 "State": "WY",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -0.11462800000000001
+                "lo": -0.10993
             },
             {
-                "hi": 0.1008167,
-                "mid": -5.167e-4,
+                "hi": 0.1006963,
+                "mid": 6.037e-4,
                 "State": "AK",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.641330000000001e-2
+                "lo": -0.1016037
             },
             {
-                "hi": 6.819e-2,
-                "mid": 4.471e-2,
+                "hi": 6.527e-2,
+                "mid": 4.483e-2,
                 "State": "AL",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.798e-2
+                "lo": -6.7e-2
             },
             {
-                "hi": 0.1037281,
-                "mid": 8.719e-4,
+                "hi": 9.8775e-2,
+                "mid": 2.025e-3,
                 "State": "AR",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.799189999999999e-2
+                "lo": -9.8485e-2
             },
             {
-                "hi": 2.682000000000001e-2,
-                "mid": -9.148e-2,
+                "hi": 2.6929999999999996e-2,
+                "mid": -9.132e-2,
                 "State": "AZ",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.801999999999999e-2
+                "lo": -2.7480000000000004e-2
             },
             {
-                "hi": 2.037e-2,
-                "mid": -3.075e-2,
+                "hi": 1.982e-2,
+                "mid": -3.063e-2,
                 "State": "CA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.0700000000000003e-2
+                "lo": -1.988e-2
             },
             {
-                "hi": 4.5825000000000005e-2,
-                "mid": 6.375e-3,
+                "hi": 4.5426e-2,
+                "mid": 6.494e-3,
                 "State": "CO",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.8885e-2
+                "lo": -4.6264e-2
             },
             {
-                "hi": 4.449e-2,
-                "mid": -3.128e-2,
+                "hi": 4.2910000000000004e-2,
+                "mid": -3.047e-2,
                 "State": "CT",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.4789999999999996e-2
+                "lo": -4.854e-2
             },
             {
-                "hi": 2.9060000000000002e-2,
-                "mid": -1.649e-2,
+                "hi": 3.018e-2,
+                "mid": -1.732e-2,
                 "State": "DC",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.074e-2
+                "lo": -3.051e-2
             },
             {
-                "hi": 4.6616e-2,
-                "mid": -4.11e-2,
+                "hi": 4.6153e-2,
+                "mid": -4.098e-2,
                 "State": "DE",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.915e-2
+                "lo": -4.6579999999999996e-2
             },
             {
-                "hi": 2.33e-2,
-                "mid": -6.773e-2,
+                "hi": 2.346000000000001e-2,
+                "mid": -6.728e-2,
                 "State": "FL",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.466e-2
+                "lo": -2.377e-2
             },
             {
-                "hi": 4.832e-2,
-                "mid": 2.904e-2,
+                "hi": 4.869e-2,
+                "mid": 2.87e-2,
                 "State": "GA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.556e-2
+                "lo": -4.758e-2
             },
             {
-                "hi": 4.579e-2,
-                "mid": -2.99e-2,
+                "hi": 4.534e-2,
+                "mid": -3.024e-2,
                 "State": "HI",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.5840000000000006e-2
+                "lo": -4.536e-2
             },
             {
-                "hi": 7.750510000000001e-2,
-                "mid": -7.699e-2,
+                "hi": 7.2759e-2,
+                "mid": -7.466e-2,
                 "State": "IA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.220999999999999e-2
+                "lo": -9.244e-2
             },
             {
-                "hi": 9.30321e-2,
-                "mid": 3.079e-4,
+                "hi": 9.6965e-2,
+                "mid": 2.75e-4,
                 "State": "ID",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.76179e-2
+                "lo": -9.672499999999999e-2
             },
             {
-                "hi": 5.2689e-2,
-                "mid": -6.159e-3,
+                "hi": 5.3141e-2,
+                "mid": -6.031e-3,
                 "State": "IL",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.4781e-2
+                "lo": -5.3279e-2
             },
             {
-                "hi": 7.118000000000001e-2,
-                "mid": 4.042e-2,
+                "hi": 6.77e-2,
+                "mid": 4.02e-2,
                 "State": "IN",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.350999999999999e-2
+                "lo": -6.903000000000001e-2
             },
             {
-                "hi": 6.101e-2,
-                "mid": -4.392e-2,
+                "hi": 6.2060000000000004e-2,
+                "mid": -4.513e-2,
                 "State": "KS",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.718e-2
+                "lo": -6.856999999999999e-2
             },
             {
-                "hi": 5.882e-2,
-                "mid": 1.959e-2,
+                "hi": 5.9390000000000005e-2,
+                "mid": 1.806e-2,
                 "State": "KY",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.175e-2
+                "lo": -5.937e-2
             },
             {
-                "hi": 4.186e-2,
-                "mid": 4.291e-2,
+                "hi": 4.014e-2,
+                "mid": 4.429e-2,
                 "State": "LA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.9284999999999994e-2
+                "lo": -4.1304e-2
             },
             {
-                "hi": 2.697e-2,
-                "mid": -6.161e-2,
+                "hi": 2.7180000000000003e-2,
+                "mid": -6.133e-2,
                 "State": "MA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.799e-2
+                "lo": -2.7659999999999997e-2
             },
             {
-                "hi": 3.475999999999999e-2,
-                "mid": 5.242e-2,
+                "hi": 3.512e-2,
+                "mid": 5.29e-2,
                 "State": "MD",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.4140000000000004e-2
+                "lo": -3.5500000000000004e-2
             },
             {
-                "hi": 6.137000000000001e-2,
-                "mid": 1.605e-2,
+                "hi": 6.076e-2,
+                "mid": 1.62e-2,
                 "State": "ME",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.726e-2
+                "lo": -6.637e-2
             },
             {
-                "hi": 2.7249999999999996e-2,
-                "mid": 3.813e-2,
+                "hi": 2.8529999999999993e-2,
+                "mid": 3.724e-2,
                 "State": "MI",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.8164999999999996e-2
+                "lo": -2.6910000000000003e-2
             },
             {
-                "hi": 5.402e-2,
-                "mid": 1.8e-2,
+                "hi": 5.206000000000001e-2,
+                "mid": 1.93e-2,
                 "State": "MN",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.748e-2
+                "lo": -5.7249999999999995e-2
             },
             {
-                "hi": 5.5341999999999995e-2,
-                "mid": -5.458e-2,
+                "hi": 5.58529e-2,
+                "mid": -5.5e-2,
                 "State": "MO",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.432000000000002e-2
+                "lo": -6.639999999999999e-2
             },
             {
-                "hi": 9.82976e-2,
-                "mid": -8.976e-4,
+                "hi": 9.650199999999999e-2,
+                "mid": -1.232e-3,
                 "State": "MS",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.45824e-2
+                "lo": -9.1628e-2
             },
             {
-                "hi": 7.815599999999999e-2,
-                "mid": 6.804e-3,
+                "hi": 7.9711e-2,
+                "mid": 7.729e-3,
                 "State": "MT",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.981400000000001e-2
+                "lo": -8.4479e-2
             },
             {
-                "hi": 3.845e-2,
-                "mid": 2.839e-2,
+                "hi": 3.97e-2,
+                "mid": 2.798e-2,
                 "State": "NC",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.915e-2
+                "lo": -3.7181000000000006e-2
             },
             {
-                "hi": 0.1009086,
-                "mid": -1.086e-4,
+                "hi": 0.10223789999999999,
+                "mid": -5.379e-4,
                 "State": "ND",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.72514e-2
+                "lo": -9.854210000000001e-2
             },
             {
-                "hi": 6.297e-2,
-                "mid": 2.939e-2,
+                "hi": 6.481999999999999e-2,
+                "mid": 2.84e-2,
                 "State": "NE",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.489e-2
+                "lo": -6.420000000000001e-2
             },
             {
-                "hi": 5.1556e-2,
-                "mid": 8.104e-3,
+                "hi": 4.9179e-2,
+                "mid": 9.781e-3,
                 "State": "NH",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.6174e-2
+                "lo": -5.7630999999999995e-2
             },
             {
-                "hi": 2.908e-2,
-                "mid": 1.217e-2,
+                "hi": 2.8749999999999998e-2,
+                "mid": 1.242e-2,
                 "State": "NJ",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.946e-2
+                "lo": -2.9e-2
             },
             {
-                "hi": 3.8970000000000005e-2,
-                "mid": 2.434e-2,
+                "hi": 3.957000000000001e-2,
+                "mid": 2.396e-2,
                 "State": "NM",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.843e-2
+                "lo": -3.925e-2
             },
             {
-                "hi": 3.4199999999999994e-2,
-                "mid": 6.428e-2,
+                "hi": 3.498999999999999e-2,
+                "mid": 6.431e-2,
                 "State": "NV",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.458e-2
+                "lo": -3.4800000000000005e-2
             },
             {
-                "hi": 2.45163e-2,
-                "mid": -2.495e-2,
+                "hi": 2.4453500000000003e-2,
+                "mid": -2.5e-2,
                 "State": "NY",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.5099999999999997e-2
+                "lo": -2.42e-2
             },
             {
-                "hi": 4.9780000000000005e-2,
-                "mid": 3.587e-2,
+                "hi": 4.784e-2,
+                "mid": 3.542e-2,
                 "State": "OH",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.0589999999999996e-2
+                "lo": -5.023e-2
             },
             {
-                "hi": 9.65244e-2,
-                "mid": -4.844e-4,
+                "hi": 9.874680000000001e-2,
+                "mid": -7.468e-4,
                 "State": "OK",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.79356e-2
+                "lo": -9.54332e-2
             },
             {
-                "hi": 6.767999999999999e-2,
-                "mid": -4.389e-2,
+                "hi": 6.555e-2,
+                "mid": -4.531e-2,
                 "State": "OR",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.831e-2
+                "lo": -7.329e-2
             },
             {
-                "hi": 3.201e-2,
-                "mid": 7.879e-2,
+                "hi": 3.022000000000001e-2,
+                "mid": 7.898e-2,
                 "State": "PA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.0669999999999996e-2
+                "lo": -2.9919999999999995e-2
             },
             {
-                "hi": 8.65276e-2,
-                "mid": 7.924e-4,
+                "hi": 9.1623e-2,
+                "mid": -1.303e-3,
                 "State": "RI",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -8.915239999999999e-2
+                "lo": -8.9367e-2
             },
             {
-                "hi": 6.316e-2,
-                "mid": 7.224e-2,
+                "hi": 6.381e-2,
+                "mid": 7.349e-2,
                 "State": "SC",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.0509999999999994e-2
+                "lo": -6.184e-2
             },
             {
-                "hi": 9.731542e-2,
-                "mid": -2.542e-5,
+                "hi": 0.1012663,
+                "mid": -2.663e-4,
                 "State": "SD",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.909458e-2
+                "lo": -9.91137e-2
             },
             {
-                "hi": 7.554e-2,
-                "mid": 3.306e-2,
+                "hi": 7.339999999999999e-2,
+                "mid": 3.46e-2,
                 "State": "TN",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.708999999999999e-2
+                "lo": -7.331e-2
             },
             {
-                "hi": 5.1699999999999996e-2,
-                "mid": -2.922e-2,
+                "hi": 4.999e-2,
+                "mid": -2.912e-2,
                 "State": "TX",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.224000000000001e-2
+                "lo": -5.053e-2
             },
             {
-                "hi": 9.404e-2,
-                "mid": 2.496e-2,
+                "hi": 9.782e-2,
+                "mid": 2.288e-2,
                 "State": "UT",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -8.940999999999999e-2
+                "lo": -9.441e-2
             },
             {
-                "hi": 3.787e-2,
-                "mid": -1.268e-2,
+                "hi": 3.989e-2,
+                "mid": -1.273e-2,
                 "State": "VA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.9830000000000004e-2
+                "lo": -3.964e-2
             },
             {
-                "hi": 9.36516e-2,
-                "mid": 1.684e-4,
+                "hi": 9.69782e-2,
+                "mid": 3.918e-4,
                 "State": "VT",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.33684e-2
+                "lo": -9.37118e-2
             },
             {
-                "hi": 4.7266e-2,
-                "mid": -5.355e-2,
+                "hi": 4.7328999999999996e-2,
+                "mid": -5.313e-2,
                 "State": "WA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -5.065e-2
+                "lo": -5.147e-2
             },
             {
-                "hi": 6.839e-2,
-                "mid": -4.336e-2,
+                "hi": 6.720000000000001e-2,
+                "mid": -4.098e-2,
                 "State": "WI",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -7.724e-2
+                "lo": -7.772e-2
             },
             {
-                "hi": 8.556e-2,
-                "mid": 1.714e-2,
+                "hi": 8.239e-2,
+                "mid": 1.801e-2,
                 "State": "WV",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -8.777e-2
+                "lo": -8.69e-2
             },
             {
-                "hi": 9.7089e-2,
-                "mid": -3.89e-4,
+                "hi": 9.89902e-2,
+                "mid": -6.302e-4,
                 "State": "WY",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -9.7191e-2
+                "lo": -9.43698e-2
             }
         ]
     },
@@ -3747,47 +3749,47 @@ vegaEmbed('#figure_5',vlSpec,{"renderer": "svg"});</script>
                     "sort": [
                         "SC",
                         "LA",
-                        "OH",
                         "TN",
-                        "NY",
+                        "OH",
                         "MO",
+                        "NY",
+                        "IN",
                         "AL",
                         "DC",
-                        "IN",
                         "PA",
                         "MI",
                         "NV",
                         "NC",
                         "OR",
-                        "ME",
                         "MN",
+                        "ME",
                         "NJ",
-                        "UT",
                         "KS",
-                        "MS",
                         "SD",
-                        "WY",
+                        "MS",
+                        "UT",
                         "VT",
                         "MA",
                         "NH",
-                        "RI",
-                        "WV",
-                        "CT",
                         "AK",
+                        "CT",
                         "NE",
+                        "WY",
+                        "WV",
+                        "RI",
                         "FL",
                         "ID",
                         "OK",
                         "MD",
                         "CA",
                         "VA",
-                        "WI",
                         "NM",
+                        "WI",
                         "HI",
                         "ND",
-                        "MT",
                         "WA",
                         "IL",
+                        "MT",
                         "IA",
                         "GA",
                         "DE",
@@ -3829,47 +3831,47 @@ vegaEmbed('#figure_5',vlSpec,{"renderer": "svg"});</script>
                     "sort": [
                         "SC",
                         "LA",
-                        "OH",
                         "TN",
-                        "NY",
+                        "OH",
                         "MO",
+                        "NY",
+                        "IN",
                         "AL",
                         "DC",
-                        "IN",
                         "PA",
                         "MI",
                         "NV",
                         "NC",
                         "OR",
-                        "ME",
                         "MN",
+                        "ME",
                         "NJ",
-                        "UT",
                         "KS",
-                        "MS",
                         "SD",
-                        "WY",
+                        "MS",
+                        "UT",
                         "VT",
                         "MA",
                         "NH",
-                        "RI",
-                        "WV",
-                        "CT",
                         "AK",
+                        "CT",
                         "NE",
+                        "WY",
+                        "WV",
+                        "RI",
                         "FL",
                         "ID",
                         "OK",
                         "MD",
                         "CA",
                         "VA",
-                        "WI",
                         "NM",
+                        "WI",
                         "HI",
                         "ND",
-                        "MT",
                         "WA",
                         "IL",
+                        "MT",
                         "IA",
                         "GA",
                         "DE",
@@ -3916,100 +3918,100 @@ vegaEmbed('#figure_5',vlSpec,{"renderer": "svg"});</script>
     "data": {
         "values": [
             {
-                "hi": 2.682000000000001e-2,
-                "mid": -9.148e-2,
+                "hi": 2.6929999999999996e-2,
+                "mid": -9.132e-2,
                 "State": "AZ",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.801999999999999e-2
+                "lo": -2.7480000000000004e-2
             },
             {
-                "hi": 4.186e-2,
-                "mid": 4.291e-2,
+                "hi": 4.014e-2,
+                "mid": 4.429e-2,
                 "State": "LA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.9284999999999994e-2
+                "lo": -4.1304e-2
             },
             {
-                "hi": 2.7249999999999996e-2,
-                "mid": 3.813e-2,
+                "hi": 2.8529999999999993e-2,
+                "mid": 3.724e-2,
                 "State": "MI",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.8164999999999996e-2
+                "lo": -2.6910000000000003e-2
             },
             {
-                "hi": 3.4199999999999994e-2,
-                "mid": 6.428e-2,
+                "hi": 3.498999999999999e-2,
+                "mid": 6.431e-2,
                 "State": "NV",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.458e-2
+                "lo": -3.4800000000000005e-2
             },
             {
-                "hi": 3.201e-2,
-                "mid": 7.879e-2,
+                "hi": 3.022000000000001e-2,
+                "mid": 7.898e-2,
                 "State": "PA",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.0669999999999996e-2
+                "lo": -2.9919999999999995e-2
             },
             {
-                "hi": 6.316e-2,
-                "mid": 7.224e-2,
+                "hi": 6.381e-2,
+                "mid": 7.349e-2,
                 "State": "SC",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -6.0509999999999994e-2
+                "lo": -6.184e-2
             },
             {
-                "hi": 3.095e-2,
-                "mid": -7.454e-2,
+                "hi": 3.0270000000000005e-2,
+                "mid": -7.376e-2,
                 "State": "AZ",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.1060000000000004e-2
+                "lo": -3.2339999999999994e-2
             },
             {
-                "hi": 5.855999999999999e-2,
-                "mid": 6.704e-2,
+                "hi": 5.807e-2,
+                "mid": 6.533e-2,
                 "State": "LA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.9073e-2
+                "lo": -5.7471999999999995e-2
             },
             {
-                "hi": 2.5879999999999993e-2,
-                "mid": 4.197e-2,
+                "hi": 2.5369999999999997e-2,
+                "mid": 4.222e-2,
                 "State": "MI",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.5500000000000002e-2
+                "lo": -2.679e-2
             },
             {
-                "hi": 3.427000000000001e-2,
-                "mid": 3.677e-2,
+                "hi": 3.4960000000000005e-2,
+                "mid": 3.716e-2,
                 "State": "NV",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.4914e-2
+                "lo": -3.6568699999999996e-2
             },
             {
-                "hi": 3.348999999999999e-2,
-                "mid": 4.209e-2,
+                "hi": 3.33e-2,
+                "mid": 4.286e-2,
                 "State": "PA",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.3319e-2
+                "lo": -3.3083e-2
             },
             {
-                "hi": 4.9e-2,
-                "mid": 0.1019,
+                "hi": 4.880000000000001e-2,
+                "mid": 0.1021,
                 "State": "SC",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -5.0080000000000006e-2
+                "lo": -4.795e-2
             }
         ]
     },
@@ -4044,47 +4046,47 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                     "sort": [
                         "SC",
                         "LA",
-                        "OH",
                         "TN",
-                        "NY",
+                        "OH",
                         "MO",
+                        "NY",
+                        "IN",
                         "AL",
                         "DC",
-                        "IN",
                         "PA",
                         "MI",
                         "NV",
                         "NC",
                         "OR",
-                        "ME",
                         "MN",
+                        "ME",
                         "NJ",
-                        "UT",
                         "KS",
-                        "MS",
                         "SD",
-                        "WY",
+                        "MS",
+                        "UT",
                         "VT",
                         "MA",
                         "NH",
-                        "RI",
-                        "WV",
-                        "CT",
                         "AK",
+                        "CT",
                         "NE",
+                        "WY",
+                        "WV",
+                        "RI",
                         "FL",
                         "ID",
                         "OK",
                         "MD",
                         "CA",
                         "VA",
-                        "WI",
                         "NM",
+                        "WI",
                         "HI",
                         "ND",
-                        "MT",
                         "WA",
                         "IL",
+                        "MT",
                         "IA",
                         "GA",
                         "DE",
@@ -4126,47 +4128,47 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                     "sort": [
                         "SC",
                         "LA",
-                        "OH",
                         "TN",
-                        "NY",
+                        "OH",
                         "MO",
+                        "NY",
+                        "IN",
                         "AL",
                         "DC",
-                        "IN",
                         "PA",
                         "MI",
                         "NV",
                         "NC",
                         "OR",
-                        "ME",
                         "MN",
+                        "ME",
                         "NJ",
-                        "UT",
                         "KS",
-                        "MS",
                         "SD",
-                        "WY",
+                        "MS",
+                        "UT",
                         "VT",
                         "MA",
                         "NH",
-                        "RI",
-                        "WV",
-                        "CT",
                         "AK",
+                        "CT",
                         "NE",
+                        "WY",
+                        "WV",
+                        "RI",
                         "FL",
                         "ID",
                         "OK",
                         "MD",
                         "CA",
                         "VA",
-                        "WI",
                         "NM",
+                        "WI",
                         "HI",
                         "ND",
-                        "MT",
                         "WA",
                         "IL",
+                        "MT",
                         "IA",
                         "GA",
                         "DE",
@@ -4213,68 +4215,68 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
     "data": {
         "values": [
             {
-                "hi": 4.5825000000000005e-2,
-                "mid": 6.375e-3,
+                "hi": 4.5426e-2,
+                "mid": 6.494e-3,
                 "State": "CO",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -4.8885e-2
+                "lo": -4.6264e-2
             },
             {
-                "hi": 2.9060000000000002e-2,
-                "mid": -1.649e-2,
+                "hi": 3.018e-2,
+                "mid": -1.732e-2,
                 "State": "DC",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -3.074e-2
+                "lo": -3.051e-2
             },
             {
-                "hi": 2.33e-2,
-                "mid": -6.773e-2,
+                "hi": 2.346000000000001e-2,
+                "mid": -6.728e-2,
                 "State": "FL",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.466e-2
+                "lo": -2.377e-2
             },
             {
-                "hi": 2.45163e-2,
-                "mid": -2.495e-2,
+                "hi": 2.4453500000000003e-2,
+                "mid": -2.5e-2,
                 "State": "NY",
                 "Year": "2016",
                 "Label": "Interaction",
-                "lo": -2.5099999999999997e-2
+                "lo": -2.42e-2
             },
             {
-                "hi": 3.8439999999999995e-2,
-                "mid": -8.782e-2,
+                "hi": 3.996e-2,
+                "mid": -8.748e-2,
                 "State": "CO",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -4.268000000000001e-2
+                "lo": -4.391999999999999e-2
             },
             {
-                "hi": 3.422e-2,
-                "mid": 4.607e-2,
+                "hi": 3.339e-2,
+                "mid": 4.603e-2,
                 "State": "DC",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -3.268e-2
+                "lo": -3.223e-2
             },
             {
-                "hi": 2.4598000000000002e-2,
-                "mid": -4.968e-3,
+                "hi": 2.3493e-2,
+                "mid": -4.173e-3,
                 "State": "FL",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.3681999999999998e-2
+                "lo": -2.5237e-2
             },
             {
-                "hi": 2.554e-2,
-                "mid": 5.286e-2,
+                "hi": 2.5910000000000002e-2,
+                "mid": 5.302e-2,
                 "State": "NY",
                 "Year": "2012",
                 "Label": "Interaction",
-                "lo": -2.5099999999999997e-2
+                "lo": -2.6289999999999997e-2
             }
         ]
     },
