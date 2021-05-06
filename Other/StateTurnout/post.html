@@ -1,0 +1,3133 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>State-Specific Gaps</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+
+</style>
+
+<script src="" type="text/javascript"></script>
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<header>
+<h1 class="title">Voter Turnout And Race</h1>
+</header>
+<p>As we've written about <a href="https://blueripple.github.io/research/mrp-model/p3/main.html">before</a>, younger voters and voters of color tend to vote for Democrats, but smaller fractions of those voters cast a vote in most elections. White voters without a college degree are more likely to vote for Republicans, and are similarly less likely to vote than White voters with a college degree. These turnout differences vary by state. In a sense, that’s no surprise: each state has a different mix of voters, with different distributions of age and education, etc. But turnout gaps vary widely by state <em>even once we account for the demographic differences among them</em>, something we explore in detail below. Some possible reasons incude:</p>
+<ul>
+<li>Various state policies which encourage or discourage voting: more days of early voting, easier vote-by-mail, having more polling places, or keeping polls open for more hours makes voting easier and may shrink turnout gaps. ID requirements, voter purges and unduly strict requirements around provisional ballots can widen these gaps.</li>
+<li>Grassroots organizing and campaigning, both largely local, may also drive turnout and shrink turnout gaps.</li>
+<li>Specific national and local elections have their own dynamics, energizing certain groups of voters.</li>
+</ul>
+<p>Democratic successes in AL in 2016 (the election of Doug Jones to the Senate), and GA in 2020, as well as 2020 Dem struggles in FL and TX, echo important themes about the role of organizing and voter suppression in the turnout of Democratic voters. Before we dig into that story—something we plan to do later this year—we set the stage, exploring the variations in state-level turnout gaps between White-non-Hispanic (WNH) voters and everyone else (Non-White-Non-Hispanic voters, NWNH), using data from the Current Population Survey Voter and Registration Supplement (CPS-VRS) and the American Community Survey (ACS), both produced by the US Census bureau. We're also going to explain a bit about <a href="https://www.youtube.com/watch?v=bq9c1zsR9NM">MRP modeling</a>, anchoring this and further analyses based on similar models.</p>
+<p>Considering only the WNH/NWNH gap is simplistic and reductive. There are turnout gaps by level of education and age, by population density and income, by religion, family structure and occupation. But we are particularly interested in the interplay of voter suppression and organizing, and a lot of this plays out on the field of race. In order to look state by state, which complicates the modeling, we must simplify as much else as we can.</p>
+<p>Any attempt to analyze voter turnout and connect it to government policy or grasroots organizing is fraught, running the risk of minimizing the harms done by suppressive policies or asserting that organizing is some sort of solution to voter suppression. We at Blue Ripple Politics are unequivocally in support of nearly all measures to make voting easier: no-excuse voting by mail, same day registration, more polling places, more days of early voting, longer hours at polling places, the elimination of voter ID requirements, an end to the aggressive purging of voter lists, support and allowance of provisional ballots, re-enfranchisement of people in prison and the formerly incarcerated, etc. And regardless of whether suppression is succesful, it is wrong. It is morally repugnant and it requires energy and resources to combat. Forcing people to spend those energies and resources is itself an outrage. Voting should be easy for everyone and we want everyone to vote!</p>
+<p>Trying to measure the effect of suppressive voting policy (requiring voter ID, shrinking the available polling places/hours, etc.) <a href="https://scholar.princeton.edu/sites/default/files/jmummolo/files/jop_voterid_print.pdf">is difficult.</a> It requires measuring within-state differences over-time among subsets of voters. The standard surveys used to look at these effects do not have sufficient data within groups or enough consistency over time for these analyses. The inspiring and remarkable successes of organizing in the face of these restrictions further complicates any simple measuring of their effects.</p>
+<section id="in-this-post" class="level1">
+<h1>In This Post</h1>
+<ul>
+<li>Our Data: The CPS-VRS and ACS</li>
+<li>MRP: A Quick Primer</li>
+<li>The Basic Model</li>
+<li>State-Level effects</li>
+<li>Conclusions</li>
+</ul>
+</section>
+<section id="data-the-american-community-survey-and-the-cps-voting-and-registration-supplement" class="level1">
+<h1><em>Data: The American Community Survey and the CPS Voting and Registration Supplement</em></h1>
+<p>Each year, the U.S. Census Bureau (USCB) conducts the “American Community Survey” which, for our purposes, is an update to the decennial census. Surveys are sent to ~3.5 million households, so it’s not as complete a count. There is also less geographic specificity to the reported results. The census reports results down to the “block” level, whereas much of the ACS data is available only at the PUMA (Public Use Microdata Area) level— —each PUMA has about 100,000 people. Still, this is enough granularity for work at the state or congressional-district level. For precise demographics at the state-legislative or voting precint level, we need to use either decennial census results or the subset of the ACS which is reported at the census tract level. We use ACS data rather than the 2010 decennial census because it provides a more up-to-date picture of the demographics. When the 2020 census results are available we will have an extremely precise and current set of demographic data.</p>
+<p>and each election year, via the Current Population Survey, the USCB publishes the <a href="https://www.census.gov/topics/public-sector/voting.html">Voting and Registration Supplement</a>, the result of asking approximately 100,000 people nationwide about their registration status and if they voted in the general election. In addition to county of residence, demographic information (age, sex, race, ethnicity, education, etc.) is paired with the responses, allowing estimation of voter turnout among various groups and in various places.</p>
+<p>The CPS-VRS responses are “self-reported”: the survey does not validate the registration or turnout of the people surveyed, and thus there are <a href="http://www.electproject.org/home/voter-turnout/cps-methodology">reporting errors</a>, ones which tend to overestimate turnout in a way which differs systematically among states. To account for this, we adjust the turnout probabilities from the CPS so that when they are post-stratified across the citizen population of each state, we get the correct total turnout. This was first suggested by <a href="https://www.aramhur.com/uploads/6/0/1/8/60187785/2013._poq_coding_cps.pdf">Achen and Hur</a> and we follow the procedure outlined by <a href="http://www.stat.columbia.edu/~gelman/research/published/misterp.pdf">Ghitza and Gelman</a> (p. 769), to compute the adjustment for each state/year, using the vote totals from <a href="http://www.electproject.org/home/voter-turnout/voter-turnout-data">United States Election Project</a>.</p>
+<p>Also, CPS-VRS data <a href="https://static1.squarespace.com/static/5fac72852ca67743c720d6a1/t/5ff8a986c87fc6090567c6d0/1610131850413/CPS_AFS_2021.pdf">seems to under-report</a> the gaps between White and non-White voters. So all of our results looking at turnout gaps should be viewed skeptically: the gaps are likely larger than we see in the data. There are other publically available surveys which, when possible, validate survey reponses via state voter files, primarily the <a href="https://cces.gov.harvard.edu">CCES</a>. That survey is smaller: approximately 50,000 people surveyed each year, with about 40,000 validated voters. For the sake of a first analysis, we will start with the CPS data.</p>
+<p>The 100,000 people surveyed by the CPS-VRS are distributed throughout the country, so there will only be a limited number of people in each state, particularly less populous ones. Once you start breaking those people down by demographic groups, the number of people per group gets quite small. For example, our model has binary groupings for age, sex and education and a 4-category grouping for race. Considering each of the 50 states plus DC, we have <span class="math inline">\(32 \times 51 = 1632\)</span> groups. If people were distributed evenly among those groups, we might have 60 or so people in each. But people are not distributed equally among those groups! Some states are smaller and some may not have very many people in some of those categories. So how can we hope to understand any state-level subtleties in turnout?</p>
+<p>That's where MRP comes in.</p>
+</section>
+<section id="mrp-a-quick-primer" class="level1">
+<h1><em>MRP: A Quick Primer</em></h1>
+<p>Though there might not be many people in any one Age/Sex/Education/Race/State group, each person surveyed has many things in common with many people in other groups. The <strong>MR</strong> part of <strong>MRP</strong> stands for <strong>M</strong>ulti-level <strong>R</strong>egression, a modeling technique which allows "partial-pooling" of the data. This means that the estimation of the turnout probability in each group is built partially from the data in that group and partially from the data in the shared categories. For example, the turnout probability for young, female, college-educated, Black voters in MI is fit partially from just those voters, partially from all young, female, college-educated, Black voters in the entire country, and partially from all voters in MI. Models can be constructed to allow partial-pooling along different groupings. The <strong>MR</strong> technique and tools we use (namely, <a href="https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo">Hamiltonian Monte Carlo</a> via <a href="https://mc-stan.org/about/">Stan</a>) allow the data itself to determine how much partial-pooling leads to the best estimation.</p>
+<p>Once we have estimates for every group in every state, we turn them into turnout numbers via post-stratification: multiplying the estimated probabilities by the actual number of people in each group, and adding these up to figure out how many people are likely to vote.</p>
+<p>The Monte-Carlo modeling produces confidence intervals of the parameters, <em>and</em> the post-stratifications which use them. The fact that some groups are very small, making probabilistic inference difficult, will show up in our results as large confidence intervals. Partial-pooling helps, but only so much.</p>
+</section>
+<section id="the-basic-model" class="level1">
+<h1><em>The Basic Model</em></h1>
+<p>Our basic model includes age (under 45 or 45-and-over), sex (female or male), education (non-college-graduate or college-graduate), race/ethnicity (Black-Non-Hispanic, Hispanic, Asian/Other, and White-Non-Hispanic) and state. We recognize that these categories are reductive. In the case of sex we are limited to categories provided by the CPS data. For age and education we've chosen to simplify the categories to keep the modeling simple. For race/ethnicity, we‘re using a slightly richer set of categories, since turnout varies widely among these groups.</p>
+<p>We add a congressional-district-level population-density factor and interactions between education and a binary race term—a simplification of the race categories to White-non-Hispanic (WNH) and non-White-non-Hispanic (NWNH): a term in the model that estimates the effect of being, e.g., White-non-Hispanic (WNH) <em>and</em> college-educated over and above the effects of being in either category separately. Crucially, we also include an interaction between state and WNH/NWNH, a term which estimates the <em>state-dependent</em> portion of the turnout gap.</p>
+<p>We fit a multi-level model, allowing partial-pooling in the estimate of the overall turnout probability in each state and for the interaction between state and race. A more complex model might expand the categories, allow partial pooling for more of the categories, or add more interactions between categories.</p>
+<p>Because we are interested in local organizing and state-level voter suppression, we focus on the state-specific portion of NWNH turnout, in particular how much NWNH turnout in each state differs from what we would expect based on the demographics (age, sex, education, local population density) of those voters. So we post stratify on NWNH voters in each state, with and without state/race interactions.</p>
+<p>It’s also interesting to look at turnout gaps between NWNH voters and WNH voters. Clicking the link below will bring you some more information about those. click the link below for more detail about the demographics-only gap and the total gap.</p>
+<p><a href="http://blueripple.github.io/Other/StateTurnout/1.html">Demographic-only gaps and total gaps.</a></p>
+<p>So below we look <em>only</em> at the “State NWNH Turnout Effect”, taking the difference of the estimated NWNH turnout in a state and subtracting the estimated NWNH turnout <em>based on the demographics alone</em>. PA is at the top with 4 point better-than-expected turnout of NWNH voters and AZ is at the bottom, with 5 point worse-than-exoected turnout of NWNH voters.</p>
+<figure id="figure_4">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 1000,
+    "padding": 5,
+    "width": 500,
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "PA",
+                        "SC",
+                        "NV",
+                        "MD",
+                        "AL",
+                        "LA",
+                        "IN",
+                        "OH",
+                        "MI",
+                        "TN",
+                        "NM",
+                        "ME",
+                        "NE",
+                        "NC",
+                        "UT",
+                        "MN",
+                        "GA",
+                        "KY",
+                        "MT",
+                        "WV",
+                        "NH",
+                        "CO",
+                        "NJ",
+                        "WY",
+                        "AK",
+                        "SD",
+                        "RI",
+                        "ID",
+                        "OK",
+                        "AR",
+                        "ND",
+                        "VT",
+                        "MS",
+                        "IL",
+                        "VA",
+                        "DC",
+                        "HI",
+                        "TX",
+                        "CT",
+                        "NY",
+                        "OR",
+                        "CA",
+                        "WI",
+                        "DE",
+                        "KS",
+                        "MO",
+                        "WA",
+                        "MA",
+                        "FL",
+                        "IA",
+                        "AZ"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                },
+                "xError": {
+                    "field": "lo"
+                },
+                "xError2": {
+                    "field": "hi"
+                }
+            },
+            "mark": {
+                "ticks": true,
+                "type": "errorbar",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "PA",
+                        "SC",
+                        "NV",
+                        "MD",
+                        "AL",
+                        "LA",
+                        "IN",
+                        "OH",
+                        "MI",
+                        "TN",
+                        "NM",
+                        "ME",
+                        "NE",
+                        "NC",
+                        "UT",
+                        "MN",
+                        "GA",
+                        "KY",
+                        "MT",
+                        "WV",
+                        "NH",
+                        "CO",
+                        "NJ",
+                        "WY",
+                        "AK",
+                        "SD",
+                        "RI",
+                        "ID",
+                        "OK",
+                        "AR",
+                        "ND",
+                        "VT",
+                        "MS",
+                        "IL",
+                        "VA",
+                        "DC",
+                        "HI",
+                        "TX",
+                        "CT",
+                        "NY",
+                        "OR",
+                        "CA",
+                        "WI",
+                        "DE",
+                        "KS",
+                        "MO",
+                        "WA",
+                        "MA",
+                        "FL",
+                        "IA",
+                        "AZ"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "datum": 0,
+                    "axis": {
+                        "title": null
+                    }
+                }
+            },
+            "mark": {
+                "color": "skyblue",
+                "type": "rule"
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "aggregate": "mean",
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "mid"
+                }
+            },
+            "mark": {
+                "color": "orange",
+                "type": "rule"
+            }
+        }
+    ],
+    "title": "State NWNH Turnout Effect (2016)",
+    "data": {
+        "values": [
+            {
+                "hi": 5.37621e-2,
+                "mid": 2.979e-4,
+                "State": "AK",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.42579e-2
+            },
+            {
+                "hi": 3.0780000000000002e-2,
+                "mid": 2.203e-2,
+                "State": "AL",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.29e-2
+            },
+            {
+                "hi": 4.84735e-2,
+                "mid": -4.535e-4,
+                "State": "AR",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.0526499999999995e-2
+            },
+            {
+                "hi": 1.4450000000000005e-2,
+                "mid": -4.794e-2,
+                "State": "AZ",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.4509999999999995e-2
+            },
+            {
+                "hi": 1.0969999999999999e-2,
+                "mid": -2.209e-2,
+                "State": "CA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.115e-2
+            },
+            {
+                "hi": 2.5115e-2,
+                "mid": 4.165e-3,
+                "State": "CO",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.7825000000000003e-2
+            },
+            {
+                "hi": 2.4882e-2,
+                "mid": -1.763e-2,
+                "State": "CT",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.762e-2
+            },
+            {
+                "hi": 1.8296e-2,
+                "mid": -1.106e-2,
+                "State": "DC",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.863e-2
+            },
+            {
+                "hi": 2.4741799999999998e-2,
+                "mid": -2.437e-2,
+                "State": "DE",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.6400000000000003e-2
+            },
+            {
+                "hi": 1.2899999999999998e-2,
+                "mid": -4.045e-2,
+                "State": "FL",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.303e-2
+            },
+            {
+                "hi": 2.357e-2,
+                "mid": 1.325e-2,
+                "State": "GA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.475e-2
+            },
+            {
+                "hi": 2.589e-2,
+                "mid": -1.127e-2,
+                "State": "HI",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.5979999999999996e-2
+            },
+            {
+                "hi": 4.34003e-2,
+                "mid": -4.412e-2,
+                "State": "IA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.3189999999999994e-2
+            },
+            {
+                "hi": 5.52517e-2,
+                "mid": -1.517e-4,
+                "State": "ID",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.42983e-2
+            },
+            {
+                "hi": 2.7502000000000002e-2,
+                "mid": -3.362e-3,
+                "State": "IL",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.9848000000000003e-2
+            },
+            {
+                "hi": 3.651e-2,
+                "mid": 1.903e-2,
+                "State": "IN",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.56e-2
+            },
+            {
+                "hi": 3.4315e-2,
+                "mid": -2.47e-2,
+                "State": "KS",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.557e-2
+            },
+            {
+                "hi": 2.9533999999999998e-2,
+                "mid": 9.776e-3,
+                "State": "KY",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.0076e-2
+            },
+            {
+                "hi": 2.0460000000000002e-2,
+                "mid": 2.161e-2,
+                "State": "LA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.0502e-2
+            },
+            {
+                "hi": 1.5749999999999997e-2,
+                "mid": -3.974e-2,
+                "State": "MA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.6100000000000003e-2
+            },
+            {
+                "hi": 1.7350000000000004e-2,
+                "mid": 2.558e-2,
+                "State": "MD",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.8056e-2
+            },
+            {
+                "hi": 3.307e-2,
+                "mid": 1.741e-2,
+                "State": "ME",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.816e-2
+            },
+            {
+                "hi": 1.4159999999999996e-2,
+                "mid": 1.828e-2,
+                "State": "MI",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.4581e-2
+            },
+            {
+                "hi": 2.9920000000000002e-2,
+                "mid": 1.35e-2,
+                "State": "MN",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.168e-2
+            },
+            {
+                "hi": 3.1139e-2,
+                "mid": -2.91e-2,
+                "State": "MO",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.5489999999999994e-2
+            },
+            {
+                "hi": 5.0193e-2,
+                "mid": -1.103e-3,
+                "State": "MS",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.2477e-2
+            },
+            {
+                "hi": 4.1958999999999996e-2,
+                "mid": 9.431e-3,
+                "State": "MT",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -4.5221000000000004e-2
+            },
+            {
+                "hi": 1.9549999999999998e-2,
+                "mid": 1.473e-2,
+                "State": "NC",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.0496e-2
+            },
+            {
+                "hi": 5.31842e-2,
+                "mid": -5.242e-4,
+                "State": "ND",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.3745799999999996e-2
+            },
+            {
+                "hi": 3.352000000000001e-2,
+                "mid": 1.63e-2,
+                "State": "NE",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.4199999999999994e-2
+            },
+            {
+                "hi": 2.8994e-2,
+                "mid": 5.106e-3,
+                "State": "NH",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.2836000000000004e-2
+            },
+            {
+                "hi": 1.6286e-2,
+                "mid": 3.304e-3,
+                "State": "NJ",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.6384e-2
+            },
+            {
+                "hi": 2.044e-2,
+                "mid": 1.747e-2,
+                "State": "NM",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.9717e-2
+            },
+            {
+                "hi": 1.8249999999999995e-2,
+                "mid": 3.35e-2,
+                "State": "NV",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.8030000000000004e-2
+            },
+            {
+                "hi": 1.2856999999999999e-2,
+                "mid": -1.877e-2,
+                "State": "NY",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.304e-2
+            },
+            {
+                "hi": 2.4399999999999998e-2,
+                "mid": 1.842e-2,
+                "State": "OH",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.8011e-2
+            },
+            {
+                "hi": 5.37095e-2,
+                "mid": -2.695e-4,
+                "State": "OK",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.35205e-2
+            },
+            {
+                "hi": 3.7709999999999994e-2,
+                "mid": -2.047e-2,
+                "State": "OR",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -4.429999999999999e-2
+            },
+            {
+                "hi": 1.5829999999999997e-2,
+                "mid": 3.987e-2,
+                "State": "PA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.5480000000000004e-2
+            },
+            {
+                "hi": 4.97476e-2,
+                "mid": 2.424e-4,
+                "State": "RI",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.2762399999999994e-2
+            },
+            {
+                "hi": 2.9670000000000002e-2,
+                "mid": 3.651e-2,
+                "State": "SC",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.0806e-2
+            },
+            {
+                "hi": 5.55555e-2,
+                "mid": 2.845e-4,
+                "State": "SD",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.66445e-2
+            },
+            {
+                "hi": 3.4269999999999995e-2,
+                "mid": 1.81e-2,
+                "State": "TN",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.766e-2
+            },
+            {
+                "hi": 2.5781e-2,
+                "mid": -1.702e-2,
+                "State": "TX",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.599e-2
+            },
+            {
+                "hi": 5.0100000000000006e-2,
+                "mid": 1.407e-2,
+                "State": "UT",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.019e-2
+            },
+            {
+                "hi": 2.0818e-2,
+                "mid": -7.198e-3,
+                "State": "VA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.2452e-2
+            },
+            {
+                "hi": 5.38077e-2,
+                "mid": -8.077e-4,
+                "State": "VT",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.61023e-2
+            },
+            {
+                "hi": 2.7037e-2,
+                "mid": -3.031e-2,
+                "State": "WA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.9410000000000002e-2
+            },
+            {
+                "hi": 3.806e-2,
+                "mid": -2.358e-2,
+                "State": "WI",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -4.390999999999999e-2
+            },
+            {
+                "hi": 4.1278999999999996e-2,
+                "mid": 8.891e-3,
+                "State": "WV",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -4.7311000000000006e-2
+            },
+            {
+                "hi": 5.18051e-2,
+                "mid": 3.149e-4,
+                "State": "WY",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.35549e-2
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 1000,
+            "discreteHeight": 1000,
+            "continuousWidth": 500,
+            "discreteWidth": 500
+        }
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
+};
+vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p>The 90% confidence intervals are large—in very few states is the state-specific effect on NWNH voters clearly non-zero.</p>
+<p>We should emphasize that the split between what we attribute to demographics of the state vs. the state itself is strongly influenced by what we include in the model and how we include it. Perhaps if we added other factors, e.g., religion or median-income, gaps that appear to be state-specific would instead be explained by these other factors. We’ve included the biggest factors that tend to correlate with voter turnout and we believe that some of the shifts we see are too large to be explained by other factors. But it’s important to be mindful of the limits of this sort of analysis.</p>
+<p>We’ve done the same analysis for 2012, and below we chart state dependent NWNH turnout effect.</p>
+<figure id="figure_5">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 1000,
+    "padding": 5,
+    "width": 500,
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "SC",
+                        "TN",
+                        "LA",
+                        "OH",
+                        "MO",
+                        "DC",
+                        "NY",
+                        "AL",
+                        "IN",
+                        "PA",
+                        "MI",
+                        "NV",
+                        "NC",
+                        "OR",
+                        "ME",
+                        "KS",
+                        "MN",
+                        "UT",
+                        "NH",
+                        "VT",
+                        "NJ",
+                        "AK",
+                        "CT",
+                        "RI",
+                        "WY",
+                        "WV",
+                        "MS",
+                        "SD",
+                        "MA",
+                        "ID",
+                        "NE",
+                        "OK",
+                        "FL",
+                        "MD",
+                        "WI",
+                        "NM",
+                        "VA",
+                        "CA",
+                        "HI",
+                        "ND",
+                        "WA",
+                        "MT",
+                        "IL",
+                        "IA",
+                        "GA",
+                        "DE",
+                        "KY",
+                        "AR",
+                        "AZ",
+                        "CO",
+                        "TX"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                },
+                "xError": {
+                    "field": "lo"
+                },
+                "xError2": {
+                    "field": "hi"
+                }
+            },
+            "mark": {
+                "ticks": true,
+                "type": "errorbar",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "SC",
+                        "TN",
+                        "LA",
+                        "OH",
+                        "MO",
+                        "DC",
+                        "NY",
+                        "AL",
+                        "IN",
+                        "PA",
+                        "MI",
+                        "NV",
+                        "NC",
+                        "OR",
+                        "ME",
+                        "KS",
+                        "MN",
+                        "UT",
+                        "NH",
+                        "VT",
+                        "NJ",
+                        "AK",
+                        "CT",
+                        "RI",
+                        "WY",
+                        "WV",
+                        "MS",
+                        "SD",
+                        "MA",
+                        "ID",
+                        "NE",
+                        "OK",
+                        "FL",
+                        "MD",
+                        "WI",
+                        "NM",
+                        "VA",
+                        "CA",
+                        "HI",
+                        "ND",
+                        "WA",
+                        "MT",
+                        "IL",
+                        "IA",
+                        "GA",
+                        "DE",
+                        "KY",
+                        "AR",
+                        "AZ",
+                        "CO",
+                        "TX"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "datum": 0,
+                    "axis": {
+                        "title": null
+                    }
+                }
+            },
+            "mark": {
+                "color": "skyblue",
+                "type": "rule"
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "aggregate": "mean",
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "mid"
+                }
+            },
+            "mark": {
+                "color": "orange",
+                "type": "rule"
+            }
+        }
+    ],
+    "title": "State NWNH Turnout Effect (2012)",
+    "data": {
+        "values": [
+            {
+                "hi": 6.23057e-2,
+                "mid": 3.343e-4,
+                "State": "AK",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -6.2094300000000005e-2
+            },
+            {
+                "hi": 2.334e-2,
+                "mid": 2.185e-2,
+                "State": "AL",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.5959000000000003e-2
+            },
+            {
+                "hi": 4.676e-2,
+                "mid": -3.563e-2,
+                "State": "AR",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -4.9620000000000004e-2
+            },
+            {
+                "hi": 1.641e-2,
+                "mid": -4.023e-2,
+                "State": "AZ",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.7119999999999996e-2
+            },
+            {
+                "hi": 1.1911999999999999e-2,
+                "mid": -9.137e-3,
+                "State": "CA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.1573e-2
+            },
+            {
+                "hi": 2.4310000000000002e-2,
+                "mid": -5.507e-2,
+                "State": "CO",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.6280000000000005e-2
+            },
+            {
+                "hi": 4.99162e-2,
+                "mid": 2.338e-4,
+                "State": "CT",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.55838e-2
+            },
+            {
+                "hi": 1.7190000000000004e-2,
+                "mid": 2.386e-2,
+                "State": "DC",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.6814e-2
+            },
+            {
+                "hi": 2.1699999999999997e-2,
+                "mid": -3.238e-2,
+                "State": "DE",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.3719999999999998e-2
+            },
+            {
+                "hi": 1.2572e-2,
+                "mid": -3.932e-3,
+                "State": "FL",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.3178e-2
+            },
+            {
+                "hi": 2.5588e-2,
+                "mid": -3.026e-2,
+                "State": "GA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.7060000000000004e-2
+            },
+            {
+                "hi": 2.4311e-2,
+                "mid": -9.371e-3,
+                "State": "HI",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.4699000000000002e-2
+            },
+            {
+                "hi": 3.26e-2,
+                "mid": -2.234e-2,
+                "State": "IA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -3.9650000000000005e-2
+            },
+            {
+                "hi": 5.4637000000000005e-2,
+                "mid": -1.057e-3,
+                "State": "ID",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.5132999999999995e-2
+            },
+            {
+                "hi": 3.236e-2,
+                "mid": -1.735e-2,
+                "State": "IL",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -3.9900000000000005e-2
+            },
+            {
+                "hi": 2.9389999999999996e-2,
+                "mid": 2.091e-2,
+                "State": "IN",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -3.3240000000000006e-2
+            },
+            {
+                "hi": 3.9479e-2,
+                "mid": 5.581e-3,
+                "State": "KS",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -4.2781e-2
+            },
+            {
+                "hi": 3.30142e-2,
+                "mid": -3.251e-2,
+                "State": "KY",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -3.506000000000001e-2
+            },
+            {
+                "hi": 2.734e-2,
+                "mid": 3.001e-2,
+                "State": "LA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.7243999999999997e-2
+            },
+            {
+                "hi": 5.1817100000000005e-2,
+                "mid": -7.271e-4,
+                "State": "MA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.45029e-2
+            },
+            {
+                "hi": 1.5136e-2,
+                "mid": -5.427e-3,
+                "State": "MD",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.6843e-2
+            },
+            {
+                "hi": 5.074e-2,
+                "mid": 6.86e-3,
+                "State": "ME",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.446e-2
+            },
+            {
+                "hi": 1.1889999999999998e-2,
+                "mid": 1.953e-2,
+                "State": "MI",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.2301e-2
+            },
+            {
+                "hi": 2.0671000000000002e-2,
+                "mid": 3.939e-3,
+                "State": "MN",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.5019e-2
+            },
+            {
+                "hi": 2.4990000000000002e-2,
+                "mid": 2.628e-2,
+                "State": "MO",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.9153000000000002e-2
+            },
+            {
+                "hi": 4.7229e-2,
+                "mid": -3.49e-4,
+                "State": "MS",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.4811e-2
+            },
+            {
+                "hi": 5.6620000000000004e-2,
+                "mid": -1.646e-2,
+                "State": "MT",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.9840000000000004e-2
+            },
+            {
+                "hi": 1.738e-2,
+                "mid": 1.503e-2,
+                "State": "NC",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.8594e-2
+            },
+            {
+                "hi": 4.6439999999999995e-2,
+                "mid": -1.543e-2,
+                "State": "ND",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -4.8839999999999995e-2
+            },
+            {
+                "hi": 3.9874e-2,
+                "mid": -1.574e-3,
+                "State": "NE",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -4.5526000000000004e-2
+            },
+            {
+                "hi": 5.46498e-2,
+                "mid": 9.102e-4,
+                "State": "NH",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.89202e-2
+            },
+            {
+                "hi": 1.72536e-2,
+                "mid": 5.564e-4,
+                "State": "NJ",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.81464e-2
+            },
+            {
+                "hi": 2.633e-2,
+                "mid": -8.85e-3,
+                "State": "NM",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.8349999999999997e-2
+            },
+            {
+                "hi": 1.7900000000000003e-2,
+                "mid": 1.753e-2,
+                "State": "NV",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.9030000000000002e-2
+            },
+            {
+                "hi": 1.3430000000000001e-2,
+                "mid": 2.319e-2,
+                "State": "NY",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.2689999999999998e-2
+            },
+            {
+                "hi": 1.2890000000000002e-2,
+                "mid": 2.945e-2,
+                "State": "OH",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.27e-2
+            },
+            {
+                "hi": 5.4497e-2,
+                "mid": -3.057e-3,
+                "State": "OK",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.3293e-2
+            },
+            {
+                "hi": 3.4609999999999995e-2,
+                "mid": 1.46e-2,
+                "State": "OR",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -4.025e-2
+            },
+            {
+                "hi": 1.6149999999999998e-2,
+                "mid": 2.04e-2,
+                "State": "PA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.6565000000000003e-2
+            },
+            {
+                "hi": 5.408482e-2,
+                "mid": 9.518e-5,
+                "State": "RI",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -6.042518e-2
+            },
+            {
+                "hi": 2.0279999999999992e-2,
+                "mid": 4.728e-2,
+                "State": "SC",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.2140000000000003e-2
+            },
+            {
+                "hi": 6.20191e-2,
+                "mid": -6.991e-4,
+                "State": "SD",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -6.401090000000001e-2
+            },
+            {
+                "hi": 4.227e-2,
+                "mid": 3.032e-2,
+                "State": "TN",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -4.632e-2
+            },
+            {
+                "hi": 1.727e-2,
+                "mid": -6.093e-2,
+                "State": "TX",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.793e-2
+            },
+            {
+                "hi": 4.7442000000000005e-2,
+                "mid": 9.28e-4,
+                "State": "UT",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.4388e-2
+            },
+            {
+                "hi": 1.7983e-2,
+                "mid": -8.936e-3,
+                "State": "VA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.7684000000000002e-2
+            },
+            {
+                "hi": 5.40133e-2,
+                "mid": 7.867e-4,
+                "State": "VT",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -6.302669999999999e-2
+            },
+            {
+                "hi": 2.0547e-2,
+                "mid": -1.551e-2,
+                "State": "WA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.07e-2
+            },
+            {
+                "hi": 3.6508e-2,
+                "mid": -8.828e-3,
+                "State": "WI",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -4.5092e-2
+            },
+            {
+                "hi": 5.42189e-2,
+                "mid": -1.789e-4,
+                "State": "WV",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.63011e-2
+            },
+            {
+                "hi": 5.9017520000000004e-2,
+                "mid": 9.248e-5,
+                "State": "WY",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -6.1222479999999996e-2
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 1000,
+            "discreteHeight": 1000,
+            "continuousWidth": 500,
+            "discreteWidth": 500
+        }
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
+};
+vegaEmbed('#figure_5',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p>We can compare 2012 to 2016 a few ways. We start by plotting the estimated effect for 2016 vs 2012, excluding any state for which the 2012 and 2016 confidence intervals both include 0. States in the upper right all had NWNH turnout exceeding expectations in both years and the lower left is populated by states with NWNH turnout below expectations in both years.</p>
+<figure id="figure_6">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 500,
+    "padding": 5,
+    "width": 500,
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "type": "quantitative",
+                    "field": "2016"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "2012"
+                },
+                "text": {
+                    "type": "nominal",
+                    "field": "State"
+                }
+            },
+            "mark": {
+                "type": "text",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "datum": 0
+                }
+            },
+            "mark": "rule"
+        },
+        {
+            "encoding": {
+                "x": {
+                    "datum": 0
+                }
+            },
+            "mark": "rule"
+        }
+    ],
+    "title": "State NWNH Turnout Effect: 2012 vs. 2016",
+    "data": {
+        "values": [
+            {
+                "hi": 1.4450000000000005e-2,
+                "mid": -4.794e-2,
+                "State": "AZ",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.4509999999999995e-2
+            },
+            {
+                "hi": 1.0969999999999999e-2,
+                "mid": -2.209e-2,
+                "State": "CA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.115e-2
+            },
+            {
+                "hi": 2.5115e-2,
+                "mid": 4.165e-3,
+                "State": "CO",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.7825000000000003e-2
+            },
+            {
+                "hi": 1.8296e-2,
+                "mid": -1.106e-2,
+                "State": "DC",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.863e-2
+            },
+            {
+                "hi": 2.4741799999999998e-2,
+                "mid": -2.437e-2,
+                "State": "DE",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.6400000000000003e-2
+            },
+            {
+                "hi": 1.2899999999999998e-2,
+                "mid": -4.045e-2,
+                "State": "FL",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.303e-2
+            },
+            {
+                "hi": 2.357e-2,
+                "mid": 1.325e-2,
+                "State": "GA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.475e-2
+            },
+            {
+                "hi": 4.34003e-2,
+                "mid": -4.412e-2,
+                "State": "IA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -5.3189999999999994e-2
+            },
+            {
+                "hi": 2.0460000000000002e-2,
+                "mid": 2.161e-2,
+                "State": "LA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.0502e-2
+            },
+            {
+                "hi": 1.5749999999999997e-2,
+                "mid": -3.974e-2,
+                "State": "MA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.6100000000000003e-2
+            },
+            {
+                "hi": 1.7350000000000004e-2,
+                "mid": 2.558e-2,
+                "State": "MD",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.8056e-2
+            },
+            {
+                "hi": 1.4159999999999996e-2,
+                "mid": 1.828e-2,
+                "State": "MI",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.4581e-2
+            },
+            {
+                "hi": 1.8249999999999995e-2,
+                "mid": 3.35e-2,
+                "State": "NV",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.8030000000000004e-2
+            },
+            {
+                "hi": 1.2856999999999999e-2,
+                "mid": -1.877e-2,
+                "State": "NY",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.304e-2
+            },
+            {
+                "hi": 2.4399999999999998e-2,
+                "mid": 1.842e-2,
+                "State": "OH",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.8011e-2
+            },
+            {
+                "hi": 1.5829999999999997e-2,
+                "mid": 3.987e-2,
+                "State": "PA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.5480000000000004e-2
+            },
+            {
+                "hi": 2.9670000000000002e-2,
+                "mid": 3.651e-2,
+                "State": "SC",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.0806e-2
+            },
+            {
+                "hi": 2.5781e-2,
+                "mid": -1.702e-2,
+                "State": "TX",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.599e-2
+            },
+            {
+                "hi": 2.7037e-2,
+                "mid": -3.031e-2,
+                "State": "WA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.9410000000000002e-2
+            },
+            {
+                "hi": 1.641e-2,
+                "mid": -4.023e-2,
+                "State": "AZ",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.7119999999999996e-2
+            },
+            {
+                "hi": 1.1911999999999999e-2,
+                "mid": -9.137e-3,
+                "State": "CA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.1573e-2
+            },
+            {
+                "hi": 2.4310000000000002e-2,
+                "mid": -5.507e-2,
+                "State": "CO",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.6280000000000005e-2
+            },
+            {
+                "hi": 1.7190000000000004e-2,
+                "mid": 2.386e-2,
+                "State": "DC",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.6814e-2
+            },
+            {
+                "hi": 2.1699999999999997e-2,
+                "mid": -3.238e-2,
+                "State": "DE",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.3719999999999998e-2
+            },
+            {
+                "hi": 1.2572e-2,
+                "mid": -3.932e-3,
+                "State": "FL",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.3178e-2
+            },
+            {
+                "hi": 2.5588e-2,
+                "mid": -3.026e-2,
+                "State": "GA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.7060000000000004e-2
+            },
+            {
+                "hi": 3.26e-2,
+                "mid": -2.234e-2,
+                "State": "IA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -3.9650000000000005e-2
+            },
+            {
+                "hi": 2.734e-2,
+                "mid": 3.001e-2,
+                "State": "LA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.7243999999999997e-2
+            },
+            {
+                "hi": 5.1817100000000005e-2,
+                "mid": -7.271e-4,
+                "State": "MA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -5.45029e-2
+            },
+            {
+                "hi": 1.5136e-2,
+                "mid": -5.427e-3,
+                "State": "MD",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.6843e-2
+            },
+            {
+                "hi": 1.1889999999999998e-2,
+                "mid": 1.953e-2,
+                "State": "MI",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.2301e-2
+            },
+            {
+                "hi": 1.7900000000000003e-2,
+                "mid": 1.753e-2,
+                "State": "NV",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.9030000000000002e-2
+            },
+            {
+                "hi": 1.3430000000000001e-2,
+                "mid": 2.319e-2,
+                "State": "NY",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.2689999999999998e-2
+            },
+            {
+                "hi": 1.2890000000000002e-2,
+                "mid": 2.945e-2,
+                "State": "OH",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.27e-2
+            },
+            {
+                "hi": 1.6149999999999998e-2,
+                "mid": 2.04e-2,
+                "State": "PA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.6565000000000003e-2
+            },
+            {
+                "hi": 2.0279999999999992e-2,
+                "mid": 4.728e-2,
+                "State": "SC",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.2140000000000003e-2
+            },
+            {
+                "hi": 1.727e-2,
+                "mid": -6.093e-2,
+                "State": "TX",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.793e-2
+            },
+            {
+                "hi": 2.0547e-2,
+                "mid": -1.551e-2,
+                "State": "WA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.07e-2
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 500,
+            "discreteHeight": 500,
+            "continuousWidth": 500,
+            "discreteWidth": 500
+        }
+    },
+    "transform": [
+        {
+            "pivot": "Year",
+            "groupby": [
+                "State"
+            ],
+            "value": "mid"
+        }
+    ],
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.1.json"
+};
+vegaEmbed('#figure_6',vlSpec,{"renderer": "svg"});</script>
+</figure>
+<p>Examining in a little more detail, we’ll first look at all the gaps which are significant (90% confidence that the gap is not 0) and persistent (same direction) in <em>both</em> 2012 and 2016. Then we’ll look at gaps which have changed significantly between 2012 and 2016, that is those for which the 2016 confidence interval is outside the 2012 confidence interval.</p>
+<figure id="figure_7">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 400,
+    "padding": 5,
+    "width": 400,
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "SC",
+                        "TN",
+                        "LA",
+                        "OH",
+                        "MO",
+                        "DC",
+                        "NY",
+                        "AL",
+                        "IN",
+                        "PA",
+                        "MI",
+                        "NV",
+                        "NC",
+                        "OR",
+                        "ME",
+                        "KS",
+                        "MN",
+                        "UT",
+                        "NH",
+                        "VT",
+                        "NJ",
+                        "AK",
+                        "CT",
+                        "RI",
+                        "WY",
+                        "WV",
+                        "MS",
+                        "SD",
+                        "MA",
+                        "ID",
+                        "NE",
+                        "OK",
+                        "FL",
+                        "MD",
+                        "WI",
+                        "NM",
+                        "VA",
+                        "CA",
+                        "HI",
+                        "ND",
+                        "WA",
+                        "MT",
+                        "IL",
+                        "IA",
+                        "GA",
+                        "DE",
+                        "KY",
+                        "AR",
+                        "AZ",
+                        "CO",
+                        "TX"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                },
+                "xError": {
+                    "field": "lo"
+                },
+                "xError2": {
+                    "field": "hi"
+                }
+            },
+            "mark": {
+                "ticks": true,
+                "type": "errorbar",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "SC",
+                        "TN",
+                        "LA",
+                        "OH",
+                        "MO",
+                        "DC",
+                        "NY",
+                        "AL",
+                        "IN",
+                        "PA",
+                        "MI",
+                        "NV",
+                        "NC",
+                        "OR",
+                        "ME",
+                        "KS",
+                        "MN",
+                        "UT",
+                        "NH",
+                        "VT",
+                        "NJ",
+                        "AK",
+                        "CT",
+                        "RI",
+                        "WY",
+                        "WV",
+                        "MS",
+                        "SD",
+                        "MA",
+                        "ID",
+                        "NE",
+                        "OK",
+                        "FL",
+                        "MD",
+                        "WI",
+                        "NM",
+                        "VA",
+                        "CA",
+                        "HI",
+                        "ND",
+                        "WA",
+                        "MT",
+                        "IL",
+                        "IA",
+                        "GA",
+                        "DE",
+                        "KY",
+                        "AR",
+                        "AZ",
+                        "CO",
+                        "TX"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "datum": 0,
+                    "axis": {
+                        "title": null
+                    }
+                }
+            },
+            "mark": {
+                "color": "skyblue",
+                "type": "rule"
+            }
+        }
+    ],
+    "title": "State NWNH Turnout Effect: significant *and* persistent effects in 2012 and 2016",
+    "data": {
+        "values": [
+            {
+                "hi": 1.4450000000000005e-2,
+                "mid": -4.794e-2,
+                "State": "AZ",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.4509999999999995e-2
+            },
+            {
+                "hi": 2.0460000000000002e-2,
+                "mid": 2.161e-2,
+                "State": "LA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.0502e-2
+            },
+            {
+                "hi": 1.4159999999999996e-2,
+                "mid": 1.828e-2,
+                "State": "MI",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.4581e-2
+            },
+            {
+                "hi": 1.5829999999999997e-2,
+                "mid": 3.987e-2,
+                "State": "PA",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.5480000000000004e-2
+            },
+            {
+                "hi": 2.9670000000000002e-2,
+                "mid": 3.651e-2,
+                "State": "SC",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -3.0806e-2
+            },
+            {
+                "hi": 1.641e-2,
+                "mid": -4.023e-2,
+                "State": "AZ",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.7119999999999996e-2
+            },
+            {
+                "hi": 2.734e-2,
+                "mid": 3.001e-2,
+                "State": "LA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.7243999999999997e-2
+            },
+            {
+                "hi": 1.1889999999999998e-2,
+                "mid": 1.953e-2,
+                "State": "MI",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.2301e-2
+            },
+            {
+                "hi": 1.6149999999999998e-2,
+                "mid": 2.04e-2,
+                "State": "PA",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.6565000000000003e-2
+            },
+            {
+                "hi": 2.0279999999999992e-2,
+                "mid": 4.728e-2,
+                "State": "SC",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.2140000000000003e-2
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 400,
+            "discreteHeight": 400,
+            "continuousWidth": 400,
+            "discreteWidth": 400
+        }
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
+};
+vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_8">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 400,
+    "padding": 5,
+    "width": 400,
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "SC",
+                        "TN",
+                        "LA",
+                        "OH",
+                        "MO",
+                        "DC",
+                        "NY",
+                        "AL",
+                        "IN",
+                        "PA",
+                        "MI",
+                        "NV",
+                        "NC",
+                        "OR",
+                        "ME",
+                        "KS",
+                        "MN",
+                        "UT",
+                        "NH",
+                        "VT",
+                        "NJ",
+                        "AK",
+                        "CT",
+                        "RI",
+                        "WY",
+                        "WV",
+                        "MS",
+                        "SD",
+                        "MA",
+                        "ID",
+                        "NE",
+                        "OK",
+                        "FL",
+                        "MD",
+                        "WI",
+                        "NM",
+                        "VA",
+                        "CA",
+                        "HI",
+                        "ND",
+                        "WA",
+                        "MT",
+                        "IL",
+                        "IA",
+                        "GA",
+                        "DE",
+                        "KY",
+                        "AR",
+                        "AZ",
+                        "CO",
+                        "TX"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                },
+                "xError": {
+                    "field": "lo"
+                },
+                "xError2": {
+                    "field": "hi"
+                }
+            },
+            "mark": {
+                "ticks": true,
+                "type": "errorbar",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "SC",
+                        "TN",
+                        "LA",
+                        "OH",
+                        "MO",
+                        "DC",
+                        "NY",
+                        "AL",
+                        "IN",
+                        "PA",
+                        "MI",
+                        "NV",
+                        "NC",
+                        "OR",
+                        "ME",
+                        "KS",
+                        "MN",
+                        "UT",
+                        "NH",
+                        "VT",
+                        "NJ",
+                        "AK",
+                        "CT",
+                        "RI",
+                        "WY",
+                        "WV",
+                        "MS",
+                        "SD",
+                        "MA",
+                        "ID",
+                        "NE",
+                        "OK",
+                        "FL",
+                        "MD",
+                        "WI",
+                        "NM",
+                        "VA",
+                        "CA",
+                        "HI",
+                        "ND",
+                        "WA",
+                        "MT",
+                        "IL",
+                        "IA",
+                        "GA",
+                        "DE",
+                        "KY",
+                        "AR",
+                        "AZ",
+                        "CO",
+                        "TX"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "datum": 0,
+                    "axis": {
+                        "title": null
+                    }
+                }
+            },
+            "mark": {
+                "color": "skyblue",
+                "type": "rule"
+            }
+        }
+    ],
+    "title": "State NWNH Turnout Effect: significant *changes* 2012 to 2016",
+    "data": {
+        "values": [
+            {
+                "hi": 2.5115e-2,
+                "mid": 4.165e-3,
+                "State": "CO",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.7825000000000003e-2
+            },
+            {
+                "hi": 1.2899999999999998e-2,
+                "mid": -4.045e-2,
+                "State": "FL",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.303e-2
+            },
+            {
+                "hi": 1.2856999999999999e-2,
+                "mid": -1.877e-2,
+                "State": "NY",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -1.304e-2
+            },
+            {
+                "hi": 2.5781e-2,
+                "mid": -1.702e-2,
+                "State": "TX",
+                "Year": "2016",
+                "Label": "Interaction",
+                "lo": -2.599e-2
+            },
+            {
+                "hi": 2.4310000000000002e-2,
+                "mid": -5.507e-2,
+                "State": "CO",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -2.6280000000000005e-2
+            },
+            {
+                "hi": 1.2572e-2,
+                "mid": -3.932e-3,
+                "State": "FL",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.3178e-2
+            },
+            {
+                "hi": 1.3430000000000001e-2,
+                "mid": 2.319e-2,
+                "State": "NY",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.2689999999999998e-2
+            },
+            {
+                "hi": 1.727e-2,
+                "mid": -6.093e-2,
+                "State": "TX",
+                "Year": "2012",
+                "Label": "Interaction",
+                "lo": -1.793e-2
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 400,
+            "discreteHeight": 400,
+            "continuousWidth": 400,
+            "discreteWidth": 400
+        }
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
+};
+vegaEmbed('#figure_8',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p>We can also model 2012 and 2016 at the same time. We lose the ability to see any changes but some confidence intervals shrink because there is more information to use in the fit.</p>
+<figure id="figure_9">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 1000,
+    "padding": 5,
+    "width": 500,
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "SC",
+                        "OH",
+                        "PA",
+                        "AL",
+                        "IN",
+                        "NV",
+                        "ME",
+                        "TN",
+                        "LA",
+                        "MI",
+                        "NC",
+                        "MN",
+                        "NE",
+                        "MD",
+                        "DC",
+                        "UT",
+                        "NY",
+                        "NM",
+                        "NJ",
+                        "ID",
+                        "MO",
+                        "WV",
+                        "NH",
+                        "MS",
+                        "WY",
+                        "OK",
+                        "AK",
+                        "RI",
+                        "VT",
+                        "SD",
+                        "OR",
+                        "VA",
+                        "MT",
+                        "HI",
+                        "ND",
+                        "GA",
+                        "IL",
+                        "KY",
+                        "CA",
+                        "WA",
+                        "KS",
+                        "WI",
+                        "FL",
+                        "AR",
+                        "CT",
+                        "DE",
+                        "CO",
+                        "IA",
+                        "AZ",
+                        "MA",
+                        "TX"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                },
+                "xError": {
+                    "field": "lo"
+                },
+                "xError2": {
+                    "field": "hi"
+                }
+            },
+            "mark": {
+                "ticks": true,
+                "type": "errorbar",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "SC",
+                        "OH",
+                        "PA",
+                        "AL",
+                        "IN",
+                        "NV",
+                        "ME",
+                        "TN",
+                        "LA",
+                        "MI",
+                        "NC",
+                        "MN",
+                        "NE",
+                        "MD",
+                        "DC",
+                        "UT",
+                        "NY",
+                        "NM",
+                        "NJ",
+                        "ID",
+                        "MO",
+                        "WV",
+                        "NH",
+                        "MS",
+                        "WY",
+                        "OK",
+                        "AK",
+                        "RI",
+                        "VT",
+                        "SD",
+                        "OR",
+                        "VA",
+                        "MT",
+                        "HI",
+                        "ND",
+                        "GA",
+                        "IL",
+                        "KY",
+                        "CA",
+                        "WA",
+                        "KS",
+                        "WI",
+                        "FL",
+                        "AR",
+                        "CT",
+                        "DE",
+                        "CO",
+                        "IA",
+                        "AZ",
+                        "MA",
+                        "TX"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "datum": 0,
+                    "axis": {
+                        "title": null
+                    }
+                }
+            },
+            "mark": {
+                "color": "skyblue",
+                "type": "rule"
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "aggregate": "mean",
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "mid"
+                }
+            },
+            "mark": {
+                "color": "orange",
+                "type": "rule"
+            }
+        }
+    ],
+    "title": "State NWNH Turnout Effect (2012 & 2016)",
+    "data": {
+        "values": [
+            {
+                "hi": 5.65427e-2,
+                "mid": 1.373e-4,
+                "State": "AK",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -5.72673e-2
+            },
+            {
+                "hi": 2.155e-2,
+                "mid": 2.907e-2,
+                "State": "AL",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -2.3427999999999997e-2
+            },
+            {
+                "hi": 4.534e-2,
+                "mid": -2.197e-2,
+                "State": "AR",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -4.93e-2
+            },
+            {
+                "hi": 1.2650000000000002e-2,
+                "mid": -4.611e-2,
+                "State": "AZ",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.2580000000000001e-2
+            },
+            {
+                "hi": 9.93e-3,
+                "mid": -1.428e-2,
+                "State": "CA",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.027e-2
+            },
+            {
+                "hi": 2.0130000000000002e-2,
+                "mid": -3.49e-2,
+                "State": "CO",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -2.1769999999999998e-2
+            },
+            {
+                "hi": 2.6114699999999998e-2,
+                "mid": -2.539e-2,
+                "State": "CT",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -2.6920000000000003e-2
+            },
+            {
+                "hi": 1.3787e-2,
+                "mid": 6.723e-3,
+                "State": "DC",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.3935e-2
+            },
+            {
+                "hi": 1.847e-2,
+                "mid": -3.189e-2,
+                "State": "DE",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.8589999999999995e-2
+            },
+            {
+                "hi": 1.0740000000000001e-2,
+                "mid": -2.136e-2,
+                "State": "FL",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.0679999999999999e-2
+            },
+            {
+                "hi": 1.9726e-2,
+                "mid": -1.039e-2,
+                "State": "GA",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.9030000000000002e-2
+            },
+            {
+                "hi": 1.9133999999999998e-2,
+                "mid": -8.464e-3,
+                "State": "HI",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.8756000000000002e-2
+            },
+            {
+                "hi": 3.3122e-2,
+                "mid": -3.798e-2,
+                "State": "IA",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -3.93e-2
+            },
+            {
+                "hi": 4.9024e-2,
+                "mid": 3.456e-3,
+                "State": "ID",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -5.1116e-2
+            },
+            {
+                "hi": 2.404e-2,
+                "mid": -1.181e-2,
+                "State": "IL",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -2.577e-2
+            },
+            {
+                "hi": 2.566e-2,
+                "mid": 2.682e-2,
+                "State": "IN",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -2.9397e-2
+            },
+            {
+                "hi": 3.172e-2,
+                "mid": -1.974e-2,
+                "State": "KS",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -3.217e-2
+            },
+            {
+                "hi": 2.4919999999999998e-2,
+                "mid": -1.325e-2,
+                "State": "KY",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -2.6340000000000002e-2
+            },
+            {
+                "hi": 1.7220000000000003e-2,
+                "mid": 2.204e-2,
+                "State": "LA",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.7237000000000002e-2
+            },
+            {
+                "hi": 1.5e-2,
+                "mid": -4.848e-2,
+                "State": "MA",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.5989999999999997e-2
+            },
+            {
+                "hi": 1.3204e-2,
+                "mid": 7.036e-3,
+                "State": "MD",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.3111e-2
+            },
+            {
+                "hi": 3.4570000000000004e-2,
+                "mid": 2.589e-2,
+                "State": "ME",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -3.825e-2
+            },
+            {
+                "hi": 1.0509999999999999e-2,
+                "mid": 1.913e-2,
+                "State": "MI",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.0624000000000001e-2
+            },
+            {
+                "hi": 1.86e-2,
+                "mid": 1.509e-2,
+                "State": "MN",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -2.1149e-2
+            },
+            {
+                "hi": 2.0905e-2,
+                "mid": 3.025e-3,
+                "State": "MO",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -2.3615e-2
+            },
+            {
+                "hi": 4.25853e-2,
+                "mid": 6.547e-4,
+                "State": "MS",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -4.87647e-2
+            },
+            {
+                "hi": 4.2906e-2,
+                "mid": -5.916e-3,
+                "State": "MT",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -4.5404e-2
+            },
+            {
+                "hi": 1.456e-2,
+                "mid": 1.707e-2,
+                "State": "NC",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.4634999999999999e-2
+            },
+            {
+                "hi": 4.3435e-2,
+                "mid": -9.535e-3,
+                "State": "ND",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -4.7875e-2
+            },
+            {
+                "hi": 3.0019999999999998e-2,
+                "mid": 1.387e-2,
+                "State": "NE",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -3.211e-2
+            },
+            {
+                "hi": 2.9693999999999998e-2,
+                "mid": 2.256e-3,
+                "State": "NH",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -3.3176e-2
+            },
+            {
+                "hi": 1.3130000000000001e-2,
+                "mid": 4.56e-3,
+                "State": "NJ",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.3366e-2
+            },
+            {
+                "hi": 1.7629e-2,
+                "mid": 4.631e-3,
+                "State": "NM",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.7731e-2
+            },
+            {
+                "hi": 1.4269999999999998e-2,
+                "mid": 2.667e-2,
+                "State": "NV",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.4209999999999999e-2
+            },
+            {
+                "hi": 1.0582999999999999e-2,
+                "mid": 5.517e-3,
+                "State": "NY",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.132e-2
+            },
+            {
+                "hi": 1.1810000000000001e-2,
+                "mid": 3.825e-2,
+                "State": "OH",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.3090000000000001e-2
+            },
+            {
+                "hi": 5.13336e-2,
+                "mid": 1.564e-4,
+                "State": "OK",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -5.11364e-2
+            },
+            {
+                "hi": 3.0056e-2,
+                "mid": -1.596e-3,
+                "State": "OR",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -3.3774e-2
+            },
+            {
+                "hi": 1.301e-2,
+                "mid": 3.12e-2,
+                "State": "PA",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.2399999999999998e-2
+            },
+            {
+                "hi": 5.0029090000000005e-2,
+                "mid": 8.091e-5,
+                "State": "RI",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -5.518091e-2
+            },
+            {
+                "hi": 1.8480000000000003e-2,
+                "mid": 5.379e-2,
+                "State": "SC",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.8479999999999996e-2
+            },
+            {
+                "hi": 5.65903e-2,
+                "mid": -6.403e-4,
+                "State": "SD",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -5.84397e-2
+            },
+            {
+                "hi": 3.223e-2,
+                "mid": 2.253e-2,
+                "State": "TN",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -3.469e-2
+            },
+            {
+                "hi": 1.5289999999999998e-2,
+                "mid": -5.117e-2,
+                "State": "TX",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.5449999999999998e-2
+            },
+            {
+                "hi": 4.3414999999999995e-2,
+                "mid": 6.365e-3,
+                "State": "UT",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -4.7335e-2
+            },
+            {
+                "hi": 1.4280999999999999e-2,
+                "mid": -5.213e-3,
+                "State": "VA",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.5347e-2
+            },
+            {
+                "hi": 5.27519e-2,
+                "mid": -2.719e-4,
+                "State": "VT",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -5.21381e-2
+            },
+            {
+                "hi": 1.74018e-2,
+                "mid": -1.723e-2,
+                "State": "WA",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -1.8150000000000003e-2
+            },
+            {
+                "hi": 3.304e-2,
+                "mid": -2.019e-2,
+                "State": "WI",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -3.675e-2
+            },
+            {
+                "hi": 4.2565e-2,
+                "mid": 2.645e-3,
+                "State": "WV",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -4.4295e-2
+            },
+            {
+                "hi": 5.5835e-2,
+                "mid": 2.55e-4,
+                "State": "WY",
+                "Year": "2012 & 2016",
+                "Label": "Interaction",
+                "lo": -5.8655e-2
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 1000,
+            "discreteHeight": 1000,
+            "continuousWidth": 500,
+            "discreteWidth": 500
+        }
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
+};
+vegaEmbed('#figure_9',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+</section>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
