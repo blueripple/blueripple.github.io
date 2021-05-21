@@ -240,10 +240,10 @@
 
 <!-- page content begins here -->
 
-<div class="published">May 13, 2021 </div>
+<div class="published">May 21, 2021 </div>
 <section id="turnout-gaps" class="level1">
 <h1>Turnout Gaps</h1>
-<p>In the chart below, we look at the 2016 state turnout gaps (along with 90% percent confidence intervals) estimated by our model, without the state-race interaction. These gaps come from the <em>national</em> turnout gap between VOC and WNH voters and the differences among states come entirely from different distributions of ages, gender, education and population density among the VOC and WNH populations in that state. These gaps average about -10 pts—indicating 9% more WNH voters turned out than VOC nationally— ranging from -4 points in MI to -25 points in SD. The average gap can be quite different year-to-year and it was, for example, close to 0 in 2012. In each of the following charts, the zero-line is marked in blue and the mean of the turnout gaps in orange.</p>
+<p>In the chart below, we look at the 2020 state turnout gaps (along with 90% percent confidence intervals) estimated by our model, without the state-race interaction. These gaps come from the <em>national</em> turnout gap between VOC and WNH voters and the differences among states come entirely from different distributions of ages, gender, education and population density among the VOC and WNH populations in that state. These gaps average about -9 pts—indicating 9% more WNH voters turned out than VOC nationally— ranging from -3 points in MS to -18 points in SD. The average gap can be quite different year-to-year and it was, for example, close to 0 in 2012. In each of the following charts, the zero-line is marked in blue and the mean of the turnout gaps in orange.</p>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
 {
@@ -257,60 +257,63 @@
                     "type": "nominal",
                     "sort": [
                         "MS",
-                        "TN",
                         "AL",
-                        "LA",
                         "GA",
-                        "MO",
-                        "KY",
-                        "MI",
-                        "NC",
-                        "SC",
-                        "MD",
                         "WV",
-                        "VA",
-                        "OH",
-                        "AR",
+                        "LA",
+                        "TN",
+                        "NC",
+                        "KY",
+                        "MD",
+                        "MI",
                         "DE",
-                        "PA",
+                        "MO",
+                        "AR",
+                        "SC",
+                        "OH",
+                        "VT",
                         "IN",
+                        "VA",
+                        "TX",
+                        "PA",
+                        "IA",
                         "FL",
                         "IL",
-                        "NY",
-                        "DC",
-                        "TX",
                         "NJ",
-                        "WI",
-                        "CO",
-                        "IA",
                         "MN",
+                        "WI",
+                        "ME",
+                        "KS",
                         "NH",
+                        "CO",
+                        "NV",
+                        "CA",
+                        "NY",
+                        "OR",
+                        "MA",
                         "NE",
                         "CT",
-                        "KS",
-                        "MA",
-                        "NV",
-                        "RI",
-                        "WA",
-                        "ME",
-                        "VT",
-                        "CA",
-                        "OR",
                         "OK",
-                        "WY",
-                        "NM",
-                        "HI",
-                        "UT",
+                        "WA",
                         "AZ",
+                        "RI",
                         "ID",
-                        "ND",
+                        "WY",
+                        "UT",
                         "MT",
+                        "HI",
+                        "ND",
+                        "NM",
+                        "DC",
                         "AK",
                         "SD"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
@@ -339,60 +342,63 @@
                     "type": "nominal",
                     "sort": [
                         "MS",
-                        "TN",
                         "AL",
-                        "LA",
                         "GA",
-                        "MO",
-                        "KY",
-                        "MI",
-                        "NC",
-                        "SC",
-                        "MD",
                         "WV",
-                        "VA",
-                        "OH",
-                        "AR",
+                        "LA",
+                        "TN",
+                        "NC",
+                        "KY",
+                        "MD",
+                        "MI",
                         "DE",
-                        "PA",
+                        "MO",
+                        "AR",
+                        "SC",
+                        "OH",
+                        "VT",
                         "IN",
+                        "VA",
+                        "TX",
+                        "PA",
+                        "IA",
                         "FL",
                         "IL",
-                        "NY",
-                        "DC",
-                        "TX",
                         "NJ",
-                        "WI",
-                        "CO",
-                        "IA",
                         "MN",
+                        "WI",
+                        "ME",
+                        "KS",
                         "NH",
+                        "CO",
+                        "NV",
+                        "CA",
+                        "NY",
+                        "OR",
+                        "MA",
                         "NE",
                         "CT",
-                        "KS",
-                        "MA",
-                        "NV",
-                        "RI",
-                        "WA",
-                        "ME",
-                        "VT",
-                        "CA",
-                        "OR",
                         "OK",
-                        "WY",
-                        "NM",
-                        "HI",
-                        "UT",
+                        "WA",
                         "AZ",
+                        "RI",
                         "ID",
-                        "ND",
+                        "WY",
+                        "UT",
                         "MT",
+                        "HI",
+                        "ND",
+                        "NM",
+                        "DC",
                         "AK",
                         "SD"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
@@ -411,10 +417,7 @@
         {
             "encoding": {
                 "x": {
-                    "datum": 0,
-                    "axis": {
-                        "title": null
-                    }
+                    "datum": 0
                 }
             },
             "mark": {
@@ -426,9 +429,6 @@
             "encoding": {
                 "x": {
                     "aggregate": "mean",
-                    "axis": {
-                        "title": null
-                    },
                     "field": "mid"
                 }
             },
@@ -438,368 +438,368 @@
             }
         }
     ],
-    "title": "VOC/WNH Turnout Gap without State-specific effects (2016)",
+    "title": "VOC/WNH Turnout Gap without State-specific effects (2020)",
     "data": {
         "format": {
             "parse": {}
         },
         "values": [
             {
-                "hi": 3.360000000000002e-2,
-                "mid": -0.1947,
+                "hi": 2.890000000000001,
+                "mid": -17.39,
                 "State": "AK",
-                "Year": "2016",
-                "lo": -2.6999999999999996e-2
+                "Year": "2020",
+                "lo": -2.52
             },
             {
-                "hi": 1.8789999999999998e-2,
-                "mid": -3.806e-2,
+                "hi": 2.052,
+                "mid": -3.841,
                 "State": "AL",
-                "Year": "2016",
-                "lo": -1.9520000000000003e-2
+                "Year": "2020",
+                "lo": -1.9720000000000002
             },
             {
-                "hi": 1.9389999999999998e-2,
-                "mid": -5.651e-2,
+                "hi": 2.0420000000000003,
+                "mid": -5.744,
                 "State": "AR",
-                "Year": "2016",
-                "lo": -2.065000000000001e-2
+                "Year": "2020",
+                "lo": -2.0870000000000006
             },
             {
-                "hi": 2.0300000000000012e-2,
-                "mid": -0.165,
+                "hi": 2.059999999999999,
+                "mid": -12.34,
                 "State": "AZ",
-                "Year": "2016",
-                "lo": -1.959999999999998e-2
+                "Year": "2020",
+                "lo": -1.9299999999999997
             },
             {
-                "hi": 1.8699999999999994e-2,
-                "mid": -0.1255,
+                "hi": 2.0709999999999993,
+                "mid": -10.8,
                 "State": "CA",
-                "Year": "2016",
-                "lo": -1.830000000000001e-2
+                "Year": "2020",
+                "lo": -1.9599999999999993
             },
             {
-                "hi": 1.6630000000000006e-2,
-                "mid": -9.707e-2,
+                "hi": 1.9320000000000004,
+                "mid": -10.65,
                 "State": "CO",
-                "Year": "2016",
-                "lo": -1.7729999999999996e-2
+                "Year": "2020",
+                "lo": -1.8900000000000015
             },
             {
-                "hi": 1.7740000000000006e-2,
-                "mid": -0.1048,
+                "hi": 1.8610000000000002,
+                "mid": -11.25,
                 "State": "CT",
-                "Year": "2016",
-                "lo": -1.84e-2
+                "Year": "2020",
+                "lo": -1.8299999999999996
             },
             {
-                "hi": 1.2709999999999999e-2,
-                "mid": -8.0e-2,
+                "hi": 2.0800000000000014,
+                "mid": -15.17,
                 "State": "DC",
-                "Year": "2016",
-                "lo": -1.4089999999999991e-2
+                "Year": "2020",
+                "lo": -1.9900000000000002
             },
             {
-                "hi": 1.7999999999999995e-2,
-                "mid": -6.437e-2,
+                "hi": 1.8590000000000002,
+                "mid": -5.539000000000001,
                 "State": "DE",
-                "Year": "2016",
-                "lo": -1.8049999999999997e-2
+                "Year": "2020",
+                "lo": -1.8190000000000004
             },
             {
-                "hi": 1.6890000000000002e-2,
-                "mid": -6.682e-2,
+                "hi": 1.8819999999999997,
+                "mid": -8.126,
                 "State": "FL",
-                "Year": "2016",
-                "lo": -1.6799999999999995e-2
+                "Year": "2020",
+                "lo": -1.7530000000000003
             },
             {
-                "hi": 1.8199999999999997e-2,
-                "mid": -4.121e-2,
+                "hi": 2.056,
+                "mid": -4.309,
                 "State": "GA",
-                "Year": "2016",
-                "lo": -1.9090000000000003e-2
+                "Year": "2020",
+                "lo": -1.9419999999999993
             },
             {
-                "hi": 1.9800000000000012e-2,
-                "mid": -0.1632,
+                "hi": 2.1599999999999993,
+                "mid": -14.42,
                 "State": "HI",
-                "Year": "2016",
-                "lo": -1.9699999999999995e-2
+                "Year": "2020",
+                "lo": -2.0199999999999996
             },
             {
-                "hi": 1.9989999999999994e-2,
-                "mid": -9.755e-2,
+                "hi": 1.9550000000000005,
+                "mid": -7.674,
                 "State": "IA",
-                "Year": "2016",
-                "lo": -2.155e-2
+                "Year": "2020",
+                "lo": -2.0089999999999995
             },
             {
-                "hi": 2.889999999999998e-2,
-                "mid": -0.1659,
+                "hi": 2.43,
+                "mid": -13.100000000000001,
                 "State": "ID",
-                "Year": "2016",
-                "lo": -2.6300000000000018e-2
+                "Year": "2020",
+                "lo": -2.349999999999999
             },
             {
-                "hi": 1.7979999999999996e-2,
-                "mid": -6.752e-2,
+                "hi": 2.1579999999999995,
+                "mid": -8.356,
                 "State": "IL",
-                "Year": "2016",
-                "lo": -1.852000000000001e-2
+                "Year": "2020",
+                "lo": -1.984000000000001
             },
             {
-                "hi": 1.863e-2,
-                "mid": -6.605e-2,
+                "hi": 2.082,
+                "mid": -6.479,
                 "State": "IN",
-                "Year": "2016",
-                "lo": -1.9640000000000005e-2
+                "Year": "2020",
+                "lo": -1.9860000000000002
             },
             {
-                "hi": 2.015e-2,
-                "mid": -0.1091,
+                "hi": 2.105,
+                "mid": -9.847999999999999,
                 "State": "KS",
-                "Year": "2016",
-                "lo": -1.94e-2
+                "Year": "2020",
+                "lo": -2.0320000000000005
             },
             {
-                "hi": 1.897e-2,
-                "mid": -4.873e-2,
+                "hi": 2.173,
+                "mid": -5.362,
                 "State": "KY",
-                "Year": "2016",
-                "lo": -1.931e-2
+                "Year": "2020",
+                "lo": -2.0290000000000004
             },
             {
-                "hi": 1.7410000000000002e-2,
-                "mid": -4.032e-2,
+                "hi": 2.1180000000000003,
+                "mid": -4.429,
                 "State": "LA",
-                "Year": "2016",
-                "lo": -1.7729999999999996e-2
+                "Year": "2020",
+                "lo": -2.063
             },
             {
-                "hi": 1.7089999999999994e-2,
-                "mid": -0.1093,
+                "hi": 1.9339999999999997,
+                "mid": -11.14,
                 "State": "MA",
-                "Year": "2016",
-                "lo": -1.6799999999999995e-2
+                "Year": "2020",
+                "lo": -1.8499999999999988
             },
             {
-                "hi": 1.5960000000000002e-2,
-                "mid": -5.152e-2,
+                "hi": 1.799,
+                "mid": -5.389,
                 "State": "MD",
-                "Year": "2016",
-                "lo": -1.6349999999999996e-2
+                "Year": "2020",
+                "lo": -1.7139999999999995
             },
             {
-                "hi": 2.0500000000000004e-2,
-                "mid": -0.1228,
+                "hi": 2.0349999999999993,
+                "mid": -9.59,
                 "State": "ME",
-                "Year": "2016",
-                "lo": -2.1500000000000005e-2
+                "Year": "2020",
+                "lo": -2.0500000000000003
             },
             {
-                "hi": 1.663e-2,
-                "mid": -4.943e-2,
+                "hi": 1.8289999999999993,
+                "mid": -5.4239999999999995,
                 "State": "MI",
-                "Year": "2016",
-                "lo": -1.668e-2
+                "Year": "2020",
+                "lo": -1.7600000000000005
             },
             {
-                "hi": 1.854e-2,
-                "mid": -0.1001,
+                "hi": 1.8620000000000012,
+                "mid": -8.98,
                 "State": "MN",
-                "Year": "2016",
-                "lo": -1.89e-2
+                "Year": "2020",
+                "lo": -1.8499999999999988
             },
             {
-                "hi": 1.685e-2,
-                "mid": -4.575e-2,
+                "hi": 2.0469999999999997,
+                "mid": -5.59,
                 "State": "MO",
-                "Year": "2016",
-                "lo": -1.75e-2
+                "Year": "2020",
+                "lo": -1.8889999999999998
             },
             {
-                "hi": 1.833e-2,
-                "mid": -3.517e-2,
+                "hi": 1.963,
+                "mid": -2.973,
                 "State": "MS",
-                "Year": "2016",
-                "lo": -2.0339999999999997e-2
+                "Year": "2020",
+                "lo": -2.0589999999999997
             },
             {
-                "hi": 2.4099999999999983e-2,
-                "mid": -0.1901,
+                "hi": 2.32,
+                "mid": -14.11,
                 "State": "MT",
-                "Year": "2016",
-                "lo": -2.310000000000001e-2
+                "Year": "2020",
+                "lo": -2.3299999999999987
             },
             {
-                "hi": 1.5710000000000002e-2,
-                "mid": -5.12e-2,
+                "hi": 1.8430000000000002,
+                "mid": -5.1290000000000004,
                 "State": "NC",
-                "Year": "2016",
-                "lo": -1.6319999999999994e-2
+                "Year": "2020",
+                "lo": -1.7759999999999998
             },
             {
-                "hi": 2.8799999999999992e-2,
-                "mid": -0.1744,
+                "hi": 2.6599999999999984,
+                "mid": -14.549999999999999,
                 "State": "ND",
-                "Year": "2016",
-                "lo": -2.560000000000001e-2
+                "Year": "2020",
+                "lo": -2.2900000000000005
             },
             {
-                "hi": 1.906999999999999e-2,
-                "mid": -0.1011,
+                "hi": 2.094,
+                "mid": -11.19,
                 "State": "NE",
-                "Year": "2016",
-                "lo": -1.89e-2
+                "Year": "2020",
+                "lo": -1.9999999999999991
             },
             {
-                "hi": 1.827000000000001e-2,
-                "mid": -0.1005,
+                "hi": 1.9030000000000005,
+                "mid": -10.32,
                 "State": "NH",
-                "Year": "2016",
-                "lo": -1.8699999999999994e-2
+                "Year": "2020",
+                "lo": -1.9799999999999998
             },
             {
-                "hi": 1.718e-2,
-                "mid": -8.425e-2,
+                "hi": 1.6989999999999992,
+                "mid": -8.445,
                 "State": "NJ",
-                "Year": "2016",
-                "lo": -1.6549999999999995e-2
+                "Year": "2020",
+                "lo": -1.5850000000000004
             },
             {
-                "hi": 2.049999999999999e-2,
-                "mid": -0.1497,
+                "hi": 2.1299999999999986,
+                "mid": -14.87,
                 "State": "NM",
-                "Year": "2016",
-                "lo": -1.99e-2
+                "Year": "2020",
+                "lo": -2.049999999999999
             },
             {
-                "hi": 1.9280000000000005e-2,
-                "mid": -0.114,
+                "hi": 2.0549999999999997,
+                "mid": -10.74,
                 "State": "NV",
-                "Year": "2016",
-                "lo": -1.8799999999999997e-2
+                "Year": "2020",
+                "lo": -1.930000000000001
             },
             {
-                "hi": 1.89e-2,
-                "mid": -6.944e-2,
+                "hi": 2.1570000000000005,
+                "mid": -11,
                 "State": "NY",
-                "Year": "2016",
-                "lo": -1.8419999999999992e-2
+                "Year": "2020",
+                "lo": -1.9500000000000004
             },
             {
-                "hi": 1.8410000000000003e-2,
-                "mid": -5.521e-2,
+                "hi": 2.056,
+                "mid": -6.0440000000000005,
                 "State": "OH",
-                "Year": "2016",
-                "lo": -1.8779999999999998e-2
+                "Year": "2020",
+                "lo": -1.949
             },
             {
-                "hi": 2.4200000000000013e-2,
-                "mid": -0.137,
+                "hi": 2.3250000000000006,
+                "mid": -11.35,
                 "State": "OK",
-                "Year": "2016",
-                "lo": -2.32e-2
+                "Year": "2020",
+                "lo": -2.18
             },
             {
-                "hi": 2.1099999999999994e-2,
-                "mid": -0.1303,
+                "hi": 2.0649999999999986,
+                "mid": -11.12,
                 "State": "OR",
-                "Year": "2016",
-                "lo": -2.2699999999999998e-2
+                "Year": "2020",
+                "lo": -2.04
             },
             {
-                "hi": 1.783e-2,
-                "mid": -6.537e-2,
+                "hi": 1.8580000000000005,
+                "mid": -7.663,
                 "State": "PA",
-                "Year": "2016",
-                "lo": -1.7700000000000007e-2
+                "Year": "2020",
+                "lo": -1.6979999999999995
             },
             {
-                "hi": 2.8050000000000005e-2,
-                "mid": -0.1227,
+                "hi": 2.416,
+                "mid": -12.36,
                 "State": "RI",
-                "Year": "2016",
-                "lo": -2.6599999999999985e-2
+                "Year": "2020",
+                "lo": -2.18
             },
             {
-                "hi": 1.8860000000000002e-2,
-                "mid": -5.149e-2,
+                "hi": 2.163,
+                "mid": -5.81,
                 "State": "SC",
-                "Year": "2016",
-                "lo": -1.9579999999999993e-2
+                "Year": "2020",
+                "lo": -2.066
             },
             {
-                "hi": 3.2200000000000006e-2,
-                "mid": -0.2086,
+                "hi": 2.9600000000000017,
+                "mid": -18.04,
                 "State": "SD",
-                "Year": "2016",
-                "lo": -2.629999999999999e-2
+                "Year": "2020",
+                "lo": -2.5099999999999985
             },
             {
-                "hi": 1.9540000000000002e-2,
-                "mid": -3.629e-2,
+                "hi": 2.145,
+                "mid": -4.501,
                 "State": "TN",
-                "Year": "2016",
-                "lo": -2.0309999999999995e-2
+                "Year": "2020",
+                "lo": -2.057
             },
             {
-                "hi": 2.0390000000000005e-2,
-                "mid": -8.185e-2,
+                "hi": 2.1470000000000002,
+                "mid": -6.915,
                 "State": "TX",
-                "Year": "2016",
-                "lo": -2.0349999999999993e-2
+                "Year": "2020",
+                "lo": -2.0389999999999993
             },
             {
-                "hi": 2.4999999999999994e-2,
-                "mid": -0.1633,
+                "hi": 2.289999999999999,
+                "mid": -13.669999999999998,
                 "State": "UT",
-                "Year": "2016",
-                "lo": -2.3299999999999987e-2
+                "Year": "2020",
+                "lo": -2.2300000000000013
             },
             {
-                "hi": 1.5620000000000002e-2,
-                "mid": -5.477e-2,
+                "hi": 1.9000000000000004,
+                "mid": -6.482,
                 "State": "VA",
-                "Year": "2016",
-                "lo": -1.589e-2
+                "Year": "2020",
+                "lo": -1.8059999999999992
             },
             {
-                "hi": 2.642e-2,
-                "mid": -0.1235,
+                "hi": 1.9370000000000005,
+                "mid": -6.131,
                 "State": "VT",
-                "Year": "2016",
-                "lo": -2.5999999999999995e-2
+                "Year": "2020",
+                "lo": -2.0159999999999996
             },
             {
-                "hi": 1.9000000000000003e-2,
-                "mid": -0.1227,
+                "hi": 2.1390000000000007,
+                "mid": -11.450000000000001,
                 "State": "WA",
-                "Year": "2016",
-                "lo": -1.8799999999999983e-2
+                "Year": "2020",
+                "lo": -2.0199999999999982
             },
             {
-                "hi": 1.8979999999999997e-2,
-                "mid": -9.261e-2,
+                "hi": 2.0379999999999994,
+                "mid": -9.258,
                 "State": "WI",
-                "Year": "2016",
-                "lo": -2.0089999999999997e-2
+                "Year": "2020",
+                "lo": -2.0220000000000002
             },
             {
-                "hi": 2.0120000000000006e-2,
-                "mid": -5.451e-2,
+                "hi": 2.1200000000000006,
+                "mid": -4.42,
                 "State": "WV",
-                "Year": "2016",
-                "lo": -2.0059999999999995e-2
+                "Year": "2020",
+                "lo": -2.0540000000000003
             },
             {
-                "hi": 2.500000000000001e-2,
-                "mid": -0.1451,
+                "hi": 2.439999999999999,
+                "mid": -13.209999999999999,
                 "State": "WY",
-                "Year": "2016",
-                "lo": -2.2900000000000004e-2
+                "Year": "2020",
+                "lo": -2.37
             }
         ]
     },
@@ -820,7 +820,7 @@
 };
 vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>Now we add the state-race interaction term, allowing the model to incorporate state-specific effects on the turnout gap, and chart the result below. The range of gaps is now much larger, from slightly positive (VOC voted at <em>higher</em> rates than WNH voters) in SC to -20 points in AZ.</p>
+<p>Now we add the state-race interaction term, allowing the model to incorporate state-specific effects on the turnout gap, and chart the result below. The range of gaps is now larger, from +4 pts in AL to -28 points in WA.</p>
 <figure id="figure_2">
 <script type="text/javascript">var vlSpec=
 {
@@ -833,61 +833,64 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                 "y": {
                     "type": "nominal",
                     "sort": [
-                        "SC",
-                        "PA",
                         "AL",
-                        "LA",
-                        "TN",
-                        "MD",
-                        "MI",
                         "GA",
-                        "OH",
-                        "NC",
-                        "IN",
-                        "KY",
-                        "MS",
-                        "WV",
-                        "NV",
-                        "AR",
-                        "VA",
-                        "NE",
-                        "IL",
-                        "MN",
-                        "NJ",
-                        "CO",
-                        "NH",
-                        "ME",
-                        "DC",
+                        "SC",
                         "MO",
-                        "NY",
+                        "TN",
+                        "PA",
+                        "MI",
                         "DE",
-                        "TX",
-                        "NM",
-                        "RI",
+                        "MD",
+                        "IN",
+                        "MS",
+                        "CO",
+                        "WV",
+                        "NC",
+                        "NJ",
+                        "AR",
+                        "OH",
                         "VT",
+                        "VA",
+                        "MN",
                         "WI",
-                        "CT",
-                        "OK",
-                        "UT",
-                        "FL",
-                        "WY",
-                        "KS",
-                        "CA",
-                        "ID",
-                        "OR",
-                        "MT",
-                        "ND",
+                        "LA",
+                        "ME",
+                        "NE",
                         "IA",
-                        "WA",
-                        "MA",
+                        "NV",
+                        "OK",
+                        "FL",
+                        "MT",
+                        "CA",
+                        "KY",
+                        "TX",
+                        "RI",
+                        "CT",
+                        "NY",
+                        "OR",
+                        "AZ",
+                        "ID",
+                        "WY",
+                        "NM",
+                        "ND",
+                        "DC",
+                        "KS",
                         "HI",
+                        "IL",
+                        "NH",
                         "AK",
+                        "MA",
                         "SD",
-                        "AZ"
+                        "UT",
+                        "WA"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
@@ -915,61 +918,64 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                 "y": {
                     "type": "nominal",
                     "sort": [
-                        "SC",
-                        "PA",
                         "AL",
-                        "LA",
-                        "TN",
-                        "MD",
-                        "MI",
                         "GA",
-                        "OH",
-                        "NC",
-                        "IN",
-                        "KY",
-                        "MS",
-                        "WV",
-                        "NV",
-                        "AR",
-                        "VA",
-                        "NE",
-                        "IL",
-                        "MN",
-                        "NJ",
-                        "CO",
-                        "NH",
-                        "ME",
-                        "DC",
+                        "SC",
                         "MO",
-                        "NY",
+                        "TN",
+                        "PA",
+                        "MI",
                         "DE",
-                        "TX",
-                        "NM",
-                        "RI",
+                        "MD",
+                        "IN",
+                        "MS",
+                        "CO",
+                        "WV",
+                        "NC",
+                        "NJ",
+                        "AR",
+                        "OH",
                         "VT",
+                        "VA",
+                        "MN",
                         "WI",
-                        "CT",
-                        "OK",
-                        "UT",
-                        "FL",
-                        "WY",
-                        "KS",
-                        "CA",
-                        "ID",
-                        "OR",
-                        "MT",
-                        "ND",
+                        "LA",
+                        "ME",
+                        "NE",
                         "IA",
-                        "WA",
-                        "MA",
+                        "NV",
+                        "OK",
+                        "FL",
+                        "MT",
+                        "CA",
+                        "KY",
+                        "TX",
+                        "RI",
+                        "CT",
+                        "NY",
+                        "OR",
+                        "AZ",
+                        "ID",
+                        "WY",
+                        "NM",
+                        "ND",
+                        "DC",
+                        "KS",
                         "HI",
+                        "IL",
+                        "NH",
                         "AK",
+                        "MA",
                         "SD",
-                        "AZ"
+                        "UT",
+                        "WA"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
@@ -988,10 +994,7 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
         {
             "encoding": {
                 "x": {
-                    "datum": 0,
-                    "axis": {
-                        "title": null
-                    }
+                    "datum": 0
                 }
             },
             "mark": {
@@ -1003,9 +1006,6 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "aggregate": "mean",
-                    "axis": {
-                        "title": null
-                    },
                     "field": "mid"
                 }
             },
@@ -1015,368 +1015,368 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
             }
         }
     ],
-    "title": "VOC/WNH Turnout Gaps with State-specific effects (2016)",
+    "title": "VOC/WNH Turnout Gaps with State-specific effects (2020)",
     "data": {
         "format": {
             "parse": {}
         },
         "values": [
             {
-                "hi": 0.10388999999999998,
-                "mid": -0.1929,
+                "hi": 10.785,
+                "mid": -17.31,
                 "State": "AK",
-                "Year": "2016",
-                "lo": -0.10020000000000004
+                "Year": "2020",
+                "lo": -10.11
             },
             {
-                "hi": 6.465e-2,
-                "mid": 4.75e-3,
+                "hi": 7.347,
+                "mid": 3.703,
                 "State": "AL",
-                "Year": "2016",
-                "lo": -6.408e-2
+                "Year": "2020",
+                "lo": -7.170999999999999
             },
             {
-                "hi": 9.806000000000001e-2,
-                "mid": -5.758e-2,
+                "hi": 10.366999999999999,
+                "mid": -5.652,
                 "State": "AR",
-                "Year": "2016",
-                "lo": -9.562000000000001e-2
+                "Year": "2020",
+                "lo": -10.457999999999998
             },
             {
-                "hi": 1.9800000000000012e-2,
-                "mid": -0.2524,
+                "hi": 1.9799999999999998,
+                "mid": -12.879999999999999,
                 "State": "AZ",
-                "Year": "2016",
-                "lo": -1.9199999999999995e-2
+                "Year": "2020",
+                "lo": -2.0199999999999996
             },
             {
-                "hi": 8.49999999999998e-3,
-                "mid": -0.1649,
+                "hi": 0.9300000000000003,
+                "mid": -11.379999999999999,
                 "State": "CA",
-                "Year": "2016",
-                "lo": -8.500000000000008e-3
+                "Year": "2020",
+                "lo": -0.9099999999999997
             },
             {
-                "hi": 4.78e-2,
-                "mid": -9.005e-2,
+                "hi": 6.314,
+                "mid": -3.2140000000000004,
                 "State": "CO",
-                "Year": "2016",
-                "lo": -5.055e-2
+                "Year": "2020",
+                "lo": -6.2589999999999995
             },
             {
-                "hi": 4.7479999999999994e-2,
-                "mid": -0.1361,
+                "hi": 4.381000000000002,
+                "mid": -12.540000000000001,
                 "State": "CT",
-                "Year": "2016",
-                "lo": -4.8000000000000015e-2
+                "Year": "2020",
+                "lo": -4.61
             },
             {
-                "hi": 2.7469999999999994e-2,
-                "mid": -9.791e-2,
+                "hi": 4.060000000000001,
+                "mid": -14.530000000000001,
                 "State": "DC",
-                "Year": "2016",
-                "lo": -2.8189999999999993e-2
+                "Year": "2020",
+                "lo": -3.939999999999999
             },
             {
-                "hi": 4.614e-2,
-                "mid": -0.109,
+                "hi": 4.744,
+                "mid": -2.075,
                 "State": "DE",
-                "Year": "2016",
-                "lo": -4.7299999999999995e-2
+                "Year": "2020",
+                "lo": -5.020999999999999
             },
             {
-                "hi": 1.659999999999999e-2,
-                "mid": -0.1387,
+                "hi": 1.7350000000000003,
+                "mid": -11.110000000000001,
                 "State": "FL",
-                "Year": "2016",
-                "lo": -1.6399999999999998e-2
+                "Year": "2020",
+                "lo": -1.8199999999999994
             },
             {
-                "hi": 4.4539999999999996e-2,
-                "mid": -1.592e-2,
+                "hi": 5.276,
+                "mid": 1.584,
                 "State": "GA",
-                "Year": "2016",
-                "lo": -4.5880000000000004e-2
+                "Year": "2020",
+                "lo": -5.338
             },
             {
-                "hi": 3.98e-2,
-                "mid": -0.1833,
+                "hi": 4.750000000000002,
+                "mid": -16.12,
                 "State": "HI",
-                "Year": "2016",
-                "lo": -3.9099999999999996e-2
+                "Year": "2020",
+                "lo": -4.399999999999999
             },
             {
-                "hi": 8.012e-2,
-                "mid": -0.1749,
+                "hi": 7.807,
+                "mid": -10.25,
                 "State": "IA",
-                "Year": "2016",
-                "lo": -9.439999999999998e-2
+                "Year": "2020",
+                "lo": -8.5
             },
             {
-                "hi": 0.10504,
-                "mid": -0.1657,
+                "hi": 10.829,
+                "mid": -13.15,
                 "State": "ID",
-                "Year": "2016",
-                "lo": -0.1031
+                "Year": "2020",
+                "lo": -10.87
             },
             {
-                "hi": 5.5580000000000004e-2,
-                "mid": -7.47e-2,
+                "hi": 5.959999999999999,
+                "mid": -16.34,
                 "State": "IL",
-                "Year": "2016",
-                "lo": -5.6199999999999986e-2
+                "Year": "2020",
+                "lo": -6.330000000000002
             },
             {
-                "hi": 7.433999999999999e-2,
-                "mid": -2.882e-2,
+                "hi": 8.331,
+                "mid": -2.458,
                 "State": "IN",
-                "Year": "2016",
-                "lo": -7.128e-2
+                "Year": "2020",
+                "lo": -8.031999999999998
             },
             {
-                "hi": 6.520999999999999e-2,
-                "mid": -0.1551,
+                "hi": 7.408,
+                "mid": -15.57,
                 "State": "KS",
-                "Year": "2016",
-                "lo": -6.690000000000002e-2
+                "Year": "2020",
+                "lo": -8.07
             },
             {
-                "hi": 5.713e-2,
-                "mid": -2.94e-2,
+                "hi": 6.808,
+                "mid": -11.52,
                 "State": "KY",
-                "Year": "2016",
-                "lo": -5.900000000000001e-2
+                "Year": "2020",
+                "lo": -7.120000000000001
             },
             {
-                "hi": 3.9532e-2,
-                "mid": 2.438e-3,
+                "hi": 4.544,
+                "mid": -7.858,
                 "State": "LA",
-                "Year": "2016",
-                "lo": -3.9378e-2
+                "Year": "2020",
+                "lo": -4.402
             },
             {
-                "hi": 2.2499999999999992e-2,
-                "mid": -0.1769,
+                "hi": 2.8099999999999987,
+                "mid": -17.47,
                 "State": "MA",
-                "Year": "2016",
-                "lo": -2.360000000000001e-2
+                "Year": "2020",
+                "lo": -2.8100000000000014
             },
             {
-                "hi": 3.2223e-2,
-                "mid": -2.273e-3,
+                "hi": 3.447,
+                "mid": -2.131,
                 "State": "MD",
-                "Year": "2016",
-                "lo": -3.1937e-2
+                "Year": "2020",
+                "lo": -3.361
             },
             {
-                "hi": 7.034e-2,
-                "mid": -9.283e-2,
+                "hi": 7.7700000000000005,
+                "mid": -8.998000000000001,
                 "State": "ME",
-                "Year": "2016",
-                "lo": -7.317000000000001e-2
+                "Year": "2020",
+                "lo": -8.062
             },
             {
-                "hi": 2.3329e-2,
-                "mid": -1.41e-2,
+                "hi": 2.7504999999999997,
+                "mid": -1.9539999999999997,
                 "State": "MI",
-                "Year": "2016",
-                "lo": -2.423e-2
+                "Year": "2020",
+                "lo": -2.7
             },
             {
-                "hi": 6.132e-2,
-                "mid": -7.592e-2,
+                "hi": 5.968,
+                "mid": -6.648,
                 "State": "MN",
-                "Year": "2016",
-                "lo": -6.077999999999999e-2
+                "Year": "2020",
+                "lo": -6.012
             },
             {
-                "hi": 5.890000000000001e-2,
-                "mid": -9.914e-2,
+                "hi": 6.2559000000000005,
+                "mid": -0.7399,
                 "State": "MO",
-                "Year": "2016",
-                "lo": -6.345999999999999e-2
+                "Year": "2020",
+                "lo": -6.242099999999999
             },
             {
-                "hi": 0.10303000000000001,
-                "mid": -3.706e-2,
+                "hi": 10.094,
+                "mid": -3.019,
                 "State": "MS",
-                "Year": "2016",
-                "lo": -9.774e-2
+                "Year": "2020",
+                "lo": -9.551000000000002
             },
             {
-                "hi": 8.638e-2,
-                "mid": -0.1731,
+                "hi": 8.581,
+                "mid": -11.19,
                 "State": "MT",
-                "Year": "2016",
-                "lo": -8.819999999999997e-2
+                "Year": "2020",
+                "lo": -8.31
             },
             {
-                "hi": 3.71e-2,
-                "mid": -2.345e-2,
+                "hi": 4.556800000000001,
+                "mid": -4.968,
                 "State": "NC",
-                "Year": "2016",
-                "lo": -3.722e-2
+                "Year": "2020",
+                "lo": -4.55
             },
             {
-                "hi": 0.10071000000000001,
-                "mid": -0.1741,
+                "hi": 10.827,
+                "mid": -14.48,
                 "State": "ND",
-                "Year": "2016",
-                "lo": -0.10269999999999999
+                "Year": "2020",
+                "lo": -10.789999999999997
             },
             {
-                "hi": 6.5553e-2,
-                "mid": -7.065e-2,
+                "hi": 8.113000000000001,
+                "mid": -9.99,
                 "State": "NE",
-                "Year": "2016",
-                "lo": -6.424999999999999e-2
+                "Year": "2020",
+                "lo": -8.26
             },
             {
-                "hi": 5.664e-2,
-                "mid": -9.091e-2,
+                "hi": 5.759999999999998,
+                "mid": -16.34,
                 "State": "NH",
-                "Year": "2016",
-                "lo": -6.629e-2
+                "Year": "2020",
+                "lo": -6.4799999999999995
             },
             {
-                "hi": 2.5789999999999993e-2,
-                "mid": -7.816e-2,
+                "hi": 2.662,
+                "mid": -5.573,
                 "State": "NJ",
-                "Year": "2016",
-                "lo": -2.704000000000001e-2
+                "Year": "2020",
+                "lo": -2.5080000000000005
             },
             {
-                "hi": 3.337e-2,
-                "mid": -0.1167,
+                "hi": 3.7500000000000004,
+                "mid": -13.780000000000001,
                 "State": "NM",
-                "Year": "2016",
-                "lo": -3.370000000000001e-2
+                "Year": "2020",
+                "lo": -3.83
             },
             {
-                "hi": 3.153e-2,
-                "mid": -5.051e-2,
+                "hi": 3.254,
+                "mid": -10.96,
                 "State": "NV",
-                "Year": "2016",
-                "lo": -3.0920000000000003e-2
+                "Year": "2020",
+                "lo": -3.2700000000000005
             },
             {
-                "hi": 1.6839999999999994e-2,
-                "mid": -0.104,
+                "hi": 1.9000000000000017,
+                "mid": -12.690000000000001,
                 "State": "NY",
-                "Year": "2016",
-                "lo": -1.5700000000000006e-2
+                "Year": "2020",
+                "lo": -1.8599999999999977
             },
             {
-                "hi": 4.9280000000000004e-2,
-                "mid": -1.991e-2,
+                "hi": 5.0731,
+                "mid": -5.699,
                 "State": "OH",
-                "Year": "2016",
-                "lo": -5.2360000000000004e-2
+                "Year": "2020",
+                "lo": -5.2909999999999995
             },
             {
-                "hi": 0.10341,
-                "mid": -0.1361,
+                "hi": 10.039,
+                "mid": -11.09,
                 "State": "OK",
-                "Year": "2016",
-                "lo": -0.10420000000000001
+                "Year": "2020",
+                "lo": -10.41
             },
             {
-                "hi": 7.186999999999999e-2,
-                "mid": -0.1659,
+                "hi": 7.050000000000001,
+                "mid": -12.75,
                 "State": "OR",
-                "Year": "2016",
-                "lo": -7.91e-2
+                "Year": "2020",
+                "lo": -8.16
             },
             {
-                "hi": 2.783e-2,
-                "mid": 1.212e-2,
+                "hi": 3.396,
+                "mid": -1.8399999999999999,
                 "State": "PA",
-                "Year": "2016",
-                "lo": -2.849e-2
+                "Year": "2020",
+                "lo": -3.444
             },
             {
-                "hi": 8.712e-2,
-                "mid": -0.1203,
+                "hi": 9.979,
+                "mid": -12.25,
                 "State": "RI",
-                "Year": "2016",
-                "lo": -9.729999999999998e-2
+                "Year": "2020",
+                "lo": -10.04
             },
             {
-                "hi": 6.274e-2,
-                "mid": 2.045e-2,
+                "hi": 6.6145,
+                "mid": -0.11950000000000001,
                 "State": "SC",
-                "Year": "2016",
-                "lo": -6.2090000000000006e-2
+                "Year": "2020",
+                "lo": -6.482499999999999
             },
             {
-                "hi": 0.10699999999999998,
-                "mid": -0.2075,
+                "hi": 10.816999999999998,
+                "mid": -17.88,
                 "State": "SD",
-                "Year": "2016",
-                "lo": -0.10090000000000002
+                "Year": "2020",
+                "lo": -10.500000000000002
             },
             {
-                "hi": 7.3662e-2,
-                "mid": -1.572e-3,
+                "hi": 7.852999999999999,
+                "mid": -1.294,
                 "State": "TN",
-                "Year": "2016",
-                "lo": -7.2388e-2
+                "Year": "2020",
+                "lo": -7.769000000000001
             },
             {
-                "hi": 4.729e-2,
-                "mid": -0.1143,
+                "hi": 4.675,
+                "mid": -11.540000000000001,
                 "State": "TX",
-                "Year": "2016",
-                "lo": -4.759999999999999e-2
+                "Year": "2020",
+                "lo": -4.899999999999999
             },
             {
-                "hi": 9.985000000000001e-2,
-                "mid": -0.1368,
+                "hi": 9.156000000000002,
+                "mid": -19.040000000000003,
                 "State": "UT",
-                "Year": "2016",
-                "lo": -9.869999999999998e-2
+                "Year": "2020",
+                "lo": -10.809999999999997
             },
             {
-                "hi": 3.7329999999999995e-2,
-                "mid": -6.824e-2,
+                "hi": 4.303,
+                "mid": -6.166,
                 "State": "VA",
-                "Year": "2016",
-                "lo": -3.826e-2
+                "Year": "2020",
+                "lo": -4.274000000000001
             },
             {
-                "hi": 0.10132999999999999,
-                "mid": -0.1238,
+                "hi": 9.959999999999999,
+                "mid": -6.097,
                 "State": "VT",
-                "Year": "2016",
-                "lo": -0.10300000000000001
+                "Year": "2020",
+                "lo": -9.603
             },
             {
-                "hi": 4.899999999999999e-2,
-                "mid": -0.175,
+                "hi": 5.699999999999999,
+                "mid": -27.62,
                 "State": "WA",
-                "Year": "2016",
-                "lo": -4.9600000000000005e-2
+                "Year": "2020",
+                "lo": -5.619999999999997
             },
             {
-                "hi": 7.439e-2,
-                "mid": -0.1356,
+                "hi": 7.5434,
+                "mid": -7.803,
                 "State": "WI",
-                "Year": "2016",
-                "lo": -7.94e-2
+                "Year": "2020",
+                "lo": -7.976999999999999
             },
             {
-                "hi": 8.646999999999999e-2,
-                "mid": -3.712e-2,
+                "hi": 8.969,
+                "mid": -3.4189999999999996,
                 "State": "WV",
-                "Year": "2016",
-                "lo": -9.097999999999999e-2
+                "Year": "2020",
+                "lo": -8.891
             },
             {
-                "hi": 9.905e-2,
-                "mid": -0.1437,
+                "hi": 10.590000000000002,
+                "mid": -13.22,
                 "State": "WY",
-                "Year": "2016",
-                "lo": -0.1031
+                "Year": "2020",
+                "lo": -10.059999999999999
             }
         ]
     },
@@ -1410,61 +1410,64 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                 "y": {
                     "type": "nominal",
                     "sort": [
+                        "AL",
+                        "CO",
+                        "GA",
                         "PA",
                         "SC",
-                        "NV",
-                        "MD",
-                        "AL",
-                        "LA",
+                        "MO",
                         "IN",
-                        "TN",
-                        "OH",
                         "MI",
-                        "NM",
-                        "ME",
-                        "NE",
-                        "NC",
-                        "GA",
-                        "UT",
-                        "MN",
-                        "KY",
-                        "WV",
-                        "MT",
-                        "NH",
-                        "CO",
+                        "DE",
+                        "MD",
+                        "TN",
                         "NJ",
-                        "AK",
-                        "WY",
-                        "SD",
-                        "RI",
-                        "ID",
+                        "MT",
+                        "MN",
+                        "WI",
+                        "NM",
+                        "NE",
+                        "WV",
+                        "ME",
+                        "DC",
+                        "OH",
+                        "VA",
+                        "NC",
                         "OK",
+                        "VT",
                         "AR",
                         "ND",
-                        "VT",
+                        "AK",
+                        "SD",
                         "MS",
-                        "IL",
-                        "VA",
-                        "DC",
-                        "HI",
-                        "CT",
-                        "TX",
-                        "NY",
-                        "OR",
+                        "ID",
+                        "RI",
+                        "WY",
+                        "NV",
+                        "AZ",
                         "CA",
-                        "WI",
-                        "DE",
-                        "KS",
-                        "WA",
-                        "MO",
-                        "MA",
-                        "FL",
+                        "CT",
+                        "HI",
+                        "OR",
+                        "NY",
                         "IA",
-                        "AZ"
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "NH",
+                        "KY",
+                        "MA",
+                        "IL",
+                        "WA"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
@@ -1492,61 +1495,64 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                 "y": {
                     "type": "nominal",
                     "sort": [
+                        "AL",
+                        "CO",
+                        "GA",
                         "PA",
                         "SC",
-                        "NV",
-                        "MD",
-                        "AL",
-                        "LA",
+                        "MO",
                         "IN",
-                        "TN",
-                        "OH",
                         "MI",
-                        "NM",
-                        "ME",
-                        "NE",
-                        "NC",
-                        "GA",
-                        "UT",
-                        "MN",
-                        "KY",
-                        "WV",
-                        "MT",
-                        "NH",
-                        "CO",
+                        "DE",
+                        "MD",
+                        "TN",
                         "NJ",
-                        "AK",
-                        "WY",
-                        "SD",
-                        "RI",
-                        "ID",
+                        "MT",
+                        "MN",
+                        "WI",
+                        "NM",
+                        "NE",
+                        "WV",
+                        "ME",
+                        "DC",
+                        "OH",
+                        "VA",
+                        "NC",
                         "OK",
+                        "VT",
                         "AR",
                         "ND",
-                        "VT",
+                        "AK",
+                        "SD",
                         "MS",
-                        "IL",
-                        "VA",
-                        "DC",
-                        "HI",
-                        "CT",
-                        "TX",
-                        "NY",
-                        "OR",
+                        "ID",
+                        "RI",
+                        "WY",
+                        "NV",
+                        "AZ",
                         "CA",
-                        "WI",
-                        "DE",
-                        "KS",
-                        "WA",
-                        "MO",
-                        "MA",
-                        "FL",
+                        "CT",
+                        "HI",
+                        "OR",
+                        "NY",
                         "IA",
-                        "AZ"
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "NH",
+                        "KY",
+                        "MA",
+                        "IL",
+                        "WA"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
@@ -1565,10 +1571,7 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
         {
             "encoding": {
                 "x": {
-                    "datum": 0,
-                    "axis": {
-                        "title": null
-                    }
+                    "datum": 0
                 }
             },
             "mark": {
@@ -1580,9 +1583,6 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "aggregate": "mean",
-                    "axis": {
-                        "title": null
-                    },
                     "field": "mid"
                 }
             },
@@ -1592,368 +1592,368 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
             }
         }
     ],
-    "title": "VOC/WNH State-specific contribution to turnout gap (2016)",
+    "title": "VOC/WNH State-specific contribution to turnout gap (2020)",
     "data": {
         "format": {
             "parse": {}
         },
         "values": [
             {
-                "hi": 9.81779e-2,
-                "mid": 5.221e-4,
+                "hi": 10.663359999999999,
+                "mid": -2.3360000000000002e-2,
                 "State": "AK",
-                "Year": "2016",
-                "lo": -9.39121e-2
+                "Year": "2020",
+                "lo": -9.86864
             },
             {
-                "hi": 6.309000000000001e-2,
-                "mid": 4.351e-2,
+                "hi": 7.397999999999999,
+                "mid": 7.532,
                 "State": "AL",
-                "Year": "2016",
-                "lo": -6.437e-2
+                "Year": "2020",
+                "lo": -7.179099999999999
             },
             {
-                "hi": 9.66567e-2,
-                "mid": -8.967e-4,
+                "hi": 10.32911,
+                "mid": 2.0890000000000002e-2,
                 "State": "AR",
-                "Year": "2016",
-                "lo": -9.27333e-2
+                "Year": "2020",
+                "lo": -10.120890000000001
             },
             {
-                "hi": 2.651e-2,
-                "mid": -8.724e-2,
+                "hi": 2.6684,
+                "mid": -0.5664,
                 "State": "AZ",
-                "Year": "2016",
-                "lo": -2.6660000000000003e-2
+                "Year": "2020",
+                "lo": -2.7586000000000004
             },
             {
-                "hi": 1.969e-2,
-                "mid": -3.936e-2,
+                "hi": 2.1314,
+                "mid": -0.5734,
                 "State": "CA",
-                "Year": "2016",
-                "lo": -1.99e-2
+                "Year": "2020",
+                "lo": -2.1946
             },
             {
-                "hi": 4.4799e-2,
-                "mid": 7.191e-3,
+                "hi": 6.063999999999998,
+                "mid": 7.376,
                 "State": "CO",
-                "Year": "2016",
-                "lo": -4.7001e-2
+                "Year": "2020",
+                "lo": -5.736000000000001
             },
             {
-                "hi": 4.3590000000000004e-2,
-                "mid": -3.083e-2,
+                "hi": 4.5280000000000005,
+                "mid": -1.3639999999999999,
                 "State": "CT",
-                "Year": "2016",
-                "lo": -4.712000000000001e-2
+                "Year": "2020",
+                "lo": -4.472
             },
             {
-                "hi": 3.003e-2,
-                "mid": -1.789e-2,
+                "hi": 4.3726,
+                "mid": 0.5894,
                 "State": "DC",
-                "Year": "2016",
-                "lo": -2.9030000000000004e-2
+                "Year": "2020",
+                "lo": -4.1284
             },
             {
-                "hi": 4.55837e-2,
-                "mid": -4.484e-2,
+                "hi": 4.926,
+                "mid": 3.382,
                 "State": "DE",
-                "Year": "2016",
-                "lo": -4.7040000000000005e-2
+                "Year": "2020",
+                "lo": -4.934
             },
             {
-                "hi": 2.28e-2,
-                "mid": -7.199e-2,
+                "hi": 2.4569,
+                "mid": -3.004,
                 "State": "FL",
-                "Year": "2016",
-                "lo": -2.3349999999999996e-2
+                "Year": "2020",
+                "lo": -2.569
             },
             {
-                "hi": 4.726999999999999e-2,
-                "mid": 2.573e-2,
+                "hi": 5.582000000000001,
+                "mid": 5.778,
                 "State": "GA",
-                "Year": "2016",
-                "lo": -4.777e-2
+                "Year": "2020",
+                "lo": -5.2074
             },
             {
-                "hi": 4.6270000000000006e-2,
-                "mid": -1.999e-2,
+                "hi": 5.157,
+                "mid": -1.6740000000000002,
                 "State": "HI",
-                "Year": "2016",
-                "lo": -4.466e-2
+                "Year": "2020",
+                "lo": -5.067999999999999
             },
             {
-                "hi": 7.595199999999999e-2,
-                "mid": -7.722e-2,
+                "hi": 7.394,
+                "mid": -2.621,
                 "State": "IA",
-                "Year": "2016",
-                "lo": -9.038e-2
+                "Year": "2020",
+                "lo": -8.129
             },
             {
-                "hi": 0.1030911,
-                "mid": -2.911e-4,
+                "hi": 10.7902,
+                "mid": -7.02e-2,
                 "State": "ID",
-                "Year": "2016",
-                "lo": -9.66289e-2
+                "Year": "2020",
+                "lo": -10.459800000000001
             },
             {
-                "hi": 5.221e-2,
-                "mid": -6.26e-3,
+                "hi": 6.033,
+                "mid": -7.9750000000000005,
                 "State": "IL",
-                "Year": "2016",
-                "lo": -5.448e-2
+                "Year": "2020",
+                "lo": -6.535
             },
             {
-                "hi": 7.352e-2,
-                "mid": 3.678e-2,
+                "hi": 8.413,
+                "mid": 3.9570000000000003,
                 "State": "IN",
-                "Year": "2016",
-                "lo": -6.822e-2
+                "Year": "2020",
+                "lo": -8.036
             },
             {
-                "hi": 6.373999999999999e-2,
-                "mid": -4.579e-2,
+                "hi": 7.335,
+                "mid": -5.7509999999999994,
                 "State": "KS",
-                "Year": "2016",
-                "lo": -6.551e-2
+                "Year": "2020",
+                "lo": -8.188999999999998
             },
             {
-                "hi": 5.876999999999999e-2,
-                "mid": 1.896e-2,
+                "hi": 6.936099999999999,
+                "mid": -6.156,
                 "State": "KY",
-                "Year": "2016",
-                "lo": -5.767e-2
+                "Year": "2020",
+                "lo": -7.424
             },
             {
-                "hi": 4.123000000000001e-2,
-                "mid": 4.223e-2,
+                "hi": 4.856000000000001,
+                "mid": -3.3910000000000005,
                 "State": "LA",
-                "Year": "2016",
-                "lo": -3.9879e-2
+                "Year": "2020",
+                "lo": -4.839999999999999
             },
             {
-                "hi": 2.6820000000000004e-2,
-                "mid": -6.772e-2,
+                "hi": 3.1290000000000004,
+                "mid": -6.345000000000001,
                 "State": "MA",
-                "Year": "2016",
-                "lo": -2.7639999999999998e-2
+                "Year": "2020",
+                "lo": -3.384999999999999
             },
             {
-                "hi": 3.4719999999999994e-2,
-                "mid": 4.92e-2,
+                "hi": 3.5969999999999995,
+                "mid": 3.2800000000000002,
                 "State": "MD",
-                "Year": "2016",
-                "lo": -3.494e-2
+                "Year": "2020",
+                "lo": -3.6452000000000004
             },
             {
-                "hi": 6.144000000000001e-2,
-                "mid": 3.112e-2,
+                "hi": 7.1645,
+                "mid": 0.6065,
                 "State": "ME",
-                "Year": "2016",
-                "lo": -6.749e-2
+                "Year": "2020",
+                "lo": -7.5865
             },
             {
-                "hi": 2.7680000000000003e-2,
-                "mid": 3.528e-2,
+                "hi": 3.0719999999999996,
+                "mid": 3.465,
                 "State": "MI",
-                "Year": "2016",
-                "lo": -2.8055999999999998e-2
+                "Year": "2020",
+                "lo": -3.0225
             },
             {
-                "hi": 5.5889999999999995e-2,
-                "mid": 2.384e-2,
+                "hi": 5.822,
+                "mid": 2.282,
                 "State": "MN",
-                "Year": "2016",
-                "lo": -5.537e-2
+                "Year": "2020",
+                "lo": -5.672
             },
             {
-                "hi": 5.7587000000000006e-2,
-                "mid": -5.356e-2,
+                "hi": 6.205,
+                "mid": 4.745,
                 "State": "MO",
-                "Year": "2016",
-                "lo": -6.284000000000001e-2
+                "Year": "2020",
+                "lo": -6.223
             },
             {
-                "hi": 0.10121000000000001,
-                "mid": -2.17e-3,
+                "hi": 9.783800000000001,
+                "mid": -5.58e-2,
                 "State": "MS",
-                "Year": "2016",
-                "lo": -9.692999999999999e-2
+                "Year": "2020",
+                "lo": -9.4972
             },
             {
-                "hi": 7.731e-2,
-                "mid": 1.715e-2,
+                "hi": 8.264,
+                "mid": 2.8160000000000003,
                 "State": "MT",
-                "Year": "2016",
-                "lo": -8.264e-2
+                "Year": "2020",
+                "lo": -7.849
             },
             {
-                "hi": 3.805e-2,
-                "mid": 2.806e-2,
+                "hi": 4.6217,
+                "mid": 0.1413,
                 "State": "NC",
-                "Year": "2016",
-                "lo": -3.8790000000000005e-2
+                "Year": "2020",
+                "lo": -4.6663
             },
             {
-                "hi": 9.94826e-2,
-                "mid": -9.526e-4,
+                "hi": 10.7094055,
+                "mid": 5.945e-4,
                 "State": "ND",
-                "Year": "2016",
-                "lo": -9.49874e-2
+                "Year": "2020",
+                "lo": -10.470594499999999
             },
             {
-                "hi": 6.437999999999999e-2,
-                "mid": 2.984e-2,
+                "hi": 7.847999999999999,
+                "mid": 1.1159999999999999,
                 "State": "NE",
-                "Year": "2016",
-                "lo": -6.171e-2
+                "Year": "2020",
+                "lo": -7.893
             },
             {
-                "hi": 5.305700000000001e-2,
-                "mid": 9.023e-3,
+                "hi": 5.552600000000001,
+                "mid": -6.04,
                 "State": "NH",
-                "Year": "2016",
-                "lo": -5.7152999999999995e-2
+                "Year": "2020",
+                "lo": -6.3
             },
             {
-                "hi": 2.9769e-2,
-                "mid": 5.971e-3,
+                "hi": 2.978,
+                "mid": 2.864,
                 "State": "NJ",
-                "Year": "2016",
-                "lo": -2.9571e-2
+                "Year": "2020",
+                "lo": -3.0046999999999997
             },
             {
-                "hi": 3.8700000000000005e-2,
-                "mid": 3.263e-2,
+                "hi": 4.0120000000000005,
+                "mid": 1.123,
                 "State": "NM",
-                "Year": "2016",
-                "lo": -3.6782e-2
+                "Year": "2020",
+                "lo": -4.282
             },
             {
-                "hi": 3.491e-2,
-                "mid": 6.338e-2,
+                "hi": 3.6621999999999995,
+                "mid": -0.2412,
                 "State": "NV",
-                "Year": "2016",
-                "lo": -3.422000000000001e-2
+                "Year": "2020",
+                "lo": -3.7108000000000003
             },
             {
-                "hi": 2.383e-2,
-                "mid": -3.465e-2,
+                "hi": 2.6417,
+                "mid": -1.7160000000000002,
                 "State": "NY",
-                "Year": "2016",
-                "lo": -2.402e-2
+                "Year": "2020",
+                "lo": -2.7089999999999996
             },
             {
-                "hi": 4.882999999999999e-2,
-                "mid": 3.552e-2,
+                "hi": 5.1264,
+                "mid": 0.3196,
                 "State": "OH",
-                "Year": "2016",
-                "lo": -5.3750000000000006e-2
+                "Year": "2020",
+                "lo": -5.4086
             },
             {
-                "hi": 0.1018945,
-                "mid": -4.945e-4,
+                "hi": 9.902999999999999,
+                "mid": 0.117,
                 "State": "OK",
-                "Year": "2016",
-                "lo": -9.83055e-2
+                "Year": "2020",
+                "lo": -9.967
             },
             {
-                "hi": 6.578e-2,
-                "mid": -3.535e-2,
+                "hi": 6.844,
+                "mid": -1.677,
                 "State": "OR",
-                "Year": "2016",
-                "lo": -7.444999999999999e-2
+                "Year": "2020",
+                "lo": -7.773
             },
             {
-                "hi": 3.130000000000001e-2,
-                "mid": 7.78e-2,
+                "hi": 3.590999999999999,
+                "mid": 5.757000000000001,
                 "State": "PA",
-                "Year": "2016",
-                "lo": -3.0429999999999992e-2
+                "Year": "2020",
+                "lo": -3.4770000000000003
             },
             {
-                "hi": 9.24809e-2,
-                "mid": 4.091e-4,
+                "hi": 10.18584,
+                "mid": -7.584e-2,
                 "State": "RI",
-                "Year": "2016",
-                "lo": -8.979909999999999e-2
+                "Year": "2020",
+                "lo": -9.65916
             },
             {
-                "hi": 6.180999999999999e-2,
-                "mid": 7.159e-2,
+                "hi": 6.859,
+                "mid": 5.591,
                 "State": "SC",
-                "Year": "2016",
-                "lo": -6.061e-2
+                "Year": "2020",
+                "lo": -6.3597
             },
             {
-                "hi": 0.1026514,
-                "mid": 4.486e-4,
+                "hi": 10.8477,
+                "mid": -2.7700000000000002e-2,
                 "State": "SD",
-                "Year": "2016",
-                "lo": -9.857859999999999e-2
+                "Year": "2020",
+                "lo": -10.0323
             },
             {
-                "hi": 7.108e-2,
-                "mid": 3.572e-2,
+                "hi": 7.788,
+                "mid": 3.1620000000000004,
                 "State": "TN",
-                "Year": "2016",
-                "lo": -7.355e-2
+                "Year": "2020",
+                "lo": -7.647000000000001
             },
             {
-                "hi": 4.986e-2,
-                "mid": -3.28e-2,
+                "hi": 4.9543,
+                "mid": -4.694,
                 "State": "TX",
-                "Year": "2016",
-                "lo": -4.927e-2
+                "Year": "2020",
+                "lo": -5.045
             },
             {
-                "hi": 9.434e-2,
-                "mid": 2.566e-2,
+                "hi": 8.91,
+                "mid": -5.427,
                 "State": "UT",
-                "Year": "2016",
-                "lo": -9.103e-2
+                "Year": "2020",
+                "lo": -10.323
             },
             {
-                "hi": 3.884e-2,
-                "mid": -1.317e-2,
+                "hi": 4.501799999999999,
+                "mid": 0.24719999999999998,
                 "State": "VA",
-                "Year": "2016",
-                "lo": -3.992e-2
+                "Year": "2020",
+                "lo": -4.3902
             },
             {
-                "hi": 0.10146000000000001,
-                "mid": -1.49e-3,
+                "hi": 10.009419999999999,
+                "mid": 5.058000000000001e-2,
                 "State": "VT",
-                "Year": "2016",
-                "lo": -9.83e-2
+                "Year": "2020",
+                "lo": -9.51758
             },
             {
-                "hi": 4.6116e-2,
-                "mid": -5.164e-2,
+                "hi": 5.8599999999999985,
+                "mid": -16.14,
                 "State": "WA",
-                "Year": "2016",
-                "lo": -4.916e-2
+                "Year": "2020",
+                "lo": -6.060000000000001
             },
             {
-                "hi": 6.888999999999999e-2,
-                "mid": -4.23e-2,
+                "hi": 6.805,
+                "mid": 1.43,
                 "State": "WI",
-                "Year": "2016",
-                "lo": -7.719999999999999e-2
+                "Year": "2020",
+                "lo": -7.236000000000001
             },
             {
-                "hi": 8.366000000000001e-2,
-                "mid": 1.724e-2,
+                "hi": 8.792,
+                "mid": 1.101,
                 "State": "WV",
-                "Year": "2016",
-                "lo": -9.07e-2
+                "Year": "2020",
+                "lo": -8.943000000000001
             },
             {
-                "hi": 9.89649e-2,
-                "mid": 5.151e-4,
+                "hi": 10.3469,
+                "mid": -0.11689999999999999,
                 "State": "WY",
-                "Year": "2016",
-                "lo": -9.78051e-2
+                "Year": "2020",
+                "lo": -9.786100000000001
             }
         ]
     },
