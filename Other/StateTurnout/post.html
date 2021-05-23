@@ -14,7 +14,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="pandoc">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>State-Specific Gaps</title>
+<title>State-Specific VOC Turnout</title>
 
 <!-- Yahoo! CDN combo URL for selected Pure.css modules -->
 <link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
@@ -241,16 +241,15 @@
 
 <!-- page content begins here -->
 
-<div class="published">May 14, 2021 </div>
+<div class="published">May 21, 2021 </div>
 <section id="state-level-voter-turnout-and-race" class="level1">
 <h1>State-Level Voter Turnout And Race</h1>
 <section id="key-points-in-this-post" class="level3">
 <h3>Key Points In This Post</h3>
 <ul>
-<li>We model the state-specific turnout of voters-of-color (VOC) in 2012 and 2016, concluding that state-specific VOC turnout is unlikely to be explained by demographics alone.</li>
-<li>SC, PA, LA, and MI have consistently above average state-specific VOC turnout.</li>
-<li>AZ and TX have consistently below average VOC turnout, though TX improved significantly between 2012 and 2016.</li>
-<li>State-specific VOC turnout in FL and NY declined significantly between 2012 and 2016.</li>
+<li>We model 2020 general election turnout, concluding that the state-to-state variations in the turnout of voters-of-color (VOC) is unlikely to be explained by demographics alone.</li>
+<li>State-specific VOC turnout was high in CO, AL, PA, GA and MI and low in WA, IL, MA, NH and FL.</li>
+<li>The state-specific component of VOC turnout is usually smaller than the demographic component. Neverthelesss, it's important because elections can be very close and because it reflects what is happening at the state level.</li>
 </ul>
 </section>
 <section id="focusing-on-state-specific-turnout-effects" class="level2">
@@ -263,11 +262,11 @@
 <li>Grassroots organizing and campaigning, both largely local, boosts turnout in demographically specific ways.</li>
 <li>State and local elections have their own dynamics, energizing certain groups of voters.</li>
 </ul>
-<p>There’s been a great deal of focus on understanding how much voter organizing and suppression affected turnout in 2020, particularly in GA, where Dems prevailed, and FL and TX, where we did not. In order to answer that question, we first need a baseline view of state-level turnout across demographic groups. Our starting point in this post is to focus on the turnout of between White-non-Hispanic (WNH) voters and VOC, using data from the Current Population Survey Voter and Registration Supplement (CPS-VRS) and the American Community Survey (ACS), both produced by the US Census bureau. We're also going to explain a bit about <a href="https://www.youtube.com/watch?v=bq9c1zsR9NM%3E">MRP modeling</a>, anchoring this and further analyses based on similar models.</p>
+<p>There’s been a great deal of focus on understanding how much voter organizing and suppression affected turnout in 2020, particularly in GA, where Dems prevailed, and FL and TX, where we did not. In order to answer that question, we first need a baseline view of state-level turnout across demographic groups. Our starting point in this post is to focus on the turnout difference between White-non-Hispanic (WNH) voters and VOC, using data from the Current Population Survey Voter and Registration Supplement (CPS-VRS) and the American Community Survey (ACS), both produced by the US Census bureau. We're also going to explain a bit about <a href="https://www.youtube.com/watch?v=bq9c1zsR9NM%3E">MRP modeling</a>, anchoring this and further analyses based on similar models.</p>
 <p>Three quick caveats before we dig in.</p>
 <ol type="1">
 <li>We acknowledge that considering only the WNH/VOC gap is simplistic and reductive, because it ignores many other non-racial factors that affect turnout. But we are particularly interested in the interplay of voter suppression and organizing, where race is a big factor.</li>
-<li>This analysis should in no way take away from our firm belief that voting should be easy for everyone, regardless of demographics or partisan identity, and all measures to suppress voting are wrong.</li>
+<li>It is our firm belief that voting should be easy for everyone, regardless of demographics or partisan identity, and all measures to suppress voting are wrong.</li>
 <li>Any conclusions we can make linking turnout to state voting policies will be suggestive at best, because these analyses are <a href="https://scholar.princeton.edu/sites/default/files/jmummolo/files/jop_voterid_print.pdf">notoriously difficult</a>. Standard surveys don’t collect the right type or amount of data to track within-state differences over time among subsets of voters with enough consistency to do anything more than generate interesting hypotheses.</li>
 </ol>
 <p>With those points out of the way, let’s dive into the analysis. We’re going to start with two detailed sections about the underlying data and approach, describe our model, and then pose and answer three initial questions about voter turnout and race</p>
@@ -277,14 +276,14 @@
 <li>Intro (1): Our Data—The CPS-VRS and ACS</li>
 <li>Intro (2): MRP—A Quick Primer</li>
 <li>Our Basic Model</li>
-<li>Three initial questions (and answers) about voter turnout and race.</li>
+<li>Four initial questions (and answers) about voter turnout and race.</li>
 <li>Conclusions</li>
 </ul>
 </section>
 </section>
 <section id="intro-1-our-datathe-american-community-survey-and-the-cps-voting-and-registration-supplement" class="level2">
 <h2>Intro (1): Our Data–The American Community Survey and the CPS Voting and Registration Supplement</h2>
-<p>Each year, the U.S. Census Bureau (USCB) conducts the “American Community Survey” which, for our purposes, is an update to the decennial census. Surveys are sent to ~3.5 million households, so it’s not a complete count. There is also less geographic specificity to the reported results than the decennial census. The decennial census reports results down to the “block” level, whereas much of the ACS data is available only at the "Public Use Microdata Area" (PUMA) level— —each PUMA has about 100,000 people. Still, this is enough granularity for work at the state or congressional-district level. We use ACS data rather than the 2010 decennial census because it provides a more up-to-date picture of the demographics. (We’ll re-run this analysis once we have full 2020 census results.)</p>
+<p>Each year, the U.S. Census Bureau (USCB) conducts the <a href="https://www.census.gov/programs-surveys/acs">“American Community Survey”</a> which, for our purposes, is an update to the decennial census. Surveys are sent to ~3.5 million households, so it’s not a complete count. There is also less geographic specificity to the reported results than the decennial census. The decennial census reports results down to the “block” level, whereas much of the ACS data is available only at the "Public Use Microdata Area" (PUMA) level— —each PUMA has about 100,000 people. Still, this is enough granularity for work at the state or congressional-district level. We use ACS data rather than the 2010 decennial census because it provides a more up-to-date picture of the demographics. (We’ll re-run this analysis once we have full 2020 census results.)</p>
 <p>In addition, each election year, the USCB produces the <a href="https://www.census.gov/topics/public-sector/voting.html">Voting and Registration Supplement</a> to the Current Population Survey (CPS-VRS), by asking approximately 100,000 people nationwide for their registration status and if they voted in the general election. Responses are paired with county of residence, demographic information (age, sex, race, ethnicity, education, etc.), allowing estimation of voter turnout among various groups and in various places.</p>
 <p>We make one important tweak to the CPS-VRS data: The survey responses are “self-reported” and not independently validated, so there are <a href="http://www.electproject.org/home/voter-turnout/cps-methodology">reporting errors</a> that tend to overestimate turnout in a way which differs systematically among states. To account for this, we adjust the turnout probabilities from the CPS so that when they are post-stratified across the voting eligible population (VEP) of each state, we get the correct total turnout. This was first suggested by <a href="https://www.aramhur.com/uploads/6/0/1/8/60187785/2013._poq_coding_cps.pdf">Achen and Hur</a> and we follow the procedure outlined by <a href="http://www.stat.columbia.edu/~gelman/research/published/misterp.pdf">Ghitza and Gelman</a> (p. 769), to compute the adjustment for each state/year, using the vote totals from <a href="http://www.electproject.org/home/voter-turnout/voter-turnout-data">United States Election Project</a> and group populations from the ACS.</p>
 <p>Crucially, CPS-VRS data <a href="https://static1.squarespace.com/static/5fac72852ca67743c720d6a1/t/5ff8a986c87fc6090567c6d0/1610131850413/CPS_AFS_2021.pdf">seems to under-report the gaps between White and non-White voters.</a> So all of our results looking at race-specific turnout should be viewed skeptically: the gaps are likely larger than we see in the data, though it's unclear if this comes from over-estimating VOC turnout or under-estimating WNH turnout. There are other publically available surveys which, when possible, validate survey reponses via state voter files, primarily the <a href="https://cces.gov.harvard.edu">CCES</a>. That survey is smaller: approximately 50,000 people surveyed each year, with about 40,000 validated voters. For the sake of a first analysis, we will start with the CPS data.</p>
@@ -307,20 +306,20 @@
 <li>Allow partial pooling for more of the categories.</li>
 <li>Add more interactions between categories, for example modeling the effect of race and gender taken together. (We ran our model with more interactions and found that, other than the ones we already had, they added little information to the model.)</li>
 </ul>
-<p>Because we are interested in local organizing and state-level voter suppression, we focus on the state-specific portion of VOC turnout, in particular how much VOC turnout in each state differs from what we would expect based on the demographics (age, sex, education, local population density) of those voters. So we post-stratify on VOC in each state, with and without state/race interactions.</p>
+<p>Because we are interested in local organizing and state-level voter suppression, we focus on the state-specific portion of VOC turnout, in particular how much VOC turnout in each state differs from what we would expect based on the demographics (age, sex, education, local population density) of those voters. So we post-stratify on VOC in each state, with and without state/race interactions. We don't yet have ACS data for 2020, so for now we are using 2018 ACS data in our post-stratifications.</p>
 <p>It’s also interesting to look at turnout "gaps": differences in the turnout rate between VOC and WNH voters. Rather than showing differences among states, these might highlight how policies and organizing within a state affect the VOC population and WNH population differently. To save space here, we look at the gaps in a <a href="http://blueripple.github.io/Other/StateTurnout/Notes/1.html">separate note</a>.</p>
 </section>
-<section id="three-initial-questions-and-answers-about-voter-turnout-and-race" class="level2">
-<h2>Three initial questions (and answers) about voter turnout and race</h2>
-<p>Now we’re positioned to be able to answer three questions about each state’s VOC turnout:</p>
-<ol type="1">
-<li>How much worse (or better) was each state’s VOC turnout in 2016 compared with what one would have expected?</li>
-<li>How did each state’s VOC turnout change from 2012 to 2016?</li>
-<li>Which states have VOC turnout patterns worth a closer look?</li>
-</ol>
-<ol type="1">
-<li>Observed vs. expected VOC turnout in 2016 by state: Below we look <em>only</em> at the “State-Specific VOC Turnout”, taking the difference of the estimated VOC turnout in a state and the estimated VOC turnout <em>based on the demographics alone</em>. PA is at the top with 4 point better-than-expected turnout of VOC and AZ is at the bottom, with 5 point worse-than-expected turnout of VOC. As inspiration to further questions, we add a 2016 <a href="https://www.electoralintegrityproject.com">"Election Integrity"</a> rating for each state, computed by surveying experts and averaging their responses across a variety of election-related topics.</li>
-</ol>
+<section id="four-initial-questions-and-answers-about-voter-turnout-and-race" class="level2">
+<h2>Four initial questions (and answers) about voter turnout and race</h2>
+<p>Now we’re in a position to answer four questions about each state’s VOC turnout:</p>
+<ul>
+<li><em>How much worse (or better) was each state’s VOC turnout in 2016 compared with what one would have expected from demographics alone?</em></li>
+<li><em>Which states have significant (positive or negative) state-specific effects?</em></li>
+<li><em>Is the state-specific factor a reflection of election integrity?</em></li>
+<li><em>In those states, how do the demographic and state-specific components compare in size?</em></li>
+</ul>
+<p>Let's see if the data and model can shed some light!</p>
+<p>(1) Observed vs. expected VOC turnout in 2020 by state: Below we look <em>only</em> at the “State-Specific VOC Turnout”, taking the difference of the estimated VOC turnout in a state and the estimated VOC turnout <em>based on the demographics alone</em>. CO is at the top with 4 point better-than-expected turnout of VOC and WA is at the bottom, with 8 point worse-than-expected turnout of VOC.</p>
 <figure id="figure_4">
 <script type="text/javascript">var vlSpec=
 {
@@ -333,68 +332,70 @@
                 "y": {
                     "type": "nominal",
                     "sort": [
-                        "PA",
-                        "SC",
-                        "NV",
-                        "MD",
-                        "AL",
-                        "LA",
-                        "IN",
-                        "OH",
-                        "MI",
-                        "TN",
-                        "NM",
-                        "ME",
-                        "NE",
-                        "NC",
-                        "UT",
-                        "MN",
-                        "GA",
-                        "KY",
-                        "MT",
-                        "WV",
-                        "NH",
                         "CO",
+                        "AL",
+                        "PA",
+                        "GA",
+                        "SC",
+                        "MO",
+                        "IN",
+                        "MI",
+                        "DE",
+                        "MD",
+                        "TN",
                         "NJ",
-                        "WY",
-                        "AK",
-                        "SD",
-                        "RI",
-                        "ID",
+                        "MT",
+                        "MN",
+                        "WI",
+                        "NE",
+                        "NM",
+                        "WV",
+                        "ME",
+                        "DC",
+                        "OH",
+                        "VA",
+                        "NC",
                         "OK",
+                        "VT",
                         "AR",
                         "ND",
-                        "VT",
+                        "AK",
+                        "SD",
                         "MS",
-                        "IL",
-                        "VA",
-                        "DC",
-                        "HI",
-                        "TX",
+                        "ID",
+                        "RI",
+                        "WY",
+                        "NV",
+                        "CA",
+                        "AZ",
                         "CT",
+                        "HI",
                         "NY",
                         "OR",
-                        "CA",
-                        "WI",
-                        "DE",
-                        "KS",
-                        "MO",
-                        "WA",
-                        "MA",
-                        "FL",
                         "IA",
-                        "AZ"
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "KY",
+                        "NH",
+                        "MA",
+                        "IL",
+                        "WA"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
                 "color": {
-                    "title": "Election Integrity Rating",
-                    "type": "quantitative",
-                    "field": "ratingstate"
+                    "type": "nominal",
+                    "field": "Year"
                 },
                 "xError": {
                     "field": "lo"
@@ -416,68 +417,70 @@
                 "y": {
                     "type": "nominal",
                     "sort": [
-                        "PA",
-                        "SC",
-                        "NV",
-                        "MD",
-                        "AL",
-                        "LA",
-                        "IN",
-                        "OH",
-                        "MI",
-                        "TN",
-                        "NM",
-                        "ME",
-                        "NE",
-                        "NC",
-                        "UT",
-                        "MN",
-                        "GA",
-                        "KY",
-                        "MT",
-                        "WV",
-                        "NH",
                         "CO",
+                        "AL",
+                        "PA",
+                        "GA",
+                        "SC",
+                        "MO",
+                        "IN",
+                        "MI",
+                        "DE",
+                        "MD",
+                        "TN",
                         "NJ",
-                        "WY",
-                        "AK",
-                        "SD",
-                        "RI",
-                        "ID",
+                        "MT",
+                        "MN",
+                        "WI",
+                        "NE",
+                        "NM",
+                        "WV",
+                        "ME",
+                        "DC",
+                        "OH",
+                        "VA",
+                        "NC",
                         "OK",
+                        "VT",
                         "AR",
                         "ND",
-                        "VT",
+                        "AK",
+                        "SD",
                         "MS",
-                        "IL",
-                        "VA",
-                        "DC",
-                        "HI",
-                        "TX",
+                        "ID",
+                        "RI",
+                        "WY",
+                        "NV",
+                        "CA",
+                        "AZ",
                         "CT",
+                        "HI",
                         "NY",
                         "OR",
-                        "CA",
-                        "WI",
-                        "DE",
-                        "KS",
-                        "MO",
-                        "WA",
-                        "MA",
-                        "FL",
                         "IA",
-                        "AZ"
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "KY",
+                        "NH",
+                        "MA",
+                        "IL",
+                        "WA"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
                 "color": {
-                    "title": "Election Integrity Rating",
-                    "type": "quantitative",
-                    "field": "ratingstate"
+                    "type": "nominal",
+                    "field": "Year"
                 }
             },
             "mark": {
@@ -490,10 +493,7 @@
         {
             "encoding": {
                 "x": {
-                    "datum": 0,
-                    "axis": {
-                        "title": null
-                    }
+                    "datum": 0
                 }
             },
             "mark": {
@@ -505,9 +505,6 @@
             "encoding": {
                 "x": {
                     "aggregate": "mean",
-                    "axis": {
-                        "title": null
-                    },
                     "field": "mid"
                 }
             },
@@ -517,419 +514,452 @@
             }
         }
     ],
-    "title": "State-Specific VOC Turnout (2016)",
+    "title": "State-Specific VOC Turnout (2020)",
     "data": {
         "format": {
             "parse": {}
         },
         "values": [
             {
-                "hi": 5.18051e-2,
-                "mid": 3.149e-4,
-                "ratingstate": 9,
-                "State": "WY",
-                "Year": "2016",
-                "lo": -5.35549e-2
-            },
-            {
-                "hi": 4.1278999999999996e-2,
-                "mid": 8.891e-3,
-                "ratingstate": 8.5,
+                "hi": 4.3233999999999995,
+                "mid": 0.5546,
+                "ratingstate": 7.7142858505249,
                 "State": "WV",
-                "Year": "2016",
-                "lo": -4.7311000000000006e-2
+                "Year": "2020",
+                "votingi": 62.5223197937012,
+                "lo": -4.538600000000001
             },
             {
-                "hi": 3.806e-2,
-                "mid": -2.358e-2,
-                "ratingstate": 7,
-                "State": "WI",
-                "Year": "2016",
-                "lo": -4.390999999999999e-2
-            },
-            {
-                "hi": 2.7037e-2,
-                "mid": -3.031e-2,
-                "ratingstate": 9.428571699999999,
-                "State": "WA",
-                "Year": "2016",
-                "lo": -2.9410000000000002e-2
-            },
-            {
-                "hi": 5.38077e-2,
-                "mid": -8.077e-4,
-                "ratingstate": 9.75,
-                "State": "VT",
-                "Year": "2016",
-                "lo": -5.61023e-2
-            },
-            {
-                "hi": 2.0818e-2,
-                "mid": -7.198e-3,
-                "ratingstate": 7.75,
-                "State": "VA",
-                "Year": "2016",
-                "lo": -2.2452e-2
-            },
-            {
-                "hi": 5.0100000000000006e-2,
-                "mid": 1.407e-2,
-                "ratingstate": 9,
-                "State": "UT",
-                "Year": "2016",
-                "lo": -5.019e-2
-            },
-            {
-                "hi": 2.5781e-2,
-                "mid": -1.702e-2,
-                "ratingstate": 7.521739,
-                "State": "TX",
-                "Year": "2016",
-                "lo": -2.599e-2
-            },
-            {
-                "hi": 3.4269999999999995e-2,
-                "mid": 1.81e-2,
-                "ratingstate": 6.25,
-                "State": "TN",
-                "Year": "2016",
-                "lo": -3.766e-2
-            },
-            {
-                "hi": 5.55555e-2,
-                "mid": 2.845e-4,
-                "ratingstate": 7.3333335,
-                "State": "SD",
-                "Year": "2016",
-                "lo": -5.66445e-2
-            },
-            {
-                "hi": 2.9670000000000002e-2,
-                "mid": 3.651e-2,
-                "ratingstate": 7.6666665,
-                "State": "SC",
-                "Year": "2016",
-                "lo": -3.0806e-2
-            },
-            {
-                "hi": 4.97476e-2,
-                "mid": 2.424e-4,
-                "ratingstate": 7.5999999,
-                "State": "RI",
-                "Year": "2016",
-                "lo": -5.2762399999999994e-2
-            },
-            {
-                "hi": 1.5829999999999997e-2,
-                "mid": 3.987e-2,
-                "ratingstate": 7.2564101,
-                "State": "PA",
-                "Year": "2016",
-                "lo": -1.5480000000000004e-2
-            },
-            {
-                "hi": 3.7709999999999994e-2,
-                "mid": -2.047e-2,
-                "ratingstate": 9.5,
-                "State": "OR",
-                "Year": "2016",
-                "lo": -4.429999999999999e-2
-            },
-            {
-                "hi": 5.37095e-2,
-                "mid": -2.695e-4,
-                "ratingstate": 7.2857141,
-                "State": "OK",
-                "Year": "2016",
-                "lo": -5.35205e-2
-            },
-            {
-                "hi": 2.4399999999999998e-2,
-                "mid": 1.842e-2,
-                "ratingstate": 7.0714288,
-                "State": "OH",
-                "Year": "2016",
-                "lo": -2.8011e-2
-            },
-            {
-                "hi": 1.2856999999999999e-2,
-                "mid": -1.877e-2,
-                "ratingstate": 7.9649124,
-                "State": "NY",
-                "Year": "2016",
-                "lo": -1.304e-2
-            },
-            {
-                "hi": 1.8249999999999995e-2,
-                "mid": 3.35e-2,
-                "ratingstate": 8.3999996,
-                "State": "NV",
-                "Year": "2016",
-                "lo": -1.8030000000000004e-2
-            },
-            {
-                "hi": 2.044e-2,
-                "mid": 1.747e-2,
-                "ratingstate": 9.333333,
-                "State": "NM",
-                "Year": "2016",
-                "lo": -1.9717e-2
-            },
-            {
-                "hi": 1.6286e-2,
-                "mid": 3.304e-3,
-                "ratingstate": 8.1999998,
-                "State": "NJ",
-                "Year": "2016",
-                "lo": -1.6384e-2
-            },
-            {
-                "hi": 2.8994e-2,
-                "mid": 5.106e-3,
-                "ratingstate": 9.3999996,
-                "State": "NH",
-                "Year": "2016",
-                "lo": -3.2836000000000004e-2
-            },
-            {
-                "hi": 3.352000000000001e-2,
-                "mid": 1.63e-2,
-                "ratingstate": 7.8000002,
-                "State": "NE",
-                "Year": "2016",
-                "lo": -3.4199999999999994e-2
-            },
-            {
-                "hi": 5.31842e-2,
-                "mid": -5.242e-4,
+                "hi": 3.5504000000000002,
+                "mid": 0.7756,
                 "ratingstate": 7.5,
+                "State": "WI",
+                "Year": "2020",
+                "votingi": 70.8072891235352,
+                "lo": -3.9855999999999994
+            },
+            {
+                "hi": 3.034,
+                "mid": -8.426,
+                "ratingstate": 9.5,
+                "State": "WA",
+                "Year": "2020",
+                "votingi": 82.8125,
+                "lo": -3.1439999999999997
+            },
+            {
+                "hi": 4.92714,
+                "mid": 2.586e-2,
+                "ratingstate": 9.80000019073486,
+                "State": "VT",
+                "Year": "2020",
+                "votingi": 76.90625,
+                "lo": -5.085859999999999
+            },
+            {
+                "hi": 2.3192,
+                "mid": 0.1298,
+                "ratingstate": 8.307692527771,
+                "State": "VA",
+                "Year": "2020",
+                "votingi": 70.649040222168,
+                "lo": -2.3398000000000003
+            },
+            {
+                "hi": 4.7909999999999995,
+                "mid": -2.916,
+                "ratingstate": 8.18181800842285,
+                "State": "UT",
+                "Year": "2020",
+                "votingi": 71.8892059326172,
+                "lo": -5.59
+            },
+            {
+                "hi": 2.4583,
+                "mid": -2.332,
+                "ratingstate": 7.5,
+                "State": "TX",
+                "Year": "2020",
+                "votingi": 62.7546310424805,
+                "lo": -2.54
+            },
+            {
+                "hi": 3.8080000000000003,
+                "mid": 1.601,
+                "ratingstate": 7.375,
+                "State": "TN",
+                "Year": "2020",
+                "votingi": 60.625,
+                "lo": -3.887
+            },
+            {
+                "hi": 5.6512400000000005,
+                "mid": -1.224e-2,
+                "ratingstate": 8.4285717010498,
+                "State": "SD",
+                "Year": "2020",
+                "votingi": 74.9107131958008,
+                "lo": -5.55176
+            },
+            {
+                "hi": 3.3970000000000002,
+                "mid": 2.851,
+                "ratingstate": 7.55555534362793,
+                "State": "SC",
+                "Year": "2020",
+                "votingi": 54.4618072509766,
+                "lo": -3.2516000000000003
+            },
+            {
+                "hi": 5.2278899999999995,
+                "mid": -4.089e-2,
+                "ratingstate": 8.75,
+                "State": "RI",
+                "Year": "2020",
+                "votingi": 70.9765625,
+                "lo": -5.33811
+            },
+            {
+                "hi": 1.828,
+                "mid": 3.004,
+                "ratingstate": 7.69999980926514,
+                "State": "PA",
+                "Year": "2020",
+                "votingi": 64.34375,
+                "lo": -1.805
+            },
+            {
+                "hi": 3.6647,
+                "mid": -0.9147000000000001,
+                "ratingstate": 9.14285755157471,
+                "State": "OR",
+                "Year": "2020",
+                "votingi": 76.5178604125977,
+                "lo": -4.2722999999999995
+            },
+            {
+                "hi": 5.061719999999999,
+                "mid": 6.328e-2,
+                "ratingstate": 7.5,
+                "State": "OK",
+                "Year": "2020",
+                "votingi": 65.1041641235352,
+                "lo": -5.29628
+            },
+            {
+                "hi": 2.5963,
+                "mid": 0.16570000000000001,
+                "ratingstate": 7.89473676681519,
+                "State": "OH",
+                "Year": "2020",
+                "votingi": 70.2549362182617,
+                "lo": -2.8017
+            },
+            {
+                "hi": 1.3772,
+                "mid": -0.8943,
+                "ratingstate": 7.69999980926514,
+                "State": "NY",
+                "Year": "2020",
+                "votingi": 62.08203125,
+                "lo": -1.4117000000000002
+            },
+            {
+                "hi": 1.9234,
+                "mid": -0.12639999999999998,
+                "ratingstate": 9.60000038146973,
+                "State": "NV",
+                "Year": "2020",
+                "votingi": 69.75,
+                "lo": -1.9775999999999998
+            },
+            {
+                "hi": 2.0694,
+                "mid": 0.5806,
+                "ratingstate": 9.5,
+                "State": "NM",
+                "Year": "2020",
+                "votingi": 73.28125,
+                "lo": -2.2256
+            },
+            {
+                "hi": 1.5730000000000002,
+                "mid": 1.543,
+                "ratingstate": 7.7777776718139595,
+                "State": "NJ",
+                "Year": "2020",
+                "votingi": 69.5486145019531,
+                "lo": -1.62192
+            },
+            {
+                "hi": 3.0606,
+                "mid": -3.327,
+                "ratingstate": 9,
+                "State": "NH",
+                "Year": "2020",
+                "votingi": 75.75,
+                "lo": -3.467
+            },
+            {
+                "hi": 4.0638,
+                "mid": 0.5882000000000001,
+                "ratingstate": 8.2857141494751,
+                "State": "NE",
+                "Year": "2020",
+                "votingi": 63.2142868041992,
+                "lo": -4.1842
+            },
+            {
+                "hi": 5.541772,
+                "mid": 1.228e-3,
+                "ratingstate": 7,
                 "State": "ND",
-                "Year": "2016",
-                "lo": -5.3745799999999996e-2
+                "Year": "2020",
+                "votingi": 67.90625,
+                "lo": -5.6962280000000005
             },
             {
-                "hi": 1.9549999999999998e-2,
-                "mid": 1.473e-2,
-                "ratingstate": 7.25,
+                "hi": 2.38174,
+                "mid": 7.526e-2,
+                "ratingstate": 5.3636364936828596,
                 "State": "NC",
-                "Year": "2016",
-                "lo": -2.0496e-2
+                "Year": "2020",
+                "votingi": 63.8636360168457,
+                "lo": -2.46426
             },
             {
-                "hi": 4.1958999999999996e-2,
-                "mid": 9.431e-3,
-                "ratingstate": 8.1428576,
+                "hi": 4.356999999999999,
+                "mid": 1.537,
+                "ratingstate": 8.33333301544189,
                 "State": "MT",
-                "Year": "2016",
-                "lo": -4.5221000000000004e-2
+                "Year": "2020",
+                "votingi": 75.5902786254883,
+                "lo": -4.273
             },
             {
-                "hi": 5.0193e-2,
-                "mid": -1.103e-3,
-                "ratingstate": 7.2222223,
-                "State": "MS",
-                "Year": "2016",
-                "lo": -5.2477e-2
-            },
-            {
-                "hi": 3.1139e-2,
-                "mid": -2.91e-2,
-                "ratingstate": 7.8571429,
+                "hi": 3.036,
+                "mid": 2.424,
+                "ratingstate": 7.83333349227905,
                 "State": "MO",
-                "Year": "2016",
-                "lo": -3.5489999999999994e-2
+                "Year": "2020",
+                "votingi": 66.0096130371094,
+                "lo": -3.1889000000000003
             },
             {
-                "hi": 2.9920000000000002e-2,
-                "mid": 1.35e-2,
-                "ratingstate": 8.666667,
+                "hi": 3.0340000000000003,
+                "mid": 1.2449999999999999,
+                "ratingstate": 9,
                 "State": "MN",
-                "Year": "2016",
-                "lo": -3.168e-2
+                "Year": "2020",
+                "votingi": 73.5085220336914,
+                "lo": -3.121
             },
             {
-                "hi": 1.4159999999999996e-2,
-                "mid": 1.828e-2,
-                "ratingstate": 7.521739,
+                "hi": 1.5719999999999998,
+                "mid": 1.7950000000000002,
+                "ratingstate": 7.73333311080933,
                 "State": "MI",
-                "Year": "2016",
-                "lo": -1.4581e-2
+                "Year": "2020",
+                "votingi": 71.2708358764648,
+                "lo": -1.5703000000000003
             },
             {
-                "hi": 3.307e-2,
-                "mid": 1.741e-2,
-                "ratingstate": 9.6000004,
+                "hi": 3.7573999999999996,
+                "mid": 0.3306,
+                "ratingstate": 9.5,
                 "State": "ME",
-                "Year": "2016",
-                "lo": -3.816e-2
+                "Year": "2020",
+                "votingi": 77.9464263916016,
+                "lo": -4.1796
             },
             {
-                "hi": 1.7350000000000004e-2,
-                "mid": 2.558e-2,
-                "ratingstate": 8.6428576,
+                "hi": 1.8240000000000003,
+                "mid": 1.694,
+                "ratingstate": 8.69999980926514,
                 "State": "MD",
-                "Year": "2016",
-                "lo": -1.8056e-2
+                "Year": "2020",
+                "votingi": 75.953125,
+                "lo": -1.8865
             },
             {
-                "hi": 1.5749999999999997e-2,
-                "mid": -3.974e-2,
-                "ratingstate": 8.8648653,
+                "hi": 1.6969999999999998,
+                "mid": -3.4459999999999997,
+                "ratingstate": 9.35000038146973,
                 "State": "MA",
-                "Year": "2016",
-                "lo": -1.6100000000000003e-2
+                "Year": "2020",
+                "votingi": 70.9765625,
+                "lo": -1.854
             },
             {
-                "hi": 2.0460000000000002e-2,
-                "mid": 2.161e-2,
+                "hi": 2.4998,
+                "mid": -1.7489999999999999,
                 "ratingstate": 9.25,
                 "State": "LA",
-                "Year": "2016",
-                "lo": -2.0502e-2
+                "Year": "2020",
+                "votingi": 65,
+                "lo": -2.5260000000000007
             },
             {
-                "hi": 2.9533999999999998e-2,
-                "mid": 9.776e-3,
-                "ratingstate": 7,
+                "hi": 3.5311000000000003,
+                "mid": -3.141,
+                "ratingstate": 6.5,
                 "State": "KY",
-                "Year": "2016",
-                "lo": -3.0076e-2
+                "Year": "2020",
+                "votingi": 65,
+                "lo": -3.85
             },
             {
-                "hi": 3.4315e-2,
-                "mid": -2.47e-2,
-                "ratingstate": 8,
+                "hi": 3.8011999999999997,
+                "mid": -2.9819999999999998,
+                "ratingstate": 7.66666650772095,
                 "State": "KS",
-                "Year": "2016",
-                "lo": -3.557e-2
+                "Year": "2020",
+                "votingi": 71.0416641235352,
+                "lo": -4.269
             },
             {
-                "hi": 3.651e-2,
-                "mid": 1.903e-2,
-                "ratingstate": 7.2142859,
+                "hi": 4.117,
+                "mid": 2.005,
+                "ratingstate": 6.5,
                 "State": "IN",
-                "Year": "2016",
-                "lo": -3.56e-2
+                "Year": "2020",
+                "votingi": 63.701171875,
+                "lo": -4.087000000000001
             },
             {
-                "hi": 2.7502000000000002e-2,
-                "mid": -3.362e-3,
-                "ratingstate": 8.3888893,
+                "hi": 3.143,
+                "mid": -4.1450000000000005,
+                "ratingstate": 8.58333301544189,
                 "State": "IL",
-                "Year": "2016",
-                "lo": -2.9848000000000003e-2
+                "Year": "2020",
+                "votingi": 74.0234375,
+                "lo": -3.3689999999999998
             },
             {
-                "hi": 5.52517e-2,
-                "mid": -1.517e-4,
-                "ratingstate": 8.8000002,
+                "hi": 5.52254,
+                "mid": -3.554e-2,
+                "ratingstate": 8.39999961853027,
                 "State": "ID",
-                "Year": "2016",
-                "lo": -5.42983e-2
+                "Year": "2020",
+                "votingi": 66.4375,
+                "lo": -5.59846
             },
             {
-                "hi": 4.34003e-2,
-                "mid": -4.412e-2,
-                "ratingstate": 9.4444447,
+                "hi": 3.8890000000000002,
+                "mid": -1.399,
+                "ratingstate": 9.11111068725586,
                 "State": "IA",
-                "Year": "2016",
-                "lo": -5.3189999999999994e-2
+                "Year": "2020",
+                "votingi": 77.4479141235352,
+                "lo": -4.476999999999999
             },
             {
-                "hi": 2.589e-2,
-                "mid": -1.127e-2,
-                "ratingstate": 9.25,
+                "hi": 2.7211,
+                "mid": -0.8911,
+                "ratingstate": 8.33333301544189,
                 "State": "HI",
-                "Year": "2016",
-                "lo": -2.5979999999999996e-2
+                "Year": "2020",
+                "votingi": 74.1927108764648,
+                "lo": -2.7958999999999996
             },
             {
-                "hi": 2.357e-2,
-                "mid": 1.325e-2,
-                "ratingstate": 7.1875,
+                "hi": 2.716,
+                "mid": 2.907,
+                "ratingstate": 4.5,
                 "State": "GA",
-                "Year": "2016",
-                "lo": -2.475e-2
+                "Year": "2020",
+                "votingi": 61.9308052062988,
+                "lo": -2.6209999999999996
             },
             {
-                "hi": 1.2899999999999998e-2,
-                "mid": -4.045e-2,
-                "ratingstate": 7.2173915,
+                "hi": 1.3212,
+                "mid": -1.617,
+                "ratingstate": 6.5,
                 "State": "FL",
-                "Year": "2016",
-                "lo": -1.303e-2
+                "Year": "2020",
+                "votingi": 63.88671875,
+                "lo": -1.395
             },
             {
-                "hi": 2.4741799999999998e-2,
-                "mid": -2.437e-2,
-                "ratingstate": 9,
-                "State": "DE",
-                "Year": "2016",
-                "lo": -2.6400000000000003e-2
-            },
-            {
-                "hi": 1.8296e-2,
-                "mid": -1.106e-2,
-                "ratingstate": 9.1904764,
-                "State": "DC",
-                "Year": "2016",
-                "lo": -1.863e-2
-            },
-            {
-                "hi": 2.4882e-2,
-                "mid": -1.763e-2,
+                "hi": 2.4669999999999996,
+                "mid": 1.745,
                 "ratingstate": 8.75,
+                "State": "DE",
+                "Year": "2020",
+                "votingi": 71.71875,
+                "lo": -2.5601
+            },
+            {
+                "hi": 2.3244000000000002,
+                "mid": 0.3146,
+                "ratingstate": 9.09090900421143,
+                "State": "DC",
+                "Year": "2020",
+                "votingi": 71.1647720336914,
+                "lo": -2.2416
+            },
+            {
+                "hi": 2.4953,
+                "mid": -0.7573,
+                "ratingstate": 7.75,
                 "State": "CT",
-                "Year": "2016",
-                "lo": -2.762e-2
+                "Year": "2020",
+                "votingi": 65.8072891235352,
+                "lo": -2.5307
             },
             {
-                "hi": 2.5115e-2,
-                "mid": 4.165e-3,
-                "ratingstate": 9.1000004,
+                "hi": 3.064,
+                "mid": 3.956,
+                "ratingstate": 9.5,
                 "State": "CO",
-                "Year": "2016",
-                "lo": -2.7825000000000003e-2
+                "Year": "2020",
+                "votingi": 66.25,
+                "lo": -3.0565999999999995
             },
             {
-                "hi": 1.0969999999999999e-2,
-                "mid": -2.209e-2,
-                "ratingstate": 8.623376799999999,
+                "hi": 1.113,
+                "mid": -0.2994,
+                "ratingstate": 8.50769233703613,
                 "State": "CA",
-                "Year": "2016",
-                "lo": -1.115e-2
+                "Year": "2020",
+                "votingi": 72.9071960449219,
+                "lo": -1.1416
             },
             {
-                "hi": 1.4450000000000005e-2,
-                "mid": -4.794e-2,
-                "ratingstate": 6.3333335,
+                "hi": 1.425,
+                "mid": -0.301,
+                "ratingstate": 8,
                 "State": "AZ",
-                "Year": "2016",
-                "lo": -1.4509999999999995e-2
+                "Year": "2020",
+                "votingi": 68.2589263916016,
+                "lo": -1.4649999999999999
             },
             {
-                "hi": 4.84735e-2,
-                "mid": -4.535e-4,
-                "ratingstate": 8.6000004,
+                "hi": 5.13126,
+                "mid": 1.474e-2,
+                "ratingstate": 8,
                 "State": "AR",
-                "Year": "2016",
-                "lo": -5.0526499999999995e-2
+                "Year": "2020",
+                "votingi": 56.640625,
+                "lo": -5.43574
             },
             {
-                "hi": 3.0780000000000002e-2,
-                "mid": 2.203e-2,
-                "ratingstate": 7.1666665,
+                "hi": 3.523999999999999,
+                "mid": 3.762,
+                "ratingstate": 7.30000019073486,
                 "State": "AL",
-                "Year": "2016",
-                "lo": -3.29e-2
+                "Year": "2020",
+                "votingi": 60.171875,
+                "lo": -3.5883
             },
             {
-                "hi": 5.37621e-2,
-                "mid": 2.979e-4,
-                "ratingstate": 8.666667,
+                "hi": 5.680339999999999,
+                "mid": -1.034e-2,
+                "ratingstate": 8.66666698455811,
                 "State": "AK",
-                "Year": "2016",
-                "lo": -5.42579e-2
+                "Year": "2020",
+                "votingi": 67.7083358764648,
+                "lo": -5.42166
             }
         ]
     },
@@ -950,85 +980,83 @@
 };
 vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>The 90% confidence intervals are large—in very few states is the state-specific effect on VOC voters clearly non-zero.</p>
-<p>We should emphasize that the split between what we attribute to demographics of the state vs. the state itself is strongly influenced by what we include in the model and how we include it. Perhaps if we added other factors, e.g., religion or median-income, gaps that appear to be state-specific would instead be explained by these other factors. We’ve included the biggest factors that tend to correlate with voter turnout and we believe that some of the shifts we see are too large to be explained by other factors. But it’s important to be mindful of the limits of this sort of analysis.</p>
-<ol type="1">
-<li>State VOC turnout change from 2012 to 2016: We’ve done the same analysis for 2012, and below we chart state-specific VOC turnout.</li>
-</ol>
+<p>The 90% confidence intervals are large—in very few states is the state-specific effect on VOC voters clearly non-zero. So let's simplify that chart, retaining only states where we are 90% (or more) confident that the state-specific component of VOC turnout is not zero.</p>
 <figure id="figure_5">
 <script type="text/javascript">var vlSpec=
 {
-    "height": 1000,
+    "height": 400,
     "padding": 5,
-    "width": 500,
+    "width": 400,
     "layer": [
         {
             "encoding": {
                 "y": {
                     "type": "nominal",
                     "sort": [
-                        "SC",
-                        "TN",
-                        "LA",
-                        "OH",
-                        "MO",
-                        "DC",
-                        "NY",
+                        "CO",
                         "AL",
-                        "IN",
                         "PA",
+                        "GA",
+                        "SC",
+                        "MO",
+                        "IN",
                         "MI",
-                        "NV",
-                        "NC",
-                        "OR",
-                        "ME",
-                        "KS",
-                        "MN",
-                        "UT",
-                        "NH",
-                        "VT",
+                        "DE",
+                        "MD",
+                        "TN",
                         "NJ",
+                        "MT",
+                        "MN",
+                        "WI",
+                        "NE",
+                        "NM",
+                        "WV",
+                        "ME",
+                        "DC",
+                        "OH",
+                        "VA",
+                        "NC",
+                        "OK",
+                        "VT",
+                        "AR",
+                        "ND",
                         "AK",
-                        "CT",
+                        "SD",
+                        "MS",
+                        "ID",
                         "RI",
                         "WY",
-                        "WV",
-                        "MS",
-                        "SD",
-                        "MA",
-                        "ID",
-                        "NE",
-                        "OK",
-                        "FL",
-                        "MD",
-                        "WI",
-                        "NM",
-                        "VA",
+                        "NV",
                         "CA",
-                        "HI",
-                        "ND",
-                        "WA",
-                        "MT",
-                        "IL",
-                        "IA",
-                        "GA",
-                        "DE",
-                        "KY",
-                        "AR",
                         "AZ",
-                        "CO",
-                        "TX"
+                        "CT",
+                        "HI",
+                        "NY",
+                        "OR",
+                        "IA",
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "KY",
+                        "NH",
+                        "MA",
+                        "IL",
+                        "WA"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
                 "color": {
-                    "title": "Election Integrity Rating",
-                    "type": "quantitative",
-                    "field": "ratingstate"
+                    "type": "nominal",
+                    "field": "Year"
                 },
                 "xError": {
                     "field": "lo"
@@ -1050,68 +1078,70 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
                 "y": {
                     "type": "nominal",
                     "sort": [
-                        "SC",
-                        "TN",
-                        "LA",
-                        "OH",
-                        "MO",
-                        "DC",
-                        "NY",
+                        "CO",
                         "AL",
-                        "IN",
                         "PA",
+                        "GA",
+                        "SC",
+                        "MO",
+                        "IN",
                         "MI",
-                        "NV",
-                        "NC",
-                        "OR",
-                        "ME",
-                        "KS",
-                        "MN",
-                        "UT",
-                        "NH",
-                        "VT",
+                        "DE",
+                        "MD",
+                        "TN",
                         "NJ",
+                        "MT",
+                        "MN",
+                        "WI",
+                        "NE",
+                        "NM",
+                        "WV",
+                        "ME",
+                        "DC",
+                        "OH",
+                        "VA",
+                        "NC",
+                        "OK",
+                        "VT",
+                        "AR",
+                        "ND",
                         "AK",
-                        "CT",
+                        "SD",
+                        "MS",
+                        "ID",
                         "RI",
                         "WY",
-                        "WV",
-                        "MS",
-                        "SD",
-                        "MA",
-                        "ID",
-                        "NE",
-                        "OK",
-                        "FL",
-                        "MD",
-                        "WI",
-                        "NM",
-                        "VA",
+                        "NV",
                         "CA",
-                        "HI",
-                        "ND",
-                        "WA",
-                        "MT",
-                        "IL",
-                        "IA",
-                        "GA",
-                        "DE",
-                        "KY",
-                        "AR",
                         "AZ",
-                        "CO",
-                        "TX"
+                        "CT",
+                        "HI",
+                        "NY",
+                        "OR",
+                        "IA",
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "KY",
+                        "NH",
+                        "MA",
+                        "IL",
+                        "WA"
                     ],
                     "field": "State"
                 },
                 "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible)"
+                    },
                     "type": "quantitative",
                     "field": "mid"
                 },
                 "color": {
-                    "title": "Election Integrity Rating",
-                    "type": "quantitative",
-                    "field": "ratingstate"
+                    "type": "nominal",
+                    "field": "Year"
                 }
             },
             "mark": {
@@ -1124,10 +1154,7 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
         {
             "encoding": {
                 "x": {
-                    "datum": 0,
-                    "axis": {
-                        "title": null
-                    }
+                    "datum": 0
                 }
             },
             "mark": {
@@ -1139,9 +1166,6 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "aggregate": "mean",
-                    "axis": {
-                        "title": null
-                    },
                     "field": "mid"
                 }
             },
@@ -1151,419 +1175,101 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
             }
         }
     ],
-    "title": "State=Specific VOC Turnout (2012)",
+    "title": "State-Specific VOC Turnout (2020)",
     "data": {
         "format": {
             "parse": {}
         },
         "values": [
             {
-                "hi": 5.9017520000000004e-2,
-                "mid": 9.248e-5,
-                "ratingstate": 9,
-                "State": "WY",
-                "Year": "2012",
-                "lo": -6.1222479999999996e-2
-            },
-            {
-                "hi": 5.42189e-2,
-                "mid": -1.789e-4,
-                "ratingstate": 8.5,
-                "State": "WV",
-                "Year": "2012",
-                "lo": -5.63011e-2
-            },
-            {
-                "hi": 3.6508e-2,
-                "mid": -8.828e-3,
-                "ratingstate": 7,
-                "State": "WI",
-                "Year": "2012",
-                "lo": -4.5092e-2
-            },
-            {
-                "hi": 2.0547e-2,
-                "mid": -1.551e-2,
-                "ratingstate": 9.428571699999999,
-                "State": "WA",
-                "Year": "2012",
-                "lo": -2.07e-2
-            },
-            {
-                "hi": 5.40133e-2,
-                "mid": 7.867e-4,
-                "ratingstate": 9.75,
-                "State": "VT",
-                "Year": "2012",
-                "lo": -6.302669999999999e-2
-            },
-            {
-                "hi": 1.7983e-2,
-                "mid": -8.936e-3,
-                "ratingstate": 7.75,
-                "State": "VA",
-                "Year": "2012",
-                "lo": -1.7684000000000002e-2
-            },
-            {
-                "hi": 4.7442000000000005e-2,
-                "mid": 9.28e-4,
-                "ratingstate": 9,
-                "State": "UT",
-                "Year": "2012",
-                "lo": -5.4388e-2
-            },
-            {
-                "hi": 1.727e-2,
-                "mid": -6.093e-2,
-                "ratingstate": 7.521739,
-                "State": "TX",
-                "Year": "2012",
-                "lo": -1.793e-2
-            },
-            {
-                "hi": 4.227e-2,
-                "mid": 3.032e-2,
-                "ratingstate": 6.25,
-                "State": "TN",
-                "Year": "2012",
-                "lo": -4.632e-2
-            },
-            {
-                "hi": 6.20191e-2,
-                "mid": -6.991e-4,
-                "ratingstate": 7.3333335,
-                "State": "SD",
-                "Year": "2012",
-                "lo": -6.401090000000001e-2
-            },
-            {
-                "hi": 2.0279999999999992e-2,
-                "mid": 4.728e-2,
-                "ratingstate": 7.6666665,
-                "State": "SC",
-                "Year": "2012",
-                "lo": -2.2140000000000003e-2
-            },
-            {
-                "hi": 5.408482e-2,
-                "mid": 9.518e-5,
-                "ratingstate": 7.5999999,
-                "State": "RI",
-                "Year": "2012",
-                "lo": -6.042518e-2
-            },
-            {
-                "hi": 1.6149999999999998e-2,
-                "mid": 2.04e-2,
-                "ratingstate": 7.2564101,
-                "State": "PA",
-                "Year": "2012",
-                "lo": -1.6565000000000003e-2
-            },
-            {
-                "hi": 3.4609999999999995e-2,
-                "mid": 1.46e-2,
+                "hi": 3.034,
+                "mid": -8.426,
                 "ratingstate": 9.5,
-                "State": "OR",
-                "Year": "2012",
-                "lo": -4.025e-2
+                "State": "WA",
+                "Year": "2020",
+                "votingi": 82.8125,
+                "lo": -3.1439999999999997
             },
             {
-                "hi": 5.4497e-2,
-                "mid": -3.057e-3,
-                "ratingstate": 7.2857141,
-                "State": "OK",
-                "Year": "2012",
-                "lo": -5.3293e-2
+                "hi": 1.828,
+                "mid": 3.004,
+                "ratingstate": 7.69999980926514,
+                "State": "PA",
+                "Year": "2020",
+                "votingi": 64.34375,
+                "lo": -1.805
             },
             {
-                "hi": 1.2890000000000002e-2,
-                "mid": 2.945e-2,
-                "ratingstate": 7.0714288,
-                "State": "OH",
-                "Year": "2012",
-                "lo": -1.27e-2
-            },
-            {
-                "hi": 1.3430000000000001e-2,
-                "mid": 2.319e-2,
-                "ratingstate": 7.9649124,
-                "State": "NY",
-                "Year": "2012",
-                "lo": -1.2689999999999998e-2
-            },
-            {
-                "hi": 1.7900000000000003e-2,
-                "mid": 1.753e-2,
-                "ratingstate": 8.3999996,
-                "State": "NV",
-                "Year": "2012",
-                "lo": -1.9030000000000002e-2
-            },
-            {
-                "hi": 2.633e-2,
-                "mid": -8.85e-3,
-                "ratingstate": 9.333333,
-                "State": "NM",
-                "Year": "2012",
-                "lo": -2.8349999999999997e-2
-            },
-            {
-                "hi": 1.72536e-2,
-                "mid": 5.564e-4,
-                "ratingstate": 8.1999998,
-                "State": "NJ",
-                "Year": "2012",
-                "lo": -1.81464e-2
-            },
-            {
-                "hi": 5.46498e-2,
-                "mid": 9.102e-4,
-                "ratingstate": 9.3999996,
-                "State": "NH",
-                "Year": "2012",
-                "lo": -5.89202e-2
-            },
-            {
-                "hi": 3.9874e-2,
-                "mid": -1.574e-3,
-                "ratingstate": 7.8000002,
-                "State": "NE",
-                "Year": "2012",
-                "lo": -4.5526000000000004e-2
-            },
-            {
-                "hi": 4.6439999999999995e-2,
-                "mid": -1.543e-2,
-                "ratingstate": 7.5,
-                "State": "ND",
-                "Year": "2012",
-                "lo": -4.8839999999999995e-2
-            },
-            {
-                "hi": 1.738e-2,
-                "mid": 1.503e-2,
-                "ratingstate": 7.25,
-                "State": "NC",
-                "Year": "2012",
-                "lo": -1.8594e-2
-            },
-            {
-                "hi": 5.6620000000000004e-2,
-                "mid": -1.646e-2,
-                "ratingstate": 8.1428576,
-                "State": "MT",
-                "Year": "2012",
-                "lo": -5.9840000000000004e-2
-            },
-            {
-                "hi": 4.7229e-2,
-                "mid": -3.49e-4,
-                "ratingstate": 7.2222223,
-                "State": "MS",
-                "Year": "2012",
-                "lo": -5.4811e-2
-            },
-            {
-                "hi": 2.4990000000000002e-2,
-                "mid": 2.628e-2,
-                "ratingstate": 7.8571429,
-                "State": "MO",
-                "Year": "2012",
-                "lo": -2.9153000000000002e-2
-            },
-            {
-                "hi": 2.0671000000000002e-2,
-                "mid": 3.939e-3,
-                "ratingstate": 8.666667,
-                "State": "MN",
-                "Year": "2012",
-                "lo": -2.5019e-2
-            },
-            {
-                "hi": 1.1889999999999998e-2,
-                "mid": 1.953e-2,
-                "ratingstate": 7.521739,
-                "State": "MI",
-                "Year": "2012",
-                "lo": -1.2301e-2
-            },
-            {
-                "hi": 5.074e-2,
-                "mid": 6.86e-3,
-                "ratingstate": 9.6000004,
-                "State": "ME",
-                "Year": "2012",
-                "lo": -5.446e-2
-            },
-            {
-                "hi": 1.5136e-2,
-                "mid": -5.427e-3,
-                "ratingstate": 8.6428576,
-                "State": "MD",
-                "Year": "2012",
-                "lo": -1.6843e-2
-            },
-            {
-                "hi": 5.1817100000000005e-2,
-                "mid": -7.271e-4,
-                "ratingstate": 8.8648653,
-                "State": "MA",
-                "Year": "2012",
-                "lo": -5.45029e-2
-            },
-            {
-                "hi": 2.734e-2,
-                "mid": 3.001e-2,
-                "ratingstate": 9.25,
-                "State": "LA",
-                "Year": "2012",
-                "lo": -2.7243999999999997e-2
-            },
-            {
-                "hi": 3.30142e-2,
-                "mid": -3.251e-2,
-                "ratingstate": 7,
-                "State": "KY",
-                "Year": "2012",
-                "lo": -3.506000000000001e-2
-            },
-            {
-                "hi": 3.9479e-2,
-                "mid": 5.581e-3,
-                "ratingstate": 8,
-                "State": "KS",
-                "Year": "2012",
-                "lo": -4.2781e-2
-            },
-            {
-                "hi": 2.9389999999999996e-2,
-                "mid": 2.091e-2,
-                "ratingstate": 7.2142859,
-                "State": "IN",
-                "Year": "2012",
-                "lo": -3.3240000000000006e-2
-            },
-            {
-                "hi": 3.236e-2,
-                "mid": -1.735e-2,
-                "ratingstate": 8.3888893,
-                "State": "IL",
-                "Year": "2012",
-                "lo": -3.9900000000000005e-2
-            },
-            {
-                "hi": 5.4637000000000005e-2,
-                "mid": -1.057e-3,
-                "ratingstate": 8.8000002,
-                "State": "ID",
-                "Year": "2012",
-                "lo": -5.5132999999999995e-2
-            },
-            {
-                "hi": 3.26e-2,
-                "mid": -2.234e-2,
-                "ratingstate": 9.4444447,
-                "State": "IA",
-                "Year": "2012",
-                "lo": -3.9650000000000005e-2
-            },
-            {
-                "hi": 2.4311e-2,
-                "mid": -9.371e-3,
-                "ratingstate": 9.25,
-                "State": "HI",
-                "Year": "2012",
-                "lo": -2.4699000000000002e-2
-            },
-            {
-                "hi": 2.5588e-2,
-                "mid": -3.026e-2,
-                "ratingstate": 7.1875,
-                "State": "GA",
-                "Year": "2012",
-                "lo": -2.7060000000000004e-2
-            },
-            {
-                "hi": 1.2572e-2,
-                "mid": -3.932e-3,
-                "ratingstate": 7.2173915,
-                "State": "FL",
-                "Year": "2012",
-                "lo": -1.3178e-2
-            },
-            {
-                "hi": 2.1699999999999997e-2,
-                "mid": -3.238e-2,
+                "hi": 3.0606,
+                "mid": -3.327,
                 "ratingstate": 9,
-                "State": "DE",
-                "Year": "2012",
-                "lo": -2.3719999999999998e-2
+                "State": "NH",
+                "Year": "2020",
+                "votingi": 75.75,
+                "lo": -3.467
             },
             {
-                "hi": 1.7190000000000004e-2,
-                "mid": 2.386e-2,
-                "ratingstate": 9.1904764,
-                "State": "DC",
-                "Year": "2012",
-                "lo": -1.6814e-2
+                "hi": 1.5719999999999998,
+                "mid": 1.7950000000000002,
+                "ratingstate": 7.73333311080933,
+                "State": "MI",
+                "Year": "2020",
+                "votingi": 71.2708358764648,
+                "lo": -1.5703000000000003
             },
             {
-                "hi": 4.99162e-2,
-                "mid": 2.338e-4,
-                "ratingstate": 8.75,
-                "State": "CT",
-                "Year": "2012",
-                "lo": -5.55838e-2
+                "hi": 1.6969999999999998,
+                "mid": -3.4459999999999997,
+                "ratingstate": 9.35000038146973,
+                "State": "MA",
+                "Year": "2020",
+                "votingi": 70.9765625,
+                "lo": -1.854
             },
             {
-                "hi": 2.4310000000000002e-2,
-                "mid": -5.507e-2,
-                "ratingstate": 9.1000004,
+                "hi": 3.143,
+                "mid": -4.1450000000000005,
+                "ratingstate": 8.58333301544189,
+                "State": "IL",
+                "Year": "2020",
+                "votingi": 74.0234375,
+                "lo": -3.3689999999999998
+            },
+            {
+                "hi": 2.716,
+                "mid": 2.907,
+                "ratingstate": 4.5,
+                "State": "GA",
+                "Year": "2020",
+                "votingi": 61.9308052062988,
+                "lo": -2.6209999999999996
+            },
+            {
+                "hi": 1.3212,
+                "mid": -1.617,
+                "ratingstate": 6.5,
+                "State": "FL",
+                "Year": "2020",
+                "votingi": 63.88671875,
+                "lo": -1.395
+            },
+            {
+                "hi": 3.064,
+                "mid": 3.956,
+                "ratingstate": 9.5,
                 "State": "CO",
-                "Year": "2012",
-                "lo": -2.6280000000000005e-2
+                "Year": "2020",
+                "votingi": 66.25,
+                "lo": -3.0565999999999995
             },
             {
-                "hi": 1.1911999999999999e-2,
-                "mid": -9.137e-3,
-                "ratingstate": 8.623376799999999,
-                "State": "CA",
-                "Year": "2012",
-                "lo": -1.1573e-2
-            },
-            {
-                "hi": 1.641e-2,
-                "mid": -4.023e-2,
-                "ratingstate": 6.3333335,
-                "State": "AZ",
-                "Year": "2012",
-                "lo": -1.7119999999999996e-2
-            },
-            {
-                "hi": 4.676e-2,
-                "mid": -3.563e-2,
-                "ratingstate": 8.6000004,
-                "State": "AR",
-                "Year": "2012",
-                "lo": -4.9620000000000004e-2
-            },
-            {
-                "hi": 2.334e-2,
-                "mid": 2.185e-2,
-                "ratingstate": 7.1666665,
+                "hi": 3.523999999999999,
+                "mid": 3.762,
+                "ratingstate": 7.30000019073486,
                 "State": "AL",
-                "Year": "2012",
-                "lo": -2.5959000000000003e-2
-            },
-            {
-                "hi": 6.23057e-2,
-                "mid": 3.343e-4,
-                "ratingstate": 8.666667,
-                "State": "AK",
-                "Year": "2012",
-                "lo": -6.2094300000000005e-2
+                "Year": "2020",
+                "votingi": 60.171875,
+                "lo": -3.5883
             }
         ]
     },
@@ -1574,377 +1280,470 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
     },
     "config": {
         "view": {
-            "continuousHeight": 1000,
-            "discreteHeight": 1000,
-            "continuousWidth": 500,
-            "discreteWidth": 500
+            "continuousHeight": 400,
+            "discreteHeight": 400,
+            "continuousWidth": 400,
+            "discreteWidth": 400
         }
     },
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
 };
 vegaEmbed('#figure_5',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>We can compare 2012 to 2016 a few ways. We start by plotting the estimated effect for 2016 vs 2012, excluding any state for which the 2012 and 2016 confidence intervals both include 0. States in the upper right all had VOC turnout exceeding expectations in both years and the lower left is populated by states with VOC turnout below expectations in both years.</p>
+<p>(2) In particular, in 2020, CO, AL, PA, GA, and MI have clearly positive state-specific VOC turnout and WA, IL, MA, NH, and FL have clearly negative state-specific VOC turnout. One hypothesis we have is that the state-specific component of VOC turnout reflects some balance between voter-suppression and organizing in each state. And that might be reflected somewhat in this list: there is always organizing in the swing-states, like PA and MI, and organizing in GA was obviously a big factor. There's a history of Black-voter-organizing in AL. CO might be because of mail-in voting. On the negative side, it's less clear.</p>
+<p>(3) Does this map to some measure of election integrity? Below we make a scatter plot of the state-specific component of VOC turnout and an <a href="https://www.electoralintegrityproject.com">"Election Integrity"</a> score for voting each state, computed by surveying experts and averaging their responses across a variety of voting-related topics.</p>
 <figure id="figure_6">
 <script type="text/javascript">var vlSpec=
 {
-    "height": 500,
+    "height": 400,
     "padding": 5,
-    "width": 500,
-    "layer": [
-        {
-            "encoding": {
-                "y": {
-                    "type": "quantitative",
-                    "field": "2016"
-                },
-                "x": {
-                    "type": "quantitative",
-                    "field": "2012"
-                },
-                "color": {
-                    "title": "Election Integrity Rating",
-                    "type": "quantitative",
-                    "field": "ratingstate"
-                },
-                "text": {
-                    "type": "nominal",
-                    "field": "State"
-                }
-            },
-            "mark": {
-                "type": "text",
-                "tooltip": {
-                    "content": "data"
-                }
-            }
-        },
-        {
-            "encoding": {
-                "y": {
-                    "datum": 0
-                }
-            },
-            "mark": "rule"
-        },
-        {
-            "encoding": {
-                "x": {
-                    "datum": 0
-                }
-            },
-            "mark": "rule"
-        }
-    ],
-    "title": "State-Specific VOC Turnout: 2012 vs. 2016",
+    "width": 400,
+    "title": "State-Specific VOC Turnout vs. Voting Integrity",
     "data": {
         "format": {
             "parse": {}
         },
         "values": [
             {
-                "hi": 2.0547e-2,
-                "mid": -1.551e-2,
-                "ratingstate": 9.428571699999999,
+                "hi": 4.3233999999999995,
+                "mid": 0.5546,
+                "ratingstate": 7.7142858505249,
+                "State": "WV",
+                "Year": "2020",
+                "votingi": 62.5223197937012,
+                "lo": -4.538600000000001
+            },
+            {
+                "hi": 3.5504000000000002,
+                "mid": 0.7756,
+                "ratingstate": 7.5,
+                "State": "WI",
+                "Year": "2020",
+                "votingi": 70.8072891235352,
+                "lo": -3.9855999999999994
+            },
+            {
+                "hi": 3.034,
+                "mid": -8.426,
+                "ratingstate": 9.5,
                 "State": "WA",
-                "Year": "2012",
-                "lo": -2.07e-2
+                "Year": "2020",
+                "votingi": 82.8125,
+                "lo": -3.1439999999999997
             },
             {
-                "hi": 1.727e-2,
-                "mid": -6.093e-2,
-                "ratingstate": 7.521739,
+                "hi": 4.92714,
+                "mid": 2.586e-2,
+                "ratingstate": 9.80000019073486,
+                "State": "VT",
+                "Year": "2020",
+                "votingi": 76.90625,
+                "lo": -5.085859999999999
+            },
+            {
+                "hi": 2.3192,
+                "mid": 0.1298,
+                "ratingstate": 8.307692527771,
+                "State": "VA",
+                "Year": "2020",
+                "votingi": 70.649040222168,
+                "lo": -2.3398000000000003
+            },
+            {
+                "hi": 4.7909999999999995,
+                "mid": -2.916,
+                "ratingstate": 8.18181800842285,
+                "State": "UT",
+                "Year": "2020",
+                "votingi": 71.8892059326172,
+                "lo": -5.59
+            },
+            {
+                "hi": 2.4583,
+                "mid": -2.332,
+                "ratingstate": 7.5,
                 "State": "TX",
-                "Year": "2012",
-                "lo": -1.793e-2
+                "Year": "2020",
+                "votingi": 62.7546310424805,
+                "lo": -2.54
             },
             {
-                "hi": 2.0279999999999992e-2,
-                "mid": 4.728e-2,
-                "ratingstate": 7.6666665,
+                "hi": 3.8080000000000003,
+                "mid": 1.601,
+                "ratingstate": 7.375,
+                "State": "TN",
+                "Year": "2020",
+                "votingi": 60.625,
+                "lo": -3.887
+            },
+            {
+                "hi": 5.6512400000000005,
+                "mid": -1.224e-2,
+                "ratingstate": 8.4285717010498,
+                "State": "SD",
+                "Year": "2020",
+                "votingi": 74.9107131958008,
+                "lo": -5.55176
+            },
+            {
+                "hi": 3.3970000000000002,
+                "mid": 2.851,
+                "ratingstate": 7.55555534362793,
                 "State": "SC",
-                "Year": "2012",
-                "lo": -2.2140000000000003e-2
+                "Year": "2020",
+                "votingi": 54.4618072509766,
+                "lo": -3.2516000000000003
             },
             {
-                "hi": 1.6149999999999998e-2,
-                "mid": 2.04e-2,
-                "ratingstate": 7.2564101,
+                "hi": 5.2278899999999995,
+                "mid": -4.089e-2,
+                "ratingstate": 8.75,
+                "State": "RI",
+                "Year": "2020",
+                "votingi": 70.9765625,
+                "lo": -5.33811
+            },
+            {
+                "hi": 1.828,
+                "mid": 3.004,
+                "ratingstate": 7.69999980926514,
                 "State": "PA",
-                "Year": "2012",
-                "lo": -1.6565000000000003e-2
+                "Year": "2020",
+                "votingi": 64.34375,
+                "lo": -1.805
             },
             {
-                "hi": 1.2890000000000002e-2,
-                "mid": 2.945e-2,
-                "ratingstate": 7.0714288,
+                "hi": 3.6647,
+                "mid": -0.9147000000000001,
+                "ratingstate": 9.14285755157471,
+                "State": "OR",
+                "Year": "2020",
+                "votingi": 76.5178604125977,
+                "lo": -4.2722999999999995
+            },
+            {
+                "hi": 5.061719999999999,
+                "mid": 6.328e-2,
+                "ratingstate": 7.5,
+                "State": "OK",
+                "Year": "2020",
+                "votingi": 65.1041641235352,
+                "lo": -5.29628
+            },
+            {
+                "hi": 2.5963,
+                "mid": 0.16570000000000001,
+                "ratingstate": 7.89473676681519,
                 "State": "OH",
-                "Year": "2012",
-                "lo": -1.27e-2
+                "Year": "2020",
+                "votingi": 70.2549362182617,
+                "lo": -2.8017
             },
             {
-                "hi": 1.3430000000000001e-2,
-                "mid": 2.319e-2,
-                "ratingstate": 7.9649124,
+                "hi": 1.3772,
+                "mid": -0.8943,
+                "ratingstate": 7.69999980926514,
                 "State": "NY",
-                "Year": "2012",
-                "lo": -1.2689999999999998e-2
+                "Year": "2020",
+                "votingi": 62.08203125,
+                "lo": -1.4117000000000002
             },
             {
-                "hi": 1.7900000000000003e-2,
-                "mid": 1.753e-2,
-                "ratingstate": 8.3999996,
+                "hi": 1.9234,
+                "mid": -0.12639999999999998,
+                "ratingstate": 9.60000038146973,
                 "State": "NV",
-                "Year": "2012",
-                "lo": -1.9030000000000002e-2
+                "Year": "2020",
+                "votingi": 69.75,
+                "lo": -1.9775999999999998
             },
             {
-                "hi": 1.1889999999999998e-2,
-                "mid": 1.953e-2,
-                "ratingstate": 7.521739,
+                "hi": 2.0694,
+                "mid": 0.5806,
+                "ratingstate": 9.5,
+                "State": "NM",
+                "Year": "2020",
+                "votingi": 73.28125,
+                "lo": -2.2256
+            },
+            {
+                "hi": 1.5730000000000002,
+                "mid": 1.543,
+                "ratingstate": 7.7777776718139595,
+                "State": "NJ",
+                "Year": "2020",
+                "votingi": 69.5486145019531,
+                "lo": -1.62192
+            },
+            {
+                "hi": 3.0606,
+                "mid": -3.327,
+                "ratingstate": 9,
+                "State": "NH",
+                "Year": "2020",
+                "votingi": 75.75,
+                "lo": -3.467
+            },
+            {
+                "hi": 4.0638,
+                "mid": 0.5882000000000001,
+                "ratingstate": 8.2857141494751,
+                "State": "NE",
+                "Year": "2020",
+                "votingi": 63.2142868041992,
+                "lo": -4.1842
+            },
+            {
+                "hi": 5.541772,
+                "mid": 1.228e-3,
+                "ratingstate": 7,
+                "State": "ND",
+                "Year": "2020",
+                "votingi": 67.90625,
+                "lo": -5.6962280000000005
+            },
+            {
+                "hi": 2.38174,
+                "mid": 7.526e-2,
+                "ratingstate": 5.3636364936828596,
+                "State": "NC",
+                "Year": "2020",
+                "votingi": 63.8636360168457,
+                "lo": -2.46426
+            },
+            {
+                "hi": 4.356999999999999,
+                "mid": 1.537,
+                "ratingstate": 8.33333301544189,
+                "State": "MT",
+                "Year": "2020",
+                "votingi": 75.5902786254883,
+                "lo": -4.273
+            },
+            {
+                "hi": 3.036,
+                "mid": 2.424,
+                "ratingstate": 7.83333349227905,
+                "State": "MO",
+                "Year": "2020",
+                "votingi": 66.0096130371094,
+                "lo": -3.1889000000000003
+            },
+            {
+                "hi": 3.0340000000000003,
+                "mid": 1.2449999999999999,
+                "ratingstate": 9,
+                "State": "MN",
+                "Year": "2020",
+                "votingi": 73.5085220336914,
+                "lo": -3.121
+            },
+            {
+                "hi": 1.5719999999999998,
+                "mid": 1.7950000000000002,
+                "ratingstate": 7.73333311080933,
                 "State": "MI",
-                "Year": "2012",
-                "lo": -1.2301e-2
+                "Year": "2020",
+                "votingi": 71.2708358764648,
+                "lo": -1.5703000000000003
             },
             {
-                "hi": 1.5136e-2,
-                "mid": -5.427e-3,
-                "ratingstate": 8.6428576,
+                "hi": 3.7573999999999996,
+                "mid": 0.3306,
+                "ratingstate": 9.5,
+                "State": "ME",
+                "Year": "2020",
+                "votingi": 77.9464263916016,
+                "lo": -4.1796
+            },
+            {
+                "hi": 1.8240000000000003,
+                "mid": 1.694,
+                "ratingstate": 8.69999980926514,
                 "State": "MD",
-                "Year": "2012",
-                "lo": -1.6843e-2
+                "Year": "2020",
+                "votingi": 75.953125,
+                "lo": -1.8865
             },
             {
-                "hi": 5.1817100000000005e-2,
-                "mid": -7.271e-4,
-                "ratingstate": 8.8648653,
+                "hi": 1.6969999999999998,
+                "mid": -3.4459999999999997,
+                "ratingstate": 9.35000038146973,
                 "State": "MA",
-                "Year": "2012",
-                "lo": -5.45029e-2
+                "Year": "2020",
+                "votingi": 70.9765625,
+                "lo": -1.854
             },
             {
-                "hi": 2.734e-2,
-                "mid": 3.001e-2,
+                "hi": 2.4998,
+                "mid": -1.7489999999999999,
                 "ratingstate": 9.25,
                 "State": "LA",
-                "Year": "2012",
-                "lo": -2.7243999999999997e-2
+                "Year": "2020",
+                "votingi": 65,
+                "lo": -2.5260000000000007
             },
             {
-                "hi": 3.26e-2,
-                "mid": -2.234e-2,
-                "ratingstate": 9.4444447,
+                "hi": 3.5311000000000003,
+                "mid": -3.141,
+                "ratingstate": 6.5,
+                "State": "KY",
+                "Year": "2020",
+                "votingi": 65,
+                "lo": -3.85
+            },
+            {
+                "hi": 3.8011999999999997,
+                "mid": -2.9819999999999998,
+                "ratingstate": 7.66666650772095,
+                "State": "KS",
+                "Year": "2020",
+                "votingi": 71.0416641235352,
+                "lo": -4.269
+            },
+            {
+                "hi": 4.117,
+                "mid": 2.005,
+                "ratingstate": 6.5,
+                "State": "IN",
+                "Year": "2020",
+                "votingi": 63.701171875,
+                "lo": -4.087000000000001
+            },
+            {
+                "hi": 3.143,
+                "mid": -4.1450000000000005,
+                "ratingstate": 8.58333301544189,
+                "State": "IL",
+                "Year": "2020",
+                "votingi": 74.0234375,
+                "lo": -3.3689999999999998
+            },
+            {
+                "hi": 5.52254,
+                "mid": -3.554e-2,
+                "ratingstate": 8.39999961853027,
+                "State": "ID",
+                "Year": "2020",
+                "votingi": 66.4375,
+                "lo": -5.59846
+            },
+            {
+                "hi": 3.8890000000000002,
+                "mid": -1.399,
+                "ratingstate": 9.11111068725586,
                 "State": "IA",
-                "Year": "2012",
-                "lo": -3.9650000000000005e-2
+                "Year": "2020",
+                "votingi": 77.4479141235352,
+                "lo": -4.476999999999999
             },
             {
-                "hi": 2.5588e-2,
-                "mid": -3.026e-2,
-                "ratingstate": 7.1875,
+                "hi": 2.7211,
+                "mid": -0.8911,
+                "ratingstate": 8.33333301544189,
+                "State": "HI",
+                "Year": "2020",
+                "votingi": 74.1927108764648,
+                "lo": -2.7958999999999996
+            },
+            {
+                "hi": 2.716,
+                "mid": 2.907,
+                "ratingstate": 4.5,
                 "State": "GA",
-                "Year": "2012",
-                "lo": -2.7060000000000004e-2
+                "Year": "2020",
+                "votingi": 61.9308052062988,
+                "lo": -2.6209999999999996
             },
             {
-                "hi": 1.2572e-2,
-                "mid": -3.932e-3,
-                "ratingstate": 7.2173915,
+                "hi": 1.3212,
+                "mid": -1.617,
+                "ratingstate": 6.5,
                 "State": "FL",
-                "Year": "2012",
-                "lo": -1.3178e-2
+                "Year": "2020",
+                "votingi": 63.88671875,
+                "lo": -1.395
             },
             {
-                "hi": 2.1699999999999997e-2,
-                "mid": -3.238e-2,
-                "ratingstate": 9,
+                "hi": 2.4669999999999996,
+                "mid": 1.745,
+                "ratingstate": 8.75,
                 "State": "DE",
-                "Year": "2012",
-                "lo": -2.3719999999999998e-2
+                "Year": "2020",
+                "votingi": 71.71875,
+                "lo": -2.5601
             },
             {
-                "hi": 1.7190000000000004e-2,
-                "mid": 2.386e-2,
-                "ratingstate": 9.1904764,
+                "hi": 2.3244000000000002,
+                "mid": 0.3146,
+                "ratingstate": 9.09090900421143,
                 "State": "DC",
-                "Year": "2012",
-                "lo": -1.6814e-2
+                "Year": "2020",
+                "votingi": 71.1647720336914,
+                "lo": -2.2416
             },
             {
-                "hi": 2.4310000000000002e-2,
-                "mid": -5.507e-2,
-                "ratingstate": 9.1000004,
+                "hi": 2.4953,
+                "mid": -0.7573,
+                "ratingstate": 7.75,
+                "State": "CT",
+                "Year": "2020",
+                "votingi": 65.8072891235352,
+                "lo": -2.5307
+            },
+            {
+                "hi": 3.064,
+                "mid": 3.956,
+                "ratingstate": 9.5,
                 "State": "CO",
-                "Year": "2012",
-                "lo": -2.6280000000000005e-2
+                "Year": "2020",
+                "votingi": 66.25,
+                "lo": -3.0565999999999995
             },
             {
-                "hi": 1.1911999999999999e-2,
-                "mid": -9.137e-3,
-                "ratingstate": 8.623376799999999,
+                "hi": 1.113,
+                "mid": -0.2994,
+                "ratingstate": 8.50769233703613,
                 "State": "CA",
-                "Year": "2012",
-                "lo": -1.1573e-2
+                "Year": "2020",
+                "votingi": 72.9071960449219,
+                "lo": -1.1416
             },
             {
-                "hi": 1.641e-2,
-                "mid": -4.023e-2,
-                "ratingstate": 6.3333335,
+                "hi": 1.425,
+                "mid": -0.301,
+                "ratingstate": 8,
                 "State": "AZ",
-                "Year": "2012",
-                "lo": -1.7119999999999996e-2
+                "Year": "2020",
+                "votingi": 68.2589263916016,
+                "lo": -1.4649999999999999
             },
             {
-                "hi": 2.7037e-2,
-                "mid": -3.031e-2,
-                "ratingstate": 9.428571699999999,
-                "State": "WA",
-                "Year": "2016",
-                "lo": -2.9410000000000002e-2
+                "hi": 5.13126,
+                "mid": 1.474e-2,
+                "ratingstate": 8,
+                "State": "AR",
+                "Year": "2020",
+                "votingi": 56.640625,
+                "lo": -5.43574
             },
             {
-                "hi": 2.5781e-2,
-                "mid": -1.702e-2,
-                "ratingstate": 7.521739,
-                "State": "TX",
-                "Year": "2016",
-                "lo": -2.599e-2
+                "hi": 3.523999999999999,
+                "mid": 3.762,
+                "ratingstate": 7.30000019073486,
+                "State": "AL",
+                "Year": "2020",
+                "votingi": 60.171875,
+                "lo": -3.5883
             },
             {
-                "hi": 2.9670000000000002e-2,
-                "mid": 3.651e-2,
-                "ratingstate": 7.6666665,
-                "State": "SC",
-                "Year": "2016",
-                "lo": -3.0806e-2
-            },
-            {
-                "hi": 1.5829999999999997e-2,
-                "mid": 3.987e-2,
-                "ratingstate": 7.2564101,
-                "State": "PA",
-                "Year": "2016",
-                "lo": -1.5480000000000004e-2
-            },
-            {
-                "hi": 2.4399999999999998e-2,
-                "mid": 1.842e-2,
-                "ratingstate": 7.0714288,
-                "State": "OH",
-                "Year": "2016",
-                "lo": -2.8011e-2
-            },
-            {
-                "hi": 1.2856999999999999e-2,
-                "mid": -1.877e-2,
-                "ratingstate": 7.9649124,
-                "State": "NY",
-                "Year": "2016",
-                "lo": -1.304e-2
-            },
-            {
-                "hi": 1.8249999999999995e-2,
-                "mid": 3.35e-2,
-                "ratingstate": 8.3999996,
-                "State": "NV",
-                "Year": "2016",
-                "lo": -1.8030000000000004e-2
-            },
-            {
-                "hi": 1.4159999999999996e-2,
-                "mid": 1.828e-2,
-                "ratingstate": 7.521739,
-                "State": "MI",
-                "Year": "2016",
-                "lo": -1.4581e-2
-            },
-            {
-                "hi": 1.7350000000000004e-2,
-                "mid": 2.558e-2,
-                "ratingstate": 8.6428576,
-                "State": "MD",
-                "Year": "2016",
-                "lo": -1.8056e-2
-            },
-            {
-                "hi": 1.5749999999999997e-2,
-                "mid": -3.974e-2,
-                "ratingstate": 8.8648653,
-                "State": "MA",
-                "Year": "2016",
-                "lo": -1.6100000000000003e-2
-            },
-            {
-                "hi": 2.0460000000000002e-2,
-                "mid": 2.161e-2,
-                "ratingstate": 9.25,
-                "State": "LA",
-                "Year": "2016",
-                "lo": -2.0502e-2
-            },
-            {
-                "hi": 4.34003e-2,
-                "mid": -4.412e-2,
-                "ratingstate": 9.4444447,
-                "State": "IA",
-                "Year": "2016",
-                "lo": -5.3189999999999994e-2
-            },
-            {
-                "hi": 2.357e-2,
-                "mid": 1.325e-2,
-                "ratingstate": 7.1875,
-                "State": "GA",
-                "Year": "2016",
-                "lo": -2.475e-2
-            },
-            {
-                "hi": 1.2899999999999998e-2,
-                "mid": -4.045e-2,
-                "ratingstate": 7.2173915,
-                "State": "FL",
-                "Year": "2016",
-                "lo": -1.303e-2
-            },
-            {
-                "hi": 2.4741799999999998e-2,
-                "mid": -2.437e-2,
-                "ratingstate": 9,
-                "State": "DE",
-                "Year": "2016",
-                "lo": -2.6400000000000003e-2
-            },
-            {
-                "hi": 1.8296e-2,
-                "mid": -1.106e-2,
-                "ratingstate": 9.1904764,
-                "State": "DC",
-                "Year": "2016",
-                "lo": -1.863e-2
-            },
-            {
-                "hi": 2.5115e-2,
-                "mid": 4.165e-3,
-                "ratingstate": 9.1000004,
-                "State": "CO",
-                "Year": "2016",
-                "lo": -2.7825000000000003e-2
-            },
-            {
-                "hi": 1.0969999999999999e-2,
-                "mid": -2.209e-2,
-                "ratingstate": 8.623376799999999,
-                "State": "CA",
-                "Year": "2016",
-                "lo": -1.115e-2
-            },
-            {
-                "hi": 1.4450000000000005e-2,
-                "mid": -4.794e-2,
-                "ratingstate": 6.3333335,
-                "State": "AZ",
-                "Year": "2016",
-                "lo": -1.4509999999999995e-2
+                "hi": 5.680339999999999,
+                "mid": -1.034e-2,
+                "ratingstate": 8.66666698455811,
+                "State": "AK",
+                "Year": "2020",
+                "votingi": 67.7083358764648,
+                "lo": -5.42166
             }
         ]
     },
@@ -1955,283 +1754,256 @@ vegaEmbed('#figure_5',vlSpec,{"renderer": "canvas"});</script>
     },
     "config": {
         "view": {
-            "continuousHeight": 500,
-            "discreteHeight": 500,
-            "continuousWidth": 500,
-            "discreteWidth": 500
+            "continuousHeight": 400,
+            "discreteHeight": 400,
+            "continuousWidth": 400,
+            "discreteWidth": 400
         }
     },
-    "transform": [
-        {
-            "pivot": "Year",
-            "groupby": [
-                "State",
-                "ratingstate"
-            ],
-            "value": "mid"
+    "encoding": {
+        "y": {
+            "axis": {
+                "title": "State-Specific VOC Turnout Shift (% Eligible VOC)"
+            },
+            "type": "quantitative",
+            "field": "mid"
+        },
+        "x": {
+            "axis": {
+                "title": "Ease/Fairness of Voting (out of 100)"
+            },
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            },
+            "field": "votingi"
         }
-    ],
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.1.json"
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "mark": {
+        "type": "circle",
+        "tooltip": {
+            "content": "data"
+        }
+    }
 };
-vegaEmbed('#figure_6',vlSpec,{"renderer": "svg"});</script>
+vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>Examining in a little more detail, we’ll first look at all the state-specific effects which are significant (90% confidence that the effect is not 0) and persistent (same direction) in <em>both</em> 2012 and 2016. Then we’ll look at state-specific effects which have changed significantly between 2012 and 2016, that is those for which the 2016 confidence interval is outside the 2012 confidence interval.</p>
+<p>If there is any correlation here, it's weak or negative. And WA being an outlier in both dimensions---it's got the largest negative state-specific VOC turnout and the <em>best</em> election-integrity rating on voting---throws off any simple conclusions. Is this because grass-roots organizing sometimes overcomes voter suppression? If this is true, it's very hard to measure. And, even if organizing blunts the effects of suppressive policies, those policies are still immoral, not least because whatever time and energy is spent opposing them could be spent in better and more productive ways.</p>
+<p>(4) How much of the difference between VOC and WNH is state-specific? We continue to focus on the states with clearly non-zero (90% confidence) state-specific VOC turnout effects and look at the demographic <em>and</em> state-specific components on one chart. Below, the difference between VOC and average turnout in a state (red) is broken into two components: the state-specific portion (blue) and the "demographic" component (orange) which comes from the nationwide turnout rates of the demographic mix of VOC in that particular state.</p>
 <figure id="figure_7">
 <script type="text/javascript">var vlSpec=
 {
-    "height": 400,
+    "height": 40,
     "padding": 5,
-    "width": 400,
-    "layer": [
-        {
-            "encoding": {
-                "y": {
-                    "type": "nominal",
-                    "sort": [
-                        "SC",
-                        "TN",
-                        "LA",
-                        "OH",
-                        "MO",
-                        "DC",
-                        "NY",
-                        "AL",
-                        "IN",
-                        "PA",
-                        "MI",
-                        "NV",
-                        "NC",
-                        "OR",
-                        "ME",
-                        "KS",
-                        "MN",
-                        "UT",
-                        "NH",
-                        "VT",
-                        "NJ",
-                        "AK",
-                        "CT",
-                        "RI",
-                        "WY",
-                        "WV",
-                        "MS",
-                        "SD",
-                        "MA",
-                        "ID",
-                        "NE",
-                        "OK",
-                        "FL",
-                        "MD",
-                        "WI",
-                        "NM",
-                        "VA",
-                        "CA",
-                        "HI",
-                        "ND",
-                        "WA",
-                        "MT",
-                        "IL",
-                        "IA",
-                        "GA",
-                        "DE",
-                        "KY",
-                        "AR",
-                        "AZ",
-                        "CO",
-                        "TX"
-                    ],
-                    "field": "State"
-                },
-                "x": {
-                    "type": "quantitative",
-                    "field": "mid"
-                },
-                "color": {
-                    "type": "nominal",
-                    "field": "Year"
-                },
-                "xError": {
-                    "field": "lo"
-                },
-                "xError2": {
-                    "field": "hi"
-                }
-            },
-            "mark": {
-                "ticks": true,
-                "type": "errorbar",
-                "tooltip": {
-                    "content": "data"
-                }
-            }
-        },
-        {
-            "encoding": {
-                "y": {
-                    "type": "nominal",
-                    "sort": [
-                        "SC",
-                        "TN",
-                        "LA",
-                        "OH",
-                        "MO",
-                        "DC",
-                        "NY",
-                        "AL",
-                        "IN",
-                        "PA",
-                        "MI",
-                        "NV",
-                        "NC",
-                        "OR",
-                        "ME",
-                        "KS",
-                        "MN",
-                        "UT",
-                        "NH",
-                        "VT",
-                        "NJ",
-                        "AK",
-                        "CT",
-                        "RI",
-                        "WY",
-                        "WV",
-                        "MS",
-                        "SD",
-                        "MA",
-                        "ID",
-                        "NE",
-                        "OK",
-                        "FL",
-                        "MD",
-                        "WI",
-                        "NM",
-                        "VA",
-                        "CA",
-                        "HI",
-                        "ND",
-                        "WA",
-                        "MT",
-                        "IL",
-                        "IA",
-                        "GA",
-                        "DE",
-                        "KY",
-                        "AR",
-                        "AZ",
-                        "CO",
-                        "TX"
-                    ],
-                    "field": "State"
-                },
-                "x": {
-                    "type": "quantitative",
-                    "field": "mid"
-                },
-                "color": {
-                    "type": "nominal",
-                    "field": "Year"
-                }
-            },
-            "mark": {
-                "type": "point",
-                "tooltip": {
-                    "content": "data"
-                }
-            }
-        },
-        {
-            "encoding": {
-                "x": {
-                    "datum": 0,
-                    "axis": {
-                        "title": null
-                    }
-                }
-            },
-            "mark": {
-                "color": "skyblue",
-                "type": "rule"
-            }
-        }
-    ],
-    "title": "State-Specific VOC Turnout: significant *and* persistent effects in 2012 and 2016",
+    "width": 200,
+    "title": "VOC/WNH Turnout Gap Components (2020)",
     "data": {
         "format": {
             "parse": {}
         },
         "values": [
             {
-                "hi": 2.0279999999999992e-2,
-                "mid": 4.728e-2,
-                "State": "SC",
-                "Year": "2012",
-                "lo": -2.2140000000000003e-2
+                "Turnout": 3.749999999999993,
+                "State": "AL",
+                "VOC Turnout Component": "VOC - WNH"
             },
             {
-                "hi": 1.6149999999999998e-2,
-                "mid": 2.04e-2,
-                "State": "PA",
-                "Year": "2012",
-                "lo": -1.6565000000000003e-2
+                "Turnout": 3.762,
+                "State": "AL",
+                "VOC Turnout Component": "State-Specific"
             },
             {
-                "hi": 1.1889999999999998e-2,
-                "mid": 1.953e-2,
+                "Turnout": -1.2000000000007116e-2,
+                "State": "AL",
+                "VOC Turnout Component": "Demographic"
+            },
+            {
+                "Turnout": -3.1800000000000064,
+                "State": "CO",
+                "VOC Turnout Component": "VOC - WNH"
+            },
+            {
+                "Turnout": 3.956,
+                "State": "CO",
+                "VOC Turnout Component": "State-Specific"
+            },
+            {
+                "Turnout": -7.136000000000006,
+                "State": "CO",
+                "VOC Turnout Component": "Demographic"
+            },
+            {
+                "Turnout": -11.110000000000014,
+                "State": "FL",
+                "VOC Turnout Component": "VOC - WNH"
+            },
+            {
+                "Turnout": -1.617,
+                "State": "FL",
+                "VOC Turnout Component": "State-Specific"
+            },
+            {
+                "Turnout": -9.493000000000013,
+                "State": "FL",
+                "VOC Turnout Component": "Demographic"
+            },
+            {
+                "Turnout": 1.6000000000000014,
+                "State": "GA",
+                "VOC Turnout Component": "VOC - WNH"
+            },
+            {
+                "Turnout": 2.907,
+                "State": "GA",
+                "VOC Turnout Component": "State-Specific"
+            },
+            {
+                "Turnout": -1.3069999999999986,
+                "State": "GA",
+                "VOC Turnout Component": "Demographic"
+            },
+            {
+                "Turnout": -16.35000000000001,
+                "State": "IL",
+                "VOC Turnout Component": "VOC - WNH"
+            },
+            {
+                "Turnout": -4.1450000000000005,
+                "State": "IL",
+                "VOC Turnout Component": "State-Specific"
+            },
+            {
+                "Turnout": -12.205000000000009,
+                "State": "IL",
+                "VOC Turnout Component": "Demographic"
+            },
+            {
+                "Turnout": -17.46,
+                "State": "MA",
+                "VOC Turnout Component": "VOC - WNH"
+            },
+            {
+                "Turnout": -3.4459999999999997,
+                "State": "MA",
+                "VOC Turnout Component": "State-Specific"
+            },
+            {
+                "Turnout": -14.014000000000001,
+                "State": "MA",
+                "VOC Turnout Component": "Demographic"
+            },
+            {
+                "Turnout": -1.9399999999999975,
                 "State": "MI",
-                "Year": "2012",
-                "lo": -1.2301e-2
+                "VOC Turnout Component": "VOC - WNH"
             },
             {
-                "hi": 2.734e-2,
-                "mid": 3.001e-2,
-                "State": "LA",
-                "Year": "2012",
-                "lo": -2.7243999999999997e-2
-            },
-            {
-                "hi": 1.641e-2,
-                "mid": -4.023e-2,
-                "State": "AZ",
-                "Year": "2012",
-                "lo": -1.7119999999999996e-2
-            },
-            {
-                "hi": 2.9670000000000002e-2,
-                "mid": 3.651e-2,
-                "State": "SC",
-                "Year": "2016",
-                "lo": -3.0806e-2
-            },
-            {
-                "hi": 1.5829999999999997e-2,
-                "mid": 3.987e-2,
-                "State": "PA",
-                "Year": "2016",
-                "lo": -1.5480000000000004e-2
-            },
-            {
-                "hi": 1.4159999999999996e-2,
-                "mid": 1.828e-2,
+                "Turnout": 1.7950000000000002,
                 "State": "MI",
-                "Year": "2016",
-                "lo": -1.4581e-2
+                "VOC Turnout Component": "State-Specific"
             },
             {
-                "hi": 2.0460000000000002e-2,
-                "mid": 2.161e-2,
-                "State": "LA",
-                "Year": "2016",
-                "lo": -2.0502e-2
+                "Turnout": -3.7349999999999977,
+                "State": "MI",
+                "VOC Turnout Component": "Demographic"
             },
             {
-                "hi": 1.4450000000000005e-2,
-                "mid": -4.794e-2,
-                "State": "AZ",
-                "Year": "2016",
-                "lo": -1.4509999999999995e-2
+                "Turnout": -16.42,
+                "State": "NH",
+                "VOC Turnout Component": "VOC - WNH"
+            },
+            {
+                "Turnout": -3.327,
+                "State": "NH",
+                "VOC Turnout Component": "State-Specific"
+            },
+            {
+                "Turnout": -13.093000000000002,
+                "State": "NH",
+                "VOC Turnout Component": "Demographic"
+            },
+            {
+                "Turnout": -1.8199999999999927,
+                "State": "PA",
+                "VOC Turnout Component": "VOC - WNH"
+            },
+            {
+                "Turnout": 3.004,
+                "State": "PA",
+                "VOC Turnout Component": "State-Specific"
+            },
+            {
+                "Turnout": -4.823999999999993,
+                "State": "PA",
+                "VOC Turnout Component": "Demographic"
+            },
+            {
+                "Turnout": -27.629999999999995,
+                "State": "WA",
+                "VOC Turnout Component": "VOC - WNH"
+            },
+            {
+                "Turnout": -8.426,
+                "State": "WA",
+                "VOC Turnout Component": "State-Specific"
+            },
+            {
+                "Turnout": -19.203999999999994,
+                "State": "WA",
+                "VOC Turnout Component": "Demographic"
             }
         ]
+    },
+    "spec": {
+        "encoding": {
+            "y": {
+                "title": null,
+                "axis": {
+                    "labels": false,
+                    "ticks": false
+                },
+                "type": "nominal",
+                "sort": [
+                    "State-Specific",
+                    "Demographic",
+                    "VOC - WNH"
+                ],
+                "field": "VOC Turnout Component"
+            },
+            "x": {
+                "axis": {
+                    "orient": "bottom",
+                    "title": "Turnout Change (% Eligible VOC)"
+                },
+                "type": "quantitative",
+                "scale": {
+                    "domain": [
+                        -26,
+                        26
+                    ]
+                },
+                "field": "Turnout"
+            },
+            "color": {
+                "legend": {
+                    "orient": "bottom"
+                },
+                "type": "nominal",
+                "sort": [
+                    "State-Specific",
+                    "Demographic",
+                    "VOC - WNH"
+                ],
+                "field": "VOC Turnout Component"
+            }
+        },
+        "mark": {
+            "type": "bar",
+            "tooltip": {
+                "content": "encoding"
+            }
+        }
     },
     "autosize": {
         "resize": true,
@@ -2240,276 +2012,89 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "svg"});</script>
     },
     "config": {
         "view": {
-            "continuousHeight": 400,
-            "discreteHeight": 400,
-            "continuousWidth": 400,
-            "discreteWidth": 400
+            "continuousHeight": 40,
+            "discreteHeight": 40,
+            "continuousWidth": 200,
+            "discreteWidth": 200
         }
     },
-    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
+    "facet": {
+        "type": "nominal",
+        "sort": [
+            "CO",
+            "AL",
+            "PA",
+            "GA",
+            "SC",
+            "MO",
+            "IN",
+            "MI",
+            "DE",
+            "MD",
+            "TN",
+            "NJ",
+            "MT",
+            "MN",
+            "WI",
+            "NE",
+            "NM",
+            "WV",
+            "ME",
+            "DC",
+            "OH",
+            "VA",
+            "NC",
+            "OK",
+            "VT",
+            "AR",
+            "ND",
+            "AK",
+            "SD",
+            "MS",
+            "ID",
+            "RI",
+            "WY",
+            "NV",
+            "CA",
+            "AZ",
+            "CT",
+            "HI",
+            "NY",
+            "OR",
+            "IA",
+            "FL",
+            "LA",
+            "TX",
+            "UT",
+            "KS",
+            "KY",
+            "NH",
+            "MA",
+            "IL",
+            "WA"
+        ],
+        "field": "State"
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "columns": 3
 };
 vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<figure id="figure_8">
-<script type="text/javascript">var vlSpec=
-{
-    "height": 400,
-    "padding": 5,
-    "width": 400,
-    "layer": [
-        {
-            "encoding": {
-                "y": {
-                    "type": "nominal",
-                    "sort": [
-                        "SC",
-                        "TN",
-                        "LA",
-                        "OH",
-                        "MO",
-                        "DC",
-                        "NY",
-                        "AL",
-                        "IN",
-                        "PA",
-                        "MI",
-                        "NV",
-                        "NC",
-                        "OR",
-                        "ME",
-                        "KS",
-                        "MN",
-                        "UT",
-                        "NH",
-                        "VT",
-                        "NJ",
-                        "AK",
-                        "CT",
-                        "RI",
-                        "WY",
-                        "WV",
-                        "MS",
-                        "SD",
-                        "MA",
-                        "ID",
-                        "NE",
-                        "OK",
-                        "FL",
-                        "MD",
-                        "WI",
-                        "NM",
-                        "VA",
-                        "CA",
-                        "HI",
-                        "ND",
-                        "WA",
-                        "MT",
-                        "IL",
-                        "IA",
-                        "GA",
-                        "DE",
-                        "KY",
-                        "AR",
-                        "AZ",
-                        "CO",
-                        "TX"
-                    ],
-                    "field": "State"
-                },
-                "x": {
-                    "type": "quantitative",
-                    "field": "mid"
-                },
-                "color": {
-                    "type": "nominal",
-                    "field": "Year"
-                },
-                "xError": {
-                    "field": "lo"
-                },
-                "xError2": {
-                    "field": "hi"
-                }
-            },
-            "mark": {
-                "ticks": true,
-                "type": "errorbar",
-                "tooltip": {
-                    "content": "data"
-                }
-            }
-        },
-        {
-            "encoding": {
-                "y": {
-                    "type": "nominal",
-                    "sort": [
-                        "SC",
-                        "TN",
-                        "LA",
-                        "OH",
-                        "MO",
-                        "DC",
-                        "NY",
-                        "AL",
-                        "IN",
-                        "PA",
-                        "MI",
-                        "NV",
-                        "NC",
-                        "OR",
-                        "ME",
-                        "KS",
-                        "MN",
-                        "UT",
-                        "NH",
-                        "VT",
-                        "NJ",
-                        "AK",
-                        "CT",
-                        "RI",
-                        "WY",
-                        "WV",
-                        "MS",
-                        "SD",
-                        "MA",
-                        "ID",
-                        "NE",
-                        "OK",
-                        "FL",
-                        "MD",
-                        "WI",
-                        "NM",
-                        "VA",
-                        "CA",
-                        "HI",
-                        "ND",
-                        "WA",
-                        "MT",
-                        "IL",
-                        "IA",
-                        "GA",
-                        "DE",
-                        "KY",
-                        "AR",
-                        "AZ",
-                        "CO",
-                        "TX"
-                    ],
-                    "field": "State"
-                },
-                "x": {
-                    "type": "quantitative",
-                    "field": "mid"
-                },
-                "color": {
-                    "type": "nominal",
-                    "field": "Year"
-                }
-            },
-            "mark": {
-                "type": "point",
-                "tooltip": {
-                    "content": "data"
-                }
-            }
-        },
-        {
-            "encoding": {
-                "x": {
-                    "datum": 0,
-                    "axis": {
-                        "title": null
-                    }
-                }
-            },
-            "mark": {
-                "color": "skyblue",
-                "type": "rule"
-            }
-        }
-    ],
-    "title": "State-Specific Turnout: significant *changes* 2012 to 2016",
-    "data": {
-        "format": {
-            "parse": {}
-        },
-        "values": [
-            {
-                "hi": 1.727e-2,
-                "mid": -6.093e-2,
-                "State": "TX",
-                "Year": "2012",
-                "lo": -1.793e-2
-            },
-            {
-                "hi": 1.3430000000000001e-2,
-                "mid": 2.319e-2,
-                "State": "NY",
-                "Year": "2012",
-                "lo": -1.2689999999999998e-2
-            },
-            {
-                "hi": 1.2572e-2,
-                "mid": -3.932e-3,
-                "State": "FL",
-                "Year": "2012",
-                "lo": -1.3178e-2
-            },
-            {
-                "hi": 2.4310000000000002e-2,
-                "mid": -5.507e-2,
-                "State": "CO",
-                "Year": "2012",
-                "lo": -2.6280000000000005e-2
-            },
-            {
-                "hi": 2.5781e-2,
-                "mid": -1.702e-2,
-                "State": "TX",
-                "Year": "2016",
-                "lo": -2.599e-2
-            },
-            {
-                "hi": 1.2856999999999999e-2,
-                "mid": -1.877e-2,
-                "State": "NY",
-                "Year": "2016",
-                "lo": -1.304e-2
-            },
-            {
-                "hi": 1.2899999999999998e-2,
-                "mid": -4.045e-2,
-                "State": "FL",
-                "Year": "2016",
-                "lo": -1.303e-2
-            },
-            {
-                "hi": 2.5115e-2,
-                "mid": 4.165e-3,
-                "State": "CO",
-                "Year": "2016",
-                "lo": -2.7825000000000003e-2
-            }
-        ]
-    },
-    "autosize": {
-        "resize": true,
-        "contains": "padding",
-        "type": "pad"
-    },
-    "config": {
-        "view": {
-            "continuousHeight": 400,
-            "discreteHeight": 400,
-            "continuousWidth": 400,
-            "discreteWidth": 400
-        }
-    },
-    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
-};
-vegaEmbed('#figure_8',vlSpec,{"renderer": "canvas"});</script>
-</figure>
+<p>(<a href="http://blueripple.github.io/Other/StateTurnout/Notes/2.html">Click here</a> to see these breakdowns for all 50 states and DC)</p>
+<p>The split between the turnout shift from "VOC Demographics" vs. "State-Specific" state itself is strongly influenced by what we include in the model and how we include it. Perhaps if we added other factors, e.g., religion or median-income, shifts that appear to be state-specific would instead turn out to be explained by the other factors. We have included the biggest factors that tend to correlate with voter turnout, and we believe that some of the shifts we see are too large to be explained by other factors. But it’s important to be mindful of the limits of this sort of analysis.</p>
+</section>
+<section id="the-big-questions" class="level2">
+<h2>The Big Questions</h2>
+<ul>
+<li><p>What is or isn't happening in CO, AL, PA, GA and MI to produce improved VOC turnout? Conversely, what is or isn't happening WA, IL, MA, NH and FL to depress VOC turnout? Understanding this might help improve VOC turnout in a number of states.</p></li>
+<li><p>Why is the demographic component so large? In this piece, we've been focusing on state-specific effects, because we are interested in state-level solutions, especially organizing around VOC turnout and against suppressive state-policy. But looming over all of this is the fact that VOC turnout (particularly Hispanic, Asian and Native-American turnout) lags WNH turnout nationwide---by more than 9 points in 2020, by no means an atypical year. That tips lots of elections to Republicans in places where Dems ought to be competitive, especially state-legislative and house seats.</p></li>
+</ul>
+</section>
+<section id="whats-next" class="level2">
+<h2>What's Next?</h2>
+<p>At the height of the election cycle we focused nearly all of our pieces on actionable ideas. But, in this off-cycle year, we are trying to understand the last election so that we may apply some new wisdom as we go forward. The organizing which helped carry GA, PA, MI, NV, etc. were inspiring and, we hope, repeatable.</p>
+<p>For us, that work begins by seeing what we can learn from the data. We know that is only one way into the story, but for us it helps refine our ideas, pointing in new directions and improving the questions we ask. Some pieces, like this one, raise more questions than they answer.</p>
+<p>Next we will look back, at the 2012 and 2016 presidential elections, and also at the 2014 and 2018 midterms, and see if this same analysis, and the trends they reveal together help us understand 2020 and figure out how to apply those lessons moving forward. Stay tuned!</p>
 </section>
 </section>
 <!--
