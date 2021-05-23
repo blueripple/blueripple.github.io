@@ -1,0 +1,1334 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>State-Specific VOC Turnout</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+
+</style>
+
+<script src="" type="text/javascript"></script>
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">May 23, 2021 </div>
+<section id="state-level-voter-turnout-and-race" class="level1">
+<h1>State-Level Voter Turnout And Race</h1>
+<section id="key-points-in-this-post" class="level3">
+<h3>Key Points In This Post</h3>
+<ul>
+<li>Voters-of-color--all but White-Non-Hispanic (WNH)--often vote at lower rates than</li>
+<li>We model 2020 general election turnout, concluding that the state-to-state variations in the turnout of voters-of-color (VOC) is unlikely to be explained by demographics alone.</li>
+<li>State-specific VOC turnout was high in CO, AL, PA, GA and MI and low in WA, IL, MA, NH and FL.</li>
+<li>The state-specific component of VOC turnout is usually smaller than the demographic component. Neverthelesss, it's important: elections can be very close and because it reflects what is happening at the state level.</li>
+</ul>
+</section>
+<section id="focusing-on-state-specific-turnout-effects" class="level2">
+<h2>Focusing on State-Specific Turnout Effects</h2>
+<p>As we've written about <a href="https://blueripple.github.io/research/mrp-model/p3/main.html">before</a>, voter turnout varies widely among demographic groups. Younger voters and voters of color tend to vote for Democrats, but smaller fractions of those voters cast a vote in most elections. Similarly, White voters without a college degree, who are more likely to vote for Republicans, are less likely to vote than White voters with a college degree.</p>
+<p>Unsurprisingly, group-level turnout varies by state: each state has a different mix of eligible voters, with different distributions of age and education, etc.</p>
+<p>But group-level turnout varies widely by state <em>even once we account for the demographic differences among them</em>, which we are calling the "state-specific" effect and explore in detail below. Some possible reasons include:</p>
+<ul>
+<li>Specific state policies which encourage or discourage voting by regulating early voting, vote-by-mail, poll hours, ID requirements and other aspects of voter access.</li>
+<li>Grassroots organizing and campaigning, both largely local, boosts turnout in demographically specific ways.</li>
+<li>State and local elections have their own dynamics, energizing certain groups of voters.</li>
+</ul>
+<p>There’s been a great deal of focus on understanding how much voter organizing and suppression affected turnout in 2020, particularly in GA, where Dems prevailed, and FL and TX, where we did not. In order to answer that question, we first need a baseline view of state-level turnout across demographic groups. Our starting point in this post is to focus on the turnout difference between White-non-Hispanic (WNH) voters and VOC, using data from the Current Population Survey Voter and Registration Supplement (CPS-VRS) and the American Community Survey (ACS), both produced by the US Census bureau. We're also going to explain a bit about <a href="https://www.youtube.com/watch?v=bq9c1zsR9NM%3E">MRP modeling</a>, anchoring this and further analyses based on similar models.</p>
+<p>Three quick caveats before we dig in.</p>
+<ol type="1">
+<li>We acknowledge that considering only the WNH/VOC gap is simplistic and reductive, because it ignores many other non-racial factors that affect turnout. But we are particularly interested in the interplay of voter suppression and organizing, where race is a big factor.</li>
+<li>It is our firm belief that voting should be easy for everyone, regardless of demographics or partisan identity, and all measures to suppress voting are wrong.</li>
+<li>Any conclusions we can make linking turnout to state voting policies will be suggestive at best, because these analyses are <a href="https://scholar.princeton.edu/sites/default/files/jmummolo/files/jop_voterid_print.pdf">notoriously difficult</a>. Standard surveys don’t collect the right type or amount of data to track within-state differences over time among subsets of voters with enough consistency to do anything more than generate interesting hypotheses.</li>
+</ol>
+<p>With those points out of the way, let’s dive into the analysis. We’re going to start with two detailed sections about the underlying data and approach, describe our model, and then pose and answer three initial questions about voter turnout and race</p>
+<section id="post-roadmap" class="level3">
+<h3>Post Roadmap</h3>
+<ul>
+<li>Intro (1): Our Data—The CPS-VRS and ACS</li>
+<li>Intro (2): MRP—A Quick Primer</li>
+<li>Our Basic Model</li>
+<li>Four initial questions (and answers) about voter turnout and race.</li>
+<li>Conclusions</li>
+</ul>
+</section>
+</section>
+<section id="intro-1-our-datathe-american-community-survey-and-the-cps-voting-and-registration-supplement" class="level2">
+<h2>Intro (1): Our Data–The American Community Survey and the CPS Voting and Registration Supplement</h2>
+<p>Each year, the U.S. Census Bureau (USCB) conducts the <a href="https://www.census.gov/programs-surveys/acs">“American Community Survey”</a> which, for our purposes, is an update to the decennial census. Surveys are sent to ~3.5 million households, so it’s not a complete count. There is also less geographic specificity to the reported results than the decennial census. The decennial census reports results down to the “block” level, whereas much of the ACS data is available only at the "Public Use Microdata Area" (PUMA) level— —each PUMA has about 100,000 people. Still, this is enough granularity for work at the state or congressional-district level. We use ACS data rather than the 2010 decennial census because it provides a more up-to-date picture of the demographics. (We’ll re-run this analysis once we have full 2020 census results.)</p>
+<p>In addition, each election year, the USCB produces the <a href="https://www.census.gov/topics/public-sector/voting.html">Voting and Registration Supplement</a> to the Current Population Survey (CPS-VRS), by asking approximately 100,000 people nationwide for their registration status and if they voted in the general election. Responses are paired with county of residence, demographic information (age, sex, race, ethnicity, education, etc.), allowing estimation of voter turnout among various groups and in various places.</p>
+<p>We make one important tweak to the CPS-VRS data: The survey responses are “self-reported” and not independently validated, so there are <a href="http://www.electproject.org/home/voter-turnout/cps-methodology">reporting errors</a> that tend to overestimate turnout in a way which differs systematically among states. To account for this, we adjust the turnout probabilities from the CPS so that when they are post-stratified across the voting eligible population (VEP) of each state, we get the correct total turnout. This was first suggested by <a href="https://www.aramhur.com/uploads/6/0/1/8/60187785/2013._poq_coding_cps.pdf">Achen and Hur</a> and we follow the procedure outlined by <a href="http://www.stat.columbia.edu/~gelman/research/published/misterp.pdf">Ghitza and Gelman</a> (p. 769), to compute the adjustment for each state/year, using the vote totals from <a href="http://www.electproject.org/home/voter-turnout/voter-turnout-data">United States Election Project</a> and group populations from the ACS.</p>
+<p>Crucially, CPS-VRS data <a href="https://static1.squarespace.com/static/5fac72852ca67743c720d6a1/t/5ff8a986c87fc6090567c6d0/1610131850413/CPS_AFS_2021.pdf">seems to under-report the gaps between White and non-White voters.</a> So all of our results looking at race-specific turnout should be viewed skeptically: the gaps are likely larger than we see in the data, though it's unclear if this comes from over-estimating VOC turnout or under-estimating WNH turnout. There are other publically available surveys which, when possible, validate survey reponses via state voter files, primarily the <a href="https://cces.gov.harvard.edu">CCES</a>. That survey is smaller: approximately 50,000 people surveyed each year, with about 40,000 validated voters. For the sake of a first analysis, we will start with the CPS data.</p>
+<p>The 100,000 people surveyed by the CPS-VRS are distributed throughout the country, so there will only be a limited number of people in each state, particularly less populous ones. Once you start breaking those people down by demographic groups, the number of people per group gets quite small. For example, our model has binary groupings for age, sex and education and a 4-category grouping for race. Considering each of the 50 states plus DC, we have <span class="math inline">\(2\times 2 \times 2 \times 4 \times 51 = 1632\)</span> groups. If people were distributed evenly among those groups, we might have 60 or so people in each. But people are not distributed equally among those groups! Some states are smaller and some may not have very many people in some of those categories. So how can we hope to understand any state and race effects in turnout?</p>
+<p>That's where MRP comes in.</p>
+</section>
+<section id="intro2-mrpa-quick-primer" class="level2">
+<h2>Intro(2): MRP—A Quick Primer</h2>
+<p>Though there might not be many people in any one Age/Sex/Education/Race/State group, each person surveyed has many things in common with many people in other groups. The <strong>MR</strong> part of <strong>MRP</strong> stands for <strong>M</strong>ulti-level <strong>R</strong>egression, a modeling technique which allows "partial-pooling" of the data. This means that the estimation of the turnout probability in each group is built partially from the data in that group and partially from the data in the shared categories. For example, the turnout probability for young, female, college-educated, Black voters in MI is fit partially from just those voters, partially from all young, female, college-educated, Black voters in the entire country, and partially from all voters in MI. Models can be constructed to allow partial-pooling along different groupings. The <strong>MR</strong> technique and tools we use (namely, <a href="https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo">Hamiltonian Monte Carlo</a> via <a href="https://mc-stan.org/about/">Stan</a>) allow the data itself to determine how much partial-pooling leads to the best estimation.</p>
+<p>Once we have estimates for every group in every state, we turn them into turnout numbers via post-stratification: multiplying the estimated probabilities by the actual number of people in each group, and adding these up to figure out how many people are likely to vote.</p>
+<p>The Monte-Carlo modeling produces confidence intervals of the parameters, <em>and</em> the post-stratifications that use them. The fact that some groups are very small, making probabilistic inference difficult, will show up in our results as large confidence intervals. Partial-pooling helps, but only so much.</p>
+</section>
+<section id="our-basic-model" class="level2">
+<h2>Our Basic Model</h2>
+<p>Our basic model includes age (under 45 or 45-and-over), sex (female or male), education (non-college-graduate or college-graduate), race/ethnicity (Black-Non-Hispanic, Hispanic, Asian/Other, and White-Non-Hispanic) and state. We recognize that these categories are reductive. In the case of sex we are limited to categories provided by the CPS data. For age and education we've chosen to simplify the categories to keep the modeling simple. For race/ethnicity, we‘re using a slightly richer set of categories, since turnout varies widely among these groups.</p>
+<p>We add a congressional-district-level population-density factor and interactions between education and a binary race term—a simplification of the race categories to White-non-Hispanic (WNH) and non-White-non-Hispanic (NWNH): a term in the model that estimates the effect of being, e.g., White-non-Hispanic (WNH) <em>and</em> college-educated over and above the effects of being in either category separately. Crucially, we also include an interaction between state and WNH/VOC, a term which estimates the <em>state-dependent</em> portion of the VOC turnout.</p>
+<p>We fit a multi-level model, allowing partial-pooling in the estimate of the national turnout by race, turnout probability in each state, and for the interaction between state and race. A more complex model might:</p>
+<ul>
+<li>Expand the categories: e.g., including religion or marital status.</li>
+<li>Allow partial pooling for more of the categories.</li>
+<li>Add more interactions between categories, for example modeling the effect of race and gender taken together. (We ran our model with more interactions and found that, other than the ones we already had, they added little information to the model.)</li>
+</ul>
+<p>Because we are interested in local organizing and state-level voter suppression, we focus on the state-specific portion of VOC turnout, in particular how much VOC turnout in each state differs from what we would expect based on the demographics (age, sex, education, local population density) of those voters. So we post-stratify on VOC in each state, with and without state/race interactions. We don't yet have ACS data for 2020, so for now we are using 2018 ACS data in our post-stratifications.</p>
+<p>It’s also interesting to look at turnout "gaps": differences in the turnout rate between VOC and WNH voters. Rather than showing differences among states, these might highlight how policies and organizing within a state affect the VOC population and WNH population differently. To save space here, we look at the gaps in a <a href="https://blueripplepolitics.org/Draft/research/Turnout/StateSpecific1/Notes/gaps.html">separate note</a>.</p>
+</section>
+<section id="four-initial-questions-and-answers-about-voter-turnout-and-race" class="level2">
+<h2>Four initial questions (and answers) about voter turnout and race</h2>
+<p>Now we’re in a position to answer four questions about each state’s VOC turnout:</p>
+<ul>
+<li><em>How much worse (or better) was each state’s VOC turnout in 2016 compared with what one would have expected from demographics alone?</em></li>
+<li><em>Which states have significant (positive or negative) state-specific effects?</em></li>
+<li><em>Is the state-specific factor a reflection of election integrity?</em></li>
+<li><em>In those states, how do the demographic and state-specific components compare in size?</em></li>
+</ul>
+<p>Let's see if the data and model can shed some light!</p>
+<p>(1) Observed vs. expected VOC turnout in 2020 by state: Below we look <em>only</em> at the “State-Specific VOC Turnout”, taking the difference of the estimated VOC turnout in a state and the estimated VOC turnout <em>based on the demographics alone</em>. CO is at the top with 4 point better-than-expected turnout of VOC and WA is at the bottom, with 8 point worse-than-expected turnout of VOC.</p>
+<figure id="figure_4">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 1000,
+    "padding": 5,
+    "width": 500,
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "CO",
+                        "AL",
+                        "PA",
+                        "GA",
+                        "SC",
+                        "MO",
+                        "IN",
+                        "MI",
+                        "DE",
+                        "MD",
+                        "MT",
+                        "TN",
+                        "NJ",
+                        "MN",
+                        "WI",
+                        "NM",
+                        "NE",
+                        "WV",
+                        "DC",
+                        "ME",
+                        "OH",
+                        "VA",
+                        "NC",
+                        "MS",
+                        "ID",
+                        "OK",
+                        "WY",
+                        "AK",
+                        "SD",
+                        "RI",
+                        "VT",
+                        "AR",
+                        "ND",
+                        "NV",
+                        "AZ",
+                        "CA",
+                        "CT",
+                        "NY",
+                        "HI",
+                        "OR",
+                        "IA",
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "KY",
+                        "NH",
+                        "MA",
+                        "IL",
+                        "WA"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible VOC)"
+                    },
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                },
+                "xError": {
+                    "field": "lo"
+                },
+                "xError2": {
+                    "field": "hi"
+                }
+            },
+            "mark": {
+                "ticks": true,
+                "type": "errorbar",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "CO",
+                        "AL",
+                        "PA",
+                        "GA",
+                        "SC",
+                        "MO",
+                        "IN",
+                        "MI",
+                        "DE",
+                        "MD",
+                        "MT",
+                        "TN",
+                        "NJ",
+                        "MN",
+                        "WI",
+                        "NM",
+                        "NE",
+                        "WV",
+                        "DC",
+                        "ME",
+                        "OH",
+                        "VA",
+                        "NC",
+                        "MS",
+                        "ID",
+                        "OK",
+                        "WY",
+                        "AK",
+                        "SD",
+                        "RI",
+                        "VT",
+                        "AR",
+                        "ND",
+                        "NV",
+                        "AZ",
+                        "CA",
+                        "CT",
+                        "NY",
+                        "HI",
+                        "OR",
+                        "IA",
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "KY",
+                        "NH",
+                        "MA",
+                        "IL",
+                        "WA"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible VOC)"
+                    },
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "datum": 0
+                }
+            },
+            "mark": {
+                "color": "skyblue",
+                "type": "rule"
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "aggregate": "mean",
+                    "field": "mid"
+                }
+            },
+            "mark": {
+                "color": "orange",
+                "type": "rule"
+            }
+        }
+    ],
+    "title": "State-Specific VOC Turnout (2020)",
+    "data": {
+        "format": {
+            "parse": {}
+        },
+        "values": [
+            {
+                "hi": 4.515899999999999,
+                "mid": 0.48710000000000003,
+                "ratingstate": 7.7142858505249,
+                "State": "WV",
+                "Year": "2020",
+                "votingi": 62.5223197937012,
+                "lo": -4.4511
+            },
+            {
+                "hi": 3.6642,
+                "mid": 0.7707999999999999,
+                "ratingstate": 7.5,
+                "State": "WI",
+                "Year": "2020",
+                "votingi": 70.8072891235352,
+                "lo": -3.9858
+            },
+            {
+                "hi": 3.0719999999999996,
+                "mid": -8.405999999999999,
+                "ratingstate": 9.5,
+                "State": "WA",
+                "Year": "2020",
+                "votingi": 82.8125,
+                "lo": -3.1740000000000004
+            },
+            {
+                "hi": 4.744898,
+                "mid": 1.02e-4,
+                "ratingstate": 9.80000019073486,
+                "State": "VT",
+                "Year": "2020",
+                "votingi": 76.90625,
+                "lo": -4.984102
+            },
+            {
+                "hi": 2.386,
+                "mid": 0.128,
+                "ratingstate": 8.307692527771,
+                "State": "VA",
+                "Year": "2020",
+                "votingi": 70.649040222168,
+                "lo": -2.494
+            },
+            {
+                "hi": 4.759,
+                "mid": -2.83,
+                "ratingstate": 8.18181800842285,
+                "State": "UT",
+                "Year": "2020",
+                "votingi": 71.8892059326172,
+                "lo": -5.7540000000000004
+            },
+            {
+                "hi": 2.43279,
+                "mid": -2.343,
+                "ratingstate": 7.5,
+                "State": "TX",
+                "Year": "2020",
+                "votingi": 62.7546310424805,
+                "lo": -2.543
+            },
+            {
+                "hi": 3.846000000000001,
+                "mid": 1.5959999999999999,
+                "ratingstate": 7.375,
+                "State": "TN",
+                "Year": "2020",
+                "votingi": 60.625,
+                "lo": -3.9539999999999997
+            },
+            {
+                "hi": 5.61355,
+                "mid": 1.845e-2,
+                "ratingstate": 8.4285717010498,
+                "State": "SD",
+                "Year": "2020",
+                "votingi": 74.9107131958008,
+                "lo": -5.52845
+            },
+            {
+                "hi": 3.2549999999999994,
+                "mid": 2.934,
+                "ratingstate": 7.55555534362793,
+                "State": "SC",
+                "Year": "2020",
+                "votingi": 54.4618072509766,
+                "lo": -3.4002000000000003
+            },
+            {
+                "hi": 5.061513,
+                "mid": 7.487000000000001e-3,
+                "ratingstate": 8.75,
+                "State": "RI",
+                "Year": "2020",
+                "votingi": 70.9765625,
+                "lo": -5.349487
+            },
+            {
+                "hi": 1.8109999999999997,
+                "mid": 3.004,
+                "ratingstate": 7.69999980926514,
+                "State": "PA",
+                "Year": "2020",
+                "votingi": 64.34375,
+                "lo": -1.806
+            },
+            {
+                "hi": 3.6525000000000003,
+                "mid": -0.9605,
+                "ratingstate": 9.14285755157471,
+                "State": "OR",
+                "Year": "2020",
+                "votingi": 76.5178604125977,
+                "lo": -4.0895
+            },
+            {
+                "hi": 5.06955,
+                "mid": 5.8449999999999995e-2,
+                "ratingstate": 7.5,
+                "State": "OK",
+                "Year": "2020",
+                "votingi": 65.1041641235352,
+                "lo": -5.45545
+            },
+            {
+                "hi": 2.6628,
+                "mid": 0.1502,
+                "ratingstate": 7.89473676681519,
+                "State": "OH",
+                "Year": "2020",
+                "votingi": 70.2549362182617,
+                "lo": -2.6272
+            },
+            {
+                "hi": 1.3594,
+                "mid": -0.8956000000000001,
+                "ratingstate": 7.69999980926514,
+                "State": "NY",
+                "Year": "2020",
+                "votingi": 62.08203125,
+                "lo": -1.4063999999999999
+            },
+            {
+                "hi": 1.9261,
+                "mid": -0.10510000000000001,
+                "ratingstate": 9.60000038146973,
+                "State": "NV",
+                "Year": "2020",
+                "votingi": 69.75,
+                "lo": -1.9248999999999998
+            },
+            {
+                "hi": 2.2128,
+                "mid": 0.5202,
+                "ratingstate": 9.5,
+                "State": "NM",
+                "Year": "2020",
+                "votingi": 73.28125,
+                "lo": -2.1032
+            },
+            {
+                "hi": 1.582,
+                "mid": 1.555,
+                "ratingstate": 7.7777776718139595,
+                "State": "NJ",
+                "Year": "2020",
+                "votingi": 69.5486145019531,
+                "lo": -1.5557245
+            },
+            {
+                "hi": 3.0915999999999997,
+                "mid": -3.319,
+                "ratingstate": 9,
+                "State": "NH",
+                "Year": "2020",
+                "votingi": 75.75,
+                "lo": -3.452000000000001
+            },
+            {
+                "hi": 4.0753,
+                "mid": 0.5077,
+                "ratingstate": 8.2857141494751,
+                "State": "NE",
+                "Year": "2020",
+                "votingi": 63.2142868041992,
+                "lo": -4.0977
+            },
+            {
+                "hi": 5.44698,
+                "mid": -4.8979999999999996e-2,
+                "ratingstate": 7,
+                "State": "ND",
+                "Year": "2020",
+                "votingi": 67.90625,
+                "lo": -5.3840200000000005
+            },
+            {
+                "hi": 2.3213,
+                "mid": 0.1037,
+                "ratingstate": 5.3636364936828596,
+                "State": "NC",
+                "Year": "2020",
+                "votingi": 63.8636360168457,
+                "lo": -2.3417
+            },
+            {
+                "hi": 4.229,
+                "mid": 1.641,
+                "ratingstate": 8.33333301544189,
+                "State": "MT",
+                "Year": "2020",
+                "votingi": 75.5902786254883,
+                "lo": -4.425
+            },
+            {
+                "hi": 3.2009999999999996,
+                "mid": 2.444,
+                "ratingstate": 7.83333349227905,
+                "State": "MO",
+                "Year": "2020",
+                "votingi": 66.0096130371094,
+                "lo": -3.2682
+            },
+            {
+                "hi": 2.9189999999999996,
+                "mid": 1.2930000000000001,
+                "ratingstate": 9,
+                "State": "MN",
+                "Year": "2020",
+                "votingi": 73.5085220336914,
+                "lo": -2.995
+            },
+            {
+                "hi": 1.533,
+                "mid": 1.844,
+                "ratingstate": 7.73333311080933,
+                "State": "MI",
+                "Year": "2020",
+                "votingi": 71.2708358764648,
+                "lo": -1.6298
+            },
+            {
+                "hi": 3.7909000000000006,
+                "mid": 0.2731,
+                "ratingstate": 9.5,
+                "State": "ME",
+                "Year": "2020",
+                "votingi": 77.9464263916016,
+                "lo": -4.195099999999999
+            },
+            {
+                "hi": 1.92,
+                "mid": 1.6709999999999998,
+                "ratingstate": 8.69999980926514,
+                "State": "MD",
+                "Year": "2020",
+                "votingi": 75.953125,
+                "lo": -1.9639
+            },
+            {
+                "hi": 1.78,
+                "mid": -3.46,
+                "ratingstate": 9.35000038146973,
+                "State": "MA",
+                "Year": "2020",
+                "votingi": 70.9765625,
+                "lo": -1.7820000000000003
+            },
+            {
+                "hi": 2.4419,
+                "mid": -1.7690000000000001,
+                "ratingstate": 9.25,
+                "State": "LA",
+                "Year": "2020",
+                "votingi": 65,
+                "lo": -2.4859999999999998
+            },
+            {
+                "hi": 3.5195999999999996,
+                "mid": -3.1390000000000002,
+                "ratingstate": 6.5,
+                "State": "KY",
+                "Year": "2020",
+                "votingi": 65,
+                "lo": -3.6279999999999992
+            },
+            {
+                "hi": 3.7179,
+                "mid": -2.972,
+                "ratingstate": 7.66666650772095,
+                "State": "KS",
+                "Year": "2020",
+                "votingi": 71.0416641235352,
+                "lo": -4.014000000000001
+            },
+            {
+                "hi": 4.108,
+                "mid": 2.062,
+                "ratingstate": 6.5,
+                "State": "IN",
+                "Year": "2020",
+                "votingi": 63.701171875,
+                "lo": -4.254
+            },
+            {
+                "hi": 3.2771000000000003,
+                "mid": -4.19,
+                "ratingstate": 8.58333301544189,
+                "State": "IL",
+                "Year": "2020",
+                "votingi": 74.0234375,
+                "lo": -3.2760000000000002
+            },
+            {
+                "hi": 5.36981,
+                "mid": 6.319e-2,
+                "ratingstate": 8.39999961853027,
+                "State": "ID",
+                "Year": "2020",
+                "votingi": 66.4375,
+                "lo": -5.47719
+            },
+            {
+                "hi": 3.9219999999999997,
+                "mid": -1.355,
+                "ratingstate": 9.11111068725586,
+                "State": "IA",
+                "Year": "2020",
+                "votingi": 77.4479141235352,
+                "lo": -4.644
+            },
+            {
+                "hi": 2.7056,
+                "mid": -0.9596,
+                "ratingstate": 8.33333301544189,
+                "State": "HI",
+                "Year": "2020",
+                "votingi": 74.1927108764648,
+                "lo": -2.7314
+            },
+            {
+                "hi": 2.7550000000000003,
+                "mid": 2.945,
+                "ratingstate": 4.5,
+                "State": "GA",
+                "Year": "2020",
+                "votingi": 61.9308052062988,
+                "lo": -2.7357
+            },
+            {
+                "hi": 1.2881,
+                "mid": -1.601,
+                "ratingstate": 6.5,
+                "State": "FL",
+                "Year": "2020",
+                "votingi": 63.88671875,
+                "lo": -1.358
+            },
+            {
+                "hi": 2.4290000000000003,
+                "mid": 1.778,
+                "ratingstate": 8.75,
+                "State": "DE",
+                "Year": "2020",
+                "votingi": 71.71875,
+                "lo": -2.568
+            },
+            {
+                "hi": 2.2744,
+                "mid": 0.3896,
+                "ratingstate": 9.09090900421143,
+                "State": "DC",
+                "Year": "2020",
+                "votingi": 71.1647720336914,
+                "lo": -2.3236
+            },
+            {
+                "hi": 2.4852,
+                "mid": -0.6942,
+                "ratingstate": 7.75,
+                "State": "CT",
+                "Year": "2020",
+                "votingi": 65.8072891235352,
+                "lo": -2.6558
+            },
+            {
+                "hi": 3.0429999999999997,
+                "mid": 4.045,
+                "ratingstate": 9.5,
+                "State": "CO",
+                "Year": "2020",
+                "votingi": 66.25,
+                "lo": -3.1300000000000003
+            },
+            {
+                "hi": 1.1054000000000002,
+                "mid": -0.3125,
+                "ratingstate": 8.50769233703613,
+                "State": "CA",
+                "Year": "2020",
+                "votingi": 72.9071960449219,
+                "lo": -1.1115
+            },
+            {
+                "hi": 1.4047,
+                "mid": -0.2947,
+                "ratingstate": 8,
+                "State": "AZ",
+                "Year": "2020",
+                "votingi": 68.2589263916016,
+                "lo": -1.4433
+            },
+            {
+                "hi": 5.141412,
+                "mid": -6.412e-3,
+                "ratingstate": 8,
+                "State": "AR",
+                "Year": "2020",
+                "votingi": 56.640625,
+                "lo": -5.442588
+            },
+            {
+                "hi": 3.501000000000001,
+                "mid": 3.768,
+                "ratingstate": 7.30000019073486,
+                "State": "AL",
+                "Year": "2020",
+                "votingi": 60.171875,
+                "lo": -3.5101
+            },
+            {
+                "hi": 5.82419,
+                "mid": 3.681e-2,
+                "ratingstate": 8.66666698455811,
+                "State": "AK",
+                "Year": "2020",
+                "votingi": 67.7083358764648,
+                "lo": -5.80881
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 1000,
+            "discreteHeight": 1000,
+            "continuousWidth": 500,
+            "discreteWidth": 500
+        }
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
+};
+vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p>The 90% confidence intervals are large—in very few states is the state-specific effect on VOC voters clearly non-zero. So let's simplify that chart, retaining only states where we are 90% (or more) confident that the state-specific component of VOC turnout is not zero.</p>
+<figure id="figure_5">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 400,
+    "padding": 5,
+    "width": 600,
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "CO",
+                        "AL",
+                        "PA",
+                        "GA",
+                        "SC",
+                        "MO",
+                        "IN",
+                        "MI",
+                        "DE",
+                        "MD",
+                        "MT",
+                        "TN",
+                        "NJ",
+                        "MN",
+                        "WI",
+                        "NM",
+                        "NE",
+                        "WV",
+                        "DC",
+                        "ME",
+                        "OH",
+                        "VA",
+                        "NC",
+                        "MS",
+                        "ID",
+                        "OK",
+                        "WY",
+                        "AK",
+                        "SD",
+                        "RI",
+                        "VT",
+                        "AR",
+                        "ND",
+                        "NV",
+                        "AZ",
+                        "CA",
+                        "CT",
+                        "NY",
+                        "HI",
+                        "OR",
+                        "IA",
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "KY",
+                        "NH",
+                        "MA",
+                        "IL",
+                        "WA"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible VOC)"
+                    },
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                },
+                "xError": {
+                    "field": "lo"
+                },
+                "xError2": {
+                    "field": "hi"
+                }
+            },
+            "mark": {
+                "ticks": true,
+                "type": "errorbar",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "type": "nominal",
+                    "sort": [
+                        "CO",
+                        "AL",
+                        "PA",
+                        "GA",
+                        "SC",
+                        "MO",
+                        "IN",
+                        "MI",
+                        "DE",
+                        "MD",
+                        "MT",
+                        "TN",
+                        "NJ",
+                        "MN",
+                        "WI",
+                        "NM",
+                        "NE",
+                        "WV",
+                        "DC",
+                        "ME",
+                        "OH",
+                        "VA",
+                        "NC",
+                        "MS",
+                        "ID",
+                        "OK",
+                        "WY",
+                        "AK",
+                        "SD",
+                        "RI",
+                        "VT",
+                        "AR",
+                        "ND",
+                        "NV",
+                        "AZ",
+                        "CA",
+                        "CT",
+                        "NY",
+                        "HI",
+                        "OR",
+                        "IA",
+                        "FL",
+                        "LA",
+                        "TX",
+                        "UT",
+                        "KS",
+                        "KY",
+                        "NH",
+                        "MA",
+                        "IL",
+                        "WA"
+                    ],
+                    "field": "State"
+                },
+                "x": {
+                    "axis": {
+                        "title": "Turnout Shift (% Eligible VOC)"
+                    },
+                    "type": "quantitative",
+                    "field": "mid"
+                },
+                "color": {
+                    "type": "nominal",
+                    "field": "Year"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "datum": 0
+                }
+            },
+            "mark": {
+                "color": "skyblue",
+                "type": "rule"
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "aggregate": "mean",
+                    "field": "mid"
+                }
+            },
+            "mark": {
+                "color": "orange",
+                "type": "rule"
+            }
+        }
+    ],
+    "title": "State-Specific VOC Turnout (2020)",
+    "data": {
+        "format": {
+            "parse": {}
+        },
+        "values": [
+            {
+                "hi": 3.0719999999999996,
+                "mid": -8.405999999999999,
+                "ratingstate": 9.5,
+                "State": "WA",
+                "Year": "2020",
+                "votingi": 82.8125,
+                "lo": -3.1740000000000004
+            },
+            {
+                "hi": 1.8109999999999997,
+                "mid": 3.004,
+                "ratingstate": 7.69999980926514,
+                "State": "PA",
+                "Year": "2020",
+                "votingi": 64.34375,
+                "lo": -1.806
+            },
+            {
+                "hi": 3.0915999999999997,
+                "mid": -3.319,
+                "ratingstate": 9,
+                "State": "NH",
+                "Year": "2020",
+                "votingi": 75.75,
+                "lo": -3.452000000000001
+            },
+            {
+                "hi": 1.533,
+                "mid": 1.844,
+                "ratingstate": 7.73333311080933,
+                "State": "MI",
+                "Year": "2020",
+                "votingi": 71.2708358764648,
+                "lo": -1.6298
+            },
+            {
+                "hi": 1.78,
+                "mid": -3.46,
+                "ratingstate": 9.35000038146973,
+                "State": "MA",
+                "Year": "2020",
+                "votingi": 70.9765625,
+                "lo": -1.7820000000000003
+            },
+            {
+                "hi": 3.2771000000000003,
+                "mid": -4.19,
+                "ratingstate": 8.58333301544189,
+                "State": "IL",
+                "Year": "2020",
+                "votingi": 74.0234375,
+                "lo": -3.2760000000000002
+            },
+            {
+                "hi": 2.7550000000000003,
+                "mid": 2.945,
+                "ratingstate": 4.5,
+                "State": "GA",
+                "Year": "2020",
+                "votingi": 61.9308052062988,
+                "lo": -2.7357
+            },
+            {
+                "hi": 1.2881,
+                "mid": -1.601,
+                "ratingstate": 6.5,
+                "State": "FL",
+                "Year": "2020",
+                "votingi": 63.88671875,
+                "lo": -1.358
+            },
+            {
+                "hi": 3.0429999999999997,
+                "mid": 4.045,
+                "ratingstate": 9.5,
+                "State": "CO",
+                "Year": "2020",
+                "votingi": 66.25,
+                "lo": -3.1300000000000003
+            },
+            {
+                "hi": 3.501000000000001,
+                "mid": 3.768,
+                "ratingstate": 7.30000019073486,
+                "State": "AL",
+                "Year": "2020",
+                "votingi": 60.171875,
+                "lo": -3.5101
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 400,
+            "discreteHeight": 400,
+            "continuousWidth": 600,
+            "discreteWidth": 600
+        }
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
+};
+vegaEmbed('#figure_5',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p>(2) In particular, in 2020, CO, AL, PA, GA, and MI have clearly positive state-specific VOC turnout and WA, IL, MA, NH, and FL have clearly negative state-specific VOC turnout. One hypothesis we have is that the state-specific component of VOC turnout reflects some balance between voter-suppression and organizing in each state. And that might be reflected somewhat in this list: there is always organizing in the swing-states, like PA and MI, and organizing in GA was obviously a big factor. There's a history of Black-voter-organizing in AL. CO might be because of mail-in voting. On the negative side, it's less clear.</p>
+<p>(3) Does this map to some measure of election integrity? Below we make a scatter plot of the state-specific component of VOC turnout and an <a href="https://www.electoralintegrityproject.com">"Election Integrity"</a> score for voting each state, computed by surveying experts and averaging their responses across a variety of voting-related topics.</p>
+</section>
+</section>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
