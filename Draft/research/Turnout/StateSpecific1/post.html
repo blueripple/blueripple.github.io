@@ -247,14 +247,14 @@
 <section id="key-points-in-this-post" class="level3">
 <h3>Key Points In This Post</h3>
 <ul>
-<li>Voters-of-color (VOC) often vote at lower rates than White-non-Hispanic voters (WNHV). This "turnout gap" varies strongly between states. Different VOC (younger or older, male or female, level of education and race/ethnicity) vote at different rates. Is this the source of the state-to-state variation?</li>
+<li>Voters-of-color (VOC) often vote at lower rates than white-non-Hispanic voters (WNHV). This "turnout gap" varies strongly between states. Different VOC (younger or older, male or female, level of education and race/ethnicity) vote at different rates. Is this the source of the state-to-state variation?</li>
 <li>We model 2020 general election turnout, concluding that state-to-state variations in the VOC turnout are unlikely to be explained by demographics alone.</li>
 <li>State-specific turnout gaps were clearly better than expected in CO, AL, PA, GA and MI and clearly worse than expected in WA, IL, MA, NH and FL.</li>
 </ul>
 </section>
 <section id="focusing-on-state-specific-turnout-effects" class="level2">
 <h2>Focusing on State-Specific Turnout Effects</h2>
-<p>As we've written about <a href="https://blueripple.github.io/research/mrp-model/p3/main.html">before</a>, voter turnout varies widely among demographic groups. Younger voters and voters of color tend to vote for Democrats, but smaller fractions of those voters cast a vote in most elections. Similarly, White voters without a college degree, who are more likely to vote for Republicans, are less likely to vote than White voters with a college degree.</p>
+<p>As we've written about <a href="https://blueripple.github.io/research/mrp-model/p3/main.html">before</a>, voter turnout varies widely among demographic groups. Younger voters and voters of color tend to vote for Democrats, but smaller fractions of those voters cast a vote in most elections. Similarly, white voters without a college degree, who are more likely to vote for Republicans, are less likely to vote than White voters with a college degree.</p>
 <p>Unsurprisingly, group-level turnout varies by state: each state has a different mix of eligible voters, with different distributions of age and education, etc. We are interested in the impact of <em>state-level</em> differences (policy, organizing, local candidates or ballot initiatives) on turnout of VOC and WNHV, so we look at the turnout “gap”, the difference between VOC turnout and WNHV turnout—positive gaps indicate higher turnout among VOC, negative indicate higher turnout among WHNV<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p>Below we chart the 2020 turnout gap in each state along with the average gap (about -9%, marked by a vertical orange line) to illustrate the range seen among the states (and DC). Since these turnout estimates are produced from a model<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> we also include 90% confidence intervals for our estimates.</p>
 <figure id="figure_4">
@@ -896,7 +896,7 @@
 };
 vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>Across the states, gaps vary by 32 points, from a high of +4% in AL to -28% in WA. Can this gap be explained by demographic differences alone? The VOC in AL are mostly Black while the VOC in WA are mostly Hispanic. Black voters turned out at higher rates than Hispanic voters nationwide. Perhaps this explains the turnout gap between WA and PA? Using our model, we can estimate the gaps that would result if there were no state-specific effects<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. We chart this below.</p>
+<p>Across the states, gaps vary by 32 points, from a high of +4% in AL to -28% in WA. Can this gap be explained by demographic differences alone? The VOC in AL are mostly Black while the VOC in WA are mostly Hispanic. Black voters turned out at higher rates than Hispanic voters nationwide. Perhaps this explains the turnout gap between WA and PA? Using our model, we can estimate the gaps that would result if there were no state-specific effects<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. We chart this (on the same scale) below.</p>
 <figure id="figure_6">
 <script type="text/javascript">var vlSpec=
 {
@@ -1568,7 +1568,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
 <p>Each year, the U.S. Census Bureau (USCB) conducts the <a href="https://www.census.gov/programs-surveys/acs">“American Community Survey”</a> which, for our purposes, is an update to the decennial census. Surveys are sent to ~3.5 million households (of about 125 million) so it’s not a complete count. There is also less geographic specificity to the reported results than the decennial census. The decennial census reports results down to the “block” level, whereas much of the ACS data is available only at the “Public Use Micro-data Area” (PUMA) level— each PUMA has about 100,000 people. Still, this is enough granularity for most work at the state or congressional-district level. We use 2018 ACS data rather than the 2010 decennial census because it provides a more up-to-date picture of the demographics of each state. (We’ll re-run this analysis once we have full 2020 census results or the 2020 ACS.)</p>
 <p>In addition, each election year, the USCB produces the <a href="https://www.census.gov/topics/public-sector/voting.html">Voting and Registration Supplement</a> to the Current Population Survey (CPS-VRS), asking approximately 100,000 people nationwide if they voted in the general election. Responses are paired with county of residence, demographic information (age, sex, race, ethnicity, education, etc.), allowing estimation of voter turnout among various groups and in various places.</p>
 <p>We make one important tweak to the CPS-VRS data: The survey responses are “self-reported” and not independently validated, so there are <a href="http://www.electproject.org/home/voter-turnout/cps-methodology">reporting errors</a> that tend to overestimate turnout, and in a way which differs systematically among states. To account for this, we adjust the turnout probabilities from the CPS-VRS so that when they are post-stratified across the voting eligible population (VEP) of each state, we get the correct total turnout. This was first suggested by <a href="https://www.aramhur.com/uploads/6/0/1/8/60187785/2013._poq_coding_cps.pdf">Achen and Hur</a> and we follow the procedure outlined by <a href="http://www.stat.columbia.edu/~gelman/research/published/misterp.pdf">Ghitza and Gelman</a> (p. 769), to compute the adjustment for each state, using the vote totals from <a href="http://www.electproject.org/home/voter-turnout/voter-turnout-data">United States Election Project</a> and group populations from the ACS.</p>
-<p>Crucially, CPS-VRS data <a href="https://static1.squarespace.com/static/5fac72852ca67743c720d6a1/t/5ff8a986c87fc6090567c6d0/1610131850413/CPS_AFS_2021.pdf">seems to under-report the turnout gaps between White and non-White voters.</a> So all of our results looking at race-specific turnout should be viewed skeptically: the gaps are likely larger than we see in the data, though it's unclear if this comes from over-estimating VOC turnout or under-estimating WNH turnout. There are other publicly available surveys which, when possible, validate survey responses via state voter files, primarily the <a href="https://cces.gov.harvard.edu">CCES</a>. That survey is smaller: approximately 50,000 people surveyed each year, with about 40,000 validated voters. For this post, we stick to the CPS-VRS because it's bigger. In a future post, we may repeat this analysis with the 2020 CCES survey.</p>
+<p>Crucially, CPS-VRS data <a href="https://static1.squarespace.com/static/5fac72852ca67743c720d6a1/t/5ff8a986c87fc6090567c6d0/1610131850413/CPS_AFS_2021.pdf">seems to under-report the turnout gaps between white and non-white voters.</a> So all of our results looking at race-specific turnout should be viewed skeptically: the gaps are likely larger than we see in the data, though it's unclear if this comes from over-estimating VOC turnout or under-estimating WNH turnout. There are other publicly available surveys which, when possible, validate survey responses via state voter files, primarily the <a href="https://cces.gov.harvard.edu">CCES</a>. That survey is smaller: approximately 50,000 people surveyed each year, with about 40,000 validated voters. For this post, we stick to the CPS-VRS because it's bigger. In a future post, we may repeat this analysis with the 2020 CCES survey.</p>
 <p>The 100,000 people surveyed by the CPS-VRS are distributed throughout the country, so there will only be a limited number of people in each state, particularly less populous ones. Once you start breaking those people down by demographic groups, the number of people per group gets quite small. For example, our model has binary groupings for age, sex and education and a 4-category grouping for race and ethnicity. Considering each of the 50 states plus DC, we have <span class="math inline">\(2\times 2 \times 2 \times 4 \times 51 = 1632\)</span> groups. If people were distributed evenly among those groups, we might have 60 or so people in each. But people are not distributed equally among those groups! Some states are smaller and some may not have very many people in some of those categories. So how can we hope to understand any state and race effects in turnout?</p>
 <p>That's where MRP comes in.</p>
 </section>
@@ -1583,7 +1583,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
 <section id="our-basic-model" class="level2">
 <h2>Our Basic Model</h2>
 <p>Our basic model includes age (under 45 or 45-and-over), sex (female or male), education (non-college-graduate or college-graduate), race/ethnicity (Black-non-Hispanic, Hispanic, Asian/Other, and white-non-Hispanic) and state. We recognize that these categories are reductive. In the case of sex we are limited to categories provided by the CPS data. For age and education we've chosen to simplify the categories to keep the modeling simple. For race/ethnicity, we‘re using a slightly richer set of categories, since turnout varies widely among these groups.</p>
-<p>We add a congressional-district-level population-density factor and interactions between education and a binary race term—a simplification of the race categories to white-non-Hispanic (WNH) and non-WNH: a term in the model that estimates the effect of being, e.g., White-non-Hispanic (WNH) <em>and</em> college-educated over and above the effects of being in either category separately. Crucially, we also include an interaction between state and VOC/WNHV, a term which estimates the <em>state-dependent</em> portion of the turnout gap.</p>
+<p>We add a congressional-district-level population-density factor and interactions between education and a binary race term—a simplification of the race categories to white-non-Hispanic (WNH) and non-WNH: a term in the model that estimates the effect of being, e.g., white-non-Hispanic (WNH) <em>and</em> college-educated over and above the effects of being in either category separately. Crucially, we also include an interaction between state and VOC/WNHV, a term which estimates the <em>state-dependent</em> portion of the turnout gap.</p>
 <p>We fit a multi-level model, allowing partial-pooling in the estimate of the national turnout by race, turnout probability in each state, and for the interaction between state and race. A more complex model might:</p>
 <ul>
 <li>Expand the categories: e.g., including religion or marital status.</li>
@@ -1794,7 +1794,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "AK",
                 "Year": "2020",
                 "lo": -9.86864,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 7.397999999999999,
@@ -1802,7 +1802,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "AL",
                 "Year": "2020",
                 "lo": -7.179099999999999,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 10.32911,
@@ -1810,7 +1810,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "AR",
                 "Year": "2020",
                 "lo": -10.120890000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 2.6684,
@@ -1818,7 +1818,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "AZ",
                 "Year": "2020",
                 "lo": -2.7586000000000004,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 2.1314,
@@ -1826,7 +1826,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "CA",
                 "Year": "2020",
                 "lo": -2.1946,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 6.063999999999998,
@@ -1834,7 +1834,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "CO",
                 "Year": "2020",
                 "lo": -5.736000000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 4.5280000000000005,
@@ -1842,7 +1842,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "CT",
                 "Year": "2020",
                 "lo": -4.472,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 4.3726,
@@ -1850,7 +1850,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "DC",
                 "Year": "2020",
                 "lo": -4.1284,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 4.926,
@@ -1858,7 +1858,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "DE",
                 "Year": "2020",
                 "lo": -4.934,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 2.4569,
@@ -1866,7 +1866,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "FL",
                 "Year": "2020",
                 "lo": -2.569,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 5.582000000000001,
@@ -1874,7 +1874,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "GA",
                 "Year": "2020",
                 "lo": -5.2074,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 5.157,
@@ -1882,7 +1882,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "HI",
                 "Year": "2020",
                 "lo": -5.067999999999999,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 7.394,
@@ -1890,7 +1890,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "IA",
                 "Year": "2020",
                 "lo": -8.129,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 10.7902,
@@ -1898,7 +1898,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "ID",
                 "Year": "2020",
                 "lo": -10.459800000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 6.033,
@@ -1906,7 +1906,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "IL",
                 "Year": "2020",
                 "lo": -6.535,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 8.413,
@@ -1914,7 +1914,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "IN",
                 "Year": "2020",
                 "lo": -8.036,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 7.335,
@@ -1922,7 +1922,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "KS",
                 "Year": "2020",
                 "lo": -8.188999999999998,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 6.936099999999999,
@@ -1930,7 +1930,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "KY",
                 "Year": "2020",
                 "lo": -7.424,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 4.856000000000001,
@@ -1938,7 +1938,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "LA",
                 "Year": "2020",
                 "lo": -4.839999999999999,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 3.1290000000000004,
@@ -1946,7 +1946,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "MA",
                 "Year": "2020",
                 "lo": -3.384999999999999,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 3.5969999999999995,
@@ -1954,7 +1954,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "MD",
                 "Year": "2020",
                 "lo": -3.6452000000000004,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 7.1645,
@@ -1962,7 +1962,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "ME",
                 "Year": "2020",
                 "lo": -7.5865,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 3.0719999999999996,
@@ -1970,7 +1970,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "MI",
                 "Year": "2020",
                 "lo": -3.0225,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 5.822,
@@ -1978,7 +1978,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "MN",
                 "Year": "2020",
                 "lo": -5.672,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 6.205,
@@ -1986,7 +1986,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "MO",
                 "Year": "2020",
                 "lo": -6.223,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 9.783800000000001,
@@ -1994,7 +1994,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "MS",
                 "Year": "2020",
                 "lo": -9.4972,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 8.264,
@@ -2002,7 +2002,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "MT",
                 "Year": "2020",
                 "lo": -7.849,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 4.6217,
@@ -2010,7 +2010,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "NC",
                 "Year": "2020",
                 "lo": -4.6663,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 10.7094055,
@@ -2018,7 +2018,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "ND",
                 "Year": "2020",
                 "lo": -10.470594499999999,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 7.847999999999999,
@@ -2026,7 +2026,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "NE",
                 "Year": "2020",
                 "lo": -7.893,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 5.552600000000001,
@@ -2034,7 +2034,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "NH",
                 "Year": "2020",
                 "lo": -6.3,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 2.978,
@@ -2042,7 +2042,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "NJ",
                 "Year": "2020",
                 "lo": -3.0046999999999997,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 4.0120000000000005,
@@ -2050,7 +2050,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "NM",
                 "Year": "2020",
                 "lo": -4.282,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 3.6621999999999995,
@@ -2058,7 +2058,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "NV",
                 "Year": "2020",
                 "lo": -3.7108000000000003,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 2.6417,
@@ -2066,7 +2066,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "NY",
                 "Year": "2020",
                 "lo": -2.7089999999999996,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 5.1264,
@@ -2074,7 +2074,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "OH",
                 "Year": "2020",
                 "lo": -5.4086,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 9.902999999999999,
@@ -2082,7 +2082,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "OK",
                 "Year": "2020",
                 "lo": -9.967,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 6.844,
@@ -2090,7 +2090,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "OR",
                 "Year": "2020",
                 "lo": -7.773,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 3.590999999999999,
@@ -2098,7 +2098,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "PA",
                 "Year": "2020",
                 "lo": -3.4770000000000003,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 10.18584,
@@ -2106,7 +2106,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "RI",
                 "Year": "2020",
                 "lo": -9.65916,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 6.859,
@@ -2114,7 +2114,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "SC",
                 "Year": "2020",
                 "lo": -6.3597,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 10.8477,
@@ -2122,7 +2122,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "SD",
                 "Year": "2020",
                 "lo": -10.0323,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 7.788,
@@ -2130,7 +2130,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "TN",
                 "Year": "2020",
                 "lo": -7.647000000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 4.9543,
@@ -2138,7 +2138,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "TX",
                 "Year": "2020",
                 "lo": -5.045,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 8.91,
@@ -2146,7 +2146,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "UT",
                 "Year": "2020",
                 "lo": -10.323,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 4.501799999999999,
@@ -2154,7 +2154,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "VA",
                 "Year": "2020",
                 "lo": -4.3902,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 10.009419999999999,
@@ -2162,7 +2162,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "VT",
                 "Year": "2020",
                 "lo": -9.51758,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 5.8599999999999985,
@@ -2170,7 +2170,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "WA",
                 "Year": "2020",
                 "lo": -6.060000000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 6.805,
@@ -2178,7 +2178,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "WI",
                 "Year": "2020",
                 "lo": -7.236000000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 8.792,
@@ -2186,7 +2186,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "WV",
                 "Year": "2020",
                 "lo": -8.943000000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 10.3469,
@@ -2194,7 +2194,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
                 "State": "WY",
                 "Year": "2020",
                 "lo": -9.786100000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             }
         ]
     },
@@ -2287,6 +2287,12 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                         "title": "Turnout Gap (%)"
                     },
                     "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            -23,
+                            23
+                        ]
+                    },
                     "field": "mid"
                 },
                 "color": {
@@ -2372,6 +2378,12 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                         "title": "Turnout Gap (%)"
                     },
                     "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            -23,
+                            23
+                        ]
+                    },
                     "field": "mid"
                 },
                 "color": {
@@ -2410,7 +2422,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "AL",
                 "Year": "2020",
                 "lo": -7.179099999999999,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 6.063999999999998,
@@ -2418,7 +2430,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "CO",
                 "Year": "2020",
                 "lo": -5.736000000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 2.4569,
@@ -2426,7 +2438,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "FL",
                 "Year": "2020",
                 "lo": -2.569,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 5.582000000000001,
@@ -2434,7 +2446,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "GA",
                 "Year": "2020",
                 "lo": -5.2074,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 6.033,
@@ -2442,7 +2454,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "IL",
                 "Year": "2020",
                 "lo": -6.535,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 3.1290000000000004,
@@ -2450,7 +2462,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "MA",
                 "Year": "2020",
                 "lo": -3.384999999999999,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 3.0719999999999996,
@@ -2458,7 +2470,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "MI",
                 "Year": "2020",
                 "lo": -3.0225,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 5.552600000000001,
@@ -2466,7 +2478,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "NH",
                 "Year": "2020",
                 "lo": -6.3,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 3.590999999999999,
@@ -2474,7 +2486,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "PA",
                 "Year": "2020",
                 "lo": -3.4770000000000003,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             },
             {
                 "hi": 5.8599999999999985,
@@ -2482,7 +2494,7 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
                 "State": "WA",
                 "Year": "2020",
                 "lo": -6.060000000000001,
-                "Type": "State-Spercific Turnout Gap"
+                "Type": "State-Specific Turnout Gap"
             }
         ]
     },
