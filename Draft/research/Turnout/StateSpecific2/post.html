@@ -1,0 +1,2448 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>State-Specific Turnout Gaps Over Time</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  figure {
+      border: 1px #cccccc solid;
+      padding: 4px;
+      margin: auto
+  }
+  figcaption {
+      font-style: italic;
+      font-size: 12pt;
+      text-align: center;
+  }
+</style>
+
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">June 11, 2021 </div>
+<section id="state-specific-turnout-gaps-2012-to-2020" class="level1">
+<h1>State-Specific Turnout Gaps: 2012 to 2020</h1>
+<ul>
+<li><p>Footnote/section about how these gaps translate to vote shift? Examples could be a state but also a house district. GA/GA-7? TX/TX-2 (Crenshaw, 50% WHNV)? This is a little complicated since the votes gained are: gap * VOC fraction of all voters * [2*(VOC D Pref) - 1]. All of which requires some explaining. And we want to emphasize that it can be a bigger effect in a district than in the state but also important for a whole state.</p></li>
+<li><p>Focus on GA (improvement), PA (always good), CO (VBM?), MO/TX (getting worse?), AZ (always bad)?</p></li>
+</ul>
+<section id="section" class="level2">
+<h2>++++++</h2>
+<p>In our <a href="https://blueripplepolitics.org/blog/voc-turnout-analysis">last research post</a> we introduced a model for using two census data-sets (the <a href="https://www.census.gov/topics/public-sector/voting.html">CPS-VRS</a> for state-level voter turnout and the <a href="https://www.census.gov/programs-surveys/acs">ACS</a> for population counts) to estimate the gap between the turnout of voters-of-color (VOC) and white-non-Hispanic voters (WHNV) in each state. Our interest is in understanding how state-specific differences, e.g., local organizing and policies around voting, contribute to turnout gaps so we looked at the part of the gap remaining after we account for the demographic differences among states: differences in the ages, education levels of both groups and racial/ethnic makeup of the VOC.</p>
+<p>That post focused exclusively on 2020. Here we take a broader view, examining all the elections, presidential and mid-term, since 2012, and looking at the trends in a few states.</p>
+<p>We begin by showing the state-specific turnout gap in all the states, charted along with the model uncertainty. The scale of the charts is a bit large since some of the uncertainties are quite large.</p>
+<figure id="figure_10">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 100,
+    "padding": 5,
+    "width": 120,
+    "title": "State-Specific VOC/WNH Turnout Gap (2012 - 2020)",
+    "data": {
+        "format": {
+            "parse": {}
+        },
+        "values": [
+            {
+                "hi": 24.543499999999998,
+                "mid": -0.21350000000000002,
+                "State": "AK",
+                "Year": 2012,
+                "lo": -24.1765,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.507000000000001,
+                "mid": 1.508,
+                "State": "AL",
+                "Year": 2012,
+                "lo": -5.305,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 14.255,
+                "mid": -17.380000000000003,
+                "State": "AR",
+                "Year": 2012,
+                "lo": -14.250000000000002,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.209999999999999,
+                "mid": -15.299999999999999,
+                "State": "AZ",
+                "Year": 2012,
+                "lo": -5.7700000000000005,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.926,
+                "mid": -10.05,
+                "State": "CA",
+                "Year": 2012,
+                "lo": -5.309999999999998,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.480000000000001,
+                "mid": -16.900000000000002,
+                "State": "CO",
+                "Year": 2012,
+                "lo": -6.899999999999998,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 24.9186,
+                "mid": 0.12140000000000001,
+                "State": "CT",
+                "Year": 2012,
+                "lo": -26.1114,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.454,
+                "mid": 1.772,
+                "State": "DC",
+                "Year": 2012,
+                "lo": -6.612,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 2.600000000000001,
+                "mid": 7.4399999999999995,
+                "State": "DE",
+                "Year": 2012,
+                "lo": -2.256,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.903,
+                "mid": -7.196,
+                "State": "FL",
+                "Year": 2012,
+                "lo": -5.274000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.709999999999999,
+                "mid": -14.32,
+                "State": "GA",
+                "Year": 2012,
+                "lo": -7.950000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.412,
+                "mid": -14.09,
+                "State": "HI",
+                "Year": 2012,
+                "lo": -6.690000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 9.637,
+                "mid": -5.043,
+                "State": "IA",
+                "Year": 2012,
+                "lo": -11.107,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 19.316,
+                "mid": -11.99,
+                "State": "ID",
+                "Year": 2012,
+                "lo": -17.97,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 9.849,
+                "mid": -2.2089999999999996,
+                "State": "IL",
+                "Year": 2012,
+                "lo": -9.981,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.576,
+                "mid": 7.8340000000000005,
+                "State": "IN",
+                "Year": 2012,
+                "lo": -11.158000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 11.147000000000002,
+                "mid": -4.605,
+                "State": "KS",
+                "Year": 2012,
+                "lo": -11.584999999999997,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 8.848,
+                "mid": -11.88,
+                "State": "KY",
+                "Year": 2012,
+                "lo": -8.91,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.943,
+                "mid": 3.857,
+                "State": "LA",
+                "Year": 2012,
+                "lo": -7.7219999999999995,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 24.42835,
+                "mid": 2.165e-2,
+                "State": "MA",
+                "Year": 2012,
+                "lo": -25.08165,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.5225,
+                "mid": -5.349,
+                "State": "MD",
+                "Year": 2012,
+                "lo": -5.611,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 18.355,
+                "mid": -5.315,
+                "State": "ME",
+                "Year": 2012,
+                "lo": -21.715,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.009,
+                "mid": 2.919,
+                "State": "MI",
+                "Year": 2012,
+                "lo": -5.058,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.045,
+                "mid": 1.129,
+                "State": "MN",
+                "Year": 2012,
+                "lo": -6.609,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.669999999999999,
+                "mid": 28.96,
+                "State": "MO",
+                "Year": 2012,
+                "lo": -7.610000000000003,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 23.780260000000002,
+                "mid": 9.974000000000001e-2,
+                "State": "MS",
+                "Year": 2012,
+                "lo": -24.72974,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 21.7774,
+                "mid": -20.9,
+                "State": "MT",
+                "Year": 2012,
+                "lo": -21.159999999999997,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.1134,
+                "mid": -0.4024,
+                "State": "NC",
+                "Year": 2012,
+                "lo": -6.3286,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 14.468,
+                "mid": -7.861,
+                "State": "ND",
+                "Year": 2012,
+                "lo": -14.468999999999998,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 12.455,
+                "mid": 1.125,
+                "State": "NE",
+                "Year": 2012,
+                "lo": -13.715000000000002,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 24.8926,
+                "mid": 0.19740000000000002,
+                "State": "NH",
+                "Year": 2012,
+                "lo": -25.767399999999995,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.64867,
+                "mid": -5.702999999999999,
+                "State": "NJ",
+                "Year": 2012,
+                "lo": -5.817,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.319000000000001,
+                "mid": -9.703000000000001,
+                "State": "NM",
+                "Year": 2012,
+                "lo": -7.266999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.848000000000001,
+                "mid": -4.041,
+                "State": "NV",
+                "Year": 2012,
+                "lo": -5.936,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.1287,
+                "mid": 0.9003000000000001,
+                "State": "NY",
+                "Year": 2012,
+                "lo": -5.4873,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.064,
+                "mid": 6.126,
+                "State": "OH",
+                "Year": 2012,
+                "lo": -5.414,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 15.555,
+                "mid": 3.8350000000000004,
+                "State": "OK",
+                "Year": 2012,
+                "lo": -12.965000000000002,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.08,
+                "mid": 13.120000000000001,
+                "State": "OR",
+                "Year": 2012,
+                "lo": -11.679,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 3.0299999999999994,
+                "mid": 15.09,
+                "State": "PA",
+                "Year": 2012,
+                "lo": -2.9000000000000012,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 24.44191,
+                "mid": 8.09e-3,
+                "State": "RI",
+                "Year": 2012,
+                "lo": -24.63809,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.790000000000002,
+                "mid": 13.74,
+                "State": "SC",
+                "Year": 2012,
+                "lo": -7.000999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 24.671300000000002,
+                "mid": -0.2813,
+                "State": "SD",
+                "Year": 2012,
+                "lo": -24.9587,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 16.03,
+                "mid": 13.489999999999998,
+                "State": "TN",
+                "Year": 2012,
+                "lo": -18.264,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 2.026,
+                "mid": 3.436,
+                "State": "TX",
+                "Year": 2012,
+                "lo": -2.144,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 17.4369,
+                "mid": 0.2131,
+                "State": "UT",
+                "Year": 2012,
+                "lo": -19.6131,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.76144,
+                "mid": -5.702,
+                "State": "VA",
+                "Year": 2012,
+                "lo": -6.018,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 24.536459999999998,
+                "mid": -1.646e-2,
+                "State": "VT",
+                "Year": 2012,
+                "lo": -25.11354,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.8549999999999995,
+                "mid": -9.408,
+                "State": "WA",
+                "Year": 2012,
+                "lo": -6.201999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 11.790000000000001,
+                "mid": -2.78,
+                "State": "WI",
+                "Year": 2012,
+                "lo": -14.21,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 24.5309,
+                "mid": -0.1409,
+                "State": "WV",
+                "Year": 2012,
+                "lo": -24.8491,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 24.9923,
+                "mid": -0.3723,
+                "State": "WY",
+                "Year": 2012,
+                "lo": -24.4777,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 13.86261,
+                "mid": -7.261000000000001e-2,
+                "State": "AK",
+                "Year": 2014,
+                "lo": -12.667390000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.9563000000000015,
+                "mid": 0.4697,
+                "State": "AL",
+                "Year": 2014,
+                "lo": -6.569700000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.056000000000001,
+                "mid": -1.5779999999999998,
+                "State": "AR",
+                "Year": 2014,
+                "lo": -11.722000000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 2.9199999999999995,
+                "mid": -7.371999999999999,
+                "State": "AZ",
+                "Year": 2014,
+                "lo": -2.918000000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 2.1990000000000003,
+                "mid": -8.107000000000001,
+                "State": "CA",
+                "Year": 2014,
+                "lo": -2.163,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.537999999999999,
+                "mid": 4.782,
+                "State": "CO",
+                "Year": 2014,
+                "lo": -6.465999999999999,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.734,
+                "mid": -8.842,
+                "State": "CT",
+                "Year": 2014,
+                "lo": -6.938,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.6014,
+                "mid": -4.253,
+                "State": "DC",
+                "Year": 2014,
+                "lo": -4.742,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.161700000000001,
+                "mid": -5.872,
+                "State": "DE",
+                "Year": 2014,
+                "lo": -4.957999999999999,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.2502999999999997,
+                "mid": -4.093999999999999,
+                "State": "FL",
+                "Year": 2014,
+                "lo": -3.277,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.1657,
+                "mid": 0.9353,
+                "State": "GA",
+                "Year": 2014,
+                "lo": -5.3713,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.816999999999999,
+                "mid": 6.463000000000001,
+                "State": "HI",
+                "Year": 2014,
+                "lo": -4.6930000000000005,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 10.308,
+                "mid": 4.492,
+                "State": "IA",
+                "Year": 2014,
+                "lo": -10.101,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 13.146000000000003,
+                "mid": 1.864,
+                "State": "ID",
+                "Year": 2014,
+                "lo": -12.154000000000002,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 9.351,
+                "mid": 2.7289999999999996,
+                "State": "IL",
+                "Year": 2014,
+                "lo": -8.434,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 8.649000000000001,
+                "mid": 3.991,
+                "State": "IN",
+                "Year": 2014,
+                "lo": -8.074,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 8.594,
+                "mid": 6.2059999999999995,
+                "State": "KS",
+                "Year": 2014,
+                "lo": -8.538,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.949,
+                "mid": -1.8849999999999998,
+                "State": "KY",
+                "Year": 2014,
+                "lo": -7.15,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.220000000000001,
+                "mid": -3.787,
+                "State": "LA",
+                "Year": 2014,
+                "lo": -5.145,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.6222,
+                "mid": -5.213,
+                "State": "MA",
+                "Year": 2014,
+                "lo": -4.516,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.1819999999999995,
+                "mid": -1.396,
+                "State": "MD",
+                "Year": 2014,
+                "lo": -4.256,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.797,
+                "mid": 2.863,
+                "State": "ME",
+                "Year": 2014,
+                "lo": -11.481000000000002,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.7553,
+                "mid": -0.9343,
+                "State": "MI",
+                "Year": 2014,
+                "lo": -3.6906999999999996,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 7.439,
+                "mid": -5.869,
+                "State": "MN",
+                "Year": 2014,
+                "lo": -7.431000000000002,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 8.010000000000002,
+                "mid": 10.2,
+                "State": "MO",
+                "Year": 2014,
+                "lo": -7.933,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 14.119599999999998,
+                "mid": 0.13040000000000002,
+                "State": "MS",
+                "Year": 2014,
+                "lo": -14.890400000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 12.032,
+                "mid": -2.281,
+                "State": "MT",
+                "Year": 2014,
+                "lo": -11.759,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.758,
+                "mid": 1.394,
+                "State": "NC",
+                "Year": 2014,
+                "lo": -4.849,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 12.722,
+                "mid": 5.367999999999999,
+                "State": "ND",
+                "Year": 2014,
+                "lo": -11.402,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 9.443,
+                "mid": -2.606,
+                "State": "NE",
+                "Year": 2014,
+                "lo": -9.144,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 9.079999999999998,
+                "mid": 15.45,
+                "State": "NH",
+                "Year": 2014,
+                "lo": -8.856,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.6767000000000003,
+                "mid": -0.7387,
+                "State": "NJ",
+                "Year": 2014,
+                "lo": -3.5993000000000004,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 1.277,
+                "mid": 2.886,
+                "State": "NM",
+                "Year": 2014,
+                "lo": -1.097,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.6210000000000004,
+                "mid": -5.877000000000001,
+                "State": "NV",
+                "Year": 2014,
+                "lo": -3.917,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 2.7689999999999997,
+                "mid": 1.5810000000000002,
+                "State": "NY",
+                "Year": 2014,
+                "lo": -2.609,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.4354,
+                "mid": 0.6636000000000001,
+                "State": "OH",
+                "Year": 2014,
+                "lo": -4.5806000000000004,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 13.8632,
+                "mid": -0.10319999999999999,
+                "State": "OK",
+                "Year": 2014,
+                "lo": -13.4268,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.363,
+                "mid": -2.3529999999999998,
+                "State": "OR",
+                "Year": 2014,
+                "lo": -10.477,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.106000000000001,
+                "mid": 5.747,
+                "State": "PA",
+                "Year": 2014,
+                "lo": -4.029,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 13.42256,
+                "mid": -9.255999999999999e-2,
+                "State": "RI",
+                "Year": 2014,
+                "lo": -13.53744,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.986,
+                "mid": -4.331,
+                "State": "SC",
+                "Year": 2014,
+                "lo": -5.789,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 13.021000000000003,
+                "mid": 4.9e-2,
+                "State": "SD",
+                "Year": 2014,
+                "lo": -13.158999999999999,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 10.007000000000001,
+                "mid": 6.673,
+                "State": "TN",
+                "Year": 2014,
+                "lo": -9.19,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 1.989,
+                "mid": -4.426,
+                "State": "TX",
+                "Year": 2014,
+                "lo": -1.9889999999999999,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.063,
+                "mid": 3.547,
+                "State": "UT",
+                "Year": 2014,
+                "lo": -9.371,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.6846,
+                "mid": -5.019,
+                "State": "VA",
+                "Year": 2014,
+                "lo": -4.588,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 14.670799999999998,
+                "mid": -0.1208,
+                "State": "VT",
+                "Year": 2014,
+                "lo": -13.859200000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.429790000000001,
+                "mid": -5.457,
+                "State": "WA",
+                "Year": 2014,
+                "lo": -5.443,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 10.76,
+                "mid": -6.8180000000000005,
+                "State": "WI",
+                "Year": 2014,
+                "lo": -10.701999999999998,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 10.991000000000001,
+                "mid": -4.4110000000000005,
+                "State": "WV",
+                "Year": 2014,
+                "lo": -10.499,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 13.68917,
+                "mid": -7.917e-2,
+                "State": "WY",
+                "Year": 2014,
+                "lo": -13.17083,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 22.468200000000003,
+                "mid": 0.1518,
+                "State": "AK",
+                "Year": 2016,
+                "lo": -22.511799999999997,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 9.103,
+                "mid": 1.957,
+                "State": "AL",
+                "Year": 2016,
+                "lo": -9.673000000000002,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 22.1513,
+                "mid": -0.1213,
+                "State": "AR",
+                "Year": 2016,
+                "lo": -23.3487,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.269999999999999,
+                "mid": -16.259999999999998,
+                "State": "AZ",
+                "Year": 2016,
+                "lo": -4.539999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.014000000000001,
+                "mid": -12.620000000000001,
+                "State": "CA",
+                "Year": 2016,
+                "lo": -4.289999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.947,
+                "mid": 3.263,
+                "State": "CO",
+                "Year": 2016,
+                "lo": -7.504,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.488100000000001,
+                "mid": -7.42,
+                "State": "CT",
+                "Year": 2016,
+                "lo": -6.580000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.714,
+                "mid": -10.24,
+                "State": "DC",
+                "Year": 2016,
+                "lo": -5.66,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.656999999999999,
+                "mid": -14.42,
+                "State": "DE",
+                "Year": 2016,
+                "lo": -6.7299999999999995,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.23,
+                "mid": -16.150000000000002,
+                "State": "FL",
+                "Year": 2016,
+                "lo": -4.380000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.293500000000001,
+                "mid": 0.43550000000000005,
+                "State": "GA",
+                "Year": 2016,
+                "lo": -6.7395,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.9959999999999996,
+                "mid": -14.64,
+                "State": "HI",
+                "Year": 2016,
+                "lo": -6.090000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 14.762999999999998,
+                "mid": -16.82,
+                "State": "IA",
+                "Year": 2016,
+                "lo": -14.910000000000004,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 21.9417,
+                "mid": 0.1483,
+                "State": "ID",
+                "Year": 2016,
+                "lo": -22.828300000000002,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.6850000000000005,
+                "mid": 1.3390000000000002,
+                "State": "IL",
+                "Year": 2016,
+                "lo": -8.187999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 11.115,
+                "mid": 5.175,
+                "State": "IN",
+                "Year": 2016,
+                "lo": -11.37,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 9.0091,
+                "mid": -8.756,
+                "State": "KS",
+                "Year": 2016,
+                "lo": -9.424,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 8.488000000000001,
+                "mid": 2.282,
+                "State": "KY",
+                "Year": 2016,
+                "lo": -8.562,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.06799,
+                "mid": -2.899e-2,
+                "State": "LA",
+                "Year": 2016,
+                "lo": -5.94201,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.362000000000001,
+                "mid": -11.600000000000001,
+                "State": "MA",
+                "Year": 2016,
+                "lo": -4.65,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.3053,
+                "mid": 0.7287,
+                "State": "MD",
+                "Year": 2016,
+                "lo": -5.3007,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 8.684,
+                "mid": 4.836,
+                "State": "ME",
+                "Year": 2016,
+                "lo": -10.267999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.3739,
+                "mid": -0.5549000000000001,
+                "State": "MI",
+                "Year": 2016,
+                "lo": -4.7601,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.647000000000001,
+                "mid": 8.323,
+                "State": "MN",
+                "Year": 2016,
+                "lo": -8.6931,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 8.826999999999998,
+                "mid": -10.35,
+                "State": "MO",
+                "Year": 2016,
+                "lo": -9.070000000000002,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 22.7315,
+                "mid": 0.4285,
+                "State": "MS",
+                "Year": 2016,
+                "lo": -23.808500000000002,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 14.105,
+                "mid": -0.475,
+                "State": "MT",
+                "Year": 2016,
+                "lo": -14.015,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.629,
+                "mid": 3.615,
+                "State": "NC",
+                "Year": 2016,
+                "lo": -5.841,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 23.2704,
+                "mid": -0.2404,
+                "State": "ND",
+                "Year": 2016,
+                "lo": -21.6796,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.020000000000001,
+                "mid": 5.09,
+                "State": "NE",
+                "Year": 2016,
+                "lo": -10.171,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.192,
+                "mid": 1.6969999999999998,
+                "State": "NH",
+                "Year": 2016,
+                "lo": -8.368,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.6273,
+                "mid": -4.152,
+                "State": "NJ",
+                "Year": 2016,
+                "lo": -4.631,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.1508,
+                "mid": -4.968,
+                "State": "NM",
+                "Year": 2016,
+                "lo": -5.472,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.970716,
+                "mid": 7.284e-3,
+                "State": "NV",
+                "Year": 2016,
+                "lo": -5.222284,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.214999999999999,
+                "mid": -8.703,
+                "State": "NY",
+                "Year": 2016,
+                "lo": -4.467000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.678000000000001,
+                "mid": 4.032,
+                "State": "OH",
+                "Year": 2016,
+                "lo": -6.7540000000000004,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 22.9662,
+                "mid": -1.62e-2,
+                "State": "OK",
+                "Year": 2016,
+                "lo": -22.5838,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 11.789,
+                "mid": -7.879,
+                "State": "OR",
+                "Year": 2016,
+                "lo": -12.601,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 3.469999999999998,
+                "mid": 17.66,
+                "State": "PA",
+                "Year": 2016,
+                "lo": -3.340000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 23.34642,
+                "mid": -2.6420000000000003e-2,
+                "State": "RI",
+                "Year": 2016,
+                "lo": -23.14358,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 8.369999999999997,
+                "mid": 11.98,
+                "State": "SC",
+                "Year": 2016,
+                "lo": -8.981,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 23.0021,
+                "mid": -0.1421,
+                "State": "SD",
+                "Year": 2016,
+                "lo": -22.527900000000002,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 11.004000000000001,
+                "mid": 2.696,
+                "State": "TN",
+                "Year": 2016,
+                "lo": -10.824,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.524000000000001,
+                "mid": -16.32,
+                "State": "TX",
+                "Year": 2016,
+                "lo": -6.289999999999998,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 21.12,
+                "mid": 3.56,
+                "State": "UT",
+                "Year": 2016,
+                "lo": -21.17,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.89,
+                "mid": 22.08,
+                "State": "VA",
+                "Year": 2016,
+                "lo": -4.929999999999998,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 23.4182,
+                "mid": -0.4182,
+                "State": "VT",
+                "Year": 2016,
+                "lo": -23.2418,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.187,
+                "mid": -4.796,
+                "State": "WA",
+                "Year": 2016,
+                "lo": -7.284,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 12.983,
+                "mid": 8.197000000000001,
+                "State": "WI",
+                "Year": 2016,
+                "lo": -11.415000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 18.689999999999998,
+                "mid": 19.689999999999998,
+                "State": "WV",
+                "Year": 2016,
+                "lo": -12.057,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 22.6474,
+                "mid": 0.2026,
+                "State": "WY",
+                "Year": 2016,
+                "lo": -22.5426,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.70177,
+                "mid": 8.823e-2,
+                "State": "AK",
+                "Year": 2018,
+                "lo": -10.51823,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 7.469,
+                "mid": -5.103,
+                "State": "AL",
+                "Year": 2018,
+                "lo": -7.757,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.182640000000001,
+                "mid": 6.736e-2,
+                "State": "AR",
+                "Year": 2018,
+                "lo": -10.87736,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 2.769,
+                "mid": -5.71,
+                "State": "AZ",
+                "Year": 2018,
+                "lo": -2.912000000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 2.2329999999999997,
+                "mid": -3.768,
+                "State": "CA",
+                "Year": 2018,
+                "lo": -2.2790000000000004,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.76,
+                "mid": 2.025,
+                "State": "CO",
+                "Year": 2018,
+                "lo": -6.464,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.1031,
+                "mid": 0.7059,
+                "State": "CT",
+                "Year": 2018,
+                "lo": -4.8639,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.6129999999999995,
+                "mid": -1.455,
+                "State": "DC",
+                "Year": 2018,
+                "lo": -4.659,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.309,
+                "mid": -1.7229999999999999,
+                "State": "DE",
+                "Year": 2018,
+                "lo": -5.277000000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 2.9530000000000003,
+                "mid": -8.022,
+                "State": "FL",
+                "Year": 2018,
+                "lo": -2.7980000000000005,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.660399999999999,
+                "mid": 0.9416000000000001,
+                "State": "GA",
+                "Year": 2018,
+                "lo": -5.4656,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.037999999999999,
+                "mid": 3.5000000000000004,
+                "State": "HI",
+                "Year": 2018,
+                "lo": -5.055000000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 8.8672,
+                "mid": 0.2218,
+                "State": "IA",
+                "Year": 2018,
+                "lo": -9.0778,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.2324,
+                "mid": -0.2224,
+                "State": "ID",
+                "Year": 2018,
+                "lo": -10.4076,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.18,
+                "mid": 5.34,
+                "State": "IL",
+                "Year": 2018,
+                "lo": -6.1401,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 8.609,
+                "mid": 1.304,
+                "State": "IN",
+                "Year": 2018,
+                "lo": -8.220999999999998,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 7.819000000000001,
+                "mid": 5.840999999999999,
+                "State": "KS",
+                "Year": 2018,
+                "lo": -7.261999999999999,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.673,
+                "mid": 3.254,
+                "State": "KY",
+                "Year": 2018,
+                "lo": -6.447,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.646,
+                "mid": -1.111,
+                "State": "LA",
+                "Year": 2018,
+                "lo": -4.497,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.4039,
+                "mid": 0.8021,
+                "State": "MA",
+                "Year": 2018,
+                "lo": -3.2961000000000005,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.063,
+                "mid": -5.398,
+                "State": "MD",
+                "Year": 2018,
+                "lo": -4.392,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 8.631,
+                "mid": -3.5909999999999997,
+                "State": "ME",
+                "Year": 2018,
+                "lo": -8.819,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.476,
+                "mid": 6.644,
+                "State": "MI",
+                "Year": 2018,
+                "lo": -3.496,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.98,
+                "mid": 10.74,
+                "State": "MN",
+                "Year": 2018,
+                "lo": -6.672000000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.987499999999999,
+                "mid": -7.367999999999999,
+                "State": "MO",
+                "Year": 2018,
+                "lo": -7.132,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.0695,
+                "mid": -1.95e-2,
+                "State": "MS",
+                "Year": 2018,
+                "lo": -11.3505,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 9.1,
+                "mid": -4.9,
+                "State": "MT",
+                "Year": 2018,
+                "lo": -9.06,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.3151,
+                "mid": -0.5460999999999999,
+                "State": "NC",
+                "Year": 2018,
+                "lo": -5.1909,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.1068,
+                "mid": -0.23679999999999998,
+                "State": "ND",
+                "Year": 2018,
+                "lo": -10.443200000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 7.800999999999999,
+                "mid": -4.218999999999999,
+                "State": "NE",
+                "Year": 2018,
+                "lo": -7.481000000000002,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.4879999999999995,
+                "mid": 2.196,
+                "State": "NH",
+                "Year": 2018,
+                "lo": -6.321000000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.4633,
+                "mid": -3.33e-2,
+                "State": "NJ",
+                "Year": 2018,
+                "lo": -3.3407,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.977,
+                "mid": -6.512,
+                "State": "NM",
+                "Year": 2018,
+                "lo": -3.958,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.8530000000000006,
+                "mid": -10.190000000000001,
+                "State": "NV",
+                "Year": 2018,
+                "lo": -4.040000000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 2.751,
+                "mid": 4.745,
+                "State": "NY",
+                "Year": 2018,
+                "lo": -2.74,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.324000000000001,
+                "mid": -8.616,
+                "State": "OH",
+                "Year": 2018,
+                "lo": -6.6339999999999995,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 10.7712,
+                "mid": 0.17880000000000001,
+                "State": "OK",
+                "Year": 2018,
+                "lo": -10.908800000000001,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 9.279,
+                "mid": 4.611,
+                "State": "OR",
+                "Year": 2018,
+                "lo": -9.012999999999998,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 3.8599999999999994,
+                "mid": 10.41,
+                "State": "PA",
+                "Year": 2018,
+                "lo": -3.8529999999999993,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.4641,
+                "mid": -7.41e-2,
+                "State": "RI",
+                "Year": 2018,
+                "lo": -10.7859,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 6.8542000000000005,
+                "mid": 0.6148,
+                "State": "SC",
+                "Year": 2018,
+                "lo": -7.1018,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 10.5542,
+                "mid": 0.1158,
+                "State": "SD",
+                "Year": 2018,
+                "lo": -10.9458,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 8.360999999999999,
+                "mid": 2.669,
+                "State": "TN",
+                "Year": 2018,
+                "lo": -8.309,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 4.7655,
+                "mid": -5.731,
+                "State": "TX",
+                "Year": 2018,
+                "lo": -4.879,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 9.828000000000001,
+                "mid": -4.843999999999999,
+                "State": "UT",
+                "Year": 2018,
+                "lo": -10.356,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.206999999999999,
+                "mid": 4.692,
+                "State": "VA",
+                "Year": 2018,
+                "lo": -5.2142,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.259780000000001,
+                "mid": -4.978e-2,
+                "State": "VT",
+                "Year": 2018,
+                "lo": -10.780219999999998,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 5.647,
+                "mid": 8.863,
+                "State": "WA",
+                "Year": 2018,
+                "lo": -5.323,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 8.918000000000001,
+                "mid": -1.133,
+                "State": "WI",
+                "Year": 2018,
+                "lo": -8.851999999999999,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 10.786000000000001,
+                "mid": 6.694,
+                "State": "WV",
+                "Year": 2018,
+                "lo": -9.648,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 11.08315,
+                "mid": -5.3149999999999996e-2,
+                "State": "WY",
+                "Year": 2018,
+                "lo": -11.15685,
+                "Type": "Mid-term"
+            },
+            {
+                "hi": 10.38168,
+                "mid": 5.832e-2,
+                "State": "AK",
+                "Year": 2020,
+                "lo": -10.61832,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.548000000000001,
+                "mid": 7.5920000000000005,
+                "State": "AL",
+                "Year": 2020,
+                "lo": -7.3688,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.42483,
+                "mid": -4.483e-2,
+                "State": "AR",
+                "Year": 2020,
+                "lo": -10.57517,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 2.6775,
+                "mid": -0.5915,
+                "State": "AZ",
+                "Year": 2020,
+                "lo": -2.6355,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 2.0688999999999997,
+                "mid": -0.5439,
+                "State": "CA",
+                "Year": 2020,
+                "lo": -2.1951,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.7940000000000005,
+                "mid": 7.486,
+                "State": "CO",
+                "Year": 2020,
+                "lo": -5.638,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.2700000000000005,
+                "mid": -1.217,
+                "State": "CT",
+                "Year": 2020,
+                "lo": -4.723,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.5485,
+                "mid": 0.5665,
+                "State": "DC",
+                "Year": 2020,
+                "lo": -4.1675,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.909,
+                "mid": 3.474,
+                "State": "DE",
+                "Year": 2020,
+                "lo": -4.917,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 2.5106,
+                "mid": -2.986,
+                "State": "FL",
+                "Year": 2020,
+                "lo": -2.6039999999999996,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.577000000000001,
+                "mid": 5.872999999999999,
+                "State": "GA",
+                "Year": 2020,
+                "lo": -5.2764,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.138,
+                "mid": -1.757,
+                "State": "HI",
+                "Year": 2020,
+                "lo": -5.009999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.722999999999999,
+                "mid": -2.552,
+                "State": "IA",
+                "Year": 2020,
+                "lo": -8.527999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 9.9591,
+                "mid": 0.1809,
+                "State": "ID",
+                "Year": 2020,
+                "lo": -10.048900000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.404999999999999,
+                "mid": -8.045,
+                "State": "IL",
+                "Year": 2020,
+                "lo": -6.734999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 8.274000000000001,
+                "mid": 4.026,
+                "State": "IN",
+                "Year": 2020,
+                "lo": -8.027999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.465000000000001,
+                "mid": -5.9110000000000005,
+                "State": "KS",
+                "Year": 2020,
+                "lo": -7.658999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.8043,
+                "mid": -6.136,
+                "State": "KY",
+                "Year": 2020,
+                "lo": -7.094,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.759,
+                "mid": -3.44,
+                "State": "LA",
+                "Year": 2020,
+                "lo": -4.614,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 3.3589999999999995,
+                "mid": -6.334,
+                "State": "MA",
+                "Year": 2020,
+                "lo": -3.577000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 3.691,
+                "mid": 3.3390000000000004,
+                "State": "MD",
+                "Year": 2020,
+                "lo": -3.6246,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.1045,
+                "mid": 0.5585,
+                "State": "ME",
+                "Year": 2020,
+                "lo": -7.9315,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 3.1200000000000006,
+                "mid": 3.483,
+                "State": "MI",
+                "Year": 2020,
+                "lo": -3.031,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.359,
+                "mid": 2.535,
+                "State": "MN",
+                "Year": 2020,
+                "lo": -5.882,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.246,
+                "mid": 4.904,
+                "State": "MO",
+                "Year": 2020,
+                "lo": -6.3149999999999995,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.450660000000001,
+                "mid": 7.934e-2,
+                "State": "MS",
+                "Year": 2020,
+                "lo": -10.05534,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.858,
+                "mid": 3.072,
+                "State": "MT",
+                "Year": 2020,
+                "lo": -8.017000000000001,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.6899,
+                "mid": 0.20010000000000003,
+                "State": "NC",
+                "Year": 2020,
+                "lo": -4.7651,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.468419999999998,
+                "mid": 7.158e-2,
+                "State": "ND",
+                "Year": 2020,
+                "lo": -10.25158,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.7826,
+                "mid": 0.9874,
+                "State": "NE",
+                "Year": 2020,
+                "lo": -7.8233999999999995,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.6122,
+                "mid": -6.12,
+                "State": "NH",
+                "Year": 2020,
+                "lo": -5.9799999999999995,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 2.953,
+                "mid": 2.891,
+                "State": "NJ",
+                "Year": 2020,
+                "lo": -2.9697800000000005,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.236,
+                "mid": 1.11,
+                "State": "NM",
+                "Year": 2020,
+                "lo": -4.346,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 3.535,
+                "mid": -0.125,
+                "State": "NV",
+                "Year": 2020,
+                "lo": -3.787,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 2.537,
+                "mid": -1.66,
+                "State": "NY",
+                "Year": 2020,
+                "lo": -2.789,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.2616,
+                "mid": 0.3534,
+                "State": "OH",
+                "Year": 2020,
+                "lo": -5.3334,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.18362,
+                "mid": -8.362e-2,
+                "State": "OK",
+                "Year": 2020,
+                "lo": -10.36638,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.255000000000001,
+                "mid": -1.704,
+                "State": "OR",
+                "Year": 2020,
+                "lo": -7.6850000000000005,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 3.3859999999999992,
+                "mid": 5.893000000000001,
+                "State": "PA",
+                "Year": 2020,
+                "lo": -3.583,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.4328,
+                "mid": 0.1472,
+                "State": "RI",
+                "Year": 2020,
+                "lo": -9.9082,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 7.020999999999999,
+                "mid": 5.659,
+                "State": "SC",
+                "Year": 2020,
+                "lo": -6.665,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 11.0626,
+                "mid": -0.1626,
+                "State": "SD",
+                "Year": 2020,
+                "lo": -10.1474,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 8.036999999999999,
+                "mid": 3.113,
+                "State": "TN",
+                "Year": 2020,
+                "lo": -7.745,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.9655000000000005,
+                "mid": -4.601,
+                "State": "TX",
+                "Year": 2020,
+                "lo": -5.325,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 8.89,
+                "mid": -5.446,
+                "State": "UT",
+                "Year": 2020,
+                "lo": -10.413999999999998,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 4.6647,
+                "mid": 0.3023,
+                "State": "VA",
+                "Year": 2020,
+                "lo": -4.6803,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 9.5096,
+                "mid": -4.76e-2,
+                "State": "VT",
+                "Year": 2020,
+                "lo": -9.299399999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 5.6800000000000015,
+                "mid": -16.27,
+                "State": "WA",
+                "Year": 2020,
+                "lo": -5.699999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 6.966,
+                "mid": 1.4489999999999998,
+                "State": "WI",
+                "Year": 2020,
+                "lo": -7.289999999999999,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 9.200999999999999,
+                "mid": 1.149,
+                "State": "WV",
+                "Year": 2020,
+                "lo": -9.186,
+                "Type": "Presidential"
+            },
+            {
+                "hi": 10.1558,
+                "mid": 0.1042,
+                "State": "WY",
+                "Year": 2020,
+                "lo": -10.3442,
+                "Type": "Presidential"
+            }
+        ]
+    },
+    "spec": {
+        "layer": [
+            {
+                "encoding": {
+                    "yError": {
+                        "type": "quantitative",
+                        "field": "lo"
+                    },
+                    "y": {
+                        "type": "quantitative",
+                        "field": "mid"
+                    },
+                    "x": {
+                        "axis": {
+                            "format": "d",
+                            "formatType": "number"
+                        },
+                        "type": "quantitative",
+                        "field": "Year"
+                    },
+                    "yError2": {
+                        "type": "quantitative",
+                        "field": "hi"
+                    }
+                },
+                "mark": "errorband"
+            },
+            {
+                "encoding": {
+                    "y": {
+                        "datum": 0
+                    },
+                    "x": {
+                        "axis": {
+                            "format": "d",
+                            "formatType": "number"
+                        },
+                        "type": "quantitative",
+                        "field": "Year"
+                    }
+                },
+                "mark": "line"
+            },
+            {
+                "encoding": {
+                    "y": {
+                        "type": "quantitative",
+                        "field": "mid"
+                    },
+                    "x": {
+                        "axis": {
+                            "format": "d",
+                            "formatType": "number"
+                        },
+                        "type": "quantitative",
+                        "field": "Year"
+                    }
+                },
+                "mark": {
+                    "color": "orange",
+                    "type": "line",
+                    "size": 1
+                }
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 100,
+            "discreteHeight": 100,
+            "continuousWidth": 120,
+            "discreteWidth": 120
+        }
+    },
+    "facet": {
+        "type": "nominal",
+        "field": "State"
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "columns": 4
+};
+vegaEmbed('#figure_10',vlSpec,{"renderer": "canvas"});</script>
+<figcaption>
+State-Specific Turnout Gaps over Time (NB: Each state has its own turnout scale)
+</figcaption>
+</figure>
+<p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple">Github</a> page.</em></p>
+</section>
+</section>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
