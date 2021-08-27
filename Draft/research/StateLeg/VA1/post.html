@@ -1,0 +1,295 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virginia Lower House</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  figure {
+      border: 1px #cccccc solid;
+      padding: 4px;
+      margin: auto
+  }
+  figcaption {
+      font-style: italic;
+      font-size: 12pt;
+      text-align: center;
+  }
+</style>
+
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">August 27, 2021 </div>
+<section id="va-lower-house" class="level3">
+<h3>VA Lower House</h3>
+<div class="brTableTitle">VA Lower Model (2018 data)</div>
+<table class="brTable"><thead><tr><th>State </th><th>District</th><th>5%</th><th>50%</th><th>95%</th></tr></thead><tbody><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">1</td><td style="; color: green" data-label="5%">26.59</td><td style="; color: green" data-label="50%">28.01</td><td style="; color: green" data-label="95%">29.46</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">2</td><td style="; color: green" data-label="5%">50.86</td><td style="; color: green" data-label="50%">53.95</td><td style="; color: green" data-label="95%">57.19</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">3</td><td style="; color: green" data-label="5%">26.90</td><td style="; color: green" data-label="50%">28.30</td><td style="; color: green" data-label="95%">29.75</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">4</td><td style="; color: green" data-label="5%">26.12</td><td style="; color: green" data-label="50%">27.56</td><td style="; color: green" data-label="95%">29.00</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">5</td><td style="; color: green" data-label="5%">29.69</td><td style="; color: green" data-label="50%">31.07</td><td style="; color: green" data-label="95%">32.48</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">6</td><td style="; color: green" data-label="5%">25.87</td><td style="; color: green" data-label="50%">27.38</td><td style="; color: green" data-label="95%">28.91</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">7</td><td style="; color: green" data-label="5%">29.36</td><td style="; color: green" data-label="50%">30.83</td><td style="; color: green" data-label="95%">32.30</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">8</td><td style="; color: green" data-label="5%">31.32</td><td style="; color: green" data-label="50%">32.73</td><td style="; color: green" data-label="95%">34.16</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">9</td><td style="; color: green" data-label="5%">28.86</td><td style="; color: green" data-label="50%">30.35</td><td style="; color: green" data-label="95%">31.87</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">10</td><td style="; color: green" data-label="5%">41.11</td><td style="; color: green" data-label="50%">43.31</td><td style="; color: green" data-label="95%">45.72</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">11</td><td style="; color: green" data-label="5%">54.42</td><td style="; color: green" data-label="50%">55.68</td><td style="; color: green" data-label="95%">56.85</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">12</td><td style="; color: green" data-label="5%">34.60</td><td style="; color: green" data-label="50%">35.80</td><td style="; color: green" data-label="95%">37.02</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">13</td><td style="; color: green" data-label="5%">51.25</td><td style="; color: green" data-label="50%">55.61</td><td style="; color: green" data-label="95%">59.78</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">14</td><td style="; color: green" data-label="5%">42.47</td><td style="; color: green" data-label="50%">43.96</td><td style="; color: green" data-label="95%">45.46</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">15</td><td style="; color: green" data-label="5%">28.03</td><td style="; color: green" data-label="50%">29.54</td><td style="; color: green" data-label="95%">31.14</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">16</td><td style="; color: green" data-label="5%">34.93</td><td style="; color: green" data-label="50%">36.66</td><td style="; color: green" data-label="95%">38.41</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">17</td><td style="; color: green" data-label="5%">42.80</td><td style="; color: green" data-label="50%">43.69</td><td style="; color: green" data-label="95%">44.58</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">18</td><td style="; color: green" data-label="5%">31.11</td><td style="; color: green" data-label="50%">33.00</td><td style="; color: green" data-label="95%">34.99</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">19</td><td style="; color: green" data-label="5%">27.94</td><td style="; color: green" data-label="50%">29.44</td><td style="; color: green" data-label="95%">30.98</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">20</td><td style="; color: green" data-label="5%">29.84</td><td style="; color: green" data-label="50%">31.44</td><td style="; color: green" data-label="95%">33.06</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">21</td><td style="; color: green" data-label="5%">56.08</td><td style="; color: green" data-label="50%">57.89</td><td style="; color: green" data-label="95%">59.49</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">22</td><td style="; color: green" data-label="5%">37.49</td><td style="; color: green" data-label="50%">38.83</td><td style="; color: green" data-label="95%">40.19</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">23</td><td style="; color: green" data-label="5%">38.93</td><td style="; color: green" data-label="50%">40.22</td><td style="; color: green" data-label="95%">41.55</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">24</td><td style="; color: green" data-label="5%">26.08</td><td style="; color: green" data-label="50%">27.72</td><td style="; color: green" data-label="95%">29.41</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">25</td><td style="; color: green" data-label="5%">32.16</td><td style="; color: green" data-label="50%">33.63</td><td style="; color: green" data-label="95%">35.12</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">26</td><td style="; color: green" data-label="5%">34.11</td><td style="; color: green" data-label="50%">36.58</td><td style="; color: green" data-label="95%">39.57</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">27</td><td style="; color: green" data-label="5%">52.20</td><td style="; color: green" data-label="50%">53.31</td><td style="; color: green" data-label="95%">54.38</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">28</td><td style="; color: green" data-label="5%">46.72</td><td style="; color: green" data-label="50%">48.83</td><td style="; color: green" data-label="95%">50.98</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">29</td><td style="; color: green" data-label="5%">34.02</td><td style="; color: green" data-label="50%">35.61</td><td style="; color: green" data-label="95%">37.29</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">30</td><td style="; color: green" data-label="5%">31.72</td><td style="; color: green" data-label="50%">33.53</td><td style="; color: green" data-label="95%">35.43</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">31</td><td style="; color: green" data-label="5%">45.05</td><td style="; color: green" data-label="50%">47.86</td><td style="; color: green" data-label="95%">51.01</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">32</td><td style="; color: green" data-label="5%">53.50</td><td style="; color: green" data-label="50%">55.59</td><td style="; color: green" data-label="95%">57.42</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">33</td><td style="; color: green" data-label="5%">38.51</td><td style="; color: green" data-label="50%">39.96</td><td style="; color: green" data-label="95%">41.42</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">34</td><td style="; color: green" data-label="5%">49.92</td><td style="; color: green" data-label="50%">51.29</td><td style="; color: green" data-label="95%">52.58</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">35</td><td style="; color: green" data-label="5%">55.37</td><td style="; color: green" data-label="50%">57.22</td><td style="; color: green" data-label="95%">58.85</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">36</td><td style="; color: green" data-label="5%">54.26</td><td style="; color: green" data-label="50%">56.00</td><td style="; color: green" data-label="95%">57.50</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">37</td><td style="; color: green" data-label="5%">55.52</td><td style="; color: green" data-label="50%">57.93</td><td style="; color: green" data-label="95%">60.02</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">38</td><td style="; color: green" data-label="5%">55.90</td><td style="; color: green" data-label="50%">60.99</td><td style="; color: green" data-label="95%">65.31</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">39</td><td style="; color: green" data-label="5%">54.83</td><td style="; color: green" data-label="50%">57.82</td><td style="; color: green" data-label="95%">60.41</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">40</td><td style="; color: green" data-label="5%">46.68</td><td style="; color: green" data-label="50%">48.57</td><td style="; color: green" data-label="95%">50.42</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">41</td><td style="; color: green" data-label="5%">55.40</td><td style="; color: green" data-label="50%">57.79</td><td style="; color: green" data-label="95%">59.78</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">42</td><td style="; color: green" data-label="5%">49.86</td><td style="; color: green" data-label="50%">51.81</td><td style="; color: green" data-label="95%">53.65</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">43</td><td style="; color: green" data-label="5%">57.61</td><td style="; color: green" data-label="50%">60.12</td><td style="; color: green" data-label="95%">62.24</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">44</td><td style="; color: green" data-label="5%">56.00</td><td style="; color: green" data-label="50%">60.07</td><td style="; color: green" data-label="95%">63.77</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">45</td><td style="; color: green" data-label="5%">58.68</td><td style="; color: green" data-label="50%">60.51</td><td style="; color: green" data-label="95%">62.06</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">46</td><td style="; color: green" data-label="5%">64.46</td><td style="; color: green" data-label="50%">67.24</td><td style="; color: green" data-label="95%">69.44</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">47</td><td style="; color: green" data-label="5%">59.14</td><td style="; color: green" data-label="50%">61.46</td><td style="; color: green" data-label="95%">63.33</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">48</td><td style="; color: green" data-label="5%">54.36</td><td style="; color: green" data-label="50%">55.95</td><td style="; color: green" data-label="95%">57.27</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">49</td><td style="; color: green" data-label="5%">62.71</td><td style="; color: green" data-label="50%">66.35</td><td style="; color: green" data-label="95%">69.14</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">50</td><td style="; color: green" data-label="5%">52.60</td><td style="; color: green" data-label="50%">57.14</td><td style="; color: green" data-label="95%">61.36</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">51</td><td style="; color: green" data-label="5%">48.37</td><td style="; color: green" data-label="50%">50.99</td><td style="; color: green" data-label="95%">53.66</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">52</td><td style="; color: green" data-label="5%">59.47</td><td style="; color: green" data-label="50%">65.02</td><td style="; color: green" data-label="95%">70.05</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">53</td><td style="; color: green" data-label="5%">56.36</td><td style="; color: green" data-label="50%">59.10</td><td style="; color: green" data-label="95%">61.39</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">54</td><td style="; color: green" data-label="5%">42.94</td><td style="; color: green" data-label="50%">44.88</td><td style="; color: green" data-label="95%">47.00</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">55</td><td style="; color: green" data-label="5%">35.16</td><td style="; color: green" data-label="50%">36.71</td><td style="; color: green" data-label="95%">38.27</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">56</td><td style="; color: green" data-label="5%">34.55</td><td style="; color: green" data-label="50%">36.12</td><td style="; color: green" data-label="95%">37.72</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">57</td><td style="; color: green" data-label="5%">52.95</td><td style="; color: green" data-label="50%">54.04</td><td style="; color: green" data-label="95%">55.04</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">58</td><td style="; color: green" data-label="5%">32.54</td><td style="; color: green" data-label="50%">34.08</td><td style="; color: green" data-label="95%">35.67</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">59</td><td style="; color: green" data-label="5%">30.45</td><td style="; color: green" data-label="50%">32.24</td><td style="; color: green" data-label="95%">34.09</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">60</td><td style="; color: green" data-label="5%">34.22</td><td style="; color: green" data-label="50%">36.16</td><td style="; color: green" data-label="95%">38.15</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">61</td><td style="; color: green" data-label="5%">34.29</td><td style="; color: green" data-label="50%">36.25</td><td style="; color: green" data-label="95%">38.30</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">62</td><td style="; color: green" data-label="5%">48.20</td><td style="; color: green" data-label="50%">50.11</td><td style="; color: green" data-label="95%">52.17</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">63</td><td style="; color: green" data-label="5%">50.88</td><td style="; color: green" data-label="50%">52.98</td><td style="; color: green" data-label="95%">55.09</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">64</td><td style="; color: green" data-label="5%">35.79</td><td style="; color: green" data-label="50%">37.62</td><td style="; color: green" data-label="95%">39.45</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">65</td><td style="; color: green" data-label="5%">34.57</td><td style="; color: green" data-label="50%">36.11</td><td style="; color: green" data-label="95%">37.65</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">66</td><td style="; color: green" data-label="5%">43.73</td><td style="; color: green" data-label="50%">45.21</td><td style="; color: green" data-label="95%">46.74</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">67</td><td style="; color: green" data-label="5%">52.89</td><td style="; color: green" data-label="50%">55.13</td><td style="; color: green" data-label="95%">57.14</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">68</td><td style="; color: green" data-label="5%">50.03</td><td style="; color: green" data-label="50%">50.74</td><td style="; color: green" data-label="95%">51.44</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">69</td><td style="; color: green" data-label="5%">62.55</td><td style="; color: green" data-label="50%">64.19</td><td style="; color: green" data-label="95%">65.74</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">70</td><td style="; color: green" data-label="5%">60.72</td><td style="; color: green" data-label="50%">63.08</td><td style="; color: green" data-label="95%">65.47</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">71</td><td style="; color: green" data-label="5%">64.59</td><td style="; color: green" data-label="50%">65.74</td><td style="; color: green" data-label="95%">66.83</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">72</td><td style="; color: green" data-label="5%">53.59</td><td style="; color: green" data-label="50%">54.66</td><td style="; color: green" data-label="95%">55.67</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">73</td><td style="; color: green" data-label="5%">52.87</td><td style="; color: green" data-label="50%">54.34</td><td style="; color: green" data-label="95%">55.69</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">74</td><td style="; color: green" data-label="5%">53.11</td><td style="; color: green" data-label="50%">54.88</td><td style="; color: green" data-label="95%">56.65</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">75</td><td style="; color: green" data-label="5%">39.07</td><td style="; color: green" data-label="50%">41.41</td><td style="; color: green" data-label="95%">43.77</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">76</td><td style="; color: green" data-label="5%">44.77</td><td style="; color: green" data-label="50%">46.29</td><td style="; color: green" data-label="95%">47.84</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">77</td><td style="; color: green" data-label="5%">57.85</td><td style="; color: green" data-label="50%">59.54</td><td style="; color: green" data-label="95%">61.26</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">78</td><td style="; color: green" data-label="5%">50.15</td><td style="; color: green" data-label="50%">51.27</td><td style="; color: green" data-label="95%">52.37</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">79</td><td style="; color: green" data-label="5%">53.82</td><td style="; color: green" data-label="50%">55.10</td><td style="; color: green" data-label="95%">56.33</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">80</td><td style="; color: green" data-label="5%">62.55</td><td style="; color: green" data-label="50%">63.93</td><td style="; color: green" data-label="95%">65.26</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">81</td><td style="; color: green" data-label="5%">39.12</td><td style="; color: green" data-label="50%">40.73</td><td style="; color: green" data-label="95%">42.40</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">82</td><td style="; color: green" data-label="5%">43.70</td><td style="; color: green" data-label="50%">44.88</td><td style="; color: green" data-label="95%">46.03</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">83</td><td style="; color: green" data-label="5%">49.59</td><td style="; color: green" data-label="50%">50.97</td><td style="; color: green" data-label="95%">52.30</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">84</td><td style="; color: green" data-label="5%">51.61</td><td style="; color: green" data-label="50%">53.18</td><td style="; color: green" data-label="95%">54.68</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">85</td><td style="; color: green" data-label="5%">56.35</td><td style="; color: green" data-label="50%">58.02</td><td style="; color: green" data-label="95%">59.48</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">86</td><td style="; color: green" data-label="5%">54.71</td><td style="; color: green" data-label="50%">57.96</td><td style="; color: green" data-label="95%">60.88</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">87</td><td style="; color: green" data-label="5%">49.86</td><td style="; color: green" data-label="50%">52.65</td><td style="; color: green" data-label="95%">55.35</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">88</td><td style="; color: green" data-label="5%">42.35</td><td style="; color: green" data-label="50%">44.39</td><td style="; color: green" data-label="95%">46.63</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">89</td><td style="; color: green" data-label="5%">64.13</td><td style="; color: green" data-label="50%">65.61</td><td style="; color: green" data-label="95%">66.98</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">90</td><td style="; color: green" data-label="5%">64.73</td><td style="; color: green" data-label="50%">66.54</td><td style="; color: green" data-label="95%">68.22</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">91</td><td style="; color: green" data-label="5%">45.79</td><td style="; color: green" data-label="50%">47.34</td><td style="; color: green" data-label="95%">48.95</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">92</td><td style="; color: green" data-label="5%">63.68</td><td style="; color: green" data-label="50%">65.14</td><td style="; color: green" data-label="95%">66.57</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">93</td><td style="; color: green" data-label="5%">48.52</td><td style="; color: green" data-label="50%">49.80</td><td style="; color: green" data-label="95%">51.11</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">94</td><td style="; color: green" data-label="5%">50.30</td><td style="; color: green" data-label="50%">51.79</td><td style="; color: green" data-label="95%">53.28</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">95</td><td style="; color: green" data-label="5%">63.03</td><td style="; color: green" data-label="50%">64.89</td><td style="; color: green" data-label="95%">66.69</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">96</td><td style="; color: green" data-label="5%">38.88</td><td style="; color: green" data-label="50%">40.27</td><td style="; color: green" data-label="95%">41.71</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">97</td><td style="; color: green" data-label="5%">34.28</td><td style="; color: green" data-label="50%">35.64</td><td style="; color: green" data-label="95%">37.03</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">98</td><td style="; color: green" data-label="5%">30.21</td><td style="; color: green" data-label="50%">31.93</td><td style="; color: green" data-label="95%">33.69</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">99</td><td style="; color: green" data-label="5%">32.48</td><td style="; color: green" data-label="50%">34.38</td><td style="; color: green" data-label="95%">36.31</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="District">100</td><td style="; color: green" data-label="5%">32.24</td><td style="; color: green" data-label="50%">34.56</td><td style="; color: green" data-label="95%">37.13</td></tr></tbody></table>
+<p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org">website</a>, sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>, and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a> and <a href="https://www.facebook.com/blueripplepolitics">FaceBook</a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple">Github</a> page.</em></p>
+</section>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
