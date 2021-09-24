@@ -1,0 +1,1437 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virginia Lower House</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  figure {
+      border: 1px #cccccc solid;
+      padding: 4px;
+      margin: auto
+  }
+  figcaption {
+      font-style: italic;
+      font-size: 12pt;
+      text-align: center;
+  }
+</style>
+
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">September 24, 2021 </div>
+<section id="modeling-state-house-races-va-edition" class="level1">
+<h1>Modeling State House Races: VA edition</h1>
+<p>We’ve <a href="https://blueripplepolitics.org/blog/state-races-2019"><strong>written before</strong></a> about the importance of state legislative elections and, if anything, the situation for Dems and progressives has only become more urgent since then. Republican control of state-houses has opened the door to partisan and race-based <a href="https://www.washingtonpost.com/news/wonk/wp/2015/03/01/this-is-the-best-explanation-of-gerrymandering-you-will-ever-see/">gerrymandering</a> and <a href="https://www.aclu.org/issues/voting-rights/fighting-voter-suppression">voter suppression</a>, which allows the Republicans to hold state-houses and a disproportionate share of the U.S. house. In addition, on hundreds of substantive issues, including <a href="https://www.washingtonpost.com/politics/2021/09/01/texas-abortion-law-faq/">abortion access</a>, <a href="https://apnews.com/article/health-government-and-politics-coronavirus-pandemic-michigan-laws-eeb73e92d5af8b46f6a1e70d8a5cbe81">COVID-safety</a>, <a href="https://apnews.com/article/wisconsin-medicaid-business-health-government-and-politics-1ab60e341674584c3059511d35ec7c21">Medicaid expansion</a>, and <a href="https://thehill.com/changing-america/respect/equality/558927-texas-passes-law-banning-critical-race-theory-in-schools">education policy</a>, Republican control is an ongoing disaster for Democratic policy positions and, more importantly, for the people of these states.</p>
+<p>Virginia is the rare <a href="https://slate.com/news-and-politics/2019/11/democrats-win-virginia-legislature.html">good-news story</a> in this regard: the state’s House of Delegates (lower house) and Senate went blue in 2019, after 20 years of Republican control (VA state-house elections occur in odd-numbered years). We’d like to keep it that way–which is why we are trying to figure out the highest-impact races to support this fall.</p>
+<p>But modeling State-legislative elections to figure out which ones need the most help from donors is tricky. That’s mainly because the data are extremely challenging: polling is almost non-existent and detailed demographic information gets more difficult to find for smaller regions, making any kind of forecasting difficult.</p>
+<p>Despite the challenges, we’ll do our best to identify the upcoming Virginia state legislature races that the Dem candidate <em>can</em> win, but is <em>not certain</em> to win. Below we’ll look at our first attempt to model expected closeness of elections in the VA lower house. In this post we’ll feed our model 2018 data and compare the predictions to the 2019 election outcome. To be very clear: we’re not interested in predicting outcomes. We are interested in determining which races are likely to be close and are thus flippable or in need of defending.</p>
+<section id="key-points-in-this-post" class="level3">
+<h3>Key Points In This Post</h3>
+<ul>
+<li>Using voter-turnout and voter-preference data we can model expected turnout and preference for specific state-legislative-districts (SLDs).</li>
+<li>Demographic information for state-legislative districts (SLDs) is available from the ACS (American Community Survey) and the decennial census, but there is “some assembly required.”</li>
+<li>Combining these pieces of information allows us to estimate a range of likely outcomes for an SLD election based on intrinsic factors, without having to include any history of local election results.</li>
+<li>Our test model, which compares forecasted results using 2018 data to 2019 results, is extremely encouraging, so we are excited to apply it to the upcoming 2021 races!</li>
+</ul>
+</section>
+<section id="how-we-modeled-state-legislature-election-results-from-demographic-information" class="level2">
+<h2>How We Modeled State Legislature Election Results from Demographic Information</h2>
+<p>When people use election-data and demographics to craft new districts<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> for congressional or state legislative elections, they focus almost entirely on past election results: breaking past results down to their smallest available geographies, usually “precincts”, further splitting those into census blocks, then reassembling them in different ways to build new districts with predictable political leanings. We don’t doubt the accuracy of these methods, especially given the financial and computational resources given over to them during redistricting.</p>
+<p>But what if past results are inconsistent with what we might expect from a purely demographic model? While we expect the past-results model to be highly predictive, we also believe that mismatches between past results and intrinsic demographics might be extremely informative. These differences might highlight the places where the right candidate, campaign or organizing effort might produce a surprising result by activating Dem-leaning voters, or alerting us to districts where an incumbent Democrat might need more help defending a seat than one might expect from past results alone.</p>
+<p>To do this, we’re going to model state-legislative elections using only demographic variables: population density, sex (female or male are the only classifications in the data we have), education level (non-college-grad or college-grad), and race (Black, Latinx, Asian, white-non-Latinx, other). We would very much like to have an age factor as well but the tables made available by the census at the SLD level preclude this<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>We’ve built very similar models before, most-recently to look at the <a href="https://blueripple.github.io/research/Turnout/StateSpecific1/post.html"><strong>turnout gap between voters-of-color and white voters</strong></a> . So, for more details on our <a href="https://blueripple.github.io/research/Turnout/StateSpecific1/post.html#intro-1-our-datathe-american-community-survey-and-the-cps-voting-and-registration-supplement"><strong>demographic and turnout data</strong></a>, or <a href="https://blueripple.github.io/research/Turnout/StateSpecific1/post.html#intro2-mrpa-quick-primer"><strong>multi-level-regression and post-stratification (MRP)</strong></a>, please click the links above.</p>
+<p>This model has a few key differences from what we did before:</p>
+<ul>
+<li><p>In addition to modeling voter turnout, we also model voter preference and we build those models jointly since there are likely correlations between turnout and preference that might get lost in separate models<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p></li>
+<li><p>We need demographic information for each SLD which is harder to assemble from census data than the demographics of. e.g., a congressional district.</p></li>
+</ul>
+<p>We assemble SLD-level demographic information using census provided <a href="https://en.wikipedia.org/wiki/Shapefile">shapefiles</a> for each district. The shapefile is used to find all the census block-groups inside the district and those are aggregated<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> to construct SLD-level demographic breakdowns of population density, sex, education and race.</p>
+<p>A complication to our approach is that our favored source for turnout data, the census bureau’s Current Population Survey Voting and Registration Supplement (<a href="https://www.census.gov/data/datasets/time-series/demo/cps/cps-supp_cps-repwgt/cps-voting.html">CPSVRS</a>), has no data about who voters chose in the election, just whether or not they voted. To get voter preference information we use the Cooperative Election Survey (<a href="https://cces.gov.harvard.edu">CES</a>) which does the work of validating survey respondents self-reported turnout with voter files<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. We use each voter’s party choice for their U.S. House district as a proxy for their likely vote for state legislature.</p>
+<p>Our model combines those data sets at the congressional district level and jointly estimates turnout probabilities using counts of voters from the CPSVRS and counts of Dem votes for U.S. House from the CES. We then post-stratify the estimates across the demographic data we built for each VA lower house district. The result is a prediction for the expected Dem vote share in each district. More detail about the model and data-sources can be found <a href="https://blueripple.github.io/research/StateLeg/VA1/Notes/Model_Details.html"><strong>here</strong></a>.</p>
+<p>Cutting to the chase: in the chart below we plot the model estimate (using 2018 data) vs. the results of the 2019 election. In blue, we also plot the “model=result” line, where every dot would fall if the model was exactly predictive of each race. The <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination">R-squared</a> value indicates that our model explains 74% of the variance among contested races<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<figure id="figure_1">
+<script type="text/javascript">var vlSpec=
+{
+    "height": 600,
+    "padding": 5,
+    "width": 600,
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "axis": {
+                        "title": "Model_Mid"
+                    },
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative",
+                    "field": "Model_Mid"
+                },
+                "x": {
+                    "axis": {
+                        "title": "Election_Result"
+                    },
+                    "type": "quantitative",
+                    "field": "Election_Result"
+                },
+                "color": {
+                    "type": "nominal",
+                    "sort": [
+                        true,
+                        false
+                    ],
+                    "field": "Contested"
+                }
+            },
+            "mark": {
+                "type": "circle",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "axis": {
+                        "title": "Model_Mid"
+                    },
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative",
+                    "field": "Model_Mid"
+                },
+                "x": {
+                    "axis": {
+                        "title": ""
+                    },
+                    "type": "quantitative",
+                    "field": "Model_Mid"
+                }
+            },
+            "mark": {
+                "type": "line",
+                "tooltip": null
+            }
+        }
+    ],
+    "title": "Modeled Vs. Actual (All)",
+    "data": {
+        "format": {
+            "parse": {}
+        },
+        "values": [
+            {
+                "Model": "PlusState",
+                "Election_Result": 0,
+                "Contested": false,
+                "Model_Upper": 29.69,
+                "State": "VA",
+                "Model_Lower": 23.580000000000002,
+                "Model_Mid": 26.46,
+                "District Number": 1
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 60.92196755086273,
+                "Contested": true,
+                "Model_Upper": 56.74,
+                "State": "VA",
+                "Model_Lower": 47.88,
+                "Model_Mid": 52.28,
+                "District Number": 2
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 0,
+                "Contested": false,
+                "Model_Upper": 29.99,
+                "State": "VA",
+                "Model_Lower": 23.880000000000003,
+                "Model_Mid": 26.76,
+                "District Number": 3
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 36.994447116435666,
+                "Contested": true,
+                "Model_Upper": 29.2,
+                "State": "VA",
+                "Model_Lower": 23.119999999999997,
+                "Model_Mid": 25.990000000000002,
+                "District Number": 4
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 0,
+                "Contested": false,
+                "Model_Upper": 32.6,
+                "State": "VA",
+                "Model_Lower": 26.3,
+                "Model_Mid": 29.310000000000002,
+                "District Number": 5
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 22.995309867492374,
+                "Contested": true,
+                "Model_Upper": 29.110000000000003,
+                "State": "VA",
+                "Model_Lower": 22.96,
+                "Model_Mid": 25.88,
+                "District Number": 6
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 33.188678335503155,
+                "Contested": true,
+                "Model_Upper": 32.519999999999996,
+                "State": "VA",
+                "Model_Lower": 26.169999999999998,
+                "Model_Mid": 29.220000000000002,
+                "District Number": 7
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 33.5211882918305,
+                "Contested": true,
+                "Model_Upper": 34.339999999999996,
+                "State": "VA",
+                "Model_Lower": 27.889999999999997,
+                "Model_Mid": 30.990000000000002,
+                "District Number": 8
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 0,
+                "Contested": false,
+                "Model_Upper": 32.24,
+                "State": "VA",
+                "Model_Lower": 25.929999999999996,
+                "Model_Mid": 28.96,
+                "District Number": 9
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 52.3138568660295,
+                "Contested": true,
+                "Model_Upper": 45.050000000000004,
+                "State": "VA",
+                "Model_Lower": 37.269999999999996,
+                "Model_Mid": 41.08,
+                "District Number": 10
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 94.3841911764706,
+                "Contested": false,
+                "Model_Upper": 56.48,
+                "State": "VA",
+                "Model_Lower": 50.129999999999995,
+                "Model_Mid": 53.26,
+                "District Number": 11
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 53.56197989321275,
+                "Contested": true,
+                "Model_Upper": 37.07,
+                "State": "VA",
+                "Model_Lower": 30.620000000000005,
+                "Model_Mid": 33.7,
+                "District Number": 12
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 55.92324805339266,
+                "Contested": true,
+                "Model_Upper": 58.35,
+                "State": "VA",
+                "Model_Lower": 47.33,
+                "Model_Mid": 53.06999999999999,
+                "District Number": 13
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 38.62145524270865,
+                "Contested": true,
+                "Model_Upper": 46.21,
+                "State": "VA",
+                "Model_Lower": 39.58,
+                "Model_Mid": 42.809999999999995,
+                "District Number": 14
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 25.525808861107834,
+                "Contested": true,
+                "Model_Upper": 31.22,
+                "State": "VA",
+                "Model_Lower": 24.9,
+                "Model_Mid": 27.91,
+                "District Number": 15
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 0,
+                "Contested": false,
+                "Model_Upper": 39.379999999999995,
+                "State": "VA",
+                "Model_Lower": 32.6,
+                "Model_Mid": 35.86,
+                "District Number": 16
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 0,
+                "Contested": false,
+                "Model_Upper": 44.25,
+                "State": "VA",
+                "Model_Lower": 37.93,
+                "Model_Mid": 41.02,
+                "District Number": 17
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 38.860310099985504,
+                "Contested": true,
+                "Model_Upper": 35.17,
+                "State": "VA",
+                "Model_Lower": 28.23,
+                "Model_Mid": 31.56,
+                "District Number": 18
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 0,
+                "Contested": false,
+                "Model_Upper": 31.31,
+                "State": "VA",
+                "Model_Lower": 25.040000000000003,
+                "Model_Mid": 28.02,
+                "District Number": 19
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 41.377116959529296,
+                "Contested": true,
+                "Model_Upper": 33.46,
+                "State": "VA",
+                "Model_Lower": 26.950000000000003,
+                "Model_Mid": 30.099999999999998,
+                "District Number": 20
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 54.54065702097718,
+                "Contested": true,
+                "Model_Upper": 58.589999999999996,
+                "State": "VA",
+                "Model_Lower": 51.78,
+                "Model_Mid": 55.24,
+                "District Number": 21
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 30.919633871663393,
+                "Contested": true,
+                "Model_Upper": 40.68,
+                "State": "VA",
+                "Model_Lower": 34.150000000000006,
+                "Model_Mid": 37.31,
+                "District Number": 22
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 35.90675286678307,
+                "Contested": true,
+                "Model_Upper": 41.839999999999996,
+                "State": "VA",
+                "Model_Lower": 35.260000000000005,
+                "Model_Mid": 38.43,
+                "District Number": 23
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 32.64556962025316,
+                "Contested": true,
+                "Model_Upper": 29.86,
+                "State": "VA",
+                "Model_Lower": 23.54,
+                "Model_Mid": 26.55,
+                "District Number": 24
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 39.97292794668888,
+                "Contested": true,
+                "Model_Upper": 35.19,
+                "State": "VA",
+                "Model_Lower": 28.68,
+                "Model_Mid": 31.81,
+                "District Number": 25
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 45.8510694203584,
+                "Contested": true,
+                "Model_Upper": 39.09,
+                "State": "VA",
+                "Model_Lower": 30.930000000000003,
+                "Model_Mid": 34.79,
+                "District Number": 26
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 49.62863152359669,
+                "Contested": true,
+                "Model_Upper": 54.03,
+                "State": "VA",
+                "Model_Lower": 47.699999999999996,
+                "Model_Mid": 50.8,
+                "District Number": 27
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 51.82478914843173,
+                "Contested": true,
+                "Model_Upper": 50.42,
+                "State": "VA",
+                "Model_Lower": 43.02,
+                "Model_Mid": 46.69,
+                "District Number": 28
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 35.56688214818498,
+                "Contested": true,
+                "Model_Upper": 37.09,
+                "State": "VA",
+                "Model_Lower": 30.31,
+                "Model_Mid": 33.6,
+                "District Number": 29
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 42.12801775261124,
+                "Contested": true,
+                "Model_Upper": 35.85,
+                "State": "VA",
+                "Model_Lower": 29.03,
+                "Model_Mid": 32.29,
+                "District Number": 30
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 52.63157894736842,
+                "Contested": true,
+                "Model_Upper": 50.55,
+                "State": "VA",
+                "Model_Lower": 41.97,
+                "Model_Mid": 46.150000000000006,
+                "District Number": 31
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 92.62176353431106,
+                "Contested": false,
+                "Model_Upper": 55.95,
+                "State": "VA",
+                "Model_Lower": 48.51,
+                "Model_Mid": 52.32,
+                "District Number": 32
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 43.140214528871475,
+                "Contested": true,
+                "Model_Upper": 41.13,
+                "State": "VA",
+                "Model_Lower": 34.449999999999996,
+                "Model_Mid": 37.68,
+                "District Number": 33
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 58.35120324040982,
+                "Contested": true,
+                "Model_Upper": 51.470000000000006,
+                "State": "VA",
+                "Model_Lower": 44.690000000000005,
+                "Model_Mid": 48.04,
+                "District Number": 34
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 92.75159098263403,
+                "Contested": false,
+                "Model_Upper": 57.19,
+                "State": "VA",
+                "Model_Lower": 50.1,
+                "Model_Mid": 53.690000000000005,
+                "District Number": 35
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 92.94302143230529,
+                "Contested": false,
+                "Model_Upper": 56.16,
+                "State": "VA",
+                "Model_Lower": 49.09,
+                "Model_Mid": 52.65,
+                "District Number": 36
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 91.8913701010361,
+                "Contested": false,
+                "Model_Upper": 58.25,
+                "State": "VA",
+                "Model_Lower": 50.470000000000006,
+                "Model_Mid": 54.50000000000001,
+                "District Number": 37
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 93.26015661602302,
+                "Contested": false,
+                "Model_Upper": 63.370000000000005,
+                "State": "VA",
+                "Model_Lower": 51.519999999999996,
+                "Model_Mid": 57.95,
+                "District Number": 38
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 68.35283918508887,
+                "Contested": true,
+                "Model_Upper": 58.809999999999995,
+                "State": "VA",
+                "Model_Lower": 50.27,
+                "Model_Mid": 54.75,
+                "District Number": 39
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 52.338508091040644,
+                "Contested": true,
+                "Model_Upper": 49.4,
+                "State": "VA",
+                "Model_Lower": 42.17,
+                "Model_Mid": 45.75,
+                "District Number": 40
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 71.57563980650762,
+                "Contested": false,
+                "Model_Upper": 58.089999999999996,
+                "State": "VA",
+                "Model_Lower": 50.39,
+                "Model_Mid": 54.379999999999995,
+                "District Number": 41
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 59.65999188700815,
+                "Contested": true,
+                "Model_Upper": 52.739999999999995,
+                "State": "VA",
+                "Model_Lower": 45.48,
+                "Model_Mid": 49.120000000000005,
+                "District Number": 42
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 77.80435419310749,
+                "Contested": false,
+                "Model_Upper": 60.88,
+                "State": "VA",
+                "Model_Lower": 53.239999999999995,
+                "Model_Mid": 57.26,
+                "District Number": 43
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 70.67243332303573,
+                "Contested": true,
+                "Model_Upper": 62.2,
+                "State": "VA",
+                "Model_Lower": 51.78,
+                "Model_Mid": 57.36,
+                "District Number": 44
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 91.4559881897029,
+                "Contested": false,
+                "Model_Upper": 60.39,
+                "State": "VA",
+                "Model_Lower": 53.38,
+                "Model_Mid": 56.95,
+                "District Number": 45
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 92.03055950865104,
+                "Contested": false,
+                "Model_Upper": 68,
+                "State": "VA",
+                "Model_Lower": 60.24,
+                "Model_Mid": 64.4,
+                "District Number": 46
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 96.11574436713818,
+                "Contested": false,
+                "Model_Upper": 61.33,
+                "State": "VA",
+                "Model_Lower": 53.779999999999994,
+                "Model_Mid": 57.720000000000006,
+                "District Number": 47
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 94.18549232675628,
+                "Contested": false,
+                "Model_Upper": 55.83,
+                "State": "VA",
+                "Model_Lower": 48.88,
+                "Model_Mid": 52.39,
+                "District Number": 48
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 83.43460381759039,
+                "Contested": false,
+                "Model_Upper": 67.31,
+                "State": "VA",
+                "Model_Lower": 58.14,
+                "Model_Mid": 63.17,
+                "District Number": 49
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 53.26000398168426,
+                "Contested": true,
+                "Model_Upper": 59.870000000000005,
+                "State": "VA",
+                "Model_Lower": 48.57,
+                "Model_Mid": 54.53,
+                "District Number": 50
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 54.57872879566411,
+                "Contested": true,
+                "Model_Upper": 52.82,
+                "State": "VA",
+                "Model_Lower": 44.690000000000005,
+                "Model_Mid": 48.76,
+                "District Number": 51
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 73.02490203514095,
+                "Contested": true,
+                "Model_Upper": 68.96,
+                "State": "VA",
+                "Model_Lower": 56.06,
+                "Model_Mid": 62.89,
+                "District Number": 52
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 93.84459001581206,
+                "Contested": false,
+                "Model_Upper": 59.51,
+                "State": "VA",
+                "Model_Lower": 51.27,
+                "Model_Mid": 55.58,
+                "District Number": 53
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 41.93589579874856,
+                "Contested": true,
+                "Model_Upper": 46.78,
+                "State": "VA",
+                "Model_Lower": 39.519999999999996,
+                "Model_Mid": 43.05,
+                "District Number": 54
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 39.82006920415225,
+                "Contested": true,
+                "Model_Upper": 38.82,
+                "State": "VA",
+                "Model_Lower": 32.11,
+                "Model_Mid": 35.339999999999996,
+                "District Number": 55
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 38.92518440463646,
+                "Contested": true,
+                "Model_Upper": 37.95,
+                "State": "VA",
+                "Model_Lower": 31.169999999999998,
+                "Model_Mid": 34.43,
+                "District Number": 56
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 96.10886189833559,
+                "Contested": false,
+                "Model_Upper": 54.269999999999996,
+                "State": "VA",
+                "Model_Lower": 47.82,
+                "Model_Mid": 50.970000000000006,
+                "District Number": 57
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 37.4541339460238,
+                "Contested": true,
+                "Model_Upper": 35.89,
+                "State": "VA",
+                "Model_Lower": 29.32,
+                "Model_Mid": 32.48,
+                "District Number": 58
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 36.67986316639121,
+                "Contested": true,
+                "Model_Upper": 34.94,
+                "State": "VA",
+                "Model_Lower": 28.18,
+                "Model_Mid": 31.430000000000003,
+                "District Number": 59
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 33.65688384231491,
+                "Contested": true,
+                "Model_Upper": 39.379999999999995,
+                "State": "VA",
+                "Model_Lower": 32.32,
+                "Model_Mid": 35.730000000000004,
+                "District Number": 60
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 33.08449124018296,
+                "Contested": true,
+                "Model_Upper": 39.65,
+                "State": "VA",
+                "Model_Lower": 32.51,
+                "Model_Mid": 35.949999999999996,
+                "District Number": 61
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 44.73101199682314,
+                "Contested": true,
+                "Model_Upper": 52.22,
+                "State": "VA",
+                "Model_Lower": 45.050000000000004,
+                "Model_Mid": 48.55,
+                "District Number": 62
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 55.043661547726586,
+                "Contested": false,
+                "Model_Upper": 56.25,
+                "State": "VA",
+                "Model_Lower": 49.059999999999995,
+                "Model_Mid": 52.65,
+                "District Number": 63
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 39.76964517926807,
+                "Contested": true,
+                "Model_Upper": 40.53,
+                "State": "VA",
+                "Model_Lower": 33.589999999999996,
+                "Model_Mid": 36.93,
+                "District Number": 64
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 34.88304862023653,
+                "Contested": true,
+                "Model_Upper": 38.04,
+                "State": "VA",
+                "Model_Lower": 31.34,
+                "Model_Mid": 34.56,
+                "District Number": 65
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 47.034201488265595,
+                "Contested": true,
+                "Model_Upper": 46.73,
+                "State": "VA",
+                "Model_Lower": 40.06,
+                "Model_Mid": 43.309999999999995,
+                "District Number": 66
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 89.34287228404875,
+                "Contested": false,
+                "Model_Upper": 55.55,
+                "State": "VA",
+                "Model_Lower": 47.99,
+                "Model_Mid": 51.839999999999996,
+                "District Number": 67
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 54.59699542782494,
+                "Contested": true,
+                "Model_Upper": 50.81,
+                "State": "VA",
+                "Model_Lower": 44.47,
+                "Model_Mid": 47.61,
+                "District Number": 68
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 97.63832310627546,
+                "Contested": false,
+                "Model_Upper": 65.42,
+                "State": "VA",
+                "Model_Lower": 59.07,
+                "Model_Mid": 62.27,
+                "District Number": 69
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 94.65899753492194,
+                "Contested": false,
+                "Model_Upper": 65.68,
+                "State": "VA",
+                "Model_Lower": 58.35,
+                "Model_Mid": 62,
+                "District Number": 70
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 88.19749012115159,
+                "Contested": false,
+                "Model_Upper": 66.5,
+                "State": "VA",
+                "Model_Lower": 60.699999999999996,
+                "Model_Mid": 63.62,
+                "District Number": 71
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 53.25839035516455,
+                "Contested": true,
+                "Model_Upper": 54.949999999999996,
+                "State": "VA",
+                "Model_Lower": 48.59,
+                "Model_Mid": 51.7,
+                "District Number": 72
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 52.199362097367775,
+                "Contested": true,
+                "Model_Upper": 54.7,
+                "State": "VA",
+                "Model_Lower": 47.92,
+                "Model_Mid": 51.25999999999999,
+                "District Number": 73
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 95.67231215495462,
+                "Contested": false,
+                "Model_Upper": 57.75,
+                "State": "VA",
+                "Model_Lower": 50.970000000000006,
+                "Model_Mid": 54.35,
+                "District Number": 74
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 50.98282127518996,
+                "Contested": true,
+                "Model_Upper": 45.56,
+                "State": "VA",
+                "Model_Lower": 37.75,
+                "Model_Mid": 41.57,
+                "District Number": 75
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 56.33340873105632,
+                "Contested": true,
+                "Model_Upper": 48.43,
+                "State": "VA",
+                "Model_Lower": 41.69,
+                "Model_Mid": 44.95,
+                "District Number": 76
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 91.42042509072058,
+                "Contested": false,
+                "Model_Upper": 61.650000000000006,
+                "State": "VA",
+                "Model_Lower": 55.230000000000004,
+                "Model_Mid": 58.43000000000001,
+                "District Number": 77
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 0,
+                "Contested": false,
+                "Model_Upper": 52.129999999999995,
+                "State": "VA",
+                "Model_Lower": 45.85,
+                "Model_Mid": 48.93,
+                "District Number": 78
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 87.42168217201443,
+                "Contested": false,
+                "Model_Upper": 56.220000000000006,
+                "State": "VA",
+                "Model_Lower": 49.94,
+                "Model_Mid": 53.03,
+                "District Number": 79
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 66.0098792535675,
+                "Contested": true,
+                "Model_Upper": 65.24,
+                "State": "VA",
+                "Model_Lower": 59.28,
+                "Model_Mid": 62.27,
+                "District Number": 80
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 47.747017780778755,
+                "Contested": true,
+                "Model_Upper": 42.49,
+                "State": "VA",
+                "Model_Lower": 35.67,
+                "Model_Mid": 38.98,
+                "District Number": 81
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 40.69374577670996,
+                "Contested": true,
+                "Model_Upper": 45.71,
+                "State": "VA",
+                "Model_Lower": 39.2,
+                "Model_Mid": 42.370000000000005,
+                "District Number": 82
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 49.972670128450396,
+                "Contested": true,
+                "Model_Upper": 51.6,
+                "State": "VA",
+                "Model_Lower": 44.93,
+                "Model_Mid": 48.22,
+                "District Number": 83
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 48.74063330916123,
+                "Contested": true,
+                "Model_Upper": 53.93,
+                "State": "VA",
+                "Model_Lower": 47.160000000000004,
+                "Model_Mid": 50.51,
+                "District Number": 84
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 51.643935183205784,
+                "Contested": true,
+                "Model_Upper": 58.47,
+                "State": "VA",
+                "Model_Lower": 51.800000000000004,
+                "Model_Mid": 55.16,
+                "District Number": 85
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 88.91705903658095,
+                "Contested": false,
+                "Model_Upper": 59.099999999999994,
+                "State": "VA",
+                "Model_Lower": 50.07,
+                "Model_Mid": 54.82,
+                "District Number": 86
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 62.00238295486403,
+                "Contested": true,
+                "Model_Upper": 53.949999999999996,
+                "State": "VA",
+                "Model_Lower": 45.5,
+                "Model_Mid": 49.82,
+                "District Number": 87
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 44.14758737275367,
+                "Contested": true,
+                "Model_Upper": 46.27,
+                "State": "VA",
+                "Model_Lower": 38.87,
+                "Model_Mid": 42.47,
+                "District Number": 88
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 96.17902471609887,
+                "Contested": false,
+                "Model_Upper": 66.52,
+                "State": "VA",
+                "Model_Lower": 60.42999999999999,
+                "Model_Mid": 63.5,
+                "District Number": 89
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 91.84060721062619,
+                "Contested": false,
+                "Model_Upper": 67.96,
+                "State": "VA",
+                "Model_Lower": 61.67,
+                "Model_Mid": 64.85,
+                "District Number": 90
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 54.7434863081961,
+                "Contested": true,
+                "Model_Upper": 49.01,
+                "State": "VA",
+                "Model_Lower": 42.29,
+                "Model_Mid": 45.58,
+                "District Number": 91
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 93.51147324905638,
+                "Contested": false,
+                "Model_Upper": 66.73,
+                "State": "VA",
+                "Model_Lower": 60.78,
+                "Model_Mid": 63.75999999999999,
+                "District Number": 92
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 55.65986500116379,
+                "Contested": true,
+                "Model_Upper": 50.88,
+                "State": "VA",
+                "Model_Lower": 44.330000000000005,
+                "Model_Mid": 47.52,
+                "District Number": 93
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 57.71688130178696,
+                "Contested": true,
+                "Model_Upper": 53.010000000000005,
+                "State": "VA",
+                "Model_Lower": 46.37,
+                "Model_Mid": 49.61,
+                "District Number": 94
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 90.22161297692483,
+                "Contested": false,
+                "Model_Upper": 66.79,
+                "State": "VA",
+                "Model_Lower": 60.3,
+                "Model_Mid": 63.55,
+                "District Number": 95
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 46.3509459376722,
+                "Contested": true,
+                "Model_Upper": 41.839999999999996,
+                "State": "VA",
+                "Model_Lower": 35.19,
+                "Model_Mid": 38.37,
+                "District Number": 96
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 26.577029787493522,
+                "Contested": true,
+                "Model_Upper": 37.43,
+                "State": "VA",
+                "Model_Lower": 30.94,
+                "Model_Mid": 34.06,
+                "District Number": 97
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 30.951503537735846,
+                "Contested": true,
+                "Model_Upper": 34.38,
+                "State": "VA",
+                "Model_Lower": 27.810000000000002,
+                "Model_Mid": 30.959999999999997,
+                "District Number": 98
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 37.496472911963885,
+                "Contested": true,
+                "Model_Upper": 37.2,
+                "State": "VA",
+                "Model_Lower": 30.2,
+                "Model_Mid": 33.550000000000004,
+                "District Number": 99
+            },
+            {
+                "Model": "PlusState",
+                "Election_Result": 48.04127317243791,
+                "Contested": true,
+                "Model_Upper": 38.03,
+                "State": "VA",
+                "Model_Lower": 30.39,
+                "Model_Mid": 34.06,
+                "District Number": 100
+            }
+        ]
+    },
+    "autosize": {
+        "resize": true,
+        "contains": "padding",
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 600,
+            "discreteHeight": 600,
+            "continuousWidth": 600,
+            "discreteWidth": 600
+        }
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json"
+};
+vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
+<figcaption>
+model explains 73.6% of the SLD to SLD variance in contested election results.
+</figcaption>
+</figure>
+<p>We want to pause for a moment to pat ourselves on the back: our model actually works pretty well! It’s particularly remarkable that a model using only a few demographic variables and votes for a different office (U.S. House) has any predictive power at all, much less the 74% explanatory power that we see here. It’s a reminder of how strongly demographics determine voting patterns and how consistently people vote for one party on the entire ballot. Although our model isn’t perfect – after all, our data are limited, and factors related to the specific candidates or incumbency aren’t included at all–we think it will serve our purpose. With it, we think we will be able to sort Virginia’s upcoming state legislature races into “safe”, “needs defending”, “flippable” and “long-shot” and to limit our donation recommendations to the middle two categories.</p>
+</section>
+<section id="whats-next" class="level2">
+<h2>What’s Next?</h2>
+<p>In the coming days, we’re going to apply this model Virginia’s 2021 races, which are happening this November<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. But next year, as we look to state legislative elections in, e.g., GA, TX, PA, OH, and WI, we’ll do the same work there, and use that to help guide our recommendations in those races.</p>
+<p>It’s crucial to start winning back state-houses and Dems can only do that if they support candidates in winnable races. But that’s not enough. In some districts, we need to field better candidates–or any candidate at all! We need to nurture and fund local organizers and learn what they need to help win state legislative races. This is part of a larger need to understand and support the role of local organizing in driving turnout and winning elections.</p>
+<p>We’ll be writing more soon about specific candidates we recommend in Virginia, and voter turnout organizations to start funding now in various states. Watch this space!</p>
+<p><em>Want to read more from Blue Ripple? Visit our <a href="https://www.blueripplepolitics.org"><strong>website</strong></a>, sign up for <a href="http://eepurl.com/gzmeQ5"><strong>email updates</strong></a>, and follow us on <a href="https://twitter.com/BlueRipplePol"><strong>Twitter</strong></a> and <a href="https://www.facebook.com/blueripplepolitics"><strong>FaceBook</strong></a>. Folks interested in our data and modeling efforts should also check out our <a href="https://github.com/blueripple"><strong>Github</strong></a> page.</em></p>
+</section>
+</section>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>See, for example <a href="https://districtr.org">this</a> free redistricting tool. Or <a href="https://www.districtbuilder.org">this</a>. Information about all things redistricting is available <a href="https://redistricting.lls.edu">here</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>For larger geographic areas it’s possible to get ACS “micro-data,” which provides specific information for many factors. The smallest of these, Public-Use-Microdata-Areas or “PUMA”s, contain about 100,000 people which is too big to use to get the demographics of a SLD. Census block-groups only contain a few thousand people, but for those micro-data is not available. We’re using census tables and they do not provide 4-factor breakdowns. So we we’re limited to sex, education and race. Once additional 2020 decennial data is available, we may be able to improve on this.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Imagine, for example, that college-educated Asian voters are more likely to vote for Dems. But that in the places where their turnout is highest, their preference for Dems is lowest. If we modeled turnout and preference separately, we would miss this correlation, and estimate a higher number of Dem votes than we should in places where we expect high turnout among college-educated Asian voters, and a lower number of Dem votes than we should in places were we expect low turnout of those voters.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>We built a <a href="https://github.com/blueripple/GeoData/blob/main/code/aggregateRaw.py"><strong>python script</strong></a> to automate most of this process. We download shapefiles and block-group-data for the state and the script merges those into SLD-level demographics. The code is available on our <a href="https://github.com/blueripple"><strong>github site</strong></a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>The CES also has turnout information and it has the advantage of being validated. But that comes with <a href="https://agadjanianpolitics.wordpress.com/2018/02/19/vote-validation-and-possible-underestimates-of-turnout-among-younger-americans/">its own issues</a>. We generally run our estimations with both CPSVRS and CES as a turnout source to make sure the results are similar but rely on a <a href="https://www.aramhur.com/uploads/6/0/1/8/60187785/2013._poq_coding_cps.pdf">slightly-corrected</a> version of the CPSVRS, as that seems to be the most common approach.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Races uncontested by one of the major parties fall on the sides of the chart (except HD-63, where a <a href="https://ballotpedia.org/Larry_Haake">well-known</a> local independent mounted a strong challenge to the incumbent Dem) and we can see that these are predictably one-sided in the model, with the exception of district 78 (a swingy district that was uncontested by the Democrats).<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>The CES hasn’t yet validated it’s voting data for 2020. We’re hopeful that they will complete that soon and then we can run this model with an eye to the 2021 elections for the VA state-house. If we have to, we can use the 2018 voting data but we’d prefer a more recent sample of voter preference.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>

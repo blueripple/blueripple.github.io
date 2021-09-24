@@ -1,0 +1,354 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>State Legislative Election Model</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  figure {
+      border: 1px #cccccc solid;
+      padding: 4px;
+      margin: auto
+  }
+  figcaption {
+      font-style: italic;
+      font-size: 12pt;
+      text-align: center;
+  }
+</style>
+
+<script src="" type="text/javascript"></script>
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">September 24, 2021 </div>
+<section id="modeling-state-legislative-elections" class="level3">
+<h3>Modeling State Legislative Elections</h3>
+<p>We want to build a reasonable but simple demographic model of voter turnout and preference which we can use to estimate the outcome of an election in a state legislative district. We want to build something we can apply fairly easily to any state. And, since this is a redistricting year, we want something that we can apply to newly drawn districts as well as existing ones.</p>
+<p>One possibility is that we work bottom-up, using voting precincts as building blocks:</p>
+<ol type="1">
+<li>Get the geographic boundary and election results for each precinct, e.g., from <a href="https://openprecincts.org">openprecincts</a>.</li>
+<li>Build a demographic profile of the precinct using overlaps<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of census “blocks” or “block groups”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</li>
+<li>Use the total number of votes and votes cast for the Democratic candidate in each precinct to <em>infer</em> a demographic model of turnout and voter preference in the entire set of precincts.</li>
+<li>Apply that model to the demographics of a SLD to generate a rough estimate of the likely election result.</li>
+</ol>
+<p>For a given SLD (or set of SLD’s), what precincts do we include in the model? In order to keep things simple we want a model that covers multiple districts. We could model using every precinct in the country or at least the state. Using every precinct in the country is hard: some of that data is unavailable and there are a lot of precincts (about <a href="https://arxiv.org/ftp/arxiv/papers/1410/1410.8868.pdf">175,000</a> of them)! Using data only from the state risks being too influenced by the local election history.</p>
+<p>So instead, we work top-down from national-level data:</p>
+<ol type="1">
+<li>Use a national survey of voter turnout, e.g., the Current Population Survey Voter Registration Supplement (<a href="https://www.census.gov/data/datasets/time-series/demo/cps/cps-supp_cps-repwgt/cps-voting.html">CPSVRS</a>), and/or the Cooperative Election Survey (<a href="https://cces.gov.harvard.edu">CES</a>, formerly the CCES) and a national survey of voter preference, like the CES, to build demographically stratified turnout and preference data at the state or congressional-district (CD) level.</li>
+<li>Use that data to infer a demographic model of turnout and voter preference, possibly with state or CD-level effects.</li>
+<li>Apply<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> that model to the demographics of a SLD to generate a rough estimate of the likely election result.</li>
+</ol>
+<p>This approach might be too general: voters in different regions might not be well described by a national model. The data we use is organized by CD, so we can add some geographic specificity to the model. Even better, we can compare the quality of models with different levels of geographic detail.</p>
+<p>This data is considerably simpler to work with and more comprehensive precinct-level data is not available for all states and all election years. But we remain interested in the bottom-up approach as well, and we might implement some version of it for comparison.</p>
+<p>Some details:</p>
+<ol type="1">
+<li><p>For turnout, we have the CPSVRS and/or the CES. The CPSVRS is self-reported whereas the CES validates the turnout data via voter files. All other things equal, we’d prefer the validated data. But there’s some evidence that the <a href="https://agadjanianpolitics.wordpress.com/2018/02/19/vote-validation-and-possible-underestimates-of-turnout-among-younger-americans/">validation process used by the CES introduces bias</a> because it tends to miss people who move between elections, and they are disproportionately likely to be young and poor. Because it the more used source, we use the CPSVRS as a source of turnout data, though we also run the models using the CES as a turnout source to see if it makes a large difference. People tend to over-report their own turnout, which presents a problem for non-validated sources. So we use some standard adjustments to the turnout data, first suggested by <a href="https://www.aramhur.com/uploads/6/0/1/8/60187785/2013._poq_coding_cps.pdf">Hur &amp; Achen</a>, which adjusts the turnout probabilities from CPSVRS so that the actual recorded total turnout matches the CPSVRS post-stratified on the geography in question. The Hur &amp; Achen paper doesn’t address how to re-weight among various demographic groups within the same geography. For this we follow the procedure outlined (in a slightly different context) on pages 9-10 of <a href="http://www.stat.columbia.edu/~gelman/research/published/mrp_voterfile_20181030.pdf">this paper</a> by Ghitza and Gelman.</p></li>
+<li><p>We choose congressional districts (CD’s) as our basic geographic unit for constructing the model of turnout and voter preference. We use CD’s as our modeling units for two reasons: CD’s are a core interest at BlueRipple politics and they are the smallest geography easily available in all the required data. We can get more fine grained census data for demographics but the turnout and voter preference data that we use (the CPSVRS and CES) is not available at the SLD level.</p></li>
+</ol>
+<p>For each of the 436 districts (435 CDs plus DC) in the U.S., we have:</p>
+<ul>
+<li><p>The CPSVRS, containing self-reported voter turnout for about 1% of eligible voters in each district, broken down by sex (female or male), education (non-college-grad or college-grad) and race (Black, Latinx, Asian, white-non-Latinx, other).</p></li>
+<li><p>The CES, containing validated turnout and voter preference–specifically the political party of the voter’s choice for congressional representative, broken down by the same demographic categories.</p></li>
+<li><p>Population density, computed by aggregating data from the Census Bureau’s American Community Survey (ACS) at the Public-Use-Microdata-Area (PUMA) level.</p></li>
+</ul>
+<p>For each State Legislative District (SLD) we have data from the ACS, which we aggregate from the block-group level using <a href="https://medium.com/spatial-data-science/spatial-interpolation-with-python-a60b52f16cbb">areal interpolation</a>. Our shapefiles for the SLDs and the census block-groups come from the Census Bureau. The result of this aggregation is a breakdown of the citizens in each district by the same demographic variables as the CPSVRS and CES data, as well as an estimate of population density in the SLD.</p>
+<p>Modeling proceeds as follows:</p>
+<ol type="1">
+<li><p>We combine the CPSVRS, CES, and CD-level population density into one data-set, with rows for each combination of demographic variables within each CD. That’s 2 x 2 x 5 x 436 = 8720 rows, each with turnout data from both CPSVRS and CES, party preference from the CES and population density from the ACS.</p></li>
+<li><p>We model turnout and vote choice as binomially distributed with probabilities determined by the various demographic parameters. That is, given a district, <span class="math inline">\(d\)</span>, with population density <span class="math inline">\(\rho\)</span>, and the subset of people with sex <span class="math inline">\(s\)</span>, education-level <span class="math inline">\(e\)</span> and race <span class="math inline">\(r\)</span>, we assume that the turnout (<span class="math inline">\(T\)</span>) of eligible voters (<span class="math inline">\(E\)</span>) and the votes for the Democratic candidate (<span class="math inline">\(D\)</span>), out of all validated voters (<span class="math inline">\(V\)</span>), both follow binomial distributions:</p>
+<p><span class="math inline">\(T^{(d)}_{ser}(\rho) \thicksim B\big(E^{(d)}_{ser}(\rho);t^{(d)}_{ser}(\rho)\big)\)</span></p>
+<p><span class="math inline">\(D^{(d)}_{ser}(\rho) \thicksim B\big(V^{(d)}_{ser}(\rho);p^{(d)}_{ser}(\rho)\big)\)</span></p>
+<p>where <span class="math inline">\(B(n;p)\)</span> is the distribution of successful outcomes from <span class="math inline">\(n\)</span>-trials with fixed probability of success <span class="math inline">\(p\)</span>. NB: If we were using the same data for turnout and preference, <span class="math inline">\(T^{(d)}_{ser}(\rho)\)</span> would be the same as <span class="math inline">\(V^{(d)}_{ser}(\rho)\)</span>, but since we are using different data sets, we need to model them separately.</p>
+<p>The probabilities <span class="math inline">\(t\)</span> and <span class="math inline">\(p\)</span> must be between 0 and 1 and are modeled via <a href="https://en.wikipedia.org/wiki/Logistic_function">logistic functions</a> of the parameters so that the parameters themselves are unconstrained. This allows the fitting to proceed more easily. The logistic then maps the unconstrained sum of the parameters to a probability.</p>
+<p><span class="math inline">\(\begin{equation}  t^{(d)}_{ser}(\rho) = \textrm{logit}(X\cdot\tilde{\rho} + A_s + B_e + C_r + D_{S(d)})  \end{equation}\)</span></p>
+<p><span class="math inline">\(\begin{equation}  p^{(d)}_{ser}(\rho) = \textrm{logit}(x\cdot\tilde{\rho} + \alpha_s + \beta_e + \gamma_r + \delta_{S(d)})  \end{equation}\)</span></p>
+<p>where <span class="math inline">\(S(d)\)</span> is the state in which the district <span class="math inline">\(d\)</span> is located, and <span class="math inline">\(\tilde{\rho} = \textrm{log}(\rho) - \textrm{mean}(\textrm{log}(\rho))\)</span></p>
+<ul>
+<li><p><span class="math inline">\(X\)</span> and <span class="math inline">\(x\)</span> are single coefficients, given broad, normal, zero-centered priors.</p></li>
+<li><p><span class="math inline">\(A_s\)</span>, <span class="math inline">\(B_e\)</span>, <span class="math inline">\(\alpha_s\)</span>, and <span class="math inline">\(\beta_e\)</span> are constrained to be <span class="math inline">\(\pm\)</span> one number each, since the categories are binary. E.g., <span class="math inline">\(B_\textrm{college-grad} = -B_\textrm{non-grad}\)</span>. They are given broad, normal, zero-centered priors.</p></li>
+<li><p><span class="math inline">\(C_r\)</span> and <span class="math inline">\(\gamma_r\)</span> represent one number per race category and are partially pooled: we add hyper-parameters representing the mean value among all races and the variance of the specific race coefficients around that mean. The mean acts like the constant term in the fit, setting an average turnout/preference among all people, and the variance adjusts how much the race-specific levels of turnout/D-preference are derived from each racial group separately.</p></li>
+<li><p><span class="math inline">\(D_s\)</span> and <span class="math inline">\(\delta_s\)</span> take on one value per state and are also partially pooled. Here we assume zero mean and use one hyper-parameter for the variance, allowing the fit to determine how much the state-by-state variance is determined by the demographics of the state vs. something intrinsic to the state itself, an issue we looked at in some detail in a <a href="https://blueripple.github.io/research/Turnout/StateSpecific1/post.html">previous post</a>.</p></li>
+</ul></li>
+<li><p>We use <a href="https://www.haskell.org">Haskell</a> to parse the data, reorganize it and produce code for <a href="https://mc-stan.org">Stan</a>, which then runs the <a href="https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo">Hamiltonian Monte Carlo</a> to estimate the posterior distribution of all the parameters and thus posterior distributions of <span class="math inline">\(t^{(d)}_{ser}(\rho)\)</span> and <span class="math inline">\(p^{(d)}_{ser}(\rho)\)</span>.</p></li>
+<li><p>Using those distributions and the breakdown of the demographics of each SLD, which amounts to a population density (<span class="math inline">\(\rho*\)</span>), and numbers, <span class="math inline">\(N_{ser}\)</span> of eligible voters for each combination of sex, education-level and race, we <a href="https://en.wikipedia.org/wiki/Multilevel_regression_with_poststratification">post-stratify</a> to get a distribution of votes, <span class="math inline">\(V\)</span>, and democratic votes, <span class="math inline">\(D\)</span>:</p>
+<p><span class="math inline">\(\begin{equation}  V = \sum_{ser} N_{ser} t_{ser}(\rho*)  \end{equation}\)</span></p>
+<p><span class="math inline">\(\begin{equation}  D = \sum_{ser} N_{ser} t_{ser}(\rho*) p_{ser}(\rho*)  \end{equation}\)</span></p>
+<p>where it’s understood that we are setting the state <span class="math inline">\(S=\textrm{Virginia}\)</span>. From here it’s straightforward to compute the distribution of democratic vote share <span class="math inline">\(D/V\)</span>.</p></li>
+</ol>
+<p>One advantage of estimating these things via Monte Carlo, is that we compute each quantity, including the post-stratified ones, on <em>each</em> Monte Carlo iteration. So rather than just getting an estimate of the value of each quantity, we get some large number of samples from its posterior distribution. So we have good diagnostics around these quantities: we can see if we’ve done enough sampling for their distributions to have converged and we can extract informative confidence intervals–even of derived quantities like the post-stratifications–rather than just crude estimates of standard deviation as you might get from various methods which estimate parameters via optimization of the maximum-likelihood function.</p>
+</section>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>By “overlap” we mean that we weight a census geography in a SLD by computing how much the area of that geography overlaps the district, a technique called <a href="https://www.spatialanalysisonline.com/HTML/areal_interpolation.htm">“areal interpolation”</a>. Areal interpolation assumes that people are distributed evenly over the source geographies (the census blocks or block-groups). This assumption is relatively harmless if the census geographies are very small compared to the target geography. More accuracy can be achieved using sources of population density data within the census geographies, for example, the <a href="https://www.usgs.gov/centers/eros/science/national-land-cover-database?qt-science_center_objects=0#qt-science_center_objects">National Land Cover Database (NLCD)</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>For the decennial census there is detailed data available at the block level, where a block has ~100 people. For the American Community Survey, which collects data every year and thus is more up to date than the decennial census, data is available only at the “block-group” level, consisting of a few thousand people.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Given a model giving a probability that any person, described by their demography, will vote and the probability that they will vote for the Democratic candidate, we can break each SLD into buckets of each sort of person in our model and then multiply the number of people in each group by the those probabilities to figure out the total number of votes in each group and how many of those votes were for the Democratic candidate. We add all those numbers up and that yields turnout and Dem vote share. Applying the model to the composition of the SLD in this way is called “post-stratification”.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
