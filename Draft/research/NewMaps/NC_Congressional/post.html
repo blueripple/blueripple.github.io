@@ -3755,23 +3755,49 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
         "resize": true
     },
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "encoding": {
-        "x": {
-            "type": "quantitative",
-            "field": "% non-white"
+    "layer": [
+        {
+            "encoding": {
+                "x": {
+                    "type": "quantitative",
+                    "field": "% non-white"
+                },
+                "y": {
+                    "type": "quantitative",
+                    "field": "% college grad"
+                },
+                "text": {
+                    "field": "District"
+                }
+            },
+            "mark": {
+                "type": "text",
+                "dy": 20
+            }
         },
-        "color": {
-            "type": "quantitative",
-            "field": "log density"
-        },
-        "y": {
-            "type": "quantitative",
-            "field": "% college grad"
-        },
-        "text": {
-            "field": "District"
+        {
+            "encoding": {
+                "x": {
+                    "type": "quantitative",
+                    "field": "% non-white"
+                },
+                "color": {
+                    "type": "quantitative",
+                    "field": "log density"
+                },
+                "y": {
+                    "type": "quantitative",
+                    "field": "% college grad"
+                }
+            },
+            "mark": {
+                "type": "circle",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
         }
-    },
+    ],
     "config": {
         "view": {
             "continuousWidth": 600,
@@ -3862,13 +3888,7 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
             }
         ]
     },
-    "height": 600,
-    "mark": {
-        "type": "text",
-        "tooltip": {
-            "content": "encoding"
-        }
-    }
+    "height": 600
 };
 vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
 </figure>
@@ -7906,10 +7926,165 @@ vegaEmbed('#figure_3',vlSpec,{"renderer": "canvas"});</script>
 };
 vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
 </figure>
+<figure id="figure_5">
+<script type="text/javascript">var vlSpec=
+{
+    "width": 600,
+    "title": "NC demographic scatter",
+    "padding": 5,
+    "autosize": {
+        "type": "pad",
+        "contains": "padding",
+        "resize": true
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "layer": [
+        {
+            "encoding": {
+                "x": {
+                    "type": "quantitative",
+                    "field": "% non-white"
+                },
+                "y": {
+                    "type": "quantitative",
+                    "field": "% college grad"
+                },
+                "text": {
+                    "field": "District"
+                }
+            },
+            "mark": {
+                "type": "text",
+                "dy": 20
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "type": "quantitative",
+                    "field": "% non-white"
+                },
+                "color": {
+                    "type": "quantitative",
+                    "field": "log density"
+                },
+                "y": {
+                    "type": "quantitative",
+                    "field": "% college grad"
+                }
+            },
+            "mark": {
+                "type": "circle",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "continuousWidth": 600,
+            "discreteWidth": 600,
+            "discreteHeight": 600,
+            "continuousHeight": 600
+        }
+    },
+    "data": {
+        "values": [
+            {
+                "District": "NC-01",
+                "% non-white": 29.131875113450718,
+                "log density": 5.782347167526864,
+                "% college grad": 19.99621830943305
+            },
+            {
+                "District": "NC-02",
+                "% non-white": 44.20211063948525,
+                "log density": 5.14644741720991,
+                "% college grad": 14.790551104681228
+            },
+            {
+                "District": "NC-03",
+                "% non-white": 28.318307955542135,
+                "log density": 5.698769932832657,
+                "% college grad": 19.867144027951515
+            },
+            {
+                "District": "NC-04",
+                "% non-white": 40.252156178500876,
+                "log density": 6.2409383936682215,
+                "% college grad": 18.10852691162819
+            },
+            {
+                "District": "NC-05",
+                "% non-white": 33.924381679323425,
+                "log density": 7.532537962015426,
+                "% college grad": 32.2366859479047
+            },
+            {
+                "District": "NC-06",
+                "% non-white": 37.522985533229516,
+                "log density": 7.457268781662764,
+                "% college grad": 35.79971532094705
+            },
+            {
+                "District": "NC-07",
+                "% non-white": 24.58640041432125,
+                "log density": 6.07424197356555,
+                "% college grad": 20.465262389309153
+            },
+            {
+                "District": "NC-08",
+                "% non-white": 26.85556436683115,
+                "log density": 6.04602375259733,
+                "% college grad": 24.63123422824105
+            },
+            {
+                "District": "NC-09",
+                "% non-white": 51.62350638476349,
+                "log density": 8.006307565850175,
+                "% college grad": 29.032248260393192
+            },
+            {
+                "District": "NC-10",
+                "% non-white": 25.082861979274185,
+                "log density": 6.504048623888836,
+                "% college grad": 21.9374922587837
+            },
+            {
+                "District": "NC-11",
+                "% non-white": 23.220409128532577,
+                "log density": 6.0494032120284285,
+                "% college grad": 19.1749438335107
+            },
+            {
+                "District": "NC-12",
+                "% non-white": 25.814615627965832,
+                "log density": 6.538024042825084,
+                "% college grad": 21.108707091293226
+            },
+            {
+                "District": "NC-13",
+                "% non-white": 20.51316827435404,
+                "log density": 6.21768336493912,
+                "% college grad": 21.322640021036023
+            },
+            {
+                "District": "NC-14",
+                "% non-white": 8.778938907752584,
+                "log density": 5.379943435427982,
+                "% college grad": 22.93513031295764
+            }
+        ]
+    },
+    "height": 600
+};
+vegaEmbed('#figure_5',vlSpec,{"renderer": "canvas"});</script>
+</figure>
 <p>It’s hard to see anything specific from these charts, though I find them extremely useful as I try to understand what might be happening in a specific district. Our impression is that this new map has made the safe D districts safer by adding voters-of-color (mostly Black voters but also some Hispanic and Asian voters) and thus made the rest of the districts easier for Republicans to win by removing those same voters from places where they might have made districts competitive.</p>
 <p>DRA is the best and simplest tool we’ve found for exploring history-based analysis of congressional and state-house maps. Their analysis of the new NC map is <a href="https://davesredistricting.org/maps#viewmap::6b4ec494-9f6c-4a60-b32a-86a5b19e762d">here</a>. According to DRA, the new plan heavily favors Republicans, with 8 safe R districts, 3 safe D districts and 3 more competitive districts, 2 of which favor Rs and one which favors Ds.</p>
 <p>To visualize the model results on these new districts, we chart the model estimates vs the DRA estimates for the new districts, using the same sort of scatter plot as above, replacing election results from 2020 with DRA estimates of partisan lean. Again, the line represents where each district would fall if the model and DRA estimate agree precisely.</p>
-<figure id="figure_5">
+<figure id="figure_6">
 <script type="text/javascript">var vlSpec=
 {
     "width": 600,
@@ -8129,7 +8304,7 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
     },
     "height": 600
 };
-vegaEmbed('#figure_5',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>A few observations:</p>
 <ul>

@@ -255,7 +255,7 @@
 <p>The standard way to predict “partisan lean” for any district, old or new: break it into precincts with known voting history (usually a combination of recent presidential, house and governor races) and then aggregate those results to estimate expected results in the district. We’ll call this the “historical model.”</p>
 <p>The historical model is likely to be more accurate as a predictive tool since the same people often vote the same way in subsequent elections. So why build a demographic model? We’re interested in places where the history may be misleading, either because of the specific story in a district or because changing politics or demographics may have altered the balance of likely voters but one or both parties are not seeing the threat or new opportunity.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>This sort of analysis is potentially more useful when the districts are new, since voting history may be less “sticky” there.</p>
-<figure id="figure_6">
+<figure id="figure_7">
 <script type="text/javascript">var vlSpec=
 {
     "width": 600,
@@ -10214,9 +10214,9 @@
     },
     "height": 600
 };
-vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<figure id="figure_7">
+<figure id="figure_8">
 <script type="text/javascript">var vlSpec=
 {
     "width": 600,
@@ -10228,23 +10228,49 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
         "resize": true
     },
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "encoding": {
-        "x": {
-            "type": "quantitative",
-            "field": "% non-white"
+    "layer": [
+        {
+            "encoding": {
+                "x": {
+                    "type": "quantitative",
+                    "field": "% non-white"
+                },
+                "y": {
+                    "type": "quantitative",
+                    "field": "% college grad"
+                },
+                "text": {
+                    "field": "District"
+                }
+            },
+            "mark": {
+                "type": "text",
+                "dy": 20
+            }
         },
-        "color": {
-            "type": "quantitative",
-            "field": "log density"
-        },
-        "y": {
-            "type": "quantitative",
-            "field": "% college grad"
-        },
-        "text": {
-            "field": "District"
+        {
+            "encoding": {
+                "x": {
+                    "type": "quantitative",
+                    "field": "% non-white"
+                },
+                "color": {
+                    "type": "quantitative",
+                    "field": "log density"
+                },
+                "y": {
+                    "type": "quantitative",
+                    "field": "% college grad"
+                }
+            },
+            "mark": {
+                "type": "circle",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
         }
-    },
+    ],
     "config": {
         "view": {
             "continuousWidth": 600,
@@ -10485,18 +10511,12 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
             }
         ]
     },
-    "height": 600,
-    "mark": {
-        "type": "text",
-        "tooltip": {
-            "content": "encoding"
-        }
-    }
+    "height": 600
 };
-vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_8',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>placeholder</p>
-<figure id="figure_8">
+<figure id="figure_9">
 <script type="text/javascript">var vlSpec=
 {
     "width": 600,
@@ -10990,10 +11010,10 @@ vegaEmbed('#figure_7',vlSpec,{"renderer": "canvas"});</script>
     },
     "height": 600
 };
-vegaEmbed('#figure_8',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_9',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>placeholder</p>
-<figure id="figure_9">
+<figure id="figure_10">
 <script type="text/javascript">var vlSpec=
 {
     "width": 600,
@@ -20924,10 +20944,309 @@ vegaEmbed('#figure_8',vlSpec,{"renderer": "canvas"});</script>
     },
     "height": 600
 };
-vegaEmbed('#figure_9',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_10',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_11">
+<script type="text/javascript">var vlSpec=
+{
+    "width": 600,
+    "title": "TX demographic scatter",
+    "padding": 5,
+    "autosize": {
+        "type": "pad",
+        "contains": "padding",
+        "resize": true
+    },
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "layer": [
+        {
+            "encoding": {
+                "x": {
+                    "type": "quantitative",
+                    "field": "% non-white"
+                },
+                "y": {
+                    "type": "quantitative",
+                    "field": "% college grad"
+                },
+                "text": {
+                    "field": "District"
+                }
+            },
+            "mark": {
+                "type": "text",
+                "dy": 20
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "type": "quantitative",
+                    "field": "% non-white"
+                },
+                "color": {
+                    "type": "quantitative",
+                    "field": "log density"
+                },
+                "y": {
+                    "type": "quantitative",
+                    "field": "% college grad"
+                }
+            },
+            "mark": {
+                "type": "circle",
+                "tooltip": {
+                    "content": "data"
+                }
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "continuousWidth": 600,
+            "discreteWidth": 600,
+            "discreteHeight": 600,
+            "continuousHeight": 600
+        }
+    },
+    "data": {
+        "values": [
+            {
+                "District": "TX-01",
+                "% non-white": 29.012389295384196,
+                "log density": 5.431142259660542,
+                "% college grad": 16.68292814930296
+            },
+            {
+                "District": "TX-02",
+                "% non-white": 36.085699089693705,
+                "log density": 7.421530548263452,
+                "% college grad": 27.118592007863132
+            },
+            {
+                "District": "TX-03",
+                "% non-white": 32.79973539028351,
+                "log density": 7.408912312202432,
+                "% college grad": 31.437121957858686
+            },
+            {
+                "District": "TX-04",
+                "% non-white": 30.78299884420346,
+                "log density": 6.457428778961949,
+                "% college grad": 27.27864648121795
+            },
+            {
+                "District": "TX-05",
+                "% non-white": 38.85147622584654,
+                "log density": 6.734496530596925,
+                "% college grad": 17.272916087288653
+            },
+            {
+                "District": "TX-06",
+                "% non-white": 43.54210321538303,
+                "log density": 6.6125113543230665,
+                "% college grad": 17.813281316790864
+            },
+            {
+                "District": "TX-07",
+                "% non-white": 60.74417144635142,
+                "log density": 8.844780358163707,
+                "% college grad": 31.883227918682486
+            },
+            {
+                "District": "TX-08",
+                "% non-white": 42.83916937603548,
+                "log density": 6.956364474396759,
+                "% college grad": 21.775851115512538
+            },
+            {
+                "District": "TX-09",
+                "% non-white": 79.38021761334163,
+                "log density": 8.46308752496251,
+                "% college grad": 22.117525381242206
+            },
+            {
+                "District": "TX-10",
+                "% non-white": 33.14941611074275,
+                "log density": 6.024536588168176,
+                "% college grad": 26.2202135289103
+            },
+            {
+                "District": "TX-11",
+                "% non-white": 44.15331678700361,
+                "log density": 6.700325123087419,
+                "% college grad": 17.7734375
+            },
+            {
+                "District": "TX-12",
+                "% non-white": 32.16076271882962,
+                "log density": 7.523232767372112,
+                "% college grad": 23.498321824003703
+            },
+            {
+                "District": "TX-13",
+                "% non-white": 28.769318167551756,
+                "log density": 5.914583502772024,
+                "% college grad": 18.690601735025673
+            },
+            {
+                "District": "TX-14",
+                "% non-white": 36.90482747894721,
+                "log density": 6.859426008584851,
+                "% college grad": 18.656704327849944
+            },
+            {
+                "District": "TX-15",
+                "% non-white": 78.33359854752095,
+                "log density": 6.754231069547984,
+                "% college grad": 16.391770563525828
+            },
+            {
+                "District": "TX-16",
+                "% non-white": 83.57284387250725,
+                "log density": 8.09284797036465,
+                "% college grad": 18.848183341855577
+            },
+            {
+                "District": "TX-17",
+                "% non-white": 35.85402616642119,
+                "log density": 6.0155960266829105,
+                "% college grad": 18.16369947374314
+            },
+            {
+                "District": "TX-18",
+                "% non-white": 73.93411018911418,
+                "log density": 8.352698193132888,
+                "% college grad": 19.16423398978447
+            },
+            {
+                "District": "TX-19",
+                "% non-white": 38.69557834680432,
+                "log density": 5.880337436555819,
+                "% college grad": 17.7326292195884
+            },
+            {
+                "District": "TX-20",
+                "% non-white": 75.21542524697163,
+                "log density": 8.522455322089893,
+                "% college grad": 18.358975754349746
+            },
+            {
+                "District": "TX-21",
+                "% non-white": 31.613734898136027,
+                "log density": 6.568274521296469,
+                "% college grad": 28.824984689354498
+            },
+            {
+                "District": "TX-22",
+                "% non-white": 47.7914102613105,
+                "log density": 7.0564166342834564,
+                "% college grad": 29.635362917096664
+            },
+            {
+                "District": "TX-23",
+                "% non-white": 63.208867248421214,
+                "log density": 5.676205706885966,
+                "% college grad": 20.387123921733643
+            },
+            {
+                "District": "TX-24",
+                "% non-white": 27.609962154713177,
+                "log density": 8.234671116582527,
+                "% college grad": 33.243947839322075
+            },
+            {
+                "District": "TX-25",
+                "% non-white": 30.035541907229376,
+                "log density": 6.710169819281794,
+                "% college grad": 21.177025658560964
+            },
+            {
+                "District": "TX-26",
+                "% non-white": 32.03257009917962,
+                "log density": 7.17862938565955,
+                "% college grad": 29.536396473613323
+            },
+            {
+                "District": "TX-27",
+                "% non-white": 52.33753517520463,
+                "log density": 6.41449121109515,
+                "% college grad": 15.938308487587136
+            },
+            {
+                "District": "TX-28",
+                "% non-white": 77.08677448578118,
+                "log density": 7.215975002651466,
+                "% college grad": 14.999689236859899
+            },
+            {
+                "District": "TX-29",
+                "% non-white": 86.77303016551625,
+                "log density": 8.440774243321123,
+                "% college grad": 9.300636111044767
+            },
+            {
+                "District": "TX-30",
+                "% non-white": 72.48941486717986,
+                "log density": 8.094329603731406,
+                "% college grad": 19.97229675605603
+            },
+            {
+                "District": "TX-31",
+                "% non-white": 29.58032872651175,
+                "log density": 6.5306443643705006,
+                "% college grad": 24.323146008632342
+            },
+            {
+                "District": "TX-32",
+                "% non-white": 53.336007143613884,
+                "log density": 8.737094692961966,
+                "% college grad": 26.15031858701739
+            },
+            {
+                "District": "TX-33",
+                "% non-white": 76.70590549281714,
+                "log density": 8.434289729016474,
+                "% college grad": 15.700231202289014
+            },
+            {
+                "District": "TX-34",
+                "% non-white": 87.3544201327133,
+                "log density": 7.12454267265737,
+                "% college grad": 13.90200330502983
+            },
+            {
+                "District": "TX-35",
+                "% non-white": 65.07457292788146,
+                "log density": 7.86034322397553,
+                "% college grad": 19.332495125091288
+            },
+            {
+                "District": "TX-36",
+                "% non-white": 39.30259222333001,
+                "log density": 6.596272196344404,
+                "% college grad": 18.02725157859754
+            },
+            {
+                "District": "TX-37",
+                "% non-white": 36.061243173747705,
+                "log density": 8.364855201007696,
+                "% college grad": 35.545002060522606
+            },
+            {
+                "District": "TX-38",
+                "% non-white": 38.06336730934545,
+                "log density": 8.096960578480493,
+                "% college grad": 32.80499952242553
+            }
+        ]
+    },
+    "height": 600
+};
+vegaEmbed('#figure_11',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>placeholder</p>
-<figure id="figure_10">
+<figure id="figure_12">
 <script type="text/javascript">var vlSpec=
 {
     "width": 600,
@@ -21339,7 +21658,7 @@ vegaEmbed('#figure_9',vlSpec,{"renderer": "canvas"});</script>
     },
     "height": 600
 };
-vegaEmbed('#figure_10',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_12',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>Placeholder</p>
 <div class="brTableTitle">TX 2022: DRA and Blue Ripple Model (sorted by DRA D Share)</div>
