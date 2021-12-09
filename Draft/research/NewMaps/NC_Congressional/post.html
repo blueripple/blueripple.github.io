@@ -249,7 +249,7 @@
 
 <!-- page content begins here -->
 
-<div class="published">December  8, 2021 </div>
+<div class="published">December  9, 2021 </div>
 <section id="blue-ripple-model-and-ncs-new-congressional-map" class="level1">
 <h1>Blue Ripple Model and NC’s new Congressional Map</h1>
 <p>About a month ago, Frank and I spoke to Dale about, among other things, looking at new congressional maps as they come out in case our demographic models are at all useful for your candidate selection work.</p>
@@ -3760,10 +3760,16 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
                     "field": "% non-white"
                 },
                 "y": {
                     "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
                     "field": "% college grad"
                 },
                 "text": {
@@ -3779,15 +3785,32 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
                     "field": "% non-white"
                 },
                 "color": {
                     "type": "quantitative",
+                    "scale": {
+                        "zero": false,
+                        "scheme": "redblue"
+                    },
                     "field": "log density"
                 },
                 "y": {
                     "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
                     "field": "% college grad"
+                },
+                "size": {
+                    "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
+                    "field": "Modeled D-Edge"
                 }
             },
             "mark": {
@@ -3811,79 +3834,92 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
             {
                 "District": "NC-01",
                 "% non-white": 46.80113342269765,
-                "log density": 5.447857433817612,
+                "Modeled D-Edge": 5.447857433817612,
+                "log density": 1.1299999999999977,
                 "% college grad": 15.79923553691587
             },
             {
                 "District": "NC-02",
                 "% non-white": 33.10835066892585,
-                "log density": 7.647795587380141,
+                "Modeled D-Edge": 7.647795587380141,
+                "log density": 10.170000000000002,
                 "% college grad": 34.59038304351029
             },
             {
                 "District": "NC-03",
                 "% non-white": 27.403810199675085,
-                "log density": 5.53153005353903,
+                "Modeled D-Edge": 5.53153005353903,
+                "log density": -6.7,
                 "% college grad": 18.359478798544405
             },
             {
                 "District": "NC-04",
                 "% non-white": 35.40149661468314,
-                "log density": 6.736575422287017,
+                "Modeled D-Edge": 6.736575422287017,
+                "log density": 5.289999999999995,
                 "% college grad": 31.088042805341825
             },
             {
                 "District": "NC-05",
                 "% non-white": 14.809233714351622,
-                "log density": 5.747863153891376,
+                "Modeled D-Edge": 5.747863153891376,
+                "log density": -9.53,
                 "% college grad": 16.095039372555597
             },
             {
                 "District": "NC-06",
                 "% non-white": 39.91424889395169,
-                "log density": 7.327819959458015,
+                "Modeled D-Edge": 7.327819959458015,
+                "log density": 10.440000000000005,
                 "% college grad": 25.710085894935478
             },
             {
                 "District": "NC-07",
                 "% non-white": 22.704147588997582,
-                "log density": 5.82744449148394,
+                "Modeled D-Edge": 5.82744449148394,
+                "log density": -5.969999999999997,
                 "% college grad": 20.584183649041112
             },
             {
                 "District": "NC-08",
                 "% non-white": 37.33674245041808,
-                "log density": 6.431363287534036,
+                "Modeled D-Edge": 6.431363287534036,
+                "log density": 2.32,
                 "% college grad": 19.92354615186486
             },
             {
                 "District": "NC-09",
                 "% non-white": 32.30741433793289,
-                "log density": 6.239027502962935,
+                "Modeled D-Edge": 6.239027502962935,
+                "log density": -1.7199999999999993,
                 "% college grad": 25.92990360766843
             },
             {
                 "District": "NC-10",
                 "% non-white": 17.242166517457477,
-                "log density": 5.781946495625555,
+                "Modeled D-Edge": 5.781946495625555,
+                "log density": -8.639999999999997,
                 "% college grad": 17.850044762757385
             },
             {
                 "District": "NC-11",
                 "% non-white": 9.02352064272517,
-                "log density": 5.299466705804558,
+                "Modeled D-Edge": 5.299466705804558,
+                "log density": -14.02,
                 "% college grad": 22.193138164615245
             },
             {
                 "District": "NC-12",
                 "% non-white": 48.10875255433089,
-                "log density": 7.769311011116041,
+                "Modeled D-Edge": 7.769311011116041,
+                "log density": 15.290000000000003,
                 "% college grad": 28.67339153814263
             },
             {
                 "District": "NC-13",
                 "% non-white": 21.21935782234758,
-                "log density": 5.844529438984284,
+                "Modeled D-Edge": 5.844529438984284,
+                "log density": -7.06,
                 "% college grad": 16.12136441048483
             }
         ]
@@ -4062,119 +4098,119 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
         "values": [
             {
                 "District": 1,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 48.66,
-                "Model_Mid": 51.28,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 48.74,
+                "Model_Mid": 51.129999999999995,
                 "Election Result": 54.1767780206415,
-                "Model_Upper": 53.81,
+                "Model_Upper": 53.559999999999995,
                 "State": "NC"
             },
             {
                 "District": 2,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
                 "Model_Lower": 57.730000000000004,
-                "Model_Mid": 60.309999999999995,
+                "Model_Mid": 60.17,
                 "Election Result": 64.38213078849206,
-                "Model_Upper": 62.739999999999995,
+                "Model_Upper": 62.519999999999996,
                 "State": "NC"
             },
             {
                 "District": 3,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 40.96,
-                "Model_Mid": 43.46,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 40.99,
+                "Model_Mid": 43.3,
                 "Election Result": 36.61598887883669,
-                "Model_Upper": 45.87,
+                "Model_Upper": 45.58,
                 "State": "NC"
             },
             {
                 "District": 4,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 52.959999999999994,
-                "Model_Mid": 55.48,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 52.94,
+                "Model_Mid": 55.28999999999999,
                 "Election Result": 67.32999945313021,
-                "Model_Upper": 57.82000000000001,
+                "Model_Upper": 57.58,
                 "State": "NC"
             },
             {
                 "District": 5,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 38.04,
-                "Model_Mid": 40.56,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 38.11,
+                "Model_Mid": 40.47,
                 "Election Result": 31.731398055013514,
-                "Model_Upper": 43.05,
+                "Model_Upper": 42.86,
                 "State": "NC"
             },
             {
                 "District": 6,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 58.120000000000005,
-                "Model_Mid": 60.61,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 58.10999999999999,
+                "Model_Mid": 60.440000000000005,
                 "Election Result": 62.272891393145656,
-                "Model_Upper": 62.91,
+                "Model_Upper": 62.73,
                 "State": "NC"
             },
             {
                 "District": 7,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 41.67,
-                "Model_Mid": 44.18,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 41.699999999999996,
+                "Model_Mid": 44.03,
                 "Election Result": 39.65664646679424,
-                "Model_Upper": 46.63,
+                "Model_Upper": 46.39,
                 "State": "NC"
             },
             {
                 "District": 8,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 50.03999999999999,
-                "Model_Mid": 52.580000000000005,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 49.99,
+                "Model_Mid": 52.32,
                 "Election Result": 46.7162433813772,
-                "Model_Upper": 54.949999999999996,
+                "Model_Upper": 54.65,
                 "State": "NC"
             },
             {
                 "District": 9,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 46.17,
-                "Model_Mid": 48.72,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 45.879999999999995,
+                "Model_Mid": 48.28,
                 "Election Result": 44.407904504558005,
-                "Model_Upper": 51.2,
+                "Model_Upper": 50.67,
                 "State": "NC"
             },
             {
                 "District": 10,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 38.97,
-                "Model_Mid": 41.5,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 39.019999999999996,
+                "Model_Mid": 41.36,
                 "Election Result": 31.09240232461119,
-                "Model_Upper": 43.99,
+                "Model_Upper": 43.769999999999996,
                 "State": "NC"
             },
             {
                 "District": 11,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 33.58,
-                "Model_Mid": 36.120000000000005,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 33.589999999999996,
+                "Model_Mid": 35.980000000000004,
                 "Election Result": 43.72167171300119,
-                "Model_Upper": 38.65,
+                "Model_Upper": 38.34,
                 "State": "NC"
             },
             {
                 "District": 12,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 63.06,
-                "Model_Mid": 65.55,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 62.970000000000006,
+                "Model_Mid": 65.29,
                 "Election Result": 100,
-                "Model_Upper": 67.84,
+                "Model_Upper": 67.51,
                 "State": "NC"
             },
             {
                 "District": 13,
-                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusHStateD}",
-                "Model_Lower": 40.589999999999996,
-                "Model_Mid": 43.1,
+                "Model": "Model {groupModel = PlusStateAndStateRaceG, densityModel = PlusNCHRaceD}",
+                "Model_Lower": 40.6,
+                "Model_Mid": 42.94,
                 "Election Result": 31.81810062138747,
-                "Model_Upper": 45.57,
+                "Model_Upper": 45.32,
                 "State": "NC"
             }
         ]
@@ -7943,10 +7979,16 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
                     "field": "% non-white"
                 },
                 "y": {
                     "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
                     "field": "% college grad"
                 },
                 "text": {
@@ -7962,15 +8004,32 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
                     "field": "% non-white"
                 },
                 "color": {
                     "type": "quantitative",
-                    "field": "log density"
+                    "scale": {
+                        "zero": false,
+                        "scheme": "redblue"
+                    },
+                    "field": "Model D-Edge"
                 },
                 "y": {
                     "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
                     "field": "% college grad"
+                },
+                "size": {
+                    "type": "quantitative",
+                    "scale": {
+                        "zero": false
+                    },
+                    "field": "log density"
                 }
             },
             "mark": {
@@ -7994,84 +8053,98 @@ vegaEmbed('#figure_4',vlSpec,{"renderer": "canvas"});</script>
             {
                 "District": "NC-01",
                 "% non-white": 29.131875113450718,
+                "Model D-Edge": -3.9200000000000013,
                 "log density": 5.782347167526864,
                 "% college grad": 19.99621830943305
             },
             {
                 "District": "NC-02",
                 "% non-white": 44.20211063948525,
+                "Model D-Edge": -2.0299999999999985,
                 "log density": 5.14644741720991,
                 "% college grad": 14.790551104681228
             },
             {
                 "District": "NC-03",
                 "% non-white": 28.318307955542135,
+                "Model D-Edge": -6.8500000000000005,
                 "log density": 5.698769932832657,
                 "% college grad": 19.867144027951515
             },
             {
                 "District": "NC-04",
                 "% non-white": 40.252156178500876,
+                "Model D-Edge": 1.770000000000005,
                 "log density": 6.2409383936682215,
                 "% college grad": 18.10852691162819
             },
             {
                 "District": "NC-05",
                 "% non-white": 33.924381679323425,
+                "Model D-Edge": 10.150000000000004,
                 "log density": 7.532537962015426,
                 "% college grad": 32.2366859479047
             },
             {
                 "District": "NC-06",
                 "% non-white": 37.522985533229516,
+                "Model D-Edge": 10.060000000000002,
                 "log density": 7.457268781662764,
                 "% college grad": 35.79971532094705
             },
             {
                 "District": "NC-07",
                 "% non-white": 24.58640041432125,
+                "Model D-Edge": -4.139999999999999,
                 "log density": 6.07424197356555,
                 "% college grad": 20.465262389309153
             },
             {
                 "District": "NC-08",
                 "% non-white": 26.85556436683115,
+                "Model D-Edge": -3.53,
                 "log density": 6.04602375259733,
                 "% college grad": 24.63123422824105
             },
             {
                 "District": "NC-09",
                 "% non-white": 51.62350638476349,
+                "Model D-Edge": 17.710000000000004,
                 "log density": 8.006307565850175,
                 "% college grad": 29.032248260393192
             },
             {
                 "District": "NC-10",
                 "% non-white": 25.082861979274185,
+                "Model D-Edge": -0.8199999999999985,
                 "log density": 6.504048623888836,
                 "% college grad": 21.9374922587837
             },
             {
                 "District": "NC-11",
                 "% non-white": 23.220409128532577,
+                "Model D-Edge": -4.33,
                 "log density": 6.0494032120284285,
                 "% college grad": 19.1749438335107
             },
             {
                 "District": "NC-12",
                 "% non-white": 25.814615627965832,
+                "Model D-Edge": -0.30000000000000027,
                 "log density": 6.538024042825084,
                 "% college grad": 21.108707091293226
             },
             {
                 "District": "NC-13",
                 "% non-white": 20.51316827435404,
+                "Model D-Edge": -3.9700000000000015,
                 "log density": 6.21768336493912,
                 "% college grad": 21.322640021036023
             },
             {
                 "District": "NC-14",
                 "% non-white": 8.778938907752584,
+                "Model D-Edge": -13.590000000000002,
                 "log density": 5.379943435427982,
                 "% college grad": 22.93513031295764
             }
@@ -8189,116 +8262,116 @@ vegaEmbed('#figure_5',vlSpec,{"renderer": "canvas"});</script>
         },
         "values": [
             {
-                "Model (95%)": 48.66,
+                "Model (95%)": 48.47,
                 "District": 1,
-                "Model": 46.25,
+                "Model": 46.08,
                 "DRA": 42.806012884753045,
                 "State": "NC",
-                "Model (5%)": 43.91
+                "Model (5%)": 43.65
             },
             {
-                "Model (95%)": 50.61,
+                "Model (95%)": 50.41,
                 "District": 2,
-                "Model": 48.14,
+                "Model": 47.97,
                 "DRA": 52.8514791094846,
                 "State": "NC",
-                "Model (5%)": 45.62
+                "Model (5%)": 45.33
             },
             {
-                "Model (95%)": 45.93,
+                "Model (95%)": 45.56,
                 "District": 3,
-                "Model": 43.57,
+                "Model": 43.15,
                 "DRA": 42.373054873054876,
                 "State": "NC",
-                "Model (5%)": 41.22
+                "Model (5%)": 40.72
             },
             {
-                "Model (95%)": 54.459999999999994,
+                "Model (95%)": 54.120000000000005,
                 "District": 4,
-                "Model": 52.059999999999995,
+                "Model": 51.77,
                 "DRA": 47.326915198689065,
                 "State": "NC",
-                "Model (5%)": 49.65
+                "Model (5%)": 49.2
             },
             {
-                "Model (95%)": 62.69,
+                "Model (95%)": 62.519999999999996,
                 "District": 5,
-                "Model": 60.309999999999995,
+                "Model": 60.150000000000006,
                 "DRA": 63.87805378772325,
                 "State": "NC",
-                "Model (5%)": 57.93000000000001
+                "Model (5%)": 57.550000000000004
             },
             {
-                "Model (95%)": 62.64999999999999,
+                "Model (95%)": 62.49,
                 "District": 6,
-                "Model": 60.24,
+                "Model": 60.06,
                 "DRA": 73.27056897257471,
                 "State": "NC",
-                "Model (5%)": 57.85
+                "Model (5%)": 57.330000000000005
             },
             {
-                "Model (95%)": 48.46,
+                "Model (95%)": 48.309999999999995,
                 "District": 7,
-                "Model": 46.08,
+                "Model": 45.86,
                 "DRA": 42.072983747316776,
                 "State": "NC",
-                "Model (5%)": 43.7
+                "Model (5%)": 43.38
             },
             {
-                "Model (95%)": 49.1,
+                "Model (95%)": 48.91,
                 "District": 8,
-                "Model": 46.7,
+                "Model": 46.47,
                 "DRA": 41.58223313888036,
                 "State": "NC",
-                "Model (5%)": 44.35
+                "Model (5%)": 43.97
             },
             {
-                "Model (95%)": 70.16,
+                "Model (95%)": 69.93,
                 "District": 9,
-                "Model": 67.91,
+                "Model": 67.71000000000001,
                 "DRA": 73.57443748073564,
                 "State": "NC",
-                "Model (5%)": 65.63
+                "Model (5%)": 65.09
             },
             {
-                "Model (95%)": 51.77,
+                "Model (95%)": 51.65,
                 "District": 10,
-                "Model": 49.34,
+                "Model": 49.18,
                 "DRA": 39.22091235263967,
                 "State": "NC",
-                "Model (5%)": 46.989999999999995
+                "Model (5%)": 46.6
             },
             {
-                "Model (95%)": 48.22,
+                "Model (95%)": 48.13,
                 "District": 11,
-                "Model": 45.82,
+                "Model": 45.67,
                 "DRA": 43.81585677749361,
                 "State": "NC",
-                "Model (5%)": 43.47
+                "Model (5%)": 43.2
             },
             {
-                "Model (95%)": 52.28,
+                "Model (95%)": 52.17,
                 "District": 12,
-                "Model": 49.87,
+                "Model": 49.7,
                 "DRA": 43.50097306155895,
                 "State": "NC",
-                "Model (5%)": 47.5
+                "Model (5%)": 47.15
             },
             {
-                "Model (95%)": 48.6,
+                "Model (95%)": 48.53,
                 "District": 13,
-                "Model": 46.18,
+                "Model": 46.03,
                 "DRA": 39.5762972060178,
                 "State": "NC",
-                "Model (5%)": 43.81
+                "Model (5%)": 43.51
             },
             {
-                "Model (95%)": 39.09,
+                "Model (95%)": 38.95,
                 "District": 14,
-                "Model": 36.620000000000005,
+                "Model": 36.41,
                 "DRA": 46.23744104982571,
                 "State": "NC",
-                "Model (5%)": 34.25
+                "Model (5%)": 34.04
             }
         ]
     },
@@ -8314,7 +8387,7 @@ vegaEmbed('#figure_6',vlSpec,{"renderer": "canvas"});</script>
 </ul>
 <p>That’s perhaps best seen in a table (sorted by DRA Dem vote share):</p>
 <div class="brTableTitle">NC 2022: DRA and Blue Ripple Model (sorted by DRA D Share)</div>
-<table class="brTable"><thead><tr><th>State</th><th>District</th><th>DRA</th><th>Model</th></tr></thead><tbody><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">9</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="DRA">73.57</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Model">67.91</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">6</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="DRA">73.27</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Model">60.24</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">5</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="DRA">63.88</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Model">60.31</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">2</td><td style="; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="DRA">52.85</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">48.14</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">4</td><td style="; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="DRA">47.33</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; color: green" data-label="Model">52.06</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">14</td><td style="; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="DRA">46.24</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Model">36.62</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">11</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">43.82</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">45.82</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">12</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">43.50</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">49.87</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">1</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">42.81</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">46.25</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">3</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">42.37</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Model">43.57</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">7</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">42.07</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">46.08</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">8</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">41.58</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">46.70</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">13</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">39.58</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">46.18</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">10</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">39.22</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">49.34</td></tr></tbody></table>
+<table class="brTable"><thead><tr><th>State</th><th>District</th><th>DRA</th><th>Model</th></tr></thead><tbody><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">9</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="DRA">73.57</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Model">67.71</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">6</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="DRA">73.27</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Model">60.06</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">5</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="DRA">63.88</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Model">60.15</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">2</td><td style="; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="DRA">52.85</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">47.97</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">4</td><td style="; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="DRA">47.33</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; color: green" data-label="Model">51.77</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">14</td><td style="; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="DRA">46.24</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Model">36.41</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">11</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">43.82</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">45.67</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">12</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">43.50</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">49.70</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">1</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">42.81</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">46.08</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">3</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">42.37</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Model">43.15</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">7</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">42.07</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">45.86</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">8</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">41.58</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">46.47</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">13</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">39.58</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">46.03</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">NC</td><td style="; ; ; ; ; ; ; ; ; color: green" data-label="District">10</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DRA">39.22</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Model">49.18</td></tr></tbody></table>
 <p>As we said above, we’d trust the DRA result over ours if we had to predict an election outcome. If we were looking at places where we might try to have an impact, we’d be ignoring the safe D districts and focusing on NC-2 and NC-4. But then we’d try to understand what’s happening in NC-14, where DRA sees a competitive lean R district and the model says safe R, as well as NC-12 and NC-10 where the model sees lean R districts and DRA says safe R, though we imagine NC-12 is the more interesting play since DRA is very unlikely to that wrong.</p>
 <p>As with many gerrymandered maps, this one makes the minority party very safe in their small number of districts and the majority somewhat less safe in theirs. The DRA analysis has most of the R districts about R+6 to R+10 but the model sees those, with the exception of NC-14, as R+6 to tied. Which means that in a wave election favoring Dems, admittedly not the likely scenario in 2022, this map might be surprisingly risky for the Republicans.</p>
 <p>If the map changes (there is ongoing litigation) or we update the model enough to significantly shift our view on any of this, we’ll update this note (and let you know).</p>
