@@ -249,9 +249,21 @@
 
 <!-- page content begins here -->
 
-<div class="published">December 15, 2021 (updated: January 14, 2022)</div>
-<p>Before we apply the model to the old districts, let’s look at the demographics two different ways. The chart below shows each of NC’s 2020 districts, with the population broken down by race/ethnicity (Black, Hispanic, Asian, white-non-Hispanic and other) and education (College Grad and non-College Grad). Each bar also has a dot representing the (logarithmic) population density<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of the district. The scale for that dot is on the right-side axis of the chart. For reference, a log density of 5 represents about 150 people per square mile and a log density of 8 represents about 3000 people per square mile.</p>
-<p>We’ve ordered the districts by the modeled D-share which is helpful for understanding how the model responds to demographics and density.</p>
+<div class="published">December 15, 2021 (updated: January 26, 2022)</div>
+<p>Before we apply the model to the old districts, let’s look at the
+demographics two different ways. The chart below shows each of NC’s 2020
+districts, with the population broken down by race/ethnicity (Black,
+Hispanic, Asian, white-non-Hispanic and other) and education (College
+Grad and non-College Grad). Each bar also has a dot representing the
+(logarithmic) population density<a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a> of the district. The
+scale for that dot is on the right-side axis of the chart. For
+reference, a log density of 5 represents about 150 people per square
+mile and a log density of 8 represents about 3000 people per square
+mile.</p>
+<p>We’ve ordered the districts by the modeled D-share which is helpful
+for understanding how the model responds to demographics and
+density.</p>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
 {
@@ -280,8 +292,8 @@
                         "NC-02",
                         "NC-06",
                         "NC-04",
-                        "NC-08",
                         "NC-01",
+                        "NC-08",
                         "NC-09",
                         "NC-07",
                         "NC-03",
@@ -342,8 +354,8 @@
                         "NC-02",
                         "NC-06",
                         "NC-04",
-                        "NC-08",
                         "NC-01",
+                        "NC-08",
                         "NC-09",
                         "NC-07",
                         "NC-03",
@@ -3735,8 +3747,16 @@
 };
 vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>These districts are all majority white, though NC-12 is right on the line. But there are large variations in the proportion of voters-of-color and population density among the districts.</p>
-<p>Below we look at these demographics a different way. We place each district according to its proportion of college graduates and non-white citizens of voting age. We also indicate (logarithmic) population density via the size of the circle and modeled D-edge (D-share - 50%) via color. This makes it easier to see that the model predicts larger D vote share as the district becomes more educated, more non-white and more dense.</p>
+<p>These districts are all majority white, though NC-12 is right on the
+line. But there are large variations in the proportion of
+voters-of-color and population density among the districts.</p>
+<p>Below we look at these demographics a different way. We place each
+district according to its proportion of college graduates and non-white
+citizens of voting age. We also indicate (logarithmic) population
+density via the size of the circle and modeled D-edge (D-share - 50%)
+via color. This makes it easier to see that the model predicts larger D
+vote share as the district becomes more educated, more non-white and
+more dense.</p>
 <figure id="figure_2">
 <script type="text/javascript">var vlSpec=
 {
@@ -3790,8 +3810,8 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                     "scale": {
                         "scheme": "redblue",
                         "domain": [
-                            -18.620000000000005,
-                            18.620000000000005
+                            -16.95,
+                            16.95
                         ]
                     }
                 },
@@ -3842,91 +3862,91 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
             {
                 "District": "NC-01",
                 "% non-white": 49.39236555792427,
-                "Modeled D-Edge": 1.8299999999999983,
+                "Modeled D-Edge": 3.400000000000003,
                 "log density": 5.447857433817612,
                 "% college grad": 18.76376733354087
             },
             {
                 "District": "NC-02",
                 "% non-white": 36.12898842979934,
-                "Modeled D-Edge": 13.939999999999998,
+                "Modeled D-Edge": 12.119999999999997,
                 "log density": 7.647795587380141,
                 "% college grad": 52.88271763847771
             },
             {
                 "District": "NC-03",
                 "% non-white": 29.283922609615914,
-                "Modeled D-Edge": -6.290000000000001,
+                "Modeled D-Edge": -4.999999999999999,
                 "log density": 5.53153005353903,
                 "% college grad": 22.488194009982713
             },
             {
                 "District": "NC-04",
                 "% non-white": 38.75689598317336,
-                "Modeled D-Edge": 8.089999999999996,
+                "Modeled D-Edge": 7.609999999999994,
                 "log density": 6.736575422287017,
                 "% college grad": 45.112697521456646
             },
             {
                 "District": "NC-05",
                 "% non-white": 15.446481013019797,
-                "Modeled D-Edge": -9.610000000000001,
+                "Modeled D-Edge": -8.639999999999997,
                 "log density": 5.747863153891376,
                 "% college grad": 19.1824646030417
             },
             {
                 "District": "NC-06",
                 "% non-white": 43.43928722164355,
-                "Modeled D-Edge": 13.019999999999998,
+                "Modeled D-Edge": 11.850000000000005,
                 "log density": 7.327819959458015,
                 "% college grad": 34.60777442624982
             },
             {
                 "District": "NC-07",
                 "% non-white": 25.076309316282305,
-                "Modeled D-Edge": -5.130000000000001,
+                "Modeled D-Edge": -4.28,
                 "log density": 5.82744449148394,
                 "% college grad": 25.919501422832848
             },
             {
                 "District": "NC-08",
                 "% non-white": 38.168263818336584,
-                "Modeled D-Edge": 3.0200000000000005,
+                "Modeled D-Edge": 2.959999999999996,
                 "log density": 6.431363287534036,
                 "% college grad": 24.880654917174315
             },
             {
                 "District": "NC-09",
                 "% non-white": 35.549869505143036,
-                "Modeled D-Edge": -3.0000000000002247e-2,
+                "Modeled D-Edge": 0.34999999999999476,
                 "log density": 6.239027502962935,
                 "% college grad": 35.007249714275964
             },
             {
                 "District": "NC-10",
                 "% non-white": 18.138689246942707,
-                "Modeled D-Edge": -8.489999999999998,
+                "Modeled D-Edge": -7.629999999999998,
                 "log density": 5.781946495625555,
                 "% college grad": 21.728611672651386
             },
             {
                 "District": "NC-11",
                 "% non-white": 9.866966640900163,
-                "Modeled D-Edge": -14.040000000000003,
+                "Modeled D-Edge": -12.490000000000002,
                 "log density": 5.299466705804558,
                 "% college grad": 28.523368814911287
             },
             {
                 "District": "NC-12",
                 "% non-white": 52.439068430112485,
-                "Modeled D-Edge": 18.620000000000005,
+                "Modeled D-Edge": 16.95,
                 "log density": 7.769311011116041,
                 "% college grad": 40.20013310106567
             },
             {
                 "District": "NC-13",
                 "% non-white": 22.463983561148915,
-                "Modeled D-Edge": -6.929999999999997,
+                "Modeled D-Edge": -6.140000000000001,
                 "log density": 5.844529438984284,
                 "% college grad": 19.219869633287168
             }
@@ -3936,8 +3956,15 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
 };
 vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>Below we chart the 2020 <em>election results</em> and compare them to the model. This is so we have some sense that the model makes sense and some sense of how approximate we might expect it to be.</p>
-<p>The election result is on the x-axis and our model estimate on the y-axis, and a line representing where districts would fall on this scatter-plot if the model and election result agreed precisely. We’ve also included confidence intervals from the model. In districts left of the line, the model overrestimated the D vote share and underestimated it in districts to the right.</p>
+<p>Below we chart the 2020 <em>election results</em> and compare them to
+the model. This is so we have some sense that the model makes sense and
+some sense of how approximate we might expect it to be.</p>
+<p>The election result is on the x-axis and our model estimate on the
+y-axis, and a line representing where districts would fall on this
+scatter-plot if the model and election result agreed precisely. We’ve
+also included confidence intervals from the model. In districts left of
+the line, the model overrestimated the D vote share and underestimated
+it in districts to the right.</p>
 <figure id="figure_3">
 <script type="text/javascript">var vlSpec=
 {
@@ -4155,119 +4182,119 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
         },
         "values": [
             {
-                "Demographic Model (5% CI)": 49.61,
+                "Demographic Model (5% CI)": 49.62,
                 "District": 1,
-                "Demographic Model (95% CI)": 54.21,
+                "Demographic Model (95% CI)": 57.010000000000005,
                 "Election Result": 54.1767780206415,
-                "Demographic Model": 51.83,
+                "Demographic Model": 53.400000000000006,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 61.029999999999994,
+                "Demographic Model (5% CI)": 57.46,
                 "District": 2,
-                "Demographic Model (95% CI)": 66.88,
+                "Demographic Model (95% CI)": 66.62,
                 "Election Result": 64.38213078849206,
-                "Demographic Model": 63.94,
+                "Demographic Model": 62.12,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 41.46,
+                "Demographic Model (5% CI)": 41.55,
                 "District": 3,
-                "Demographic Model (95% CI)": 46.03,
+                "Demographic Model (95% CI)": 48.5,
                 "Election Result": 36.61598887883669,
-                "Demographic Model": 43.71,
+                "Demographic Model": 45,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 55.74,
+                "Demographic Model (5% CI)": 55.14,
                 "District": 4,
-                "Demographic Model (95% CI)": 60.58,
+                "Demographic Model (95% CI)": 60.14000000000001,
                 "Election Result": 67.32999945313021,
-                "Demographic Model": 58.089999999999996,
+                "Demographic Model": 57.60999999999999,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 37.93,
+                "Demographic Model (5% CI)": 38.279999999999994,
                 "District": 5,
-                "Demographic Model (95% CI)": 42.93,
+                "Demographic Model (95% CI)": 44.5,
                 "Election Result": 31.731398055013514,
-                "Demographic Model": 40.39,
+                "Demographic Model": 41.36,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 60.34,
+                "Demographic Model (5% CI)": 58.26,
                 "District": 6,
-                "Demographic Model (95% CI)": 65.77,
+                "Demographic Model (95% CI)": 65.36999999999999,
                 "Election Result": 62.272891393145656,
-                "Demographic Model": 63.019999999999996,
+                "Demographic Model": 61.85000000000001,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 42.559999999999995,
+                "Demographic Model (5% CI)": 42.85,
                 "District": 7,
-                "Demographic Model (95% CI)": 47.199999999999996,
+                "Demographic Model (95% CI)": 48.61,
                 "Election Result": 39.65664646679424,
-                "Demographic Model": 44.87,
+                "Demographic Model": 45.72,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 50.690000000000005,
+                "Demographic Model (5% CI)": 50.580000000000005,
                 "District": 8,
-                "Demographic Model (95% CI)": 55.510000000000005,
+                "Demographic Model (95% CI)": 55.33,
                 "Election Result": 46.7162433813772,
-                "Demographic Model": 53.02,
+                "Demographic Model": 52.959999999999994,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 47.68,
+                "Demographic Model (5% CI)": 47.949999999999996,
                 "District": 9,
-                "Demographic Model (95% CI)": 52.33,
+                "Demographic Model (95% CI)": 52.71,
                 "Election Result": 44.407904504558005,
-                "Demographic Model": 49.97,
+                "Demographic Model": 50.349999999999994,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 39.08,
+                "Demographic Model (5% CI)": 39.37,
                 "District": 10,
-                "Demographic Model (95% CI)": 44,
+                "Demographic Model (95% CI)": 45.43,
                 "Election Result": 31.09240232461119,
-                "Demographic Model": 41.510000000000005,
+                "Demographic Model": 42.370000000000005,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 33.31,
+                "Demographic Model (5% CI)": 33.410000000000004,
                 "District": 11,
-                "Demographic Model (95% CI)": 38.6,
+                "Demographic Model (95% CI)": 41.81,
                 "Election Result": 43.72167171300119,
-                "Demographic Model": 35.96,
+                "Demographic Model": 37.51,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 65.75,
+                "Demographic Model (5% CI)": 62.49,
                 "District": 12,
-                "Demographic Model (95% CI)": 71.53,
+                "Demographic Model (95% CI)": 71.2,
                 "Election Result": 100,
-                "Demographic Model": 68.62,
+                "Demographic Model": 66.95,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 40.68,
+                "Demographic Model (5% CI)": 40.97,
                 "District": 13,
-                "Demographic Model (95% CI)": 45.51,
+                "Demographic Model (95% CI)": 46.78,
                 "Election Result": 31.81810062138747,
-                "Demographic Model": 43.07,
+                "Demographic Model": 43.86,
                 "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = DMG, densityTransform = LogDensity, densityModel = DMD}",
                 "State": "NC"
             }
@@ -4277,12 +4304,35 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
 };
 vegaEmbed('#figure_3',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>The model seems to capture the trends pretty well, though it has some significant misses, particularly in the safe R districts, where the model overestimates the likely D share<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (ignore NC-12 here: the Dem ran unopposed and so the election result does not reflect true D share in that district.) We’re most interested in districts between 45% and 55%, scant though they are in this map. In that range the model does pretty well.</p>
-<section class="footnotes" role="doc-endnotes">
+<p>The model seems to capture the trends pretty well, though it has some
+significant misses, particularly in the safe R districts, where the
+model overestimates the likely D share<a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+(ignore NC-12 here: the Dem ran unopposed and so the election result
+does not reflect true D share in that district.) We’re most interested
+in districts between 45% and 55%, scant though they are in this map. In
+that range the model does pretty well.</p>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>We use logarithms here because density varies tremendously over districts, from tens to hundreds of thousands of people per square mile. We use population-weighting because the resulting average more closely expresses the density of where people actually live. For example, consider a district made up of a high-density city where 90% of the population live and then large but low-density exurbs where the other 10% live. Most people in that district live at high density and we want our density to reflect that even though the unweighted average density (people/district size) might be smaller.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>We’re not convinced that we are handling population density as well as we could. Even on a log scale, the variation is large and very different state-to-state. We’ve worked on this some without any simple solution. If we make significant progress there, we’ll update this note.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>We use logarithms here because
+density varies tremendously over districts, from tens to hundreds of
+thousands of people per square mile. We use population-weighting because
+the resulting average more closely expresses the density of where people
+actually live. For example, consider a district made up of a
+high-density city where 90% of the population live and then large but
+low-density exurbs where the other 10% live. Most people in that
+district live at high density and we want our density to reflect that
+even though the unweighted average density (people/district size) might
+be smaller.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>We’re not convinced that we are
+handling population density as well as we could. Even on a log scale,
+the variation is large and very different state-to-state. We’ve worked
+on this some without any simple solution. If we make significant
+progress there, we’ll update this note.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--
