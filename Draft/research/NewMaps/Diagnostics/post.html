@@ -1,0 +1,301 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnostics</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  figure {
+      border: 1px #cccccc solid;
+      padding: 4px;
+      margin: auto
+  }
+  figcaption {
+      font-style: italic;
+      font-size: 12pt;
+      text-align: center;
+  }
+</style>
+
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">February 17, 2022 (updated: February 17, 2022)</div>
+<div class="brTableTitle">Diagnostics</div>
+<table class="brTable"><thead><tr><th>State</th><th>ACS CVAP</th><th>Elex Votes</th><th>Elex Dem Votes</th><th>Elex Turnout</th><th>AH Turnout Target</th><th>CPS (PS) Turnout</th><th>CCES (PS) Turnout</th><th>Modeled Turnout</th><th>Raw D Share</th><th>CCES (PS) D Share</th><th>Modeled D Share</th></tr></thead><tbody><tr><td style="; " data-label="State">AK</td><td style="; color: green" data-label="ACS CVAP">534186</td><td style="; color: green" data-label="Votes">359530</td><td style="; color: green" data-label="Elex D Votes">153778</td><td style="; color: green" data-label="Elex Turnout">67.3</td><td style="; color: green" data-label="AH T Tgt">68.8</td><td style="; color: green" data-label="CPS Turnout">68.8</td><td style="; color: green" data-label="CCES Turnout">68.8</td><td style="; color: green" data-label="M Turnout">68.3</td><td style="; color: green" data-label="Raw D Share">42.8</td><td style="; color: green" data-label="CCES D Share">42.6</td><td style="; color: green" data-label="M Share">36.6</td></tr><tr><td style="; " data-label="State">AL</td><td style="; color: green" data-label="ACS CVAP">3731404</td><td style="; color: green" data-label="Votes">2323282</td><td style="; color: green" data-label="Elex D Votes">849624</td><td style="; color: green" data-label="Elex Turnout">62.3</td><td style="; color: green" data-label="AH T Tgt">63.1</td><td style="; color: green" data-label="CPS Turnout">63.1</td><td style="; color: green" data-label="CCES Turnout">64.3</td><td style="; color: green" data-label="M Turnout">63.1</td><td style="; color: green" data-label="Raw D Share">36.6</td><td style="; color: green" data-label="CCES D Share">38.1</td><td style="; color: green" data-label="M Share">35.4</td></tr><tr><td style="; " data-label="State">AR</td><td style="; color: green" data-label="ACS CVAP">2236641</td><td style="; color: green" data-label="Votes">1219069</td><td style="; color: green" data-label="Elex D Votes">423932</td><td style="; color: green" data-label="Elex Turnout">54.5</td><td style="; color: green" data-label="AH T Tgt">56.1</td><td style="; color: green" data-label="CPS Turnout">56.1</td><td style="; color: green" data-label="CCES Turnout">55.6</td><td style="; color: green" data-label="M Turnout">55.9</td><td style="; color: green" data-label="Raw D Share">34.8</td><td style="; color: green" data-label="CCES D Share">36.2</td><td style="; color: green" data-label="M Share">34.8</td></tr><tr><td style="; " data-label="State">AZ</td><td style="; color: green" data-label="ACS CVAP">5141766</td><td style="; color: green" data-label="Votes">3387326</td><td style="; color: green" data-label="Elex D Votes">1672143</td><td style="; color: green" data-label="Elex Turnout">65.9</td><td style="; color: green" data-label="AH T Tgt">65.9</td><td style="; color: green" data-label="CPS Turnout">65.9</td><td style="; color: green" data-label="CCES Turnout">65.8</td><td style="; color: green" data-label="M Turnout">61.8</td><td style="; color: green" data-label="Raw D Share">49.4</td><td style="; color: green" data-label="CCES D Share">51.4</td><td style="; color: green" data-label="M Share">50.4</td></tr><tr><td style="; " data-label="State">CA</td><td style="; color: green" data-label="ACS CVAP">26042183</td><td style="; color: green" data-label="Votes">17500881</td><td style="; color: green" data-label="Elex D Votes">11110250</td><td style="; color: green" data-label="Elex Turnout">67.2</td><td style="; color: green" data-label="AH T Tgt">68.5</td><td style="; color: green" data-label="CPS Turnout">68.5</td><td style="; color: green" data-label="CCES Turnout">68.0</td><td style="; color: green" data-label="M Turnout">60.2</td><td style="; color: green" data-label="Raw D Share">63.5</td><td style="; color: green" data-label="CCES D Share">62.0</td><td style="; color: green" data-label="M Share">66.4</td></tr><tr><td style="; " data-label="State">CO</td><td style="; color: green" data-label="ACS CVAP">4249216</td><td style="; color: green" data-label="Votes">3279980</td><td style="; color: green" data-label="Elex D Votes">1804352</td><td style="; color: green" data-label="Elex Turnout">77.2</td><td style="; color: green" data-label="AH T Tgt">76.4</td><td style="; color: green" data-label="CPS Turnout">76.4</td><td style="; color: green" data-label="CCES Turnout">76.3</td><td style="; color: green" data-label="M Turnout">73.6</td><td style="; color: green" data-label="Raw D Share">55.0</td><td style="; color: green" data-label="CCES D Share">53.6</td><td style="; color: green" data-label="M Share">52.9</td></tr><tr><td style="; " data-label="State">CT</td><td style="; color: green" data-label="ACS CVAP">2618601</td><td style="; color: green" data-label="Votes">1823857</td><td style="; color: green" data-label="Elex D Votes">1080831</td><td style="; color: green" data-label="Elex Turnout">69.7</td><td style="; color: green" data-label="AH T Tgt">71.5</td><td style="; color: green" data-label="CPS Turnout">71.5</td><td style="; color: green" data-label="CCES Turnout">70.8</td><td style="; color: green" data-label="M Turnout">66.8</td><td style="; color: green" data-label="Raw D Share">59.3</td><td style="; color: green" data-label="CCES D Share">60.2</td><td style="; color: green" data-label="M Share">58.8</td></tr><tr><td style="; " data-label="State">DC</td><td style="; color: green" data-label="ACS CVAP">537598</td><td style="; color: green" data-label="Votes">344356</td><td style="; color: green" data-label="Elex D Votes">317323</td><td style="; color: green" data-label="Elex Turnout">64.1</td><td style="; color: green" data-label="AH T Tgt">64.1</td><td style="; color: green" data-label="CPS Turnout">64.1</td><td style="; color: green" data-label="CCES Turnout">64.1</td><td style="; color: green" data-label="M Turnout">65.1</td><td style="; color: green" data-label="Raw D Share">92.1</td><td style="; color: green" data-label="CCES D Share">90.4</td><td style="; color: green" data-label="M Share">88.4</td></tr><tr><td style="; " data-label="State">DE</td><td style="; color: green" data-label="ACS CVAP">725017</td><td style="; color: green" data-label="Votes">504346</td><td style="; color: green" data-label="Elex D Votes">296268</td><td style="; color: green" data-label="Elex Turnout">69.6</td><td style="; color: green" data-label="AH T Tgt">70.7</td><td style="; color: green" data-label="CPS Turnout">70.7</td><td style="; color: green" data-label="CCES Turnout">70.7</td><td style="; color: green" data-label="M Turnout">69.1</td><td style="; color: green" data-label="Raw D Share">58.7</td><td style="; color: green" data-label="CCES D Share">58.9</td><td style="; color: green" data-label="M Share">53.8</td></tr><tr><td style="; " data-label="State">FL</td><td style="; color: green" data-label="ACS CVAP">15508738</td><td style="; color: green" data-label="Votes">11067456</td><td style="; color: green" data-label="Elex D Votes">5297045</td><td style="; color: green" data-label="Elex Turnout">71.4</td><td style="; color: green" data-label="AH T Tgt">71.7</td><td style="; color: green" data-label="CPS Turnout">71.7</td><td style="; color: green" data-label="CCES Turnout">70.5</td><td style="; color: green" data-label="M Turnout">67.0</td><td style="; color: green" data-label="Raw D Share">47.9</td><td style="; color: green" data-label="CCES D Share">50.1</td><td style="; color: green" data-label="M Share">48.1</td></tr><tr><td style="; " data-label="State">GA</td><td style="; color: green" data-label="ACS CVAP">7585407</td><td style="; color: green" data-label="Votes">4999960</td><td style="; color: green" data-label="Elex D Votes">2473633</td><td style="; color: green" data-label="Elex Turnout">65.9</td><td style="; color: green" data-label="AH T Tgt">68.0</td><td style="; color: green" data-label="CPS Turnout">68.0</td><td style="; color: green" data-label="CCES Turnout">66.2</td><td style="; color: green" data-label="M Turnout">66.1</td><td style="; color: green" data-label="Raw D Share">49.5</td><td style="; color: green" data-label="CCES D Share">49.5</td><td style="; color: green" data-label="M Share">48.6</td></tr><tr><td style="; " data-label="State">HI</td><td style="; color: green" data-label="ACS CVAP">1019642</td><td style="; color: green" data-label="Votes">579784</td><td style="; color: green" data-label="Elex D Votes">366130</td><td style="; color: green" data-label="Elex Turnout">56.9</td><td style="; color: green" data-label="AH T Tgt">57.5</td><td style="; color: green" data-label="CPS Turnout">57.5</td><td style="; color: green" data-label="CCES Turnout">59.1</td><td style="; color: green" data-label="M Turnout">56.0</td><td style="; color: green" data-label="Raw D Share">63.1</td><td style="; color: green" data-label="CCES D Share">62.3</td><td style="; color: green" data-label="M Share">61.1</td></tr><tr><td style="; " data-label="State">IA</td><td style="; color: green" data-label="ACS CVAP">2352158</td><td style="; color: green" data-label="Votes">1700130</td><td style="; color: green" data-label="Elex D Votes">759061</td><td style="; color: green" data-label="Elex Turnout">72.3</td><td style="; color: green" data-label="AH T Tgt">73.2</td><td style="; color: green" data-label="CPS Turnout">73.2</td><td style="; color: green" data-label="CCES Turnout">73.2</td><td style="; color: green" data-label="M Turnout">71.7</td><td style="; color: green" data-label="Raw D Share">44.6</td><td style="; color: green" data-label="CCES D Share">44.8</td><td style="; color: green" data-label="M Share">43.4</td></tr><tr><td style="; " data-label="State">ID</td><td style="; color: green" data-label="ACS CVAP">1289432</td><td style="; color: green" data-label="Votes">868014</td><td style="; color: green" data-label="Elex D Votes">287021</td><td style="; color: green" data-label="Elex Turnout">67.3</td><td style="; color: green" data-label="AH T Tgt">68.0</td><td style="; color: green" data-label="CPS Turnout">68.0</td><td style="; color: green" data-label="CCES Turnout">68.2</td><td style="; color: green" data-label="M Turnout">66.4</td><td style="; color: green" data-label="Raw D Share">33.1</td><td style="; color: green" data-label="CCES D Share">33.2</td><td style="; color: green" data-label="M Share">32.5</td></tr><tr><td style="; " data-label="State">IL</td><td style="; color: green" data-label="ACS CVAP">9089132</td><td style="; color: green" data-label="Votes">6033743</td><td style="; color: green" data-label="Elex D Votes">3471915</td><td style="; color: green" data-label="Elex Turnout">66.4</td><td style="; color: green" data-label="AH T Tgt">67.0</td><td style="; color: green" data-label="CPS Turnout">67.0</td><td style="; color: green" data-label="CCES Turnout">66.3</td><td style="; color: green" data-label="M Turnout">64.1</td><td style="; color: green" data-label="Raw D Share">57.5</td><td style="; color: green" data-label="CCES D Share">57.2</td><td style="; color: green" data-label="M Share">58.2</td></tr><tr><td style="; " data-label="State">IN</td><td style="; color: green" data-label="ACS CVAP">4974873</td><td style="; color: green" data-label="Votes">3033118</td><td style="; color: green" data-label="Elex D Votes">1242416</td><td style="; color: green" data-label="Elex Turnout">61.0</td><td style="; color: green" data-label="AH T Tgt">61.4</td><td style="; color: green" data-label="CPS Turnout">61.4</td><td style="; color: green" data-label="CCES Turnout">61.4</td><td style="; color: green" data-label="M Turnout">62.5</td><td style="; color: green" data-label="Raw D Share">41.0</td><td style="; color: green" data-label="CCES D Share">41.0</td><td style="; color: green" data-label="M Share">41.9</td></tr><tr><td style="; " data-label="State">KS</td><td style="; color: green" data-label="ACS CVAP">2107858</td><td style="; color: green" data-label="Votes">1372303</td><td style="; color: green" data-label="Elex D Votes">570323</td><td style="; color: green" data-label="Elex Turnout">65.1</td><td style="; color: green" data-label="AH T Tgt">65.9</td><td style="; color: green" data-label="CPS Turnout">65.9</td><td style="; color: green" data-label="CCES Turnout">66.3</td><td style="; color: green" data-label="M Turnout">65.3</td><td style="; color: green" data-label="Raw D Share">41.6</td><td style="; color: green" data-label="CCES D Share">41.4</td><td style="; color: green" data-label="M Share">40.3</td></tr><tr><td style="; " data-label="State">KY</td><td style="; color: green" data-label="ACS CVAP">3371564</td><td style="; color: green" data-label="Votes">2136768</td><td style="; color: green" data-label="Elex D Votes">772474</td><td style="; color: green" data-label="Elex Turnout">63.4</td><td style="; color: green" data-label="AH T Tgt">64.9</td><td style="; color: green" data-label="CPS Turnout">64.9</td><td style="; color: green" data-label="CCES Turnout">65.1</td><td style="; color: green" data-label="M Turnout">63.9</td><td style="; color: green" data-label="Raw D Share">36.2</td><td style="; color: green" data-label="CCES D Share">36.2</td><td style="; color: green" data-label="M Share">35.8</td></tr><tr><td style="; " data-label="State">LA</td><td style="; color: green" data-label="ACS CVAP">3465109</td><td style="; color: green" data-label="Votes">2148062</td><td style="; color: green" data-label="Elex D Votes">856034</td><td style="; color: green" data-label="Elex Turnout">62.0</td><td style="; color: green" data-label="AH T Tgt">64.3</td><td style="; color: green" data-label="CPS Turnout">64.3</td><td style="; color: green" data-label="CCES Turnout">63.4</td><td style="; color: green" data-label="M Turnout">63.9</td><td style="; color: green" data-label="Raw D Share">39.9</td><td style="; color: green" data-label="CCES D Share">42.6</td><td style="; color: green" data-label="M Share">40.1</td></tr><tr><td style="; " data-label="State">MA</td><td style="; color: green" data-label="ACS CVAP">5051854</td><td style="; color: green" data-label="Votes">3658005</td><td style="; color: green" data-label="Elex D Votes">2382202</td><td style="; color: green" data-label="Elex Turnout">72.4</td><td style="; color: green" data-label="AH T Tgt">72.1</td><td style="; color: green" data-label="CPS Turnout">72.1</td><td style="; color: green" data-label="CCES Turnout">72.2</td><td style="; color: green" data-label="M Turnout">69.3</td><td style="; color: green" data-label="Raw D Share">65.1</td><td style="; color: green" data-label="CCES D Share">65.6</td><td style="; color: green" data-label="M Share">64.0</td></tr><tr><td style="; " data-label="State">MD</td><td style="; color: green" data-label="ACS CVAP">4325235</td><td style="; color: green" data-label="Votes">3037030</td><td style="; color: green" data-label="Elex D Votes">1985023</td><td style="; color: green" data-label="Elex Turnout">70.2</td><td style="; color: green" data-label="AH T Tgt">71.1</td><td style="; color: green" data-label="CPS Turnout">71.1</td><td style="; color: green" data-label="CCES Turnout">71.8</td><td style="; color: green" data-label="M Turnout">68.3</td><td style="; color: green" data-label="Raw D Share">65.4</td><td style="; color: green" data-label="CCES D Share">64.5</td><td style="; color: green" data-label="M Share">63.7</td></tr><tr><td style="; " data-label="State">ME</td><td style="; color: green" data-label="ACS CVAP">1080773</td><td style="; color: green" data-label="Votes">828305</td><td style="; color: green" data-label="Elex D Votes">435072</td><td style="; color: green" data-label="Elex Turnout">76.6</td><td style="; color: green" data-label="AH T Tgt">76.3</td><td style="; color: green" data-label="CPS Turnout">76.3</td><td style="; color: green" data-label="CCES Turnout">75.8</td><td style="; color: green" data-label="M Turnout">73.8</td><td style="; color: green" data-label="Raw D Share">52.5</td><td style="; color: green" data-label="CCES D Share">51.6</td><td style="; color: green" data-label="M Share">50.0</td></tr><tr><td style="; " data-label="State">MI</td><td style="; color: green" data-label="ACS CVAP">7571759</td><td style="; color: green" data-label="Votes">5539302</td><td style="; color: green" data-label="Elex D Votes">2804040</td><td style="; color: green" data-label="Elex Turnout">73.2</td><td style="; color: green" data-label="AH T Tgt">73.9</td><td style="; color: green" data-label="CPS Turnout">73.9</td><td style="; color: green" data-label="CCES Turnout">74.0</td><td style="; color: green" data-label="M Turnout">71.8</td><td style="; color: green" data-label="Raw D Share">50.6</td><td style="; color: green" data-label="CCES D Share">51.0</td><td style="; color: green" data-label="M Share">49.4</td></tr><tr><td style="; " data-label="State">MN</td><td style="; color: green" data-label="ACS CVAP">4162926</td><td style="; color: green" data-label="Votes">3277171</td><td style="; color: green" data-label="Elex D Votes">1717077</td><td style="; color: green" data-label="Elex Turnout">78.7</td><td style="; color: green" data-label="AH T Tgt">80.0</td><td style="; color: green" data-label="CPS Turnout">80.0</td><td style="; color: green" data-label="CCES Turnout">81.1</td><td style="; color: green" data-label="M Turnout">76.7</td><td style="; color: green" data-label="Raw D Share">52.4</td><td style="; color: green" data-label="CCES D Share">53.0</td><td style="; color: green" data-label="M Share">49.8</td></tr><tr><td style="; " data-label="State">MO</td><td style="; color: green" data-label="ACS CVAP">4654355</td><td style="; color: green" data-label="Votes">3025962</td><td style="; color: green" data-label="Elex D Votes">1253014</td><td style="; color: green" data-label="Elex Turnout">65.0</td><td style="; color: green" data-label="AH T Tgt">65.7</td><td style="; color: green" data-label="CPS Turnout">65.7</td><td style="; color: green" data-label="CCES Turnout">65.9</td><td style="; color: green" data-label="M Turnout">65.3</td><td style="; color: green" data-label="Raw D Share">41.4</td><td style="; color: green" data-label="CCES D Share">41.6</td><td style="; color: green" data-label="M Share">40.5</td></tr><tr><td style="; " data-label="State">MS</td><td style="; color: green" data-label="ACS CVAP">2247258</td><td style="; color: green" data-label="Votes">1313759</td><td style="; color: green" data-label="Elex D Votes">539398</td><td style="; color: green" data-label="Elex Turnout">58.5</td><td style="; color: green" data-label="AH T Tgt">60.2</td><td style="; color: green" data-label="CPS Turnout">60.2</td><td style="; color: green" data-label="CCES Turnout">59.9</td><td style="; color: green" data-label="M Turnout">58.7</td><td style="; color: green" data-label="Raw D Share">41.1</td><td style="; color: green" data-label="CCES D Share">41.3</td><td style="; color: green" data-label="M Share">40.3</td></tr><tr><td style="; " data-label="State">MT</td><td style="; color: green" data-label="ACS CVAP">831102</td><td style="; color: green" data-label="Votes">603674</td><td style="; color: green" data-label="Elex D Votes">244786</td><td style="; color: green" data-label="Elex Turnout">72.6</td><td style="; color: green" data-label="AH T Tgt">73.1</td><td style="; color: green" data-label="CPS Turnout">73.1</td><td style="; color: green" data-label="CCES Turnout">73.1</td><td style="; color: green" data-label="M Turnout">72.4</td><td style="; color: green" data-label="Raw D Share">40.5</td><td style="; color: green" data-label="CCES D Share">40.6</td><td style="; color: green" data-label="M Share">39.5</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="ACS CVAP">7732318</td><td style="; color: green" data-label="Votes">5524802</td><td style="; color: green" data-label="Elex D Votes">2684292</td><td style="; color: green" data-label="Elex Turnout">71.5</td><td style="; color: green" data-label="AH T Tgt">71.5</td><td style="; color: green" data-label="CPS Turnout">71.5</td><td style="; color: green" data-label="CCES Turnout">70.7</td><td style="; color: green" data-label="M Turnout">68.9</td><td style="; color: green" data-label="Raw D Share">48.6</td><td style="; color: green" data-label="CCES D Share">49.0</td><td style="; color: green" data-label="M Share">48.5</td></tr><tr><td style="; " data-label="State">ND</td><td style="; color: green" data-label="ACS CVAP">571469</td><td style="; color: green" data-label="Votes">361819</td><td style="; color: green" data-label="Elex D Votes">114902</td><td style="; color: green" data-label="Elex Turnout">63.3</td><td style="; color: green" data-label="AH T Tgt">64.5</td><td style="; color: green" data-label="CPS Turnout">64.5</td><td style="; color: green" data-label="CCES Turnout">64.5</td><td style="; color: green" data-label="M Turnout">62.6</td><td style="; color: green" data-label="Raw D Share">31.8</td><td style="; color: green" data-label="CCES D Share">32.1</td><td style="; color: green" data-label="M Share">31.1</td></tr><tr><td style="; " data-label="State">NE</td><td style="; color: green" data-label="ACS CVAP">1385028</td><td style="; color: green" data-label="Votes">956383</td><td style="; color: green" data-label="Elex D Votes">374583</td><td style="; color: green" data-label="Elex Turnout">69.1</td><td style="; color: green" data-label="AH T Tgt">69.9</td><td style="; color: green" data-label="CPS Turnout">69.9</td><td style="; color: green" data-label="CCES Turnout">69.8</td><td style="; color: green" data-label="M Turnout">67.8</td><td style="; color: green" data-label="Raw D Share">39.2</td><td style="; color: green" data-label="CCES D Share">38.9</td><td style="; color: green" data-label="M Share">37.8</td></tr><tr><td style="; " data-label="State">NH</td><td style="; color: green" data-label="ACS CVAP">1068197</td><td style="; color: green" data-label="Votes">806182</td><td style="; color: green" data-label="Elex D Votes">424921</td><td style="; color: green" data-label="Elex Turnout">75.5</td><td style="; color: green" data-label="AH T Tgt">75.5</td><td style="; color: green" data-label="CPS Turnout">75.5</td><td style="; color: green" data-label="CCES Turnout">75.6</td><td style="; color: green" data-label="M Turnout">74.0</td><td style="; color: green" data-label="Raw D Share">52.7</td><td style="; color: green" data-label="CCES D Share">53.0</td><td style="; color: green" data-label="M Share">49.3</td></tr><tr><td style="; " data-label="State">NJ</td><td style="; color: green" data-label="ACS CVAP">6168214</td><td style="; color: green" data-label="Votes">4549353</td><td style="; color: green" data-label="Elex D Votes">2608335</td><td style="; color: green" data-label="Elex Turnout">73.8</td><td style="; color: green" data-label="AH T Tgt">75.3</td><td style="; color: green" data-label="CPS Turnout">75.3</td><td style="; color: green" data-label="CCES Turnout">74.4</td><td style="; color: green" data-label="M Turnout">70.9</td><td style="; color: green" data-label="Raw D Share">57.3</td><td style="; color: green" data-label="CCES D Share">58.0</td><td style="; color: green" data-label="M Share">58.0</td></tr><tr><td style="; " data-label="State">NM</td><td style="; color: green" data-label="ACS CVAP">1521534</td><td style="; color: green" data-label="Votes">923965</td><td style="; color: green" data-label="Elex D Votes">501614</td><td style="; color: green" data-label="Elex Turnout">60.7</td><td style="; color: green" data-label="AH T Tgt">61.3</td><td style="; color: green" data-label="CPS Turnout">61.3</td><td style="; color: green" data-label="CCES Turnout">60.5</td><td style="; color: green" data-label="M Turnout">57.6</td><td style="; color: green" data-label="Raw D Share">54.3</td><td style="; color: green" data-label="CCES D Share">53.4</td><td style="; color: green" data-label="M Share">55.3</td></tr><tr><td style="; " data-label="State">NV</td><td style="; color: green" data-label="ACS CVAP">2107480</td><td style="; color: green" data-label="Votes">1405376</td><td style="; color: green" data-label="Elex D Votes">703486</td><td style="; color: green" data-label="Elex Turnout">66.7</td><td style="; color: green" data-label="AH T Tgt">65.4</td><td style="; color: green" data-label="CPS Turnout">65.4</td><td style="; color: green" data-label="CCES Turnout">63.3</td><td style="; color: green" data-label="M Turnout">62.5</td><td style="; color: green" data-label="Raw D Share">50.1</td><td style="; color: green" data-label="CCES D Share">50.2</td><td style="; color: green" data-label="M Share">51.2</td></tr><tr><td style="; " data-label="State">NY</td><td style="; color: green" data-label="ACS CVAP">13805765</td><td style="; color: green" data-label="Votes">8661735</td><td style="; color: green" data-label="Elex D Votes">5230985</td><td style="; color: green" data-label="Elex Turnout">62.7</td><td style="; color: green" data-label="AH T Tgt">63.6</td><td style="; color: green" data-label="CPS Turnout">63.6</td><td style="; color: green" data-label="CCES Turnout">63.3</td><td style="; color: green" data-label="M Turnout">58.8</td><td style="; color: green" data-label="Raw D Share">60.4</td><td style="; color: green" data-label="CCES D Share">61.3</td><td style="; color: green" data-label="M Share">60.6</td></tr><tr><td style="; " data-label="State">OH</td><td style="; color: green" data-label="ACS CVAP">8888187</td><td style="; color: green" data-label="Votes">5922202</td><td style="; color: green" data-label="Elex D Votes">2679165</td><td style="; color: green" data-label="Elex Turnout">66.6</td><td style="; color: green" data-label="AH T Tgt">67.4</td><td style="; color: green" data-label="CPS Turnout">67.4</td><td style="; color: green" data-label="CCES Turnout">67.7</td><td style="; color: green" data-label="M Turnout">66.4</td><td style="; color: green" data-label="Raw D Share">45.2</td><td style="; color: green" data-label="CCES D Share">45.0</td><td style="; color: green" data-label="M Share">44.6</td></tr><tr><td style="; " data-label="State">OK</td><td style="; color: green" data-label="ACS CVAP">2875677</td><td style="; color: green" data-label="Votes">1560699</td><td style="; color: green" data-label="Elex D Votes">503890</td><td style="; color: green" data-label="Elex Turnout">54.3</td><td style="; color: green" data-label="AH T Tgt">55.0</td><td style="; color: green" data-label="CPS Turnout">55.0</td><td style="; color: green" data-label="CCES Turnout">55.0</td><td style="; color: green" data-label="M Turnout">55.0</td><td style="; color: green" data-label="Raw D Share">32.3</td><td style="; color: green" data-label="CCES D Share">32.8</td><td style="; color: green" data-label="M Share">32.5</td></tr><tr><td style="; " data-label="State">OR</td><td style="; color: green" data-label="ACS CVAP">3160462</td><td style="; color: green" data-label="Votes">2374321</td><td style="; color: green" data-label="Elex D Votes">1340383</td><td style="; color: green" data-label="Elex Turnout">75.1</td><td style="; color: green" data-label="AH T Tgt">75.5</td><td style="; color: green" data-label="CPS Turnout">75.5</td><td style="; color: green" data-label="CCES Turnout">76.3</td><td style="; color: green" data-label="M Turnout">72.6</td><td style="; color: green" data-label="Raw D Share">56.5</td><td style="; color: green" data-label="CCES D Share">56.5</td><td style="; color: green" data-label="M Share">53.5</td></tr><tr><td style="; " data-label="State">PA</td><td style="; color: green" data-label="ACS CVAP">9815865</td><td style="; color: green" data-label="Votes">6915283</td><td style="; color: green" data-label="Elex D Votes">3458229</td><td style="; color: green" data-label="Elex Turnout">70.5</td><td style="; color: green" data-label="AH T Tgt">71.1</td><td style="; color: green" data-label="CPS Turnout">71.1</td><td style="; color: green" data-label="CCES Turnout">71.4</td><td style="; color: green" data-label="M Turnout">69.0</td><td style="; color: green" data-label="Raw D Share">50.0</td><td style="; color: green" data-label="CCES D Share">50.6</td><td style="; color: green" data-label="M Share">49.2</td></tr><tr><td style="; " data-label="State">RI</td><td style="; color: green" data-label="ACS CVAP">803616</td><td style="; color: green" data-label="Votes">516990</td><td style="; color: green" data-label="Elex D Votes">307486</td><td style="; color: green" data-label="Elex Turnout">64.3</td><td style="; color: green" data-label="AH T Tgt">65.3</td><td style="; color: green" data-label="CPS Turnout">65.3</td><td style="; color: green" data-label="CCES Turnout">65.3</td><td style="; color: green" data-label="M Turnout">64.7</td><td style="; color: green" data-label="Raw D Share">59.5</td><td style="; color: green" data-label="CCES D Share">61.0</td><td style="; color: green" data-label="M Share">58.6</td></tr><tr><td style="; " data-label="State">SC</td><td style="; color: green" data-label="ACS CVAP">3896412</td><td style="; color: green" data-label="Votes">2514096</td><td style="; color: green" data-label="Elex D Votes">1091541</td><td style="; color: green" data-label="Elex Turnout">64.5</td><td style="; color: green" data-label="AH T Tgt">64.5</td><td style="; color: green" data-label="CPS Turnout">64.5</td><td style="; color: green" data-label="CCES Turnout">64.8</td><td style="; color: green" data-label="M Turnout">64.3</td><td style="; color: green" data-label="Raw D Share">43.4</td><td style="; color: green" data-label="CCES D Share">44.3</td><td style="; color: green" data-label="M Share">43.0</td></tr><tr><td style="; " data-label="State">SD</td><td style="; color: green" data-label="ACS CVAP">653128</td><td style="; color: green" data-label="Votes">422609</td><td style="; color: green" data-label="Elex D Votes">150471</td><td style="; color: green" data-label="Elex Turnout">64.7</td><td style="; color: green" data-label="AH T Tgt">66.0</td><td style="; color: green" data-label="CPS Turnout">66.0</td><td style="; color: green" data-label="CCES Turnout">66.0</td><td style="; color: green" data-label="M Turnout">65.1</td><td style="; color: green" data-label="Raw D Share">35.6</td><td style="; color: green" data-label="CCES D Share">35.6</td><td style="; color: green" data-label="M Share">30.9</td></tr><tr><td style="; " data-label="State">TN</td><td style="; color: green" data-label="ACS CVAP">5125332</td><td style="; color: green" data-label="Votes">3053851</td><td style="; color: green" data-label="Elex D Votes">1143711</td><td style="; color: green" data-label="Elex Turnout">59.6</td><td style="; color: green" data-label="AH T Tgt">59.8</td><td style="; color: green" data-label="CPS Turnout">59.8</td><td style="; color: green" data-label="CCES Turnout">61.5</td><td style="; color: green" data-label="M Turnout">60.1</td><td style="; color: green" data-label="Raw D Share">37.5</td><td style="; color: green" data-label="CCES D Share">37.9</td><td style="; color: green" data-label="M Share">37.8</td></tr><tr><td style="; " data-label="State">TX</td><td style="; color: green" data-label="ACS CVAP">18875911</td><td style="; color: green" data-label="Votes">11315056</td><td style="; color: green" data-label="Elex D Votes">5259126</td><td style="; color: green" data-label="Elex Turnout">59.9</td><td style="; color: green" data-label="AH T Tgt">60.4</td><td style="; color: green" data-label="CPS Turnout">60.4</td><td style="; color: green" data-label="CCES Turnout">59.9</td><td style="; color: green" data-label="M Turnout">54.9</td><td style="; color: green" data-label="Raw D Share">46.5</td><td style="; color: green" data-label="CCES D Share">48.6</td><td style="; color: green" data-label="M Share">46.8</td></tr><tr><td style="; " data-label="State">UT</td><td style="; color: green" data-label="ACS CVAP">2134504</td><td style="; color: green" data-label="Votes">1488289</td><td style="; color: green" data-label="Elex D Votes">560282</td><td style="; color: green" data-label="Elex Turnout">69.7</td><td style="; color: green" data-label="AH T Tgt">69.2</td><td style="; color: green" data-label="CPS Turnout">69.2</td><td style="; color: green" data-label="CCES Turnout">69.0</td><td style="; color: green" data-label="M Turnout">65.9</td><td style="; color: green" data-label="Raw D Share">37.6</td><td style="; color: green" data-label="CCES D Share">38.5</td><td style="; color: green" data-label="M Share">35.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; color: green" data-label="ACS CVAP">6228613</td><td style="; color: green" data-label="Votes">4460524</td><td style="; color: green" data-label="Elex D Votes">2413568</td><td style="; color: green" data-label="Elex Turnout">71.6</td><td style="; color: green" data-label="AH T Tgt">73.0</td><td style="; color: green" data-label="CPS Turnout">73.0</td><td style="; color: green" data-label="CCES Turnout">72.6</td><td style="; color: green" data-label="M Turnout">70.8</td><td style="; color: green" data-label="Raw D Share">54.1</td><td style="; color: green" data-label="CCES D Share">53.8</td><td style="; color: green" data-label="M Share">53.3</td></tr><tr><td style="; " data-label="State">VT</td><td style="; color: green" data-label="ACS CVAP">501823</td><td style="; color: green" data-label="Votes">370968</td><td style="; color: green" data-label="Elex D Votes">242820</td><td style="; color: green" data-label="Elex Turnout">73.9</td><td style="; color: green" data-label="AH T Tgt">74.2</td><td style="; color: green" data-label="CPS Turnout">74.2</td><td style="; color: green" data-label="CCES Turnout">74.2</td><td style="; color: green" data-label="M Turnout">73.6</td><td style="; color: green" data-label="Raw D Share">65.5</td><td style="; color: green" data-label="CCES D Share">65.5</td><td style="; color: green" data-label="M Share">61.6</td></tr><tr><td style="; " data-label="State">WA</td><td style="; color: green" data-label="ACS CVAP">5408008</td><td style="; color: green" data-label="Votes">4087631</td><td style="; color: green" data-label="Elex D Votes">2369612</td><td style="; color: green" data-label="Elex Turnout">75.6</td><td style="; color: green" data-label="AH T Tgt">75.7</td><td style="; color: green" data-label="CPS Turnout">75.7</td><td style="; color: green" data-label="CCES Turnout">76.2</td><td style="; color: green" data-label="M Turnout">72.0</td><td style="; color: green" data-label="Raw D Share">58.0</td><td style="; color: green" data-label="CCES D Share">59.6</td><td style="; color: green" data-label="M Share">55.6</td></tr><tr><td style="; " data-label="State">WI</td><td style="; color: green" data-label="ACS CVAP">4415169</td><td style="; color: green" data-label="Votes">3298041</td><td style="; color: green" data-label="Elex D Votes">1630866</td><td style="; color: green" data-label="Elex Turnout">74.7</td><td style="; color: green" data-label="AH T Tgt">75.8</td><td style="; color: green" data-label="CPS Turnout">75.8</td><td style="; color: green" data-label="CCES Turnout">76.1</td><td style="; color: green" data-label="M Turnout">73.0</td><td style="; color: green" data-label="Raw D Share">49.4</td><td style="; color: green" data-label="CCES D Share">49.3</td><td style="; color: green" data-label="M Share">48.7</td></tr><tr><td style="; " data-label="State">WV</td><td style="; color: green" data-label="ACS CVAP">1421204</td><td style="; color: green" data-label="Votes">794652</td><td style="; color: green" data-label="Elex D Votes">235984</td><td style="; color: green" data-label="Elex Turnout">55.9</td><td style="; color: green" data-label="AH T Tgt">57.6</td><td style="; color: green" data-label="CPS Turnout">57.6</td><td style="; color: green" data-label="CCES Turnout">57.7</td><td style="; color: green" data-label="M Turnout">60.0</td><td style="; color: green" data-label="Raw D Share">29.7</td><td style="; color: green" data-label="CCES D Share">29.6</td><td style="; color: green" data-label="M Share">32.2</td></tr><tr><td style="; " data-label="State">WY</td><td style="; color: green" data-label="ACS CVAP">435355</td><td style="; color: green" data-label="Votes">278503</td><td style="; color: green" data-label="Elex D Votes">73491</td><td style="; color: green" data-label="Elex Turnout">64.0</td><td style="; color: green" data-label="AH T Tgt">64.6</td><td style="; color: green" data-label="CPS Turnout">64.6</td><td style="; color: green" data-label="CCES Turnout">64.6</td><td style="; color: green" data-label="M Turnout">65.8</td><td style="; color: green" data-label="Raw D Share">26.4</td><td style="; color: green" data-label="CCES D Share">26.5</td><td style="; color: green" data-label="M Share">25.0</td></tr></tbody></table>
+<p><em>Want to read more from Blue Ripple? Visit our <a
+href="https://www.blueripplepolitics.org"><strong>website</strong></a>,
+sign up for <a href="http://eepurl.com/gzmeQ5"><strong>email
+updates</strong></a>, and follow us on <a
+href="https://twitter.com/BlueRipplePol"><strong>Twitter</strong></a>
+and <a
+href="https://www.facebook.com/blueripplepolitics"><strong>FaceBook</strong></a>.
+Folks interested in our data and modeling efforts should also check out
+our <a href="https://github.com/blueripple"><strong>Github</strong></a>
+page.</em></p>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
