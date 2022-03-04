@@ -249,20 +249,32 @@
 
 <!-- page content begins here -->
 
-<div class="published">December 15, 2021 </div>
-<p>Before we apply the model to the old districts, let’s look at the demographics two different ways. The chart below shows each of NC’s 2020 districts, with the population broken down by race/ethnicity (Black, Hispanic, Asian, white-non-Hispanic and other) and education (College Grad and non-College Grad). Each bar also has a dot representing the (logarithmic) population density<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of the district. The scale for that dot is on the right-side axis of the chart. For reference, a log density of 5 represents about 150 people per square mile and a log density of 8 represents about 3000 people per square mile.</p>
-<p>We’ve ordered the districts by the modeled D-share which is helpful for understanding how the model responds to demographics and density.</p>
+<div class="published">December 15, 2021 (updated: March  4, 2022)</div>
+<p>Before we apply the model to the old districts, let’s look at the
+demographics two different ways. The chart below shows each of NC’s 2020
+districts, with the population broken down by race/ethnicity (Black,
+Hispanic, Asian, white-non-Hispanic and other) and education (College
+Grad and non-College Grad). Each bar also has a dot representing the
+(logarithmic) population density<a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a> of the district. The
+scale for that dot is on the right-side axis of the chart. For
+reference, a log density of 5 represents about 150 people per square
+mile and a log density of 8 represents about 3000 people per square
+mile.</p>
+<p>We’ve ordered the districts by the modeled D-share which is helpful
+for understanding how the model responds to demographics and
+density.</p>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
 {
-    "width": 600,
-    "title": "NC Old: By Race and Education",
-    "padding": 5,
     "resolve": {
         "scale": {
             "y": "independent"
         }
     },
+    "width": 600,
+    "title": "NC Old: By Race and Education",
+    "padding": 5,
     "autosize": {
         "type": "pad",
         "contains": "padding",
@@ -272,28 +284,40 @@
     "layer": [
         {
             "encoding": {
-                "y2": {
-                    "type": "quantitative",
-                    "field": "stack_end"
-                },
                 "x": {
+                    "type": "nominal",
+                    "field": "District",
                     "sort": [
                         "NC-12",
                         "NC-02",
-                        "NC-06",
+                        "NC-14",
                         "NC-04",
-                        "NC-08",
+                        "NC-06",
                         "NC-01",
+                        "NC-13",
                         "NC-09",
                         "NC-07",
                         "NC-03",
-                        "NC-13",
-                        "NC-10",
+                        "NC-08",
                         "NC-05",
+                        "NC-10",
                         "NC-11"
-                    ],
+                    ]
+                },
+                "color": {
                     "type": "nominal",
-                    "field": "District"
+                    "field": "Race",
+                    "sort": [
+                        "R5_Other",
+                        "R5_Asian",
+                        "R5_Hispanic",
+                        "R5_Black",
+                        "R5_WhiteNonHispanic"
+                    ]
+                },
+                "y2": {
+                    "type": "quantitative",
+                    "field": "stack_end"
                 },
                 "tooltip": [
                     {
@@ -305,29 +329,18 @@
                         "field": "Education"
                     }
                 ],
-                "color": {
-                    "sort": [
-                        "R5_Other",
-                        "R5_Asian",
-                        "R5_Hispanic",
-                        "R5_Black",
-                        "R5_WhiteNonHispanic"
-                    ],
-                    "type": "nominal",
-                    "field": "Race"
-                },
                 "y": {
-                    "title": "Pct",
                     "type": "quantitative",
-                    "field": "stack"
+                    "field": "stack",
+                    "title": "Pct"
                 },
                 "opacity": {
+                    "type": "nominal",
+                    "field": "Education",
                     "sort": [
                         "Grad",
                         "NonGrad"
-                    ],
-                    "type": "nominal",
-                    "field": "Education"
+                    ]
                 }
             },
             "mark": "bar"
@@ -335,32 +348,33 @@
         {
             "encoding": {
                 "x": {
+                    "type": "nominal",
+                    "field": "District",
                     "sort": [
                         "NC-12",
                         "NC-02",
-                        "NC-06",
+                        "NC-14",
                         "NC-04",
-                        "NC-08",
+                        "NC-06",
                         "NC-01",
+                        "NC-13",
                         "NC-09",
                         "NC-07",
                         "NC-03",
-                        "NC-13",
-                        "NC-10",
+                        "NC-08",
                         "NC-05",
+                        "NC-10",
                         "NC-11"
-                    ],
-                    "type": "nominal",
-                    "field": "District"
+                    ]
                 },
                 "y": {
-                    "title": "log(Density)",
                     "type": "quantitative",
                     "aggregate": "max",
+                    "field": "log(Density)",
+                    "title": "log(Density)",
                     "scale": {
                         "zero": false
                     },
-                    "field": "log(Density)",
                     "axis": {
                         "orient": "right"
                     }
@@ -374,16 +388,16 @@
     ],
     "transform": [
         {
-            "sort": [
-                {
-                    "order": "ascending",
-                    "field": "sort"
-                }
-            ],
             "stack": "Count",
             "offset": "normalize",
             "groupby": [
                 "District"
+            ],
+            "sort": [
+                {
+                    "field": "sort",
+                    "order": "ascending"
+                }
             ],
             "as": [
                 "stack",
@@ -393,3341 +407,3341 @@
     ],
     "config": {
         "view": {
+            "continuousHeight": 600,
             "continuousWidth": 600,
             "discreteWidth": 600,
-            "discreteHeight": 600,
-            "continuousHeight": 600
+            "discreteHeight": 600
         }
     },
     "data": {
         "values": [
             {
                 "District": "NC-01",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 6161
+                "Count": 5315,
+                "sort": 6,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 98669,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 133587
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 100894,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.447857433817612,
-                "Count": 118690
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.447857433817612,
-                "Count": 2529
+                "Count": 1485,
+                "sort": 9,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 4715
+                "Count": 4295,
+                "sort": 6,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.447857433817612,
-                "Count": 4484
+                "Count": 3502,
+                "sort": 12,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 846
+                "Count": 846,
+                "sort": 7,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 34918
+                "Count": 34918,
+                "sort": 1,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.447857433817612,
-                "Count": 17796
+                "Count": 17796,
+                "sort": 4,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.447857433817612,
-                "Count": 1044
+                "Count": 1044,
+                "sort": 10,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 420
+                "Count": 420,
+                "sort": 7,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.447857433817612,
-                "Count": 982
+                "Count": 982,
+                "sort": 13,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 7239
+                "Count": 6481,
+                "sort": 6,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 94371,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 123268
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 3,
                 "Education": "NonGrad",
                 "Race": "R5_Black",
-                "log(Density)": 5.447857433817612,
-                "Count": 95119
+                "Count": 87580,
+                "sort": 3,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.447857433817612,
-                "Count": 1824
+                "Count": 924,
+                "sort": 9,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 6145
+                "Count": 5600,
+                "sort": 6,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.447857433817612,
-                "Count": 3781
+                "Count": 3192,
+                "sort": 12,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 758
+                "Count": 758,
+                "sort": 7,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 28897
+                "Count": 28897,
+                "sort": 1,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.447857433817612,
-                "Count": 7539
+                "Count": 7539,
+                "sort": 4,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.447857433817612,
-                "Count": 900
+                "Count": 900,
+                "sort": 10,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.447857433817612,
-                "Count": 545
+                "Count": 545,
+                "sort": 7,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-01",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.447857433817612,
-                "Count": 589
+                "Count": 589,
+                "sort": 13,
+                "log(Density)": 5.447857433817612
             },
             {
                 "District": "NC-02",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 12341
+                "Count": 8825,
+                "sort": 6,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 76250,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 184268
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 38383,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 7.647795587380141,
-                "Count": 59547
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.647795587380141,
-                "Count": 21850
+                "Count": 6031,
+                "sort": 9,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 8752
+                "Count": 7111,
+                "sort": 6,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 7.647795587380141,
-                "Count": 5443
+                "Count": 2745,
+                "sort": 12,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 3516
+                "Count": 3516,
+                "sort": 7,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 108018
+                "Count": 108018,
+                "sort": 1,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 7.647795587380141,
-                "Count": 21164
+                "Count": 21164,
+                "sort": 4,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.647795587380141,
-                "Count": 15819
+                "Count": 15819,
+                "sort": 10,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 1641
+                "Count": 1641,
+                "sort": 7,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 7.647795587380141,
-                "Count": 2698
+                "Count": 2698,
+                "sort": 13,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 12356
+                "Count": 9037,
+                "sort": 6,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 66256,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 173006
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 3,
                 "Education": "NonGrad",
                 "Race": "R5_Black",
-                "log(Density)": 7.647795587380141,
-                "Count": 47813
+                "Count": 35051,
+                "sort": 3,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.647795587380141,
-                "Count": 20633
+                "Count": 3971,
+                "sort": 9,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 9651
+                "Count": 8462,
+                "sort": 6,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 7.647795587380141,
-                "Count": 3708
+                "Count": 1437,
+                "sort": 12,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 3319
+                "Count": 3319,
+                "sort": 7,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 106750
+                "Count": 106750,
+                "sort": 1,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 7.647795587380141,
-                "Count": 12762
+                "Count": 12762,
+                "sort": 4,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.647795587380141,
-                "Count": 16662
+                "Count": 16662,
+                "sort": 10,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.647795587380141,
-                "Count": 1189
+                "Count": 1189,
+                "sort": 7,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-02",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 7.647795587380141,
-                "Count": 2271
+                "Count": 2271,
+                "sort": 13,
+                "log(Density)": 7.647795587380141
             },
             {
                 "District": "NC-03",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 9718
+                "Count": 8080,
+                "sort": 6,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 135827,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 186113
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 45288,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.53153005353903,
-                "Count": 54441
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.53153005353903,
-                "Count": 4509
+                "Count": 3344,
+                "sort": 9,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 4362
+                "Count": 3693,
+                "sort": 6,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.53153005353903,
-                "Count": 4632
+                "Count": 3974,
+                "sort": 12,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 1638
+                "Count": 1638,
+                "sort": 7,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 50286
+                "Count": 50286,
+                "sort": 1,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.53153005353903,
-                "Count": 9153
+                "Count": 9153,
+                "sort": 4,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.53153005353903,
-                "Count": 1165
+                "Count": 1165,
+                "sort": 10,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 669
+                "Count": 669,
+                "sort": 7,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.53153005353903,
-                "Count": 658
+                "Count": 658,
+                "sort": 13,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 11981
+                "Count": 10366,
+                "sort": 6,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 133597,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 176722
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 3,
                 "Education": "NonGrad",
                 "Race": "R5_Black",
-                "log(Density)": 5.53153005353903,
-                "Count": 49109
+                "Count": 44491,
+                "sort": 3,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.53153005353903,
-                "Count": 2755
+                "Count": 1800,
+                "sort": 9,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 4728
+                "Count": 4335,
+                "sort": 6,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.53153005353903,
-                "Count": 4017
+                "Count": 2908,
+                "sort": 12,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 1615
+                "Count": 1615,
+                "sort": 7,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 43125
+                "Count": 43125,
+                "sort": 1,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.53153005353903,
-                "Count": 4618
+                "Count": 4618,
+                "sort": 4,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.53153005353903,
-                "Count": 955
+                "Count": 955,
+                "sort": 10,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.53153005353903,
-                "Count": 393
+                "Count": 393,
+                "sort": 7,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-03",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.53153005353903,
-                "Count": 1109
+                "Count": 1109,
+                "sort": 13,
+                "log(Density)": 5.53153005353903
             },
             {
                 "District": "NC-04",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 12764
+                "Count": 9681,
+                "sort": 6,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 83211,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 179936
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 50830,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 6.736575422287017,
-                "Count": 77728
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.736575422287017,
-                "Count": 12224
+                "Count": 4265,
+                "sort": 9,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 8535
+                "Count": 7080,
+                "sort": 6,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 6.736575422287017,
-                "Count": 4687
+                "Count": 2043,
+                "sort": 12,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 3083
+                "Count": 3083,
+                "sort": 7,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 96725
+                "Count": 96725,
+                "sort": 1,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 6.736575422287017,
-                "Count": 26898
+                "Count": 26898,
+                "sort": 4,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.736575422287017,
-                "Count": 7959
+                "Count": 7959,
+                "sort": 10,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 1455
+                "Count": 1455,
+                "sort": 7,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 6.736575422287017,
-                "Count": 2644
+                "Count": 2644,
+                "sort": 13,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 13802
+                "Count": 11234,
+                "sort": 6,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 78056,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 163647
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 3,
                 "Education": "NonGrad",
                 "Race": "R5_Black",
-                "log(Density)": 6.736575422287017,
-                "Count": 62699
+                "Count": 47140,
+                "sort": 3,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.736575422287017,
-                "Count": 10662
+                "Count": 3059,
+                "sort": 9,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 9754
+                "Count": 8698,
+                "sort": 6,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 6.736575422287017,
-                "Count": 4577
+                "Count": 2629,
+                "sort": 12,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 2568
+                "Count": 2568,
+                "sort": 7,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 85591
+                "Count": 85591,
+                "sort": 1,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 6.736575422287017,
-                "Count": 15559
+                "Count": 15559,
+                "sort": 4,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.736575422287017,
-                "Count": 7603
+                "Count": 7603,
+                "sort": 10,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.736575422287017,
-                "Count": 1056
+                "Count": 1056,
+                "sort": 7,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-04",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 6.736575422287017,
-                "Count": 1948
+                "Count": 1948,
+                "sort": 13,
+                "log(Density)": 6.736575422287017
             },
             {
                 "District": "NC-05",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 5470
+                "Count": 4748,
+                "sort": 6,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 194790,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 246580
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 23843,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.747863153891376,
-                "Count": 28119
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.747863153891376,
-                "Count": 3560
+                "Count": 2397,
+                "sort": 9,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 4486
+                "Count": 3872,
+                "sort": 6,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.747863153891376,
-                "Count": 3077
+                "Count": 2396,
+                "sort": 12,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 722
+                "Count": 722,
+                "sort": 7,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 51790
+                "Count": 51790,
+                "sort": 1,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.747863153891376,
-                "Count": 4276
+                "Count": 4276,
+                "sort": 4,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.747863153891376,
-                "Count": 1163
+                "Count": 1163,
+                "sort": 10,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 614
+                "Count": 614,
+                "sort": 7,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.747863153891376,
-                "Count": 681
+                "Count": 681,
+                "sort": 13,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 6256
+                "Count": 5438,
+                "sort": 6,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 183727,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 227044
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 3,
                 "Education": "NonGrad",
                 "Race": "R5_Black",
-                "log(Density)": 5.747863153891376,
-                "Count": 24280
+                "Count": 21663,
+                "sort": 3,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.747863153891376,
-                "Count": 3020
+                "Count": 2128,
+                "sort": 9,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 5372
+                "Count": 5201,
+                "sort": 6,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.747863153891376,
-                "Count": 2883
+                "Count": 2494,
+                "sort": 12,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 818
+                "Count": 818,
+                "sort": 7,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 43317
+                "Count": 43317,
+                "sort": 1,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.747863153891376,
-                "Count": 2617
+                "Count": 2617,
+                "sort": 4,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.747863153891376,
-                "Count": 892
+                "Count": 892,
+                "sort": 10,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.747863153891376,
-                "Count": 171
+                "Count": 171,
+                "sort": 7,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-05",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.747863153891376,
-                "Count": 389
+                "Count": 389,
+                "sort": 13,
+                "log(Density)": 5.747863153891376
             },
             {
                 "District": "NC-06",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 11881
+                "Count": 9941,
+                "sort": 6,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 89469,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 155037
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 67213,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 7.327819959458015,
-                "Count": 90717
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.327819959458015,
-                "Count": 10389
+                "Count": 5843,
+                "sort": 9,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 5683
+                "Count": 5032,
+                "sort": 6,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 7.327819959458015,
-                "Count": 4683
+                "Count": 3304,
+                "sort": 12,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 1940
+                "Count": 1940,
+                "sort": 7,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 65568
+                "Count": 65568,
+                "sort": 1,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 7.327819959458015,
-                "Count": 23504
+                "Count": 23504,
+                "sort": 4,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.327819959458015,
-                "Count": 4546
+                "Count": 4546,
+                "sort": 10,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 651
+                "Count": 651,
+                "sort": 7,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 7.327819959458015,
-                "Count": 1379
+                "Count": 1379,
+                "sort": 13,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 12529
+                "Count": 10769,
+                "sort": 6,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 77062,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 137107
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 3,
                 "Education": "NonGrad",
                 "Race": "R5_Black",
-                "log(Density)": 7.327819959458015,
-                "Count": 68918
+                "Count": 55605,
+                "sort": 3,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.327819959458015,
-                "Count": 9582
+                "Count": 5322,
+                "sort": 9,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 5839
+                "Count": 5345,
+                "sort": 6,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 7.327819959458015,
-                "Count": 4149
+                "Count": 2855,
+                "sort": 12,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 1760
+                "Count": 1760,
+                "sort": 7,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 60045
+                "Count": 60045,
+                "sort": 1,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 7.327819959458015,
-                "Count": 13313
+                "Count": 13313,
+                "sort": 4,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.327819959458015,
-                "Count": 4260
+                "Count": 4260,
+                "sort": 10,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.327819959458015,
-                "Count": 494
+                "Count": 494,
+                "sort": 7,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-06",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 7.327819959458015,
-                "Count": 1294
+                "Count": 1294,
+                "sort": 13,
+                "log(Density)": 7.327819959458015
             },
             {
                 "District": "NC-07",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 9956
+                "Count": 8547,
+                "sort": 6,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 159378,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 228506
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 44316,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.82744449148394,
-                "Count": 52689
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.82744449148394,
-                "Count": 2497
+                "Count": 1359,
+                "sort": 9,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 6091
+                "Count": 5596,
+                "sort": 6,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.82744449148394,
-                "Count": 4845
+                "Count": 3737,
+                "sort": 12,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 1409
+                "Count": 1409,
+                "sort": 7,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 69128
+                "Count": 69128,
+                "sort": 1,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.82744449148394,
-                "Count": 8373
+                "Count": 8373,
+                "sort": 4,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.82744449148394,
-                "Count": 1138
+                "Count": 1138,
+                "sort": 10,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 495
+                "Count": 495,
+                "sort": 7,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.82744449148394,
-                "Count": 1108
+                "Count": 1108,
+                "sort": 13,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 11864
+                "Count": 10611,
+                "sort": 6,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 145499,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 206450
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 39256,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.82744449148394,
-                "Count": 43478
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.82744449148394,
-                "Count": 1784
+                "Count": 726,
+                "sort": 9,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 7448
+                "Count": 7128,
+                "sort": 6,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.82744449148394,
-                "Count": 4924
+                "Count": 3908,
+                "sort": 12,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 1253
+                "Count": 1253,
+                "sort": 7,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 60951
+                "Count": 60951,
+                "sort": 1,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.82744449148394,
-                "Count": 4222
+                "Count": 4222,
+                "sort": 4,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.82744449148394,
-                "Count": 1058
+                "Count": 1058,
+                "sort": 10,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.82744449148394,
-                "Count": 320
+                "Count": 320,
+                "sort": 7,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-07",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.82744449148394,
-                "Count": 1016
+                "Count": 1016,
+                "sort": 13,
+                "log(Density)": 5.82744449148394
             },
             {
                 "District": "NC-08",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 12699
+                "Count": 10461,
+                "sort": 6,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 118177,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 162142
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 51706,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 6.431363287534036,
-                "Count": 69138
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.431363287534036,
-                "Count": 7587
+                "Count": 4306,
+                "sort": 9,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 8392
+                "Count": 6972,
+                "sort": 6,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 6.431363287534036,
-                "Count": 6379
+                "Count": 5027,
+                "sort": 12,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 2238
+                "Count": 2238,
+                "sort": 7,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 43965
+                "Count": 43965,
+                "sort": 1,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 6.431363287534036,
-                "Count": 17432
+                "Count": 17432,
+                "sort": 4,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.431363287534036,
-                "Count": 3281
+                "Count": 3281,
+                "sort": 10,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 1420
+                "Count": 1420,
+                "sort": 7,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 6.431363287534036,
-                "Count": 1352
+                "Count": 1352,
+                "sort": 13,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 13728
+                "Count": 11267,
+                "sort": 6,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 113349,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 153117
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 47092,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 6.431363287534036,
-                "Count": 57300
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.431363287534036,
-                "Count": 5377
+                "Count": 2312,
+                "sort": 9,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 8604
+                "Count": 7947,
+                "sort": 6,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 6.431363287534036,
-                "Count": 5403
+                "Count": 4392,
+                "sort": 12,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 2461
+                "Count": 2461,
+                "sort": 7,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 39768
+                "Count": 39768,
+                "sort": 1,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 6.431363287534036,
-                "Count": 10208
+                "Count": 10208,
+                "sort": 4,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.431363287534036,
-                "Count": 3065
+                "Count": 3065,
+                "sort": 10,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.431363287534036,
-                "Count": 657
+                "Count": 657,
+                "sort": 7,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-08",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 6.431363287534036,
-                "Count": 1011
+                "Count": 1011,
+                "sort": 13,
+                "log(Density)": 6.431363287534036
             },
             {
                 "District": "NC-09",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 11696
+                "Count": 8679,
+                "sort": 6,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 116646,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 198242
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 44580,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 6.239027502962935,
-                "Count": 56529
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.239027502962935,
-                "Count": 10108
+                "Count": 3793,
+                "sort": 9,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 5855
+                "Count": 4622,
+                "sort": 6,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 6.239027502962935,
-                "Count": 25695
+                "Count": 20825,
+                "sort": 12,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 3017
+                "Count": 3017,
+                "sort": 7,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 81596
+                "Count": 81596,
+                "sort": 1,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 6.239027502962935,
-                "Count": 11949
+                "Count": 11949,
+                "sort": 4,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.239027502962935,
-                "Count": 6315
+                "Count": 6315,
+                "sort": 10,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 1233
+                "Count": 1233,
+                "sort": 7,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 6.239027502962935,
-                "Count": 4870
+                "Count": 4870,
+                "sort": 13,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 12137
+                "Count": 9743,
+                "sort": 6,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 103251,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 179584
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 41527,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 6.239027502962935,
-                "Count": 48329
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.239027502962935,
-                "Count": 9202
+                "Count": 2559,
+                "sort": 9,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 6710
+                "Count": 5742,
+                "sort": 6,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 6.239027502962935,
-                "Count": 22143
+                "Count": 19040,
+                "sort": 12,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 2394
+                "Count": 2394,
+                "sort": 7,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 76333
+                "Count": 76333,
+                "sort": 1,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 6.239027502962935,
-                "Count": 6802
+                "Count": 6802,
+                "sort": 4,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 6.239027502962935,
-                "Count": 6643
+                "Count": 6643,
+                "sort": 10,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 6.239027502962935,
-                "Count": 968
+                "Count": 968,
+                "sort": 7,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-09",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 6.239027502962935,
-                "Count": 3103
+                "Count": 3103,
+                "sort": 13,
+                "log(Density)": 6.239027502962935
             },
             {
                 "District": "NC-10",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 8846
+                "Count": 7714,
+                "sort": 6,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 179391,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 235014
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 24488,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.781946495625555,
-                "Count": 29372
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.781946495625555,
-                "Count": 4742
+                "Count": 2809,
+                "sort": 9,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 5623
+                "Count": 5110,
+                "sort": 6,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.781946495625555,
-                "Count": 2996
+                "Count": 2249,
+                "sort": 12,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 1132
+                "Count": 1132,
+                "sort": 7,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 55623
+                "Count": 55623,
+                "sort": 1,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.781946495625555,
-                "Count": 4884
+                "Count": 4884,
+                "sort": 4,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.781946495625555,
-                "Count": 1933
+                "Count": 1933,
+                "sort": 10,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 513
+                "Count": 513,
+                "sort": 7,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.781946495625555,
-                "Count": 747
+                "Count": 747,
+                "sort": 13,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 9952
+                "Count": 9053,
+                "sort": 6,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 167372,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 215689
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 22178,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.781946495625555,
-                "Count": 25248
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.781946495625555,
-                "Count": 4208
+                "Count": 2417,
+                "sort": 9,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 6254
+                "Count": 5965,
+                "sort": 6,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.781946495625555,
-                "Count": 2625
+                "Count": 2192,
+                "sort": 12,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 899
+                "Count": 899,
+                "sort": 7,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 48317
+                "Count": 48317,
+                "sort": 1,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.781946495625555,
-                "Count": 3070
+                "Count": 3070,
+                "sort": 4,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.781946495625555,
-                "Count": 1791
+                "Count": 1791,
+                "sort": 10,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.781946495625555,
-                "Count": 289
+                "Count": 289,
+                "sort": 7,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-10",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.781946495625555,
-                "Count": 433
+                "Count": 433,
+                "sort": 13,
+                "log(Density)": 5.781946495625555
             },
             {
                 "District": "NC-11",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 9203
+                "Count": 7352,
+                "sort": 6,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 218063,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 315394
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 8493,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.299466705804558,
-                "Count": 10356
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.299466705804558,
-                "Count": 3212
+                "Count": 1964,
+                "sort": 9,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 2552
+                "Count": 2142,
+                "sort": 6,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.299466705804558,
-                "Count": 7815
+                "Count": 6530,
+                "sort": 12,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 1851
+                "Count": 1851,
+                "sort": 7,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 97331
+                "Count": 97331,
+                "sort": 1,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.299466705804558,
-                "Count": 1863
+                "Count": 1863,
+                "sort": 4,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.299466705804558,
-                "Count": 1248
+                "Count": 1248,
+                "sort": 10,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 410
+                "Count": 410,
+                "sort": 7,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.299466705804558,
-                "Count": 1285
+                "Count": 1285,
+                "sort": 13,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 9622
+                "Count": 8213,
+                "sort": 6,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 203114,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 283942
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 9085,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.299466705804558,
-                "Count": 10132
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.299466705804558,
-                "Count": 2180
+                "Count": 1131,
+                "sort": 9,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 3999
+                "Count": 3716,
+                "sort": 6,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.299466705804558,
-                "Count": 6539
+                "Count": 5478,
+                "sort": 12,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 1409
+                "Count": 1409,
+                "sort": 7,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 80828
+                "Count": 80828,
+                "sort": 1,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.299466705804558,
-                "Count": 1047
+                "Count": 1047,
+                "sort": 4,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.299466705804558,
-                "Count": 1049
+                "Count": 1049,
+                "sort": 10,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.299466705804558,
-                "Count": 283
+                "Count": 283,
+                "sort": 7,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-11",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.299466705804558,
-                "Count": 1061
+                "Count": 1061,
+                "sort": 13,
+                "log(Density)": 5.299466705804558
             },
             {
                 "District": "NC-12",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 17329
+                "Count": 13882,
+                "sort": 6,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 68117,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 141262
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 78007,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 7.769311011116041,
-                "Count": 113695
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.769311011116041,
-                "Count": 14500
+                "Count": 7760,
+                "sort": 9,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 14665
+                "Count": 12724,
+                "sort": 6,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 7.769311011116041,
-                "Count": 5866
+                "Count": 2890,
+                "sort": 12,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 3447
+                "Count": 3447,
+                "sort": 7,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 73145
+                "Count": 73145,
+                "sort": 1,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 7.769311011116041,
-                "Count": 35688
+                "Count": 35688,
+                "sort": 4,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.769311011116041,
-                "Count": 6740
+                "Count": 6740,
+                "sort": 10,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 1941
+                "Count": 1941,
+                "sort": 7,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 7.769311011116041,
-                "Count": 2976
+                "Count": 2976,
+                "sort": 13,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 18493
+                "Count": 14926,
+                "sort": 6,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 61969,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 135311
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 63974,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 7.769311011116041,
-                "Count": 85650
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.769311011116041,
-                "Count": 15135
+                "Count": 6945,
+                "sort": 9,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 14795
+                "Count": 13390,
+                "sort": 6,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 7.769311011116041,
-                "Count": 4812
+                "Count": 3160,
+                "sort": 12,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 3567
+                "Count": 3567,
+                "sort": 7,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 73342
+                "Count": 73342,
+                "sort": 1,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 7.769311011116041,
-                "Count": 21676
+                "Count": 21676,
+                "sort": 4,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 7.769311011116041,
-                "Count": 8190
+                "Count": 8190,
+                "sort": 10,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 7.769311011116041,
-                "Count": 1405
+                "Count": 1405,
+                "sort": 7,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-12",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 7.769311011116041,
-                "Count": 1652
+                "Count": 1652,
+                "sort": 13,
+                "log(Density)": 7.769311011116041
             },
             {
                 "District": "NC-13",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 9058
+                "Count": 8272,
+                "sort": 6,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 167089,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 215599
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 33230,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.844529438984284,
-                "Count": 39521
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.844529438984284,
-                "Count": 3103
+                "Count": 2152,
+                "sort": 9,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 7046
+                "Count": 6602,
+                "sort": 6,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.844529438984284,
-                "Count": 3672
+                "Count": 3022,
+                "sort": 12,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 786
+                "Count": 786,
+                "sort": 7,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 48510
+                "Count": 48510,
+                "sort": 1,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.844529438984284,
-                "Count": 6291
+                "Count": 6291,
+                "sort": 4,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.844529438984284,
-                "Count": 951
+                "Count": 951,
+                "sort": 10,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 444
+                "Count": 444,
+                "sort": 7,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.844529438984284,
-                "Count": 650
+                "Count": 650,
+                "sort": 13,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 9649
+                "Count": 9109,
+                "sort": 6,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "Count": 157876,
                 "sort": 0,
-                "Education": "NonGrad",
-                "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 196446
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "Count": 28996,
                 "sort": 3,
-                "Education": "NonGrad",
-                "Race": "R5_Black",
-                "log(Density)": 5.844529438984284,
-                "Count": 32522
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 0
+                "Count": 0,
+                "sort": 6,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 9,
                 "Education": "NonGrad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.844529438984284,
-                "Count": 2872
+                "Count": 1925,
+                "sort": 9,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 6,
                 "Education": "NonGrad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 8484
+                "Count": 8161,
+                "sort": 6,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 12,
                 "Education": "NonGrad",
                 "Race": "R5_Other",
-                "log(Density)": 5.844529438984284,
-                "Count": 3452
+                "Count": 2851,
+                "sort": 12,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 540
+                "Count": 540,
+                "sort": 7,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 1,
                 "Education": "Grad",
                 "Race": "R5_WhiteNonHispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 38570
+                "Count": 38570,
+                "sort": 1,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 4,
                 "Education": "Grad",
                 "Race": "R5_Black",
-                "log(Density)": 5.844529438984284,
-                "Count": 3526
+                "Count": 3526,
+                "sort": 4,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 0
+                "Count": 0,
+                "sort": 7,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 10,
                 "Education": "Grad",
                 "Race": "R5_Asian",
-                "log(Density)": 5.844529438984284,
-                "Count": 947
+                "Count": 947,
+                "sort": 10,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 7,
                 "Education": "Grad",
                 "Race": "R5_Hispanic",
-                "log(Density)": 5.844529438984284,
-                "Count": 323
+                "Count": 323,
+                "sort": 7,
+                "log(Density)": 5.844529438984284
             },
             {
                 "District": "NC-13",
-                "sort": 13,
                 "Education": "Grad",
                 "Race": "R5_Other",
-                "log(Density)": 5.844529438984284,
-                "Count": 601
+                "Count": 601,
+                "sort": 13,
+                "log(Density)": 5.844529438984284
             }
         ]
     },
@@ -3735,8 +3749,16 @@
 };
 vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>These districts are all majority white, though NC-12 is right on the line. But there are large variations in the proportion of voters-of-color and population density among the districts.</p>
-<p>Below we look at these demographics a different way. We place each district according to its proportion of college graduates and non-white citizens of voting age. We also indicate (logarithmic) population density via the size of the circle and modeled D-edge (D-share - 50%) via color. This makes it easier to see that the model predicts larger D vote share as the district becomes more educated, more non-white and more dense.</p>
+<p>These districts are all majority white, though NC-12 is right on the
+line. But there are large variations in the proportion of
+voters-of-color and population density among the districts.</p>
+<p>Below we look at these demographics a different way. We place each
+district according to its proportion of college graduates and non-white
+citizens of voting age. We also indicate (logarithmic) population
+density via the size of the circle and modeled D-edge (D-share - 50%)
+via color. This makes it easier to see that the model predicts larger D
+vote share as the district becomes more educated, more non-white and
+more dense.</p>
 <figure id="figure_2">
 <script type="text/javascript">var vlSpec=
 {
@@ -3754,17 +3776,17 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "type": "quantitative",
+                    "field": "% non-white",
                     "scale": {
                         "zero": false
-                    },
-                    "field": "% non-white"
+                    }
                 },
                 "y": {
                     "type": "quantitative",
+                    "field": "% college grad",
                     "scale": {
                         "zero": false
-                    },
-                    "field": "% college grad"
+                    }
                 },
                 "text": {
                     "field": "District"
@@ -3779,35 +3801,46 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "type": "quantitative",
+                    "field": "% non-white",
                     "scale": {
                         "zero": false
-                    },
-                    "field": "% non-white"
+                    }
                 },
                 "color": {
                     "type": "quantitative",
+                    "field": "Modeled D-Edge",
                     "scale": {
                         "scheme": "redblue",
                         "domain": [
-                            -14.180000000000003,
-                            14.180000000000003
+                            -17.25,
+                            17.25
                         ]
-                    },
-                    "field": "Modeled D-Edge"
-                },
-                "y": {
-                    "type": "quantitative",
-                    "scale": {
-                        "zero": false
-                    },
-                    "field": "% college grad"
+                    }
                 },
                 "size": {
                     "type": "quantitative",
+                    "field": "log density",
                     "scale": {
                         "zero": false
-                    },
-                    "field": "log density"
+                    }
+                },
+                "y": {
+                    "type": "quantitative",
+                    "field": "% college grad",
+                    "scale": {
+                        "zero": false
+                    }
+                }
+            },
+            "selection": {
+                "view": {
+                    "type": "interval",
+                    "clear": "click[event.shiftKey]",
+                    "encodings": [
+                        "x",
+                        "y"
+                    ],
+                    "bind": "scales"
                 }
             },
             "mark": {
@@ -3815,120 +3848,109 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
                 "tooltip": {
                     "content": "data"
                 }
-            },
-            "selection": {
-                "view": {
-                    "type": "interval",
-                    "bind": "scales",
-                    "clear": "click[event.shiftKey]",
-                    "encodings": [
-                        "x",
-                        "y"
-                    ]
-                }
             }
         }
     ],
     "config": {
         "view": {
+            "continuousHeight": 600,
             "continuousWidth": 600,
             "discreteWidth": 600,
-            "discreteHeight": 600,
-            "continuousHeight": 600
+            "discreteHeight": 600
         }
     },
     "data": {
         "values": [
             {
                 "District": "NC-01",
-                "% non-white": 46.80113342269765,
-                "Modeled D-Edge": -0.3300000000000025,
+                "% non-white": 49.39236555792427,
+                "Modeled D-Edge": 1.0199999999999987,
                 "log density": 5.447857433817612,
-                "% college grad": 15.79923553691587
+                "% college grad": 18.76376733354087
             },
             {
                 "District": "NC-02",
-                "% non-white": 33.10835066892585,
-                "Modeled D-Edge": 9.660000000000002,
+                "% non-white": 36.12898842979934,
+                "Modeled D-Edge": 9.950000000000003,
                 "log density": 7.647795587380141,
-                "% college grad": 34.59038304351029
+                "% college grad": 52.88271763847771
             },
             {
                 "District": "NC-03",
-                "% non-white": 27.403810199675085,
-                "Modeled D-Edge": -6.990000000000002,
+                "% non-white": 29.283922609615914,
+                "Modeled D-Edge": -9.520000000000001,
                 "log density": 5.53153005353903,
-                "% college grad": 18.359478798544405
+                "% college grad": 22.488194009982713
             },
             {
                 "District": "NC-04",
-                "% non-white": 35.40149661468314,
-                "Modeled D-Edge": 4.64,
+                "% non-white": 38.75689598317336,
+                "Modeled D-Edge": 5.520000000000003,
                 "log density": 6.736575422287017,
-                "% college grad": 31.088042805341825
+                "% college grad": 45.112697521456646
             },
             {
                 "District": "NC-05",
-                "% non-white": 14.809233714351622,
-                "Modeled D-Edge": -9.139999999999999,
+                "% non-white": 15.446481013019797,
+                "Modeled D-Edge": -11.19,
                 "log density": 5.747863153891376,
-                "% college grad": 16.095039372555597
+                "% college grad": 19.1824646030417
             },
             {
                 "District": "NC-06",
-                "% non-white": 39.91424889395169,
-                "Modeled D-Edge": 9.640000000000004,
+                "% non-white": 43.43928722164355,
+                "Modeled D-Edge": 5.169999999999996,
                 "log density": 7.327819959458015,
-                "% college grad": 25.710085894935478
+                "% college grad": 34.60777442624982
             },
             {
                 "District": "NC-07",
-                "% non-white": 22.704147588997582,
-                "Modeled D-Edge": -5.990000000000001,
+                "% non-white": 25.076309316282305,
+                "Modeled D-Edge": -6.25,
                 "log density": 5.82744449148394,
-                "% college grad": 20.584183649041112
+                "% college grad": 25.919501422832848
             },
             {
                 "District": "NC-08",
-                "% non-white": 37.33674245041808,
-                "Modeled D-Edge": 1.529999999999998,
+                "% non-white": 38.168263818336584,
+                "Modeled D-Edge": -9.57,
                 "log density": 6.431363287534036,
-                "% college grad": 19.92354615186486
+                "% college grad": 24.880654917174315
             },
             {
                 "District": "NC-09",
-                "% non-white": 32.30741433793289,
-                "Modeled D-Edge": -2.100000000000002,
+                "% non-white": 35.549869505143036,
+                "Modeled D-Edge": -3.939999999999999,
                 "log density": 6.239027502962935,
-                "% college grad": 25.92990360766843
+                "% college grad": 35.007249714275964
             },
             {
                 "District": "NC-10",
-                "% non-white": 17.242166517457477,
-                "Modeled D-Edge": -8.389999999999997,
+                "% non-white": 18.138689246942707,
+                "Modeled D-Edge": -11.99,
                 "log density": 5.781946495625555,
-                "% college grad": 17.850044762757385
+                "% college grad": 21.728611672651386
             },
             {
                 "District": "NC-11",
-                "% non-white": 9.02352064272517,
-                "Modeled D-Edge": -13.319999999999999,
+                "% non-white": 9.866966640900163,
+                "Modeled D-Edge": -17.25,
                 "log density": 5.299466705804558,
-                "% college grad": 22.193138164615245
+                "% college grad": 28.523368814911287
             },
             {
                 "District": "NC-12",
-                "% non-white": 48.10875255433089,
-                "Modeled D-Edge": 14.180000000000003,
+                "% non-white": 52.439068430112485,
+                "Modeled D-Edge": 15.300000000000002,
                 "log density": 7.769311011116041,
-                "% college grad": 28.67339153814263
+                "% college grad": 40.20013310106567
             },
             {
                 "District": "NC-13",
-                "% non-white": 21.21935782234758,
-                "Modeled D-Edge": -7.01,
+                "% non-white": 22.463983561148915,
+                "Modeled D-Edge": -0.5000000000000004,
                 "log density": 5.844529438984284,
-                "% college grad": 16.12136441048483
+                "% college grad": 19.219869633287168
             }
         ]
     },
@@ -3936,8 +3958,15 @@ vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
 };
 vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>Below we chart the 2020 <em>election results</em> and compare them to the model. This is so we have some sense that the model makes sense and some sense of how approximate we might expect it to be.</p>
-<p>The election result is on the x-axis and our model estimate on the y-axis, and a line representing where districts would fall on this scatter-plot if the model and election result agreed precisely. We’ve also included confidence intervals from the model. In districts left of the line, the model overrestimated the D vote share and underestimated it in districts to the right.</p>
+<p>Below we chart the 2020 <em>election results</em> and compare them to
+the model. This is so we have some sense that the model makes sense and
+some sense of how approximate we might expect it to be.</p>
+<p>The election result is on the x-axis and our model estimate on the
+y-axis, and a line representing where districts would fall on this
+scatter-plot if the model and election result agreed precisely. We’ve
+also included confidence intervals from the model. In districts left of
+the line, the model overrestimated the D vote share and underestimated
+it in districts to the right.</p>
 <figure id="figure_3">
 <script type="text/javascript">var vlSpec=
 {
@@ -3955,20 +3984,20 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "type": "quantitative",
+                    "field": "Demographic Model",
                     "scale": {
                         "zero": false
                     },
-                    "field": "Demographic Model",
                     "axis": {
                         "title": "Election D-Share"
                     }
                 },
                 "y": {
                     "type": "quantitative",
+                    "field": "Demographic Model",
                     "scale": {
                         "zero": false
                     },
-                    "field": "Demographic Model",
                     "axis": {
                         "title": "Demographic Model"
                     }
@@ -3980,19 +4009,13 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
             }
         },
         {
-            "transform": [
-                {
-                    "calculate": "datum.State + '-' + datum.District",
-                    "as": "District Name"
-                }
-            ],
             "encoding": {
                 "x": {
                     "type": "quantitative",
+                    "field": "Election Result",
                     "scale": {
                         "zero": false
                     },
-                    "field": "Election Result",
                     "axis": {
                         "title": "Election D-Share"
                     }
@@ -4013,10 +4036,10 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                 ],
                 "y": {
                     "type": "quantitative",
+                    "field": "Demographic Model",
                     "scale": {
                         "zero": false
                     },
-                    "field": "Demographic Model",
                     "axis": {
                         "title": "Demographic Model"
                     }
@@ -4026,6 +4049,12 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                     "field": "District Name"
                 }
             },
+            "transform": [
+                {
+                    "calculate": "datum.State + '-' + datum.District",
+                    "as": "District Name"
+                }
+            ],
             "mark": {
                 "type": "text",
                 "dx": 20
@@ -4033,21 +4062,21 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
         },
         {
             "encoding": {
-                "y2": {
-                    "type": "quantitative",
-                    "scale": {
-                        "zero": false
-                    },
-                    "field": "Demographic Model (95% CI)"
-                },
                 "x": {
                     "type": "quantitative",
+                    "field": "Election Result",
                     "scale": {
                         "zero": false
                     },
-                    "field": "Election Result",
                     "axis": {
                         "title": "Election D-Share"
+                    }
+                },
+                "y2": {
+                    "type": "quantitative",
+                    "field": "Demographic Model (95% CI)",
+                    "scale": {
+                        "zero": false
                     }
                 },
                 "tooltip": [
@@ -4074,10 +4103,10 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                 ],
                 "y": {
                     "type": "quantitative",
+                    "field": "Demographic Model (5% CI)",
                     "scale": {
                         "zero": false
                     },
-                    "field": "Demographic Model (5% CI)",
                     "axis": {
                         "title": "Demographic Model"
                     }
@@ -4094,10 +4123,10 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
             "encoding": {
                 "x": {
                     "type": "quantitative",
+                    "field": "Election Result",
                     "scale": {
                         "zero": false
                     },
-                    "field": "Election Result",
                     "axis": {
                         "title": "Election D-Share"
                     }
@@ -4118,35 +4147,35 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
                 ],
                 "y": {
                     "type": "quantitative",
+                    "field": "Demographic Model",
                     "scale": {
                         "zero": false
                     },
-                    "field": "Demographic Model",
                     "axis": {
                         "title": "Demographic Model"
                     }
                 }
             },
-            "mark": "circle",
             "selection": {
                 "view": {
                     "type": "interval",
-                    "bind": "scales",
                     "clear": "click[event.shiftKey]",
                     "encodings": [
                         "x",
                         "y"
-                    ]
+                    ],
+                    "bind": "scales"
                 }
-            }
+            },
+            "mark": "circle"
         }
     ],
     "config": {
         "view": {
+            "continuousHeight": 600,
             "continuousWidth": 600,
             "discreteWidth": 600,
-            "discreteHeight": 600,
-            "continuousHeight": 600
+            "discreteHeight": 600
         }
     },
     "data": {
@@ -4155,120 +4184,120 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
         },
         "values": [
             {
-                "Demographic Model (5% CI)": 48.809999999999995,
+                "Demographic Model (5% CI)": 48.51,
                 "District": 1,
-                "Demographic Model (95% CI)": 50.5,
+                "Demographic Model (95% CI)": 53.620000000000005,
                 "Election Result": 54.1767780206415,
-                "Demographic Model": 49.669999999999995,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 51.019999999999996,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 59.14,
+                "Demographic Model (5% CI)": 56.879999999999995,
                 "District": 2,
-                "Demographic Model (95% CI)": 60.17,
+                "Demographic Model (95% CI)": 63.190000000000005,
                 "Election Result": 64.38213078849206,
-                "Demographic Model": 59.660000000000004,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 59.95,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 42.3,
+                "Demographic Model (5% CI)": 37.79,
                 "District": 3,
-                "Demographic Model (95% CI)": 43.7,
+                "Demographic Model (95% CI)": 43.33,
                 "Election Result": 36.61598887883669,
-                "Demographic Model": 43.01,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 40.48,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 54.15,
+                "Demographic Model (5% CI)": 52.669999999999995,
                 "District": 4,
-                "Demographic Model (95% CI)": 55.11000000000001,
+                "Demographic Model (95% CI)": 58.46,
                 "Election Result": 67.32999945313021,
-                "Demographic Model": 54.64,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 55.52,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 40.21,
+                "Demographic Model (5% CI)": 35.9,
                 "District": 5,
-                "Demographic Model (95% CI)": 41.52,
+                "Demographic Model (95% CI)": 41.9,
                 "Election Result": 31.731398055013514,
-                "Demographic Model": 40.86,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 38.81,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 59.13,
+                "Demographic Model (5% CI)": 52.39,
                 "District": 6,
-                "Demographic Model (95% CI)": 60.14000000000001,
+                "Demographic Model (95% CI)": 58.050000000000004,
                 "Election Result": 62.272891393145656,
-                "Demographic Model": 59.64,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 55.169999999999995,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 43.37,
+                "Demographic Model (5% CI)": 40.94,
                 "District": 7,
-                "Demographic Model (95% CI)": 44.62,
+                "Demographic Model (95% CI)": 46.7,
                 "Election Result": 39.65664646679424,
-                "Demographic Model": 44.01,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 43.75,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 50.970000000000006,
+                "Demographic Model (5% CI)": 37.57,
                 "District": 8,
-                "Demographic Model (95% CI)": 52.080000000000005,
+                "Demographic Model (95% CI)": 43.47,
                 "Election Result": 46.7162433813772,
-                "Demographic Model": 51.53,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 40.43,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 47.349999999999994,
+                "Demographic Model (5% CI)": 43.3,
                 "District": 9,
-                "Demographic Model (95% CI)": 48.43,
+                "Demographic Model (95% CI)": 48.93,
                 "Election Result": 44.407904504558005,
-                "Demographic Model": 47.9,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 46.06,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 40.97,
+                "Demographic Model (5% CI)": 35.11,
                 "District": 10,
-                "Demographic Model (95% CI)": 42.26,
+                "Demographic Model (95% CI)": 41.089999999999996,
                 "Election Result": 31.09240232461119,
-                "Demographic Model": 41.61,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 38.01,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 35.949999999999996,
+                "Demographic Model (5% CI)": 29.84,
                 "District": 11,
-                "Demographic Model (95% CI)": 37.41,
+                "Demographic Model (95% CI)": 35.83,
                 "Election Result": 43.72167171300119,
-                "Demographic Model": 36.68,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 32.75,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 63.629999999999995,
+                "Demographic Model (5% CI)": 62.629999999999995,
                 "District": 12,
-                "Demographic Model (95% CI)": 64.71000000000001,
+                "Demographic Model (95% CI)": 68.03,
                 "Election Result": 100,
-                "Demographic Model": 64.18,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 65.3,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             },
             {
-                "Demographic Model (5% CI)": 42.34,
+                "Demographic Model (5% CI)": 46.650000000000006,
                 "District": 13,
-                "Demographic Model (95% CI)": 43.62,
+                "Demographic Model (95% CI)": 52.470000000000006,
                 "Election Result": 31.81810062138747,
-                "Demographic Model": 42.99,
-                "Demographic Model Type": "Model {voteSource = HouseVS, groupModel = BaseG, densityModel = BaseD}",
+                "Demographic Model": 49.5,
+                "Demographic Model Type": "\"TwoPartyShare_President_BinDensity_10_5\"",
                 "State": "NC"
             }
         ]
@@ -4277,12 +4306,37 @@ vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
 };
 vegaEmbed('#figure_3',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>The model seems to capture the trends pretty well, though it has some significant misses, particularly in the safe R districts, where the model overestimates the likely D share<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (ignore NC-12 here: the Dem ran unopposed and so the election result does not reflect true D share in that district.) We’re most interested in districts between 45% and 55%, scant though they are in this map. In that range the model does pretty well.</p>
-<section class="footnotes" role="doc-endnotes">
+<p>The model seems to capture the trends pretty well, though it has some
+significant misses, particularly in the safe R districts, where the
+model overestimates the likely D share<a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+(ignore NC-12 here: the Dem ran unopposed and so the election result
+does not reflect true D share in that district.) We’re most interested
+in districts between 45% and 55%, scant though they are in this map. In
+that range the model does pretty well.</p>
+<div class="brTableTitle">2020 Dem Vote Share, NC: Demographic Model vs. Election Results</div>
+<table class="brTable"><thead><tr><th>State</th><th>District</th><th>Demographic Model (Blue Ripple)</th><th>2020 Election</th></tr></thead><tbody><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">1</td><td style="; color: green" data-label="Demographic">51</td><td style="; color: green" data-label="Election">54</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">2</td><td style="; color: green" data-label="Demographic">60</td><td style="; color: green" data-label="Election">64</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">3</td><td style="; color: green" data-label="Demographic">40</td><td style="; color: green" data-label="Election">37</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">4</td><td style="; color: green" data-label="Demographic">56</td><td style="; color: green" data-label="Election">67</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">5</td><td style="; color: green" data-label="Demographic">39</td><td style="; color: green" data-label="Election">32</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">6</td><td style="; color: green" data-label="Demographic">55</td><td style="; color: green" data-label="Election">62</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">7</td><td style="; color: green" data-label="Demographic">44</td><td style="; color: green" data-label="Election">40</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">8</td><td style="; color: green" data-label="Demographic">40</td><td style="; color: green" data-label="Election">47</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">9</td><td style="; color: green" data-label="Demographic">46</td><td style="; color: green" data-label="Election">44</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">10</td><td style="; color: green" data-label="Demographic">38</td><td style="; color: green" data-label="Election">31</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">11</td><td style="; color: green" data-label="Demographic">33</td><td style="; color: green" data-label="Election">44</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">12</td><td style="; color: green" data-label="Demographic">65</td><td style="; color: green" data-label="Election">100</td></tr><tr><td style="; " data-label="State">NC</td><td style="; color: green" data-label="District">13</td><td style="; color: green" data-label="Demographic">50</td><td style="; color: green" data-label="Election">32</td></tr></tbody></table>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>We use logarithms here because density varies tremendously over districts, from tens to hundreds of thousands of people per square mile. We use population-weighting because the resulting average more closely expresses the density of where people actually live. For example, consider a district made up of a high-density city where 90% of the population live and then large but low-density exurbs where the other 10% live. Most people in that district live at high density and we want our density to reflect that even though the unweighted average density (people/district size) might be smaller.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>We’re not convinced that we are handling population density as well as we could. Even on a log scale, the variation is large and very different state-to-state. We’ve worked on this some without any simple solution. If we make significant progress there, we’ll update this note.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>We use logarithms here because
+density varies tremendously over districts, from tens to hundreds of
+thousands of people per square mile. We use population-weighting because
+the resulting average more closely expresses the density of where people
+actually live. For example, consider a district made up of a
+high-density city where 90% of the population live and then large but
+low-density exurbs where the other 10% live. Most people in that
+district live at high density and we want our density to reflect that
+even though the unweighted average density (people/district size) might
+be smaller.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>We’re not convinced that we are
+handling population density as well as we could. Even on a log scale,
+the variation is large and very different state-to-state. We’ve worked
+on this some without any simple solution. If we make significant
+progress there, we’ll update this note.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--
