@@ -1,0 +1,2377 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AZ</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  figure {
+      border: 1px #cccccc solid;
+      padding: 4px;
+      margin: auto
+  }
+  figcaption {
+      font-style: italic;
+      font-size: 12pt;
+      text-align: center;
+  }
+</style>
+
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">April  7, 2022 (10:28:33) </div>
+<p><strong>Post input file
+“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/AZ<em>Congressional/inputs/post</em>intro.md”
+not found. Please fix/remove</strong></p>
+<figure id="figure_16">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 600,
+            "continuousWidth": 600,
+            "discreteHeight": 600,
+            "discreteWidth": 600
+        }
+    },
+    "data": {
+        "format": {
+            "parse": {}
+        },
+        "values": [
+            {
+                "Demographic Model": 48.35,
+                "Demographic Model (5% CI)": 47.81,
+                "Demographic Model (95% CI)": 48.88,
+                "Demographic Model Type": "TwoPartyShare_Ho_Se_Pr_BinDensity_10_5_DSERwe_EScale100",
+                "District": "1",
+                "Historical Model": 48.23157680154928,
+                "State": "AZ"
+            },
+            {
+                "Demographic Model": 42.14,
+                "Demographic Model (5% CI)": 41.17,
+                "Demographic Model (95% CI)": 43.13,
+                "Demographic Model Type": "TwoPartyShare_Ho_Se_Pr_BinDensity_10_5_DSERwe_EScale100",
+                "District": "2",
+                "Historical Model": 45.39007092198582,
+                "State": "AZ"
+            },
+            {
+                "Demographic Model": 70.52000000000001,
+                "Demographic Model (5% CI)": 69.61,
+                "Demographic Model (95% CI)": 71.34,
+                "Demographic Model Type": "TwoPartyShare_Ho_Se_Pr_BinDensity_10_5_DSERwe_EScale100",
+                "District": "3",
+                "Historical Model": 75.85888626807507,
+                "State": "AZ"
+            },
+            {
+                "Demographic Model": 52.44,
+                "Demographic Model (5% CI)": 51.72,
+                "Demographic Model (95% CI)": 53.169999999999995,
+                "Demographic Model Type": "TwoPartyShare_Ho_Se_Pr_BinDensity_10_5_DSERwe_EScale100",
+                "District": "4",
+                "Historical Model": 53.0530427631579,
+                "State": "AZ"
+            },
+            {
+                "Demographic Model": 45.68,
+                "Demographic Model (5% CI)": 45.15,
+                "Demographic Model (95% CI)": 46.19,
+                "Demographic Model Type": "TwoPartyShare_Ho_Se_Pr_BinDensity_10_5_DSERwe_EScale100",
+                "District": "5",
+                "Historical Model": 40.309046254604986,
+                "State": "AZ"
+            },
+            {
+                "Demographic Model": 44.11,
+                "Demographic Model (5% CI)": 43.580000000000005,
+                "Demographic Model (95% CI)": 44.64,
+                "Demographic Model Type": "TwoPartyShare_Ho_Se_Pr_BinDensity_10_5_DSERwe_EScale100",
+                "District": "6",
+                "Historical Model": 48.08184143222506,
+                "State": "AZ"
+            },
+            {
+                "Demographic Model": 59.830000000000005,
+                "Demographic Model (5% CI)": 59.089999999999996,
+                "Demographic Model (95% CI)": 60.519999999999996,
+                "Demographic Model Type": "TwoPartyShare_Ho_Se_Pr_BinDensity_10_5_DSERwe_EScale100",
+                "District": "7",
+                "Historical Model": 66.95384615384616,
+                "State": "AZ"
+            },
+            {
+                "Demographic Model": 44.76,
+                "Demographic Model (5% CI)": 44.18,
+                "Demographic Model (95% CI)": 45.32,
+                "Demographic Model Type": "TwoPartyShare_Ho_Se_Pr_BinDensity_10_5_DSERwe_EScale100",
+                "District": "8",
+                "Historical Model": 41.57555941555125,
+                "State": "AZ"
+            },
+            {
+                "Demographic Model": 39.28,
+                "Demographic Model (5% CI)": 38.519999999999996,
+                "Demographic Model (95% CI)": 40.02,
+                "Demographic Model Type": "TwoPartyShare_Ho_Se_Pr_BinDensity_10_5_DSERwe_EScale100",
+                "District": "9",
+                "Historical Model": 36.21007371007371,
+                "State": "AZ"
+            }
+        ]
+    },
+    "height": 600,
+    "layer": [
+        {
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "District",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Historical",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model (5% CI)",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model (95% CI)",
+                        "type": "quantitative"
+                    }
+                ],
+                "x": {
+                    "axis": {
+                        "title": "Historical Model"
+                    },
+                    "field": "Historical Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model (5% CI)",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y2": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Demographic Model (95% CI)",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "ticks": {
+                    "color": "black"
+                },
+                "type": "errorbar"
+            }
+        },
+        {
+            "encoding": {
+                "x": {
+                    "axis": {
+                        "title": "Historical Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "tooltip": null,
+                "type": "line"
+            }
+        },
+        {
+            "encoding": {
+                "text": {
+                    "field": "District Name",
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "District",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Historical Model",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model",
+                        "type": "quantitative"
+                    }
+                ],
+                "x": {
+                    "axis": {
+                        "title": "Historical Model"
+                    },
+                    "field": "Historical Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "dx": 20,
+                "type": "text"
+            },
+            "transform": [
+                {
+                    "as": "District Name",
+                    "calculate": "datum.State + '-' + datum.District"
+                }
+            ]
+        },
+        {
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "District",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Historical Model",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model",
+                        "type": "quantitative"
+                    }
+                ],
+                "x": {
+                    "axis": {
+                        "title": "Historical Model"
+                    },
+                    "field": "Historical Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": "circle",
+            "selection": {
+                "view": {
+                    "bind": "scales",
+                    "clear": "click[event.shiftKey]",
+                    "encodings": [
+                        "x",
+                        "y"
+                    ],
+                    "type": "interval"
+                }
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "AZ 2022: Historical vs. Demographic models",
+    "width": 600
+};
+vegaEmbed('#figure_16',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p><strong>Post input file
+“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/AZ<em>Congressional/inputs/post</em>afterDaveModel.md”
+not found. Please fix/remove</strong></p>
+<div class="brTableTitle">Calculated Dem Vote Share, AZ 2022: Demographic Model vs. Historical Model (DR)</div>
+<table class="brTable"><thead><tr><th>State</th><th>District</th><th>Demographic Model (Blue Ripple)</th><th>Historical Model (Dave&#39;s Redistricting)</th><th>BR Stance</th></tr></thead><tbody><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">AZ</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">3</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Demographic">71</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="Historical">76</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe D</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">AZ</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">7</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Demographic">60</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="Historical">67</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe D</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">AZ</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">4</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; color: green" data-label="Demographic">52</td><td style="; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="Historical">53</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Toss-Up</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">AZ</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">1</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Demographic">48</td><td style="; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="Historical">48</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Toss-Up</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">AZ</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">5</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Demographic">46</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">40</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Possible Long-Term Win/Flip</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">AZ</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">8</td><td style="border: 3px solid red; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Demographic">45</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">42</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Possible Long-Term Win/Flip</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">AZ</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">6</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">44</td><td style="; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="Historical">48</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Highly Vulnerable</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">AZ</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">2</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">42</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">45</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe R</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">AZ</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">9</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">39</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">36</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe R</td></tr></tbody></table>
+<p><strong>Post input file
+“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/AZ<em>Congressional/inputs/post</em>daveModelTable.md”
+not found. Please fix/remove</strong></p>
+<figure id="figure_17">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 600,
+            "continuousWidth": 600,
+            "discreteHeight": 600,
+            "discreteWidth": 600
+        }
+    },
+    "data": {
+        "values": [
+            {
+                "Count": 5704,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.040040871057052,
+                "sort": 12
+            },
+            {
+                "Count": 4934,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.040040871057052,
+                "sort": 3
+            },
+            {
+                "Count": 30105,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.040040871057052,
+                "sort": 6
+            },
+            {
+                "Count": 4324,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.040040871057052,
+                "sort": 9
+            },
+            {
+                "Count": 122282,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.040040871057052,
+                "sort": 0
+            },
+            {
+                "Count": 2748,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.040040871057052,
+                "sort": 13
+            },
+            {
+                "Count": 2209,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.040040871057052,
+                "sort": 4
+            },
+            {
+                "Count": 8871,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.040040871057052,
+                "sort": 7
+            },
+            {
+                "Count": 8979,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.040040871057052,
+                "sort": 10
+            },
+            {
+                "Count": 114479,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.040040871057052,
+                "sort": 1
+            },
+            {
+                "Count": 5629,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.040040871057052,
+                "sort": 12
+            },
+            {
+                "Count": 5639,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.040040871057052,
+                "sort": 3
+            },
+            {
+                "Count": 31012,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.040040871057052,
+                "sort": 6
+            },
+            {
+                "Count": 2605,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.040040871057052,
+                "sort": 9
+            },
+            {
+                "Count": 102459,
+                "District": "AZ-1",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.040040871057052,
+                "sort": 0
+            },
+            {
+                "Count": 2391,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.040040871057052,
+                "sort": 13
+            },
+            {
+                "Count": 2587,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.040040871057052,
+                "sort": 4
+            },
+            {
+                "Count": 7700,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.040040871057052,
+                "sort": 7
+            },
+            {
+                "Count": 8889,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.040040871057052,
+                "sort": 10
+            },
+            {
+                "Count": 119760,
+                "District": "AZ-1",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.040040871057052,
+                "sort": 1
+            },
+            {
+                "Count": 58219,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 4.585987366571318,
+                "sort": 12
+            },
+            {
+                "Count": 2944,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 4.585987366571318,
+                "sort": 3
+            },
+            {
+                "Count": 31174,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 4.585987366571318,
+                "sort": 6
+            },
+            {
+                "Count": 2607,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 4.585987366571318,
+                "sort": 9
+            },
+            {
+                "Count": 122370,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 4.585987366571318,
+                "sort": 0
+            },
+            {
+                "Count": 6780,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 4.585987366571318,
+                "sort": 13
+            },
+            {
+                "Count": 971,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 4.585987366571318,
+                "sort": 4
+            },
+            {
+                "Count": 4548,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 4.585987366571318,
+                "sort": 7
+            },
+            {
+                "Count": 1836,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 4.585987366571318,
+                "sort": 10
+            },
+            {
+                "Count": 50012,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 4.585987366571318,
+                "sort": 1
+            },
+            {
+                "Count": 56066,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 4.585987366571318,
+                "sort": 12
+            },
+            {
+                "Count": 4684,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 4.585987366571318,
+                "sort": 3
+            },
+            {
+                "Count": 40951,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 4.585987366571318,
+                "sort": 6
+            },
+            {
+                "Count": 1689,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 4.585987366571318,
+                "sort": 9
+            },
+            {
+                "Count": 122214,
+                "District": "AZ-2",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 4.585987366571318,
+                "sort": 0
+            },
+            {
+                "Count": 3709,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 4.585987366571318,
+                "sort": 13
+            },
+            {
+                "Count": 1191,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 4.585987366571318,
+                "sort": 4
+            },
+            {
+                "Count": 3449,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 4.585987366571318,
+                "sort": 7
+            },
+            {
+                "Count": 1248,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 4.585987366571318,
+                "sort": 10
+            },
+            {
+                "Count": 48326,
+                "District": "AZ-2",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 4.585987366571318,
+                "sort": 1
+            },
+            {
+                "Count": 7092,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.740459935141951,
+                "sort": 12
+            },
+            {
+                "Count": 19395,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.740459935141951,
+                "sort": 3
+            },
+            {
+                "Count": 125692,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.740459935141951,
+                "sort": 6
+            },
+            {
+                "Count": 4967,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.740459935141951,
+                "sort": 9
+            },
+            {
+                "Count": 40356,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.740459935141951,
+                "sort": 0
+            },
+            {
+                "Count": 1567,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.740459935141951,
+                "sort": 13
+            },
+            {
+                "Count": 4099,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.740459935141951,
+                "sort": 4
+            },
+            {
+                "Count": 9682,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.740459935141951,
+                "sort": 7
+            },
+            {
+                "Count": 2344,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.740459935141951,
+                "sort": 10
+            },
+            {
+                "Count": 18299,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.740459935141951,
+                "sort": 1
+            },
+            {
+                "Count": 5685,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.740459935141951,
+                "sort": 12
+            },
+            {
+                "Count": 18915,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.740459935141951,
+                "sort": 3
+            },
+            {
+                "Count": 124680,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.740459935141951,
+                "sort": 6
+            },
+            {
+                "Count": 4226,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.740459935141951,
+                "sort": 9
+            },
+            {
+                "Count": 44539,
+                "District": "AZ-3",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.740459935141951,
+                "sort": 0
+            },
+            {
+                "Count": 1172,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.740459935141951,
+                "sort": 13
+            },
+            {
+                "Count": 3705,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.740459935141951,
+                "sort": 4
+            },
+            {
+                "Count": 8058,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.740459935141951,
+                "sort": 7
+            },
+            {
+                "Count": 2393,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.740459935141951,
+                "sort": 10
+            },
+            {
+                "Count": 18280,
+                "District": "AZ-3",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.740459935141951,
+                "sort": 1
+            },
+            {
+                "Count": 7135,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.579268055240835,
+                "sort": 12
+            },
+            {
+                "Count": 8815,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.579268055240835,
+                "sort": 3
+            },
+            {
+                "Count": 46101,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.579268055240835,
+                "sort": 6
+            },
+            {
+                "Count": 5807,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.579268055240835,
+                "sort": 9
+            },
+            {
+                "Count": 108313,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.579268055240835,
+                "sort": 0
+            },
+            {
+                "Count": 3028,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.579268055240835,
+                "sort": 13
+            },
+            {
+                "Count": 4159,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.579268055240835,
+                "sort": 4
+            },
+            {
+                "Count": 9419,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.579268055240835,
+                "sort": 7
+            },
+            {
+                "Count": 7749,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.579268055240835,
+                "sort": 10
+            },
+            {
+                "Count": 63305,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.579268055240835,
+                "sort": 1
+            },
+            {
+                "Count": 7132,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.579268055240835,
+                "sort": 12
+            },
+            {
+                "Count": 9035,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.579268055240835,
+                "sort": 3
+            },
+            {
+                "Count": 47601,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.579268055240835,
+                "sort": 6
+            },
+            {
+                "Count": 3405,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.579268055240835,
+                "sort": 9
+            },
+            {
+                "Count": 101157,
+                "District": "AZ-4",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.579268055240835,
+                "sort": 0
+            },
+            {
+                "Count": 2489,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.579268055240835,
+                "sort": 13
+            },
+            {
+                "Count": 3014,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.579268055240835,
+                "sort": 4
+            },
+            {
+                "Count": 8306,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.579268055240835,
+                "sort": 7
+            },
+            {
+                "Count": 8987,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.579268055240835,
+                "sort": 10
+            },
+            {
+                "Count": 64338,
+                "District": "AZ-4",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.579268055240835,
+                "sort": 1
+            },
+            {
+                "Count": 3696,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.989072194563682,
+                "sort": 12
+            },
+            {
+                "Count": 4547,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.989072194563682,
+                "sort": 3
+            },
+            {
+                "Count": 24955,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.989072194563682,
+                "sort": 6
+            },
+            {
+                "Count": 5512,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.989072194563682,
+                "sort": 9
+            },
+            {
+                "Count": 118686,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.989072194563682,
+                "sort": 0
+            },
+            {
+                "Count": 1662,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.989072194563682,
+                "sort": 13
+            },
+            {
+                "Count": 2373,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.989072194563682,
+                "sort": 4
+            },
+            {
+                "Count": 8116,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.989072194563682,
+                "sort": 7
+            },
+            {
+                "Count": 8035,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.989072194563682,
+                "sort": 10
+            },
+            {
+                "Count": 62200,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.989072194563682,
+                "sort": 1
+            },
+            {
+                "Count": 3228,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.989072194563682,
+                "sort": 12
+            },
+            {
+                "Count": 4407,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.989072194563682,
+                "sort": 3
+            },
+            {
+                "Count": 22940,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.989072194563682,
+                "sort": 6
+            },
+            {
+                "Count": 3787,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.989072194563682,
+                "sort": 9
+            },
+            {
+                "Count": 102358,
+                "District": "AZ-5",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.989072194563682,
+                "sort": 0
+            },
+            {
+                "Count": 1576,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.989072194563682,
+                "sort": 13
+            },
+            {
+                "Count": 2820,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.989072194563682,
+                "sort": 4
+            },
+            {
+                "Count": 7235,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.989072194563682,
+                "sort": 7
+            },
+            {
+                "Count": 7374,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.989072194563682,
+                "sort": 10
+            },
+            {
+                "Count": 64388,
+                "District": "AZ-5",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.989072194563682,
+                "sort": 1
+            },
+            {
+                "Count": 4995,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.616546996753798,
+                "sort": 12
+            },
+            {
+                "Count": 5010,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.616546996753798,
+                "sort": 3
+            },
+            {
+                "Count": 45435,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.616546996753798,
+                "sort": 6
+            },
+            {
+                "Count": 4833,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.616546996753798,
+                "sort": 9
+            },
+            {
+                "Count": 122561,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.616546996753798,
+                "sort": 0
+            },
+            {
+                "Count": 2385,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.616546996753798,
+                "sort": 13
+            },
+            {
+                "Count": 2159,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.616546996753798,
+                "sort": 4
+            },
+            {
+                "Count": 11697,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.616546996753798,
+                "sort": 7
+            },
+            {
+                "Count": 4038,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.616546996753798,
+                "sort": 10
+            },
+            {
+                "Count": 74796,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.616546996753798,
+                "sort": 1
+            },
+            {
+                "Count": 5464,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.616546996753798,
+                "sort": 12
+            },
+            {
+                "Count": 7552,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.616546996753798,
+                "sort": 3
+            },
+            {
+                "Count": 47863,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.616546996753798,
+                "sort": 6
+            },
+            {
+                "Count": 2673,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.616546996753798,
+                "sort": 9
+            },
+            {
+                "Count": 112039,
+                "District": "AZ-6",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.616546996753798,
+                "sort": 0
+            },
+            {
+                "Count": 2140,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.616546996753798,
+                "sort": 13
+            },
+            {
+                "Count": 2486,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.616546996753798,
+                "sort": 4
+            },
+            {
+                "Count": 9798,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.616546996753798,
+                "sort": 7
+            },
+            {
+                "Count": 3744,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.616546996753798,
+                "sort": 10
+            },
+            {
+                "Count": 75218,
+                "District": "AZ-6",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.616546996753798,
+                "sort": 1
+            },
+            {
+                "Count": 8614,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.290299703705733,
+                "sort": 12
+            },
+            {
+                "Count": 6943,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.290299703705733,
+                "sort": 3
+            },
+            {
+                "Count": 121813,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.290299703705733,
+                "sort": 6
+            },
+            {
+                "Count": 3050,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.290299703705733,
+                "sort": 9
+            },
+            {
+                "Count": 59812,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.290299703705733,
+                "sort": 0
+            },
+            {
+                "Count": 1608,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.290299703705733,
+                "sort": 13
+            },
+            {
+                "Count": 1890,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.290299703705733,
+                "sort": 4
+            },
+            {
+                "Count": 15130,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.290299703705733,
+                "sort": 7
+            },
+            {
+                "Count": 2436,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.290299703705733,
+                "sort": 10
+            },
+            {
+                "Count": 28185,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.290299703705733,
+                "sort": 1
+            },
+            {
+                "Count": 8964,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.290299703705733,
+                "sort": 12
+            },
+            {
+                "Count": 8973,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.290299703705733,
+                "sort": 3
+            },
+            {
+                "Count": 115313,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.290299703705733,
+                "sort": 6
+            },
+            {
+                "Count": 2682,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.290299703705733,
+                "sort": 9
+            },
+            {
+                "Count": 64803,
+                "District": "AZ-7",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.290299703705733,
+                "sort": 0
+            },
+            {
+                "Count": 1020,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.290299703705733,
+                "sort": 13
+            },
+            {
+                "Count": 1970,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.290299703705733,
+                "sort": 4
+            },
+            {
+                "Count": 12298,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.290299703705733,
+                "sort": 7
+            },
+            {
+                "Count": 1763,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.290299703705733,
+                "sort": 10
+            },
+            {
+                "Count": 26433,
+                "District": "AZ-7",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.290299703705733,
+                "sort": 1
+            },
+            {
+                "Count": 4696,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.095272428644835,
+                "sort": 12
+            },
+            {
+                "Count": 7524,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.095272428644835,
+                "sort": 3
+            },
+            {
+                "Count": 33561,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.095272428644835,
+                "sort": 6
+            },
+            {
+                "Count": 6117,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.095272428644835,
+                "sort": 9
+            },
+            {
+                "Count": 146975,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.095272428644835,
+                "sort": 0
+            },
+            {
+                "Count": 1907,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.095272428644835,
+                "sort": 13
+            },
+            {
+                "Count": 2325,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.095272428644835,
+                "sort": 4
+            },
+            {
+                "Count": 7418,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.095272428644835,
+                "sort": 7
+            },
+            {
+                "Count": 6460,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.095272428644835,
+                "sort": 10
+            },
+            {
+                "Count": 62351,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.095272428644835,
+                "sort": 1
+            },
+            {
+                "Count": 4099,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.095272428644835,
+                "sort": 12
+            },
+            {
+                "Count": 6959,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.095272428644835,
+                "sort": 3
+            },
+            {
+                "Count": 34467,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.095272428644835,
+                "sort": 6
+            },
+            {
+                "Count": 4385,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.095272428644835,
+                "sort": 9
+            },
+            {
+                "Count": 125109,
+                "District": "AZ-8",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.095272428644835,
+                "sort": 0
+            },
+            {
+                "Count": 1542,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.095272428644835,
+                "sort": 13
+            },
+            {
+                "Count": 2704,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.095272428644835,
+                "sort": 4
+            },
+            {
+                "Count": 5400,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.095272428644835,
+                "sort": 7
+            },
+            {
+                "Count": 6213,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.095272428644835,
+                "sort": 10
+            },
+            {
+                "Count": 59329,
+                "District": "AZ-8",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.095272428644835,
+                "sort": 1
+            },
+            {
+                "Count": 6105,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.344512922991016,
+                "sort": 12
+            },
+            {
+                "Count": 7637,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.344512922991016,
+                "sort": 3
+            },
+            {
+                "Count": 51585,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.344512922991016,
+                "sort": 6
+            },
+            {
+                "Count": 5182,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.344512922991016,
+                "sort": 9
+            },
+            {
+                "Count": 154574,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.344512922991016,
+                "sort": 0
+            },
+            {
+                "Count": 1502,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.344512922991016,
+                "sort": 13
+            },
+            {
+                "Count": 3164,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.344512922991016,
+                "sort": 4
+            },
+            {
+                "Count": 7172,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.344512922991016,
+                "sort": 7
+            },
+            {
+                "Count": 3429,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.344512922991016,
+                "sort": 10
+            },
+            {
+                "Count": 38260,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.344512922991016,
+                "sort": 1
+            },
+            {
+                "Count": 5579,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.344512922991016,
+                "sort": 12
+            },
+            {
+                "Count": 8261,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.344512922991016,
+                "sort": 3
+            },
+            {
+                "Count": 51311,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.344512922991016,
+                "sort": 6
+            },
+            {
+                "Count": 3254,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.344512922991016,
+                "sort": 9
+            },
+            {
+                "Count": 147015,
+                "District": "AZ-9",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.344512922991016,
+                "sort": 0
+            },
+            {
+                "Count": 1337,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.344512922991016,
+                "sort": 13
+            },
+            {
+                "Count": 2470,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.344512922991016,
+                "sort": 4
+            },
+            {
+                "Count": 5648,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.344512922991016,
+                "sort": 7
+            },
+            {
+                "Count": 2386,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.344512922991016,
+                "sort": 10
+            },
+            {
+                "Count": 39947,
+                "District": "AZ-9",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.344512922991016,
+                "sort": 1
+            }
+        ]
+    },
+    "height": 600,
+    "layer": [
+        {
+            "encoding": {
+                "color": {
+                    "field": "Race",
+                    "sort": [
+                        "R5_Other",
+                        "R5_Asian",
+                        "R5_Hispanic",
+                        "R5_Black",
+                        "R5_WhiteNonHispanic"
+                    ],
+                    "type": "nominal"
+                },
+                "opacity": {
+                    "field": "Education",
+                    "sort": [
+                        "Grad",
+                        "NonGrad"
+                    ],
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "Race",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Education",
+                        "type": "nominal"
+                    }
+                ],
+                "x": {
+                    "field": "District",
+                    "sort": [
+                        "AZ-3",
+                        "AZ-7",
+                        "AZ-4",
+                        "AZ-1",
+                        "AZ-5",
+                        "AZ-8",
+                        "AZ-6",
+                        "AZ-2",
+                        "AZ-9"
+                    ],
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "stack",
+                    "title": "Fraction",
+                    "type": "quantitative"
+                },
+                "y2": {
+                    "field": "stack_end",
+                    "type": "quantitative"
+                }
+            },
+            "mark": "bar"
+        },
+        {
+            "encoding": {
+                "x": {
+                    "field": "District",
+                    "sort": [
+                        "AZ-3",
+                        "AZ-7",
+                        "AZ-4",
+                        "AZ-1",
+                        "AZ-5",
+                        "AZ-8",
+                        "AZ-6",
+                        "AZ-2",
+                        "AZ-9"
+                    ],
+                    "type": "nominal"
+                },
+                "y": {
+                    "aggregate": "max",
+                    "axis": {
+                        "orient": "right"
+                    },
+                    "field": "log(Density)",
+                    "scale": {
+                        "zero": false
+                    },
+                    "title": "log(Density)",
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "color": "purple",
+                "type": "circle"
+            }
+        }
+    ],
+    "padding": 5,
+    "resolve": {
+        "scale": {
+            "y": "independent"
+        }
+    },
+    "title": "AZ New: By Race and Education",
+    "transform": [
+        {
+            "as": [
+                "stack",
+                "stack_end"
+            ],
+            "groupby": [
+                "District"
+            ],
+            "offset": "normalize",
+            "sort": [
+                {
+                    "field": "sort",
+                    "order": "ascending"
+                }
+            ],
+            "stack": "Count"
+        }
+    ],
+    "width": 600
+};
+vegaEmbed('#figure_17',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_18">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 600,
+            "continuousWidth": 600,
+            "discreteHeight": 600,
+            "discreteWidth": 600
+        }
+    },
+    "data": {
+        "values": [
+            {
+                "% college grad": 46.959410489696715,
+                "% non-white": 22.640256461252708,
+                "District": "AZ-1",
+                "Modeled D-Edge": -1.6500000000000015,
+                "log density": 8.040040871057052
+            },
+            {
+                "% college grad": 21.605768618094544,
+                "% non-white": 39.30455160109595,
+                "District": "AZ-2",
+                "Modeled D-Edge": -7.86,
+                "log density": 4.585987366571318
+            },
+            {
+                "% college grad": 14.962828875234873,
+                "% non-white": 73.88475876391499,
+                "District": "AZ-3",
+                "Modeled D-Edge": 20.520000000000003,
+                "log density": 8.740459935141951
+            },
+            {
+                "% college grad": 33.65986577956653,
+                "% non-white": 35.08256386061873,
+                "District": "AZ-4",
+                "Modeled D-Edge": 2.4399999999999977,
+                "log density": 8.579268055240835
+            },
+            {
+                "% college grad": 36.047141195272836,
+                "% non-white": 24.410571978386372,
+                "District": "AZ-5",
+                "Modeled D-Edge": -4.320000000000002,
+                "log density": 7.989072194563682
+            },
+            {
+                "% college grad": 34.460746846692,
+                "% non-white": 29.67199745467977,
+                "District": "AZ-6",
+                "Modeled D-Edge": -5.890000000000001,
+                "log density": 6.616546996753798
+            },
+            {
+                "% college grad": 18.783269191816892,
+                "% non-white": 63.69596921207211,
+                "District": "AZ-7",
+                "Modeled D-Edge": 9.830000000000005,
+                "log density": 7.290299703705733
+            },
+            {
+                "% college grad": 29.393191462039766,
+                "% non-white": 25.640507533883117,
+                "District": "AZ-8",
+                "Modeled D-Edge": -5.24,
+                "log density": 8.095272428644835
+            },
+            {
+                "% college grad": 19.294893169518044,
+                "% non-white": 30.417098739872998,
+                "District": "AZ-9",
+                "Modeled D-Edge": -10.720000000000002,
+                "log density": 6.344512922991016
+            }
+        ]
+    },
+    "height": 600,
+    "layer": [
+        {
+            "encoding": {
+                "text": {
+                    "field": "District"
+                },
+                "x": {
+                    "field": "% non-white",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "% college grad",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "dy": 10,
+                "type": "text"
+            }
+        },
+        {
+            "encoding": {
+                "color": {
+                    "field": "Modeled D-Edge",
+                    "scale": {
+                        "domain": [
+                            -20.520000000000003,
+                            20.520000000000003
+                        ],
+                        "scheme": "redblue"
+                    },
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "log density",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "% non-white",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "% college grad",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "tooltip": {
+                    "content": "data"
+                },
+                "type": "circle"
+            },
+            "selection": {
+                "view": {
+                    "bind": "scales",
+                    "clear": "click[event.shiftKey]",
+                    "encodings": [
+                        "x",
+                        "y"
+                    ],
+                    "type": "interval"
+                }
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "AZ demographic scatter",
+    "width": 600
+};
+vegaEmbed('#figure_18',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p><strong>Post input file
+“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/AZ<em>Congressional/inputs/post</em>afterNewDemographics.md”
+not found. Please fix/remove</strong></p>
+<p><em>Want to read more from Blue Ripple? Visit our <a
+href="https://www.blueripplepolitics.org"><strong>website</strong></a>,
+sign up for <a href="http://eepurl.com/gzmeQ5"><strong>email
+updates</strong></a>, and follow us on <a
+href="https://twitter.com/BlueRipplePol"><strong>Twitter</strong></a>
+and <a
+href="https://www.facebook.com/blueripplepolitics"><strong>FaceBook</strong></a>.
+Folks interested in our data and modeling efforts should also check out
+our <a href="https://github.com/blueripple"><strong>Github</strong></a>
+page.</em></p>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
