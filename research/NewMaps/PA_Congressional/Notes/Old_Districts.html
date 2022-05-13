@@ -1,0 +1,3954 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PA: Old Districts</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  figure {
+      border: 1px #cccccc solid;
+      padding: 4px;
+      margin: auto
+  }
+  figcaption {
+      font-style: italic;
+      font-size: 12pt;
+      text-align: center;
+  }
+</style>
+
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">May 13, 2022 </div>
+<figure id="figure_25">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 600,
+            "continuousWidth": 600,
+            "discreteHeight": 600,
+            "discreteWidth": 600
+        }
+    },
+    "data": {
+        "values": [
+            {
+                "Count": 8873,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.286030533176811,
+                "sort": 12
+            },
+            {
+                "Count": 77144,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.396085293421486,
+                "sort": 3
+            },
+            {
+                "Count": 41593,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 9.192599984485291,
+                "sort": 6
+            },
+            {
+                "Count": 15244,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.694426373634354,
+                "sort": 9
+            },
+            {
+                "Count": 337317,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.918582264745285,
+                "sort": 0
+            },
+            {
+                "Count": 8855,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.982693046880899,
+                "sort": 13
+            },
+            {
+                "Count": 31193,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.0837885084298,
+                "sort": 4
+            },
+            {
+                "Count": 13651,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 24365,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.254733027486392,
+                "sort": 10
+            },
+            {
+                "Count": 278303,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.943519727322731,
+                "sort": 1
+            },
+            {
+                "Count": 10898,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.156866471195439,
+                "sort": 12
+            },
+            {
+                "Count": 68413,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.344053398217499,
+                "sort": 3
+            },
+            {
+                "Count": 43905,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 11052,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.592802126503628,
+                "sort": 9
+            },
+            {
+                "Count": 319532,
+                "District": "PA-1",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.971219084093652,
+                "sort": 0
+            },
+            {
+                "Count": 5914,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.000327345477904,
+                "sort": 13
+            },
+            {
+                "Count": 20026,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.087785888270425,
+                "sort": 4
+            },
+            {
+                "Count": 8696,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 21962,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.148922178931391,
+                "sort": 10
+            },
+            {
+                "Count": 257705,
+                "District": "PA-1",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.909732772289505,
+                "sort": 1
+            },
+            {
+                "Count": 14111,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.997731198318975,
+                "sort": 12
+            },
+            {
+                "Count": 36764,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.542137336989129,
+                "sort": 3
+            },
+            {
+                "Count": 27507,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 9465,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.412715530461186,
+                "sort": 9
+            },
+            {
+                "Count": 476085,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.2678718591887215,
+                "sort": 0
+            },
+            {
+                "Count": 5814,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.0301292582574435,
+                "sort": 13
+            },
+            {
+                "Count": 14529,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.522634302777207,
+                "sort": 4
+            },
+            {
+                "Count": 10890,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 6483,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.1309109372576955,
+                "sort": 10
+            },
+            {
+                "Count": 227232,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.6016434696582875,
+                "sort": 1
+            },
+            {
+                "Count": 11602,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.764752880786977,
+                "sort": 12
+            },
+            {
+                "Count": 49880,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.328625707026944,
+                "sort": 3
+            },
+            {
+                "Count": 33499,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 7965,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.467886726617465,
+                "sort": 9
+            },
+            {
+                "Count": 459915,
+                "District": "PA-10",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.223633459297084,
+                "sort": 0
+            },
+            {
+                "Count": 6947,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.016531565584947,
+                "sort": 13
+            },
+            {
+                "Count": 14382,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.443594130929585,
+                "sort": 4
+            },
+            {
+                "Count": 8477,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 7191,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.1656886184832,
+                "sort": 10
+            },
+            {
+                "Count": 203299,
+                "District": "PA-10",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.592632703628869,
+                "sort": 1
+            },
+            {
+                "Count": 11050,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.0456712416123555,
+                "sort": 12
+            },
+            {
+                "Count": 19694,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.776261710529462,
+                "sort": 3
+            },
+            {
+                "Count": 37724,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 6971,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.3163752944147005,
+                "sort": 9
+            },
+            {
+                "Count": 514234,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.61714566488449,
+                "sort": 0
+            },
+            {
+                "Count": 5696,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.2050159604658335,
+                "sort": 13
+            },
+            {
+                "Count": 9987,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.132337516155024,
+                "sort": 4
+            },
+            {
+                "Count": 13982,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 7140,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.265493425980668,
+                "sort": 10
+            },
+            {
+                "Count": 243235,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.805048026996946,
+                "sort": 1
+            },
+            {
+                "Count": 10365,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.037338461251755,
+                "sort": 12
+            },
+            {
+                "Count": 23320,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.6155057166884585,
+                "sort": 3
+            },
+            {
+                "Count": 39256,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 5014,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.163426643108073,
+                "sort": 9
+            },
+            {
+                "Count": 501057,
+                "District": "PA-11",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.566810783323736,
+                "sort": 0
+            },
+            {
+                "Count": 3916,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.920549197032973,
+                "sort": 13
+            },
+            {
+                "Count": 6300,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.480947957466454,
+                "sort": 4
+            },
+            {
+                "Count": 7222,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 5718,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.298139670079549,
+                "sort": 10
+            },
+            {
+                "Count": 206845,
+                "District": "PA-11",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.827702518236929,
+                "sort": 1
+            },
+            {
+                "Count": 9152,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.6234367388740605,
+                "sort": 12
+            },
+            {
+                "Count": 13886,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.60866852469494,
+                "sort": 3
+            },
+            {
+                "Count": 7944,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 2375,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.076113198886829,
+                "sort": 9
+            },
+            {
+                "Count": 541508,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.817068815094864,
+                "sort": 0
+            },
+            {
+                "Count": 4049,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.052581858466656,
+                "sort": 13
+            },
+            {
+                "Count": 7162,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.4247828717687945,
+                "sort": 4
+            },
+            {
+                "Count": 5717,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 5414,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.4414282492298005,
+                "sort": 10
+            },
+            {
+                "Count": 238617,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.134242366605926,
+                "sort": 1
+            },
+            {
+                "Count": 10859,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.737028846660306,
+                "sort": 12
+            },
+            {
+                "Count": 25427,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.053683471057019,
+                "sort": 3
+            },
+            {
+                "Count": 12739,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 1152,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.399921315509414,
+                "sort": 9
+            },
+            {
+                "Count": 537741,
+                "District": "PA-12",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.780353953823856,
+                "sort": 0
+            },
+            {
+                "Count": 4124,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 5.9125764581399824,
+                "sort": 13
+            },
+            {
+                "Count": 6364,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.484666159506232,
+                "sort": 4
+            },
+            {
+                "Count": 5270,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 4888,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.7068989278169955,
+                "sort": 10
+            },
+            {
+                "Count": 215045,
+                "District": "PA-12",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.182914958603782,
+                "sort": 1
+            },
+            {
+                "Count": 12965,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.746891737035919,
+                "sort": 12
+            },
+            {
+                "Count": 39186,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.976538914862747,
+                "sort": 3
+            },
+            {
+                "Count": 21776,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.958934242050881,
+                "sort": 6
+            },
+            {
+                "Count": 10090,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.734936376222727,
+                "sort": 9
+            },
+            {
+                "Count": 490220,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.284640752484954,
+                "sort": 0
+            },
+            {
+                "Count": 8604,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.1356828598491,
+                "sort": 13
+            },
+            {
+                "Count": 22220,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.387423724706554,
+                "sort": 4
+            },
+            {
+                "Count": 7260,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 10717,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.352525612760934,
+                "sort": 10
+            },
+            {
+                "Count": 208602,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.646677357323854,
+                "sort": 1
+            },
+            {
+                "Count": 10501,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.386859956004254,
+                "sort": 12
+            },
+            {
+                "Count": 47212,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.200823815234209,
+                "sort": 3
+            },
+            {
+                "Count": 23001,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 8925,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.801348178068585,
+                "sort": 9
+            },
+            {
+                "Count": 473302,
+                "District": "PA-13",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.190192313228176,
+                "sort": 0
+            },
+            {
+                "Count": 4545,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.200742776825747,
+                "sort": 13
+            },
+            {
+                "Count": 13572,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.186485726661628,
+                "sort": 4
+            },
+            {
+                "Count": 5698,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 9246,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.076953799597765,
+                "sort": 10
+            },
+            {
+                "Count": 183225,
+                "District": "PA-13",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.762724596505518,
+                "sort": 1
+            },
+            {
+                "Count": 11651,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.8919538977726615,
+                "sort": 12
+            },
+            {
+                "Count": 47862,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.029890738354517,
+                "sort": 3
+            },
+            {
+                "Count": 5052,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 2947,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.454982773280615,
+                "sort": 9
+            },
+            {
+                "Count": 487659,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.760010029195719,
+                "sort": 0
+            },
+            {
+                "Count": 5521,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.246630715369542,
+                "sort": 13
+            },
+            {
+                "Count": 18919,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.963023844492194,
+                "sort": 4
+            },
+            {
+                "Count": 5391,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 5760,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.880668701063367,
+                "sort": 10
+            },
+            {
+                "Count": 261852,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.166305296200661,
+                "sort": 1
+            },
+            {
+                "Count": 12820,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.773087588506222,
+                "sort": 12
+            },
+            {
+                "Count": 46325,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.818170500641726,
+                "sort": 3
+            },
+            {
+                "Count": 8587,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 2445,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.445449141538365,
+                "sort": 9
+            },
+            {
+                "Count": 458184,
+                "District": "PA-14",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.719656091679122,
+                "sort": 0
+            },
+            {
+                "Count": 4529,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.205649920697753,
+                "sort": 13
+            },
+            {
+                "Count": 13191,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.882913073482509,
+                "sort": 4
+            },
+            {
+                "Count": 4159,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 5295,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.820871733317499,
+                "sort": 10
+            },
+            {
+                "Count": 237673,
+                "District": "PA-14",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.235503211675054,
+                "sort": 1
+            },
+            {
+                "Count": 10318,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.771410304602112,
+                "sort": 12
+            },
+            {
+                "Count": 12146,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.431125515949604,
+                "sort": 3
+            },
+            {
+                "Count": 30035,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 3351,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.934757148690878,
+                "sort": 9
+            },
+            {
+                "Count": 523346,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.813872781194335,
+                "sort": 0
+            },
+            {
+                "Count": 6097,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 5.9942485767762745,
+                "sort": 13
+            },
+            {
+                "Count": 5994,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.002367855162294,
+                "sort": 4
+            },
+            {
+                "Count": 10970,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 5599,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.713114267103567,
+                "sort": 10
+            },
+            {
+                "Count": 220649,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.132192103704129,
+                "sort": 1
+            },
+            {
+                "Count": 10591,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.902153817992376,
+                "sort": 12
+            },
+            {
+                "Count": 20116,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.490278461996729,
+                "sort": 3
+            },
+            {
+                "Count": 36848,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 2954,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.759592511044941,
+                "sort": 9
+            },
+            {
+                "Count": 526478,
+                "District": "PA-15",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.766468481741285,
+                "sort": 0
+            },
+            {
+                "Count": 4449,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 5.909823902605291,
+                "sort": 13
+            },
+            {
+                "Count": 5075,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.65047123550406,
+                "sort": 4
+            },
+            {
+                "Count": 7338,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 3938,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.930164327583661,
+                "sort": 10
+            },
+            {
+                "Count": 190946,
+                "District": "PA-15",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.180952989405007,
+                "sort": 1
+            },
+            {
+                "Count": 10551,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.65871864792728,
+                "sort": 12
+            },
+            {
+                "Count": 21304,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.473049446160998,
+                "sort": 3
+            },
+            {
+                "Count": 33363,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 3678,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.317318106659908,
+                "sort": 9
+            },
+            {
+                "Count": 493690,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.521612964695152,
+                "sort": 0
+            },
+            {
+                "Count": 5999,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.768742126741506,
+                "sort": 13
+            },
+            {
+                "Count": 6632,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.397736010079168,
+                "sort": 4
+            },
+            {
+                "Count": 8293,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 3887,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.003721189611224,
+                "sort": 10
+            },
+            {
+                "Count": 238435,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.634848018336497,
+                "sort": 1
+            },
+            {
+                "Count": 11128,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.871389215026699,
+                "sort": 12
+            },
+            {
+                "Count": 24340,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.456825005315168,
+                "sort": 3
+            },
+            {
+                "Count": 36532,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 3238,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.6211991250431605,
+                "sort": 9
+            },
+            {
+                "Count": 488000,
+                "District": "PA-16",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.497765470037199,
+                "sort": 0
+            },
+            {
+                "Count": 5119,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.861688321744778,
+                "sort": 13
+            },
+            {
+                "Count": 5518,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.263432958722043,
+                "sort": 4
+            },
+            {
+                "Count": 4256,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 3618,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.835385156830619,
+                "sort": 10
+            },
+            {
+                "Count": 198726,
+                "District": "PA-16",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.60649941446639,
+                "sort": 1
+            },
+            {
+                "Count": 10883,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.204315141742401,
+                "sort": 12
+            },
+            {
+                "Count": 27924,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.3343414573868735,
+                "sort": 3
+            },
+            {
+                "Count": 17949,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 4808,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.501737161407971,
+                "sort": 9
+            },
+            {
+                "Count": 472276,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.109915962549483,
+                "sort": 0
+            },
+            {
+                "Count": 6161,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.283852679462909,
+                "sort": 13
+            },
+            {
+                "Count": 10876,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.257085545363186,
+                "sort": 4
+            },
+            {
+                "Count": 7132,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 7347,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.422969665095714,
+                "sort": 10
+            },
+            {
+                "Count": 288388,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.309003795960157,
+                "sort": 1
+            },
+            {
+                "Count": 8002,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.1725410411456805,
+                "sort": 12
+            },
+            {
+                "Count": 30007,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.186885592676215,
+                "sort": 3
+            },
+            {
+                "Count": 19447,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 3583,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.39036038686958,
+                "sort": 9
+            },
+            {
+                "Count": 431733,
+                "District": "PA-17",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.071490822457081,
+                "sort": 0
+            },
+            {
+                "Count": 5569,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.316304816191062,
+                "sort": 13
+            },
+            {
+                "Count": 10155,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.313072747047587,
+                "sort": 4
+            },
+            {
+                "Count": 6394,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 7588,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.4456369922892325,
+                "sort": 10
+            },
+            {
+                "Count": 276701,
+                "District": "PA-17",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.327662023403882,
+                "sort": 1
+            },
+            {
+                "Count": 10442,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.085047577734963,
+                "sort": 12
+            },
+            {
+                "Count": 83954,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.385565809734342,
+                "sort": 3
+            },
+            {
+                "Count": 9585,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 4964,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.135303017541048,
+                "sort": 9
+            },
+            {
+                "Count": 401220,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.599992824041592,
+                "sort": 0
+            },
+            {
+                "Count": 8754,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.566575931466131,
+                "sort": 13
+            },
+            {
+                "Count": 31194,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.358258104815526,
+                "sort": 4
+            },
+            {
+                "Count": 6892,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 11100,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.426135603394096,
+                "sort": 10
+            },
+            {
+                "Count": 303139,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.999679516964973,
+                "sort": 1
+            },
+            {
+                "Count": 13003,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.028343899587133,
+                "sort": 12
+            },
+            {
+                "Count": 69573,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.325335999892266,
+                "sort": 3
+            },
+            {
+                "Count": 9538,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 3122,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.141647543603423,
+                "sort": 9
+            },
+            {
+                "Count": 369011,
+                "District": "PA-18",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.614433409281757,
+                "sort": 0
+            },
+            {
+                "Count": 7578,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.270305246892432,
+                "sort": 13
+            },
+            {
+                "Count": 23085,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.47401916802298,
+                "sort": 4
+            },
+            {
+                "Count": 8321,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 11274,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.337793801576819,
+                "sort": 10
+            },
+            {
+                "Count": 283522,
+                "District": "PA-18",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.981553758977489,
+                "sort": 1
+            },
+            {
+                "Count": 13220,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.642122375237184,
+                "sort": 12
+            },
+            {
+                "Count": 227359,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.769096222131665,
+                "sort": 3
+            },
+            {
+                "Count": 101706,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 26350,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.63542691310562,
+                "sort": 9
+            },
+            {
+                "Count": 172703,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.455259225247824,
+                "sort": 0
+            },
+            {
+                "Count": 7469,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 9.614192010178128,
+                "sort": 13
+            },
+            {
+                "Count": 71806,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.718624034077715,
+                "sort": 4
+            },
+            {
+                "Count": 19540,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 19600,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.560761604618504,
+                "sort": 10
+            },
+            {
+                "Count": 136473,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.466429582798607,
+                "sort": 1
+            },
+            {
+                "Count": 12957,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.588411697339097,
+                "sort": 12
+            },
+            {
+                "Count": 185241,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.758513388335718,
+                "sort": 3
+            },
+            {
+                "Count": 91514,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 22934,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.672953801442912,
+                "sort": 9
+            },
+            {
+                "Count": 161696,
+                "District": "PA-2",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.47919000117643,
+                "sort": 0
+            },
+            {
+                "Count": 5269,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 9.545297489272903,
+                "sort": 13
+            },
+            {
+                "Count": 44738,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.70560917639549,
+                "sort": 4
+            },
+            {
+                "Count": 16127,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 16579,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.4688293750362,
+                "sort": 10
+            },
+            {
+                "Count": 118110,
+                "District": "PA-2",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.463969106689788,
+                "sort": 1
+            },
+            {
+                "Count": 12050,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.26635641287895,
+                "sort": 12
+            },
+            {
+                "Count": 250002,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.709664468739765,
+                "sort": 3
+            },
+            {
+                "Count": 22239,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 11068,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.74763159636495,
+                "sort": 9
+            },
+            {
+                "Count": 231914,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.077376207903155,
+                "sort": 0
+            },
+            {
+                "Count": 13043,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 9.552899674589693,
+                "sort": 13
+            },
+            {
+                "Count": 93014,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.700988595848157,
+                "sort": 4
+            },
+            {
+                "Count": 22059,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 22211,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.884544464769316,
+                "sort": 10
+            },
+            {
+                "Count": 252317,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.650194688548769,
+                "sort": 1
+            },
+            {
+                "Count": 10327,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.284620542913434,
+                "sort": 12
+            },
+            {
+                "Count": 195921,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.68584076339358,
+                "sort": 3
+            },
+            {
+                "Count": 21746,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 9747,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.931072499035663,
+                "sort": 9
+            },
+            {
+                "Count": 235009,
+                "District": "PA-3",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.128647481593266,
+                "sort": 0
+            },
+            {
+                "Count": 7862,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 9.62464567753378,
+                "sort": 13
+            },
+            {
+                "Count": 62010,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.661813831828086,
+                "sort": 4
+            },
+            {
+                "Count": 17963,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 17002,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.72083612651025,
+                "sort": 10
+            },
+            {
+                "Count": 227831,
+                "District": "PA-3",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.700218248539375,
+                "sort": 1
+            },
+            {
+                "Count": 8547,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.6403961761518095,
+                "sort": 12
+            },
+            {
+                "Count": 44156,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.847484360781207,
+                "sort": 3
+            },
+            {
+                "Count": 22716,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 12594,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.690719991444548,
+                "sort": 9
+            },
+            {
+                "Count": 377841,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.275658184585385,
+                "sort": 0
+            },
+            {
+                "Count": 8139,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.798473270844256,
+                "sort": 13
+            },
+            {
+                "Count": 24880,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.882879089998625,
+                "sort": 4
+            },
+            {
+                "Count": 13399,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 19048,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.794739095120813,
+                "sort": 10
+            },
+            {
+                "Count": 314959,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.585079255598759,
+                "sort": 1
+            },
+            {
+                "Count": 11535,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.414030296060464,
+                "sort": 12
+            },
+            {
+                "Count": 50109,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.874107573716438,
+                "sort": 3
+            },
+            {
+                "Count": 27268,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 9789,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.7421658204845,
+                "sort": 9
+            },
+            {
+                "Count": 348716,
+                "District": "PA-4",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.235423679409614,
+                "sort": 0
+            },
+            {
+                "Count": 5604,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.471570793188511,
+                "sort": 13
+            },
+            {
+                "Count": 14835,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.674768674612556,
+                "sort": 4
+            },
+            {
+                "Count": 9580,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 18412,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.758591215458893,
+                "sort": 10
+            },
+            {
+                "Count": 292241,
+                "District": "PA-4",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.60858716993555,
+                "sort": 1
+            },
+            {
+                "Count": 9686,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.229020993316517,
+                "sort": 12
+            },
+            {
+                "Count": 105461,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.092131102710779,
+                "sort": 3
+            },
+            {
+                "Count": 11975,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 12810,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.931015615935342,
+                "sort": 9
+            },
+            {
+                "Count": 367796,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.99136858157742,
+                "sort": 0
+            },
+            {
+                "Count": 7204,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.477673552656428,
+                "sort": 13
+            },
+            {
+                "Count": 41555,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.988750795193152,
+                "sort": 4
+            },
+            {
+                "Count": 11931,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 19093,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.481335978972728,
+                "sort": 10
+            },
+            {
+                "Count": 258728,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.635027049966337,
+                "sort": 1
+            },
+            {
+                "Count": 7491,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.94543325490956,
+                "sort": 12
+            },
+            {
+                "Count": 98203,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.793367772246528,
+                "sort": 3
+            },
+            {
+                "Count": 16979,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 10354,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.04680840300594,
+                "sort": 9
+            },
+            {
+                "Count": 346458,
+                "District": "PA-5",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.935825380044343,
+                "sort": 0
+            },
+            {
+                "Count": 6643,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.512966526718445,
+                "sort": 13
+            },
+            {
+                "Count": 27229,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.761736101345889,
+                "sort": 4
+            },
+            {
+                "Count": 9977,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 16143,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.302656106850147,
+                "sort": 10
+            },
+            {
+                "Count": 239641,
+                "District": "PA-5",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.620149515758297,
+                "sort": 1
+            },
+            {
+                "Count": 8381,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.1897017425756875,
+                "sort": 12
+            },
+            {
+                "Count": 22869,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.43221895378638,
+                "sort": 3
+            },
+            {
+                "Count": 52160,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 5557,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.208581864516876,
+                "sort": 9
+            },
+            {
+                "Count": 334728,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.107519714312166,
+                "sort": 0
+            },
+            {
+                "Count": 8377,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.181282870559688,
+                "sort": 13
+            },
+            {
+                "Count": 13998,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.22912506603323,
+                "sort": 4
+            },
+            {
+                "Count": 20575,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 19889,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.236735082472963,
+                "sort": 10
+            },
+            {
+                "Count": 341492,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.126489160608871,
+                "sort": 1
+            },
+            {
+                "Count": 8272,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.33519642984192,
+                "sort": 12
+            },
+            {
+                "Count": 29746,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.3976175125584716,
+                "sort": 3
+            },
+            {
+                "Count": 52528,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 2370,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.081475704136234,
+                "sort": 9
+            },
+            {
+                "Count": 327728,
+                "District": "PA-6",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.082282515730873,
+                "sort": 0
+            },
+            {
+                "Count": 7043,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.1161713605582,
+                "sort": 13
+            },
+            {
+                "Count": 12616,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.258558403469091,
+                "sort": 4
+            },
+            {
+                "Count": 16187,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 15839,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.223582073025814,
+                "sort": 10
+            },
+            {
+                "Count": 306082,
+                "District": "PA-6",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.1331187850332425,
+                "sort": 1
+            },
+            {
+                "Count": 8286,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.615537015044509,
+                "sort": 12
+            },
+            {
+                "Count": 37969,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.237668794611428,
+                "sort": 3
+            },
+            {
+                "Count": 71905,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 9198,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.024050144821393,
+                "sort": 9
+            },
+            {
+                "Count": 376565,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.378205042613953,
+                "sort": 0
+            },
+            {
+                "Count": 8354,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.534878383703844,
+                "sort": 13
+            },
+            {
+                "Count": 19607,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.952298115374724,
+                "sort": 4
+            },
+            {
+                "Count": 20116,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 11921,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.7503910971090155,
+                "sort": 10
+            },
+            {
+                "Count": 271716,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.560996535260763,
+                "sort": 1
+            },
+            {
+                "Count": 7688,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.54902563867028,
+                "sort": 12
+            },
+            {
+                "Count": 44015,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.028367190956144,
+                "sort": 3
+            },
+            {
+                "Count": 72834,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 5205,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.875681346931239,
+                "sort": 9
+            },
+            {
+                "Count": 362307,
+                "District": "PA-7",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.341551144648352,
+                "sort": 0
+            },
+            {
+                "Count": 5834,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.7082755378068235,
+                "sort": 13
+            },
+            {
+                "Count": 15782,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.993883404646983,
+                "sort": 4
+            },
+            {
+                "Count": 19047,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 12068,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.832514914164791,
+                "sort": 10
+            },
+            {
+                "Count": 244449,
+                "District": "PA-7",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.5544967633157425,
+                "sort": 1
+            },
+            {
+                "Count": 13778,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.7690163236213765,
+                "sort": 12
+            },
+            {
+                "Count": 16815,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.957511551832214,
+                "sort": 3
+            },
+            {
+                "Count": 39115,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 10201,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.3657342219759565,
+                "sort": 9
+            },
+            {
+                "Count": 449839,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.788843447390316,
+                "sort": 0
+            },
+            {
+                "Count": 4735,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.627966344785365,
+                "sort": 13
+            },
+            {
+                "Count": 10565,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.7508293018036225,
+                "sort": 4
+            },
+            {
+                "Count": 12549,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 11233,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.436673009241485,
+                "sort": 10
+            },
+            {
+                "Count": 250390,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.9522492124760875,
+                "sort": 1
+            },
+            {
+                "Count": 13401,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.85429095422057,
+                "sort": 12
+            },
+            {
+                "Count": 27800,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.73988162494075,
+                "sort": 3
+            },
+            {
+                "Count": 39183,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 8260,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.29815921013548,
+                "sort": 9
+            },
+            {
+                "Count": 447570,
+                "District": "PA-8",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.763941154768218,
+                "sort": 0
+            },
+            {
+                "Count": 6119,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.003632276585591,
+                "sort": 13
+            },
+            {
+                "Count": 8475,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.133465561311949,
+                "sort": 4
+            },
+            {
+                "Count": 10010,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 9132,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.479828023747221,
+                "sort": 10
+            },
+            {
+                "Count": 215624,
+                "District": "PA-8",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.962465501547579,
+                "sort": 1
+            },
+            {
+                "Count": 7244,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.195707648457688,
+                "sort": 12
+            },
+            {
+                "Count": 8561,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.171012753627734,
+                "sort": 3
+            },
+            {
+                "Count": 24567,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 3142,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.20735060574879,
+                "sort": 9
+            },
+            {
+                "Count": 571734,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.127433971445231,
+                "sort": 0
+            },
+            {
+                "Count": 2578,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.34161950136781,
+                "sort": 13
+            },
+            {
+                "Count": 3162,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.094320647970197,
+                "sort": 4
+            },
+            {
+                "Count": 8176,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 3408,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.210361234296633,
+                "sort": 10
+            },
+            {
+                "Count": 208221,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.180545339972034,
+                "sort": 1
+            },
+            {
+                "Count": 8889,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.223296928482034,
+                "sort": 12
+            },
+            {
+                "Count": 27689,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.097703751295241,
+                "sort": 3
+            },
+            {
+                "Count": 29519,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 1882,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.25833998178591,
+                "sort": 9
+            },
+            {
+                "Count": 570556,
+                "District": "PA-9",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.119249477720006,
+                "sort": 0
+            },
+            {
+                "Count": 4408,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.291763652277454,
+                "sort": 13
+            },
+            {
+                "Count": 4006,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.261376172806801,
+                "sort": 4
+            },
+            {
+                "Count": 6234,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 3110,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.230723454886694,
+                "sort": 10
+            },
+            {
+                "Count": 171136,
+                "District": "PA-9",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.190121986663909,
+                "sort": 1
+            }
+        ]
+    },
+    "height": 600,
+    "layer": [
+        {
+            "encoding": {
+                "color": {
+                    "field": "Race",
+                    "sort": [
+                        "R5_Other",
+                        "R5_Asian",
+                        "R5_Hispanic",
+                        "R5_Black",
+                        "R5_WhiteNonHispanic"
+                    ],
+                    "type": "nominal"
+                },
+                "opacity": {
+                    "field": "Education",
+                    "sort": [
+                        "Grad",
+                        "NonGrad"
+                    ],
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "Race",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Education",
+                        "type": "nominal"
+                    }
+                ],
+                "x": {
+                    "field": "District",
+                    "sort": [
+                        "PA-2",
+                        "PA-3",
+                        "PA-1",
+                        "PA-18",
+                        "PA-5",
+                        "PA-7",
+                        "PA-4",
+                        "PA-6",
+                        "PA-17",
+                        "PA-14",
+                        "PA-8",
+                        "PA-11",
+                        "PA-16",
+                        "PA-10",
+                        "PA-13",
+                        "PA-9",
+                        "PA-15",
+                        "PA-12"
+                    ],
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "stack",
+                    "title": "Fraction",
+                    "type": "quantitative"
+                },
+                "y2": {
+                    "field": "stack_end",
+                    "type": "quantitative"
+                }
+            },
+            "mark": "bar"
+        },
+        {
+            "encoding": {
+                "x": {
+                    "field": "District",
+                    "sort": [
+                        "PA-2",
+                        "PA-3",
+                        "PA-1",
+                        "PA-18",
+                        "PA-5",
+                        "PA-7",
+                        "PA-4",
+                        "PA-6",
+                        "PA-17",
+                        "PA-14",
+                        "PA-8",
+                        "PA-11",
+                        "PA-16",
+                        "PA-10",
+                        "PA-13",
+                        "PA-9",
+                        "PA-15",
+                        "PA-12"
+                    ],
+                    "type": "nominal"
+                },
+                "y": {
+                    "aggregate": "max",
+                    "axis": {
+                        "orient": "right"
+                    },
+                    "field": "log(Density)",
+                    "scale": {
+                        "zero": false
+                    },
+                    "title": "log(Density)",
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "color": "purple",
+                "type": "circle"
+            }
+        }
+    ],
+    "padding": 5,
+    "resolve": {
+        "scale": {
+            "y": "independent"
+        }
+    },
+    "title": "PA Old: By Race and Education",
+    "transform": [
+        {
+            "as": [
+                "stack",
+                "stack_end"
+            ],
+            "groupby": [
+                "District"
+            ],
+            "offset": "normalize",
+            "sort": [
+                {
+                    "field": "sort",
+                    "order": "ascending"
+                }
+            ],
+            "stack": "Count"
+        }
+    ],
+    "width": 600
+};
+vegaEmbed('#figure_25',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_26">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 600,
+            "continuousWidth": 600,
+            "discreteHeight": 600,
+            "discreteWidth": 600
+        }
+    },
+    "data": {
+        "values": [
+            {
+                "% college grad": 41.795641517323816,
+                "% non-white": 25.662063975680542,
+                "District": "PA-1",
+                "Modeled D-Edge": 12.460000000000004,
+                "log density": 7.909732772289505
+            },
+            {
+                "% college grad": 30.957876567749384,
+                "% non-white": 16.26838117027984,
+                "District": "PA-10",
+                "Modeled D-Edge": -5.759999999999998,
+                "log density": 6.592632703628869
+            },
+            {
+                "% college grad": 30.38262348947952,
+                "% non-white": 12.709340297344534,
+                "District": "PA-11",
+                "Modeled D-Edge": -5.230000000000001,
+                "log density": 6.827702518236929
+            },
+            {
+                "% college grad": 29.92889740049764,
+                "% non-white": 7.62441147066498,
+                "District": "PA-12",
+                "Modeled D-Edge": -12.76,
+                "log density": 6.182914958603782
+            },
+            {
+                "% college grad": 29.405841698911207,
+                "% non-white": 15.862141318929496,
+                "District": "PA-13",
+                "Modeled D-Edge": -5.830000000000002,
+                "log density": 6.762724596505518
+            },
+            {
+                "% college grad": 34.164690956859246,
+                "% non-white": 12.17956741373004,
+                "District": "PA-14",
+                "Modeled D-Edge": -2.389999999999998,
+                "log density": 7.235503211675054
+            },
+            {
+                "% college grad": 28.16053622014637,
+                "% non-white": 10.738756368957965,
+                "District": "PA-15",
+                "Modeled D-Edge": -12.269999999999998,
+                "log density": 6.180952989405007
+            },
+            {
+                "% college grad": 29.912277042931393,
+                "% non-white": 11.669998325351257,
+                "District": "PA-16",
+                "Modeled D-Edge": -5.630000000000002,
+                "log density": 6.60649941446639
+            },
+            {
+                "% college grad": 37.891117735066906,
+                "% non-white": 11.12120770296015,
+                "District": "PA-17",
+                "Modeled D-Edge": 0.9700000000000042,
+                "log density": 7.327662023403882
+            },
+            {
+                "% college grad": 41.62649443978839,
+                "% non-white": 18.713498287575835,
+                "District": "PA-18",
+                "Modeled D-Edge": 10.040000000000004,
+                "log density": 7.981553758977489
+            },
+            {
+                "% college grad": 30.971441309617905,
+                "% non-white": 59.971074989584686,
+                "District": "PA-2",
+                "Modeled D-Edge": 25.880000000000003,
+                "log density": 9.463969106689788
+            },
+            {
+                "% college grad": 42.372913587290064,
+                "% non-white": 45.424312884832034,
+                "District": "PA-3",
+                "Modeled D-Edge": 20.25,
+                "log density": 8.700218248539375
+            },
+            {
+                "% college grad": 44.12084671261307,
+                "% non-white": 18.393103633942907,
+                "District": "PA-4",
+                "Modeled D-Edge": 5.359999999999998,
+                "log density": 7.60858716993555
+            },
+            {
+                "% college grad": 39.26177449015816,
+                "% non-white": 25.393436641919283,
+                "District": "PA-5",
+                "Modeled D-Edge": 8.799999999999997,
+                "log density": 7.620149515758297
+            },
+            {
+                "% college grad": 47.44026687632319,
+                "% non-white": 18.45120599189386,
+                "District": "PA-6",
+                "Modeled D-Edge": 2.2199999999999998,
+                "log density": 7.1331187850332425
+            },
+            {
+                "% college grad": 38.70436085191025,
+                "% non-white": 22.760584565127218,
+                "District": "PA-7",
+                "Modeled D-Edge": 6.059999999999999,
+                "log density": 7.5544967633157425
+            },
+            {
+                "% college grad": 33.57639672132373,
+                "% non-white": 15.040622036223963,
+                "District": "PA-8",
+                "Modeled D-Edge": -2.9799999999999995,
+                "log density": 6.962465501547579
+            },
+            {
+                "% college grad": 24.8431563664788,
+                "% non-white": 8.786300624257443,
+                "District": "PA-9",
+                "Modeled D-Edge": -11.049999999999999,
+                "log density": 6.190121986663909
+            }
+        ]
+    },
+    "height": 600,
+    "layer": [
+        {
+            "encoding": {
+                "text": {
+                    "field": "District"
+                },
+                "x": {
+                    "field": "% non-white",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "% college grad",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "dy": 10,
+                "type": "text"
+            }
+        },
+        {
+            "encoding": {
+                "color": {
+                    "field": "Modeled D-Edge",
+                    "scale": {
+                        "domain": [
+                            -25.880000000000003,
+                            25.880000000000003
+                        ],
+                        "scheme": "redblue"
+                    },
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "log density",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "% non-white",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "% college grad",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "tooltip": {
+                    "content": "data"
+                },
+                "type": "circle"
+            },
+            "selection": {
+                "view": {
+                    "bind": "scales",
+                    "clear": "click[event.shiftKey]",
+                    "encodings": [
+                        "x",
+                        "y"
+                    ],
+                    "type": "interval"
+                }
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "PA demographic scatter",
+    "width": 600
+};
+vegaEmbed('#figure_26',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_27">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 600,
+            "continuousWidth": 600,
+            "discreteHeight": 600,
+            "discreteWidth": 600
+        }
+    },
+    "data": {
+        "format": {
+            "parse": {}
+        },
+        "values": [
+            {
+                "Demographic Model": 62.46000000000001,
+                "Demographic Model (5% CI)": 59.660000000000004,
+                "Demographic Model (95% CI)": 65.24,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "1",
+                "Election Result": 43.442183123942954,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 75.88000000000001,
+                "Demographic Model (5% CI)": 73.06,
+                "Demographic Model (95% CI)": 78.57,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "2",
+                "Election Result": 72.53571140934683,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 70.25,
+                "Demographic Model (5% CI)": 67.96,
+                "Demographic Model (95% CI)": 72.43,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "3",
+                "Election Result": 91.03013221304334,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 55.36,
+                "Demographic Model (5% CI)": 53.16,
+                "Demographic Model (95% CI)": 57.620000000000005,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "4",
+                "Election Result": 59.52744605376515,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 58.8,
+                "Demographic Model (5% CI)": 56.65,
+                "Demographic Model (95% CI)": 60.95,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "5",
+                "Election Result": 64.69674546857411,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 52.22,
+                "Demographic Model (5% CI)": 50.2,
+                "Demographic Model (95% CI)": 54.32,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "6",
+                "Election Result": 56.05422238505221,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 56.06,
+                "Demographic Model (5% CI)": 53.669999999999995,
+                "Demographic Model (95% CI)": 58.42,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "7",
+                "Election Result": 51.86636666118307,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 47.02,
+                "Demographic Model (5% CI)": 45.11,
+                "Demographic Model (95% CI)": 48.93,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "8",
+                "Election Result": 51.77740868619233,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 38.95,
+                "Demographic Model (5% CI)": 36.93,
+                "Demographic Model (95% CI)": 41,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "9",
+                "Election Result": 33.669652160544786,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 44.24,
+                "Demographic Model (5% CI)": 42.36,
+                "Demographic Model (95% CI)": 46.08,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "10",
+                "Election Result": 46.687627924069886,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 44.769999999999996,
+                "Demographic Model (5% CI)": 42.85,
+                "Demographic Model (95% CI)": 46.739999999999995,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "11",
+                "Election Result": 36.87636989875796,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 37.24,
+                "Demographic Model (5% CI)": 35.11,
+                "Demographic Model (95% CI)": 39.379999999999995,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "12",
+                "Election Result": 29.156110206504938,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 44.17,
+                "Demographic Model (5% CI)": 42.3,
+                "Demographic Model (95% CI)": 46.04,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "13",
+                "Election Result": 26.512550733944202,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 47.61,
+                "Demographic Model (5% CI)": 45.69,
+                "Demographic Model (95% CI)": 49.54,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "14",
+                "Election Result": 35.305407365966865,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 37.730000000000004,
+                "Demographic Model (5% CI)": 35.68,
+                "Demographic Model (95% CI)": 39.800000000000004,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "15",
+                "Election Result": 26.54155650405802,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 44.37,
+                "Demographic Model (5% CI)": 42.44,
+                "Demographic Model (95% CI)": 46.339999999999996,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "16",
+                "Election Result": 40.66148849032623,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 50.970000000000006,
+                "Demographic Model (5% CI)": 48.77,
+                "Demographic Model (95% CI)": 53.18000000000001,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "17",
+                "Election Result": 51.14708298717946,
+                "State": "PA"
+            },
+            {
+                "Demographic Model": 60.040000000000006,
+                "Demographic Model (5% CI)": 57.43000000000001,
+                "Demographic Model (95% CI)": 62.64999999999999,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "18",
+                "Election Result": 69.2481658932926,
+                "State": "PA"
+            }
+        ]
+    },
+    "height": 600,
+    "layer": [
+        {
+            "encoding": {
+                "x": {
+                    "axis": {
+                        "title": "Election D-Share"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "tooltip": null,
+                "type": "line"
+            }
+        },
+        {
+            "encoding": {
+                "text": {
+                    "field": "District Name",
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "District",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Election Result",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model",
+                        "type": "quantitative"
+                    }
+                ],
+                "x": {
+                    "axis": {
+                        "title": "Election D-Share"
+                    },
+                    "field": "Election Result",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "dx": 20,
+                "type": "text"
+            },
+            "transform": [
+                {
+                    "as": "District Name",
+                    "calculate": "datum.State + '-' + datum.District"
+                }
+            ]
+        },
+        {
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "District",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Election Result",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model (5% CI)",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model (95% CI)",
+                        "type": "quantitative"
+                    }
+                ],
+                "x": {
+                    "axis": {
+                        "title": "Election D-Share"
+                    },
+                    "field": "Election Result",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model (5% CI)",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y2": {
+                    "field": "Demographic Model (95% CI)",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "ticks": {
+                    "color": "black"
+                },
+                "type": "errorbar"
+            }
+        },
+        {
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "District",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Election Result",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model",
+                        "type": "quantitative"
+                    }
+                ],
+                "x": {
+                    "axis": {
+                        "title": "Election D-Share"
+                    },
+                    "field": "Election Result",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": "circle",
+            "selection": {
+                "view": {
+                    "bind": "scales",
+                    "clear": "click[event.shiftKey]",
+                    "encodings": [
+                        "x",
+                        "y"
+                    ],
+                    "type": "interval"
+                }
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "PA 2020: Election vs Demographic Model",
+    "width": 600
+};
+vegaEmbed('#figure_27',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<div class="brTableTitle">2020 Dem Vote Share, PA: Demographic Model vs. Election Results</div>
+<table class="brTable"><thead><tr><th>State</th><th>District</th><th>Demographic Model (Blue Ripple)</th><th>2020 Election</th></tr></thead><tbody><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">1</td><td style="; color: green" data-label="Demographic">62</td><td style="; color: green" data-label="Election">43</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">2</td><td style="; color: green" data-label="Demographic">76</td><td style="; color: green" data-label="Election">73</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">3</td><td style="; color: green" data-label="Demographic">70</td><td style="; color: green" data-label="Election">91</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">4</td><td style="; color: green" data-label="Demographic">55</td><td style="; color: green" data-label="Election">60</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">5</td><td style="; color: green" data-label="Demographic">59</td><td style="; color: green" data-label="Election">65</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">6</td><td style="; color: green" data-label="Demographic">52</td><td style="; color: green" data-label="Election">56</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">7</td><td style="; color: green" data-label="Demographic">56</td><td style="; color: green" data-label="Election">52</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">8</td><td style="; color: green" data-label="Demographic">47</td><td style="; color: green" data-label="Election">52</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">9</td><td style="; color: green" data-label="Demographic">39</td><td style="; color: green" data-label="Election">34</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">10</td><td style="; color: green" data-label="Demographic">44</td><td style="; color: green" data-label="Election">47</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">11</td><td style="; color: green" data-label="Demographic">45</td><td style="; color: green" data-label="Election">37</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">12</td><td style="; color: green" data-label="Demographic">37</td><td style="; color: green" data-label="Election">29</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">13</td><td style="; color: green" data-label="Demographic">44</td><td style="; color: green" data-label="Election">27</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">14</td><td style="; color: green" data-label="Demographic">48</td><td style="; color: green" data-label="Election">35</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">15</td><td style="; color: green" data-label="Demographic">38</td><td style="; color: green" data-label="Election">27</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">16</td><td style="; color: green" data-label="Demographic">44</td><td style="; color: green" data-label="Election">41</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">17</td><td style="; color: green" data-label="Demographic">51</td><td style="; color: green" data-label="Election">51</td></tr><tr><td style="; " data-label="State">PA</td><td style="; " data-label="District">18</td><td style="; color: green" data-label="Demographic">60</td><td style="; color: green" data-label="Election">69</td></tr></tbody></table>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
