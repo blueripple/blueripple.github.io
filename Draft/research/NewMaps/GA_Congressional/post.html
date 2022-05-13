@@ -249,10 +249,53 @@
 
 <!-- page content begins here -->
 
-<div class="published">May 11, 2022 (12:58:09) </div>
-<p><strong>Post input file
-“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/GA<em>Congressional/inputs/post</em>intro.md”
-not found. Please fix/remove</strong></p>
+<div class="published">May 13, 2022 (11:58:01) </div>
+<section id="new-maps-new-dem-strategy-our-ga-analysis" class="level1">
+<h1>New Maps, New Dem Strategy: Our GA Analysis</h1>
+<p>The 2022 Congressional elections will involve new district maps in
+all 50 states. Districts will be reshaped, created, and eliminated,
+which will change Dems’ odds in each race. How can donors figure out
+which races have the biggest “bang for buck” for flipping tenuous GOP
+seats or protecting vulnerable Dems?</p>
+<p>To help answer that question, we’ve been building and refining a
+demographic model that predicts Democratic lean in each district based
+on its makeup in terms of race, sex, education, and population density.
+We then compare those results to an existing model based on historical
+data to help Dem donors identify races that we think deserve support for
+“offense” or “defense”.</p>
+<p>In this post, we’re focusing on Georgia. Here’s what we’ll cover:</p>
+<ol type="1">
+<li>Dem-lean by district in GA: our demographic model vs. historical
+data</li>
+<li>Districts worthy of Dem donor support</li>
+<li>Coming next from Blue Ripple</li>
+<li>Coda #1: Demographics of the new GA districts</li>
+<li>Coda #2: Brief intro to our methods (for non-experts)</li>
+</ol>
+<section
+id="dem-lean-by-district-in-mi-our-demographic-model-vs.-historical-data"
+class="level2">
+<h2>1. Dem-lean by district in MI: our demographic model vs. historical
+data</h2>
+<p>Our “demographic” model forecasts the potential Democratic lean of
+each new district in GA based on attributes like race, education, age,
+and population density. In the graph and table below, we compare our
+predictions to a “historical” model (from the excellent <a
+href="https://davesredistricting.org/maps#aboutus">Dave’s Redistricting
+(DR) web-site</a>) built up from precinct-level results in prior
+elections<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>. (See methods at the end of this
+post for more details.) The axes show the projected 2-party Dem vote
+share with each model. The diagonal line represents where districts
+would fall on this scatter-plot if the two models agreed precisely. In
+districts to the left of the line, our demographic model thinks the D
+vote share is higher than historical results, and to the right of the
+line, we think it’s lower than the historical model predicts<a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>.</p>
+<p>NB: For this and all scatter charts to follow, you can pan &amp; zoom
+by dragging with the mouse or moving the scroll wheel. To reset the
+chart, hold shift and click with the mouse.</p>
 <figure id="figure_10">
 <script type="text/javascript">var vlSpec=
 {
@@ -604,14 +647,140 @@ not found. Please fix/remove</strong></p>
 };
 vegaEmbed('#figure_10',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p><strong>Post input file
-“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/GA<em>Congressional/inputs/post</em>afterDaveModel.md”
-not found. Please fix/remove</strong></p>
+<p>We generally focus our attention on districts that fall in the 45-55%
+range of Dem share in our demographic model and 47-53% in the historical
+model. That’s because we think a 3-point gap is one that either party
+could potentially close with some focused energy, resources, and
+strategic thinking. Our demographic model carries some additional
+uncertainties, so we expand the range a bit there. Our methodology for
+using our model and the historical data to classify districts is
+explained <a
+href="https://blueripplepolitics.org/blog/high-yield-donation-opportunities">in
+this post</a>.</p>
+<p>With that in mind, here are a few observations on the new GA
+districts:</p>
+<ul>
+<li><p>First, let’s dispense with the obvious ones. Several GA districts
+are clearly far outside the competitive range and don’t merit serious
+investment by Dems looking to maximize their impact. Both the
+demographic model and the historical model agree that GA-4, GA-5, GA-7,
+GA-13 are safe D. Both models also agree that GA-1, GA-3, GA-8, GA-9,
+GA-10, and GA-12 are far out of reach for Dems.</p></li>
+<li><p>We think the rest (GA-2, GA-6, GA-11) are competitive. Though the
+historical model has GA-6 and GA-11 as safe R so these are what we call
+“plausible long-shots”. GA-2 is historically safe D but here we are
+concerned that it’s not as safe as it may look, especially in a wave
+year for Rs.</p></li>
+</ul>
+<p>Here’s a different look at the data, in a table sorted by the Dem
+share in our demographic model.</p>
 <div class="brTableTitle">Calculated Dem Vote Share, GA 2022: Demographic Model vs. Historical Model (DR)</div>
 <table class="brTable"><thead><tr><th>State</th><th>District</th><th>Demographic Model (Blue Ripple)</th><th>Historical Model (Dave&#39;s Redistricting)</th><th>BR Stance</th></tr></thead><tbody><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">13</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Demographic">75</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="Historical">79</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe D (No near-term D risk)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">5</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Demographic">74</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="Historical">81</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe D (No near-term D risk)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">4</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Demographic">73</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="Historical">77</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe D (No near-term D risk)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">7</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; color: green" data-label="Demographic">65</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="Historical">59</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe D (No near-term D risk)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">6</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; color: green" data-label="Demographic">51</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">38</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Flippable (Strongly D-leaning)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">2</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; color: green" data-label="Demographic">51</td><td style="; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="Historical">54</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Becoming At-Risk (More Balanced than Advertised)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">11</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; color: green" data-label="Demographic">48</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">39</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Becoming Flippable (More balanced than Advertised)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">12</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">44</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">43</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe R (No near-term D hope)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">1</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">40</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">42</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe R (No near-term D hope)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">8</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">37</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">34</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe R (No near-term D hope)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">10</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">37</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">36</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe R (No near-term D hope)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">3</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">37</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">33</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe R (No near-term D hope)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">14</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">35</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">29</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe R (No near-term D hope)</td></tr><tr><td style="; ; ; ; ; ; ; ; ; " data-label="State">GA</td><td style="; ; ; ; ; ; ; ; ; " data-label="District">9</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; color: green" data-label="Demographic">32</td><td style="; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="Historical">28</td><td style="; ; ; ; ; ; ; ; ; " data-label="BR Stance">Safe R (No near-term D hope)</td></tr></tbody></table>
-<p><strong>Post input file
-“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/GA<em>Congressional/inputs/post</em>daveModelTable.md”
-not found. Please fix/remove</strong></p>
+</section>
+<section id="districts-worthy-of-dem-donor-support" class="level2">
+<h2>2. Districts worthy of Dem donor support</h2>
+<p>Based on the results above, we think there are three good options for
+Dem donors in GA: GA-2, GA-6, and GA-11.</p>
+<p>GA-6 (BR: D+1) and GA-11 (BR: R+2) appear to be “plausible
+long-shots” in our demographic model. GA-6 used to be a D-leaning
+district. It was redistricted by the Republican legislature to be more
+R-leaning (some voters-of-color and White voters with college degress
+were shifted to GA-7). But it remains the district in GA with the
+highest percentage of college educated White voters which is why our
+model sees a possibility of D success there. GA-11 is similar but has
+about 15% lower rate of college graduates and so is a tougher lift.</p>
+<p>A few points on “plausible long-shots”: (Feel free to skip if you’ve
+read our discussion of these sorts of districts in other analyses.) Our
+findings in GA-6 and GA-11 deserve particular discussion. These look to
+be "safe R" given the voting history in the precincts within them, but
+our demographic model suggests they should be much more Dem-leaning, and
+maybe even Dem-winnable. What might this mean? One way to answer this
+question is to consider the difference between the two models. Our
+demographic model asks: if the voting-age citizens of this district
+turned out and voted like similar people in other parts of the country
+and state, what would we expect the outcome of this election to be? In
+contrast, the historical model asks how we'd expect the election to turn
+out if the voters in this district turn out and vote as they have in
+previous elections. This points to a few possible reasons why a
+historically red district like GA-6 might look flippable in our model --
+including, but not limited to, the following:</p>
+<ul>
+<li><p>Our model may be wrong about how we define "similar" voters.
+We've incorporated factors like education and race, but maybe we've
+missed key things that make voters in GA-6 different from superficially
+"similar" voters in other districts nationwide.</p></li>
+<li><p>Location-specific factors may depress Dem voting. It's possible
+that barriers related to voter access in GA-6 depress Dem vote share
+below what it would be in other districts.</p></li>
+<li><p>Dems may, in fact, have underperformed relative to their
+potential among these voters. It's possible that more effective
+candidate recruitment, campaigning, or organizing could, in fact, yield
+a win for Dems in GA-6 or GA-11.</p></li>
+</ul>
+<p>We don't know which (if any) of these explanations is correct. But
+our model suggests that if you want to support Team Blue in TX, and are
+open to the idea of supporting some long-shot candidates, then donating
+to a Dem in GA-6 or GA-11 might fit the bill.</p>
+</section>
+<section id="coming-next-from-blue-ripple" class="level2">
+<h2>3. Coming next from Blue Ripple</h2>
+<p>Here’s where we’re planning to take these analyses over the next few
+months:</p>
+<ul>
+<li><p>We’re going to do the same type analysis in many of the states,
+in order to identify the best options for Dem donors in 2022 on both
+offense and defense nationwide. Here are our takes on <a
+href="https://blueripple.github.io/research/NewMaps/AZ_Congressional/post.html">Arizona</a>,
+<a
+href="https://blueripple.github.io/research/NewMaps/MI_Congressional/post.html">Michigan</a>,
+<a
+href="https://blueripple.github.io/research/NewMaps/NC_Congressional/post.html">North
+Carolina</a>, <a
+href="https://blueripple.github.io/research/NewMaps/PA_Congressional/post.html">Pennsylvania</a>,
+and <a
+href="https://blueripple.github.io/research/NewMaps/TX_Congressional/post.html">Texas</a>.</p></li>
+<li><p>We’re going to continue to refine and improve our demographic
+model–we’ll update this post and others as we do so. Feel free to
+contact us if you want more details on the mechanics, or if you’d like
+to propose changes or improvements.</p></li>
+<li><p>As maps get solidified, we’ll set up ActBlue donation links for
+candidates (after the primaries) to make it easy for you to
+donate.</p></li>
+</ul>
+<p>If you want to stay up-to-date, please <a
+href="http://eepurl.com/gzmeQ5">sign up</a> for our email updates! We’re
+also on <a href="https://twitter.com/BlueRipplePol">Twitter</a>, <a
+href="https://www.facebook.com/blueripplepolitics">Facebook</a>, and <a
+href="https://github.com/blueripple">Github</a>.</p>
+</section>
+<section id="coda-1-demographics-of-new-vs.-old-ga-districts"
+class="level2">
+<h2>4. Coda #1: Demographics of new vs. old GA districts</h2>
+<p>One thing we haven’t seen discussed very much is how redistricting in
+GA has changed the demographics in each district. As a way of putting
+the demographic model results in context, let’s look at the underlying
+population two different ways:</p>
+<ul>
+<li><p>The first chart below shows each of GA’s 2022 districts, with the
+population broken down by race/ethnicity (Black, Hispanic, Asian,
+White-non-Hispanic and other) and education (college graduate and
+non-college graduate). Each bar also has a dot representing the
+(logarithmic) population density<a href="#fn3" class="footnote-ref"
+id="fnref3" role="doc-noteref"><sup>3</sup></a> of the district. The
+scale for that dot is on the right-side axis of the chart. For
+reference, a log density of 5 represents about 150 people per square
+mile and a log density of 8 represents about 3000 people per square
+mile. We’ve ordered the districts by D-share based on our demographic
+model, which is helpful for understanding how the model responds to
+demographics and density.</p></li>
+<li><p>In the second chart, we look at these demographics a different
+way, placing each GA district according to its proportion of college
+graduates and non-white citizens of voting age. We also indicate
+(logarithmic) population density via the size of the circle and modeled
+D-edge (D-share minus 50%) via color. This makes it easier to see that
+the model predicts larger D vote-share as the district becomes more
+educated, more non-white and more dense.</p></li>
+</ul>
 <figure id="figure_11">
 <script type="text/javascript">var vlSpec=
 {
@@ -622,11 +791,8 @@ not found. Please fix/remove</strong></p>
         "type": "pad"
     },
     "config": {
-        "view": {
-            "continuousHeight": 600,
-            "continuousWidth": 600,
-            "discreteHeight": 600,
-            "discreteWidth": 600
+        "legend": {
+            "orient": "bottom"
         }
     },
     "data": {
@@ -3019,11 +3185,8 @@ vegaEmbed('#figure_11',vlSpec,{"renderer": "canvas"});</script>
         "type": "pad"
     },
     "config": {
-        "view": {
-            "continuousHeight": 600,
-            "continuousWidth": 600,
-            "discreteHeight": 600,
-            "discreteWidth": 600
+        "legend": {
+            "orient": "bottom"
         }
     },
     "data": {
@@ -3215,9 +3378,13 @@ vegaEmbed('#figure_11',vlSpec,{"renderer": "canvas"});</script>
 };
 vegaEmbed('#figure_12',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p><strong>Post input file
-“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/GA<em>Congressional/inputs/post</em>afterNewDemographics.md”
-not found. Please fix/remove</strong></p>
+<p>It’s hard to see anything specific from these charts, though we are
+continuing to examine them as we try to understand what might be
+happening in each specific district.</p>
+</section>
+<section id="coda-2-brief-intro-to-our-methods-for-non-experts"
+class="level2">
+<h2>5. Coda #2: Brief intro to our methods (for non-experts)</h2>
 <p>This part of the post contains a general summary of the math behind
 what we’re doing here intended for non-experts. If you want even more
 technical details, check out the links at the end of this section, visit
@@ -3256,8 +3423,8 @@ build a demographic model? Three reasons:</p>
 <li><p>We’re interested in places where the history may be misleading,
 either because of the specific story in a district or because changing
 politics or demographics may have altered the balance of likely
-voters.<a href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a></p></li>
+voters.<a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a></p></li>
 <li><p>Our demographic analysis is potentially more useful when the
 districts are new, since voting history may be less “sticky” there. For
 example, if I’m a Dem-leaning voter in a strong-D district, I might not
@@ -3293,15 +3460,41 @@ href="https://www.facebook.com/blueripplepolitics"><strong>FaceBook</strong></a>
 Folks interested in our data and modeling efforts should also check out
 our <a href="https://github.com/blueripple"><strong>Github</strong></a>
 page.</em></p>
+</section>
+</section>
 <section class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>We’re also interested in voter
+<li id="fn1" role="doc-endnote"><p>One important note about the numbers.
+Dave’s Redistricting gives estimates of Democratic candidate votes,
+Republican candidate votes and votes for other candidates. We’ve taken
+those numbers and computed 2-party vote share for the Democratic
+candidate, that is, D Votes/(D Votes + R Votes). That makes it
+comparable with the Demographic model which also produces 2-party vote
+share.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>We’ve also done this modeling for the
+old districts and compared that result to the actual 2020 election
+results. See <a
+href="https://blueripple.github.io/Draft/research/NewMaps/GA_Congressional/Notes/Old_Districts.html">here</a>.<a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>We use logarithms here because
+density varies tremendously over districts, from tens to hundreds of
+thousands of people per square mile. We use population-weighting because
+the resulting average more closely expresses the density of where people
+actually live. For example, consider a district made up of a
+high-density city where 90% of the population live and then large but
+low-density exurbs where the other 10% live. Most people in that
+district live at high density and we want our density to reflect that
+even though the unweighted average density (people/district size) might
+be smaller.<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>We’re also interested in voter
 empowerment strategies. In particular, questions about where and among
 whom, extra turnout might make a difference. The historical model is no
 help here since it does not attempt to figure out who is voting or who
-they are voting for in a demographically specific way.<a href="#fnref1"
+they are voting for in a demographically specific way.<a href="#fnref4"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
