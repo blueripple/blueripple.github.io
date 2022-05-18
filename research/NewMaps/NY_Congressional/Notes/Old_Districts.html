@@ -1,0 +1,5562 @@
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146776294-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-146776294-1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="English">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NY: Old Districts</title>
+
+<!-- Yahoo! CDN combo URL for selected Pure.css modules -->
+<link rel="stylesheet" href="https://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-responsive-min.css&pure/0.6.0/menus-min.css&pure/0.6.0/tables-min.css">
+<!-- MathJax -->
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- Vega and Vega Embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<!-- Extra styles -->
+<style>
+  @viewport {
+      width: device-width;
+      zoom: 1.0;
+  }
+  body {margin:0 0 0}.pure-g{padding:0 1em}.pure-menu-link:focus{background-color:#d3d3d3}nav{margin:0 0 1em;padding:0 0 1em;border-bottom:1px solid #ccc}footer{margin:5em 0 1em}pre{white-space:pre-wrap;margin-left:3em}code{font-size:89%;color:#191919}.author{margin-bottom:0;padding-bottom:0}.headnote,.published,.license{font-size:89%;margin-bottom:.75em}@media screen and (max-width:35.5em){thead{display:none}tr,th,td{display:block}td{border-top:0}tr td:first-child{border-top:1px solid #ddd;font-weight:700}}
+  .br-header {
+      font-family: proxima-nova, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 14pt;
+      color: white;
+      margin-top: 0em;
+      margin-left: 0em;
+      margin-bottom: 1em;
+      margin-right: 0.1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: black;
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  .br-header-logo-wrapper
+  {
+      width: 140px;
+      background-color: white;
+      height: 58px;
+      margin-left: 10px;
+  }
+  .br-header-logo
+  {
+      width: 140px;
+      object-fit: contain;
+  }
+  .br-header-item
+  {
+      display: flex;
+      flex-basis: auto;
+  }
+  .br-header-br {
+      margin-left: 10px;
+  }
+  .br-header-br a:link, .br-header-br a:visited, .brheader a:hover, .br-header-br a:active
+  {
+      color: white;
+      text-decoration: none;
+  }
+  .br-home-button-c {
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 10px;
+  }
+  .br-home-button-b {
+      font-size: 10pt;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      border-radius: 25px;
+      padding: 5px 20px;
+      color: white;
+      text-align: center;
+  }
+  .br-home-button-b a:hover {
+      background-color: white;
+  }
+  .br-readmore {
+      font-style: italic;
+  }
+  .brTable {
+      font-size: 180t
+  }
+  .brTableTitle {
+      text-align: center;
+      font-size:  14pt
+  }
+  .footnotes {
+      font-size: 10pt;
+  }
+  @media screen and (min-width: 600px) {
+     .content-wrapper {
+	 margin-left: 150px;
+	 margin-right: 150px
+     }
+  }
+  @media screen and (max-width: 600px) {
+      .content-wrapper {
+	  margin-left: 10px;
+	  margin-right: 10px
+      }
+  }
+  figure {
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  a, a:link, a:visited, a:hover, a:active {
+      color: hsl(175, 43%, 42%);
+      text-decoration: none;
+  }
+  h1 {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      font-size: 32px;
+      letter-spacing: 0px
+  }
+  h2 {
+      font-family: proxima-nova, sans-serif;
+      font-weight: 600;
+      color: hsla(0,0%,10%,0.9);
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      font-size: 25px;
+      text-transform: uppercase;
+  }
+  .published {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  .updated {
+      color: lightslategrey;
+      font-family: Garamond;
+      font-size: 12pt
+  }
+  body {
+      font-family: Garamond;
+      font-weight: 400;
+      color: hsla(0,0%,10%,0.7);
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.6em;
+  }
+  table {
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      table-layout: auto;
+      width: 100%;
+  }
+  table tr {
+      background-color: #f8f8f8;
+      border: 0.5px solid #ddd;
+      padding: .35em;
+  }
+  table th,
+  table td {
+      padding: .125 em;
+      border: 1px solid black;
+  }
+  @media screen and (max-width: 600px) {
+      table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+      }
+
+      table tr {
+	  border-bottom: 3px solid #ddd;
+	  display: block;
+      }
+
+      table td {
+	  border-bottom: 1px solid #ddd;
+	  display: block;
+	  text-align: right;
+      }
+
+      table td::before {
+	  content: attr(data-label);
+	  float: left;
+      }
+  }
+  table-old {
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  figure {
+      border: 1px #cccccc solid;
+      padding: 4px;
+      margin: auto
+  }
+  figcaption {
+      font-style: italic;
+      font-size: 12pt;
+      text-align: center;
+  }
+</style>
+
+</head>
+<body>
+  <div class="br-header">
+    <a href="https://www.blueripplepolitics.org">
+      <div class="br-header-item br-header-logo-wrapper">
+	<img class="br-header-logo" src="https://blueripple.github.io/logo/full.png" alt="BLUE RIPPLE POLITICS"/>
+      </div>
+    </a>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+<section id="page-content">
+<div class="content-wrapper pure-g">
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 pure-u-xl-1">
+
+<!-- page content begins here -->
+
+<div class="published">May 18, 2022 </div>
+<p>**Post input file
+“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/NY<em>Congressional/inputs/Notes/Old</em>Districts_intro.md”
+not found. Please fix/remove**</p>
+<figure id="figure_25">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "legend": {
+            "orient": "bottom"
+        }
+    },
+    "data": {
+        "values": [
+            {
+                "Count": 7854,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.336630750070928,
+                "sort": 12
+            },
+            {
+                "Count": 26192,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.386798264776697,
+                "sort": 3
+            },
+            {
+                "Count": 45121,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 8546,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.825444300921685,
+                "sort": 9
+            },
+            {
+                "Count": 369897,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.5086145815843075,
+                "sort": 0
+            },
+            {
+                "Count": 5417,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.507278235740294,
+                "sort": 13
+            },
+            {
+                "Count": 15898,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.649179614998946,
+                "sort": 4
+            },
+            {
+                "Count": 30010,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.577124681606847,
+                "sort": 7
+            },
+            {
+                "Count": 17956,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.722289051496602,
+                "sort": 10
+            },
+            {
+                "Count": 291976,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.4627060158267335,
+                "sort": 1
+            },
+            {
+                "Count": 6808,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.435407160336912,
+                "sort": 12
+            },
+            {
+                "Count": 27992,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.32817257655163,
+                "sort": 3
+            },
+            {
+                "Count": 54122,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 7660,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.885094854742439,
+                "sort": 9
+            },
+            {
+                "Count": 360520,
+                "District": "NY-1",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.523825259089984,
+                "sort": 0
+            },
+            {
+                "Count": 5639,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.54820590630376,
+                "sort": 13
+            },
+            {
+                "Count": 13102,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.548349877833359,
+                "sort": 4
+            },
+            {
+                "Count": 23783,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 17684,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.700658268560443,
+                "sort": 10
+            },
+            {
+                "Count": 264941,
+                "District": "NY-1",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.427323051032229,
+                "sort": 1
+            },
+            {
+                "Count": 5668,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 11.057192548957222,
+                "sort": 12
+            },
+            {
+                "Count": 20806,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 11.322255478138123,
+                "sort": 3
+            },
+            {
+                "Count": 51777,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.17802154222398,
+                "sort": 6
+            },
+            {
+                "Count": 50821,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.921806643488118,
+                "sort": 9
+            },
+            {
+                "Count": 125883,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.002719798118841,
+                "sort": 0
+            },
+            {
+                "Count": 9880,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 11.180513114394834,
+                "sort": 13
+            },
+            {
+                "Count": 14555,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 11.263305578713124,
+                "sort": 4
+            },
+            {
+                "Count": 34548,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.219320720092401,
+                "sort": 7
+            },
+            {
+                "Count": 67908,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.150172261719865,
+                "sort": 10
+            },
+            {
+                "Count": 349647,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.24786569474201,
+                "sort": 1
+            },
+            {
+                "Count": 4598,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 11.056503893164132,
+                "sort": 12
+            },
+            {
+                "Count": 17724,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 11.302811781915702,
+                "sort": 3
+            },
+            {
+                "Count": 51778,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 41912,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.904593173295329,
+                "sort": 9
+            },
+            {
+                "Count": 114285,
+                "District": "NY-10",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.003669271233573,
+                "sort": 0
+            },
+            {
+                "Count": 10953,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 11.177051695485776,
+                "sort": 13
+            },
+            {
+                "Count": 10872,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 11.29266163924514,
+                "sort": 4
+            },
+            {
+                "Count": 30034,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.208696817929942,
+                "sort": 7
+            },
+            {
+                "Count": 56390,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.105728197879206,
+                "sort": 10
+            },
+            {
+                "Count": 319846,
+                "District": "NY-10",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.22525083788629,
+                "sort": 1
+            },
+            {
+                "Count": 9326,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.959659240598338,
+                "sort": 12
+            },
+            {
+                "Count": 39037,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.758049874573064,
+                "sort": 3
+            },
+            {
+                "Count": 72660,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 57590,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.19825208968495,
+                "sort": 9
+            },
+            {
+                "Count": 279209,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.674061353934764,
+                "sort": 0
+            },
+            {
+                "Count": 8878,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.012977173843169,
+                "sort": 13
+            },
+            {
+                "Count": 22503,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.721592107272071,
+                "sort": 4
+            },
+            {
+                "Count": 38350,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 9.840874766921068,
+                "sort": 7
+            },
+            {
+                "Count": 51103,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.089638213295961,
+                "sort": 10
+            },
+            {
+                "Count": 226980,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.808582985241022,
+                "sort": 1
+            },
+            {
+                "Count": 7920,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.852861181688455,
+                "sort": 12
+            },
+            {
+                "Count": 34741,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.702655754996185,
+                "sort": 3
+            },
+            {
+                "Count": 71761,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 9.86966745176624,
+                "sort": 6
+            },
+            {
+                "Count": 47447,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.239241618102442,
+                "sort": 9
+            },
+            {
+                "Count": 259488,
+                "District": "NY-11",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.677351636180447,
+                "sort": 0
+            },
+            {
+                "Count": 5102,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.11330877144062,
+                "sort": 13
+            },
+            {
+                "Count": 16806,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.719475648603993,
+                "sort": 4
+            },
+            {
+                "Count": 30451,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 52290,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.035977418770619,
+                "sort": 10
+            },
+            {
+                "Count": 188053,
+                "District": "NY-11",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.797900374698402,
+                "sort": 1
+            },
+            {
+                "Count": 4727,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 11.278399058106348,
+                "sort": 12
+            },
+            {
+                "Count": 25153,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 11.267244628823898,
+                "sort": 3
+            },
+            {
+                "Count": 64615,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.155829492895428,
+                "sort": 6
+            },
+            {
+                "Count": 31034,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.279542889404889,
+                "sort": 9
+            },
+            {
+                "Count": 102086,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.262817280168177,
+                "sort": 0
+            },
+            {
+                "Count": 13172,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 11.354979090413929,
+                "sort": 13
+            },
+            {
+                "Count": 14653,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 11.284866242146876,
+                "sort": 4
+            },
+            {
+                "Count": 47458,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.250459582904554,
+                "sort": 7
+            },
+            {
+                "Count": 74382,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.374450274599726,
+                "sort": 10
+            },
+            {
+                "Count": 406250,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.428429235835031,
+                "sort": 1
+            },
+            {
+                "Count": 4500,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 11.126519781804848,
+                "sort": 12
+            },
+            {
+                "Count": 22141,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 11.26892894264712,
+                "sort": 3
+            },
+            {
+                "Count": 61582,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.178000352597657,
+                "sort": 6
+            },
+            {
+                "Count": 22097,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.196521094030018,
+                "sort": 9
+            },
+            {
+                "Count": 92706,
+                "District": "NY-12",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.192586798516455,
+                "sort": 0
+            },
+            {
+                "Count": 12267,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 11.222094835948344,
+                "sort": 13
+            },
+            {
+                "Count": 11460,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 11.29318723215182,
+                "sort": 4
+            },
+            {
+                "Count": 38754,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 56388,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.341333616983817,
+                "sort": 10
+            },
+            {
+                "Count": 373384,
+                "District": "NY-12",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.397105465484762,
+                "sort": 1
+            },
+            {
+                "Count": 7315,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 11.369034360588422,
+                "sort": 12
+            },
+            {
+                "Count": 143436,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 11.352438698846607,
+                "sort": 3
+            },
+            {
+                "Count": 267467,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.414912004107752,
+                "sort": 6
+            },
+            {
+                "Count": 11548,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.368972635239528,
+                "sort": 9
+            },
+            {
+                "Count": 35270,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.303450647290786,
+                "sort": 0
+            },
+            {
+                "Count": 16186,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 11.384973177331549,
+                "sort": 13
+            },
+            {
+                "Count": 86688,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 11.356145876810848,
+                "sort": 4
+            },
+            {
+                "Count": 119350,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.411081230082186,
+                "sort": 7
+            },
+            {
+                "Count": 26078,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.374101910543658,
+                "sort": 10
+            },
+            {
+                "Count": 145059,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.369197686705341,
+                "sort": 1
+            },
+            {
+                "Count": 6549,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 11.390976587419619,
+                "sort": 12
+            },
+            {
+                "Count": 119179,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 11.353405717681445,
+                "sort": 3
+            },
+            {
+                "Count": 246468,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.430756903812204,
+                "sort": 6
+            },
+            {
+                "Count": 9227,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.33602402051919,
+                "sort": 9
+            },
+            {
+                "Count": 38144,
+                "District": "NY-13",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.34197412476408,
+                "sort": 0
+            },
+            {
+                "Count": 10085,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 11.419203871677,
+                "sort": 13
+            },
+            {
+                "Count": 62933,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 11.368141228281102,
+                "sort": 4
+            },
+            {
+                "Count": 82164,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.411977704787416,
+                "sort": 7
+            },
+            {
+                "Count": 17895,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.389585409919226,
+                "sort": 10
+            },
+            {
+                "Count": 132636,
+                "District": "NY-13",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.38521120910294,
+                "sort": 1
+            },
+            {
+                "Count": 9322,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.827336635506288,
+                "sort": 12
+            },
+            {
+                "Count": 62897,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.677198742032905,
+                "sort": 3
+            },
+            {
+                "Count": 169972,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.895602706921196,
+                "sort": 6
+            },
+            {
+                "Count": 52332,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.911218304845544,
+                "sort": 9
+            },
+            {
+                "Count": 77013,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.647612774405562,
+                "sort": 0
+            },
+            {
+                "Count": 7589,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.786712522754929,
+                "sort": 13
+            },
+            {
+                "Count": 32454,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.6769341941427,
+                "sort": 4
+            },
+            {
+                "Count": 75686,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 53620,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.907226761724003,
+                "sort": 10
+            },
+            {
+                "Count": 79560,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.734620157077499,
+                "sort": 1
+            },
+            {
+                "Count": 8272,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.777290280125575,
+                "sort": 12
+            },
+            {
+                "Count": 54046,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.69040037727745,
+                "sort": 3
+            },
+            {
+                "Count": 157962,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.93476563092545,
+                "sort": 6
+            },
+            {
+                "Count": 48258,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.927673393738608,
+                "sort": 9
+            },
+            {
+                "Count": 76828,
+                "District": "NY-14",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.673028680726032,
+                "sort": 0
+            },
+            {
+                "Count": 5257,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.81626006248473,
+                "sort": 13
+            },
+            {
+                "Count": 19276,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.777085303468066,
+                "sort": 4
+            },
+            {
+                "Count": 57204,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.854879666619555,
+                "sort": 7
+            },
+            {
+                "Count": 51651,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.904597552136181,
+                "sort": 10
+            },
+            {
+                "Count": 77942,
+                "District": "NY-14",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.7443365546865,
+                "sort": 1
+            },
+            {
+                "Count": 9855,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 11.089854095031269,
+                "sort": 12
+            },
+            {
+                "Count": 159797,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 11.13371767793823,
+                "sort": 3
+            },
+            {
+                "Count": 319022,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.129942379700912,
+                "sort": 6
+            },
+            {
+                "Count": 10178,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.015911506200352,
+                "sort": 9
+            },
+            {
+                "Count": 12111,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.092391526438593,
+                "sort": 0
+            },
+            {
+                "Count": 5374,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 11.045118757718763,
+                "sort": 13
+            },
+            {
+                "Count": 58033,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 11.108625994719448,
+                "sort": 4
+            },
+            {
+                "Count": 96990,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.131890604150946,
+                "sort": 7
+            },
+            {
+                "Count": 7228,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.991842126515238,
+                "sort": 10
+            },
+            {
+                "Count": 11286,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.073165096956883,
+                "sort": 1
+            },
+            {
+                "Count": 7624,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 11.107290866949864,
+                "sort": 12
+            },
+            {
+                "Count": 147794,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 11.115249870667581,
+                "sort": 3
+            },
+            {
+                "Count": 261942,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 11.129344048303569,
+                "sort": 6
+            },
+            {
+                "Count": 9637,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.010306786470911,
+                "sort": 9
+            },
+            {
+                "Count": 14922,
+                "District": "NY-15",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.086838178544376,
+                "sort": 0
+            },
+            {
+                "Count": 3261,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 11.004014950521649,
+                "sort": 13
+            },
+            {
+                "Count": 32588,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 11.116016609822667,
+                "sort": 4
+            },
+            {
+                "Count": 64418,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 7673,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.994995354300812,
+                "sort": 10
+            },
+            {
+                "Count": 9491,
+                "District": "NY-15",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 11.049562836332269,
+                "sort": 1
+            },
+            {
+                "Count": 10750,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.913923293939654,
+                "sort": 12
+            },
+            {
+                "Count": 149952,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.024138791190667,
+                "sort": 3
+            },
+            {
+                "Count": 125889,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 9.834185922583567,
+                "sort": 6
+            },
+            {
+                "Count": 12536,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.734144161621932,
+                "sort": 9
+            },
+            {
+                "Count": 131004,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.521522421870245,
+                "sort": 0
+            },
+            {
+                "Count": 11250,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 9.814439808026036,
+                "sort": 13
+            },
+            {
+                "Count": 92426,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.94325517959333,
+                "sort": 4
+            },
+            {
+                "Count": 68401,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 26870,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.427938449526053,
+                "sort": 10
+            },
+            {
+                "Count": 174102,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.363401456069292,
+                "sort": 1
+            },
+            {
+                "Count": 7934,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.852369911525606,
+                "sort": 12
+            },
+            {
+                "Count": 123642,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.015153156180835,
+                "sort": 3
+            },
+            {
+                "Count": 118716,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 9.758119750333044,
+                "sort": 6
+            },
+            {
+                "Count": 13535,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.758363399107857,
+                "sort": 9
+            },
+            {
+                "Count": 116863,
+                "District": "NY-16",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.519978984345983,
+                "sort": 0
+            },
+            {
+                "Count": 6000,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 9.679539381582833,
+                "sort": 13
+            },
+            {
+                "Count": 48204,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.975072856217174,
+                "sort": 4
+            },
+            {
+                "Count": 46022,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 9.74506474565189,
+                "sort": 7
+            },
+            {
+                "Count": 18004,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.40952396217704,
+                "sort": 10
+            },
+            {
+                "Count": 160515,
+                "District": "NY-16",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.350469517500063,
+                "sort": 1
+            },
+            {
+                "Count": 5593,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.079287901926431,
+                "sort": 12
+            },
+            {
+                "Count": 40541,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.19254548620057,
+                "sort": 3
+            },
+            {
+                "Count": 64335,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 10282,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.06972348304395,
+                "sort": 9
+            },
+            {
+                "Count": 217005,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.02505417228985,
+                "sort": 0
+            },
+            {
+                "Count": 10435,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.092914392591437,
+                "sort": 13
+            },
+            {
+                "Count": 32785,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.12243219345656,
+                "sort": 4
+            },
+            {
+                "Count": 47461,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 36222,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.019368293374036,
+                "sort": 10
+            },
+            {
+                "Count": 312537,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.957101747373722,
+                "sort": 1
+            },
+            {
+                "Count": 7679,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.12771925940368,
+                "sort": 12
+            },
+            {
+                "Count": 41294,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.135228155462773,
+                "sort": 3
+            },
+            {
+                "Count": 63576,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 9598,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.08734269834046,
+                "sort": 9
+            },
+            {
+                "Count": 199034,
+                "District": "NY-17",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.040898171107706,
+                "sort": 0
+            },
+            {
+                "Count": 7756,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.062216762983875,
+                "sort": 13
+            },
+            {
+                "Count": 24211,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.177398925924837,
+                "sort": 4
+            },
+            {
+                "Count": 38218,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 28582,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.07226153052125,
+                "sort": 10
+            },
+            {
+                "Count": 295926,
+                "District": "NY-17",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.958501630807086,
+                "sort": 1
+            },
+            {
+                "Count": 10809,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.968005194184384,
+                "sort": 12
+            },
+            {
+                "Count": 46933,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.130756234669381,
+                "sort": 3
+            },
+            {
+                "Count": 61386,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.977477179862344,
+                "sort": 6
+            },
+            {
+                "Count": 8049,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.000206339976203,
+                "sort": 9
+            },
+            {
+                "Count": 319778,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.918560612259867,
+                "sort": 0
+            },
+            {
+                "Count": 12249,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.99302954429517,
+                "sort": 13
+            },
+            {
+                "Count": 25388,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.078808704434972,
+                "sort": 4
+            },
+            {
+                "Count": 41734,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 11613,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.97068871977013,
+                "sort": 10
+            },
+            {
+                "Count": 253348,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.915473948063345,
+                "sort": 1
+            },
+            {
+                "Count": 11553,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.00702451462213,
+                "sort": 12
+            },
+            {
+                "Count": 54241,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.096175750584012,
+                "sort": 3
+            },
+            {
+                "Count": 70264,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 7737,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.05249809554988,
+                "sort": 9
+            },
+            {
+                "Count": 322501,
+                "District": "NY-18",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.922496356895472,
+                "sort": 0
+            },
+            {
+                "Count": 7150,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.046572760495449,
+                "sort": 13
+            },
+            {
+                "Count": 20360,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.996413157602587,
+                "sort": 4
+            },
+            {
+                "Count": 29483,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 10705,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.009237414668564,
+                "sort": 10
+            },
+            {
+                "Count": 227692,
+                "District": "NY-18",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.89767128349526,
+                "sort": 1
+            },
+            {
+                "Count": 13863,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.545806185556692,
+                "sort": 12
+            },
+            {
+                "Count": 20633,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 5.656343987510768,
+                "sort": 3
+            },
+            {
+                "Count": 30237,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 5.450229218987078,
+                "sort": 6
+            },
+            {
+                "Count": 4167,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.291435796755959,
+                "sort": 9
+            },
+            {
+                "Count": 457843,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.358254102131881,
+                "sort": 0
+            },
+            {
+                "Count": 9482,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 5.590316867762067,
+                "sort": 13
+            },
+            {
+                "Count": 10213,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 5.626426786470217,
+                "sort": 4
+            },
+            {
+                "Count": 17998,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 8595,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.6523086762793,
+                "sort": 10
+            },
+            {
+                "Count": 266520,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.477626775042356,
+                "sort": 1
+            },
+            {
+                "Count": 15639,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.428769682968806,
+                "sort": 12
+            },
+            {
+                "Count": 39861,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 5.496155360104089,
+                "sort": 3
+            },
+            {
+                "Count": 37409,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 5.410388145942329,
+                "sort": 6
+            },
+            {
+                "Count": 2840,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.494412763749101,
+                "sort": 9
+            },
+            {
+                "Count": 464196,
+                "District": "NY-19",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.3469049826278265,
+                "sort": 0
+            },
+            {
+                "Count": 6362,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 5.577706293814923,
+                "sort": 13
+            },
+            {
+                "Count": 8236,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 5.46210567148435,
+                "sort": 4
+            },
+            {
+                "Count": 15865,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 6415,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.76578221037841,
+                "sort": 10
+            },
+            {
+                "Count": 229002,
+                "District": "NY-19",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.48936323962518,
+                "sort": 1
+            },
+            {
+                "Count": 8940,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.528534064609765,
+                "sort": 12
+            },
+            {
+                "Count": 46486,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.530368929945622,
+                "sort": 3
+            },
+            {
+                "Count": 94889,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.550930027329398,
+                "sort": 6
+            },
+            {
+                "Count": 10135,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.54045981884106,
+                "sort": 9
+            },
+            {
+                "Count": 304145,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.489727531251265,
+                "sort": 0
+            },
+            {
+                "Count": 7933,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.44877352826968,
+                "sort": 13
+            },
+            {
+                "Count": 23634,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.543057681000997,
+                "sort": 4
+            },
+            {
+                "Count": 47642,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 16103,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.536929810473818,
+                "sort": 10
+            },
+            {
+                "Count": 228274,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.480377097074582,
+                "sort": 1
+            },
+            {
+                "Count": 10427,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.513907525516917,
+                "sort": 12
+            },
+            {
+                "Count": 50004,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.527143677687834,
+                "sort": 3
+            },
+            {
+                "Count": 104277,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 8589,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.582464190866101,
+                "sort": 9
+            },
+            {
+                "Count": 301469,
+                "District": "NY-2",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.4846828808095,
+                "sort": 0
+            },
+            {
+                "Count": 7051,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.53062623957331,
+                "sort": 13
+            },
+            {
+                "Count": 17269,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.507434382481721,
+                "sort": 4
+            },
+            {
+                "Count": 36482,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 16383,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.55193057409269,
+                "sort": 10
+            },
+            {
+                "Count": 205381,
+                "District": "NY-2",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.48450149920674,
+                "sort": 1
+            },
+            {
+                "Count": 16795,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.529734559569497,
+                "sort": 12
+            },
+            {
+                "Count": 44918,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.055730060275883,
+                "sort": 3
+            },
+            {
+                "Count": 22593,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 8838,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.559579066575506,
+                "sort": 9
+            },
+            {
+                "Count": 383740,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.1324221279239355,
+                "sort": 0
+            },
+            {
+                "Count": 10666,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.626844834306982,
+                "sort": 13
+            },
+            {
+                "Count": 16014,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.91542663499111,
+                "sort": 4
+            },
+            {
+                "Count": 19894,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 13468,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.4086425027053995,
+                "sort": 10
+            },
+            {
+                "Count": 326311,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.288835372223794,
+                "sort": 1
+            },
+            {
+                "Count": 19969,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.423140670329756,
+                "sort": 12
+            },
+            {
+                "Count": 43291,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.953209579327013,
+                "sort": 3
+            },
+            {
+                "Count": 23921,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.404005151587566,
+                "sort": 6
+            },
+            {
+                "Count": 8488,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.587843231776635,
+                "sort": 9
+            },
+            {
+                "Count": 369022,
+                "District": "NY-20",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.119284218637967,
+                "sort": 0
+            },
+            {
+                "Count": 8892,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.599345532930864,
+                "sort": 13
+            },
+            {
+                "Count": 13761,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 7.9450395977895685,
+                "sort": 4
+            },
+            {
+                "Count": 12346,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 14838,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.401422770383697,
+                "sort": 10
+            },
+            {
+                "Count": 289804,
+                "District": "NY-20",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.2945854898975755,
+                "sort": 1
+            },
+            {
+                "Count": 17693,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.0459535504711965,
+                "sort": 12
+            },
+            {
+                "Count": 6737,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 5.144008980972611,
+                "sort": 3
+            },
+            {
+                "Count": 13855,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 2833,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.147342941722925,
+                "sort": 9
+            },
+            {
+                "Count": 512823,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.1100607839603835,
+                "sort": 0
+            },
+            {
+                "Count": 6665,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 5.0155814476827825,
+                "sort": 13
+            },
+            {
+                "Count": 5208,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 4.99656531423486,
+                "sort": 4
+            },
+            {
+                "Count": 9796,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 4068,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.121087973229897,
+                "sort": 10
+            },
+            {
+                "Count": 240909,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.123629946213321,
+                "sort": 1
+            },
+            {
+                "Count": 20675,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.041185672597518,
+                "sort": 12
+            },
+            {
+                "Count": 36112,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 4.821287097531316,
+                "sort": 3
+            },
+            {
+                "Count": 24424,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 2866,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.2416118310479645,
+                "sort": 9
+            },
+            {
+                "Count": 543778,
+                "District": "NY-21",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.090719980459244,
+                "sort": 0
+            },
+            {
+                "Count": 4795,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 5.118409434837704,
+                "sort": 13
+            },
+            {
+                "Count": 4045,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 4.977503369959179,
+                "sort": 4
+            },
+            {
+                "Count": 6102,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 4760,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.229270448497646,
+                "sort": 10
+            },
+            {
+                "Count": 197434,
+                "District": "NY-21",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.137016505028257,
+                "sort": 1
+            },
+            {
+                "Count": 11123,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.463469013403166,
+                "sort": 12
+            },
+            {
+                "Count": 18359,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.4481477629492305,
+                "sort": 3
+            },
+            {
+                "Count": 13586,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 6280,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.151513857376267,
+                "sort": 9
+            },
+            {
+                "Count": 498774,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.0357866011624,
+                "sort": 0
+            },
+            {
+                "Count": 6202,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.5072916253724005,
+                "sort": 13
+            },
+            {
+                "Count": 6181,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.6902214737078065,
+                "sort": 4
+            },
+            {
+                "Count": 10498,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 6.811404206977643,
+                "sort": 7
+            },
+            {
+                "Count": 8315,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.083488339434392,
+                "sort": 10
+            },
+            {
+                "Count": 242207,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.266265286573542,
+                "sort": 1
+            },
+            {
+                "Count": 12475,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.967182562400733,
+                "sort": 12
+            },
+            {
+                "Count": 23900,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.203906304509749,
+                "sort": 3
+            },
+            {
+                "Count": 17436,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 4088,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.209081134794982,
+                "sort": 9
+            },
+            {
+                "Count": 487101,
+                "District": "NY-22",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.958615484514703,
+                "sort": 0
+            },
+            {
+                "Count": 4636,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.325529889537746,
+                "sort": 13
+            },
+            {
+                "Count": 7056,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.663009945664433,
+                "sort": 4
+            },
+            {
+                "Count": 8186,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 7825,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.231406833741612,
+                "sort": 10
+            },
+            {
+                "Count": 213404,
+                "District": "NY-22",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.3712024176850335,
+                "sort": 1
+            },
+            {
+                "Count": 14411,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.334917522518386,
+                "sort": 12
+            },
+            {
+                "Count": 10177,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.155844135481063,
+                "sort": 3
+            },
+            {
+                "Count": 14893,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 3652,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.951191802089489,
+                "sort": 9
+            },
+            {
+                "Count": 502095,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.473591469763363,
+                "sort": 0
+            },
+            {
+                "Count": 8762,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 5.8583056847629456,
+                "sort": 13
+            },
+            {
+                "Count": 7445,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 5.845428144291335,
+                "sort": 4
+            },
+            {
+                "Count": 9686,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 10330,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.176858292025311,
+                "sort": 10
+            },
+            {
+                "Count": 253100,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.662174494563618,
+                "sort": 1
+            },
+            {
+                "Count": 15162,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.332550842015225,
+                "sort": 12
+            },
+            {
+                "Count": 15684,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 5.974892326086124,
+                "sort": 3
+            },
+            {
+                "Count": 18013,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 1979,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 5.835803255977218,
+                "sort": 9
+            },
+            {
+                "Count": 504012,
+                "District": "NY-23",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.431556306874756,
+                "sort": 0
+            },
+            {
+                "Count": 6428,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 5.867883165369613,
+                "sort": 13
+            },
+            {
+                "Count": 6344,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 5.984730146382633,
+                "sort": 4
+            },
+            {
+                "Count": 8833,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 8000,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.134101756050261,
+                "sort": 10
+            },
+            {
+                "Count": 211776,
+                "District": "NY-23",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.707569786613951,
+                "sort": 1
+            },
+            {
+                "Count": 12530,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.970616401116537,
+                "sort": 12
+            },
+            {
+                "Count": 47099,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.292000643811543,
+                "sort": 3
+            },
+            {
+                "Count": 17752,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 7.605597079106106,
+                "sort": 6
+            },
+            {
+                "Count": 6845,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.825673099472384,
+                "sort": 9
+            },
+            {
+                "Count": 438777,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.5113359893633405,
+                "sort": 0
+            },
+            {
+                "Count": 8838,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.306857041557768,
+                "sort": 13
+            },
+            {
+                "Count": 11057,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.113798993677634,
+                "sort": 4
+            },
+            {
+                "Count": 9405,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 10767,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.7565065615263755,
+                "sort": 10
+            },
+            {
+                "Count": 275922,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.870973053123945,
+                "sort": 1
+            },
+            {
+                "Count": 16795,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 7.2004075080075385,
+                "sort": 12
+            },
+            {
+                "Count": 49957,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 7.81765190116224,
+                "sort": 3
+            },
+            {
+                "Count": 19419,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 5679,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.062731204811582,
+                "sort": 9
+            },
+            {
+                "Count": 436091,
+                "District": "NY-24",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.477152375169632,
+                "sort": 0
+            },
+            {
+                "Count": 5728,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.485031797680821,
+                "sort": 13
+            },
+            {
+                "Count": 11154,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.073057948350904,
+                "sort": 4
+            },
+            {
+                "Count": 8822,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 6207,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.7204942215194485,
+                "sort": 10
+            },
+            {
+                "Count": 229728,
+                "District": "NY-24",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.913419907175678,
+                "sort": 1
+            },
+            {
+                "Count": 12753,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.071721156446737,
+                "sort": 12
+            },
+            {
+                "Count": 101445,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.603412999701488,
+                "sort": 3
+            },
+            {
+                "Count": 47958,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.494155266587589,
+                "sort": 6
+            },
+            {
+                "Count": 9104,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.802194081479664,
+                "sort": 9
+            },
+            {
+                "Count": 315612,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.571228682252761,
+                "sort": 0
+            },
+            {
+                "Count": 9127,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.00978316046203,
+                "sort": 13
+            },
+            {
+                "Count": 28190,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.283790931875412,
+                "sort": 4
+            },
+            {
+                "Count": 18475,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 10419,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.840070602681372,
+                "sort": 10
+            },
+            {
+                "Count": 308759,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.601992035551535,
+                "sort": 1
+            },
+            {
+                "Count": 10492,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.176515192054335,
+                "sort": 12
+            },
+            {
+                "Count": 83856,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.580582007565793,
+                "sort": 3
+            },
+            {
+                "Count": 46603,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 7802,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.019393094854127,
+                "sort": 9
+            },
+            {
+                "Count": 295865,
+                "District": "NY-25",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.587181923053264,
+                "sort": 0
+            },
+            {
+                "Count": 7675,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 7.979632532817385,
+                "sort": 13
+            },
+            {
+                "Count": 18442,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.194597872515235,
+                "sort": 4
+            },
+            {
+                "Count": 14454,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 9869,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 7.669433191306695,
+                "sort": 10
+            },
+            {
+                "Count": 284458,
+                "District": "NY-25",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 7.589367070028888,
+                "sort": 1
+            },
+            {
+                "Count": 13676,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.477264861378456,
+                "sort": 12
+            },
+            {
+                "Count": 101771,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.689330784636523,
+                "sort": 3
+            },
+            {
+                "Count": 31345,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 9107,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.571606966884362,
+                "sort": 9
+            },
+            {
+                "Count": 372765,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.237417970320202,
+                "sort": 0
+            },
+            {
+                "Count": 10941,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.465786830848248,
+                "sort": 13
+            },
+            {
+                "Count": 34490,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.66392836159905,
+                "sort": 4
+            },
+            {
+                "Count": 15699,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 10402,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.349823626601811,
+                "sort": 10
+            },
+            {
+                "Count": 266317,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.317861774925024,
+                "sort": 1
+            },
+            {
+                "Count": 14510,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.461111600269577,
+                "sort": 12
+            },
+            {
+                "Count": 89255,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 8.693898406963497,
+                "sort": 3
+            },
+            {
+                "Count": 31171,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 8075,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.628015747401035,
+                "sort": 9
+            },
+            {
+                "Count": 348480,
+                "District": "NY-26",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.268245232212317,
+                "sort": 0
+            },
+            {
+                "Count": 7652,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.443272057307514,
+                "sort": 13
+            },
+            {
+                "Count": 22954,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 8.610507841199952,
+                "sort": 4
+            },
+            {
+                "Count": 9867,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 11433,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.351955366441828,
+                "sort": 10
+            },
+            {
+                "Count": 232536,
+                "District": "NY-26",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.317741069407091,
+                "sort": 1
+            },
+            {
+                "Count": 12454,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 5.991641341097039,
+                "sort": 12
+            },
+            {
+                "Count": 12568,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 6.300140098939859,
+                "sort": 3
+            },
+            {
+                "Count": 9862,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 2545,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.470372479635039,
+                "sort": 9
+            },
+            {
+                "Count": 505765,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.030874527058649,
+                "sort": 0
+            },
+            {
+                "Count": 7138,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.1097218792825005,
+                "sort": 13
+            },
+            {
+                "Count": 4227,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.381373763424492,
+                "sort": 4
+            },
+            {
+                "Count": 6312,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 3838,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.382607960497318,
+                "sort": 10
+            },
+            {
+                "Count": 289798,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.124727769753068,
+                "sort": 1
+            },
+            {
+                "Count": 14372,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 6.011668755029498,
+                "sort": 12
+            },
+            {
+                "Count": 27027,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 5.944943877393249,
+                "sort": 3
+            },
+            {
+                "Count": 16332,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 2760,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.296273299655431,
+                "sort": 9
+            },
+            {
+                "Count": 507801,
+                "District": "NY-27",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 5.990769236521478,
+                "sort": 0
+            },
+            {
+                "Count": 5013,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 6.224444422859204,
+                "sort": 13
+            },
+            {
+                "Count": 4852,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 6.027748588612023,
+                "sort": 4
+            },
+            {
+                "Count": 4921,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 3493,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 6.47297523439926,
+                "sort": 10
+            },
+            {
+                "Count": 242523,
+                "District": "NY-27",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 6.173202771917936,
+                "sort": 1
+            },
+            {
+                "Count": 7165,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.828214536283504,
+                "sort": 12
+            },
+            {
+                "Count": 32148,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.191050744313545,
+                "sort": 3
+            },
+            {
+                "Count": 42904,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.628456907281754,
+                "sort": 6
+            },
+            {
+                "Count": 37252,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.297299371130423,
+                "sort": 9
+            },
+            {
+                "Count": 228091,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.266540544540291,
+                "sort": 0
+            },
+            {
+                "Count": 8716,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.459554802311963,
+                "sort": 13
+            },
+            {
+                "Count": 23884,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.177256464207927,
+                "sort": 4
+            },
+            {
+                "Count": 31175,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.531476659829822,
+                "sort": 7
+            },
+            {
+                "Count": 67168,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.703807489713192,
+                "sort": 10
+            },
+            {
+                "Count": 333869,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.188755483775251,
+                "sort": 1
+            },
+            {
+                "Count": 7493,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 8.79831464587737,
+                "sort": 12
+            },
+            {
+                "Count": 30766,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.283348038446498,
+                "sort": 3
+            },
+            {
+                "Count": 42348,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.588147789593755,
+                "sort": 6
+            },
+            {
+                "Count": 31374,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.320572341418005,
+                "sort": 9
+            },
+            {
+                "Count": 201951,
+                "District": "NY-3",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.268308233145829,
+                "sort": 0
+            },
+            {
+                "Count": 9074,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 8.426939869432504,
+                "sort": 13
+            },
+            {
+                "Count": 14686,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.044743084233055,
+                "sort": 4
+            },
+            {
+                "Count": 22976,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 8.561883816348123,
+                "sort": 7
+            },
+            {
+                "Count": 62929,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 8.700853050066248,
+                "sort": 10
+            },
+            {
+                "Count": 310536,
+                "District": "NY-3",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.184255841381232,
+                "sort": 1
+            },
+            {
+                "Count": 9037,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.084351039622005,
+                "sort": 12
+            },
+            {
+                "Count": 82773,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.142502043818386,
+                "sort": 3
+            },
+            {
+                "Count": 75805,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 20712,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.018891981461676,
+                "sort": 9
+            },
+            {
+                "Count": 208911,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.93877177487283,
+                "sort": 0
+            },
+            {
+                "Count": 10407,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 9.040578646129168,
+                "sort": 13
+            },
+            {
+                "Count": 61136,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.113465498219032,
+                "sort": 4
+            },
+            {
+                "Count": 44924,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 35187,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.004267491271854,
+                "sort": 10
+            },
+            {
+                "Count": 255375,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.936515346493286,
+                "sort": 1
+            },
+            {
+                "Count": 7370,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 9.065644066479301,
+                "sort": 12
+            },
+            {
+                "Count": 68014,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.130167435966808,
+                "sort": 3
+            },
+            {
+                "Count": 74773,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 16266,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.006438121614533,
+                "sort": 9
+            },
+            {
+                "Count": 202279,
+                "District": "NY-4",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.940700174850553,
+                "sort": 0
+            },
+            {
+                "Count": 8353,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 9.018623652107262,
+                "sort": 13
+            },
+            {
+                "Count": 38700,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.084284232621767,
+                "sort": 4
+            },
+            {
+                "Count": 41344,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 33709,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.009842042766573,
+                "sort": 10
+            },
+            {
+                "Count": 227453,
+                "District": "NY-4",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 8.9297787956876,
+                "sort": 1
+            },
+            {
+                "Count": 35904,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.102641916732056,
+                "sort": 12
+            },
+            {
+                "Count": 243414,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.997575817228322,
+                "sort": 3
+            },
+            {
+                "Count": 93616,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.036878203521045,
+                "sort": 6
+            },
+            {
+                "Count": 55931,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.074075421570951,
+                "sort": 9
+            },
+            {
+                "Count": 83755,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.7561315169302,
+                "sort": 0
+            },
+            {
+                "Count": 21892,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.018565503276216,
+                "sort": 13
+            },
+            {
+                "Count": 136492,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.947736462604693,
+                "sort": 4
+            },
+            {
+                "Count": 43158,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 50136,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 9.998173612015762,
+                "sort": 10
+            },
+            {
+                "Count": 79486,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.66783715782326,
+                "sort": 1
+            },
+            {
+                "Count": 33702,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.099218524002705,
+                "sort": 12
+            },
+            {
+                "Count": 220853,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 9.98156533506157,
+                "sort": 3
+            },
+            {
+                "Count": 96328,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.035713387171091,
+                "sort": 6
+            },
+            {
+                "Count": 52434,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.086191781834609,
+                "sort": 9
+            },
+            {
+                "Count": 82670,
+                "District": "NY-5",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.777349853594915,
+                "sort": 0
+            },
+            {
+                "Count": 14145,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.020033030280137,
+                "sort": 13
+            },
+            {
+                "Count": 81088,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 9.945380667906578,
+                "sort": 4
+            },
+            {
+                "Count": 35359,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 7
+            },
+            {
+                "Count": 50698,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.00551642725147,
+                "sort": 10
+            },
+            {
+                "Count": 71981,
+                "District": "NY-5",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 9.65149521477341,
+                "sort": 1
+            },
+            {
+                "Count": 12797,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.402080941785867,
+                "sort": 12
+            },
+            {
+                "Count": 19373,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.38990896398335,
+                "sort": 3
+            },
+            {
+                "Count": 95590,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.548811961950554,
+                "sort": 6
+            },
+            {
+                "Count": 94739,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.371847252854893,
+                "sort": 9
+            },
+            {
+                "Count": 133526,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.350196692752725,
+                "sort": 0
+            },
+            {
+                "Count": 11899,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.394575600791454,
+                "sort": 13
+            },
+            {
+                "Count": 16811,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.36416832234935,
+                "sort": 4
+            },
+            {
+                "Count": 56645,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.468620262457021,
+                "sort": 7
+            },
+            {
+                "Count": 102936,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.365091848274362,
+                "sort": 10
+            },
+            {
+                "Count": 151922,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.381562004763122,
+                "sort": 1
+            },
+            {
+                "Count": 11704,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.388627451791065,
+                "sort": 12
+            },
+            {
+                "Count": 15937,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.388834153981866,
+                "sort": 3
+            },
+            {
+                "Count": 96786,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.584658157190809,
+                "sort": 6
+            },
+            {
+                "Count": 78243,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.37166369348695,
+                "sort": 9
+            },
+            {
+                "Count": 131859,
+                "District": "NY-6",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.351085728403296,
+                "sort": 0
+            },
+            {
+                "Count": 9694,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.36739465854286,
+                "sort": 13
+            },
+            {
+                "Count": 12732,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.429910748741483,
+                "sort": 4
+            },
+            {
+                "Count": 45251,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.447684278533787,
+                "sort": 7
+            },
+            {
+                "Count": 96535,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.375621360207708,
+                "sort": 10
+            },
+            {
+                "Count": 123456,
+                "District": "NY-6",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.39357046220473,
+                "sort": 1
+            },
+            {
+                "Count": 9941,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.764049521350465,
+                "sort": 12
+            },
+            {
+                "Count": 75028,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.882370692231996,
+                "sort": 3
+            },
+            {
+                "Count": 147963,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 53633,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.067393438445798,
+                "sort": 9
+            },
+            {
+                "Count": 92312,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.818110525656275,
+                "sort": 0
+            },
+            {
+                "Count": 17115,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.90973379571114,
+                "sort": 13
+            },
+            {
+                "Count": 36312,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.89487436049509,
+                "sort": 4
+            },
+            {
+                "Count": 67067,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.902141386167969,
+                "sort": 7
+            },
+            {
+                "Count": 48244,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.956239121239477,
+                "sort": 10
+            },
+            {
+                "Count": 215040,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.925464291003173,
+                "sort": 1
+            },
+            {
+                "Count": 10986,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.81298074963106,
+                "sort": 12
+            },
+            {
+                "Count": 64529,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.894566481979702,
+                "sort": 3
+            },
+            {
+                "Count": 132276,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.902611440693217,
+                "sort": 6
+            },
+            {
+                "Count": 43482,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 11.035511640009872,
+                "sort": 9
+            },
+            {
+                "Count": 92890,
+                "District": "NY-7",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.830803487343514,
+                "sort": 0
+            },
+            {
+                "Count": 12150,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.871339812405447,
+                "sort": 13
+            },
+            {
+                "Count": 25921,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.910017280695026,
+                "sort": 4
+            },
+            {
+                "Count": 50981,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.869667213978706,
+                "sort": 7
+            },
+            {
+                "Count": 40833,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.984616849305336,
+                "sort": 10
+            },
+            {
+                "Count": 207562,
+                "District": "NY-7",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.943601410732436,
+                "sort": 1
+            },
+            {
+                "Count": 18846,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.4986270526781,
+                "sort": 12
+            },
+            {
+                "Count": 252532,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.656970547842443,
+                "sort": 3
+            },
+            {
+                "Count": 105207,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 29220,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.510732651796548,
+                "sort": 9
+            },
+            {
+                "Count": 85857,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.593745753020228,
+                "sort": 0
+            },
+            {
+                "Count": 18840,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.642223539658065,
+                "sort": 13
+            },
+            {
+                "Count": 133074,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.60210156397879,
+                "sort": 4
+            },
+            {
+                "Count": 46151,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.704728005985581,
+                "sort": 7
+            },
+            {
+                "Count": 27364,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.632277905102505,
+                "sort": 10
+            },
+            {
+                "Count": 137864,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.746191250419601,
+                "sort": 1
+            },
+            {
+                "Count": 15579,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.481915602497773,
+                "sort": 12
+            },
+            {
+                "Count": 203123,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.6410080628508,
+                "sort": 3
+            },
+            {
+                "Count": 88375,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 27237,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.503249639124945,
+                "sort": 9
+            },
+            {
+                "Count": 85067,
+                "District": "NY-8",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.608356204643233,
+                "sort": 0
+            },
+            {
+                "Count": 10665,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.623066935541528,
+                "sort": 13
+            },
+            {
+                "Count": 82206,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.624679550487548,
+                "sort": 4
+            },
+            {
+                "Count": 30381,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.699577411201046,
+                "sort": 7
+            },
+            {
+                "Count": 24042,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.589578131471141,
+                "sort": 10
+            },
+            {
+                "Count": 122795,
+                "District": "NY-8",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.75264719607896,
+                "sort": 1
+            },
+            {
+                "Count": 13087,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.866148433169958,
+                "sort": 12
+            },
+            {
+                "Count": 251391,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.910752135224476,
+                "sort": 3
+            },
+            {
+                "Count": 52838,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 24714,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.821987503867206,
+                "sort": 9
+            },
+            {
+                "Count": 79574,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.763860509861665,
+                "sort": 0
+            },
+            {
+                "Count": 16042,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.856005970411317,
+                "sort": 13
+            },
+            {
+                "Count": 141394,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.89295750834376,
+                "sort": 4
+            },
+            {
+                "Count": 29652,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.896918232177056,
+                "sort": 7
+            },
+            {
+                "Count": 24234,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.83809288528265,
+                "sort": 10
+            },
+            {
+                "Count": 153318,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.865445799006533,
+                "sort": 1
+            },
+            {
+                "Count": 11324,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_Other",
+                "log(Density)": 10.844107217247478,
+                "sort": 12
+            },
+            {
+                "Count": 199560,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_Black",
+                "log(Density)": 10.909428386081808,
+                "sort": 3
+            },
+            {
+                "Count": 49472,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_Hispanic",
+                "log(Density)": null,
+                "sort": 6
+            },
+            {
+                "Count": 22483,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.817746506600656,
+                "sort": 9
+            },
+            {
+                "Count": 82218,
+                "District": "NY-9",
+                "Education": "NonGrad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.793075659633402,
+                "sort": 0
+            },
+            {
+                "Count": 8674,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_Other",
+                "log(Density)": 10.88490622819717,
+                "sort": 13
+            },
+            {
+                "Count": 80249,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_Black",
+                "log(Density)": 10.896179143559772,
+                "sort": 4
+            },
+            {
+                "Count": 22525,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_Hispanic",
+                "log(Density)": 10.910318836630642,
+                "sort": 7
+            },
+            {
+                "Count": 18385,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_Asian",
+                "log(Density)": 10.821663082947724,
+                "sort": 10
+            },
+            {
+                "Count": 137301,
+                "District": "NY-9",
+                "Education": "Grad",
+                "Race": "R5_WhiteNonHispanic",
+                "log(Density)": 10.868741594245769,
+                "sort": 1
+            }
+        ]
+    },
+    "height": 600,
+    "layer": [
+        {
+            "encoding": {
+                "color": {
+                    "field": "Race",
+                    "sort": [
+                        "R5_Other",
+                        "R5_Asian",
+                        "R5_Hispanic",
+                        "R5_Black",
+                        "R5_WhiteNonHispanic"
+                    ],
+                    "type": "nominal"
+                },
+                "opacity": {
+                    "field": "Education",
+                    "sort": [
+                        "Grad",
+                        "NonGrad"
+                    ],
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "Race",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Education",
+                        "type": "nominal"
+                    }
+                ],
+                "x": {
+                    "field": "District",
+                    "sort": [
+                        "NY-15",
+                        "NY-5",
+                        "NY-9",
+                        "NY-8",
+                        "NY-13",
+                        "NY-16",
+                        "NY-14",
+                        "NY-7",
+                        "NY-6",
+                        "NY-12",
+                        "NY-4",
+                        "NY-10",
+                        "NY-11",
+                        "NY-17",
+                        "NY-3",
+                        "NY-2",
+                        "NY-26",
+                        "NY-25",
+                        "NY-1",
+                        "NY-18",
+                        "NY-20",
+                        "NY-24",
+                        "NY-22",
+                        "NY-27",
+                        "NY-19",
+                        "NY-23",
+                        "NY-21"
+                    ],
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "stack",
+                    "title": "Fraction",
+                    "type": "quantitative"
+                },
+                "y2": {
+                    "field": "stack_end",
+                    "type": "quantitative"
+                }
+            },
+            "mark": "bar"
+        },
+        {
+            "encoding": {
+                "x": {
+                    "field": "District",
+                    "sort": [
+                        "NY-15",
+                        "NY-5",
+                        "NY-9",
+                        "NY-8",
+                        "NY-13",
+                        "NY-16",
+                        "NY-14",
+                        "NY-7",
+                        "NY-6",
+                        "NY-12",
+                        "NY-4",
+                        "NY-10",
+                        "NY-11",
+                        "NY-17",
+                        "NY-3",
+                        "NY-2",
+                        "NY-26",
+                        "NY-25",
+                        "NY-1",
+                        "NY-18",
+                        "NY-20",
+                        "NY-24",
+                        "NY-22",
+                        "NY-27",
+                        "NY-19",
+                        "NY-23",
+                        "NY-21"
+                    ],
+                    "type": "nominal"
+                },
+                "y": {
+                    "aggregate": "max",
+                    "axis": {
+                        "orient": "right"
+                    },
+                    "field": "log(Density)",
+                    "scale": {
+                        "zero": false
+                    },
+                    "title": "log(Density)",
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "color": "purple",
+                "type": "circle"
+            }
+        }
+    ],
+    "padding": 5,
+    "resolve": {
+        "scale": {
+            "y": "independent"
+        }
+    },
+    "title": "NY Old: By Race and Education",
+    "transform": [
+        {
+            "as": [
+                "stack",
+                "stack_end"
+            ],
+            "groupby": [
+                "District"
+            ],
+            "offset": "normalize",
+            "sort": [
+                {
+                    "field": "sort",
+                    "order": "ascending"
+                }
+            ],
+            "stack": "Count"
+        }
+    ],
+    "width": 600
+};
+vegaEmbed('#figure_25',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p>**Post input file
+“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/NY<em>Congressional/inputs/Notes/Old</em>Districts_afterDemographicsBar.md”
+not found. Please fix/remove**</p>
+<figure id="figure_26">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "legend": {
+            "orient": "bottom"
+        }
+    },
+    "data": {
+        "values": [
+            {
+                "% college grad": 42.87041929451796,
+                "% non-white": 19.597806033034416,
+                "District": "NY-1",
+                "Modeled D-Edge": 8.07,
+                "log density": 7.427323051032229
+            },
+            {
+                "% college grad": 65.08689567841944,
+                "% non-white": 34.55134777337693,
+                "District": "NY-10",
+                "Modeled D-Edge": 18.720000000000002,
+                "log density": 11.22525083788629
+            },
+            {
+                "% college grad": 42.14766778860232,
+                "% non-white": 37.24201237748364,
+                "District": "NY-11",
+                "Modeled D-Edge": 16.12,
+                "log density": 9.797900374698402
+            },
+            {
+                "% college grad": 70.87920076223502,
+                "% non-white": 34.10737965484386,
+                "District": "NY-12",
+                "Modeled D-Edge": 19.340000000000003,
+                "log density": 11.397105465484762
+            },
+            {
+                "% college grad": 44.142460867967394,
+                "% non-white": 77.82950690071272,
+                "District": "NY-13",
+                "Modeled D-Edge": 26.759999999999994,
+                "log density": 11.38521120910294
+            },
+            {
+                "% college grad": 39.098034984763935,
+                "% non-white": 73.55091700994188,
+                "District": "NY-14",
+                "Modeled D-Edge": 23.270000000000003,
+                "log density": 10.7443365546865
+            },
+            {
+                "% college grad": 23.72208667140561,
+                "% non-white": 96.17282408919458,
+                "District": "NY-15",
+                "Modeled D-Edge": 30.310000000000002,
+                "log density": 11.049562836332269
+            },
+            {
+                "% college grad": 44.56360696423871,
+                "% non-white": 60.17516571346527,
+                "District": "NY-16",
+                "Modeled D-Edge": 23.57,
+                "log density": 9.350469517500063
+            },
+            {
+                "% college grad": 55.86697207766548,
+                "% non-white": 31.382855458886723,
+                "District": "NY-17",
+                "Modeled D-Edge": 15.749999999999996,
+                "log density": 7.958501630807086
+            },
+            {
+                "% college grad": 41.193375544842056,
+                "% non-white": 27.66654668175171,
+                "District": "NY-18",
+                "Modeled D-Edge": 7.969999999999999,
+                "log density": 6.89767128349526
+            },
+            {
+                "% college grad": 34.74818899755971,
+                "% non-white": 14.880423399880868,
+                "District": "NY-19",
+                "Modeled D-Edge": -3.53,
+                "log density": 5.48936323962518
+            },
+            {
+                "% college grad": 39.220116556767884,
+                "% non-white": 32.755725768725334,
+                "District": "NY-2",
+                "Modeled D-Edge": 14.949999999999996,
+                "log density": 8.48450149920674
+            },
+            {
+                "% college grad": 43.53606957193376,
+                "% non-white": 17.911822539277235,
+                "District": "NY-20",
+                "Modeled D-Edge": 7.189999999999996,
+                "log density": 7.2945854898975755
+            },
+            {
+                "% college grad": 29.04589277716204,
+                "% non-white": 10.244731858850201,
+                "District": "NY-21",
+                "Modeled D-Edge": -5.69,
+                "log density": 5.137016505028257
+            },
+            {
+                "% college grad": 32.00421489495108,
+                "% non-white": 10.334827871055067,
+                "District": "NY-22",
+                "Modeled D-Edge": -1.1699999999999988,
+                "log density": 6.3712024176850335
+            },
+            {
+                "% college grad": 32.54291499415618,
+                "% non-white": 9.798918555637725,
+                "District": "NY-23",
+                "Modeled D-Edge": -4.520000000000001,
+                "log density": 5.707569786613951
+            },
+            {
+                "% college grad": 35.46837351986894,
+                "% non-white": 15.231380620568203,
+                "District": "NY-24",
+                "Modeled D-Edge": 3.6699999999999955,
+                "log density": 6.913419907175678
+            },
+            {
+                "% college grad": 43.24882201201688,
+                "% non-white": 26.603824394190664,
+                "District": "NY-25",
+                "Modeled D-Edge": 12.719999999999999,
+                "log density": 7.589367070028888
+            },
+            {
+                "% college grad": 37.888064508665735,
+                "% non-white": 25.714574482205197,
+                "District": "NY-26",
+                "Modeled D-Edge": 13.290000000000003,
+                "log density": 8.317741069407091
+            },
+            {
+                "% college grad": 33.98162628793877,
+                "% non-white": 8.179729045064715,
+                "District": "NY-27",
+                "Modeled D-Edge": -1.2900000000000023,
+                "log density": 6.173202771917936
+            },
+            {
+                "% college grad": 57.22664976834863,
+                "% non-white": 30.524181945742175,
+                "District": "NY-3",
+                "Modeled D-Edge": 15.649999999999997,
+                "log density": 8.184255841381232
+            },
+            {
+                "% college grad": 49.6928792114168,
+                "% non-white": 41.280685806763486,
+                "District": "NY-4",
+                "Modeled D-Edge": 18.94,
+                "log density": 8.9297787956876
+            },
+            {
+                "% college grad": 36.918477210333016,
+                "% non-white": 79.91891560678744,
+                "District": "NY-5",
+                "Modeled D-Edge": 28.269999999999996,
+                "log density": 9.65149521477341
+            },
+            {
+                "% college grad": 47.62320478446036,
+                "% non-white": 58.98447780891739,
+                "District": "NY-6",
+                "Modeled D-Edge": 19.840000000000003,
+                "log density": 10.39357046220473
+            },
+            {
+                "% college grad": 49.937165270916346,
+                "% non-white": 57.91603341492039,
+                "District": "NY-7",
+                "Modeled D-Edge": 21.78,
+                "log density": 10.943601410732436
+            },
+            {
+                "% college grad": 41.010861647538725,
+                "% non-white": 72.0554251582304,
+                "District": "NY-8",
+                "Modeled D-Edge": 27.690000000000005,
+                "log density": 10.75264719607896
+            },
+            {
+                "% college grad": 44.54021509621519,
+                "% non-white": 68.10491844885384,
+                "District": "NY-9",
+                "Modeled D-Edge": 27.92,
+                "log density": 10.868741594245769
+            }
+        ]
+    },
+    "height": 600,
+    "layer": [
+        {
+            "encoding": {
+                "text": {
+                    "field": "District"
+                },
+                "x": {
+                    "field": "% non-white",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "% college grad",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "dy": 10,
+                "type": "text"
+            }
+        },
+        {
+            "encoding": {
+                "color": {
+                    "field": "Modeled D-Edge",
+                    "scale": {
+                        "domain": [
+                            -30.310000000000002,
+                            30.310000000000002
+                        ],
+                        "scheme": "redblue"
+                    },
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "log density",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "% non-white",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "% college grad",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "tooltip": {
+                    "content": "data"
+                },
+                "type": "circle"
+            },
+            "selection": {
+                "view": {
+                    "bind": "scales",
+                    "clear": "click[event.shiftKey]",
+                    "encodings": [
+                        "x",
+                        "y"
+                    ],
+                    "type": "interval"
+                }
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "NY demographic scatter",
+    "width": 600
+};
+vegaEmbed('#figure_26',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p>**Post input file
+“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/NY<em>Congressional/inputs/Notes/Old</em>Districts_afterDemographicsScatter.md”
+not found. Please fix/remove**</p>
+<figure id="figure_27">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 600,
+            "continuousWidth": 600,
+            "discreteHeight": 600,
+            "discreteWidth": 600
+        }
+    },
+    "data": {
+        "format": {
+            "parse": {}
+        },
+        "values": [
+            {
+                "Demographic Model": 58.07,
+                "Demographic Model (5% CI)": 56.089999999999996,
+                "Demographic Model (95% CI)": 59.97,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "1",
+                "Election Result": 46.82536378827433,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 64.95,
+                "Demographic Model (5% CI)": 62.31,
+                "Demographic Model (95% CI)": 67.54,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "2",
+                "Election Result": 45.69967802098895,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 65.64999999999999,
+                "Demographic Model (5% CI)": 63.31,
+                "Demographic Model (95% CI)": 67.94,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "3",
+                "Election Result": 55.16606392228751,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 68.94,
+                "Demographic Model (5% CI)": 66.52,
+                "Demographic Model (95% CI)": 71.28,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "4",
+                "Election Result": 56.626857802131134,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 78.27,
+                "Demographic Model (5% CI)": 76.14999999999999,
+                "Demographic Model (95% CI)": 80.27,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "5",
+                "Election Result": 100,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 69.84,
+                "Demographic Model (5% CI)": 67.28,
+                "Demographic Model (95% CI)": 72.28,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "6",
+                "Election Result": 68.52580361302346,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 71.78,
+                "Demographic Model (5% CI)": 69.42,
+                "Demographic Model (95% CI)": 74.02,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "7",
+                "Election Result": 85.45571641330453,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 77.69,
+                "Demographic Model (5% CI)": 75.59,
+                "Demographic Model (95% CI)": 79.60000000000001,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "8",
+                "Election Result": 84.83173250523579,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 77.92,
+                "Demographic Model (5% CI)": 75.82,
+                "Demographic Model (95% CI)": 79.81,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "9",
+                "Election Result": 83.96985822716479,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 68.72,
+                "Demographic Model (5% CI)": 66.11,
+                "Demographic Model (95% CI)": 71.24000000000001,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "10",
+                "Election Result": 75.51638183155868,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 66.12,
+                "Demographic Model (5% CI)": 63.49,
+                "Demographic Model (95% CI)": 68.64,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "11",
+                "Election Result": 46.85628026748086,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 69.34,
+                "Demographic Model (5% CI)": 66.75,
+                "Demographic Model (95% CI)": 71.88,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "12",
+                "Election Result": 83.32636778712454,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 76.75999999999999,
+                "Demographic Model (5% CI)": 74.49,
+                "Demographic Model (95% CI)": 79.01,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "13",
+                "Election Result": 92.12103150951643,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 73.27,
+                "Demographic Model (5% CI)": 70.89999999999999,
+                "Demographic Model (95% CI)": 75.62,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "14",
+                "Election Result": 72.31656884619211,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 80.31,
+                "Demographic Model (5% CI)": 77.64999999999999,
+                "Demographic Model (95% CI)": 82.88,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "15",
+                "Election Result": 88.87520052004152,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 73.57000000000001,
+                "Demographic Model (5% CI)": 71.41,
+                "Demographic Model (95% CI)": 75.64999999999999,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "16",
+                "Election Result": 100,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 65.75,
+                "Demographic Model (5% CI)": 63.46000000000001,
+                "Demographic Model (95% CI)": 68,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "17",
+                "Election Result": 62.71944320854256,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 57.97,
+                "Demographic Model (5% CI)": 56.11000000000001,
+                "Demographic Model (95% CI)": 59.74,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "18",
+                "Election Result": 54.56501113188228,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 46.47,
+                "Demographic Model (5% CI)": 43.309999999999995,
+                "Demographic Model (95% CI)": 49.53,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "19",
+                "Election Result": 55.80275731271428,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 57.19,
+                "Demographic Model (5% CI)": 55.26,
+                "Demographic Model (95% CI)": 59,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "20",
+                "Election Result": 59.054662474351595,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 44.31,
+                "Demographic Model (5% CI)": 41.11,
+                "Demographic Model (95% CI)": 47.46,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "21",
+                "Election Result": 43.19138214255329,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 48.83,
+                "Demographic Model (5% CI)": 46.379999999999995,
+                "Demographic Model (95% CI)": 51.17,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "22",
+                "Election Result": 48.122792033207155,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 45.48,
+                "Demographic Model (5% CI)": 42.47,
+                "Demographic Model (95% CI)": 48.43,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "23",
+                "Election Result": 43.799629950263956,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 53.669999999999995,
+                "Demographic Model (5% CI)": 51.629999999999995,
+                "Demographic Model (95% CI)": 55.60000000000001,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "24",
+                "Election Result": 47.75718680351812,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 62.72,
+                "Demographic Model (5% CI)": 60.660000000000004,
+                "Demographic Model (95% CI)": 64.74,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "25",
+                "Election Result": 58.47748544251699,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 63.29,
+                "Demographic Model (5% CI)": 60.9,
+                "Demographic Model (95% CI)": 65.58,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "26",
+                "Election Result": 70.82874650817993,
+                "State": "NY"
+            },
+            {
+                "Demographic Model": 48.71,
+                "Demographic Model (5% CI)": 46.22,
+                "Demographic Model (95% CI)": 51.06,
+                "Demographic Model Type": "\"TwoPartyShare_HSP_BinDensity_10_5_DISERwe_EScale1\"",
+                "District": "27",
+                "Election Result": 43.69046054073003,
+                "State": "NY"
+            }
+        ]
+    },
+    "height": 600,
+    "layer": [
+        {
+            "encoding": {
+                "x": {
+                    "axis": {
+                        "title": "Election D-Share"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "tooltip": null,
+                "type": "line"
+            }
+        },
+        {
+            "encoding": {
+                "text": {
+                    "field": "District Name",
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "District",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Election Result",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model",
+                        "type": "quantitative"
+                    }
+                ],
+                "x": {
+                    "axis": {
+                        "title": "Election D-Share"
+                    },
+                    "field": "Election Result",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "dx": 20,
+                "type": "text"
+            },
+            "transform": [
+                {
+                    "as": "District Name",
+                    "calculate": "datum.State + '-' + datum.District"
+                }
+            ]
+        },
+        {
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "District",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Election Result",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model (5% CI)",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model (95% CI)",
+                        "type": "quantitative"
+                    }
+                ],
+                "x": {
+                    "axis": {
+                        "title": "Election D-Share"
+                    },
+                    "field": "Election Result",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model (5% CI)",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y2": {
+                    "field": "Demographic Model (95% CI)",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": {
+                "ticks": {
+                    "color": "black"
+                },
+                "type": "errorbar"
+            }
+        },
+        {
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "District",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Election Result",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Demographic Model",
+                        "type": "quantitative"
+                    }
+                ],
+                "x": {
+                    "axis": {
+                        "title": "Election D-Share"
+                    },
+                    "field": "Election Result",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": "Demographic Model"
+                    },
+                    "field": "Demographic Model",
+                    "scale": {
+                        "zero": false
+                    },
+                    "type": "quantitative"
+                }
+            },
+            "mark": "circle",
+            "selection": {
+                "view": {
+                    "bind": "scales",
+                    "clear": "click[event.shiftKey]",
+                    "encodings": [
+                        "x",
+                        "y"
+                    ],
+                    "type": "interval"
+                }
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "NY 2020: Election vs Demographic Model",
+    "width": 600
+};
+vegaEmbed('#figure_27',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<p>**Post input file
+“/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/NY<em>Congressional/inputs/Notes/Old</em>Districts_afterModelElection.md”
+not found. Please fix/remove**</p>
+<div class="brTableTitle">2020 Dem Vote Share, NY: Demographic Model vs. Election Results</div>
+<table class="brTable"><thead><tr><th>State</th><th>District</th><th>Demographic Model (Blue Ripple)</th><th>2020 Election</th></tr></thead><tbody><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">1</td><td style="; color: green" data-label="Demographic">58</td><td style="; color: green" data-label="Election">47</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">2</td><td style="; color: green" data-label="Demographic">65</td><td style="; color: green" data-label="Election">46</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">3</td><td style="; color: green" data-label="Demographic">66</td><td style="; color: green" data-label="Election">55</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">4</td><td style="; color: green" data-label="Demographic">69</td><td style="; color: green" data-label="Election">57</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">5</td><td style="; color: green" data-label="Demographic">78</td><td style="; color: green" data-label="Election">100</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">6</td><td style="; color: green" data-label="Demographic">70</td><td style="; color: green" data-label="Election">69</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">7</td><td style="; color: green" data-label="Demographic">72</td><td style="; color: green" data-label="Election">85</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">8</td><td style="; color: green" data-label="Demographic">78</td><td style="; color: green" data-label="Election">85</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">9</td><td style="; color: green" data-label="Demographic">78</td><td style="; color: green" data-label="Election">84</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">10</td><td style="; color: green" data-label="Demographic">69</td><td style="; color: green" data-label="Election">76</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">11</td><td style="; color: green" data-label="Demographic">66</td><td style="; color: green" data-label="Election">47</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">12</td><td style="; color: green" data-label="Demographic">69</td><td style="; color: green" data-label="Election">83</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">13</td><td style="; color: green" data-label="Demographic">77</td><td style="; color: green" data-label="Election">92</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">14</td><td style="; color: green" data-label="Demographic">73</td><td style="; color: green" data-label="Election">72</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">15</td><td style="; color: green" data-label="Demographic">80</td><td style="; color: green" data-label="Election">89</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">16</td><td style="; color: green" data-label="Demographic">74</td><td style="; color: green" data-label="Election">100</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">17</td><td style="; color: green" data-label="Demographic">66</td><td style="; color: green" data-label="Election">63</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">18</td><td style="; color: green" data-label="Demographic">58</td><td style="; color: green" data-label="Election">55</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">19</td><td style="; color: green" data-label="Demographic">46</td><td style="; color: green" data-label="Election">56</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">20</td><td style="; color: green" data-label="Demographic">57</td><td style="; color: green" data-label="Election">59</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">21</td><td style="; color: green" data-label="Demographic">44</td><td style="; color: green" data-label="Election">43</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">22</td><td style="; color: green" data-label="Demographic">49</td><td style="; color: green" data-label="Election">48</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">23</td><td style="; color: green" data-label="Demographic">45</td><td style="; color: green" data-label="Election">44</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">24</td><td style="; color: green" data-label="Demographic">54</td><td style="; color: green" data-label="Election">48</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">25</td><td style="; color: green" data-label="Demographic">63</td><td style="; color: green" data-label="Election">58</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">26</td><td style="; color: green" data-label="Demographic">63</td><td style="; color: green" data-label="Election">71</td></tr><tr><td style="; " data-label="State">NY</td><td style="; " data-label="District">27</td><td style="; color: green" data-label="Demographic">49</td><td style="; color: green" data-label="Election">44</td></tr></tbody></table>
+<!--
+  <div class="br-readmore">
+  Want To read more from Blue Ripple? Visit our
+  <a href="https://blueripple.org">website</a>,
+  sign up for <a href="http://eepurl.com/gzmeQ5">email updates</a>,
+    and follow us on <a href="https://twitter.com/BlueRipplePol">Twitter</a>
+    and <a href="https://www.facebook.com/blueripplepolitics/">FaceBook</a>.
+    Folks interested in our data and modeling efforts should also check out
+    our <a href="https://github.com/blueripple">Github page</a>.
+  </div>
+-->
+<!-- page content ends here -->
+
+</div>     <!-- pure-u-1... -->
+</div>     <!-- pure-g -->
+</section> <!-- page-content -->
+<footer>
+  <div class="br-header">
+    <div class="br-header-item br-header-br" style="width: 8em">
+      <p>BLUE RIPPLE POLITICS</p>
+    </div>
+    <div class="br-header-item br-home-button-c">
+      <a href="https://www.blueripplepolitics.org">
+	<div class="br-home-button-b">HOME</div>
+      </a>
+    </div>
+  </div>
+</footer>
+<!--
+<script>
+var mindoc=function(){function e(e){return e=e.toLowerCase(),e.charAt(0).toUpperCase()+e.substr(1)}function n(e){var n=new RegExp(/^\b[a-z]\S+\b-\b\S+\b/);return n.test(e)&&(e=e.replace(/-+/g," ")),e}function t(t){return t=n(t),e(t)}function r(e,n){return!!e.className.match(new RegExp("(\\s|^)"+n+"(\\s|)"))}function a(e,n){r(e,n)||(e.className+=" "+n)}function o(e,n){if(r(e,n)){var t=new RegExp("(\\s|^)"+n+"(\\s|)");e.className=e.className.replace(t," ")}}function u(){var e,n,t={table:"pure-table pure-table-bordered"};Object.keys(t).forEach(function(r){if(e=document.getElementsByTagName(r),n=e.length,n>1)for(var o=0;n>o;o++)a(e[o],t[r])})}function c(e,n){for(var t=0,r=e.length;r>t;t++)for(var a=e[t].getElementsByTagName("a"),u=0,c=a.length;c>u;u++)a[u].addEventListener("click",function(){o(n,"hidden")})}function i(e,n){for(var t=0,r=e.length;r>t;t++)e[t].addEventListener("click",function(){o(n,"hidden")})}function d(){var e=document.createElement("li");return a(e,"pure-menu-item"),e}function l(e){var n=document.createElement("a");return n.id="menu-"+e,n.href="#",n.innerHTML=t(e),a(n,"pure-menu-link"),n}function m(e){var n=document.createDocumentFragment(),t=document.createElement("nav"),r=document.createElement("div"),o=document.createElement("ul");n.appendChild(t),t.appendChild(r),r.appendChild(o),a(r,"pure-menu"),a(o,"pure-menu-list");var u="All sections",c=d();a(c,"pure-menu-selected"),o.appendChild(c),c.appendChild(l(u));for(var i,m,s=0,f=e.length;f>s;s++)i=e[s].getAttribute("id"),m=d(),o.appendChild(m),m.appendChild(l(i));var p=document.getElementById("page-content");document.querySelector("body").insertBefore(n,p)}function s(e){var n;e.hasAttribute("pure-menu-selected")||(n=document.querySelector(".pure-menu-selected"),o(n,"pure-menu-selected"),a(e,"pure-menu-selected"))}function f(e,n){var t,u=n.getAttribute("id"),c=u.replace(/menu-/,""),i=document.getElementById(u).parentNode;s(i);for(var d in e)t=e[d],r(t,"hidden")||a(t,"hidden"),t.getAttribute("id")===c&&r(t,"hidden")&&o(t,"hidden")}function p(e){var n;for(var t in e)n=e[t],r(n,"hidden")&&o(n,"hidden")}function v(e){for(var n=document.querySelectorAll(".pure-menu-link"),t=0,r=n.length;r>t;t++)0===t?n[t].addEventListener("click",function(){p(e)}):n[t].addEventListener("click",function(){f(e,this)})}return{main:function(){if(u(),document.getElementsByClassName("level2").length>0){var e,n=[];["abstract","level2","footnotes"].forEach(function(t){e=document.getElementsByClassName(t);for(var r=0,a=e.length;a>r;r++)n.push(e[r])});var t;for(var o in n)t=n[o],r(t,"level2")||a(t,"level2"),r(t,"footnotes")&&t.setAttribute("id","footnotes");m(n),v(n);var d=document.getElementsByClassName("citation"),l=document.getElementById("references");c(d,l);var s=document.getElementsByClassName("footnoteRef"),f=document.getElementById("footnotes");i(s,f)}}}}();window.addEventListener("load",function(){mindoc.main()});
+</script>
+-->
+<!-- For debugging local scripts -->
+<!-- <script src="../build/mindoc.js"></script> -->
+</body>
+</html>
