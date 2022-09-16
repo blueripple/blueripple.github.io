@@ -249,7 +249,7 @@
 
 <!-- page content begins here -->
 
-<div class="published">August 24, 2022 </div>
+<div class="published">September 16, 2022 </div>
 <p>Blue Ripple Politics focuses on demographics and location as an
 indicator of partisan lean, leaving out things like district specific
 partisan history<a href="#fn1" class="footnote-ref" id="fnref1"
@@ -281,7 +281,7 @@ equally populated bins.</p></li>
 we’ve added a blue/red line to indicate the middle 50% D/R range of
 districts.</p></li>
 </ul>
-<figure id="figure_6626">
+<figure id="figure_17282">
 <script type="text/javascript">var vlSpec=
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
@@ -302,91 +302,151 @@ districts.</p></li>
         "dRanks": [
             {
                 "Hi": 9,
-                "Lo": 4.5,
-                "Stat": "%Voters-of-color"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5,
-                "Stat": "%Grad-among-White"
+                "Lo": 5.5,
+                "Stat": "Density"
             },
             {
                 "Hi": 9,
                 "Lo": 5.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
             }
         ],
         "districts": [
             {
-                "Rank": 5.5,
+                "Rank": 7,
                 "Size": 50,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "NJ-11"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "D Median"
             },
             {
-                "Rank": 3.5,
+                "Rank": 2.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "R Median"
             },
             {
                 "Rank": 9.5,
                 "Size": 50,
-                "Stat": "%Grad-among-White",
-                "Type": "NJ-11"
-            },
-            {
-                "Rank": 7,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 7,
-                "Size": 50,
-                "Stat": "Density",
+                "Stat": "%Grad-Among-White",
                 "Type": "NJ-11"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "Density",
+                "Stat": "%Grad-Among-White",
                 "Type": "D Median"
             },
             {
                 "Rank": 3,
                 "Size": 10,
-                "Stat": "Density",
+                "Stat": "%Grad-Among-White",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 50,
+                "Stat": "%Voters-Of-Color",
+                "Type": "NJ-11"
+            },
+            {
+                "Rank": 7.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 3.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
                 "Type": "R Median"
             }
         ],
         "rRanks": [
             {
-                "Hi": 5.5,
+                "Hi": 4.5,
                 "Lo": 1.5,
-                "Stat": "%Voters-of-color"
+                "Stat": "Density"
             },
             {
                 "Hi": 5,
                 "Lo": 1.5,
-                "Stat": "%Grad-among-White"
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             },
             {
                 "Hi": 4.5,
                 "Lo": 1.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 4.5,
+                "Lo": 1.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             }
         ]
     },
@@ -440,8 +500,8 @@ districts.</p></li>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -514,8 +574,8 @@ districts.</p></li>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -581,8 +641,8 @@ districts.</p></li>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -622,8 +682,8 @@ districts.</p></li>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -658,8 +718,8 @@ districts.</p></li>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -677,12 +737,12 @@ districts.</p></li>
     "title": "NJ-11: National Demographics",
     "width": 300
 };
-vegaEmbed('#figure_6626',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_17282',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>Below, we replace the national medians with state medians (while
 keeping the <em>national</em> ranges). Each state is different and
 seeing that context helps as well.</p>
-<figure id="figure_6627">
+<figure id="figure_17283">
 <script type="text/javascript">var vlSpec=
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
@@ -703,57 +763,51 @@ seeing that context helps as well.</p>
         "dRanks": [
             {
                 "Hi": 9,
-                "Lo": 4.5,
-                "Stat": "%Voters-of-color"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5,
-                "Stat": "%Grad-among-White"
+                "Lo": 5.5,
+                "Stat": "Density"
             },
             {
                 "Hi": 9,
                 "Lo": 5.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
             }
         ],
         "districts": [
-            {
-                "Rank": 5.5,
-                "Size": 50,
-                "Stat": "%Voters-of-color",
-                "Type": "NJ-11"
-            },
-            {
-                "Rank": 8,
-                "Size": 10,
-                "Stat": "%Voters-of-color",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3.5,
-                "Size": 10,
-                "Stat": "%Voters-of-color",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 9.5,
-                "Size": 50,
-                "Stat": "%Grad-among-White",
-                "Type": "NJ-11"
-            },
-            {
-                "Rank": 8,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 6,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "R Median"
-            },
             {
                 "Rank": 7,
                 "Size": 50,
@@ -771,23 +825,89 @@ seeing that context helps as well.</p>
                 "Size": 10,
                 "Stat": "Density",
                 "Type": "R Median"
+            },
+            {
+                "Rank": 9.5,
+                "Size": 50,
+                "Stat": "%Grad-Among-White",
+                "Type": "NJ-11"
+            },
+            {
+                "Rank": 7,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 6,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 50,
+                "Stat": "%Voters-Of-Color",
+                "Type": "NJ-11"
+            },
+            {
+                "Rank": 7,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 3.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "R Median"
             }
         ],
         "rRanks": [
             {
-                "Hi": 5.5,
+                "Hi": 4.5,
                 "Lo": 1.5,
-                "Stat": "%Voters-of-color"
+                "Stat": "Density"
             },
             {
                 "Hi": 5,
                 "Lo": 1.5,
-                "Stat": "%Grad-among-White"
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             },
             {
                 "Hi": 4.5,
                 "Lo": 1.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 4.5,
+                "Lo": 1.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             }
         ]
     },
@@ -841,8 +961,8 @@ seeing that context helps as well.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -915,8 +1035,8 @@ seeing that context helps as well.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -982,8 +1102,8 @@ seeing that context helps as well.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1023,8 +1143,8 @@ seeing that context helps as well.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1059,8 +1179,8 @@ seeing that context helps as well.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1078,11 +1198,11 @@ seeing that context helps as well.</p>
     "title": "NJ-11: State Demographics",
     "width": 300
 };
-vegaEmbed('#figure_6627',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_17283',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>Some final charts, this time adding CT-04, GA-06, and TX-24 for
 comparison.</p>
-<figure id="figure_6628">
+<figure id="figure_17284">
 <script type="text/javascript">var vlSpec=
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
@@ -1103,145 +1223,205 @@ comparison.</p>
         "dRanks": [
             {
                 "Hi": 9,
-                "Lo": 4.5,
-                "Stat": "%Voters-of-color"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5,
-                "Stat": "%Grad-among-White"
+                "Lo": 5.5,
+                "Stat": "Density"
             },
             {
                 "Hi": 9,
                 "Lo": 5.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
             }
         ],
         "districts": [
             {
-                "Rank": 5.5,
+                "Rank": 7,
                 "Size": 50,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "NJ-11"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "D Median"
             },
             {
-                "Rank": 3.5,
+                "Rank": 2.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "R Median"
             },
             {
                 "Rank": 9.5,
                 "Size": 50,
-                "Stat": "%Grad-among-White",
+                "Stat": "%Grad-Among-White",
                 "Type": "NJ-11"
             },
             {
-                "Rank": 7,
+                "Rank": 7.5,
                 "Size": 10,
-                "Stat": "%Grad-among-White",
+                "Stat": "%Grad-Among-White",
                 "Type": "D Median"
             },
             {
                 "Rank": 3,
                 "Size": 10,
-                "Stat": "%Grad-among-White",
+                "Stat": "%Grad-Among-White",
                 "Type": "R Median"
             },
             {
-                "Rank": 7,
+                "Rank": 5.5,
                 "Size": 50,
-                "Stat": "Density",
+                "Stat": "%Voters-Of-Color",
                 "Type": "NJ-11"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "Density",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 10,
-                "Stat": "Density",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 6.5,
-                "Size": 25,
-                "Stat": "%Voters-of-color",
-                "Type": "CT-04"
-            },
-            {
-                "Rank": 7.5,
-                "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "%Voters-Of-Color",
                 "Type": "D Median"
             },
             {
                 "Rank": 3.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "%Voters-Of-Color",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 7,
+                "Size": 25,
+                "Stat": "Density",
+                "Type": "CT-04"
+            },
+            {
+                "Rank": 7.5,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 2.5,
+                "Size": 10,
+                "Stat": "Density",
                 "Type": "R Median"
             },
             {
                 "Rank": 10,
                 "Size": 25,
-                "Stat": "%Grad-among-White",
-                "Type": "CT-04"
-            },
-            {
-                "Rank": 7,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 7,
-                "Size": 25,
-                "Stat": "Density",
+                "Stat": "%Grad-Among-White",
                 "Type": "CT-04"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "Density",
+                "Stat": "%Grad-Among-White",
                 "Type": "D Median"
             },
             {
                 "Rank": 3,
                 "Size": 10,
-                "Stat": "Density",
+                "Stat": "%Grad-Among-White",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 6.5,
+                "Size": 25,
+                "Stat": "%Voters-Of-Color",
+                "Type": "CT-04"
+            },
+            {
+                "Rank": 7.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 3.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
                 "Type": "R Median"
             }
         ],
         "rRanks": [
             {
-                "Hi": 5.5,
+                "Hi": 4.5,
                 "Lo": 1.5,
-                "Stat": "%Voters-of-color"
+                "Stat": "Density"
             },
             {
                 "Hi": 5,
                 "Lo": 1.5,
-                "Stat": "%Grad-among-White"
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             },
             {
                 "Hi": 4.5,
                 "Lo": 1.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 4.5,
+                "Lo": 1.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             }
         ]
     },
@@ -1297,8 +1477,8 @@ comparison.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1373,8 +1553,8 @@ comparison.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1442,8 +1622,8 @@ comparison.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1483,8 +1663,8 @@ comparison.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1519,8 +1699,8 @@ comparison.</p>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1538,9 +1718,9 @@ comparison.</p>
     "title": "National Demographic Comparison",
     "width": 300
 };
-vegaEmbed('#figure_6628',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_17284',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<figure id="figure_6629">
+<figure id="figure_17285">
 <script type="text/javascript">var vlSpec=
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
@@ -1561,62 +1741,110 @@ vegaEmbed('#figure_6628',vlSpec,{"renderer": "canvas"});</script>
         "dRanks": [
             {
                 "Hi": 9,
-                "Lo": 4.5,
-                "Stat": "%Voters-of-color"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5,
-                "Stat": "%Grad-among-White"
+                "Lo": 5.5,
+                "Stat": "Density"
             },
             {
                 "Hi": 9,
                 "Lo": 5.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
             }
         ],
         "districts": [
             {
-                "Rank": 5.5,
+                "Rank": 7,
                 "Size": 50,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "NJ-11"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "D Median"
             },
             {
-                "Rank": 3.5,
+                "Rank": 2.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "R Median"
             },
             {
                 "Rank": 9.5,
                 "Size": 50,
-                "Stat": "%Grad-among-White",
+                "Stat": "%Grad-Among-White",
                 "Type": "NJ-11"
             },
             {
-                "Rank": 7,
+                "Rank": 7.5,
                 "Size": 10,
-                "Stat": "%Grad-among-White",
+                "Stat": "%Grad-Among-White",
                 "Type": "D Median"
             },
             {
                 "Rank": 3,
                 "Size": 10,
-                "Stat": "%Grad-among-White",
+                "Stat": "%Grad-Among-White",
                 "Type": "R Median"
             },
             {
-                "Rank": 7,
+                "Rank": 5.5,
                 "Size": 50,
-                "Stat": "Density",
+                "Stat": "%Voters-Of-Color",
                 "Type": "NJ-11"
+            },
+            {
+                "Rank": 7.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 3.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 25,
+                "Stat": "Density",
+                "Type": "GA-06"
             },
             {
                 "Rank": 7.5,
@@ -1625,81 +1853,93 @@ vegaEmbed('#figure_6628',vlSpec,{"renderer": "canvas"});</script>
                 "Type": "D Median"
             },
             {
-                "Rank": 3,
+                "Rank": 2.5,
                 "Size": 10,
                 "Stat": "Density",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 9.5,
+                "Size": 25,
+                "Stat": "%Grad-Among-White",
+                "Type": "GA-06"
+            },
+            {
+                "Rank": 7.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 3,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
                 "Type": "R Median"
             },
             {
                 "Rank": 5,
                 "Size": 25,
-                "Stat": "%Voters-of-color",
+                "Stat": "%Voters-Of-Color",
                 "Type": "GA-06"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "%Voters-Of-Color",
                 "Type": "D Median"
             },
             {
                 "Rank": 3.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 9.5,
-                "Size": 25,
-                "Stat": "%Grad-among-White",
-                "Type": "GA-06"
-            },
-            {
-                "Rank": 7,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 5.5,
-                "Size": 25,
-                "Stat": "Density",
-                "Type": "GA-06"
-            },
-            {
-                "Rank": 7.5,
-                "Size": 10,
-                "Stat": "Density",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 10,
-                "Stat": "Density",
+                "Stat": "%Voters-Of-Color",
                 "Type": "R Median"
             }
         ],
         "rRanks": [
             {
-                "Hi": 5.5,
+                "Hi": 4.5,
                 "Lo": 1.5,
-                "Stat": "%Voters-of-color"
+                "Stat": "Density"
             },
             {
                 "Hi": 5,
                 "Lo": 1.5,
-                "Stat": "%Grad-among-White"
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             },
             {
                 "Hi": 4.5,
                 "Lo": 1.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 4.5,
+                "Lo": 1.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             }
         ]
     },
@@ -1755,8 +1995,8 @@ vegaEmbed('#figure_6628',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1831,8 +2071,8 @@ vegaEmbed('#figure_6628',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1900,8 +2140,8 @@ vegaEmbed('#figure_6628',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1941,8 +2181,8 @@ vegaEmbed('#figure_6628',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1977,8 +2217,8 @@ vegaEmbed('#figure_6628',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -1996,9 +2236,9 @@ vegaEmbed('#figure_6628',vlSpec,{"renderer": "canvas"});</script>
     "title": "National Demographic Comparison",
     "width": 300
 };
-vegaEmbed('#figure_6629',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_17285',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<figure id="figure_6630">
+<figure id="figure_17286">
 <script type="text/javascript">var vlSpec=
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
@@ -2019,109 +2259,103 @@ vegaEmbed('#figure_6629',vlSpec,{"renderer": "canvas"});</script>
         "dRanks": [
             {
                 "Hi": 9,
-                "Lo": 4.5,
-                "Stat": "%Voters-of-color"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5,
-                "Stat": "%Grad-among-White"
+                "Lo": 5.5,
+                "Stat": "Density"
             },
             {
                 "Hi": 9,
                 "Lo": 5.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 9,
+                "Lo": 4.5,
+                "Stat": "%Voters-Of-Color"
             }
         ],
         "districts": [
             {
-                "Rank": 5.5,
+                "Rank": 7,
                 "Size": 50,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "NJ-11"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "D Median"
             },
             {
-                "Rank": 3.5,
+                "Rank": 2.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "Density",
                 "Type": "R Median"
             },
             {
                 "Rank": 9.5,
                 "Size": 50,
-                "Stat": "%Grad-among-White",
-                "Type": "NJ-11"
-            },
-            {
-                "Rank": 7,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 7,
-                "Size": 50,
-                "Stat": "Density",
+                "Stat": "%Grad-Among-White",
                 "Type": "NJ-11"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "Density",
+                "Stat": "%Grad-Among-White",
                 "Type": "D Median"
             },
             {
                 "Rank": 3,
                 "Size": 10,
-                "Stat": "Density",
+                "Stat": "%Grad-Among-White",
                 "Type": "R Median"
             },
             {
                 "Rank": 5.5,
-                "Size": 25,
-                "Stat": "%Voters-of-color",
-                "Type": "TX-24"
+                "Size": 50,
+                "Stat": "%Voters-Of-Color",
+                "Type": "NJ-11"
             },
             {
                 "Rank": 7.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
+                "Stat": "%Voters-Of-Color",
                 "Type": "D Median"
             },
             {
                 "Rank": 3.5,
                 "Size": 10,
-                "Stat": "%Voters-of-color",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 9,
-                "Size": 25,
-                "Stat": "%Grad-among-White",
-                "Type": "TX-24"
-            },
-            {
-                "Rank": 7,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 10,
-                "Stat": "%Grad-among-White",
+                "Stat": "%Voters-Of-Color",
                 "Type": "R Median"
             },
             {
@@ -2137,27 +2371,93 @@ vegaEmbed('#figure_6629',vlSpec,{"renderer": "canvas"});</script>
                 "Type": "D Median"
             },
             {
-                "Rank": 3,
+                "Rank": 2.5,
                 "Size": 10,
                 "Stat": "Density",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 9,
+                "Size": 25,
+                "Stat": "%Grad-Among-White",
+                "Type": "TX-24"
+            },
+            {
+                "Rank": 7.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 3,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 25,
+                "Stat": "%Voters-Of-Color",
+                "Type": "TX-24"
+            },
+            {
+                "Rank": 7.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 3.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
                 "Type": "R Median"
             }
         ],
         "rRanks": [
             {
-                "Hi": 5.5,
+                "Hi": 4.5,
                 "Lo": 1.5,
-                "Stat": "%Voters-of-color"
+                "Stat": "Density"
             },
             {
                 "Hi": 5,
                 "Lo": 1.5,
-                "Stat": "%Grad-among-White"
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             },
             {
                 "Hi": 4.5,
                 "Lo": 1.5,
                 "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 4.5,
+                "Lo": 1.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 5,
+                "Lo": 1.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 5.5,
+                "Lo": 1.5,
+                "Stat": "%Voters-Of-Color"
             }
         ]
     },
@@ -2213,8 +2513,8 @@ vegaEmbed('#figure_6629',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -2289,8 +2589,8 @@ vegaEmbed('#figure_6629',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -2358,8 +2658,8 @@ vegaEmbed('#figure_6629',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -2399,8 +2699,8 @@ vegaEmbed('#figure_6629',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -2435,8 +2735,8 @@ vegaEmbed('#figure_6629',vlSpec,{"renderer": "canvas"});</script>
                     "field": "Stat",
                     "sort": [
                         "Density",
-                        "%Grad-among-White",
-                        "%Voters-of-color"
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
                     ],
                     "type": "nominal"
                 }
@@ -2454,7 +2754,7 @@ vegaEmbed('#figure_6629',vlSpec,{"renderer": "canvas"});</script>
     "title": "National Demographic Comparison",
     "width": 300
 };
-vegaEmbed('#figure_6630',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_17286',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>For the curious, a bit more about our key metrics:</p>
 <ul>
@@ -2483,21 +2783,20 @@ toward the Republican party, particularly among non-college-educated
 Hispanic voters. Still, the fraction of a district which is non-White is
 heavily predictive.</p></li>
 </ul>
-<section class="footnotes footnotes-end-of-document"
+<section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>Our model uses election results and
-surveys to estimate turnout and voter preference according to various
-demographic variables. But we don’t use previous election results as a
-<em>predictor</em>, though that is clearly crucial if your goal is
-prediction.<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>We do use incumbency as a predictor
-otherwise the strong effect of incumbency would make the rest of the fit
-less precise. But we do not apply it when analyzing districts because
-our goal is to look at the potential for districts to change, not to
-predict a specific outcome.<a href="#fnref2" class="footnote-back"
+<li id="fn1"><p>Our model uses election results and surveys to estimate
+turnout and voter preference according to various demographic variables.
+But we don’t use previous election results as a <em>predictor</em>,
+though that is clearly crucial if your goal is prediction.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>We do use incumbency as a predictor otherwise the strong
+effect of incumbency would make the rest of the fit less precise. But we
+do not apply it when analyzing districts because our goal is to look at
+the potential for districts to change, not to predict a specific
+outcome.<a href="#fnref2" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
