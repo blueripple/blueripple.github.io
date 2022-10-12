@@ -249,7 +249,7 @@
 
 <!-- page content begins here -->
 
-<div class="published">October 11, 2022 </div>
+<div class="published">October 12, 2022 </div>
 <p>Blue Ripple Politics focuses on demographics and location as an
 indicator of partisan lean, leaving out things like district specific
 partisan history<a href="#fn1" class="footnote-ref" id="fnref1"
@@ -264,13 +264,14 @@ surprises and districts on the cusp of change. For more details about
 the model, please visit the <a
 href="https://blueripple.github.io/explainer/model/ElectionModel/post.html">model-details
 section of our web-site</a>.</p>
-<p>For <a href="https://www.sawbuckpatriots.com">Sawbuck Patriots</a>
-we’re using our methodology to provide color commentary, to give you,
-the hardy daily donors, a different way to look at Alex’s picks. So
-below we’re giving you the demographic data we think is most relevant in
-any district: the population density, what percentage of the
-eligible-to-vote White people have graduated from college and what
-percent of the eligible-to-vote population are voters of color.</p>
+<p>IL-17 looks slightly D-leaning in historical models (54% D), but Blue
+Ripple’s demographic model is somewhat more worried for Dems (49% D).
+The mid-density district is mainly comprised of white voters with lower
+levels of education (orange circles below), and all of these factors
+drag its tendency toward the GOP. That said, nearby MI-08 has similar
+demographic characteristics but is more strongly D-leaning according to
+pundits, suggesting the Dems may have a better-than-advertised chance
+here.</p>
 <p>Our key data is summarized in the chart below.</p>
 <ul>
 <li><p>The data for all districts is put in order and binned into 10
@@ -280,7 +281,7 @@ equally populated bins.</p></li>
 we’ve added a blue/red line to indicate the middle 50% D/R range of
 districts.</p></li>
 </ul>
-<figure id="figure_17387">
+<figure id="figure_17381">
 <script type="text/javascript">var vlSpec=
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
@@ -736,12 +737,12 @@ districts.</p></li>
     "title": "IL-17: National Demographics",
     "width": 300
 };
-vegaEmbed('#figure_17387',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_17381',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>Below, we replace the national medians with state medians (while
 keeping the <em>national</em> ranges). Each state is different and
 seeing that context helps as well.</p>
-<figure id="figure_17388">
+<figure id="figure_17382">
 <script type="text/javascript">var vlSpec=
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
@@ -1197,11 +1198,10 @@ seeing that context helps as well.</p>
     "title": "IL-17: State Demographics",
     "width": 300
 };
-vegaEmbed('#figure_17388',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_17382',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>Some final charts, this time adding MI-08, and FL-08 for
-comparison.</p>
-<figure id="figure_17389">
+<p>One final chart, this time adding MI-08 for comparison.</p>
+<figure id="figure_17383">
 <script type="text/javascript">var vlSpec=
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
@@ -1717,525 +1717,7 @@ comparison.</p>
     "title": "National Demographic Comparison",
     "width": 300
 };
-vegaEmbed('#figure_17389',vlSpec,{"renderer": "canvas"});</script>
-</figure>
-<figure id="figure_17390">
-<script type="text/javascript">var vlSpec=
-{
-    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "autosize": {
-        "contains": "padding",
-        "resize": true,
-        "type": "pad"
-    },
-    "config": {
-        "view": {
-            "continuousHeight": 80,
-            "continuousWidth": 300,
-            "discreteHeight": 80,
-            "discreteWidth": 300
-        }
-    },
-    "datasets": {
-        "dRanks": [
-            {
-                "Hi": 9,
-                "Lo": 5.5,
-                "Stat": "Density"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5.5,
-                "Stat": "Density"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5.5,
-                "Stat": "Density"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5,
-                "Stat": "%Grad-Among-White"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5,
-                "Stat": "%Grad-Among-White"
-            },
-            {
-                "Hi": 9,
-                "Lo": 5,
-                "Stat": "%Grad-Among-White"
-            },
-            {
-                "Hi": 9,
-                "Lo": 4.5,
-                "Stat": "%Voters-Of-Color"
-            },
-            {
-                "Hi": 9,
-                "Lo": 4.5,
-                "Stat": "%Voters-Of-Color"
-            },
-            {
-                "Hi": 9,
-                "Lo": 4.5,
-                "Stat": "%Voters-Of-Color"
-            }
-        ],
-        "districts": [
-            {
-                "Rank": 4.5,
-                "Size": 50,
-                "Stat": "Density",
-                "Type": "IL-17"
-            },
-            {
-                "Rank": 7.5,
-                "Size": 10,
-                "Stat": "Density",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 2.5,
-                "Size": 10,
-                "Stat": "Density",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 1.5,
-                "Size": 50,
-                "Stat": "%Grad-Among-White",
-                "Type": "IL-17"
-            },
-            {
-                "Rank": 7.5,
-                "Size": 10,
-                "Stat": "%Grad-Among-White",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 10,
-                "Stat": "%Grad-Among-White",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 50,
-                "Stat": "%Voters-Of-Color",
-                "Type": "IL-17"
-            },
-            {
-                "Rank": 7.5,
-                "Size": 10,
-                "Stat": "%Voters-Of-Color",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3.5,
-                "Size": 10,
-                "Stat": "%Voters-Of-Color",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 5.5,
-                "Size": 25,
-                "Stat": "Density",
-                "Type": "FL-08"
-            },
-            {
-                "Rank": 7.5,
-                "Size": 10,
-                "Stat": "Density",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 2.5,
-                "Size": 10,
-                "Stat": "Density",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 4,
-                "Size": 25,
-                "Stat": "%Grad-Among-White",
-                "Type": "FL-08"
-            },
-            {
-                "Rank": 7.5,
-                "Size": 10,
-                "Stat": "%Grad-Among-White",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 10,
-                "Stat": "%Grad-Among-White",
-                "Type": "R Median"
-            },
-            {
-                "Rank": 3,
-                "Size": 25,
-                "Stat": "%Voters-Of-Color",
-                "Type": "FL-08"
-            },
-            {
-                "Rank": 7.5,
-                "Size": 10,
-                "Stat": "%Voters-Of-Color",
-                "Type": "D Median"
-            },
-            {
-                "Rank": 3.5,
-                "Size": 10,
-                "Stat": "%Voters-Of-Color",
-                "Type": "R Median"
-            }
-        ],
-        "rRanks": [
-            {
-                "Hi": 4.5,
-                "Lo": 1.5,
-                "Stat": "Density"
-            },
-            {
-                "Hi": 5,
-                "Lo": 1.5,
-                "Stat": "%Grad-Among-White"
-            },
-            {
-                "Hi": 5.5,
-                "Lo": 1.5,
-                "Stat": "%Voters-Of-Color"
-            },
-            {
-                "Hi": 4.5,
-                "Lo": 1.5,
-                "Stat": "Density"
-            },
-            {
-                "Hi": 5,
-                "Lo": 1.5,
-                "Stat": "%Grad-Among-White"
-            },
-            {
-                "Hi": 5.5,
-                "Lo": 1.5,
-                "Stat": "%Voters-Of-Color"
-            },
-            {
-                "Hi": 4.5,
-                "Lo": 1.5,
-                "Stat": "Density"
-            },
-            {
-                "Hi": 5,
-                "Lo": 1.5,
-                "Stat": "%Grad-Among-White"
-            },
-            {
-                "Hi": 5.5,
-                "Lo": 1.5,
-                "Stat": "%Voters-Of-Color"
-            }
-        ]
-    },
-    "height": 80,
-    "layer": [
-        {
-            "data": {
-                "name": "districts"
-            },
-            "encoding": {
-                "color": {
-                    "field": "Type",
-                    "legend": {
-                        "orient": "right"
-                    },
-                    "scale": {
-                        "domain": [
-                            "R Median",
-                            "IL-17",
-                            "FL-08",
-                            "D Median"
-                        ],
-                        "range": [
-                            "red",
-                            "orange",
-                            "green",
-                            "blue"
-                        ]
-                    },
-                    "title": null,
-                    "type": "nominal"
-                },
-                "size": {
-                    "field": "Size",
-                    "legend": null,
-                    "title": null,
-                    "type": "quantitative"
-                },
-                "x": {
-                    "field": "Rank",
-                    "scale": {
-                        "domain": [
-                            0,
-                            10
-                        ]
-                    },
-                    "type": "quantitative"
-                },
-                "y": {
-                    "axis": {
-                        "title": null
-                    },
-                    "field": "Stat",
-                    "sort": [
-                        "Density",
-                        "%Grad-Among-White",
-                        "%Voters-Of-Color"
-                    ],
-                    "type": "nominal"
-                }
-            },
-            "mark": "point",
-            "transform": [
-                {
-                    "filter": {
-                        "not": {
-                            "or": [
-                                {
-                                    "equal": "D Median",
-                                    "field": "Type"
-                                },
-                                {
-                                    "equal": "R Median",
-                                    "field": "Type"
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "data": {
-                "name": "districts"
-            },
-            "encoding": {
-                "color": {
-                    "field": "Type",
-                    "legend": {
-                        "orient": "right"
-                    },
-                    "scale": {
-                        "domain": [
-                            "R Median",
-                            "IL-17",
-                            "FL-08",
-                            "D Median"
-                        ],
-                        "range": [
-                            "red",
-                            "orange",
-                            "green",
-                            "blue"
-                        ]
-                    },
-                    "title": null,
-                    "type": "nominal"
-                },
-                "size": {
-                    "field": "Size",
-                    "legend": null,
-                    "title": null,
-                    "type": "quantitative"
-                },
-                "x": {
-                    "field": "Rank",
-                    "scale": {
-                        "domain": [
-                            0,
-                            10
-                        ]
-                    },
-                    "type": "quantitative"
-                },
-                "y": {
-                    "axis": {
-                        "title": null
-                    },
-                    "field": "Stat",
-                    "sort": [
-                        "Density",
-                        "%Grad-Among-White",
-                        "%Voters-Of-Color"
-                    ],
-                    "type": "nominal"
-                }
-            },
-            "mark": {
-                "type": "point",
-                "yOffset": -1
-            },
-            "transform": [
-                {
-                    "filter": {
-                        "equal": "D Median",
-                        "field": "Type"
-                    }
-                }
-            ]
-        },
-        {
-            "data": {
-                "name": "districts"
-            },
-            "encoding": {
-                "color": {
-                    "field": "Type",
-                    "legend": {
-                        "orient": "right"
-                    },
-                    "scale": {
-                        "domain": [
-                            "R Median",
-                            "IL-17",
-                            "FL-08",
-                            "D Median"
-                        ],
-                        "range": [
-                            "red",
-                            "orange",
-                            "green",
-                            "blue"
-                        ]
-                    },
-                    "title": null,
-                    "type": "nominal"
-                },
-                "size": {
-                    "field": "Size",
-                    "legend": null,
-                    "title": null,
-                    "type": "quantitative"
-                },
-                "x": {
-                    "field": "Rank",
-                    "scale": {
-                        "domain": [
-                            0,
-                            10
-                        ]
-                    },
-                    "type": "quantitative"
-                },
-                "y": {
-                    "axis": {
-                        "title": null
-                    },
-                    "field": "Stat",
-                    "sort": [
-                        "Density",
-                        "%Grad-Among-White",
-                        "%Voters-Of-Color"
-                    ],
-                    "type": "nominal"
-                }
-            },
-            "mark": {
-                "type": "point",
-                "yOffset": 1
-            },
-            "transform": [
-                {
-                    "filter": {
-                        "equal": "R Median",
-                        "field": "Type"
-                    }
-                }
-            ]
-        },
-        {
-            "data": {
-                "name": "dRanks"
-            },
-            "encoding": {
-                "x": {
-                    "field": "Lo",
-                    "title": "Rank (Lines represent middle 50% of D/R districts)",
-                    "type": "quantitative"
-                },
-                "x2": {
-                    "field": "Hi",
-                    "title": null,
-                    "type": "quantitative"
-                },
-                "y": {
-                    "axis": {
-                        "title": null
-                    },
-                    "field": "Stat",
-                    "sort": [
-                        "Density",
-                        "%Grad-Among-White",
-                        "%Voters-Of-Color"
-                    ],
-                    "type": "nominal"
-                }
-            },
-            "mark": {
-                "color": "blue",
-                "orient": "horizontal",
-                "size": 3,
-                "type": "bar",
-                "yOffset": -1
-            }
-        },
-        {
-            "data": {
-                "name": "rRanks"
-            },
-            "encoding": {
-                "x": {
-                    "field": "Lo",
-                    "title": "Rank (Lines represent middle 50% of D/R districts)",
-                    "type": "quantitative"
-                },
-                "x2": {
-                    "field": "Hi",
-                    "title": null,
-                    "type": "quantitative"
-                },
-                "y": {
-                    "axis": {
-                        "title": null
-                    },
-                    "field": "Stat",
-                    "sort": [
-                        "Density",
-                        "%Grad-Among-White",
-                        "%Voters-Of-Color"
-                    ],
-                    "type": "nominal"
-                }
-            },
-            "mark": {
-                "color": "red",
-                "orient": "horizontal",
-                "size": 3,
-                "type": "bar",
-                "yOffset": 1
-            }
-        }
-    ],
-    "padding": 5,
-    "title": "National Demographic Comparison",
-    "width": 300
-};
-vegaEmbed('#figure_17390',vlSpec,{"renderer": "canvas"});</script>
+vegaEmbed('#figure_17383',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>For the curious, a bit more about our key metrics:</p>
 <ul>
