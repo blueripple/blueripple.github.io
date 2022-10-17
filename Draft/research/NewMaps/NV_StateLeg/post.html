@@ -249,7 +249,7 @@
 
 <!-- page content begins here -->
 
-<div class="published">October  7, 2022 (11:53:16) </div>
+<div class="published">October 17, 2022 (08:45:04) </div>
 <p><strong>Post input file
 “/Users/adam/BlueRipple/research/br-2021-NewMaps/posts/NV<em>StateLeg/inputs/post</em>intro.md”
 not found. Please fix/remove</strong></p>
@@ -9559,6 +9559,2296 @@ historical model comparator, we use data from the excellent <a
 href="https://davesredistricting.org/maps#aboutus">“Dave’s
 Redistricting”</a>, which is also the source of our maps for the new
 districts.</p>
+<figure id="figure_31">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 80,
+            "continuousWidth": 300,
+            "discreteHeight": 80,
+            "discreteWidth": 300
+        }
+    },
+    "datasets": {
+        "dRanks": [
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ],
+        "districts": [
+            {
+                "Rank": 8.5,
+                "Size": 50,
+                "Stat": "Density",
+                "Type": "Upper-12"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 8.5,
+                "Size": 50,
+                "Stat": "%Grad-Among-White",
+                "Type": "Upper-12"
+            },
+            {
+                "Rank": 4.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 5,
+                "Size": 50,
+                "Stat": "%Voters-Of-Color",
+                "Type": "Upper-12"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "R Median"
+            }
+        ],
+        "rRanks": [
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ]
+    },
+    "height": 80,
+    "layer": [
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Upper-12",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": "point",
+            "transform": [
+                {
+                    "filter": {
+                        "not": {
+                            "or": [
+                                {
+                                    "equal": "D Median",
+                                    "field": "Type"
+                                },
+                                {
+                                    "equal": "R Median",
+                                    "field": "Type"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Upper-12",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": -1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "D Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Upper-12",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": 1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "R Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "dRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "blue",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": -1
+            }
+        },
+        {
+            "data": {
+                "name": "rRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "red",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": 1
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "Upper-12: State Demographics",
+    "width": 300
+};
+vegaEmbed('#figure_31',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_32">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 80,
+            "continuousWidth": 300,
+            "discreteHeight": 80,
+            "discreteWidth": 300
+        }
+    },
+    "datasets": {
+        "dRanks": [
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ],
+        "districts": [
+            {
+                "Rank": 6.5,
+                "Size": 50,
+                "Stat": "Density",
+                "Type": "Upper-8"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 9.5,
+                "Size": 50,
+                "Stat": "%Grad-Among-White",
+                "Type": "Upper-8"
+            },
+            {
+                "Rank": 4.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 4.5,
+                "Size": 50,
+                "Stat": "%Voters-Of-Color",
+                "Type": "Upper-8"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "R Median"
+            }
+        ],
+        "rRanks": [
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ]
+    },
+    "height": 80,
+    "layer": [
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Upper-8",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": "point",
+            "transform": [
+                {
+                    "filter": {
+                        "not": {
+                            "or": [
+                                {
+                                    "equal": "D Median",
+                                    "field": "Type"
+                                },
+                                {
+                                    "equal": "R Median",
+                                    "field": "Type"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Upper-8",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": -1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "D Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Upper-8",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": 1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "R Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "dRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "blue",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": -1
+            }
+        },
+        {
+            "data": {
+                "name": "rRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "red",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": 1
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "Upper-8: State Demographics",
+    "width": 300
+};
+vegaEmbed('#figure_32',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_33">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 80,
+            "continuousWidth": 300,
+            "discreteHeight": 80,
+            "discreteWidth": 300
+        }
+    },
+    "datasets": {
+        "dRanks": [
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ],
+        "districts": [
+            {
+                "Rank": 8,
+                "Size": 50,
+                "Stat": "Density",
+                "Type": "Upper-9"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 7.5,
+                "Size": 50,
+                "Stat": "%Grad-Among-White",
+                "Type": "Upper-9"
+            },
+            {
+                "Rank": 4.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 6,
+                "Size": 50,
+                "Stat": "%Voters-Of-Color",
+                "Type": "Upper-9"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "R Median"
+            }
+        ],
+        "rRanks": [
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ]
+    },
+    "height": 80,
+    "layer": [
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Upper-9",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": "point",
+            "transform": [
+                {
+                    "filter": {
+                        "not": {
+                            "or": [
+                                {
+                                    "equal": "D Median",
+                                    "field": "Type"
+                                },
+                                {
+                                    "equal": "R Median",
+                                    "field": "Type"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Upper-9",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": -1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "D Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Upper-9",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": 1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "R Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "dRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "blue",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": -1
+            }
+        },
+        {
+            "data": {
+                "name": "rRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "red",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": 1
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "Upper-9: State Demographics",
+    "width": 300
+};
+vegaEmbed('#figure_33',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_34">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 80,
+            "continuousWidth": 300,
+            "discreteHeight": 80,
+            "discreteWidth": 300
+        }
+    },
+    "datasets": {
+        "dRanks": [
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ],
+        "districts": [
+            {
+                "Rank": 7,
+                "Size": 50,
+                "Stat": "Density",
+                "Type": "Lower-35"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 8,
+                "Size": 50,
+                "Stat": "%Grad-Among-White",
+                "Type": "Lower-35"
+            },
+            {
+                "Rank": 4.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 50,
+                "Stat": "%Voters-Of-Color",
+                "Type": "Lower-35"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "R Median"
+            }
+        ],
+        "rRanks": [
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ]
+    },
+    "height": 80,
+    "layer": [
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Lower-35",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": "point",
+            "transform": [
+                {
+                    "filter": {
+                        "not": {
+                            "or": [
+                                {
+                                    "equal": "D Median",
+                                    "field": "Type"
+                                },
+                                {
+                                    "equal": "R Median",
+                                    "field": "Type"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Lower-35",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": -1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "D Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Lower-35",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": 1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "R Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "dRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "blue",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": -1
+            }
+        },
+        {
+            "data": {
+                "name": "rRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "red",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": 1
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "Lower-35: State Demographics",
+    "width": 300
+};
+vegaEmbed('#figure_34',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_35">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 80,
+            "continuousWidth": 300,
+            "discreteHeight": 80,
+            "discreteWidth": 300
+        }
+    },
+    "datasets": {
+        "dRanks": [
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 7.5,
+                "Lo": 2,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 8.5,
+                "Lo": 5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ],
+        "districts": [
+            {
+                "Rank": 5.5,
+                "Size": 50,
+                "Stat": "Density",
+                "Type": "Lower-37"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "Density",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 8.5,
+                "Size": 50,
+                "Stat": "%Grad-Among-White",
+                "Type": "Lower-37"
+            },
+            {
+                "Rank": 4.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 5.5,
+                "Size": 10,
+                "Stat": "%Grad-Among-White",
+                "Type": "R Median"
+            },
+            {
+                "Rank": 3.5,
+                "Size": 50,
+                "Stat": "%Voters-Of-Color",
+                "Type": "Lower-37"
+            },
+            {
+                "Rank": 6.75,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "D Median"
+            },
+            {
+                "Rank": 1.5,
+                "Size": 10,
+                "Stat": "%Voters-Of-Color",
+                "Type": "R Median"
+            }
+        ],
+        "rRanks": [
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            },
+            {
+                "Hi": 3,
+                "Lo": 0.5,
+                "Stat": "Density"
+            },
+            {
+                "Hi": 7,
+                "Lo": 3.5,
+                "Stat": "%Grad-Among-White"
+            },
+            {
+                "Hi": 2.5,
+                "Lo": 0.5,
+                "Stat": "%Voters-Of-Color"
+            }
+        ]
+    },
+    "height": 80,
+    "layer": [
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Lower-37",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": "point",
+            "transform": [
+                {
+                    "filter": {
+                        "not": {
+                            "or": [
+                                {
+                                    "equal": "D Median",
+                                    "field": "Type"
+                                },
+                                {
+                                    "equal": "R Median",
+                                    "field": "Type"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Lower-37",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": -1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "D Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "districts"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Type",
+                    "legend": {
+                        "orient": "right"
+                    },
+                    "scale": {
+                        "domain": [
+                            "R Median",
+                            "Lower-37",
+                            "D Median"
+                        ],
+                        "range": [
+                            "red",
+                            "orange",
+                            "blue"
+                        ]
+                    },
+                    "title": null,
+                    "type": "nominal"
+                },
+                "size": {
+                    "field": "Size",
+                    "legend": null,
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "Rank",
+                    "scale": {
+                        "domain": [
+                            0,
+                            10
+                        ]
+                    },
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "type": "point",
+                "yOffset": 1
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "equal": "R Median",
+                        "field": "Type"
+                    }
+                }
+            ]
+        },
+        {
+            "data": {
+                "name": "dRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "blue",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": -1
+            }
+        },
+        {
+            "data": {
+                "name": "rRanks"
+            },
+            "encoding": {
+                "x": {
+                    "field": "Lo",
+                    "title": "Rank (Lines represent middle 50% of D/R districts)",
+                    "type": "quantitative"
+                },
+                "x2": {
+                    "field": "Hi",
+                    "title": null,
+                    "type": "quantitative"
+                },
+                "y": {
+                    "axis": {
+                        "title": null
+                    },
+                    "field": "Stat",
+                    "sort": [
+                        "Density",
+                        "%Grad-Among-White",
+                        "%Voters-Of-Color"
+                    ],
+                    "type": "nominal"
+                }
+            },
+            "mark": {
+                "color": "red",
+                "orient": "horizontal",
+                "size": 3,
+                "type": "bar",
+                "yOffset": 1
+            }
+        }
+    ],
+    "padding": 5,
+    "title": "Lower-37: State Demographics",
+    "width": 300
+};
+vegaEmbed('#figure_35',vlSpec,{"renderer": "canvas"});</script>
+</figure>
 <p><em>Want to read more from Blue Ripple? Visit our <a
 href="https://www.blueripplepolitics.org"><strong>website</strong></a>,
 sign up for <a href="http://eepurl.com/gzmeQ5"><strong>email
