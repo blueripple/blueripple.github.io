@@ -249,7 +249,7 @@
 
 <!-- page content begins here -->
 
-<div class="published">September 28, 2023 (18:07:20) </div>
+<div class="published">September 29, 2023 (13:40:58) </div>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
 {
@@ -261,10 +261,10 @@
     },
     "config": {
         "view": {
-            "continuousHeight": 700,
-            "continuousWidth": 700,
-            "discreteHeight": 700,
-            "discreteWidth": 700
+            "continuousHeight": 500,
+            "continuousWidth": 500,
+            "discreteHeight": 500,
+            "discreteWidth": 500
         }
     },
     "data": {
@@ -274,7 +274,7 @@
         },
         "url": "https://blueripple.github.io/Draft/research/Election/VA/data/2023-StateLeg_VAcomp_1.json"
     },
-    "height": 700,
+    "height": 500,
     "layer": [
         {
             "encoding": {
@@ -353,9 +353,139 @@
     ],
     "padding": 10,
     "title": "VA: model vs historical (DRA)",
-    "width": 700
+    "width": 500
 };
 vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_2">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 300,
+            "continuousWidth": 500,
+            "discreteHeight": 300,
+            "discreteWidth": 500
+        }
+    },
+    "data": {
+        "format": {
+            "feature": "VA_2022_sldl",
+            "type": "topojson"
+        },
+        "url": "https://blueripple.github.io/Draft/research/Election/VA/data/VA_2022_sldl_topo.json"
+    },
+    "encoding": {
+        "color": {
+            "field": "Delta",
+            "type": "quantitative"
+        }
+    },
+    "height": 300,
+    "mark": {
+        "tooltip": {
+            "content": "data"
+        },
+        "type": "geoshape"
+    },
+    "padding": 10,
+    "projection": {
+        "reflectY": true,
+        "type": "identity"
+    },
+    "title": "VA: model - historical (Lower House)",
+    "transform": [
+        {
+            "from": {
+                "data": {
+                    "format": {
+                        "property": "values",
+                        "type": "json"
+                    },
+                    "url": "https://blueripple.github.io/Draft/research/Election/VA/data/2023-StateLeg_VA_geoDeltaL_1.json"
+                },
+                "fields": [
+                    "Delta"
+                ],
+                "key": "District"
+            },
+            "lookup": "properties.NAME"
+        }
+    ],
+    "width": 500
+};
+vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
+</figure>
+<figure id="figure_3">
+<script type="text/javascript">var vlSpec=
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "autosize": {
+        "contains": "padding",
+        "resize": true,
+        "type": "pad"
+    },
+    "config": {
+        "view": {
+            "continuousHeight": 300,
+            "continuousWidth": 500,
+            "discreteHeight": 300,
+            "discreteWidth": 500
+        }
+    },
+    "data": {
+        "format": {
+            "feature": "VA_2022_sldu",
+            "type": "topojson"
+        },
+        "url": "https://blueripple.github.io/Draft/research/Election/VA/data/VA_2022_sldu_topo.json"
+    },
+    "encoding": {
+        "color": {
+            "field": "Delta",
+            "type": "quantitative"
+        }
+    },
+    "height": 300,
+    "mark": {
+        "tooltip": {
+            "content": "data"
+        },
+        "type": "geoshape"
+    },
+    "padding": 10,
+    "projection": {
+        "reflectY": true,
+        "type": "identity"
+    },
+    "title": "VA: model - historical (Upper House)",
+    "transform": [
+        {
+            "from": {
+                "data": {
+                    "format": {
+                        "property": "values",
+                        "type": "json"
+                    },
+                    "url": "https://blueripple.github.io/Draft/research/Election/VA/data/2023-StateLeg_VA_geoDeltaU_1.json"
+                },
+                "fields": [
+                    "Delta"
+                ],
+                "key": "District"
+            },
+            "lookup": "properties.NAME"
+        }
+    ],
+    "width": 500
+};
+vegaEmbed('#figure_3',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <div class="brTableTitle">VA Model (2020 data): Senate</div>
 <table class="brTable"><thead><tr><th>State</th><th>District</th><th>Historical</th><th>5%</th><th>50%</th><th>95%</th></tr></thead><tbody><tr><td style="; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; " data-label="District">Upper-4</td><td style="; ; ; ; ; ; color: green" data-label="Historical">48.01</td><td style="; ; ; ; ; ; color: green" data-label="5%">47.38</td><td style="; ; border: 3px solid pink; ; ; ; color: green" data-label="50%">49.68</td><td style="; ; border: 3px solid pink; ; ; ; color: green" data-label="95%">51.95</td></tr><tr><td style="; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; " data-label="District">Upper-12</td><td style="; ; ; ; ; ; color: green" data-label="Historical">44.63</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="5%">48.91</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="50%">51.12</td><td style="; ; ; ; ; ; color: green" data-label="95%">53.32</td></tr><tr><td style="; ; ; ; ; ; " data-label="State">VA</td><td style="border: 3px solid purple; ; ; ; ; ; " data-label="District">Upper-16</td><td style="; ; ; ; ; ; color: green" data-label="Historical">55.21</td><td style="; ; ; ; border: 3px solid blue; ; color: green" data-label="5%">54.79</td><td style="; ; ; ; ; ; color: green" data-label="50%">56.96</td><td style="; ; ; ; ; ; color: green" data-label="95%">59.11</td></tr><tr><td style="; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; " data-label="District">Upper-17</td><td style="; ; ; ; ; ; color: green" data-label="Historical">51.70</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="5%">50.65</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="50%">52.97</td><td style="; ; ; ; ; ; color: green" data-label="95%">55.26</td></tr><tr><td style="; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; " data-label="District">Upper-20</td><td style="; ; ; ; ; ; color: green" data-label="Historical">46.11</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="5%">49.94</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="50%">52.15</td><td style="; ; ; ; ; ; color: green" data-label="95%">54.38</td></tr><tr><td style="; ; ; ; ; ; " data-label="State">VA</td><td style="border: 3px solid purple; ; ; ; ; ; " data-label="District">Upper-22</td><td style="; ; ; ; ; ; color: green" data-label="Historical">56.66</td><td style="; ; ; ; border: 3px solid blue; ; color: green" data-label="5%">60.28</td><td style="; ; ; ; ; ; color: green" data-label="50%">62.39</td><td style="; ; ; ; ; ; color: green" data-label="95%">64.55</td></tr><tr><td style="; ; ; ; ; ; " data-label="State">VA</td><td style="border: 3px solid purple; ; ; ; ; ; " data-label="District">Upper-24</td><td style="; ; ; ; ; ; color: green" data-label="Historical">51.61</td><td style="; ; ; ; border: 3px solid blue; ; color: green" data-label="5%">53.99</td><td style="; ; ; ; ; ; color: green" data-label="50%">56.09</td><td style="; ; ; ; ; ; color: green" data-label="95%">58.21</td></tr><tr><td style="; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; " data-label="District">Upper-27</td><td style="; ; ; ; ; ; color: green" data-label="Historical">48.97</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="5%">51.14</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="50%">53.29</td><td style="; ; ; ; ; ; color: green" data-label="95%">55.38</td></tr><tr><td style="; ; ; ; ; ; " data-label="State">VA</td><td style="border: 3px solid purple; ; ; ; ; ; " data-label="District">Upper-31</td><td style="; ; ; ; ; ; color: green" data-label="Historical">53.10</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="5%">47.99</td><td style="; ; ; border: 3px solid skyblue; ; ; color: green" data-label="50%">50.26</td><td style="; ; ; ; ; ; color: green" data-label="95%">52.52</td></tr></tbody></table>
