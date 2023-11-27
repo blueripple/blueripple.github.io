@@ -250,46 +250,67 @@
 
 <!-- page content begins here -->
 
-<div class="published">November  2, 2023 (16:25:46) </div>
-<section id="modeling-state-legislative-elections" class="level1">
-<h1>Modeling State Legislative Elections</h1>
-<p>As Democratic donors have become more interested in giving money to
-state-legislative candidates, it’s become more important to know how to
-allocate that money; to uncover as much as possible about the
-competitiveness of each seat, especially in states where control of, or
-a supermajority in, a chamber is potentially up for grabs.</p>
-<p>Local expertise in the particular district or set of districts is
-often the best way to figure out which districts are close-but-winnable.
-However, such knowledge is often hard to find and it’s useful to have
-ways of understanding state-legislative districts that we can apply to
-the country as a whole.</p>
+<div class="published">November 27, 2023 (11:09:59) </div>
+<section id="efficient-giving-to-state-legislative-elections"
+class="level1">
+<h1>Efficient Giving to State Legislative Elections</h1>
+<p>Democratic donors are more interested than ever in state-legislative
+races. So it’s increasingly important to know how to allocate money
+among those races.</p>
+<p>Ideally, knowing as much as possible about the competitiveness of
+each seat, especially in states where control of, or a supermajority in,
+a chamber is potentially up for grabs, allows us to focus our efforts on
+the ones where we can have the greatest “bang for the buck.”</p>
+<p>In the first part of this post, we’ll discuss what we think our
+modeling and data-driven approaches can contribute to this analysis and
+the refinement and framing of slates of races for donors. In the second
+part, we’ll dig into the technical details of our model.</p>
+<section id="its-hard-to-analyze-state-legislative-races"
+class="level3">
+<h3>It’s Hard to Analyze State Legislative Races!</h3>
+<p>Local expertise in a particular district or set of districts is often
+the best way to figure out which races are close-but-winnable. However,
+such knowledge is often hard to find and it’s useful to have ways of
+looking at state-legislative districts that we can apply to the state or
+country as a whole.</p>
 <p>Polling would be extremely useful, but polls are expensive and
 state-legislative-races don’t usually generate enough news interest to
 field a poll. Additionally, there’s less information available about the
 demographic characteristics of the people who live in geographic regions
 as small as a state-legislative district. This makes the work of
 weighting a poll–adjusting the responses you get to estimate the
-responses you would’ve gotten from a representative sample–quite
-difficult.</p>
-<section id="past-partisan-lean" class="level3">
-<h3>Past Partisan Lean</h3>
+responses you would’ve gotten from a representative sample of
+voters–quite difficult.</p>
+<p>That leaves us with various options for using historical data to help
+Democratic donors figure out which state legislature candidates to
+support. The primary strategy is to use historical results to identify
+“close” races. We think our modeling approach–which incorporates data on
+the recent turnout and partisan lean of various demographic
+groups–provides an extra set of helpful tools for looking at these
+races.</p>
+</section>
+<section id="past-partisan-lean-let-history-be-your-guide"
+class="level3">
+<h3>Past Partisan Lean: Let history be your guide</h3>
 <p>The most straightforward way to find close-but-winnable races is to
-look at what happened in previous elections, either for the same office
-or statewide. That’s straightforward but not easy. <a
+look at what happened in previous elections, either for the same
+districts or statewide. <a
 href="https://davesredistricting.org/maps#home">Dave’s Redistricting</a>
 does a spectacular job of joining district maps and precinct-level data
 from previous elections to create an estimate of the
 past-partisan-lean<a href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a> (PPL) of every
 state-legislative-district in the country. Their rich interface allows
-the user to choose various previous elections and combinations of them
+the user to choose various previous elections (or combinations of them)
 to estimate the partisan lean.</p>
-<p>As an example, here is chart of the PPL in the VA house<a href="#fn2"
-class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>,
-the lower chamber of the VA state-legislature. (As with many such maps,
-it looks mainly Republican (red) but that is because the districts with
-Democratic leaning PPL are often geographically smaller, in places, like
-cities, with higher population density.)</p>
+<p>As an example, here is chart of the 2021 PPL in the VA house<a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>, the lower chamber of the VA
+state-legislature. As with many such maps, it looks mainly Republican
+(Red) but that is because the Democratic leaning districts are often
+geographically smaller, in places like cities, with higher population
+density. As the 2023 election showed, there are slightly more D leaning
+districts in VA than R leaning ones.</p>
 <figure id="figure_1">
 <script type="text/javascript">var vlSpec=
 {
@@ -370,12 +391,19 @@ cities, with higher population density.)</p>
 };
 vegaEmbed('#figure_1',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>Are there districts with PPLs that are unexpected given their
-location and demographic makeup? This sort of analysis provides
-opportunities to add a possibly flippable or safe-looking-but-vulnerable
-district to a list for donors or remove districts that were already
-marginal but seem more so when looking at the underlying
-demographics.</p>
+<p>PPL alone tells you nothing about <em>why</em> a district has the
+lean it does. For that you need local knowledge and/or some analysis of
+the demographics. You can look at the demographic composition of a
+district and make some inferences but doing that more systematically,
+via a detailed demographic model applied to robust estimates of the
+demographic composition of each district, provides more information with
+greater consistency across districts and states.</p>
+<p>Demographic analysis can help identify opportunities and
+vulnerabilities for Democrats. District PPLs inconsistent with their
+location and demographic makeup may indicate a possibly flippable or
+safe-looking-but-vulnerable district. It may also uncover districts that
+can be downgraded as donation targets because the underlying
+demographics make them likely less close than history suggests.</p>
 <p>For example, imagine a state-legislative-district with PPL just below
 some cutoff for winnable. A demographic analysis shows that its
 “expected” partisan-lean is over 50%. Might that be a district where a
@@ -385,23 +413,23 @@ alerted to a district which looks easily winnable by PPL standards but
 with “expected” partisan lean much closer to 50%? That district might be
 vulnerable to the right opposition candidate, especially in a tough
 political environment.</p>
-<p>PPL also doesn’t help much with scenario analysis. E.g., what would
-happen in a given seat if women turned out at higher rates and were more
-likely to vote for the democratic candidate? With a demographic
-breakdown and model of turnout and partisan lean we can estimate these
-sorts of effects.</p>
 </section>
-<section id="demographic-partisan-lean" class="level3">
-<h3>Demographic Partisan Lean</h3>
+<section
+id="demographic-partisan-lean-using-the-demographics-of-state-legislative-districts"
+class="level3">
+<h3>Demographic Partisan Lean: Using the demographics of state
+legislative districts</h3>
 <p>Rather than consider how people in a specific place have voted in
 previous elections, Demographic Partisan Lean (DPL) instead categorizes
 people demographically, in our case by state, age, sex,
-educational-attainment, race/ethnicity, and population-density. Using
-large surveys of turnout and party-preference we model expected turnout
-and party-preference for each of those categories. Then, given the
-numbers of people in each of those categories in a district, compute the
-(modeled) partisan lean among expected voters. Here’s what this looks
-like in VA:</p>
+educational-attainment, race/ethnicity, and population-density<a
+href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>. Using large surveys of turnout and
+party-preference we model expected turnout and party-preference for each
+of those categories. Then, given the numbers of people in each of those
+categories in a district, we combine them to compute the (modeled)
+partisan lean among expected voters. Here’s what this looks like in
+VA:</p>
 <figure id="figure_2">
 <script type="text/javascript">var vlSpec=
 {
@@ -482,9 +510,9 @@ like in VA:</p>
 };
 vegaEmbed('#figure_2',vlSpec,{"renderer": "canvas"});</script>
 </figure>
-<p>The maps of PPL and DPL are, unsurprisingly, very similar but there
-are some large differences which are clearer on the chart of DPL - PPL
-below.</p>
+<p>The maps of PPL and DPL are, unsurprisingly, similar but there are
+some large differences which are clearer on a chart of just the
+difference (DPL - PPL) below.</p>
 <figure id="figure_3">
 <script type="text/javascript">var vlSpec=
 {
@@ -567,48 +595,66 @@ vegaEmbed('#figure_3',vlSpec,{"renderer": "canvas"});</script>
 </figure>
 <p>We can see that there are a few districts which might be interesting
 to look at. This is clearer in table form: below we list some districts
-which are not close in PPL but close when looked at demographically.
-These are districts that might be flippable or look like safe seats but
-need defending. We’re not saying that these seats <em>are</em> flippable
-or in need of extra defense but that they might be worth a second look
-to figure out why they have been voting in ways so different from what
-we’d expect demographically.</p>
+which are not close in PPL but, when looked at demographically,
+<em>ought</em> to be close. These are districts that might be flippable
+or look like safe seats but need defending. It’s not that these seats
+<em>are</em> flippable (or in need of extra defense) but that they might
+be worth a second look to figure out why they have been voting in ways
+so different from what we might expect based on the demographics.</p>
 <div class="brTableTitle">Flippable/Vulnerable ?</div>
-<table class="brTable"><thead><tr><th>State</th><th>District</th><th>PPL</th><th>DPL</th></tr></thead><tbody><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-52</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">44.86</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="DPL">58.16</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-55</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; ; color: green" data-label="PPL">57.88</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="DPL">40.42</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-73</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">43.75</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="DPL">51.30</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-74</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">41.70</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="DPL">52.34</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-90</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">37.63</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="DPL">52.12</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-98</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">39.06</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="DPL">51.73</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-99</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">44.30</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="DPL">54.89</td></tr></tbody></table>
+<table class="brTable"><thead><tr><th>State</th><th>District</th><th>PPL</th><th>DPL</th></tr></thead><tbody><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-52</td><td style="; color: hsl(0.0, 51%, 50%)" data-label="PPL">44.9</td><td style="; color: hsl(240.0, 82%, 50%)" data-label="DPL">58.2</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-55</td><td style="; color: hsl(240.0, 79%, 50%)" data-label="PPL">57.9</td><td style="; color: hsl(0.0, 96%, 50%)" data-label="DPL">40.4</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-73</td><td style="; color: hsl(0.0, 62%, 50%)" data-label="PPL">43.8</td><td style="; color: hsl(240.0, 13%, 50%)" data-label="DPL">51.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-74</td><td style="; color: hsl(0.0, 83%, 50%)" data-label="PPL">41.7</td><td style="; color: hsl(240.0, 23%, 50%)" data-label="DPL">52.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-90</td><td style="; color: hsl(0.0, 100%, 50%)" data-label="PPL">37.6</td><td style="; color: hsl(240.0, 21%, 50%)" data-label="DPL">52.1</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-98</td><td style="; color: hsl(0.0, 100%, 50%)" data-label="PPL">39.1</td><td style="; color: hsl(240.0, 17%, 50%)" data-label="DPL">51.7</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-99</td><td style="; color: hsl(0.0, 57%, 50%)" data-label="PPL">44.3</td><td style="; color: hsl(240.0, 49%, 50%)" data-label="DPL">54.9</td></tr></tbody></table>
+<p>A quick note: We did this analysis pre-election and all of the
+contested districts in the list above played out pretty much as history
+(PPL) would suggest. For example, House district 52 (Lower-52) was won
+by the R candidate 54-45. House district 52 is between the median R and
+D districts in terms of population density and %voters-of-color and
+slightly closer to the median R district in terms of the % of white
+voters who have graduated from college. So why did our model think this
+might be a D district? The median white voter in the district is younger
+than in the typical district in VA (moving their modeled preference from
+45/55 to 50/50), and the district has a significant number of black
+voters (25% of the over-18 population and 21% of the modeled
+electorate). Obviously something about that analysis is wrong! It would
+be interesting to know what: Are these younger white voters very R
+leaning despite their age? Are Black voters a smaller fraction of the
+electorate than we thought? Either or both of those might suggest a path
+forward for a D candidate in the district.</p>
 <p>One way to think of DPL is as a very detailed analysis of voting
 patterns based on race or education or age. Each of those can be a
 valuable predictor of turnout and party-preference. But sometimes the
-combination of categories is essential for understanding. For example,
-the Republican lean of white-non-college educated voters is greater than
-you expect from the Republican lean of white voters and the Republican
-lean of non-college-educated voters combined. This gets even more
-complex and harder to keep track of once you add age and sex and all
-these things vary from state to state. Population density affects
-party-preference quite strongly in ways not captured by any of those
-categories.</p>
+<em>combination</em> of categories is essential for understanding. For
+example, the Republican lean of white-non-college educated voters is
+greater than you expect from the Republican lean of white voters and the
+Republican lean of non-college-educated voters combined. This gets even
+more complex and harder to keep track of once you add age and sex. All
+of these things may vary from state to state. Population density affects
+party-preference quite strongly in ways not well captured by any of
+those categories.</p>
 <p>DPL is the partisan lean of a district if, within each demographic
 group, each person’s choice to vote and whom to vote for was more or
 less the same as everyone else in the state living at similar population
-density. This is likely less predictive than knowing who those same
-people voted for in the previous few elections. But it’s different
-information, and particularly interesting when it’s inconsistent with
-the HPL.</p>
+density<a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a>. This is less <em>predictive</em>
+than knowing who those same people voted for in the previous few
+elections. But it’s different information, and particularly interesting
+when it’s inconsistent with the PPL.</p>
 </section>
-<section id="scenario-analysis" class="level3">
-<h3>Scenario Analysis</h3>
+<section id="scenario-analysis-asking-what-if-questions" class="level3">
+<h3>Scenario Analysis: Asking “what if…?” questions</h3>
 <p>Since the DPL is built from an estimate of who lives in a district
 and how likely each of them is to turn out and vote for the Democratic
 candidate, we can use it to answer some “what would happen if…” sorts of
-questions. If you imagine some voters are more energized and thus likely
-to vote and/or more likely to vote for the Democratic candidate, that
-might change which seats are in play and which are safe. For example,
-suppose we think the Dobbs decision overturning Roe v. Wade will raise
-turnout among women by 5% and also pushes their party preference 5
-points towards Democratic candidates<a href="#fn3" class="footnote-ref"
-id="fnref3" role="doc-noteref"><sup>3</sup></a>. What would this mean
-for the 20 closest (by PPL) house districts in VA?</p>
+questions. If you imagine some voters are more energized and thus more
+likely to vote and/or more likely to vote for the Democratic candidate,
+that might change which seats are in play and which are safe. For
+example, suppose we think the Dobbs decision overturning Roe v. Wade
+will raise turnout among women by 5% and also pushes their party
+preference 5 points towards Democratic candidates<a href="#fn5"
+class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.
+What would this mean for the 20 closest (by PPL) house districts in
+VA?</p>
 <div class="brTableTitle">Dobbs Scenario</div>
-<table class="brTable"><thead><tr><th>State</th><th>District</th><th>PPL</th><th>PPL + Scenario</th></tr></thead><tbody><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-52</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">44.86</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">47.16</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-34</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">45.35</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">47.88</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-100</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">45.36</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">47.63</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-64</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">45.82</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">47.97</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-69</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">46.03</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">48.30</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-49</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">46.34</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">48.55</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-30</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">46.39</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">48.73</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-66</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">47.06</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">49.36</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-83</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">47.62</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">49.48</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-41</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">47.99</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">50.36</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-86</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">48.54</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">50.65</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-71</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">48.97</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">51.34</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-89</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">49.06</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">51.18</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-75</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">49.59</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">51.65</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-22</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">49.97</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">52.14</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-57</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; ; color: green" data-label="PPL">50.25</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">52.58</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-65</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; ; color: green" data-label="PPL">52.02</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="+Scenario">54.34</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-97</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; ; color: green" data-label="PPL">52.53</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="+Scenario">54.70</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-82</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; ; color: green" data-label="PPL">54.00</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="+Scenario">56.04</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-58</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; ; color: green" data-label="PPL">54.13</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="+Scenario">56.51</td></tr></tbody></table>
+<table class="brTable"><thead><tr><th>State</th><th>District</th><th>PPL</th><th>PPL + Scenario</th></tr></thead><tbody><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-52</td><td style="; color: hsl(0.0, 51%, 50%)" data-label="PPL">44.9</td><td style="; color: hsl(0.0, 28%, 50%)" data-label="+Scenario">47.2</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-34</td><td style="; color: hsl(0.0, 46%, 50%)" data-label="PPL">45.4</td><td style="; color: hsl(0.0, 21%, 50%)" data-label="+Scenario">47.9</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-100</td><td style="; color: hsl(0.0, 46%, 50%)" data-label="PPL">45.4</td><td style="; color: hsl(0.0, 24%, 50%)" data-label="+Scenario">47.6</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-64</td><td style="; color: hsl(0.0, 42%, 50%)" data-label="PPL">45.8</td><td style="; color: hsl(0.0, 20%, 50%)" data-label="+Scenario">48.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-69</td><td style="; color: hsl(0.0, 40%, 50%)" data-label="PPL">46.0</td><td style="; color: hsl(0.0, 17%, 50%)" data-label="+Scenario">48.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-49</td><td style="; color: hsl(0.0, 37%, 50%)" data-label="PPL">46.3</td><td style="; color: hsl(0.0, 14%, 50%)" data-label="+Scenario">48.6</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-30</td><td style="; color: hsl(0.0, 36%, 50%)" data-label="PPL">46.4</td><td style="; color: hsl(0.0, 13%, 50%)" data-label="+Scenario">48.7</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-66</td><td style="; color: hsl(0.0, 29%, 50%)" data-label="PPL">47.1</td><td style="; color: hsl(0.0,  6%, 50%)" data-label="+Scenario">49.4</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-83</td><td style="; color: hsl(0.0, 24%, 50%)" data-label="PPL">47.6</td><td style="; color: hsl(0.0,  5%, 50%)" data-label="+Scenario">49.5</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-41</td><td style="; color: hsl(0.0, 20%, 50%)" data-label="PPL">48.0</td><td style="; color: hsl(240.0,  4%, 50%)" data-label="+Scenario">50.4</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-86</td><td style="; color: hsl(0.0, 15%, 50%)" data-label="PPL">48.5</td><td style="; color: hsl(240.0,  7%, 50%)" data-label="+Scenario">50.7</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-71</td><td style="; color: hsl(0.0, 10%, 50%)" data-label="PPL">49.0</td><td style="; color: hsl(240.0, 13%, 50%)" data-label="+Scenario">51.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-89</td><td style="; color: hsl(0.0,  9%, 50%)" data-label="PPL">49.1</td><td style="; color: hsl(240.0, 12%, 50%)" data-label="+Scenario">51.2</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-75</td><td style="; color: hsl(0.0,  4%, 50%)" data-label="PPL">49.6</td><td style="; color: hsl(240.0, 16%, 50%)" data-label="+Scenario">51.6</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-22</td><td style="; color: hsl(0.0,  0%, 50%)" data-label="PPL">50.0</td><td style="; color: hsl(240.0, 21%, 50%)" data-label="+Scenario">52.1</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-57</td><td style="; color: hsl(240.0,  2%, 50%)" data-label="PPL">50.2</td><td style="; color: hsl(240.0, 26%, 50%)" data-label="+Scenario">52.6</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-65</td><td style="; color: hsl(240.0, 20%, 50%)" data-label="PPL">52.0</td><td style="; color: hsl(240.0, 43%, 50%)" data-label="+Scenario">54.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-97</td><td style="; color: hsl(240.0, 25%, 50%)" data-label="PPL">52.5</td><td style="; color: hsl(240.0, 47%, 50%)" data-label="+Scenario">54.7</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-82</td><td style="; color: hsl(240.0, 40%, 50%)" data-label="PPL">54.0</td><td style="; color: hsl(240.0, 60%, 50%)" data-label="+Scenario">56.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-58</td><td style="; color: hsl(240.0, 41%, 50%)" data-label="PPL">54.1</td><td style="; color: hsl(240.0, 65%, 50%)" data-label="+Scenario">56.5</td></tr></tbody></table>
 <p>We can see that it makes a bunch of safe R districts into Lean R and
 a couple of Lean D become safe. This would be helpful when advising
 donors or allocating donor funds.</p>
@@ -622,25 +668,62 @@ share, with another slight boost coming from the turnout shift.</p>
 with a college degree? This is a tricker thing to map out in VA. Here’s
 the same table but with that scenario:</p>
 <div class="brTableTitle">Dobbs Scenario</div>
-<table class="brTable"><thead><tr><th>State</th><th>District</th><th>PPL</th><th>PPL + Scenario</th></tr></thead><tbody><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-52</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">44.86</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">45.71</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-34</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">45.35</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">46.17</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-100</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">45.36</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">46.20</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-64</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">45.82</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">46.76</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-69</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">46.03</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">47.04</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-49</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">46.34</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">46.78</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-30</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">46.39</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">47.86</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-66</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">47.06</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">47.83</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-83</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">47.62</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">48.07</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-41</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">47.99</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">48.98</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-86</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">48.54</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">49.33</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-71</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">48.97</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">50.11</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-89</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">49.06</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">49.89</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-75</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">49.59</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">50.16</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-22</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">49.97</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">51.16</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-57</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; ; color: green" data-label="PPL">50.25</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">51.75</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-65</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; ; color: green" data-label="PPL">52.02</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">52.97</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-97</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; ; color: green" data-label="PPL">52.53</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="+Scenario">53.32</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-82</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; ; color: green" data-label="PPL">54.00</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="+Scenario">54.50</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-58</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; ; color: green" data-label="PPL">54.13</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="+Scenario">55.55</td></tr></tbody></table>
-<p>In this case the shift varies from under one point to over 1.5
-points, which, using our example, makes HD-69 and HD-30 competitive (but
-not HD-49) and pushes HD-97 into safe territory.</p>
+<table class="brTable"><thead><tr><th>State</th><th>District</th><th>PPL</th><th>PPL + Scenario</th></tr></thead><tbody><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-52</td><td style="; color: hsl(0.0, 51%, 50%)" data-label="PPL">44.9</td><td style="; color: hsl(0.0, 43%, 50%)" data-label="+Scenario">45.7</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-34</td><td style="; color: hsl(0.0, 46%, 50%)" data-label="PPL">45.4</td><td style="; color: hsl(0.0, 38%, 50%)" data-label="+Scenario">46.2</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-100</td><td style="; color: hsl(0.0, 46%, 50%)" data-label="PPL">45.4</td><td style="; color: hsl(0.0, 38%, 50%)" data-label="+Scenario">46.2</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-64</td><td style="; color: hsl(0.0, 42%, 50%)" data-label="PPL">45.8</td><td style="; color: hsl(0.0, 32%, 50%)" data-label="+Scenario">46.8</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-69</td><td style="; color: hsl(0.0, 40%, 50%)" data-label="PPL">46.0</td><td style="; color: hsl(0.0, 30%, 50%)" data-label="+Scenario">47.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-49</td><td style="; color: hsl(0.0, 37%, 50%)" data-label="PPL">46.3</td><td style="; color: hsl(0.0, 32%, 50%)" data-label="+Scenario">46.8</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-30</td><td style="; color: hsl(0.0, 36%, 50%)" data-label="PPL">46.4</td><td style="; color: hsl(0.0, 21%, 50%)" data-label="+Scenario">47.9</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-66</td><td style="; color: hsl(0.0, 29%, 50%)" data-label="PPL">47.1</td><td style="; color: hsl(0.0, 22%, 50%)" data-label="+Scenario">47.8</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-83</td><td style="; color: hsl(0.0, 24%, 50%)" data-label="PPL">47.6</td><td style="; color: hsl(0.0, 19%, 50%)" data-label="+Scenario">48.1</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-41</td><td style="; color: hsl(0.0, 20%, 50%)" data-label="PPL">48.0</td><td style="; color: hsl(0.0, 10%, 50%)" data-label="+Scenario">49.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-86</td><td style="; color: hsl(0.0, 15%, 50%)" data-label="PPL">48.5</td><td style="; color: hsl(0.0,  7%, 50%)" data-label="+Scenario">49.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-71</td><td style="; color: hsl(0.0, 10%, 50%)" data-label="PPL">49.0</td><td style="; color: hsl(240.0,  1%, 50%)" data-label="+Scenario">50.1</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-89</td><td style="; color: hsl(0.0,  9%, 50%)" data-label="PPL">49.1</td><td style="; color: hsl(0.0,  1%, 50%)" data-label="+Scenario">49.9</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-75</td><td style="; color: hsl(0.0,  4%, 50%)" data-label="PPL">49.6</td><td style="; color: hsl(240.0,  2%, 50%)" data-label="+Scenario">50.2</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-22</td><td style="; color: hsl(0.0,  0%, 50%)" data-label="PPL">50.0</td><td style="; color: hsl(240.0, 12%, 50%)" data-label="+Scenario">51.2</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-57</td><td style="; color: hsl(240.0,  2%, 50%)" data-label="PPL">50.2</td><td style="; color: hsl(240.0, 18%, 50%)" data-label="+Scenario">51.8</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-65</td><td style="; color: hsl(240.0, 20%, 50%)" data-label="PPL">52.0</td><td style="; color: hsl(240.0, 30%, 50%)" data-label="+Scenario">53.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-97</td><td style="; color: hsl(240.0, 25%, 50%)" data-label="PPL">52.5</td><td style="; color: hsl(240.0, 33%, 50%)" data-label="+Scenario">53.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-82</td><td style="; color: hsl(240.0, 40%, 50%)" data-label="PPL">54.0</td><td style="; color: hsl(240.0, 45%, 50%)" data-label="+Scenario">54.5</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-58</td><td style="; color: hsl(240.0, 41%, 50%)" data-label="PPL">54.1</td><td style="; color: hsl(240.0, 55%, 50%)" data-label="+Scenario">55.5</td></tr></tbody></table>
+<p>In this case the shift varies from 0.5 to over 1.5 points, which,
+using our example, makes HD-69 and HD-30 competitive (but not HD-49) and
+pushes HD-97 into safe territory.</p>
 <p>This might also be useful when considering a targeted intervention.
 E.g., how much would you have to boost turnout among people 18-35 to
-meaninfully shift the likely vote-share in competitive districts?
+meaningfully shift the likely vote-share in competitive districts?
 Imagine we think we can boost youth turnout by 5% across the state. How
 much would that change the final vote-share across the state? It turns
 out that makes very little difference in close districts in VA,
 primarily because the typical under 35 voter in VA is not overwhelmingly
 more likely to vote for Democrats. So it makes a small difference and
 one that can be positive or negative, depending on the district.</p>
+<div class="brTableTitle">Youth Enthusiasm Scenario</div>
+<table class="brTable"><thead><tr><th>State</th><th>District</th><th>PPL</th><th>PPL + Scenario</th></tr></thead><tbody><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-52</td><td style="; color: hsl(0.0, 51%, 50%)" data-label="PPL">44.9</td><td style="; color: hsl(0.0, 51%, 50%)" data-label="+Scenario">44.9</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-34</td><td style="; color: hsl(0.0, 46%, 50%)" data-label="PPL">45.4</td><td style="; color: hsl(0.0, 46%, 50%)" data-label="+Scenario">45.4</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-100</td><td style="; color: hsl(0.0, 46%, 50%)" data-label="PPL">45.4</td><td style="; color: hsl(0.0, 47%, 50%)" data-label="+Scenario">45.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-64</td><td style="; color: hsl(0.0, 42%, 50%)" data-label="PPL">45.8</td><td style="; color: hsl(0.0, 42%, 50%)" data-label="+Scenario">45.8</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-69</td><td style="; color: hsl(0.0, 40%, 50%)" data-label="PPL">46.0</td><td style="; color: hsl(0.0, 40%, 50%)" data-label="+Scenario">46.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-49</td><td style="; color: hsl(0.0, 37%, 50%)" data-label="PPL">46.3</td><td style="; color: hsl(0.0, 37%, 50%)" data-label="+Scenario">46.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-30</td><td style="; color: hsl(0.0, 36%, 50%)" data-label="PPL">46.4</td><td style="; color: hsl(0.0, 37%, 50%)" data-label="+Scenario">46.3</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-66</td><td style="; color: hsl(0.0, 29%, 50%)" data-label="PPL">47.1</td><td style="; color: hsl(0.0, 30%, 50%)" data-label="+Scenario">47.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-83</td><td style="; color: hsl(0.0, 24%, 50%)" data-label="PPL">47.6</td><td style="; color: hsl(0.0, 24%, 50%)" data-label="+Scenario">47.6</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-41</td><td style="; color: hsl(0.0, 20%, 50%)" data-label="PPL">48.0</td><td style="; color: hsl(0.0, 19%, 50%)" data-label="+Scenario">48.1</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-86</td><td style="; color: hsl(0.0, 15%, 50%)" data-label="PPL">48.5</td><td style="; color: hsl(0.0, 15%, 50%)" data-label="+Scenario">48.5</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-71</td><td style="; color: hsl(0.0, 10%, 50%)" data-label="PPL">49.0</td><td style="; color: hsl(0.0, 11%, 50%)" data-label="+Scenario">48.9</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-89</td><td style="; color: hsl(0.0,  9%, 50%)" data-label="PPL">49.1</td><td style="; color: hsl(0.0, 10%, 50%)" data-label="+Scenario">49.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-75</td><td style="; color: hsl(0.0,  4%, 50%)" data-label="PPL">49.6</td><td style="; color: hsl(0.0,  4%, 50%)" data-label="+Scenario">49.6</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-22</td><td style="; color: hsl(0.0,  0%, 50%)" data-label="PPL">50.0</td><td style="; color: hsl(0.0,  1%, 50%)" data-label="+Scenario">49.9</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-57</td><td style="; color: hsl(240.0,  2%, 50%)" data-label="PPL">50.2</td><td style="; color: hsl(240.0,  2%, 50%)" data-label="+Scenario">50.2</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-65</td><td style="; color: hsl(240.0, 20%, 50%)" data-label="PPL">52.0</td><td style="; color: hsl(240.0, 20%, 50%)" data-label="+Scenario">52.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-97</td><td style="; color: hsl(240.0, 25%, 50%)" data-label="PPL">52.5</td><td style="; color: hsl(240.0, 25%, 50%)" data-label="+Scenario">52.5</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-82</td><td style="; color: hsl(240.0, 40%, 50%)" data-label="PPL">54.0</td><td style="; color: hsl(240.0, 40%, 50%)" data-label="+Scenario">54.0</td></tr><tr><td style="; " data-label="State">VA</td><td style="; " data-label="District">Lower-58</td><td style="; color: hsl(240.0, 41%, 50%)" data-label="PPL">54.1</td><td style="; color: hsl(240.0, 41%, 50%)" data-label="+Scenario">54.1</td></tr></tbody></table>
 <p>When doing these analyses, we’ve chosen PPL as our baseline. But one
 could just as easily use some other framework or model to come up with a
-baseline and still use DPL based scenario analysis to understand where
-things might change under various circumstances.</p>
-<div class="brTableTitle">Youth Enthusiasm Scenario</div>
-<table class="brTable"><thead><tr><th>State</th><th>District</th><th>PPL</th><th>PPL + Scenario</th></tr></thead><tbody><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-52</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">44.86</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">44.91</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-34</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">45.35</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">45.44</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-100</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">45.36</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">45.32</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-64</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">45.82</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">45.76</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-69</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">46.03</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">46.01</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-49</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">46.34</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">46.32</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-30</td><td style="border: 3px solid red; ; ; ; ; ; ; ; ; ; color: green" data-label="PPL">46.39</td><td style="; ; ; ; ; border: 3px solid red; ; ; ; ; color: green" data-label="+Scenario">46.31</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-66</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">47.06</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">47.02</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-83</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">47.62</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">47.59</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-41</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">47.99</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">48.06</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-86</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">48.54</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">48.50</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-71</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">48.97</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">48.93</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-89</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">49.06</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">49.02</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-75</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">49.59</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">49.62</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-22</td><td style="; border: 3px solid pink; ; ; ; ; ; ; ; ; color: green" data-label="PPL">49.97</td><td style="; ; ; ; ; ; border: 3px solid pink; ; ; ; color: green" data-label="+Scenario">49.91</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-57</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; ; color: green" data-label="PPL">50.25</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">50.19</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-65</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; ; color: green" data-label="PPL">52.02</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">51.99</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-97</td><td style="; ; border: 3px solid skyblue; ; ; ; ; ; ; ; color: green" data-label="PPL">52.53</td><td style="; ; ; ; ; ; ; border: 3px solid skyblue; ; ; color: green" data-label="+Scenario">52.52</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-82</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; ; color: green" data-label="PPL">54.00</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="+Scenario">53.97</td></tr><tr><td style="; ; ; ; ; ; ; ; ; ; " data-label="State">VA</td><td style="; ; ; ; ; ; ; ; ; ; " data-label="District">Lower-58</td><td style="; ; ; border: 3px solid blue; ; ; ; ; ; ; color: green" data-label="PPL">54.13</td><td style="; ; ; ; ; ; ; ; border: 3px solid blue; ; color: green" data-label="+Scenario">54.10</td></tr></tbody></table>
+baseline and still use DPL based scenario analysis to understand how
+much and where things might change under various circumstances.</p>
+</section>
+<section id="geographical-district-overlaps-double-word-scores"
+class="level3">
+<h3>Geographical District Overlaps: Double-word scores</h3>
+<p>Once we have PPL to make allocation recommendations for donors, e.g.,
+give to any race within 5 points of 50/50, how can we narrow (or
+broaden) that list? Are we missing any districts worth an investment of
+resources? Are we including any that are too hard or too easy to win?
+Among all the districts we consider close, are some better “investments”
+than others?</p>
+<p>Sometimes it’s helpful to think about how the district relates to
+other races on the same ticket, the so-called “reverse-coattails” effect
+(“reverse” because we are referring to races for smaller offices helping
+a larger race on the same ballot).</p>
+<p>When a district overlaps geographically with another important
+election we call that a a “double-word-score.” For instance, in a
+presidential election year, any close state-legislative district in a
+swing state might be a good or appealing place to direct donor dollars.
+Close senate races also generate these sorts of opportunities.</p>
+<p>Looking at competitive <em>congressional</em> districts gives
+“double-word-score” opportunities for some state-legislative-districts
+and not others. These are trickier to find than statewide elections
+since we need to know the population overlaps of the congressional and
+state-legislative districts. As an example, let’s consider the 2024
+election in Wisconsin. The chart below contains all the competitive
+state-legislative districts (PPL between 45% and 55%) and whichever
+congressional district contains most of the state-legislative-district.
+In green, we’ve highlighted the districts where the overlapping
+congressional districts are also competitive by PPL. The WI
+congressional races are already triple-word-scores in ’24 because WI is
+a swing state and has a senate race as well. So the
+state-legislative-districts in green in the chart below are actually
+quadruple-word-scores!</p>
+<p>This might be a nice frame for driving donor money aimed at the
+bigger races into the state-legislative races.</p>
+<div class="brTableTitle">WI SLD/CD Overlaps</div>
+<table class="brTable"><thead><tr><th>State District</th><th>State District PPL</th><th>% Overlap</th><th>CD</th><th>CD PPL</th></tr></thead><tbody><tr><td style="; border: 3px solid green; " data-label="District">Upper-15</td><td style="; ; color: hsl(240.0, 49%, 50%)" data-label="D. PPL">54.94</td><td style="; ; color: hsl(120.0, 50%, 10%)" data-label="% Overlap">60.21</td><td style="; ; " data-label="CD">1</td><td style="; ; color: hsl(0.0, 19%, 50%)" data-label="CD PPL">48.11</td></tr><tr><td style="; border: 3px solid green; " data-label="District">Upper-17</td><td style="; ; color: hsl(0.0, 47%, 50%)" data-label="D. PPL">45.29</td><td style="; ; color: hsl(120.0, 50%,  3%)" data-label="% Overlap">53.33</td><td style="; ; " data-label="CD">3</td><td style="; ; color: hsl(0.0, 13%, 50%)" data-label="CD PPL">48.66</td></tr><tr><td style="; ; " data-label="District">Upper-19</td><td style="; ; color: hsl(0.0,  6%, 50%)" data-label="D. PPL">49.44</td><td style="; ; color: hsl(120.0, 50%, 11%)" data-label="% Overlap">60.53</td><td style="; ; " data-label="CD">8</td><td style="; ; color: hsl(0.0, 86%, 50%)" data-label="CD PPL">41.37</td></tr><tr><td style="; ; " data-label="District">Upper-30</td><td style="; ; color: hsl(0.0, 48%, 50%)" data-label="D. PPL">45.23</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">8</td><td style="; ; color: hsl(0.0, 86%, 50%)" data-label="CD PPL">41.37</td></tr><tr><td style="; border: 3px solid green; " data-label="District">Upper-31</td><td style="; ; color: hsl(0.0, 28%, 50%)" data-label="D. PPL">47.24</td><td style="; ; color: hsl(120.0, 50%, 49%)" data-label="% Overlap">98.58</td><td style="; ; " data-label="CD">3</td><td style="; ; color: hsl(0.0, 13%, 50%)" data-label="CD PPL">48.66</td></tr><tr><td style="; border: 3px solid green; " data-label="District">Upper-32</td><td style="; ; color: hsl(240.0, 23%, 50%)" data-label="D. PPL">52.33</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">99.98</td><td style="; ; " data-label="CD">3</td><td style="; ; color: hsl(0.0, 13%, 50%)" data-label="CD PPL">48.66</td></tr><tr><td style="; border: 3px solid green; " data-label="District">Lower-21</td><td style="; ; color: hsl(0.0, 11%, 50%)" data-label="D. PPL">48.85</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">1</td><td style="; ; color: hsl(0.0, 19%, 50%)" data-label="CD PPL">48.11</td></tr><tr><td style="; ; " data-label="District">Lower-23</td><td style="; ; color: hsl(0.0,  0%, 50%)" data-label="D. PPL">49.95</td><td style="; ; color: hsl(120.0, 50%,  6%)" data-label="% Overlap">55.52</td><td style="; ; " data-label="CD">6</td><td style="; ; color: hsl(0.0, 91%, 50%)" data-label="CD PPL">40.88</td></tr><tr><td style="; ; " data-label="District">Lower-30</td><td style="; ; color: hsl(0.0, 35%, 50%)" data-label="D. PPL">46.46</td><td style="; ; color: hsl(120.0, 50%, 25%)" data-label="% Overlap">75.18</td><td style="; ; " data-label="CD">7</td><td style="; ; color: hsl(0.0, 94%, 50%)" data-label="CD PPL">40.60</td></tr><tr><td style="; ; " data-label="District">Lower-4</td><td style="; ; color: hsl(0.0, 44%, 50%)" data-label="D. PPL">45.56</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">8</td><td style="; ; color: hsl(0.0, 86%, 50%)" data-label="CD PPL">41.37</td></tr><tr><td style="; ; " data-label="District">Lower-42</td><td style="; ; color: hsl(0.0,  5%, 50%)" data-label="D. PPL">49.51</td><td style="; ; color: hsl(120.0, 50%, 29%)" data-label="% Overlap">78.80</td><td style="; ; " data-label="CD">6</td><td style="; ; color: hsl(0.0, 91%, 50%)" data-label="CD PPL">40.88</td></tr><tr><td style="; border: 3px solid green; " data-label="District">Lower-49</td><td style="; ; color: hsl(0.0, 34%, 50%)" data-label="D. PPL">46.60</td><td style="; ; color: hsl(120.0, 50%, 41%)" data-label="% Overlap">90.66</td><td style="; ; " data-label="CD">3</td><td style="; ; color: hsl(0.0, 13%, 50%)" data-label="CD PPL">48.66</td></tr><tr><td style="; ; " data-label="District">Lower-51</td><td style="; ; color: hsl(240.0, 49%, 50%)" data-label="D. PPL">54.86</td><td style="; ; color: hsl(120.0, 50%, 47%)" data-label="% Overlap">96.70</td><td style="; ; " data-label="CD">2</td><td style="; ; color: hsl(240.0, 100%, 50%)" data-label="CD PPL">69.49</td></tr><tr><td style="; ; " data-label="District">Lower-54</td><td style="; ; color: hsl(240.0, 24%, 50%)" data-label="D. PPL">52.44</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">6</td><td style="; ; color: hsl(0.0, 91%, 50%)" data-label="CD PPL">40.88</td></tr><tr><td style="; ; " data-label="District">Lower-55</td><td style="; ; color: hsl(0.0, 29%, 50%)" data-label="D. PPL">47.11</td><td style="; ; color: hsl(120.0, 50%, 30%)" data-label="% Overlap">80.50</td><td style="; ; " data-label="CD">6</td><td style="; ; color: hsl(0.0, 91%, 50%)" data-label="CD PPL">40.88</td></tr><tr><td style="; ; " data-label="District">Lower-57</td><td style="; ; color: hsl(240.0, 46%, 50%)" data-label="D. PPL">54.63</td><td style="; ; color: hsl(120.0, 50%, 21%)" data-label="% Overlap">71.40</td><td style="; ; " data-label="CD">8</td><td style="; ; color: hsl(0.0, 86%, 50%)" data-label="CD PPL">41.37</td></tr><tr><td style="; border: 3px solid green; " data-label="District">Lower-68</td><td style="; ; color: hsl(0.0, 35%, 50%)" data-label="D. PPL">46.46</td><td style="; ; color: hsl(120.0, 50%, 43%)" data-label="% Overlap">92.85</td><td style="; ; " data-label="CD">3</td><td style="; ; color: hsl(0.0, 13%, 50%)" data-label="CD PPL">48.66</td></tr><tr><td style="; border: 3px solid green; " data-label="District">Lower-71</td><td style="; ; color: hsl(240.0, 32%, 50%)" data-label="D. PPL">53.20</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">3</td><td style="; ; color: hsl(0.0, 13%, 50%)" data-label="CD PPL">48.66</td></tr><tr><td style="; ; " data-label="District">Lower-73</td><td style="; ; color: hsl(240.0, 17%, 50%)" data-label="D. PPL">51.66</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">7</td><td style="; ; color: hsl(0.0, 94%, 50%)" data-label="CD PPL">40.60</td></tr><tr><td style="; ; " data-label="District">Lower-74</td><td style="; ; color: hsl(240.0,  4%, 50%)" data-label="D. PPL">50.44</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">7</td><td style="; ; color: hsl(0.0, 94%, 50%)" data-label="CD PPL">40.60</td></tr><tr><td style="; ; " data-label="District">Lower-85</td><td style="; ; color: hsl(0.0, 11%, 50%)" data-label="D. PPL">48.86</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">7</td><td style="; ; color: hsl(0.0, 94%, 50%)" data-label="CD PPL">40.60</td></tr><tr><td style="; ; " data-label="District">Lower-88</td><td style="; ; color: hsl(0.0, 10%, 50%)" data-label="D. PPL">49.04</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">8</td><td style="; ; color: hsl(0.0, 86%, 50%)" data-label="CD PPL">41.37</td></tr><tr><td style="; ; " data-label="District">Lower-90</td><td style="; ; color: hsl(240.0, 34%, 50%)" data-label="D. PPL">53.40</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">8</td><td style="; ; color: hsl(0.0, 86%, 50%)" data-label="CD PPL">41.37</td></tr><tr><td style="; border: 3px solid green; " data-label="District">Lower-94</td><td style="; ; color: hsl(0.0,  9%, 50%)" data-label="D. PPL">49.11</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">100.00</td><td style="; ; " data-label="CD">3</td><td style="; ; color: hsl(0.0, 13%, 50%)" data-label="CD PPL">48.66</td></tr><tr><td style="; border: 3px solid green; " data-label="District">Lower-96</td><td style="; ; color: hsl(0.0,  9%, 50%)" data-label="D. PPL">49.07</td><td style="; ; color: hsl(120.0, 50%, 50%)" data-label="% Overlap">99.94</td><td style="; ; " data-label="CD">3</td><td style="; ; color: hsl(0.0, 13%, 50%)" data-label="CD PPL">48.66</td></tr></tbody></table>
 </section>
 <section id="dpl-our-model" class="level2">
 <h2>DPL: our model</h2>
@@ -652,52 +735,44 @@ technical details.</p>
 <p>Our survey data comes from the Cooperative Election Study (<a
 href="https://cces.gov.harvard.edu">CES</a>), a highly-regarded survey
 which runs every 2 years and validates people’s responses about turnout
-via a third-party which uses voter-file data<a href="#fn4"
-class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.
+via a third-party which uses voter-file data<a href="#fn6"
+class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.
 The CES survey includes approximately 60,000 people per election cycle.
 It gathers demographic and geographic information about each person as
 well as information about voting and party preference.</p>
-<p>The CES data includes state and congressional district of each person
-interviewed. We use that to join the data to population-density data
-from the 5-year American Community Survey (<a
+<p>The CES data includes the state and congressional district of each
+person interviewed. We use that to join the data to population-density
+data from the 5-year American Community Survey (<a
 href="https://www.census.gov/programs-surveys/acs/microdata.html">ACS</a>)
 data, using the sample ending the same year as the CES survey was
 done.</p>
-<p>We then fit a multi-level regressions of that data, one for turnout,
-one for party-preference and one for both at the same time. To compute
-expected turnout, party-preference of voters or DPL in a district, we
+<p>We then fit a multi-level regression of that data, one for turnout,
+one for party-preference and one for both jointly. To compute expected
+turnout, party-preference of voters or DPL in a district, we
 “post-stratify” the model using the demographics of the district. That
 demographic data is also sourced from the ACS, though via a different
-path because the microdata is not available at SLD size geographies. Due
-to the method we use for modeling (Hamiltonian Monte Carlo), the result
-of post-stratification is a distribution of turnout, party-preference or
-DPL, giving us an expectation and various ways to look at
-uncertainty.</p>
+path because the microdata is not available at
+state-legislative-district sized geographies. We use Hamiltonian Monte
+Carlo for fitting the model so the result of post-stratification is a
+distribution of turnout, party-preference or DPL, giving us an
+expectation and various ways to look at uncertainty.</p>
 <p>Let’s dig into the details a bit!</p>
 <section id="choosing-our-sources" class="level3">
 <h3>Choosing Our Sources</h3>
-<p>Our present model uses the 2020 CES survey as its source. We will
-have the 2022 CES survey as a possible source available to us soon. It’s
-not clear which is more appropriate for thinking about 2024. 2022 is
-more recent and so might better capture current demographic voting
-trends, but 2020 is the most recent <em>presidential</em> election year.
-Using the 2020 survey, we choose presidential vote as our
-party-preference indicator. If we use 2022, we will switch to
-house-candidate vote and include incumbency in the regression model for
-party-preference. We’re thinking about ways to combine these but it’s
-not straightforward for a variety of reasons. We could also model using
-both and have two DPL numbers to look at per district.</p>
-<p>ACS is the best available public data for figuring out the
-demographic breakdowns of who lives in a district. We get ACS population
-tables at the census-tract level and aggregate them to the district
-level. Unfortunately, none of these tables alone has all the categories
-we want for post-stratificaiton. So We use statistical methods<a
-href="#fn5" class="footnote-ref" id="fnref5"
-role="doc-noteref"><sup>5</sup></a> to combine those tables, producing
-an estimated population table with all of our demographic categories in
-each district.</p>
+<p>Our present model uses the 2020 CES survey as its source and we
+choose presidential vote as our party-preference indicator<a href="#fn7"
+class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a>.</p>
+<p>The ACS is the best available <em>public</em> data for figuring out
+the demographics of a district. We get ACS population tables at the
+census-tract level and aggregate them to the district level.
+Unfortunately, none of these tables alone has all the categories we want
+for post-stratification. We use statistical methods<a href="#fn8"
+class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> to
+combine those tables, producing an estimated population table with all
+of our demographic categories in each district.</p>
 <p>There are various companies that use voter-file data (which is public
-but costs $$ and requires work to standardize) and various other data
+but costs money and requires work to standardize) and various other data
 and modeling (e.g., using names to predict race and sex) to estimate a
 population table for any specific geography. We’ve not had a chance to
 compare the accuracy of our methods to theirs but we imagine those
@@ -714,20 +789,20 @@ male or female but the ACS does not) in a congressional district but
 your survey has twice as many women as men, you would adjust the weights
 so that those interviews have equal representation in a weighted sum.
 Because our demographic categories are more coarse-grained than what the
-CES provides (e.g., CES give age in years but we want to model with 5
+CES provides (e.g., CES gives age in years but we want to model with 5
 age buckets) we need to aggregate the data. We use the weights when
 aggregating and this means that in the aggregated data we have non-whole
 numbers of voters and voters preferring one party or the other.</p>
 <p>We imagine each person in a demographic category and state has a
-specific fixed probablilty of voting and each voter a different
-probability of voting for the Democratic candidate. This would lead to a
-binomial model of vote counts. This is obviously a simplification but a
-fairly standard one, and a reasonable fit to the data. As mentioned
-above, we have non-whole counts. So we use a generalization of the
-binomial model^[bg] which allows for this.</p>
+specific fixed probability of voting and the voters among them a
+different probability of voting for the Democratic candidate. This would
+lead to a binomial model of vote counts. This is obviously a
+simplification but a fairly standard one, and a reasonable fit to the
+data. As mentioned above, we have non-whole counts. So we use a
+generalization of the binomial model^[bg] which allows for this.</p>
 <p>This is not an actual probability density and gives slightly lower
-(check this!) likelihood to very low and very high counts than it
-should. Fixing this is one project for our next version!</p>
+likelihood to very low and very high counts than it should. Fixing this
+is one project for our next version!</p>
 <p>Our specific probability is a linear function of the
 log-density^[lpd] plus a number for each of the categories and some of
 their combinations. In particular we estimate using “alphas” for state,
@@ -735,7 +810,7 @@ age, sex, education, race/ethnicity, the combination of age and
 education, age and race/ethnicity, education and race, and state and
 race. For the state factor and all the combination factors, we use
 “partial-pooling” which means we allow the model itself to estimate how
-big a factor these variations should be.</p>
+big an overall factor these variations should be.</p>
 <p>Population density in the US varies by several orders of magnitude,
 from 10s of people per square mile in the most rural places to over
 100,000 per square mile in the densest places, like New York City. That
@@ -766,7 +841,19 @@ or post-stratification result.</p>
 <p>We do this for turnout and party-preference of voters, where we match
 to known vote totals for the candidate of each party.</p>
 <p>The final result of all this work is an estimate of the DPL for any
-SDL in the country.</p>
+SLD in the country along with the breakdowns necessary to do demographic
+scenario analysis.</p>
+</section>
+</section>
+<section id="conclusion-how-can-we-help" class="level2">
+<h2>Conclusion: How Can We Help?</h2>
+<p>We developed these tools in order to help elect more Democrats to
+state legislative office. If there are ways we can deploy this data or
+these tools in order to help you decide where to send your money or help
+your donors make those decisions, please let us know! If it’s helpful,
+we’re happy to discuss the details, provide custom views into this data
+and our analysis or be pointed in helpful directions for further
+work.</p>
 <p><em>Want to read more from Blue Ripple? Visit our <a
 href="https://www.blueripplepolitics.org"><strong>website</strong></a>,
 sign up for <a href="http://eepurl.com/gzmeQ5"><strong>email
@@ -777,7 +864,6 @@ href="https://www.facebook.com/blueripplepolitics"><strong>FaceBook</strong></a>
 Folks interested in our data and modeling efforts should also check out
 our <a href="https://github.com/blueripple"><strong>Github</strong></a>
 page.</em></p>
-</section>
 </section>
 </section>
 <aside id="footnotes" class="footnotes footnotes-end-of-document"
@@ -795,10 +881,29 @@ role="doc-backlink">↩︎</a></p></li>
 presidential and statewide elections from 2016-2021: 2018 and 2020
 senate as well as Governor and AG from 2021.<a href="#fnref2"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>A technical note: we don’t actually move the
+<li id="fn3"><p>For age we use five categories: 18-24, 25-34, 35-44,
+45-64, and 65 and over. For sex we use two: male and female. Almost none
+of our source data tracks sex in a more fine-grained way. For
+educational attainment, we use four categories: non high-school
+graduate, high-school graduate, some college, and college-graduate. And
+for race/ethnicity we use five categories: Black, Hispanic, Asian
+American/Pacific Islander (AAPI), White-Non-Hispanic and Other. With all
+of these categories there would be value to finer gradations but that
+would also create computational and data difficulties. As it is, this
+setup uses 200 buckets per state.]<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>The model takes the state into account but the fit is
+not separate for each state. We use something called “partial-pooling”:
+we allow the fitting process itself to control how much it uses data
+from the state and when to “borrow strength” from the national data.
+We’d expect the state data to be more predictive but there isn’t that
+much of it for each category (since we have 200 categories!). So there’s
+a tradeoff.<a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>A technical note: we don’t actually move the
 probabilities by 5% (or whatever) for a couple of reasons. We don’t want
-to end up with probabilities above 1 or below 0 which could happen with
-larger shifts and/or probabilities already closer to 0 or 1. And,
+to end up with probabilities above 100% or below 0 which could happen
+with larger shifts and/or probabilities already closer to 0 or 1. And,
 intuitively, very low and very high probabilities are likely to shift
 less than probabilities closer to 50%. So we shift using the logistic
 function in such a way that for a shift of <span
@@ -806,16 +911,26 @@ class="math inline">\(x\)</span>, we would shift a probability of <span
 class="math inline">\(\frac{1}{2} - \frac{x}{2}\)</span> to <span
 class="math inline">\(\frac{1}{2} + \frac{x}{2}\)</span> but smoothly
 apply slightly smaller shifts as the probability moves away from <span
-class="math inline">\(\frac{1}{2}\)</span>.<a href="#fnref3"
+class="math inline">\(\frac{1}{2}\)</span>.<a href="#fnref5"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>CES has used different validation partners in different
-years. Whoever parteners with the CES in a particular year attempts to
+<li id="fn6"><p>CES has used different validation partners in different
+years. Whoever partners with the CES in a particular year attempts to
 match a CES interviewee with a voter-file record in that state to
 validate the survey responses about registration and turnout.<a
-href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>We will produce another explainer about just this part
-of the DPL. Basically, the ACS data is provided in tables which cover a
-maximum of 3-categories at a time, for example citizenship, sex and
+href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>We will have the 2022 CES survey as a possible source
+available to us soon. It’s not clear which is more appropriate for
+thinking about 2024. 2022 is more recent and so might better capture
+current demographic voting trends, but 2020 is the most recent
+<em>presidential</em> election year. If we use 2022, we will switch to
+house-candidate vote and include incumbency in the regression model for
+party-preference. We’re thinking about ways to combine these but it’s
+not straightforward for a variety of reasons. We could also model using
+both and have two DPL numbers to look at per district.<a href="#fnref7"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>We will produce another explainer about just this part
+of the DPL. Basically, the ACS data is provided in tables which
+typically cover 3-categories at a time, for example citizenship, sex and
 race/ethnicity. To get the table we want, citizenship x age x sex x
 education x race/ethnicity–citizenship is there so we can get the final
 table for citizens only since only citizens can vote–we need to
@@ -825,7 +940,7 @@ them, to estimate the correct combination in each district. There is a
 large and confusing literature full of techniques for doing this. The
 one we’ve developed has some advantages in terms of accuracy and
 statistical bias and the disadvantage of being somewhat more complex.<a
-href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 <!--
