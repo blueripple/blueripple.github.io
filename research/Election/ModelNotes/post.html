@@ -836,27 +836,18 @@ different probability of voting for the Democratic candidate. This would
 lead to a binomial model of vote counts. This is obviously a
 simplification but a fairly standard one, and a reasonable fit to the
 data. As mentioned above, we have non-whole counts. So we use a
-generalization of the binomial model[^bg] which allows for this.</p>
-<p>This is not an actual probability density and gives slightly lower
-likelihood to very low and very high counts than it should. Fixing this
-is one project for our next version!</p>
-<p>Our specific probability is a linear function of the
-log-density[^lpd] plus a number for each of the categories and some of
-their combinations. In particular we estimate using “alphas” for state,
-age, sex, education, race/ethnicity, the combination of age and
-education, age and race/ethnicity, education and race, and state and
-race. For the state factor and all the combination factors, we use
-“partial-pooling” which means we allow the model itself to estimate how
-big an overall factor these variations should be.</p>
-<p>Population density in the US varies by several orders of magnitude,
-from 10s of people per square mile in the most rural places to over
-100,000 per square mile in the densest places, like New York City. That
-makes it difficult to use as a predictor. There are various approaches
-to “fixing” this. We can classify places by density, e.g., as rural,
-suburban and urban. Or we can divide density into quantiles and use
-those for modeling. We choose a log-transform to compress the range,
-somewhat like using quantiles, but preserve the continuous
-variation.</p>
+generalization of the binomial model<a href="#fn10" class="footnote-ref"
+id="fnref10" role="doc-noteref"><sup>10</sup></a> which allows for
+this.</p>
+<p>Our specific probability is a linear function of the log-density<a
+href="#fn11" class="footnote-ref" id="fnref11"
+role="doc-noteref"><sup>11</sup></a> plus a number for each of the
+categories and some of their combinations. In particular we estimate
+using “alphas” for state, age, sex, education, race/ethnicity, the
+combination of age and education, age and race/ethnicity, education and
+race, and state and race. For the state factor and all the combination
+factors, we use “partial-pooling” which means we allow the model itself
+to estimate how big an overall factor these variations should be.</p>
 <p>We use <a href="https://mc-stan.org">Stan</a>, which then runs a <a
 href="https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo">Hamiltonian
 Monte Carlo</a> to estimate the parameters. Because of how Monte-Carlo
@@ -983,6 +974,22 @@ large and confusing literature full of techniques for doing this. The
 one we’ve developed has some advantages in terms of accuracy and
 statistical bias and the disadvantage of being somewhat more complex.<a
 href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Specifically, we use the binomial density but just
+allow non-integer “successes” and “failures”. This is not an actual
+probability density and gives slightly lower likelihood to very low and
+very high counts than it should. Fixing this is one project for our next
+version!<a href="#fnref10" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>For modeling, we use logarithmic population density.
+Population density in the US varies by several orders of magnitude, from
+10s of people per square mile in the most rural places to over 100,000
+per square mile in the densest places, like New York City. That makes it
+difficult to use as a predictor. There are various approaches to
+“fixing” this. We can classify places by density, e.g., as rural,
+suburban and urban. Or we can divide density into quantiles and use
+those for modeling. We choose a log-transform to compress the range,
+somewhat like using quantiles, but preserve the continuous variation.<a
+href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--
